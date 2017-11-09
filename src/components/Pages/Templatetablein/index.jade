@@ -1,0 +1,72 @@
+.templatetablein
+    DashboardController(v-bind:createbtn='true',v-bind:editbtn='true',v-bind:attachmentbtn='true',v-bind:actionbtn='true', v-bind:links='btnlinks',v-bind:heading='head' )
+    Templatetableincompo
+        .o_view_manager_content(slot='template')
+            .o_form_view.o_form_nosheet.o_form_readonly
+                span.o_form_field.o_form_invisible res.partner
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | Template Name
+                            td(colspan='1', style='width: 100%;')
+                                span.o_form_field.o_form_required {{name_e}}
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_165')
+                                    | Active
+                            td(colspan='1', style='width: 100%;')
+                                .o_checkbox.o_form_field_boolean.o_form_field
+                                    input#o_field_input_165(type='checkbox', name='active', disabled='', v-model='active')
+                                    span
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | Model
+                            td(colspan='1', style='width: 100%;')
+                                a.o_form_uri.o_form_field.o_form_required(href='#') {{model_description}}
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | Filter
+                            td(colspan='1', style='width: 100%;')
+                                div
+                                    a.o_form_uri.o_form_field(href='#') {{filter_name}}
+                                    p.oe_grey
+                                        b To create a new filter:
+                                        br
+                                        |                                 - Go to the Odoo document you want to filter. For instance, go to Opportunities and search on Sales Department.
+                                        br
+                                        |                                 - In this "Search" view, select the option "Save Current Filter", enter the name (Ex: Sales Department)
+                                        br
+                                        |                                 - If you select "Share with all users", link of google document in "More" options will appear for all users in opportunities of Sales Department.
+                                        br
+                                        |                                 - If you don't select "Share with all users", link of google document in "More" options will not appear for other users in opportunities of Sales Department.
+                                        br
+                                        |                                 - If filter is not specified, link of google document will appear in "More" option for all users for all opportunities.
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | Template URL
+                            td(colspan='1', style='width: 100%;')
+                                span.o_form_field.o_form_required {{template_url}}
+
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_invisible
+                                    | Resource Id
+                            td(colspan='1', style='width: 100%;')
+                                span.o_form_field.o_form_invisible 1eIM-q7PX9wp1vEUUdUvrmAe8V3Do60vXDETulNmI9mA
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                    | Google Drive Name Pattern
+                            td(colspan='1', style='width: 100%;')
+                                div
+                                    span.o_form_field.o_form_required {{gdrive_name_pattern}}
+                                    p.oe_grey
+                                        | The name of the attached document can use fixed or variable data. To distinguish between documents in
+                                        | Google Drive, use fixed words and fields. For instance, in the example above, if you wrote Agrolait_%(name)s_Sales
+                                        | in the Google Drive name field, the document in your Google Drive and in Odoo attachment will be named
+                                        | 'Agrolait_SO0001_Sales'.

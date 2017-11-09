@@ -1,0 +1,217 @@
+.o_content
+    .o_view_manager_content
+        .o_form_view.o_form_readonly
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .o_group
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_661')
+                                            | Name
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field.o_form_required 40 Hours/Week
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_662')
+                                            | Workgroup Manager
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field(href='#') Administrators
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_663')
+                                            | Company
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field(href='#') Alupak Industriess
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_664', data-original-title='', title='')
+                                            | Hours per Day
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_required.o_form_invisible(href='#') Hour(s)
+                        label.o_form_label.o_group_col_6(for='o_field_input_665')
+                            | Working Time
+                        .o_group_col_6.o_form_field.o_form_field_one2many.o_view_manager_content
+                            .o_x2m_control_panel
+                                .o_cp_buttons
+                                .o_cp_pager
+                                    .o_hidden
+                                        span.o_pager_value
+                                        |  /
+                                        span.o_pager_limit
+                                        span.btn-group.btn-group-sm
+                                            button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                            button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                            .o_list_editable
+                                .o_form_view.o_list_editable_form.o_form_nosheet.o_hidden
+                                    field(name='name', modifiers='{"required":true}', nolabel='true')
+                                    field(name='dayofweek', modifiers='{"required":true}', nolabel='true')
+                                    field(name='hour_from', widget='float_time', modifiers='{"required":true}', nolabel='true')
+                                    field(name='hour_to', widget='float_time', modifiers='{"required":true}', nolabel='true')
+                                    field(name='date_from', modifiers='{}', nolabel='true')
+                                    field(name='date_to', modifiers='{}', nolabel='true')
+                                .table-responsive
+                                    table.o_list_view.table.table-condensed.table-striped
+                                        thead
+                                            tr
+                                                th.o_column_sortable(data-id='name')
+                                                    | Name
+                                                th.o_column_sortable(data-id='dayofweek')
+                                                    | Day of Week
+                                                th.o_column_sortable(data-id='hour_from')
+                                                    | Work from
+                                                th.o_column_sortable(data-id='hour_to')
+                                                    | Work to
+                                                th.o_column_sortable(data-id='date_from')
+                                                    | Starting Date
+                                                th.o_column_sortable(data-id='date_to')
+                                                    | End Date
+                                        tfoot
+                                            tr
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                        tbody
+                                            tr(data-id='1', style='')
+                                                td.(data-field='name') Monday morning
+td.(data-field='dayofweek') Monday
+td.o_list_number(data-field='hour_from', title='Start and End time of working.') 08:00
+td.o_list_number(data-field='hour_to') 12:00
+td.(data-field='date_from')  
+td.(data-field='date_to')  
+tr(data-id='2', style='')
+    td.(data-field='name') Monday evening
+td.(data-field='dayofweek') Monday
+td.o_list_number(data-field='hour_from', title='Start and End time of working.') 13:00
+td.o_list_number(data-field='hour_to') 17:00
+td.(data-field='date_from')  
+td.(data-field='date_to')  
+tr(data-id='3', style='')
+    td.(data-field='name') Tuesday morning
+td.(data-field='dayofweek') Tuesday
+td.o_list_number(data-field='hour_from', title='Start and End time of working.') 08:00
+td.o_list_number(data-field='hour_to') 12:00
+td.(data-field='date_from')  
+td.(data-field='date_to')  
+tr(data-id='4', style='')
+    td.(data-field='name') Tuesday evening
+td.(data-field='dayofweek') Tuesday
+td.o_list_number(data-field='hour_from', title='Start and End time of working.') 13:00
+td.o_list_number(data-field='hour_to') 17:00
+td.(data-field='date_from')  
+td.(data-field='date_to')  
+tr(data-id='5', style='')
+    td.(data-field='name') Wednesday morning
+td.(data-field='dayofweek') Wednesday
+td.o_list_number(data-field='hour_from', title='Start and End time of working.') 08:00
+td.o_list_number(data-field='hour_to') 12:00
+td.(data-field='date_from')  
+td.(data-field='date_to')  
+tr(data-id='6', style='')
+    td.(data-field='name') Wednesday evening
+td.(data-field='dayofweek') Wednesday
+td.o_list_number(data-field='hour_from', title='Start and End time of working.') 13:00
+td.o_list_number(data-field='hour_to') 17:00
+td.(data-field='date_from')  
+td.(data-field='date_to')  
+tr(data-id='7', style='')
+    td.(data-field='name') Thursday morning
+td.(data-field='dayofweek') Thursday
+td.o_list_number(data-field='hour_from', title='Start and End time of working.') 08:00
+td.o_list_number(data-field='hour_to') 12:00
+td.(data-field='date_from')  
+td.(data-field='date_to')  
+tr(data-id='8', style='')
+    td.(data-field='name') Thursday evening
+td.(data-field='dayofweek') Thursday
+td.o_list_number(data-field='hour_from', title='Start and End time of working.') 13:00
+td.o_list_number(data-field='hour_to') 17:00
+td.(data-field='date_from')  
+td.(data-field='date_to')  
+tr(data-id='9', style='')
+    td.(data-field='name') Friday morning
+td.(data-field='dayofweek') Friday
+td.o_list_number(data-field='hour_from', title='Start and End time of working.') 08:00
+td.o_list_number(data-field='hour_to') 12:00
+td.(data-field='date_from')  
+td.(data-field='date_to')  
+tr(data-id='10', style='')
+    td.(data-field='name') Friday evening
+td.(data-field='dayofweek') Friday
+td.o_list_number(data-field='hour_from', title='Start and End time of working.') 13:00
+td.o_list_number(data-field='hour_to') 17:00
+td.(data-field='date_from')  
+td.(data-field='date_to')  
+label.o_form_label.o_group_col_6(for='o_field_input_666')
+    | Leaves
+.o_group_col_6.o_form_field.o_form_field_one2many.o_view_manager_content
+    .o_x2m_control_panel
+        .o_cp_buttons
+        .o_cp_pager
+            .o_hidden
+                span.o_pager_value
+                |  /
+                span.o_pager_limit
+                span.btn-group.btn-group-sm
+                    button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                    button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+    div
+        .table-responsive
+            table.o_list_view.table.table-condensed.table-striped
+                thead
+                    tr
+                        th.o_column_sortable(data-id='name')
+                            | Reason
+                        th.o_column_sortable(data-id='resource_id')
+                            | Resource
+                        th.o_column_sortable(data-id='company_id')
+                            | Company
+                        th.o_column_sortable(data-id='calendar_id')
+                            | Working Time
+                        th.o_column_sortable(data-id='date_from')
+                            | Start Date
+                        th.o_column_sortable(data-id='date_to')
+                            | End Date
+                tfoot
+                    tr
+                        td
+                        td
+                        td
+                        td
+                        td
+                        td
+                tbody
+                    tr(data-id='1', style='')
+                        td.(data-field='name') 2 Hours On Leave
+td.(data-field='resource_id', title='If empty, this is a generic holiday for the company. If a resource is set, the holiday/leave is only for this resource') Analyst
+td.o_readonly(data-field='company_id') Alupak Industriess
+td.(data-field='calendar_id') 40 Hours/Week
+td.(data-field='date_from') 01/28/2017 13:00:00
+td.(data-field='date_to') 01/28/2017 16:00:00
+tr(data-id='3', style='')
+    td.(data-field='name') Doctor Appointment
+td.(data-field='resource_id', title='If empty, this is a generic holiday for the company. If a resource is set, the holiday/leave is only for this resource') Administrators
+td.o_readonly(data-field='company_id') Alupak Industriess
+td.(data-field='calendar_id') 40 Hours/Week
+td.(data-field='date_from') 02/20/2017 05:00:00
+td.(data-field='date_to') 02/22/2017 05:00:00
+tr(data-id='4', style='')
+    td.(data-field='name') Me buhat bemar hunn
+td.(data-field='resource_id', title='If empty, this is a generic holiday for the company. If a resource is set, the holiday/leave is only for this resource') Rahemeen
+td.o_readonly(data-field='company_id') Alupak Industriess
+td.(data-field='calendar_id') 40 Hours/Week
+td.(data-field='date_from') 02/20/2017 07:00:00
+td.(data-field='date_to') 02/22/2017 19:00:00
+tr
+    td(title='Reason')  
+    td(title='Resource')  
+    td(title='Company')  
+    td(title='Working Time')  
+    td(title='Start Date')  
+    td(title='End Date')  

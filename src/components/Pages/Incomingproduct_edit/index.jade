@@ -1,0 +1,311 @@
+.incominproduct_edit
+    DashboardController(v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_editable
+                header(style='margin-left:-15px;margin-right:-15px;')
+                    ul.oe_form_field_status.oe_form_status.o_form_field(data-original-title='', title='')
+                        li(data-id='draft')
+                            span.label New
+                            span.arrow
+                                span
+                        li(data-id='confirmed')
+                            span.label Waiting Availability
+                            span.arrow
+                                span
+                        li.oe_active(data-id='assigned')
+                            span.label Available
+                            span.arrow
+                                span
+                        li(data-id='done')
+                            span.label Done
+                            span.arrow
+                                span
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .o_group
+                            .o_group.o_group_col_12
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_420')
+                                                    | Product
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_420.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help(for='o_field_input_421', data-original-title='', title='')
+                                                    | Quantity
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_row
+                                                    input#o_field_input_421.o_form_input.o_form_field.o_form_required.o_form_field_number(type='text')
+                                                    .o_form_field_many2one.o_form_field.o_form_required.o_form_invisible
+                                                        .o_form_input_dropdown
+                                                            input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_422')
+                                                    | Description
+                                            td(colspan='1', style='width: 100%;')
+                                                input#o_field_input_422.o_form_input.o_form_field.o_form_required(type='text')
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_423')
+                                                    | Picking Type
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_with_button.o_form_field
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_423.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_424')
+                                                    | Priority
+                                            td(colspan='1', style='width: 100%;')
+                                                select#o_field_input_424.o_form_input.o_form_field(name='priority')
+                                                    option(value='false')
+                                                    option(value='"0"') Not urgent
+                                                    option(value='"1"') Normal
+                                                    option(value='"2"') Urgent
+                                                    option(value='"3"') Very Urgent
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_425')
+                                                    | Company
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_425.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help(for='o_field_input_426', data-original-title='', title='')
+                                                    | Expected Date
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_datepicker.o_form_field_date.o_form_field.o_form_required
+                                                    input.o_datepicker_input.o_form_input(type='text', name='date_expected')
+                                                    span.o_datepicker_button
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_427', data-original-title='', title='')
+                                                    | Date
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_datepicker.o_form_field_date.o_form_field.o_form_required.o_form_invisible
+                                                    input.o_datepicker_input.o_form_input(type='text', name='date')
+                                                    span.o_datepicker_button
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Origin
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_428')
+                                                | Source Document
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_428.o_form_input.o_form_field(type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_429', data-original-title='', title='')
+                                                | Source Location
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required.o_form_invisible
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_429.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_430')
+                                                | Transfer Reference
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_430.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible(for='o_field_input_431')
+                                                | Creation Date
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field_date.o_form_field.o_form_invisible 01/28/2017 19:22:44
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_432', data-original-title='', title='')
+                                                | Supply Method
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_432.o_form_input.o_form_field.o_form_required.o_form_invisible(name='procure_method')
+                                                option(value='false')
+                                                option(value='"make_to_stock"') Default: Take From Stock
+                                                option(value='"make_to_order"') Advanced: Apply Procurement Rules
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_433')
+                                                | Procurement Group
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_433.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                            table.o_group.o_inner_group.o_form_invisible.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Destination
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_434', data-original-title='', title='')
+                                                | Destination Location
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_434.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_435', data-original-title='', title='')
+                                                | Destination Address
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_435.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_436')
+                                                | Transfer Destination Address
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_436.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_437', data-original-title='', title='')
+                                                | Destination Move
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_438')
+                                                | Purchase Order Line
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                            table.o_group.o_inner_group.o_form_invisible.o_group_col_12
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Reserved Quants
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false(for='o_field_input_439', data-original-title='', title='')
+                                                | Availability
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_textarea.o_form_field.o_form_field_empty
+                            table.o_group.o_inner_group.o_form_invisible.o_group_col_12
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Moved Quants
+                                    tr
+                                        td(colspan='1', style='width: 50%;')
+                                            .o_form_field.o_form_field_many2many.o_form_field_empty.o_view_manager_content
+                                                .o_x2m_control_panel
+                                                    .o_cp_buttons
+                                                    .o_cp_pager
+                                                        .o_hidden
+                                                            span.o_pager_value
+                                                            |  /
+                                                            span.o_pager_limit
+                                                            span.btn-group.btn-group-sm
+                                                                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                                .o_cannot_create
+                                                    .table-responsive
+                                                        table.o_list_view.table.table-condensed.table-striped
+                                                            thead
+                                                                tr
+                                                                    th.o_column_sortable(data-id='product_id')
+                                                                        | Product
+                                                                    th.o_column_sortable(data-id='qty')
+                                                                        | Quantity
+                                                                    th.o_column_sortable(data-id='location_id')
+                                                                        | Location
+                                                                    th.o_column_sortable(data-id='in_date')
+                                                                        | Incoming Date
+                                                                    th(data-id='inventory_value')
+                                                                        | Inventory Value
+                                                                    th.o_column_sortable(data-id='company_id')
+                                                                        | Company
+                                                            tfoot
+                                                                tr
+                                                                    td
+                                                                    td
+                                                                    td
+                                                                    td
+                                                                    td
+                                                                    td
+                                                            tbody
+                                                                tr
+                                                                    td(title='Product')  
+                                                                    td(title='Quantity')  
+                                                                    td(title='Location')  
+                                                                    td(title='Incoming Date')  
+                                                                    td(title='Inventory Value')  
+                                                                    td(title='Company')  
+                                                                tr
+                                                                    td(title='Product')  
+                                                                    td(title='Quantity')  
+                                                                    td(title='Location')  
+                                                                    td(title='Incoming Date')  
+                                                                    td(title='Inventory Value')  
+                                                                    td(title='Company')  
+                                                                tr
+                                                                    td(title='Product')  
+                                                                    td(title='Quantity')  
+                                                                    td(title='Location')  
+                                                                    td(title='Incoming Date')  
+                                                                    td(title='Inventory Value')  
+                                                                    td(title='Company')  
+                                                                tr
+                                                                    td(title='Product')  
+                                                                    td(title='Quantity')  
+                                                                    td(title='Location')  
+                                                                    td(title='Incoming Date')  
+                                                                    td(title='Inventory Value')  
+                                                                    td(title='Company')  
+    Message
+    Request_quotation_lower
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+.posfruitwoedit
+    .o_content(style='margin-left:-15px;margin-right:-15px;')
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .o_form_field_image.oe_avatar.o_form_field(data-original-title='', title='')
+                            img(border='1', name='image_medium', src='http://192.168.25.104:8069/web/image?model=pos.category&id=1&field=image_medium&unique=20170308135826')
+                        .oe_left
+                            table.o_group.o_inner_group
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_3')
+                                                | Name
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required Fruits and Vegetables
+                                            button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_4')
+                                                | Parent Category
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_5', data-original-title='', title='')
+                                                | Sequence
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_field_number 1

@@ -1,0 +1,27 @@
+.container-fluid
+    .row
+        .col-md-9.calendarbox
+            #calendar
+        #myModal.modal.fade(role='dialog')
+            .modal-dialog.modal-sm
+                .modal-content
+                    .modal-header
+                        h4.modal-title Create
+                        button.close(type='button', data-dismiss='modal') ×
+
+                    .modal-body
+                        .form-group
+                            label(for='inputdefault') Summary
+                            input#inputdefault.form-control(type='text')
+
+                    .modal-footer
+                        button.btnn.btn-default(type='button', data-dismiss='modal') Create
+                        button.btnn.btn-default(type='button', data-dismiss='modal') Edit
+                        button.btnn.btn-default(type='button', data-dismiss='modal') Close
+
+
+        .col-md-3
+            button#Closebutton.btnnn(type='button',style='position: inherit;width: 100%;') x
+            #embeddingDatePicker
+
+

@@ -1,0 +1,11 @@
+.two{
+
+    border-left:1px solid #ddd;
+    border-collapse: separate;
+    border-spacing: 2px;
+
+    padding-left:12px;
+}
+.one{
+    padding-left:12px;
+}

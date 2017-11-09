@@ -1,0 +1,447 @@
+.o_web_client > .o_main .o_main_content .o_content {
+    -ms-flex: 1 1 auto;
+    -moz-flex: 1 1 auto;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+    height: 100%;
+    overflow: auto;
+    position: relative;
+}
+
+.o_web_client > .o_main .o_main_content .o_content .o_view_manager_content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+}
+
+.o_web_client > .o_main .o_main_content .o_content .o_view_manager_content .o_view_manager_content {
+    position: static;
+    height: auto;
+}
+.o_form_view .note-editor, .o_form_view .oe_form_field_html, .o_form_view .oe_form_field_html_text, .o_form_view .oe_form_field_text, .o_form_view .o_view_manager_content {
+    display: block;
+}
+.o_form_view .o_form_field.o_view_manager_content, .o_form_view .o_form_field.o_form_field_one2many, .o_form_view .o_form_field.o_form_field_many2many {
+    width: 100%;
+}
+
+.o_form_view .o_form_field.o_view_manager_content > div, .o_form_view .o_form_field.o_form_field_one2many > div, .o_form_view .o_form_field.o_form_field_many2many > div {
+    width: 100%;
+}
+.o_view_manager_content {
+    position: static;}
+
+.modal .modal-content .modal-body .o_view_manager_content {
+position: static;
+}
+
+
+.o_form_field .oe_view_nocontent {
+    display: none;
+}
+
+
+.oe_view_nocontent a {
+    cursor: pointer;
+}
+
+.oe_view_nocontent span, .oe_view_nocontent a {
+    display: inline !important;
+}
+
+
+.o_cannot_create .oe_view_nocontent_create {
+    display: none;
+}
+
+/* /web/static/src/less/views_extra.less defined in bundle 'web.assets_backend' */
+.oe_view_nocontent {
+    padding: 15px;
+    margin-top: 0;
+    color: #777777;
+    font-size: 125%;
+    max-width: 700px;
+}
+
+.oe_view_nocontent .oe_view_nocontent_create {
+    margin-top: 0;
+    padding-top: 35px;
+    color: #4c4c4c;
+}
+
+.oe_view_nocontent .oe_view_nocontent_create:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 70px;
+    height: 80px;
+    margin-left: -70px;
+    margin-top: -50px;
+    background: transparent url(/web/static/src/img/view_empty_arrow.png) no-repeat 0px 0px;
+}
+
+.oe_view_nocontent > p {
+    padding-left: 78px;
+}
+
+.oe_view_nocontent .oe_empty_custom_dashboard {
+    background: transparent url(/web/static/src/img/graph_background.png) no-repeat 0 0;
+    margin-top: -15px;
+    padding: 100px 0 0 137px;
+    min-height: 327px;
+    margin-left: -15px;
+}
+.o_reconciliation .oe_view_nocontent {
+    max-width: none;
+}
+
+.o_reconciliation .oe_view_nocontent > p {
+    padding: 0 10%;
+}
+
+
+.table-responsive {
+    overflow-x: auto;
+    min-height: 0.01%;
+}
+
+@media screen and (max-width: 767px) {
+    .table-responsive {
+        width: 100%;
+        margin-bottom: 13.5px;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        border: 1px solid #dddddd;
+    }
+
+    .table-responsive > .table {
+        margin-bottom: 0;
+    }
+
+    .table-responsive > .table > thead > tr > th, .table-responsive > .table > tbody > tr > th, .table-responsive > .table > tfoot > tr > th, .table-responsive > .table > thead > tr > td, .table-responsive > .table > tbody > tr > td, .table-responsive > .table > tfoot > tr > td {
+        white-space: nowrap;
+    }
+
+    .table-responsive > .table-bordered {
+        border: 0;
+    }
+
+    .table-responsive > .table-bordered > thead > tr > th:first-child, .table-responsive > .table-bordered > tbody > tr > th:first-child, .table-responsive > .table-bordered > tfoot > tr > th:first-child, .table-responsive > .table-bordered > thead > tr > td:first-child, .table-responsive > .table-bordered > tbody > tr > td:first-child, .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+        border-left: 0;
+    }
+
+    .table-responsive > .table-bordered > thead > tr > th:last-child, .table-responsive > .table-bordered > tbody > tr > th:last-child, .table-responsive > .table-bordered > tfoot > tr > th:last-child, .table-responsive > .table-bordered > thead > tr > td:last-child, .table-responsive > .table-bordered > tbody > tr > td:last-child, .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+        border-right: 0;
+    }
+
+    .table-responsive > .table-bordered > tbody > tr:last-child > th, .table-responsive > .table-bordered > tfoot > tr:last-child > th, .table-responsive > .table-bordered > tbody > tr:last-child > td, .table-responsive > .table-bordered > tfoot > tr:last-child > td {
+        border-bottom: 0;
+    }
+}
+
+
+.panel > .table, .panel > .table-responsive > .table, .panel > .panel-collapse > .table {
+    margin-bottom: 0;
+}
+
+.panel > .table caption, .panel > .table-responsive > .table caption, .panel > .panel-collapse > .table caption {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.panel > .table:first-child, .panel > .table-responsive:first-child > .table:first-child {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.panel > .table:first-child > thead:first-child > tr:first-child, .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child, .panel > .table:first-child > tbody:first-child > tr:first-child, .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.panel > .table:first-child > thead:first-child > tr:first-child td:first-child, .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child, .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child, .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child, .panel > .table:first-child > thead:first-child > tr:first-child th:first-child, .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child, .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child, .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+    border-top-left-radius: 3px;
+}
+
+.panel > .table:first-child > thead:first-child > tr:first-child td:last-child, .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child, .panel > .table:first-child > tbody:first-child > tr:first-child td:last-child, .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child, .panel > .table:first-child > thead:first-child > tr:first-child th:last-child, .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child, .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child, .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+    border-top-right-radius: 3px;
+}
+
+.panel > .table:last-child, .panel > .table-responsive:last-child > .table:last-child {
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.panel > .table:last-child > tbody:last-child > tr:last-child, .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child, .panel > .table:last-child > tfoot:last-child > tr:last-child, .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.panel > .table:last-child > tbody:last-child > tr:last-child td:first-child, .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child, .panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .panel > .table:last-child > tbody:last-child > tr:last-child th:first-child, .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child, .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+    border-bottom-left-radius: 3px;
+}
+
+.panel > .table:last-child > tbody:last-child > tr:last-child td:last-child, .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child, .panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .panel > .table:last-child > tbody:last-child > tr:last-child th:last-child, .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child, .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+    border-bottom-right-radius: 3px;
+}
+
+.panel > .panel-body + .table, .panel > .panel-body + .table-responsive, .panel > .table + .panel-body, .panel > .table-responsive + .panel-body {
+    border-top: 1px solid #dddddd;
+}
+
+.panel > .table > tbody:first-child > tr:first-child th, .panel > .table > tbody:first-child > tr:first-child td {
+    border-top: 0;
+}
+
+.panel > .table-bordered, .panel > .table-responsive > .table-bordered {
+    border: 0;
+}
+
+.panel > .table-bordered > thead > tr > th:first-child, .panel > .table-responsive > .table-bordered > thead > tr > th:first-child, .panel > .table-bordered > tbody > tr > th:first-child, .panel > .table-responsive > .table-bordered > tbody > tr > th:first-child, .panel > .table-bordered > tfoot > tr > th:first-child, .panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child, .panel > .table-bordered > thead > tr > td:first-child, .panel > .table-responsive > .table-bordered > thead > tr > td:first-child, .panel > .table-bordered > tbody > tr > td:first-child, .panel > .table-responsive > .table-bordered > tbody > tr > td:first-child, .panel > .table-bordered > tfoot > tr > td:first-child, .panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+    border-left: 0;
+}
+
+.panel > .table-bordered > thead > tr > th:last-child, .panel > .table-responsive > .table-bordered > thead > tr > th:last-child, .panel > .table-bordered > tbody > tr > th:last-child, .panel > .table-responsive > .table-bordered > tbody > tr > th:last-child, .panel > .table-bordered > tfoot > tr > th:last-child, .panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child, .panel > .table-bordered > thead > tr > td:last-child, .panel > .table-responsive > .table-bordered > thead > tr > td:last-child, .panel > .table-bordered > tbody > tr > td:last-child, .panel > .table-responsive > .table-bordered > tbody > tr > td:last-child, .panel > .table-bordered > tfoot > tr > td:last-child, .panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+    border-right: 0;
+}
+
+.panel > .table-bordered > thead > tr:first-child > td, .panel > .table-responsive > .table-bordered > thead > tr:first-child > td, .panel > .table-bordered > tbody > tr:first-child > td, .panel > .table-responsive > .table-bordered > tbody > tr:first-child > td, .panel > .table-bordered > thead > tr:first-child > th, .panel > .table-responsive > .table-bordered > thead > tr:first-child > th, .panel > .table-bordered > tbody > tr:first-child > th, .panel > .table-responsive > .table-bordered > tbody > tr:first-child > th {
+    border-bottom: 0;
+}
+
+.panel > .table-bordered > tbody > tr:last-child > td, .panel > .table-responsive > .table-bordered > tbody > tr:last-child > td, .panel > .table-bordered > tfoot > tr:last-child > td, .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td, .panel > .table-bordered > tbody > tr:last-child > th, .panel > .table-responsive > .table-bordered > tbody > tr:last-child > th, .panel > .table-bordered > tfoot > tr:last-child > th, .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
+    border-bottom: 0;
+}
+
+.panel > .table-responsive {
+    border: 0;
+    margin-bottom: 0;
+}
+
+@media print {
+    .table-responsive {
+        overflow-x: initial;
+    }
+}
+
+.o_form_view .o_form_field .o_list_view {
+    margin-bottom: 10px;
+}
+
+.o_form_view .o_form_field .o_list_view > tfoot > tr > td {
+    padding: 3px;
+    color: #4c4c4c;
+}
+
+.o_form_view.o_form_readonly .o_form_field .o_list_view .o_row_handle {
+    display: none;
+}
+
+
+.o_list_view tbody > tr.o_group_header {
+    background-color: #ededed;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#dedede));
+    background-image: -webkit-linear-gradient(top, #fcfcfc, #dedede);
+    background-image: -moz-linear-gradient(top, #fcfcfc, #dedede);
+    background-image: -ms-linear-gradient(top, #fcfcfc, #dedede);
+    background-image: -o-linear-gradient(top, #fcfcfc, #dedede);
+    background-image: linear-gradient(to bottom, #fcfcfc, #dedede);
+}
+
+.o_list_view tbody > tr.o_group_header .o_group_name {
+    white-space: nowrap;
+}
+
+.o_list_view tbody > tr.o_group_header .o_group_pager {
+    cursor: text;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: right;
+}
+
+.o_list_view tbody > tr.o_group_header .o_group_pager .o_pager_previous, .o_list_view tbody > tr.o_group_header .o_group_pager .o_pager_next {
+    background-color: #fbfbfa;
+}
+
+.o_list_view tbody > tr.o_group_header .o_group_pager .o_pager_previous:hover, .o_list_view tbody > tr.o_group_header .o_group_pager .o_pager_next:hover {
+    background-color: #e2e2e0;
+}
+.o_list_editable .o_form_view.o_list_editable_form .o_checkbox {
+    padding: 7px 0 0 5px;
+    background: transparent;
+}
+/* /web/static/src/less/list_view.less defined in bundle 'web.assets_backend' */
+.o_list_view {
+    cursor: pointer;
+    background-color: white;
+    margin-bottom: 0px;
+}
+
+.o_list_view.table td, .o_list_view.table th {
+    vertical-align: middle;
+}
+
+.o_list_view thead {
+    color: #4c4c4c;
+    background-color: #eee;
+    border-bottom: 1px solid #cacaca;
+}
+
+.o_list_view thead > tr > th {
+    border-left: 1px solid #dfdfdf;
+}
+
+.o_list_view thead > tr > th:not(.o_column_sortable):hover {
+    cursor: default;
+}
+
+.o_list_view tfoot {
+    cursor: default;
+    color: #4c4c4c;
+    background-color: #eeeeee;
+    font-weight: bold;
+    border-top: 2px solid #cacaca;
+    border-bottom: 1px solid #cacaca;
+}
+
+.o_list_view .o_column_sortable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.o_list_view .o_column_sortable.o-sort-up:after {
+    font-family: FontAwesome;
+    margin-left: 5px;
+    content: "\f0d7";
+}
+
+.o_list_view .o_column_sortable.o-sort-down:after {
+    font-family: FontAwesome;
+    margin-left: 5px;
+    content: "\f0d8";
+}
+
+.o_list_view .o_list_record_selector {
+    width: 1px;
+}
+
+.o_list_view .o_list_record_selector > input {
+    margin-left: 3px;
+}
+
+@media (max-width: 767px) {
+    .o_list_view .o_list_record_selector > input {
+        display: none !important;
+    }
+}
+
+.o_list_view .o_list_record_delete {
+    width: 13px;
+}
+
+.o_list_view .o_handle_cell {
+    width: 1px;
+}
+
+.o_list_view .o_handle_cell .o_row_handle {
+    cursor: ns-resize;
+}
+
+.o_list_view .text-bf {
+    font-weight: bold;
+}
+
+.o_list_view .text-it {
+    font-style: italic;
+}
+
+.o_list_view .text-muted {
+    color: #919191;
+}
+
+
+.o_list_view tbody + tbody {
+    border-top: none;
+}
+
+.o_list_view .o_list_number {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.o_list_view .o_list_text {
+    white-space: pre-wrap;
+}
+
+.o_list_editable {
+    position: relative;
+}
+
+.o_list_editable .o_temp_visible {
+    opacity: 0;
+    display: block !important;
+}
+
+
+.o_list_editable .o_list_view .o_row_edition > td {
+    visibility: hidden;
+}
+
+.o_list_editable .o_list_view .o_row_edition > td.o_list_record_selector, .o_list_editable .o_list_view .o_row_edition > td.o_list_record_delete, .o_list_editable .o_list_view .o_row_edition > td.o_list_button {
+    visibility: visible;
+}
+
+.o_list_editable .o_list_view .o_row_edition > td.o_list_record_delete {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.o_list_editable .o_list_view .o_row_edition > td.o_readonly {
+    visibility: visible;
+    color: transparent;
+}
+
+
+.table-condensed > thead > tr > th, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > tbody > tr > td, .table-condensed > tfoot > tr > td {
+    padding: 5px;
+}
+
+.datepicker .table-condensed > thead {
+    color: white;
+    background-color: #7c7bad;
+}
+
+.datepicker .table-condensed > thead > tr:first-child th:hover {
+    color: white;
+    background-color: #5f5e97;
+}
+
+.datepicker .table-condensed > thead > tr:last-child {
+    color: #8f8f8f;
+    background-color: #dcdcdc;
+}
+
+.datepicker .table-condensed > thead > tr > th {
+    border-radius: 0;
+}
+
+.datepicker .table-condensed > tbody > tr > td.active, .datepicker .table-condensed > tbody > tr > td .active {
+    background-color: #7c7bad;
+    border-radius: 100px;
+}
+
+.datepicker .table-condensed > tbody > tr > td.today:before {
+    border-bottom-color: #7c7bad;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #efeff8;
+}

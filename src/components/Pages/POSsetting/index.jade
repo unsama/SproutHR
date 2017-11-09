@@ -1,0 +1,97 @@
+.o_main_content(style='margin-left:-15px;margin-right:-15px;')
+  .o_control_panel.o_hidden
+  .o_content
+    .o_view_manager_content
+      .o_form_view.oe_form_configuration.o_form_nosheet.o_form_editable
+        header
+          button.btn.btn-sm.oe_highlight(type='button')
+            span Apply
+          button.btn.btn-sm.oe_link(type='button')
+            span Cancel
+        table.o_group.o_inner_group
+          tbody
+            tr
+              td(colspan='2', style='width: 100%;')
+                .o_horizontal_separator
+                  | Importable Point of Sale Data
+            tr
+              td.o_td_label(colspan='1')
+                label.o_form_label(for='o_field_input_144')
+                  | Beverages
+              td(colspan='1', style='width: 100%;')
+                div
+                  div
+                    .o_checkbox.o_form_field_boolean.o_form_field
+                      input#o_field_input_145(type='checkbox', name='module_pos_data_drinks')
+                      span
+                    label.o_form_label(for='o_field_input_145')
+                      | Import common drinks data
+        table.o_group.o_inner_group
+          tbody
+            tr
+              td(colspan='2', style='width: 100%;')
+                .o_horizontal_separator
+                  | Point of Sale
+            tr
+              td.o_td_label(colspan='1')
+                label.o_form_label.o_form_label_help(for='o_field_input_146', data-original-title='', title='')
+                  | Restaurant
+              td(colspan='1', style='width: 100%;')
+                .o_form_field_radio.o_vertical.o_form_field
+                  .o_radio_item
+                    input#radio152_0.o_form_radio(type='radio', name='radio152', value='0')
+                    label.o_form_label(for='radio152_0') Point of sale for shops
+                  .o_radio_item
+                    input#radio152_1.o_form_radio(type='radio', name='radio152', value='1')
+                    label.o_form_label(for='radio152_1') Restaurant: activate table management
+            tr
+              td.o_td_label(colspan='1')
+                label.o_form_label.o_form_label_help(for='o_field_input_147', data-original-title='', title='')
+                  | Discount
+              td(colspan='1', style='width: 100%;')
+                .o_form_field_radio.o_vertical.o_form_field
+                  .o_radio_item
+                    input#radio153_0.o_form_radio(type='radio', name='radio153', value='0')
+                    label.o_form_label(for='radio153_0') Allow discounts on order lines only
+                  .o_radio_item
+                    input#radio153_1.o_form_radio(type='radio', name='radio153', value='1')
+                    label.o_form_label(for='radio153_1') Allow global discounts
+            tr
+              td.o_td_label(colspan='1')
+                label.o_form_label.o_form_label_help(for='o_field_input_148', data-original-title='', title='')
+                  | Credit Cards
+              td(colspan='1', style='width: 100%;')
+                .o_form_field_radio.o_vertical.o_form_field
+                  .o_radio_item
+                    input#radio154_0.o_form_radio(type='radio', name='radio154', value='0')
+                    label.o_form_label(for='radio154_0') No credit card
+                  .o_radio_item
+                    input#radio154_1.o_form_radio(type='radio', name='radio154', value='1')
+                    label.o_form_label(for='radio154_1') Allows customers to pay with credit cards.
+            tr
+              td.o_td_label(colspan='1')
+                label.o_form_label(for='o_field_input_149')
+                  | Reprints
+              td(colspan='1', style='width: 100%;')
+                .o_form_field_radio.o_vertical.o_form_field
+                  .o_radio_item
+                    input#radio155_0.o_form_radio(type='radio', name='radio155', value='0')
+                    label.o_form_label(for='radio155_0') No reprint
+                  .o_radio_item
+                    input#radio155_1.o_form_radio(type='radio', name='radio155', value='1')
+                    label.o_form_label(for='radio155_1') Allow cashier to reprint receipts
+            tr
+              td.o_td_label(colspan='1')
+                label.o_form_label.o_form_label_help(for='o_field_input_150')
+                  | Loyalty Program
+              td(colspan='1', style='width: 100%;')
+                div
+                  div
+                    .o_form_field.o_form_field_boolean
+                      .o_checkbox.o_form_field_boolean
+                        input#o_field_input_151(type='checkbox', name='module_pos_loyalty')
+                        span
+                    label.o_form_label.o_form_label_help(for='o_field_input_151', data-original-title='', title='')
+                      | Manage loyalty program with points and rewards for customers
+                    span.label.label-primary.oe_inline Enterprise
+                    a(href='', target='_blank')  More Info

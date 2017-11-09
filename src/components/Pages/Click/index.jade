@@ -1,0 +1,34 @@
+
+.container(style='')
+    br
+    br
+    br
+    br
+    br
+    .center
+        .main(style='display: inline-block;')
+            .test(v-show='r')
+                .row
+                    .col-sm-12
+                        .center
+                            h1(style='font-size: 27px;') Welcome Administrators
+                        .center
+                            h2(style='font-size: 19px;') Click to check in
+                        .center
+                            i.fa.fa-sign-in.btn-primary.icon(v-on:click='r=false,v=true')
+
+    .center(style='margin-top: 100px;')
+        .div(style='display: inline-block;' v-show='v')
+            .row
+                .col-sm-12
+                    .center
+                        h1(style='font-size: 27px;color: green;') Checked out at 19:26:32
+                    .center
+                        h2(style='font-size: 19px;') Welcome Administrators
+                    .center
+                        h2(style='font-size: 19px;') Have a good evening
+                    .center
+                        button.btn.btn-primary.a(v-on:click='r=true,v=false' type='button') Ok
+
+
+

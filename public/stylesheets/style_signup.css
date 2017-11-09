@@ -1,0 +1,6 @@
+.maincol{
+    position: relative;
+    top: 246px;
+    box-shadow: 1px 1px 1px 3px rgba(227, 207, 207, 0.25);
+    padding: 15px;
+}

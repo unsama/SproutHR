@@ -1,0 +1,89 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "vue-loading-bar",
+        "scope": null,
+        "escapedName": "vue-loading-bar",
+        "name": "vue-loading-bar",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\project\\sp_bussiness"
+    ]
+  ],
+  "_from": "vue-loading-bar@latest",
+  "_id": "vue-loading-bar@1.0.0",
+  "_inCache": true,
+  "_location": "/vue-loading-bar",
+  "_nodeVersion": "0.10.42",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/vue-loading-bar-1.0.0.tgz_1460355723424_0.660291253356263"
+  },
+  "_npmUser": {
+    "name": "bosnaufal",
+    "email": "bosnaufalemail@gmail.com"
+  },
+  "_npmVersion": "3.7.2",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "vue-loading-bar",
+    "scope": null,
+    "escapedName": "vue-loading-bar",
+    "name": "vue-loading-bar",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/vue-loading-bar/-/vue-loading-bar-1.0.0.tgz",
+  "_shasum": "6004635f092cd2af0cb01a22624c55758b8ed739",
+  "_shrinkwrap": null,
+  "_spec": "vue-loading-bar",
+  "_where": "C:\\project\\sp_bussiness",
+  "author": {
+    "name": "Bos Naufal",
+    "email": "bosnaufalemail@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/BosNaufal/vue-loading-bar/issues"
+  },
+  "dependencies": {},
+  "description": "Youtube Like Loading Bar Component for Vue.Js",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "6004635f092cd2af0cb01a22624c55758b8ed739",
+    "tarball": "https://registry.npmjs.org/vue-loading-bar/-/vue-loading-bar-1.0.0.tgz"
+  },
+  "gitHead": "f322c71596d0765b080408af9f89f2e69e93dc9b",
+  "homepage": "https://github.com/BosNaufal/vue-loading-bar#readme",
+  "keywords": [
+    "vuejs",
+    "loading",
+    "loading bar",
+    "component",
+    "progress"
+  ],
+  "license": "MIT",
+  "main": "vue-loading-bar.vue",
+  "maintainers": [
+    {
+      "name": "bosnaufal",
+      "email": "bosnaufalemail@gmail.com"
+    }
+  ],
+  "name": "vue-loading-bar",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BosNaufal/vue-loading-bar.git"
+  },
+  "scripts": {},
+  "version": "1.0.0"
+}

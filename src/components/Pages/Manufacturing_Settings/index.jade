@@ -1,0 +1,135 @@
+.manufacturing_settings
+    .o_content(style='margin-left: -15px;margin-right: -15px;')
+        .o_view_manager_content
+            .o_form_view.oe_form_configuration.o_form_nosheet.o_form_editable.oe_form_dirty
+                header
+                    button.btn.btn-sm.oe_highlight(type='button')
+                        span Apply
+                    button.btn.btn-sm.oe_link(type='button')
+                        span Cancel
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Logistics
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_invisible(for='o_field_input_9')
+                                    | Company
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_many2one.o_with_button.o_form_field.o_form_required.o_form_invisible
+                                    .o_form_input_dropdown
+                                        input#o_field_input_9.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                        span.o_dropdown_button(draggable='false')
+                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_10', data-original-title='', title='')
+                                    | Manufacturing Lead Time *
+                            td(colspan='1', style='width: 100%;')
+                                input#o_field_input_10.o_form_input.o_form_field.o_form_field_number(type='text')
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Manufacturing Order
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                    | Product Variants
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio18_0.o_form_radio(type='radio', name='radio18', value='0')
+                                        label.o_form_label(for='radio18_0') No variants on products
+                                    .o_radio_item
+                                        input#radio18_1.o_form_radio(type='radio', name='radio18', value='1')
+                                        label.o_form_label(for='radio18_1')
+                                            | Products can have several attributes, defining variants (Example: size, color,...)
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                    | By-Products
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio19_0.o_form_radio(type='radio', name='radio19', value='0')
+                                        label.o_form_label(for='radio19_0') No by-products in bills of materials (A + B --> C)
+                                    .o_radio_item
+                                        input#radio19_1.o_form_radio(type='radio', name='radio19', value='1')
+                                        label.o_form_label(for='radio19_1') Bills of materials may produce residual products (A + B --> C + D)
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                    | Routings & Planning
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio20_0.o_form_radio(type='radio', name='radio20', value='0')
+                                        label.o_form_label(for='radio20_0') Manage production by manufacturing orders
+                                    .o_radio_item
+                                        input#radio20_1.o_form_radio(type='radio', name='radio20', value='1')
+                                        label.o_form_label(for='radio20_1') Manage production by work orders
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Extra Features
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | Master Production Schedule
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio21_0.o_form_radio(type='radio', name='radio21', value='0')
+                                        label.o_form_label.mr4(for='radio21_0') No need for Master Production Schedule as products have short lead times
+                                    .o_radio_item
+                                        input#radio21_1.o_form_radio(type='radio', name='radio21', value='1')
+                                        label.o_form_label.mr4(for='radio21_1')
+                                            | Use Master Production Schedule in order to create procurements based on forecasts
+                                        span.label.label-primary.oe_inline Enterprise
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | PLM
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio22_0.o_form_radio(type='radio', name='radio22', value='0')
+                                        label.o_form_label.mr4(for='radio22_0') No product lifecycle management
+                                    .o_radio_item
+                                        input#radio22_1.o_form_radio(type='radio', name='radio22', value='1')
+                                        label.o_form_label.mr4(for='radio22_1') Manage engineering changes, versions and documents
+                                        span.label.label-primary.oe_inline Enterprise
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | Maintenance
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio23_0.o_form_radio(type='radio', name='radio23', value='0')
+                                        label.o_form_label.mr4(for='radio23_0') No maintenance machine and work centers
+                                    .o_radio_item
+                                        input#radio23_1.o_form_radio(type='radio', name='radio23', value='1')
+                                        label.o_form_label.mr4(for='radio23_1') Preventive and Corrective maintenance management
+                                        span.label.label-primary.oe_inline Enterprise
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | Quality
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio24_0.o_form_radio(type='radio', name='radio24', value='0')
+                                        label.o_form_label.mr4(for='radio24_0') No quality control
+                                    .o_radio_item
+                                        input#radio24_1.o_form_radio(type='radio', name='radio24', value='1')
+                                        label.o_form_label.mr4(for='radio24_1') Manage quality control points, checks and measures
+                                        span.label.label-primary.oe_inline Enterprise
+
+

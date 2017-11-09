@@ -1,0 +1,28 @@
+.mMainCon{
+    padding:5px;
+}
+.mTagSP{
+    display: inline-flex;
+    padding: 5px;
+    background-color: #bdbdbd;
+    margin: 2.5px 2.5px;
+    border-radius: 4px;
+    font-size: 14px;
+    word-break: break-all;
+    position: relative;
+}
+.mCusInput{
+    border: 0;
+    background-color: transparent;
+    outline: none;
+}
+
+.mCusListG{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    margin-top: 3px;
+    max-height: 200px;
+    overflow-y: auto;
+}

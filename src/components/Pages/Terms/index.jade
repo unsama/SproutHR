@@ -1,0 +1,121 @@
+.Terms
+    .row.samorequestinnerrow
+        .dashboardcontroller
+            .bro
+                .col-sm-6.samodashheadingmain(style='margin-top: 10px;')
+                    h4.samodashheading Requests for Quotation/PO00007: 637.50 Rs.
+                .col-sm-6.samodashsearch
+                    h1(style='color: #f0eeee;') s
+            .bro
+                .col-sm-6.samodashheadingmain
+                    button.btn.btn-primary.samobuttopcontroller#hasS(type='button', href='users')
+                        router-link.links.samolinks(to='Imported') Edit
+                    button.btn.btn-default.samobuttopcontroller2#hasHide(type='button', href='#home')
+                        router-link.links.samolinks(to='Imported') Create
+                            Discard
+                    .dropdown1
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-filter.iconbutton
+                                | Print
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Purchase order
+                                a.dropdown-item(href='#') Request For Quotation
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton2.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-bars.iconbutton
+                                | Attachment
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Add
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-star.iconbutton
+                                | Action
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Delete
+                                a.dropdown-item(href='#') Duplicate
+                .col-sm-6.samodashsearch
+                    div(style='float:right;')
+                        span.o_pager_value 1-24
+                            |  /
+                            span.o_pager_limit 24
+                            span.btn-group.btn-group-sm
+                                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p', disabled='')
+                                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n', disabled='')
+    .o_content.samocontent
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+
+                          .row
+                            .col-xs-2(style='font-weight: bold;padding-left: 67px;')
+                                .one
+                                    label(style='font-size:15px;')
+                                        | Payment Terms
+                                    br
+
+
+
+                            .col-xs-3(style='')
+                                .two(style='margin-left: -23px;')
+                                    label(style='font-size:13px;')
+                                        | End of Following Month
+                                    br
+
+
+                            .col-xs-2(style='font-weight: bold;')
+                                .one
+                                    label(style='font-size:15px;padding-left: 125px;')
+                                        | Active
+                                    br
+
+
+
+                            .col-xs-2(style='')
+                                .checkbox.disabled(style='padding-left:21px;')
+                                    input(type='checkbox', value='', disabled='')
+                                br
+
+                           .row(style='margin-top:20px;')
+                              .col-xs-12
+                                  h1(style='font-size: 19px;padding-left:17px;padding-left: 58px;') Description on the Invoice
+
+                                  label(style='font-size:15px;padding-left: 58px;')
+                                      | Payment term: End of Following Month
+                                  br
+
+                           .row(style='margin-top:10px;')
+                                .col-xs-12
+                                    h1(style='font-size: 23px;padding-left:17px;padding-left: 58px;color:#7c7bad;') Terms
+                                    label(style='font-size:15px;padding-left: 58px;color: #777777;')
+                                        | The last line's computation type should be "Balance" to ensure that the whole amount will be allocated.
+                                    br
+            .row(style='margin-top:10px;padding-left: 58px;')
+                table.table.table-striped.samotable
+                    thead.samotablehead
+                        tr
+                            th.samotableheadborder Due Type
+                            th.samotableheadborder Value
+                            th.samotableheadborder Number Of Days
+
+
+
+                    tfoot
+                        tr
+                            td
+                            td
+                            td
+                            td
+
+
+                    tbody.samotbody
+                        tr
+
+
+                            td.samotablepadd Balance
+                            td.samotablepadd 0.0000
+                            td.samotablepadd 0
+                            td.samotablepadd Lst day of following Month
+
+
+
+

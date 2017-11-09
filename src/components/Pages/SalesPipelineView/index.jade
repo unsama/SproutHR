@@ -1,0 +1,18 @@
+.salespipelineview
+    DashboardController(v-bind:editbtn='true',v-bind:heading="quotation",v-bind:createbtn='true',v-bind:Attachmentbtn='true',v-bind:importbtn='false',v-bind:actionbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='false',v-bind:paginbtn2='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false')
+    .row
+        .col-md-12.pull-left.samotopcontroller
+            .col-md-5.pull-left
+                button.btn.btn-primary.samobutton2(type='button',style='margin-right: 5px;') New Quotation
+                button.btn.btn-primary.samobutton2(type='button',style='margin-right: 5px;') Mark Won
+                button.btn.btn-primary.samobutton2(type='button',style='margin-right: 5px;') Mark Lost
+                button.btn.btn-primary.samobutton1(type='button') Log Activity
+
+            .col-md-1.pull-left
+            .col-md-3.pull-left
+            .col-md-3.pull-right
+                .btn-group.btn-breadcrumb.samobreadcrum1
+                    a.btn.btn-primary.samobreadbutt(href='#') In Progress
+                    a.btn.btn-primary.samobreadbutt1(href='#') Confirmed
+                    a.btn.btn-primary.samobreadbutt(href='#') Done
+    Pipelineview

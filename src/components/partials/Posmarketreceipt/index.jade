@@ -1,0 +1,56 @@
+.pos-receipt-container(style='position: fixed;')
+    .pos-sale-ticket
+        .pos-center-align 03/25/2017 7:49 PM Order 00001-001-0005
+        br
+        |             usama
+        br
+        |             Phone:
+        br
+        |             User: usama
+        br
+        br
+        table.receipt-orderlines
+            colgroup
+                col(width='50%')
+                col(width='25%')
+                col(width='25%')
+            tbody
+                tr
+                    td
+                        | Miscellaneous
+                        .pos-disc-font
+                            | With a 68% discount
+                    td.pos-right-align
+                        | 1.000
+                    td.pos-right-align
+                        | $ 160.00
+        br
+        table.receipt-total
+            tbody
+                tr
+                    td Subtotal:
+                    td.pos-right-align
+                        | $ 160.00
+                tr
+                    td Discount:
+                    td.pos-right-align
+                        | $ 340.00
+                tr.emph
+                    td Total:
+                    td.pos-right-align
+                        | $ 160.00
+        br
+        table.receipt-paymentlines
+            tbody
+                tr
+                    td
+                        | Cash (USD)
+                    td.pos-right-align
+                        | $ 5,555.00
+        br
+        table.receipt-change
+            tbody
+                tr
+                    td Change:
+                    td.pos-right-align
+                        | $ 5,395.00

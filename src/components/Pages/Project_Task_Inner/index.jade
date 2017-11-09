@@ -1,0 +1,307 @@
+.Product_inner_Edit
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v1-bind:paginbtn1='true',v1-bind:paginbtn2='true',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false',v-bind:dropdownbtn1='false',v-bind:dropdownbtn2='false',v-bind:dropdownbtn3='false',v-bind:actionbtn='true',v-bind:Attachmentbtn='true',v-bind:printbtn='false')
+    .o_content.row
+        .col-md-12
+            .row
+                .col-md-12.pull-left.samotopcontroller
+                    .col-md-5.pull-left
+
+
+                    .col-md-1.pull-left
+                    .col-md-3.pull-left
+                    .col-md-3.pull-right
+                        .btn-group.btn-breadcrumb.samobreadcrum1
+                            a.btn.btn-primary.samobreadbutt(href='#') In Progress
+                            a.btn.btn-primary.samobreadbutt(href='#') Done
+                            a.btn.btn-primary.samobreadbutt1(href='#') To do
+                            a.btn.btn-primary.samobreadbutt(href='#') More
+            .o_view_manager_content
+                .o_form_view.o_form_readonly
+
+                    .o_form_sheet_bg.row
+                        .o_form_sheet
+                            .oe_button_box(name='button_box')
+                                button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                    .fa.fa-fw.fa-archive.o_button_icon
+                                    .o_stat_info.o_form_field
+                                        span.o_stat_text.o_not_hover.text-success Active
+                                        span.o_stat_text.o_hover.text-danger Archive
+
+
+
+                            .oe_button_box(name='button_box')
+                                button.btn.btn-sm.oe_stat_button(type='button')
+                                    .fa.fa-fw.fa-archive.o_button_icon
+                                    .o_stat_info.o_form_field
+                                        span.o_stat_text.o_not_hover.text-success Active
+                                        span.o_stat_text.o_hover.text-danger Archive
+                                button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                    .fa.fa-fw.fa-tasks.o_button_icon
+                                    .o_form_field.o_stat_info
+                                        span.o_stat_value 0
+                                        span.o_stat_text Sub-tasks
+                                button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                    .fa.fa-fw.fa-dollar.o_button_icon
+                                    span Sales Order
+
+                            .btn-group.o_kanban_selection.o_form_field.o_form_required(data-original-title='', title='')
+                                a(data-toggle='dropdown', href='#')
+                                    span.oe_kanban_status.oe_kanban_status_red
+                                ul.dropdown-menu.state(role='menu')
+                                    li(data-value='normal')
+                                        a(href='#')
+                                            span.oe_kanban_status
+                                            |             In Progress
+                                    li(data-value='done')
+                                        a(href='#')
+                                            span.oe_kanban_status.oe_kanban_status_green
+                                            |             Ready for next stage
+
+                            .oe_title
+                                h1.o_row
+                                    .o_priority.o_form_field
+                                        a.o_priority_star.fa.fa-star(href='#', data-value='1', title='High')
+                                    span.o_form_field.o_form_required User Interface design
+
+                            .o_group
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Project
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field(href='#') E-Learning Integration
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_task_user_field
+                                                    | Assigned to
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_task_user_field.o_form_field Administrators
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                    | Initially Planned Hours
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field.o_form_field_number 55:00
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(data-original-title='', title='')
+                                                    | Kanban Blocked Explanation
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field.o_form_invisible.o_form_field_empty
+                                                button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false( data-original-title='', title='')
+                                                    | Kanban Ongoing Explanation
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field.o_form_invisible.o_form_field_empty
+                                                button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(data-original-title='', title='')
+                                                    | Kanban Valid Explanation
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field.o_form_invisible.o_form_field_empty
+                                                button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_empty.o_form_label_false
+                                                    | Deadline
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field_date.o_form_field.o_form_field_empty
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Tags
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2manytags.o_form_field
+                                                    span.badge.dropdown.o_tag_color_10(data-color='10', data-id='5', data-index='0')
+                                                        span.o_badge_text(title='Usability') Usability
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Working Time Recorded
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_progressbar.o_form_field
+                                                    .o_progress
+                                                        .o_progressbar_complete(style='width: 100%;')
+                                                    .o_progressbar_value 100%
+
+
+
+                            .o_notebook(style='margin-top:0px;')
+                                ul.nav.nav-tabs(role='tablist')
+                                    li.nav-item
+                                        a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Description
+                                    li.nav-item
+                                        a.nav-link(href='#buzz', role='tab', data-toggle='tab') Timesheets
+                                    li.nav-item
+                                        a.nav-link(href='#buzz1', role='tab', data-toggle='tab') Extra Info
+
+
+
+                                .tab-content
+                                    #profile.tab-pane.fade.in.active(role='tabpanel')
+
+
+
+
+                                    #buzz.tab-pane.fade.in(role='tabpanel')
+                                        TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter")
+
+                                    #buzz1.tab-pane.fade.in(role='tabpanel')
+                                        .o_group
+                                            table.o_group.o_inner_group.o_group_col_6
+                                                tbody
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_help.o_form_invisible( data-original-title='', title='')
+                                                                | Sequence
+                                                        td(colspan='1', style='width: 100%;')
+                                                            span.o_form_field.o_form_invisible.o_form_field_number 10
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_empty.o_form_label_false
+                                                                | Customer
+                                                        td(colspan='1', style='width: 100%;')
+                                                            a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                                | Parent Task
+                                                        td(colspan='1', style='width: 100%;')
+                                                            a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_invisible
+                                                                | Sub-tasks
+                                                        td(colspan='1', style='width: 100%;')
+                                                            .o_form_field.o_form_invisible.o_form_field_one2many.o_view_manager_content
+                                                                .o_x2m_control_panel
+                                                                    .o_cp_buttons
+                                                                    .o_cp_pager
+                                                                        .o_hidden
+                                                                            span.o_pager_value
+                                                                            |  /
+                                                                            span.o_pager_limit
+                                                                            span.btn-group.btn-group-sm
+                                                                                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                                                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                                                div
+                                                                    .table-responsive
+                                                                        table.o_list_view.table.table-condensed.table-striped
+                                                                            thead
+                                                                                tr
+                                                                                    th.o_column_sortable(data-id='name')
+                                                                                        | Task Title
+                                                                                    th.o_column_sortable(data-id='project_id')
+                                                                                        | Project
+                                                                                    th.o_column_sortable(data-id='user_id')
+                                                                                        | Assigned to
+                                                                                    th.o_column_sortable(data-id='planned_hours')
+                                                                                        | Initially Planned Hours
+                                                                                    th.o_column_sortable(data-id='remaining_hours')
+                                                                                        | Remaining Hours
+                                                                                    th.o_column_sortable(data-id='stage_id')
+                                                                                        | Stage
+                                                                                    th.o_column_sortable(data-id='progress')
+                                                                                        | Working Time Recorded
+                                                                            tfoot
+                                                                                tr
+                                                                                    td
+                                                                                    td
+                                                                                    td
+                                                                                    td
+                                                                                    td.o_list_number(data-field='remaining_hours', title='Remaining Hours') 00:00
+                                                                                    td
+                                                                                    td
+                                                                            tbody.ui-sortable
+                                                                                tr
+                                                                                    td(title='Task Title')  
+                                                                                    td(title='Project')  
+                                                                                    td(title='Assigned to')  
+                                                                                    td(title='Initially Planned Hours')  
+                                                                                    td(title='Remaining Hours')  
+                                                                                    td(title='Stage')  
+                                                                                    td(title='Working Time Recorded')  
+                                                                                tr
+                                                                                    td(title='Task Title')  
+                                                                                    td(title='Project')  
+                                                                                    td(title='Assigned to')  
+                                                                                    td(title='Initially Planned Hours')  
+                                                                                    td(title='Remaining Hours')  
+                                                                                    td(title='Stage')  
+                                                                                    td(title='Working Time Recorded')  
+                                                                                tr
+                                                                                    td(title='Task Title')  
+                                                                                    td(title='Project')  
+                                                                                    td(title='Assigned to')  
+                                                                                    td(title='Initially Planned Hours')  
+                                                                                    td(title='Remaining Hours')  
+                                                                                    td(title='Stage')  
+                                                                                    td(title='Working Time Recorded')  
+                                                                                tr
+                                                                                    td(title='Task Title')  
+                                                                                    td(title='Project')  
+                                                                                    td(title='Assigned to')  
+                                                                                    td(title='Initially Planned Hours')  
+                                                                                    td(title='Remaining Hours')  
+                                                                                    td(title='Stage')  
+                                                                                    td(title='Working Time Recorded')  
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false( data-original-title='', title='')
+                                                                | Sub-task Project
+                                                        td(colspan='1', style='width: 100%;')
+                                                            a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                                | Procurement
+                                                        td(colspan='1', style='width: 100%;')
+                                                            a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                                | Order Line
+                                                        td(colspan='1', style='width: 100%;')
+                                                            a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label
+                                                                | Company
+                                                        td(colspan='1', style='width: 100%;')
+                                                            a.o_form_uri.o_form_field(href='#') Alupak Industriesss
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                                | Displayed Image
+                                                        td(colspan='1', style='width: 100%;')
+                                                            a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                            table.o_group.o_inner_group.o_group_col_6
+                                                tbody
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_invisible
+                                                                | Assigning Date
+                                                        td(colspan='1', style='width: 100%;')
+                                                            span.o_form_field_date.o_form_field.o_form_invisible 02/18/2017 18:17:39
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_invisible
+                                                                | Last Stage Update
+                                                        td(colspan='1', style='width: 100%;')
+                                                            span.o_form_field_date.o_form_field.o_form_invisible 02/18/2017 18:17:39
+
+
+
+
+
+
+
+                Message
+                Request_quotation_lower

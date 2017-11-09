@@ -1,0 +1,13 @@
+.accounting
+    DashboardController(v-bind:save='false',v-bind:heading="vendormenu",v-bind:editbtn='false',v-bind:num1='false',v-bind:num2='false',v-bind:paginbtn1='false',v-bind:paginbtn2='false',v-bind:printbtn='false',v-bind:Attachmentbtn='false',v-bind:actionbtn='false',v-bind:createbtn='false',v-bind:links="btnlinks")
+    .o_content(style='margin-left: -15px;margin-right: -15px;')
+        .o_reconciliation.o_manual_reconciliation
+            .oe_form_sheetbg.o_form_view
+                .oe_form_sheet.o_form_sheet.oe_form_sheet_width
+                    .notification_area
+                    .oe_view_nocontent
+                        p
+                            b Good Job!
+                            |  There is nothing to reconcile.
+                        p All invoices and payments have been matched, your accounts' balances are clean.
+    hr

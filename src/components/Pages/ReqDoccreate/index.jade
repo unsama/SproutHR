@@ -1,0 +1,140 @@
+ReqDoccreate
+    DashboardController(v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks")
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_editable
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        label.o_form_label.oe_edit_only(for='o_field_input_294')
+                            | Attachment Name
+                        h1
+                            input#o_field_input_294.o_form_input.o_form_field.o_form_required(type='text')
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_295', data-original-title='', title='')
+                                                | Type
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_295.o_form_input.o_form_field.o_form_required(name='type')
+                                                option(value='false')
+                                                option(value='"url"') URL
+                                                option(value='"binary"') File
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | File Content
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_binary_file.o_form_field
+                                                input.o_form_input.o_hidden(readonly='readonly', type='text', name='datas')
+                                                button.btn.btn-sm.btn-primary.o_select_file_button(title='Select', type='button') Upload your file
+                                                button.btn.btn-sm.btn-default.fa.fa-pencil.o_select_file_button.o_hidden(title='Select', type='button')
+                                                button.btn.btn-sm.btn-default.fa.fa-trash-o.o_clear_file_button.o_hidden(title='Clear', type='button')
+                                                span.o_form_binary_progress.o_hidden Uploading...
+                                                .o_hidden_input_file.o_hidden(style='overflow-x: hidden')
+                                                    form.o_form_binary_form(enctype='multipart/form-data', method='post', action='/web/binary/upload')
+                                                        input(name='csrf_token', type='hidden', value='616929304a51b7102a984369878e15a6ca21cbe0o')
+                                                        input(name='callback', type='hidden')
+                                                        input.o_form_input_file(name='ufile', type='file')
+                                                    iframe(style='display: none')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible.oe_inline.oe_right(for='o_field_input_297')
+                                                | File Name
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_297.o_form_input.oe_inline.oe_right.o_form_field.o_form_invisible(type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible(for='o_field_input_298')
+                                                | Url
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_298.o_form_input.o_form_field.o_form_invisible(maxlength='1024', type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                | Mime Type
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_invisible.o_form_field_empty
+                            table.o_group.o_inner_group.o_form_invisible.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Attached To
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                | Resource Model
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field hr.job
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false
+                                                | Resource Field
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_field_empty
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                | Resource ID
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_field_number 2
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Resource Name
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field Chief Technical Officer
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_304')
+                                                | Company
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_304.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: block;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_305')
+                                                | Is public document
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_checkbox.o_form_field_boolean.o_form_field
+                                                input#o_field_input_305(type='checkbox', name='public')
+                                                span
+                            table.o_group.o_inner_group.o_form_invisible.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | History
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false
+                                                | Creation
+                                        td(colspan='1', style='width: 100%;')
+                                            div(name='creation_div')
+                                                a.o_form_uri.oe_inline.o_form_field.o_form_field_empty(href='#')
+                                                |  on
+                                                span.o_form_field_date.oe_inline.o_form_field.o_form_field_empty
+                            table.o_group.o_inner_group.o_form_invisible.o_group_col_12
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Description
+                                    tr
+                                        td(colspan='1', style='width: 50%;')
+                                            textarea.o_form_textarea.o_form_field(rows='6', name='description', style='height: 50px;')
+                                            textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 110px;')
+                            table.o_group.o_inner_group.o_form_invisible.o_group_col_12
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Indexed Content
+                                    tr
+                                        td(colspan='1', style='width: 50%;')
+                                            span.o_form_textarea.o_form_field.o_form_field_empty

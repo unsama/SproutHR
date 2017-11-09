@@ -1,0 +1,163 @@
+.journalentries
+    DashboardController(v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks", v-bind:num1="true", v-bind:num2="true").o_content
+    .o_view_manager_content(style='margin-left:-15px; margin-right:-15px;')
+        .o_form_view.o_form_readonly
+            header
+                button.btn.btn-sm.oe_highlight(type='button', style='background-color:white;border-color: darkgrey; ')
+                    router-link.linksd(to='')(style='color:black;') Reverse Entry
+                button.btn.btn-sm.oe_highlight(type='button', style='background-color:white; border-color: darkgrey;')
+                    router-link.linksd(to='')(style='color:black;') Cancel Entry
+                button.btn.btn-sm.oe_highlight.o_form_invisible(type='button')
+                    span Capture Transaction
+                button.btn.btn-sm.o_form_invisible(type='button')
+                    span Void Transaction
+                ul.oe_form_field_status.oe_form_status_clickable.o_form_field.o_form_required
+                    li.oe_active(data-id='draft')
+                        span.label Unposted
+                        span.arrow
+                            span
+                    li(data-id='pending')
+                        span.label Posted
+                        span.arrow
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .col-md-2
+                        .tophead
+                            h6 Number
+                            br
+                            h2 MISC/2017/0008
+
+
+                    .col-md-10
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button', style='margin-bottom: 12px !important; width: 145px !important; float: right !important;')
+                                .fa.fa-fw.fa-bars.o_button_icon.trash
+                                .o_stat_info.o_form_field(data-original-title='', title='')
+                                    router-link.linksd(to='journalitem')  Reconciled entries
+
+
+
+                    .col-xs-12.request_inner1
+                        .row
+                            .col-xs-3.request_inner3(style='font-weight: bold; width: 21% !important;')
+                                .one
+                                    label(style='font-size:15px;')
+                                        | Journal
+                                    br
+                                    label(style='font-size:15px;')
+                                        | Date
+                                    br
+
+
+                            .col-xs-4.osahass(style='width: 27.333333% !important;')
+                                .two
+                                    label(style='font-size:13px;')
+                                        | Miscellaneous Operations (pas)
+                                    br
+                                    label(style='font-size:13px;')
+                                        | 03/08/2017
+                                    br
+
+
+                            .col-xs-3.request_inner2(style='font-weight: bold; width: 21% !important;')
+                                .one
+                                    label(style='font-size:15px; ')
+                                        | Reference
+                                    br
+                                    label(style='font-size:15px;')
+                                        | Company
+                                    br
+
+
+                            .col-xs-2.osahass(style='width: 27.333333% !important;')
+                                .two
+                                    input#o_field_input_87.o_form_input.o_form_field(type='text', value='reversal of: MISC/2016/0001', style='font-size: 0.8rem !important;')
+                                    br
+                                    a.o_form_uri.o_form_field.o_form_required(href='#') Alupak Industriess
+                                    br
+                                    br
+
+                    .o_notebook(style='margin-top:45px;')
+                        ul.nav.nav-tabs(role='tablist')
+                            li.nav-item
+                                a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Journal Items
+
+                        .tab-content
+                            .row(style='')
+                                .col-md-12
+
+                                    table.table.table-striped.samotable(style='')
+                                        thead.samotablehead
+                                            tr
+
+
+                                                th.samotableheadborder Account
+                                                th.samotableheadborder Partner
+                                                th.samotableheadborder Label
+                                                th.samotableheadborder Amount Currency
+                                                th.samotableheadborder Currency
+                                                th.samotableheadborder Debit
+                                                th.samotableheadborder Credit
+                                                th.samotableheadborder Due
+
+
+                                        tfoot(style='background-color: #eeeeee;')
+                                            tr
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td 0.00
+                                                td 0.00
+                                                td
+
+
+                                        tbody.samotbody
+                                            tr
+
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+
+                                            tr
+
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+
+                                            tr
+
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+
+                                            tr
+
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+
+                    textarea.o_form_textarea.o_form_field(rows='6', name='sale_note',placeholder='Add an internal note..', style='height: 57px; font-size: 0.9rem; padding-left: 13px;')
+                    button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                    textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 1397px;')

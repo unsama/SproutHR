@@ -1,0 +1,56 @@
+.samotablehead{
+    color: #4c4c4c;
+    background-color: #eee;
+    border-bottom: 3px solid #cacaca;
+}
+.samotable tbody tr:nth-of-type(odd){
+
+    background-color: #efeff8;
+}
+
+.samotable{
+    font-size:13px;
+
+}
+.samotableheadborder{
+    border-right: 1px solid lightgrey;
+    line-height: 0.4em;
+    vertical-align: middle;
+}
+.main{
+    padding-top: 50px;
+}
+.samotbody{
+
+    line-height: 0.4em;
+}
+
+.samotablepadd{
+    vertical-align: middle;
+
+}
+.test{
+    flex: 0 0 auto;
+    min-width: 650px;
+    max-width: 860px;
+    min-height: 330px;
+    background: white;
+    padding: 16px;
+    margin: 0 auto;
+
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    font-size: 1.2em;
+    padding: 3em;
+}
+.two{
+
+    border-left:1px solid #ddd;
+    border-collapse: separate;
+    border-spacing: 2px;
+
+    padding-left:12px;
+}
+.one{
+    padding-left:12px;
+}

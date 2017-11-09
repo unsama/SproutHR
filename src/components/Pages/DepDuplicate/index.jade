@@ -1,0 +1,40 @@
+.DepDuplicate
+    DashboardController(v-bind:heading="nextactivity",v-bind:savebtn='true',v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Departments/ {{name}}
+        span.o_pager_value(slot='page') 1-{{num}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+    ReqEdit
+        table.o_group.o_inner_group(slot='dep')
+            tbody
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label(for='o_field_input_155')
+                            | Department Name
+                    td(colspan='1', style='width: 50%;')
+                        input#o_field_input_155.o_form_input.o_form_field.o_form_required(v-model='name',type='text')
+                    td.o_td_label(colspan='1')
+                        label.o_form_label
+                            | Manager
+                    td(colspan='1', style='width: 50%;')
+                        select(v-model='job_location')
+                            option(v-for='option in options', v-bind:value="option.id")
+                                | {{ option.employeename }}
+                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label
+                            | Parent Department
+                    td(colspan='1', style='width: 50%;')
+                        select(v-model='parent_dept_id')
+                            option(v-for='option in options2', v-bind:value="option.id")
+                                | {{ option.name }}
+                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+
+
+    Request_quotation_lower

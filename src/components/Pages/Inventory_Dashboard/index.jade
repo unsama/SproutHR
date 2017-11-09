@@ -1,0 +1,88 @@
+.inventory_dashboard
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:createbtn='false',v-bind:importbtn='false', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true')
+    .card.samocard
+        .col-sm-12.samocolsm12_1
+            span
+                .col-sm-6.pull-left
+                    h6.samoh61 Recipts
+                .col-sm-6.pull-right
+                    .dropdown
+                        button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownbtn(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style='float: right;')
+                            | More
+                        .dropdown-menu.dashdropmenu(aria-labelledby='dropdownMenuButton')
+                            .col-sm-12
+                                .col-sm-6.pull-left
+                                    h6 View
+                                    hr
+
+                                .col-sm-6.pull-right
+                                    h6 New
+                                    hr
+                            .col-sm-12
+                                .col-sm-6.pull-left
+                                    a.samoalink All
+
+                                .col-sm-6.pull-right
+                                    a.samoalink Transfer
+                            .col-sm-12
+                                .col-sm-6.pull-left
+                                    a.samoalink Ready
+
+                                .col-sm-6.pull-right
+                                    a.samoalink new
+
+                            .col-sm-12
+                                .col-sm-6.pull-left
+                                    a.samoalink Waiting
+                                .col-sm-6.pull-right
+
+
+                            .col-sm-12
+                                .col-sm-7.pull-left(style='padding: 0px;')
+                                    ul(style='list-style-type:none;display: -webkit-inline-box;padding: 0px;margin-bottom: -4px;')
+                                        li
+                                            a.color1.colorbg(href='#', data-color='1')
+                                        li
+                                            a.color2.colorbg(href='#', data-color='2')
+                                        li
+                                            a.color3.colorbg(href='#', data-color='3')
+                                        li
+                                            a.color4.colorbg(href='#', data-color='4')
+                                        li
+                                            a.color5.colorbg(href='#', data-color='5')
+                                        li
+                                            a.color6.colorbg(href='#', data-color='6')
+                                        li
+                                            a.color7.colorbg(href='#', data-color='7')
+                                        li
+                                            a.color8.colorbg(href='#', data-color='8')
+                                        li
+                                            a.color9.colorbg(href='#', data-color='9')
+                                        li
+                                            a.color10.colorbg(href='#', data-color='10')
+
+
+
+                                .col-sm-5.pull-right
+                                    a.samoalink Settings
+
+
+
+
+
+
+
+                h6.samoh63 Your Company
+            .col-sm-12(style='padding: 0px;')
+                .col-sm-6.pull-left(style='padding: 0px;')
+                    button.btn.btn-primary.samodashbtn(type='button') 3 To Recieve
+                .col-sm-6.pull-right.samocolright
+                    .col-sm-6.samoinventorypadd
+                        a waiting
+                    .col-sm-6(style='margin-top: 4px;')
+                        h6 1
+
+
+
+
+

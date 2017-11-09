@@ -1,0 +1,281 @@
+.expensesreportscreatein
+    Modal( v-bind:saveclose='true',v-bind:modal='"bd-example-modal-lg2"' ,v-bind:savenew='true',v-bind:discard='true',v-bind:heading="modalheading")
+    .o_content(style='margin-left:-15px;margin-right:-15px;')
+        .o_view_manager_content
+            .o_form_view.o_expense_sheet.o_form_editable
+                header
+                    button.btn.btn-sm.oe_highlight.o_expense_sheet_approve(type='button')
+                        span Approve
+                    button.btn.btn-sm.oe_highlight.o_expense_sheet_post.o_form_invisible(type='button')
+                        span Post Journal Entries
+                    button.btn.btn-sm.oe_highlight.o_expense_sheet_pay.o_form_invisible(type='button')
+                        span Register Payment
+                    button.btn.btn-sm.o_form_invisible(type='button')
+                        span Resubmit
+                    button.btn.btn-sm(type='button')
+                        span Refuse
+                    button.btn.btn-sm.o_form_invisible(type='button')
+                        span Refuse
+                    ul.oe_form_field_status.oe_form_status.o_form_field.o_form_required(data-original-title='', title='')
+                        li.oe_active(data-id='submit')
+                            span.label Submitted
+                            span.arrow
+                                span
+                        li(data-id='approve')
+                            span.label Approved
+                            span.arrow
+                                span
+                        li(data-id='post')
+                            span.label Posted
+                            span.arrow
+                                span
+                        li(data-id='done')
+                            span.label Paid
+                            span.arrow
+                                span
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-book.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value 0
+                                    span.o_stat_text Documents
+                            button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                .fa.fa-fw.fa-book.o_button_icon
+                                span Accounting Entries
+                        .oe_title
+                            label.o_form_label.oe_edit_only(for='o_field_input_25')
+                                | Expense Report Summary
+                            h1
+                                input#o_field_input_25.o_form_input.o_form_field.o_form_required(placeholder='e.g. Trip to NY', type='text')
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_26')
+                                                | Employee
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field.o_form_required
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_26.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_27')
+                                                | Payment By
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_field_empty
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible(for='o_field_input_28')
+                                                | Validation By
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field.o_form_invisible
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_28.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible(for='o_field_input_29')
+                                                | Total Amount
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_invisible.o_form_field_number 0.00
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible(for='o_field_input_30')
+                                                | Currency
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_invisible
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_30.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible(for='o_field_input_31')
+                                                | Employee Home Address
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field.o_form_invisible
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_31.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible(for='o_field_input_32')
+                                                | Department
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field.o_form_invisible
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_32.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_33')
+                                                | Company
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_33.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_34', data-original-title='', title='')
+                                                | Expense Journal
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field.o_form_invisible
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_34.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_35', data-original-title='', title='')
+                                                | Bank Journal
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field.o_form_invisible
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_35.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible(for='o_field_input_36')
+                                                | Accounting Date
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_datepicker.o_form_field_date.o_form_field.o_form_invisible
+                                                input.o_datepicker_input.o_form_input(type='text', name='accounting_date')
+                                                span.o_datepicker_button
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible(for='o_field_input_37')
+                                                | Journal Entry
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field.o_form_invisible
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_37.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                        .o_form_field.o_view_manager_content
+                            .o_x2m_control_panel
+                                .o_cp_buttons
+                                .o_cp_pager
+                                    .o_hidden
+                                        span.o_pager_value
+                                        |  /
+                                        span.o_pager_limit
+                                        span.btn-group.btn-group-sm
+                                            button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                            button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                            div
+                                .table-responsive
+                                    table.o_list_view.table.table-condensed.table-striped
+                                        thead
+                                            tr
+                                                th.o_column_sortable(data-id='date')
+                                                    | Date
+                                                th.o_column_sortable(data-id='name')
+                                                    | Expense Description
+                                                th(data-id='attachment_number')
+                                                th(data-id='action_get_attachment_view')
+                                                th.o_column_sortable(data-id='tax_ids')
+                                                    | Taxes
+                                                th.o_column_sortable(data-id='total_amount')
+                                                    | Total
+                                                th.o_list_record_delete
+                                        tfoot
+                                            tr
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td.o_list_number(data-field='total_amount', title='Total Amount') 0.00
+                                                td.o_list_record_delete
+                                        tbody
+                                            tr
+                                                td.o_form_field_x2many_list_row_add(colspan='7')
+                                                    a(href='#')(data-toggle='modal', data-target='.bd-example-modal-lg2') Add an item
+                                            tr
+                                                td(title='Date')  
+                                                td(title='Expense Description')  
+                                                td(title=' ')  
+                                                td(title='View Attachments')  
+                                                td(title='Taxes')  
+                                                td(title='Total')  
+                                                td.o_list_record_delete
+                                            tr
+                                                td(title='Date')  
+                                                td(title='Expense Description')  
+                                                td(title=' ')  
+                                                td(title='View Attachments')  
+                                                td(title='Taxes')  
+                                                td(title='Total')  
+                                                td.o_list_record_delete
+                                            tr
+                                                td(title='Date')  
+                                                td(title='Expense Description')  
+                                                td(title=' ')  
+                                                td(title='View Attachments')  
+                                                td(title='Taxes')  
+                                                td(title='Total')  
+                                                td.o_list_record_delete
+                .o_chatter.o_form_field.oe_chatter.o_form_invisible
+                    .o_chatter_topbar
+                        button.btn.btn-sm.btn-primary.o_chatter_button_new_message(title='Send a message', type='button')
+                            | New message
+                        button.btn.btn-sm.btn-link.o_chatter_button_log_note(title='Log a note. Followers will not be notified.')
+                            | Log an internal note
+                        .o_followers.o_form_field.o_form_invisible
+                            .o_followers_title_box
+                                button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', title='No follower')
+                                    i.fa.fa-user
+                                    span.o_followers_count 0
+                                    span.caret
+                                ul.dropdown-menu.o_followers_list(role='menu')
+                                    li.o_add_follower
+                                        a(href='#')  Add Followers
+                                    li.o_add_follower_channel
+                                        a(href='#')  Add Channels
+                            .o_followers_actions
+                                .btn-group.btn-group-sm.o_subtypes_list
+                                    button.btn.btn-sm.btn-link.o_followers_follow_button.o_followers_notfollow
+                                        span.o_follow Follow
+                                        span.fa.fa-times.o_followers_unfollow
+                                        span.o_followers_unfollow  Unfollow
+                                        span.fa.fa-check.o_followers_following
+                                        span.o_followers_following  Following
+                                    button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', disabled='disabled')
+                                        span.fa.fa-bell
+                                    ul.dropdown-menu(role='menu')
+                                        li.o_subtype
+                                            input#input_mail_followers_subtype_1.o_subtype_checkbox(type='checkbox', checked='true', data-id='1', name='Discussions')
+                                            span(for='input_mail_followers_subtype_1')
+                                                | Discussions
+                                        li.o_subtype
+                                            input#input_mail_followers_subtype_2.o_subtype_checkbox(type='checkbox', data-id='2', name='Note')
+                                            span(for='input_mail_followers_subtype_2')
+                                                | Note
+                                        li.o_subtype
+                                            input#input_mail_followers_subtype_81.o_subtype_checkbox(type='checkbox', checked='true', data-id='81', name='Approved')
+                                            span(for='input_mail_followers_subtype_81')
+                                                | Approved
+                                        li.o_subtype
+                                            input#input_mail_followers_subtype_82.o_subtype_checkbox(type='checkbox', checked='true', data-id='82', name='Refused')
+                                            span(for='input_mail_followers_subtype_82')
+                                                | Refused
+                                        li.o_subtype
+                                            input#input_mail_followers_subtype_83.o_subtype_checkbox(type='checkbox', data-id='83', name='Submitted')
+                                            span(for='input_mail_followers_subtype_83')
+                                                | Submitted
+                                        li.o_subtype
+                                            input#input_mail_followers_subtype_84.o_subtype_checkbox(type='checkbox', data-id='84', name='Paid')
+                                            span(for='input_mail_followers_subtype_84')
+                                                | Paid
+                    .o_mail_thread

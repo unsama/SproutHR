@@ -1,0 +1,32 @@
+.two{
+
+    padding-left:12px;
+}
+.one{
+    padding-left:12px;
+    border-right:1px solid #ddd;
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+
+.osahass{
+    padding-right: 150px !important;
+
+}
+.samohead{
+
+    color:#7c7bad;
+    font-weight: bold;
+}
+
+.samoone{
+    color: #4c4c4c;
+    font-size: 13px;
+}
+.samocheckbox{
+    margin-left: -4px;
+}
+
+.samopaddcol{
+    padding-top: 54px;
+}

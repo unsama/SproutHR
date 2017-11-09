@@ -1,0 +1,172 @@
+.all_transfers_table
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false',v-bind:dropdownbtn1='false',v-bind:dropdownbtn2='false',v-bind:dropdownbtn3='false',v-bind:Attachmentbtn='true',v-bind:actionbtn='true')
+    .row
+        .col-md-12.pull-left.samotopcontroller
+            .col-md-5.pull-left
+                button.btn.btn-primary.samobutton2(type='button',style='margin-right: 5px;') Validate
+                button.btn.btn-primary.samobutton1(type='button',style='margin-right: 5px;') Print
+                button.btn.btn-primary.samobutton1(type='button') Cancel
+
+            .col-md-1.pull-left
+            .col-md-3.pull-left
+            .col-md-3.pull-right
+                .btn-group.btn-breadcrumb.samobreadcrum1
+                    a.btn.btn-primary.samobreadbutt(href='#') Draft
+                    a.btn.btn-primary.samobreadbutt1(href='#') Waiting Availability
+                    a.btn.btn-primary.samobreadbutt(href='#') Partially Available
+                    a.btn.btn-primary.samobreadbutt(href='#') Available
+                    a.btn.btn-primary.samobreadbutt(href='#') Done
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                .fa.fa-fw.fa-shopping-cart.o_button_icon
+                                span Purchases
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-bars.o_button_icon
+                                span Group's Procurements
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-bars.o_button_icon
+                                span Group's Pickings
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Product
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_required(href='#') [MBi9] Motherboard I9P57
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Quantity
+                                        td(colspan='1', style='width: 100%;')
+                                            div
+                                                div
+                                                    span.oe_inline.o_form_field.o_form_required.o_form_field_number 12.000
+                                                    a.o_form_uri.oe_inline.o_form_field.o_form_required.o_form_invisible(href='#') Unit(s)
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                | Warehouse
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field(href='#') YourCompany
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Procurement Location
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field(href='#') WH/Stock
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty(data-original-title='', title='')
+                                                | Preferred Routes
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2manytags.o_form_field.o_form_invisible.o_form_field_empty
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Scheduling
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Scheduled Date
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field_date.o_form_field.o_form_required 01/31/2017 05:00:00
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Priority
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required Normal
+
+
+                        .o_notebook
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Notes
+                                li.nav-item
+                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') Extra Information
+
+
+                            // Tab panes
+                            .tab-content
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+
+                                    h6(style='background-color: #D2D2FF;') OP/00002
+
+
+
+                                #buzz.tab-pane.fade.in(role='tabpanel')
+                                    .o_group
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_empty.o_form_label_false
+                                                            | BoM
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                            | Manufacturing Order
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                            | Source Document
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field OP/00002
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_empty.o_form_label_false
+                                                            | Task
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_empty.o_form_label_false
+                                                            | Purchase Order
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                            | Procurement Group
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false(data-original-title='', title='')
+                                                            | Rule
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false(data-original-title='', title='')
+                                                            | Customer Address
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label
+                                                            | Company
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_required(href='#') Alupak Industriess
+        Message
+        Request_quotation_lower
+
+
+

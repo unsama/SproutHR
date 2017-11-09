@@ -1,0 +1,148 @@
+.Billing
+    .row.samorequestinnerrow
+        .dashboardcontroller
+            .bro
+                .col-sm-6.samodashheadingmain(style='margin-top: 10px;')
+                    h4.samodashheading Requests for Quotation/PO00007: 637.50 Rs.
+                .col-sm-6.samodashsearch
+                    h1(style='color: #f0eeee;') s
+            .bro
+                .col-sm-6.samodashheadingmain
+                    button.btn.btn-primary.samobuttopcontroller#hasS(type='button', href='users')
+                        router-link.links.samolinks(to='Imported') Edit
+                    button.btn.btn-default.samobuttopcontroller2#hasHide(type='button', href='#home')
+                        router-link.links.samolinks(to='Imported') Create
+                            Discard
+                    .dropdown1
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton2.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-bars.iconbutton
+                                | Attachment
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Add
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-star.iconbutton
+                                | Action
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Delete
+                                a.dropdown-item(href='#') Duplicate
+                .col-sm-6.samodashsearch
+                    div(style='float:right;')
+                        span.o_pager_value 1-24
+                            |  /
+                            span.o_pager_limit 24
+                            span.btn-group.btn-group-sm
+                                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p', disabled='')
+                                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n', disabled='')
+    .o_content.samocontent
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .row
+                            .col-md-9
+                                h1 BILL/2017/0002
+                            .col-md-3
+                                button.btn.btn-sm.oe_stat_button(type='button')
+                                    .fa.fa-fw.fa-bars.o_button_icon
+                                    span Reconciled entries
+
+
+
+                        .row(style='margin-top:10px;')
+                            .col-md-3
+
+                                .one
+                                    label(style='font-size:16px;font-weight:bold;')
+                                        | Reference
+                                    br
+                                    label(style='font-size:16px;font-weight:bold;')
+                                        | Company
+                                    br
+
+
+
+
+                            .col-md-3
+                                label(style='font-size:13px;padding-right:25px;')
+                                    | Vendor Bills (pas)
+                                br
+                                label(style='font-size:13px;padding-right:25px;')
+                                    | 01/15/2017
+                                br
+
+                            .col-md-3
+
+                                .one
+                                    label(style='font-size:16px;font-weight:bold;')
+                                        | Reference
+                                    br
+                                    label(style='font-size:16px;font-weight:bold;')
+                                        | Company
+                                    br
+
+
+
+
+
+                            .col-md-3
+                                label(style='font-size:13px;')
+                                    | 01/28/2017 19:22:57
+                                br
+                                label(style='font-size:13px;')
+                                    | Alupak Industriess
+                                br
+                        .o_notebook(style='margin-top:0px;')
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Journal Items
+
+                            // Tab panes
+                            .tab-content
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+                                    table.table.table-striped.samotable
+                                        thead.samotablehead(style='background-color:#f0eeee;')
+                                            tr
+
+                                                th.samotableheadborder Account
+                                                th.samotableheadborder Partnar
+                                                th.samotableheadborder Label
+                                                th.samotableheadborder Ammount currency
+                                                th.samotableheadborder Debit
+                                                th.samotableheadborder Credit
+                                                th.samotableheadborder Debit
+                                                th.samotableheadborder Due Date
+
+
+
+
+
+                                        tfoot.samotfoot
+                                            tr
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+
+
+
+                                        tbody.samotbody
+                                            tr
+
+                                                td.samotablepadd [CPUi5] Processor Core i5 2.70 Ghz
+                                                td.samotablepadd 125.00
+                                                td.samotablepadd 00.00
+                                                td.samotablepadd [CPUi5] Processor Core i5 2.70 Ghz
+                                                td.samotablepadd 125.00
+                                                td.samotablepadd 125.00
+                                                td.samotablepadd 125.00
+                                                td.samotablepadd 125.00
+
+
+
+

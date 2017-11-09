@@ -1,0 +1,453 @@
+.leavemeeting
+    DashboardController(v-bind:heading="nextactivity",v-bind:savebtn='true',v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks")
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Departments/New
+    .row
+        .col-sm-12
+            #success-alert(style='background-color:red;display:none;position:absolute;right: 0px;z-index: 1;')
+                button.close(type="button", data-dismiss="alert",style='color:white;') x
+                .o_notification.o_error
+                    .o_notification_title
+                        span.o_icon.fa.fa-3x.fa-exclamation(style='color:white;border-bottom: 3px solid white;font-size: 16px') The following fields are invalid:
+
+                    .o_notification_content(style='padding-top: 16px;')
+                        ul
+                            li#leave(style='color:white;') Department Names
+    .o_content(style='margin-left:-15px;margin-right:-15px;')
+        .o_view_manager_content
+            .o_form_view.o_form_editable
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        span.o_form_field.o_form_invisible Unconfirmed
+                        .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                            input(type='checkbox', name='is_attendee', disabled='')
+                            span
+                        span.o_form_field.o_form_invisible.o_form_field_empty
+                        .oe_title
+                            .oe_edit_only
+                                label.o_form_label(for='o_field_input_255')
+                                    | Meeting Subject
+                            h1
+                                input#o_field_input_255.o_form_input.o_form_field.o_form_required(placeholder='e.g. Business Lunch', type='text')
+                            label.o_form_label.oe_edit_only
+                                | Attendees
+                            h2
+                                .o_form_field_many2manytags.oe_inline.o_form_field
+                                    span.badge.dropdown.o_tag_color_10(data-color='10', data-id='55', data-index='0')
+                                        span.o_calendar_invitation.false
+                                        span.o_badge_text(title='6737pafkiet') 6737pafkiet
+                                        span.fa.fa-times.o_delete
+                                    .o_form_field_many2one.oe_inline.o_form_field
+                                        .o_form_input_dropdown
+                                            input.o_form_input.ui-autocomplete-input(type='text', placeholder='Select attendees...', autocomplete='off')
+                                            span.o_dropdown_button(draggable='false')
+                        .o_notebook
+                            ul.nav.nav-tabs(role='tablist')
+                                li.active
+                                    a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_257')
+                                        | Meeting Details
+                                li
+                                    a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_258')
+                                        | Options
+                                li.o_form_invisible
+                                    a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_259')
+                                        | Invitations
+                                li.o_form_invisible
+                                    a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_260')
+                                        | Misc
+                            .tab-content.nav.nav-tabs
+                                #notebook_page_257.tab-pane.active(role='tabpanel')
+                                    table.o_group.o_inner_group.oe_edit_only.o_form_invisible
+                                        tbody
+                                            tr
+                                                td(colspan='1', style='width: 50%;')
+                                                    p.alert.alert-warning
+                                                        | This event is linked to a recurrence...
+                                                        br
+                                                        button.btn.btn-sm.oe_link(type='button', data-original-title='', title='')
+                                                            span Update only this instance
+                                    .o_group
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_261', data-original-title='', title='')
+                                                            | Start
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_datepicker.o_form_field_date.o_form_field.o_form_required.o_form_invisible
+                                                            input.o_datepicker_input.o_form_input(type='text', name='start')
+                                                            span.o_datepicker_button
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_262', data-original-title='', title='')
+                                                            | Stop
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_datepicker.o_form_field_date.o_form_field.o_form_required.o_form_invisible
+                                                            input.o_datepicker_input.o_form_input(type='text', name='stop')
+                                                            span.o_datepicker_button
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_263')
+                                                            | ID
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_invisible.o_form_field_empty
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible(for='o_field_input_264')
+                                                            | Starting at
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_datepicker.o_form_field_date.o_form_field.o_form_invisible
+                                                            input.o_datepicker_input.o_form_input(type='text', name='start_date')
+                                                            span.o_datepicker_button
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible(for='o_field_input_265')
+                                                            | Ending at
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_datepicker.o_form_field_date.o_form_field.o_form_invisible
+                                                            input.o_datepicker_input.o_form_input(type='text', name='stop_date')
+                                                            span.o_datepicker_button
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_266')
+                                                            | Starting at
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_datepicker.o_form_field_date.o_form_field
+                                                            input.o_datepicker_input.o_form_input(type='text', name='start_datetime')
+                                                            span.o_datepicker_button
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible(for='o_field_input_267')
+                                                            | End Datetime
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_datepicker.o_form_field_date.o_form_field.o_form_invisible
+                                                            input.o_datepicker_input.o_form_input(type='text', name='stop_datetime')
+                                                            span.o_datepicker_button
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_268')
+                                                            | Duration
+                                                    td(colspan='1', style='width: 100%;')
+                                                        div(attrs="{'invisible': [('allday','=',True)]}")
+                                                            input#o_field_input_268.o_form_input.oe_inline.o_form_field.o_form_field_number(type='text')
+                                                            span  hours
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_269')
+                                                            | All Day
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_checkbox.o_form_field_boolean.o_form_field
+                                                            input#o_field_input_269(type='checkbox', name='allday')
+                                                            span
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_270')
+                                                            | Tags
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2manytags.o_form_field
+                                                            .o_form_field_many2one.o_form_field
+                                                                .o_form_input_dropdown
+                                                                    input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                    span.o_dropdown_button(draggable='false')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_271')
+                                                            | Reminders
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2manytags.o_form_field
+                                                            .o_form_field_many2one.o_form_field
+                                                                .o_form_input_dropdown
+                                                                    input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                    span.o_dropdown_button(draggable='false')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_272', data-original-title='', title='')
+                                                            | Location
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_272.o_form_input.o_form_field(type='text')
+                                    label.o_form_label(for='o_field_input_273')
+                                        | Description
+                                    textarea.o_form_textarea.o_form_field(rows='6', name='description', style='height: 50px;')
+                                    textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 826px;')
+                                #notebook_page_258.tab-pane(role='tabpanel')
+                                    .o_group
+                                        .o_group_col_6
+                                            table.o_group.o_inner_group
+                                                tbody
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_help(for='o_field_input_274', data-original-title='', title='')
+                                                                | Recurrent
+                                                        td(colspan='1', style='width: 100%;')
+                                                            .o_checkbox.o_form_field_boolean.o_form_field
+                                                                input#o_field_input_274(type='checkbox', name='recurrency')
+                                                                span
+                                            .o_form_invisible(attrs="{'invisible': [('recurrency', '=', False)]}")
+                                                table.o_group.o_inner_group
+                                                    tbody
+                                                        tr
+                                                            td.o_td_label(colspan='1')
+                                                                label.o_form_label.o_form_label_help(for='o_field_input_275', data-original-title='', title='')
+                                                                    | Repeat Every
+                                                            td(colspan='1', style='width: 100%;')
+                                                                .o_row
+                                                                    input#o_field_input_275.o_form_input.o_form_field.o_form_field_number(type='text')
+                                                                    select.o_form_input.o_form_field(name='rrule_type', data-original-title='', title='')
+                                                                        option(value='false')
+                                                                        option(value='"daily"') Day(s)
+                                                                        option(value='"weekly"') Week(s)
+                                                                        option(value='"monthly"') Month(s)
+                                                                        option(value='"yearly"') Year(s)
+                                                        tr
+                                                            td.o_td_label(colspan='1')
+                                                                label.o_form_label(for='o_field_input_276')
+                                                                    | Until
+                                                            td(colspan='1', style='width: 100%;')
+                                                                .o_row
+                                                                    select#o_field_input_276.o_form_input.o_form_field(name='end_type')
+                                                                        option(value='false')
+                                                                        option(value='"count"') Number of repetitions
+                                                                        option(value='"end_date"') End date
+                                                                    input.o_form_input.o_form_field.o_form_field_number(type='text', data-original-title='', title='')
+                                                                    .o_datepicker.o_form_field_date.o_form_field.o_form_invisible
+                                                                        input.o_datepicker_input.o_form_input(type='text', name='final_date')
+                                                                        span.o_datepicker_button
+                                                table.o_group.o_inner_group.o_form_invisible
+                                                    tbody
+                                                        tr
+                                                            td.o_td_label(colspan='1')
+                                                                label.o_form_label(for='o_field_input_277')
+                                                                    | Mon
+                                                            td(colspan='1', style='width: 100%;')
+                                                                .o_checkbox.o_form_field_boolean.o_form_field
+                                                                    input#o_field_input_277(type='checkbox', name='mo')
+                                                                    span
+                                                        tr
+                                                            td.o_td_label(colspan='1')
+                                                                label.o_form_label(for='o_field_input_278')
+                                                                    | Tue
+                                                            td(colspan='1', style='width: 100%;')
+                                                                .o_checkbox.o_form_field_boolean.o_form_field
+                                                                    input#o_field_input_278(type='checkbox', name='tu')
+                                                                    span
+                                                        tr
+                                                            td.o_td_label(colspan='1')
+                                                                label.o_form_label(for='o_field_input_279')
+                                                                    | Wed
+                                                            td(colspan='1', style='width: 100%;')
+                                                                .o_checkbox.o_form_field_boolean.o_form_field
+                                                                    input#o_field_input_279(type='checkbox', name='we')
+                                                                    span
+                                                        tr
+                                                            td.o_td_label(colspan='1')
+                                                                label.o_form_label(for='o_field_input_280')
+                                                                    | Thu
+                                                            td(colspan='1', style='width: 100%;')
+                                                                .o_checkbox.o_form_field_boolean.o_form_field
+                                                                    input#o_field_input_280(type='checkbox', name='th')
+                                                                    span
+                                                        tr
+                                                            td.o_td_label(colspan='1')
+                                                                label.o_form_label(for='o_field_input_281')
+                                                                    | Fri
+                                                            td(colspan='1', style='width: 100%;')
+                                                                .o_checkbox.o_form_field_boolean.o_form_field
+                                                                    input#o_field_input_281(type='checkbox', name='fr')
+                                                                    span
+                                                        tr
+                                                            td.o_td_label(colspan='1')
+                                                                label.o_form_label(for='o_field_input_282')
+                                                                    | Sat
+                                                            td(colspan='1', style='width: 100%;')
+                                                                .o_checkbox.o_form_field_boolean.o_form_field
+                                                                    input#o_field_input_282(type='checkbox', name='sa')
+                                                                    span
+                                                        tr
+                                                            td.o_td_label(colspan='1')
+                                                                label.o_form_label(for='o_field_input_283')
+                                                                    | Sun
+                                                            td(colspan='1', style='width: 100%;')
+                                                                .o_checkbox.o_form_field_boolean.o_form_field
+                                                                    input#o_field_input_283(type='checkbox', name='su')
+                                                                    span
+                                                table.o_group.o_inner_group.o_form_invisible
+                                                    tbody
+                                                        tr
+                                                            td.o_td_label(colspan='1')
+                                                                label.o_form_label(for='o_field_input_284')
+                                                                    | Day of Month
+                                                            td(colspan='1', style='width: 100%;')
+                                                                .o_row
+                                                                    select#o_field_input_284.o_form_input.o_form_field(name='month_by')
+                                                                        option(value='false')
+                                                                        option(value='"date"') Date of month
+                                                                        option(value='"day"') Day of month
+                                                                    input.o_form_input.o_form_field.o_form_field_number(type='text')
+                                                                    select.o_form_input.o_form_field.o_form_invisible(name='byday')
+                                                                        option(value='false')
+                                                                        option(value='"1"') First
+                                                                        option(value='"2"') Second
+                                                                        option(value='"3"') Third
+                                                                        option(value='"4"') Fourth
+                                                                        option(value='"5"') Fifth
+                                                                        option(value='"-1"') Last
+                                                                    select.o_form_input.o_form_field.o_form_invisible(name='week_list')
+                                                                        option(value='false')
+                                                                        option(value='"MO"') Monday
+                                                                        option(value='"TU"') Tuesday
+                                                                        option(value='"WE"') Wednesday
+                                                                        option(value='"TH"') Thursday
+                                                                        option(value='"FR"') Friday
+                                                                        option(value='"SA"') Saturday
+                                                                        option(value='"SU"') Sunday
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_285')
+                                                            | Privacy
+                                                    td(colspan='1', style='width: 100%;')
+                                                        select#o_field_input_285.o_form_input.o_form_field(name='privacy')
+                                                            option(value='false')
+                                                            option(value='"public"') Everyone
+                                                            option(value='"private"') Only me
+                                                            option(value='"confidential"') Only internal users
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_286')
+                                                            | Show Time as
+                                                    td(colspan='1', style='width: 100%;')
+                                                        select#o_field_input_286.o_form_input.o_form_field(name='show_as')
+                                                            option(value='false')
+                                                            option(value='"free"') Free
+                                                            option(value='"busy"') Busy
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible(for='o_field_input_287')
+                                                            | Recurrent Rule
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_287.o_form_input.o_form_field.o_form_invisible(type='text')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible(for='o_field_input_288')
+                                                            | Recurrent ID
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_288.o_form_input.o_form_field.o_form_invisible.o_form_field_number(type='text')
+                                #notebook_page_259.tab-pane(role='tabpanel')
+                                    button.btn.btn-sm.oe_link(type='button')
+                                        .fa.fa-fw.fa-envelope.o_button_icon
+                                        span Send mail
+                                    .o_form_field.o_form_field_one2many.o_view_manager_content
+                                        .o_x2m_control_panel
+                                            .o_cp_buttons
+                                            .o_cp_pager
+                                                .o_hidden
+                                                    span.o_pager_value
+                                                    |  /
+                                                    span.o_pager_limit
+                                                    span.btn-group.btn-group-sm
+                                                        button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                        button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                        .o_cannot_create.o_list_editable
+                                            .o_form_view.o_list_editable_form.o_form_nosheet.o_cannot_create.o_hidden
+                                                field(name='partner_id', on_change='1', can_create='true', can_write='true', modifiers='{"readonly":true}', nolabel='true')
+                                                field(name='state', modifiers='{"readonly":true}', nolabel='true')
+                                                field(name='email', widget='email', modifiers='{}', nolabel='true')
+                                                button(name='do_tentative', states='needsAction,declined,accepted', string='Uncertain', type='button', icon='fa-asterisk', modifiers='{"invisible":true}', nolabel='true', data-button-type='object')
+                                                button(name='do_accept', string='Accept', states='needsAction,tentative,declined', type='button', icon='fa-check text-success', modifiers='{"invisible":true}', nolabel='true', data-button-type='object')
+                                                button(name='do_decline', string='Decline', states='needsAction,tentative,accepted', type='button', icon='fa-times-circle text-danger', modifiers='{"invisible":true}', nolabel='true', data-button-type='object')
+                                            .table-responsive
+                                                table.o_list_view.table.table-condensed.table-striped
+                                                    thead
+                                                        tr
+                                                            th.o_column_sortable(data-id='partner_id')
+                                                                | Contact
+                                                            th.o_column_sortable(data-id='state')
+                                                                | Status
+                                                            th.o_column_sortable(data-id='email')
+                                                                | Email
+                                                            th(data-id='do_tentative')
+                                                            th(data-id='do_accept')
+                                                            th(data-id='do_decline')
+                                                    tfoot
+                                                        tr
+                                                            td
+                                                            td
+                                                            td
+                                                            td
+                                                            td
+                                                            td
+                                                    tbody
+                                                        tr
+                                                            td(title='Contact')  
+                                                            td(title='Status')  
+                                                            td(title='Email')  
+                                                            td(title='Uncertain')  
+                                                            td(title='Accept')  
+                                                            td(title='Decline')  
+                                                        tr
+                                                            td(title='Contact')  
+                                                            td(title='Status')  
+                                                            td(title='Email')  
+                                                            td(title='Uncertain')  
+                                                            td(title='Accept')  
+                                                            td(title='Decline')  
+                                                        tr
+                                                            td(title='Contact')  
+                                                            td(title='Status')  
+                                                            td(title='Email')  
+                                                            td(title='Uncertain')  
+                                                            td(title='Accept')  
+                                                            td(title='Decline')  
+                                                        tr
+                                                            td(title='Contact')  
+                                                            td(title='Status')  
+                                                            td(title='Email')  
+                                                            td(title='Uncertain')  
+                                                            td(title='Accept')  
+                                                            td(title='Decline')  
+                                #notebook_page_260.tab-pane(role='tabpanel')
+                                    table.o_group.o_inner_group
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_289')
+                                                        | Owner
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_with_button.o_form_field
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_289.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                .o_chatter.o_form_field.oe_chatter.o_form_invisible
+                    .o_chatter_topbar
+                        button.btn.btn-sm.btn-primary.o_chatter_button_new_message(title='Send a message', type='button')
+                            | New message
+                        button.btn.btn-sm.btn-link.o_chatter_button_log_note(title='Log a note. Followers will not be notified.')
+                            | Log an internal note
+                        .o_followers.o_form_field.o_form_invisible
+                            .o_followers_title_box
+                                button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', title='No follower')
+                                    i.fa.fa-user
+                                    span.o_followers_count 0
+                                    span.caret
+                                ul.dropdown-menu.o_followers_list(role='menu')
+                                    li.o_add_follower
+                                        a(href='#')  Add Followers
+                                    li.o_add_follower_channel
+                                        a(href='#')  Add Channels
+                            .o_followers_actions
+                                .btn-group.btn-group-sm.o_subtypes_list
+                                    button.btn.btn-sm.btn-link.o_followers_follow_button.o_followers_notfollow
+                                        span.o_follow Follow
+                                        span.fa.fa-times.o_followers_unfollow
+                                        span.o_followers_unfollow  Unfollow
+                                        span.fa.fa-check.o_followers_following
+                                        span.o_followers_following  Following
+                                    button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', disabled='disabled')
+                                        span.fa.fa-bell
+                                    ul.dropdown-menu(role='menu')
+                    .o_mail_thread
+

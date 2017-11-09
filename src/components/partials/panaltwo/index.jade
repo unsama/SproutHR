@@ -1,0 +1,36 @@
+.container
+    .row
+        .col-xs-6(style='padding-left:15px;font-weight: bold;')
+            .one
+                label(style='font-size:15px;')
+                    | Purchase Lead Time *
+                br
+                br
+                label(style='font-size:15px;')
+                    | Purchase Order Modification *
+                br
+                br
+
+                label(style='font-size:15px;')
+                    | Levels of Approvals *
+
+        .col-xs-6(style='padding-left:45px;')
+            .two
+                input#usr.form-control(type='text')
+                form
+                    .checkbox
+                        label
+                            input(type='checkbox', value='')
+                            | Allow to edit purchase orders
+                    .checkbox
+                        label
+                            input(type='checkbox', value='')
+                            | Confirmed purchase orders are not editable
+                    .checkbox
+                        label
+                            input(type='checkbox', value='')
+                            | Confirm purchase orders in one step
+                    .checkbox
+                        label
+                            input(type='checkbox', value='')
+                            | Get 2 levels of approvals to confirm a purchase order

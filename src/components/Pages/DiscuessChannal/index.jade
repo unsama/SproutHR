@@ -1,0 +1,66 @@
+.DiscuessChannal
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true',v-bind:dropdownMenuButton='true',v-bind:Attachmentbtn='true',v-bind:actionbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+    infochannal
+    //.dropdown
+    //    button.btn.btn-primary.dropdown-toggle(type='button', data-toggle='dropdown')
+    //        | Dropdown Example
+    //        span.caret
+    //    ul.dropdown-menu
+    //        li
+    //            ul.nav.nav-tabs.tabs-student
+    //                li.active
+    //                    a(style='margin-left: 7px;',href='#tab-activity') All
+    //                li
+    //                    a(style='margin-left: 19px;',href='#tab-sales') Chat
+    //                li
+    //                    a(style='margin-left: 20px;',href='#tab-sales') Channel
+    //            .tab-content
+    //                #tab-activity.tab-pane.active
+    //                    h1 djhjdf
+    //                #tab-sales.tab-pane
+    //                    h1 ssss
+    .dropdown
+        a.dropdown-toggle.btn.btn-default.btn-color
+            span#color-name Sucess
+        ul.o_mail_navbar_dropdown.dropdown-menu(role='menu')
+            li.o_mail_navbar_dropdown_top
+                div
+                    button.btn.btn-sm.o_filter_button.o_selected(type='button')  All
+                    button.btn.btn-sm.o_filter_button(data-filter='chat', type='button')  Chat
+                    button.btn.btn-sm.o_filter_button(data-filter='channels', type='button')  Channels
+                button.btn.btn-sm.o_new_message(type='button')  New message
+            li.o_mail_navbar_dropdown_channels
+                .o_mail_channel_preview(data-channel_id='9')
+                    img.o_channel_image(src='/web/image/res.partner/56/image_small')
+                    .o_channel_info
+                        .o_channel_title
+                            span.o_channel_name
+                                i.o_mail_user_status.fa.fa-circle-o(title='Offline')
+                                |                             Mavia
+                            span.o_last_message_date  Apr 17, 2017 7:51 PM
+                        .o_last_message_preview
+                            | YourCompany, Administrators:
+                            span.o_mail_emoji
+                                img(src='/mail/static/src/img/smiley/yum.png')
+                .o_mail_channel_preview(data-channel_id='8')
+                    img.o_channel_image(src='/web/image/mail.channel/8/image_small')
+                    .o_channel_info
+                        .o_channel_title
+                            span.o_channel_name
+                                | Projects & Tasks
+                            span.o_last_message_date  Apr 17, 2017 7:24 PM
+                        .o_last_message_preview
+                            | YourCompany, Administrators:
+                            | joined #Projects & Tasks
+                .o_mail_channel_preview(data-channel_id='1')
+                    img.o_channel_image(src='/web/image/mail.channel/1/image_small')
+                    .o_channel_info
+                        .o_channel_title
+                            span.o_channel_name
+                                | general
+                            span.o_last_message_date  Apr 17, 2017 7:24 PM
+                        .o_last_message_preview
+                            | YourCompany, Administrators:
+                            | joined #general
+
+

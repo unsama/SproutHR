@@ -1,0 +1,74 @@
+.Chat
+    #chat_window_1.row.chat-window.col-xs-5.col-md-3(style='margin-left:10px;')
+        .col-xs-9.col-md-9
+            .panel.panel-default
+                .panel-heading.top-bar(style='height: 26px;background-color: #7c7bad;')
+                    .col-md-12.col-xs-12
+                        h3.panel-title(style='font-size: 12px;')
+                            span.glyphicon.glyphicon-comment
+                            |  #Project
+                            span.fa.fa-times.o_mail_partner_unpin(style='padding-left: 193px;')
+                    .col-md-4.col-xs-4(style='text-align: right;')
+                        a(href='#')
+                            span#minim_chat_window.glyphicon.glyphicon-minus.icon_minim
+                        a(href='#')
+                            span.glyphicon.glyphicon-remove.icon_close(data-id='chat_window_1')
+                .panel-body.msg_container_base
+                    .row.msg_container.base_receive
+                        .row(style='margin-left: -10px;margin-right: -10px;margin-top: 4px;')
+                            .col-sm-2
+                                .o_mail_channel_preview(data-channel_id='1')
+                                    img.o_channel_image(src='/images/placeholder.png')
+                            .col-sm-9
+                                .o_channel_info
+                                    .o_channel_title
+                                        span.o_channel_name
+                                            | General
+                                        span.o_last_message_date(style='margin-left: 47px;font-size: 11px;')  Apr 17, 2017 7:24 PM
+                                .o_last_message_preview(style='font-size: 10px;')
+                                    | YourCompany, Administrators:
+                                    | joined #general
+
+                .panel-body.msg_container_base
+                    .row.msg_container.base_receive
+                        .row(style='margin-left: -10px;margin-right: -10px;margin-top: 4px;')
+                            .col-sm-2
+                                .o_mail_channel_preview(data-channel_id='1')
+                                    img.o_channel_image(src='/images/placeholder.png')
+                            .col-sm-9
+                                .o_channel_info
+                                    .o_channel_title
+                                        span.o_channel_name
+                                            | General
+                                        span.o_last_message_date(style='margin-left: 47px;font-size: 11px;')  Apr 17, 2017 7:24 PM
+                                .o_last_message_preview(style='font-size: 10px;')
+                                    | YourCompany, Administrators:
+                                    | joined #general
+                .panel-body.msg_container_base
+                    .row.msg_container.base_receive
+                        .row(style='margin-left: -10px;margin-right: -10px;margin-top: 4px;')
+                            .col-sm-2
+                                .o_mail_channel_preview(data-channel_id='1')
+                                    img.o_channel_image(src='/images/placeholder.png')
+                            .col-sm-9
+                                .o_channel_info
+                                    .o_channel_title
+                                        span.o_channel_name
+                                            | General
+                                        span.o_last_message_date(style='margin-left: 47px;font-size: 11px;')  Apr 17, 2017 7:24 PM
+                                .o_last_message_preview(style='font-size: 10px;')
+                                    | YourCompany, Administrators:
+                                    | joined #general
+                .panel-footer
+                    .input-group
+                        input#btn-input.form-control.input-sm.chat_input(type='text', placeholder='Write your message here...')
+    .col-sm-6.col-md-6
+        #border
+            .alert.alert-warning(style='background-color: red;color: aliceblue;border: 20px;')
+                i.fa.fa-exclamation(style='font-size: 34px;color: gray;',aria-hidden='true')
+                button.close(style='color: aliceblue;',type='button', data-dismiss='alert', aria-hidden='true')
+                    | ×
+                span.glyphicon.glyphicon-record
+                strong(style='margin-left: 17px;font-size: 18px;') Wrong Pin
+
+

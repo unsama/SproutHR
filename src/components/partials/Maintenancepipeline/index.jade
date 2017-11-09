@@ -1,0 +1,591 @@
+.pipeline
+    //.o_content(style='margin-left:-20px')
+    //    .o_view_manager_content
+    //        .o_kanban_view.o_kanban_small_column.o_opportunity_kanban.o_kanban_grouped.connectedSortable(style='display: flex;height: 976px;')
+    //            #sortable1.o_kanban_group(data-id='1')
+    //                .o_kanban_header(data-delay='500', title='', data-original-title='<p>1 records</p>')
+    //                    span.o_column_title New Request
+    //                    span.o_column_unfold
+    //                        i.fa.fa-arrows-h
+    //                    span.o_kanban_config.dropdown
+    //                        a.dropdown-toggle(data-toggle='dropdown', href='#')
+    //                            i.fa.fa-gear
+    //                        ul.dropdown-menu.memu-p(role='menu')
+    //                            li
+    //                                a.o_kanban_toggle_fold(href='#') Fold
+    //                            li
+    //                                a.o_column_edit(href='#') Edit Stage
+    //                            li
+    //                                a.o_column_delete(href='#') Delete
+    //                            li
+    //                                a.o_column_archive(href='#') Archive Records
+    //                            li
+    //                                a.o_column_unarchive(href='#') Restore Records
+    //                    span.o_kanban_quick_add
+    //                        i.fa.fa-plus#click
+    //                .o_kanban_quick_create#createa(style='display:none')
+    //                    input(placeholder='Add', type='text')
+    //                    button.btn.btn-sm.btn-primary.o_kanban_add Add
+    //                    button.btn.btn-sm.btn-default.o_kanban_cancel#discard Discard
+    //                #sortable1.connectedSortable(style='height:100%').o_kanban_group(data-id='1')
+    //                    .oe_kanban_color_0.oe_kanban_card.oe_kanban_global_click.oe_semantic_html_override.o_kanban_record.ui-sortable-handle
+    //                        .o_dropdown_kanban.dropdown
+    //                            a.dropdown-toggle.btn(data-toggle='dropdown', href='#')
+    //                                span.fa.fa-bars.fa-lg
+    //                            ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
+    //                                li
+    //                                    a.oe_kanban_action.oe_kanban_action_a(data-type='edit', href='#') Edit...
+    //                                li
+    //                                    a.oe_kanban_action.oe_kanban_action_a(data-type='delete', href='#') Delete
+    //                                li
+    //                                    ul.oe_kanban_colorpicker(data-field='color')
+    //                                        li
+    //                                            a.oe_kanban_color_0(href='#', data-color='0')
+    //                                        li
+    //                                            a.oe_kanban_color_1(href='#', data-color='1')
+    //                                        li
+    //                                            a.oe_kanban_color_2(href='#', data-color='2')
+    //                                        li
+    //                                            a.oe_kanban_color_3(href='#', data-color='3')
+    //                                        li
+    //                                            a.oe_kanban_color_4(href='#', data-color='4')
+    //                                        li
+    //                                            a.oe_kanban_color_5(href='#', data-color='5')
+    //                                        li
+    //                                            a.oe_kanban_color_6(href='#', data-color='6')
+    //                                        li
+    //                                            a.oe_kanban_color_7(href='#', data-color='7')
+    //                                        li
+    //                                            a.oe_kanban_color_8(href='#', data-color='8')
+    //                                        li
+    //                                            a.oe_kanban_color_9(href='#', data-color='9')
+    //                        .oe_kanban_content(tooltip='kanban-tooltip', data-original-title='', title='')
+    //                            div
+    //                                b Battery drains fast
+    //                                br
+    //                                span(name='owner_user_id')
+    //                                    | Demo User
+    //                                    br
+    //                                span.oe_grey
+    //                                    | HP Laptop/LP/303/28292090
+    //                                    br
+    //                            .oe_kanban_footer_left(style='margin-top:2px;')
+    //                                span Computers
+    //                            .oe_kanban_bottom_right
+    //                                img.oe_kanban_avatar.pull-right(width='24', height='24', src='http://192.168.25.104:8069/web/image?model=res.users&field=image_small&id=5&unique=20170408094906', title='Demo User')
+    //                                .pull-left
+    //                                    .btn-group.o_kanban_selection
+    //                                        a(data-toggle='dropdown', href='#')
+    //                                            span.oe_kanban_status.oe_kanban_status_green
+    //                                        ul.dropdown-menu.state(role='menu')
+    //                                            li(data-value='normal')
+    //                                                a(href='#')
+    //                                                    span.oe_kanban_status
+    //                                                    |                     In Progress
+    //                                            li(data-value='blocked')
+    //                                                a(href='#')
+    //                                                    span.oe_kanban_status.oe_kanban_status_red
+    //                                                    |                     Blocked
+    //                                    .o_priority
+    //                                        a.o_priority_star.fa.fa-star(href='#', data-value='1', title='Low')
+    //                                        a.o_priority_star.fa.fa-star(href='#', data-value='2', title='Normal')
+    //                                        a.o_priority_star.fa.fa-star(href='#', data-value='3', title='High')
+    //                        .oe_clear
+    //            #sortable1.o_kanban_group(data-id='1')
+    //                .o_kanban_header(data-delay='500', title='', data-original-title='<p>1 records</p>')
+    //                    span.o_column_title In Progress
+    //                    span.o_column_unfold
+    //                        i.fa.fa-arrows-h
+    //                    span.o_kanban_config.dropdown
+    //                        a.dropdown-toggle(data-toggle='dropdown', href='#')
+    //                            i.fa.fa-gear
+    //                        ul.dropdown-menu.memu-p(role='menu')
+    //                            li
+    //                                a.o_kanban_toggle_fold(href='#') Fold
+    //                            li
+    //                                a.o_column_edit(href='#') Edit Stage
+    //                            li
+    //                                a.o_column_delete(href='#') Delete
+    //                            li
+    //                                a.o_column_archive(href='#') Archive Records
+    //                            li
+    //                                a.o_column_unarchive(href='#') Restore Records
+    //                    span.o_kanban_quick_add
+    //                        i.fa.fa-plus#click1
+    //                .o_kanban_quick_create#createb(style='display:none')
+    //                    input(placeholder='Add', type='text')
+    //                    button.btn.btn-sm.btn-primary.o_kanban_add Add
+    //                    button.btn.btn-sm.btn-default.o_kanban_cancel Discard
+    //                #sortable1.connectedSortable(style='height:100%').o_kanban_group(data-id='1')
+    //                    .oe_kanban_color_0.oe_kanban_card.oe_kanban_global_click.oe_semantic_html_override.o_kanban_record.ui-sortable-handle
+    //                        .o_dropdown_kanban.dropdown
+    //                            a.dropdown-toggle.btn(data-toggle='dropdown', href='#')
+    //                                span.fa.fa-bars.fa-lg
+    //                            ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
+    //                                li
+    //                                    a.oe_kanban_action.oe_kanban_action_a(data-type='edit', href='#') Edit...
+    //                                li
+    //                                    a.oe_kanban_action.oe_kanban_action_a(data-type='delete', href='#') Delete
+    //                                li
+    //                                    ul.oe_kanban_colorpicker(data-field='color')
+    //                                        li
+    //                                            a.oe_kanban_color_0(href='#', data-color='0')
+    //                                        li
+    //                                            a.oe_kanban_color_1(href='#', data-color='1')
+    //                                        li
+    //                                            a.oe_kanban_color_2(href='#', data-color='2')
+    //                                        li
+    //                                            a.oe_kanban_color_3(href='#', data-color='3')
+    //                                        li
+    //                                            a.oe_kanban_color_4(href='#', data-color='4')
+    //                                        li
+    //                                            a.oe_kanban_color_5(href='#', data-color='5')
+    //                                        li
+    //                                            a.oe_kanban_color_6(href='#', data-color='6')
+    //                                        li
+    //                                            a.oe_kanban_color_7(href='#', data-color='7')
+    //                                        li
+    //                                            a.oe_kanban_color_8(href='#', data-color='8')
+    //                                        li
+    //                                            a.oe_kanban_color_9(href='#', data-color='9')
+    //                        .oe_kanban_content(tooltip='kanban-tooltip', data-original-title='', title='')
+    //                            div
+    //                                b Some keys are not working
+    //                                br
+    //                                span(name='owner_user_id')
+    //                                    | Demo User
+    //                                    br
+    //                                span.oe_grey
+    //                                    | HP Laptop/LP/303/28292090
+    //                                    br
+    //                            .oe_kanban_footer_left(style='margin-top:2px;')
+    //                                span Computers
+    //                            .oe_kanban_bottom_right
+    //                                img.oe_kanban_avatar.pull-right(width='24', height='24', src='http://192.168.25.104:8069/web/image?model=res.users&field=image_small&id=5&unique=20170408094906', title='Demo User')
+    //                                .pull-left
+    //                                    .btn-group.o_kanban_selection
+    //                                        a(data-toggle='dropdown', href='#')
+    //                                            span.oe_kanban_status.oe_kanban_status_green
+    //                                        ul.dropdown-menu.state(role='menu')
+    //                                            li(data-value='normal')
+    //                                                a(href='#')
+    //                                                    span.oe_kanban_status
+    //                                                    |                     In Progress
+    //                                            li(data-value='blocked')
+    //                                                a(href='#')
+    //                                                    span.oe_kanban_status.oe_kanban_status_red
+    //                                                    |                     Blocked
+    //                                    .o_priority
+    //                                        a.o_priority_star.fa.fa-star(href='#', data-value='1', title='Low')
+    //                                        a.o_priority_star.fa.fa-star(href='#', data-value='2', title='Normal')
+    //                                        a.o_priority_star.fa.fa-star(href='#', data-value='3', title='High')
+    //                        .oe_clear
+    //            #sortable1.o_kanban_group(data-id='1')
+    //                .o_kanban_header(data-delay='500', title='', data-original-title='<p>1 records</p>')
+    //                    span.o_column_title Repaired
+    //                    span.o_column_unfold
+    //                        i.fa.fa-arrows-h
+    //                    span.o_kanban_config.dropdown
+    //                        a.dropdown-toggle(data-toggle='dropdown', href='#')
+    //                            i.fa.fa-gear
+    //                        ul.dropdown-menu.memu-p(role='menu')
+    //                            li
+    //                                a.o_kanban_toggle_fold(href='#') Fold
+    //                            li
+    //                                a.o_column_edit(href='#') Edit Stage
+    //                            li
+    //                                a.o_column_delete(href='#') Delete
+    //                            li
+    //                                a.o_column_archive(href='#') Archive Records
+    //                            li
+    //                                a.o_column_unarchive(href='#') Restore Records
+    //                    span.o_kanban_quick_add
+    //                        i.fa.fa-plus#click2
+    //                .o_kanban_quick_create#createc(style='display:none')
+    //                    input(placeholder='Add', type='text')
+    //                    button.btn.btn-sm.btn-primary.o_kanban_add Add
+    //                    button.btn.btn-sm.btn-default.o_kanban_cancel Discard
+    //                #sortable1.connectedSortable(style='height:100%').o_kanban_group(data-id='1')
+    //                    .oe_kanban_color_0.oe_kanban_card.oe_kanban_global_click.oe_semantic_html_override.o_kanban_record.ui-sortable-handle
+    //                        .o_dropdown_kanban.dropdown
+    //                            a.dropdown-toggle.btn(data-toggle='dropdown', href='#')
+    //                                span.fa.fa-bars.fa-lg
+    //                            ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
+    //                                li
+    //                                    a.oe_kanban_action.oe_kanban_action_a(data-type='edit', href='#') Edit...
+    //                                li
+    //                                    a.oe_kanban_action.oe_kanban_action_a(data-type='delete', href='#') Delete
+    //                                li
+    //                                    ul.oe_kanban_colorpicker(data-field='color')
+    //                                        li
+    //                                            a.oe_kanban_color_0(href='#', data-color='0')
+    //                                        li
+    //                                            a.oe_kanban_color_1(href='#', data-color='1')
+    //                                        li
+    //                                            a.oe_kanban_color_2(href='#', data-color='2')
+    //                                        li
+    //                                            a.oe_kanban_color_3(href='#', data-color='3')
+    //                                        li
+    //                                            a.oe_kanban_color_4(href='#', data-color='4')
+    //                                        li
+    //                                            a.oe_kanban_color_5(href='#', data-color='5')
+    //                                        li
+    //                                            a.oe_kanban_color_6(href='#', data-color='6')
+    //                                        li
+    //                                            a.oe_kanban_color_7(href='#', data-color='7')
+    //                                        li
+    //                                            a.oe_kanban_color_8(href='#', data-color='8')
+    //                                        li
+    //                                            a.oe_kanban_color_9(href='#', data-color='9')
+    //                        .oe_kanban_content(tooltip='kanban-tooltip', data-original-title='', title='')
+    //                            router-link(to='Maintenancegridpage')
+    //                                div
+    //                                    b Touchpad not working
+    //                                    br
+    //                                    span(name='owner_user_id')
+    //                                        | Demo User
+    //                                        br
+    //                                    span.oe_grey
+    //                                        | HP Laptop/LP/303/28292090
+    //                                        br
+    //                            .oe_kanban_footer_left(style='margin-top:2px;')
+    //                                span Computers
+    //                            .oe_kanban_bottom_right
+    //                                img.oe_kanban_avatar.pull-right(width='24', height='24', src='http://192.168.25.104:8069/web/image?model=res.users&field=image_small&id=5&unique=20170408094906', title='Demo User')
+    //                                .pull-left
+    //                                    .btn-group.o_kanban_selection
+    //                                        a(data-toggle='dropdown', href='#')
+    //                                            span.oe_kanban_status.oe_kanban_status_green
+    //                                        ul.dropdown-menu.state(role='menu')
+    //                                            li(data-value='normal')
+    //                                                a(href='#')
+    //                                                    span.oe_kanban_status
+    //                                                    |                     In Progress
+    //                                            li(data-value='blocked')
+    //                                                a(href='#')
+    //                                                    span.oe_kanban_status.oe_kanban_status_red
+    //                                                    |                     Blocked
+    //                                    .o_priority
+    //                                        a.o_priority_star.fa.fa-star(href='#', data-value='1', title='Low')
+    //                                        a.o_priority_star.fa.fa-star(href='#', data-value='2', title='Normal')
+    //                                        a.o_priority_star.fa.fa-star(href='#', data-value='3', title='High')
+    //                        .oe_clear
+    //            .o_column_quick_create#addnew
+    //                .o_column_header
+    //                    span.o_kanban_add_column
+    //                        i.fa.fa-chevron-right
+    //                    span.o_kanban_title Add new Column
+    //                    .o_kanban_quick_create
+    //                        input(placeholder='Add', type='text')
+    //                        button.btn.btn-sm.btn-primary.o_kanban_add Add
+    //                        button.btn.btn-sm.btn-default.o_kanban_cancel Discard
+    //            .o_kanban_group#addshow(data-id='5', style='display:none')
+    //                .o_kanban_header(data-delay='500', title='', data-original-title='<p>0 records</p>')
+    //                    span.o_column_title
+    //                .o_kanban_quick_create
+    //                    input(placeholder='Add', type='text')
+    //                    br
+    //                    button.btn.btn-sm.btn-primary.o_kanban_add Add
+    //                    button.btn.btn-sm.btn-default.o_kanban_cancel#discard Discard
+    .o_content(style='margin-left:-20px')
+        .o_view_manager_content
+            .o_kanban_view.o_kanban_small_column.o_opportunity_kanban.o_kanban_grouped.connectedSortable(style='display: flex;height: 976px;')
+                .o_kanban_group(data-id='1')
+                    .o_kanban_header(data-delay='500', title='', data-original-title='<p>1 records</p>')
+                        span.o_column_title New Request
+                        span.o_column_unfold
+                            i.fa.fa-arrows-h
+                        span.o_kanban_config.dropdown
+                            a.dropdown-toggle(data-toggle='dropdown', href='#')
+                                i.fa.fa-gear
+                            ul.dropdown-menu.memu-p(role='menu')
+                                li
+                                    a.o_kanban_toggle_fold(href='#') Fold
+                                li
+                                    a.o_column_edit(href='#') Edit Stage
+                                li
+                                    a.o_column_delete(href='#') Delete
+                                li
+                                    a.o_column_archive(href='#') Archive Records
+                                li
+                                    a.o_column_unarchive(href='#') Restore Records
+                        span.o_kanban_quick_add
+                            i.fa.fa-plus#click
+                    .o_kanban_quick_create#createa(style='display:none')
+                        input(placeholder='Add', type='text')
+                        button.btn.btn-sm.btn-primary.o_kanban_add Add
+                        button.btn.btn-sm.btn-default.o_kanban_cancel Discard
+                    #sortable1.connectedSortable(style='height:100%')
+                        .oe_kanban_color_0.oe_kanban_card.oe_kanban_global_click.oe_semantic_html_override.o_kanban_record.ui-sortable-handle
+                            .o_dropdown_kanban.dropdown
+                                a.dropdown-toggle.btn(data-toggle='dropdown', href='#')
+                                    span.fa.fa-bars.fa-lg
+                                ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
+                                    li
+                                        a.oe_kanban_action.oe_kanban_action_a(data-type='edit', href='#') Edit...
+                                    li
+                                        a.oe_kanban_action.oe_kanban_action_a(data-type='delete', href='#') Delete
+                                    li
+                                        ul.oe_kanban_colorpicker(data-field='color')
+                                            li
+                                                a.oe_kanban_color_0.colorbg(href='#', data-color='0')
+                                            li
+                                                a.oe_kanban_color_1.colorbg(href='#', data-color='1')
+                                            li
+                                                a.oe_kanban_color_2.colorbg(href='#', data-color='2')
+                                            li
+                                                a.oe_kanban_color_3.colorbg(href='#', data-color='3')
+                                            li
+                                                a.oe_kanban_color_4.colorbg(href='#', data-color='4')
+                                            li
+                                                a.oe_kanban_color_5.colorbg(href='#', data-color='5')
+                                            li
+                                                a.oe_kanban_color_6.colorbg(href='#', data-color='6')
+                                            li
+                                                a.oe_kanban_color_7.colorbg(href='#', data-color='7')
+                                            li
+                                                a.oe_kanban_color_8.colorbg(href='#', data-color='8')
+                                            li
+                                                a.oe_kanban_color_9.colorbg(href='#', data-color='9')
+                            .oe_kanban_content(tooltip='kanban-tooltip', data-original-title='', title='')
+                                div
+                                    b Battery drains fast
+                                    br
+                                    span(name='owner_user_id')
+                                        | Demo User
+                                        br
+                                    span.oe_grey
+                                        | HP Laptop/LP/303/28292090
+                                        br
+                                .oe_kanban_footer_left(style='margin-top:2px;')
+                                    span Computers
+                                .oe_kanban_bottom_right
+                                    img.oe_kanban_avatar.pull-right(width='24', height='24', src='http://192.168.25.104:8069/web/image?model=res.users&field=image_small&id=5&unique=20170408094906', title='Demo User')
+                                    .pull-left
+                                        .btn-group.o_kanban_selection
+                                            a(data-toggle='dropdown', href='#')
+                                                span.oe_kanban_status.oe_kanban_status_green
+                                            ul.dropdown-menu.state(role='menu')
+                                                li(data-value='normal')
+                                                    a(href='#')
+                                                        span.oe_kanban_status
+                                                        |                     In Progress
+                                                li(data-value='blocked')
+                                                        span.oe_kanban_status.oe_kanban_status_red.button#jQueryColorChange.Button
+                                                        |                     Blocked
+                                        .o_priority
+                                            fieldset.rating
+                                                input#star5(type='radio', name='rating', value='5')
+                                                label(for='star5', title='Rocks!') 5 stars
+                                                input#star4(type='radio', name='rating', value='4')
+                                                label(for='star4', title='Pretty good') 4 stars
+                                                input#star3(type='radio', name='rating', value='3')
+                                                label(for='star3', title='Meh') 3 stars
+                            .oe_clear
+                .o_kanban_group(data-id='1')
+                    .o_kanban_header(data-delay='500', title='', data-original-title='<p>1 records</p>')
+                        span.o_column_title In Progress
+                        span.o_column_unfold
+                            i.fa.fa-arrows-h
+                        span.o_kanban_config.dropdown
+                            a.dropdown-toggle(data-toggle='dropdown', href='#')
+                                i.fa.fa-gear
+                            ul.dropdown-menu.memu-p(role='menu')
+                                li
+                                    a.o_kanban_toggle_fold(href='#') Fold
+                                li
+                                    a.o_column_edit(href='#') Edit Stage
+                                li
+                                    a.o_column_delete(href='#') Delete
+                                li
+                                    a.o_column_archive(href='#') Archive Records
+                                li
+                                    a.o_column_unarchive(href='#') Restore Records
+                        span.o_kanban_quick_add
+                            i.fa.fa-plus#click1
+                    .o_kanban_quick_create#createb(style='display:none')
+                        input(placeholder='Add', type='text')
+                        button.btn.btn-sm.btn-primary.o_kanban_add Add
+                        button.btn.btn-sm.btn-default.o_kanban_cancel Discard
+                    #sortable1.connectedSortable(style='height:100%')
+                        .oe_kanban_color_0.oe_kanban_card.oe_kanban_global_click.oe_semantic_html_override.o_kanban_record.ui-sortable-handle
+                            .o_dropdown_kanban.dropdown
+                                a.dropdown-toggle.btn(data-toggle='dropdown', href='#')
+                                    span.fa.fa-bars.fa-lg
+                                ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
+                                    li
+                                        a.oe_kanban_action.oe_kanban_action_a(data-type='edit', href='#') Edit...
+                                    li
+                                        a.oe_kanban_action.oe_kanban_action_a(data-type='delete', href='#') Delete
+                                    li
+                                        ul.oe_kanban_colorpicker(data-field='color')
+                                            li
+                                                a.oe_kanban_color_0.colorbg(href='#', data-color='0')
+                                            li
+                                                a.oe_kanban_color_1.colorbg(href='#', data-color='1')
+                                            li
+                                                a.oe_kanban_color_2.colorbg(href='#', data-color='2')
+                                            li
+                                                a.oe_kanban_color_3.colorbg(href='#', data-color='3')
+                                            li
+                                                a.oe_kanban_color_4.colorbg(href='#', data-color='4')
+                                            li
+                                                a.oe_kanban_color_5.colorbg(href='#', data-color='5')
+                                            li
+                                                a.oe_kanban_color_6.colorbg(href='#', data-color='6')
+                                            li
+                                                a.oe_kanban_color_7.colorbg(href='#', data-color='7')
+                                            li
+                                                a.oe_kanban_color_8.colorbg(href='#', data-color='8')
+                                            li
+                                                a.oe_kanban_color_9.colorbg(href='#', data-color='9')
+                            .oe_kanban_content(tooltip='kanban-tooltip', data-original-title='', title='')
+                                router-link(to='Maintenancegridpage')
+                                    div
+                                        b Touchpad not working
+                                        br
+                                        span(name='owner_user_id')
+                                            | Demo User
+                                            br
+                                        span.oe_grey
+                                            | HP Laptop/LP/303/28292090
+                                            br
+                                .oe_kanban_footer_left(style='margin-top:2px;')
+                                    span Computers
+                                .oe_kanban_bottom_right
+                                    img.oe_kanban_avatar.pull-right(width='24', height='24', src='http://192.168.25.104:8069/web/image?model=res.users&field=image_small&id=5&unique=20170408094906', title='Demo User')
+                                    .pull-left
+                                        .btn-group.o_kanban_selection
+                                            a(data-toggle='dropdown', href='#')
+                                                span.oe_kanban_status.oe_kanban_status_green
+                                            ul.dropdown-menu.state(role='menu')
+                                                li(data-value='normal')
+                                                    a(href='#')
+                                                        span.oe_kanban_status
+                                                        |                     In Progress
+                                                li(data-value='blocked')
+                                                    a(href='#')
+                                                        span.oe_kanban_status.oe_kanban_status_red
+                                                        |                     Blocked
+                                        .o_priority
+                                            fieldset.rating
+                                                input#star5(type='radio', name='rating', value='5')
+                                                label(for='star5', title='Rocks!') 5 stars
+                                                input#star4(type='radio', name='rating', value='4')
+                                                label(for='star4', title='Pretty good') 4 stars
+                                                input#star3(type='radio', name='rating', value='3')
+                                                label(for='star3', title='Meh') 3 stars
+                            .oe_clear
+                .o_kanban_group(data-id='1')
+                    .o_kanban_header(data-delay='500', title='', data-original-title='<p>1 records</p>')
+                        span.o_column_title Scrap
+                        span.o_column_unfold
+                            i.fa.fa-arrows-h
+                        span.o_kanban_config.dropdown
+                            a.dropdown-toggle(data-toggle='dropdown', href='#')
+                                i.fa.fa-gear
+                            ul.dropdown-menu.memu-p(role='menu')
+                                li
+                                    a.o_kanban_toggle_fold(href='#') Fold
+                                li
+                                    a.o_column_edit(href='#') Edit Stage
+                                li
+                                    a.o_column_delete(href='#') Delete
+                                li
+                                    a.o_column_archive(href='#') Archive Records
+                                li
+                                    a.o_column_unarchive(href='#') Restore Records
+                        span.o_kanban_quick_add
+                            i.fa.fa-plus#click2
+                    .o_kanban_quick_create#createc(style='display:none')
+                        input(placeholder='Add', type='text')
+                        button.btn.btn-sm.btn-primary.o_kanban_add Add
+                        button.btn.btn-sm.btn-default.o_kanban_cancel Discard
+                    #sortable1.connectedSortable(style='height:100%')
+                        .oe_kanban_color_0.oe_kanban_card.oe_kanban_global_click.oe_semantic_html_override.o_kanban_record.ui-sortable-handle
+                            .o_dropdown_kanban.dropdown
+                                a.dropdown-toggle.btn(data-toggle='dropdown', href='#')
+                                    span.fa.fa-bars.fa-lg
+                                ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
+                                    li
+                                        a.oe_kanban_action.oe_kanban_action_a(data-type='edit', href='#') Edit...
+                                    li
+                                        a.oe_kanban_action.oe_kanban_action_a(data-type='delete', href='#') Delete
+                                    li
+                                        ul.oe_kanban_colorpicker(data-field='color')
+                                            li
+                                                a.oe_kanban_color_0.colorbg(href='#', data-color='0')
+                                            li
+                                                a.oe_kanban_color_1.colorbg(href='#', data-color='1')
+                                            li
+                                                a.oe_kanban_color_2.colorbg(href='#', data-color='2')
+                                            li
+                                                a.oe_kanban_color_3.colorbg(href='#', data-color='3')
+                                            li
+                                                a.oe_kanban_color_4.colorbg(href='#', data-color='4')
+                                            li
+                                                a.oe_kanban_color_5.colorbg(href='#', data-color='5')
+                                            li
+                                                a.oe_kanban_color_6.colorbg(href='#', data-color='6')
+                                            li
+                                                a.oe_kanban_color_7.colorbg(href='#', data-color='7')
+                                            li
+                                                a.oe_kanban_color_8.colorbg(href='#', data-color='8')
+                                            li
+                                                a.oe_kanban_color_9.colorbg(href='#', data-color='9')
+                            .oe_kanban_content(tooltip='kanban-tooltip', data-original-title='', title='')
+                                div
+                                    b Some keys are not working
+                                    br
+                                    span(name='owner_user_id')
+                                        | Demo User
+                                        br
+                                    span.oe_grey
+                                        | HP Laptop/LP/303/28292090
+                                        br
+                                .oe_kanban_footer_left(style='margin-top:2px;')
+                                    span Computers
+                                .oe_kanban_bottom_right
+                                    img.oe_kanban_avatar.pull-right(width='24', height='24', src='http://192.168.25.104:8069/web/image?model=res.users&field=image_small&id=5&unique=20170408094906', title='Demo User')
+                                    .pull-left
+                                        .btn-group.o_kanban_selection
+                                            a(data-toggle='dropdown', href='#')
+                                                span.oe_kanban_status.oe_kanban_status_green
+                                            ul.dropdown-menu.state(role='menu')
+                                                li(data-value='normal')
+                                                    a(href='#')
+                                                        span.oe_kanban_status
+                                                        |                     In Progress
+                                                li(data-value='blocked')
+                                                    a(href='#')
+                                                        span.oe_kanban_status.oe_kanban_status_red
+                                                        |                     Blocked
+                                        .o_priority
+                                            fieldset.rating
+                                                input#star5(type='radio', name='rating', value='5')
+                                                label(for='star5', title='Rocks!') 5 stars
+                                                input#star4(type='radio', name='rating', value='4')
+                                                label(for='star4', title='Pretty good') 4 stars
+                                                input#star3(type='radio', name='rating', value='3')
+                                                label(for='star3', title='Meh') 3 stars
+                            .oe_clear
+                .o_column_quick_create#addnew
+                    .o_column_header
+                        span.o_kanban_add_column
+                            i.fa.fa-chevron-right
+                        span.o_kanban_title Add new Column
+                        .o_kanban_quick_create
+                            input(placeholder='Add', type='text')
+                            button.btn.btn-sm.btn-primary.o_kanban_add Add
+                            button.btn.btn-sm.btn-default.o_kanban_cancel Discard
+                .o_kanban_group#addshow(data-id='5', style='display:none')
+                    .o_kanban_header(data-delay='500', title='', data-original-title='<p>0 records</p>')
+                        span.o_column_title
+                    .o_kanban_quick_create
+                        input(placeholder='Add', type='text')
+                        br
+                        button.btn.btn-sm.btn-primary.o_kanban_add Add
+                        button.btn.btn-sm.btn-default.o_kanban_cancel#discard Discard
+
+
+

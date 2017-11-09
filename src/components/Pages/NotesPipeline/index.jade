@@ -1,0 +1,341 @@
+.pipeline.bg
+    dashconterller(v-bind:save='false',v-bind:heading="pipeline",v-bind:createbtn='true',v-bind:importbtn='false', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='false',v-bind:paginbtn2='false',v-bind:firstbtn='true',v-bind:secondbtn='true',v-bind:fifthbtn='true',v-bind:thirdbtn='true',v-bind:fourthbtn='true',v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true')
+    modal( v-bind:save='false',v-bind:heading="modalheading", v-bind:sheduaeactivity='true', v-bind:noactivity='true')
+        ScheduleanActivity
+    .o_content(style='margin-left:-24px')
+        .o_view_manager_content
+            .o_kanban_view.o_kanban_small_column.o_opportunity_kanban.o_kanban_grouped.connectedSortable(style='display: flex;height: 91vh;')
+                .o_kanban_group(data-id='1')
+                    .o_kanban_header(data-delay='500', title='', data-original-title='<p>1 records</p>')
+                        span.o_column_title Later
+                        span.o_column_unfold
+                            i.fa.fa-arrows-h
+                        span.o_kanban_config.dropdown
+                            a.dropdown-toggle(data-toggle='dropdown', href='#')
+                                i.fa.fa-gear
+                            ul.dropdown-menu.memu-p(role='menu')
+                                li
+                                    a.o_kanban_toggle_fold(href='#') Fold
+                                li
+                                    a.o_column_edit(href='#') Edit Stage
+                                li
+                                    a.o_column_delete(href='#') Delete
+                                li
+                                    a.o_column_archive(href='#') Archive Records
+                                li
+                                    a.o_column_unarchive(href='#') Restore Records
+                        span.o_kanban_quick_add
+                            i.fa.fa-plus#click
+                    .o_kanban_quick_create#opencreate(style='display:none')
+                        input(placeholder='Add', type='text')
+                        button.btn.btn-sm.btn-primary.o_kanban_add Add
+                        button.btn.btn-sm.btn-default.o_kanban_cancel Discard
+                    #sortable1.connectedSortable(style='min-height:50%')
+                        .oe_kanban_color_0.oe_kanban_global_click.o_kanban_record
+                            .o_dropdown_kanban.dropdown
+                                a.dropdown-toggle.btn(data-toggle='dropdown', href='#')
+                                    span.fa.fa-bars.fa-lg
+                                ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
+                                    li.memu-p
+                                        a.oe_kanban_action.oe_kanban_action_a(data-type='edit', href='#') Edit
+                                    li.memu-p
+                                        a.oe_kanban_action.oe_kanban_action_a(data-type='delete', href='#') Delete
+                                    li.memu-p
+                                        a.oe_kanban_action.oe_kanban_action_a(data-name='action_set_unactive', data-type='object', href='#') Archive
+                                    li
+                                        ul.oe_kanban_colorpicker(data-field='color')
+                                            li
+                                                a.oe_kanban_color_0.colorbg(href='#', data-color='0')
+                                            li
+                                                a.oe_kanban_color_1.colorbg(href='#', data-color='1')
+                                            li
+                                                a.oe_kanban_color_2.colorbg(href='#', data-color='2')
+                                            li
+                                                a.oe_kanban_color_3.colorbg(href='#', data-color='3')
+                                            li
+                                                a.oe_kanban_color_4.colorbg(href='#', data-color='4')
+                                            li
+                                                a.oe_kanban_color_5.colorbg(href='#', data-color='5')
+                                            li
+                                                a.oe_kanban_color_6.colorbg(href='#', data-color='6')
+                                            li
+                                                a.oe_kanban_color_7.colorbg(href='#', data-color='7')
+                                            li
+                                                a.oe_kanban_color_8.colorbg(href='#', data-color='8')
+                                            li
+                                                a.oe_kanban_color_9.colorbg(href='#', data-color='9')
+
+                            router-link(to='notespipelinecreate')
+                                .oe_kanban_content
+                                    div
+                                        .oe_form_field.o_form_field_many2manytags.o_kanban_tags(name='tag_ids', can_create='true', can_write='true', modifiers='{}')
+                                    div(style='margin-top: 20px;')
+                                        span
+                                            a.oe_kanban_action.oe_kanban_action_a(data-name='action_close', data-type='object', href='#')
+                                                i.fa.fa-check
+                                        span.oe_kanban_content
+                                            | Read some documentation about Odoo before diving into the code
+
+                                    .text-muted
+                                    .o_kanban_footer
+                                        .o_priority
+                                            fieldset.rating
+                            div.modalopen
+                                .o_kanban_inline_block
+                                img.oe_kanban_avatar(width='24', height='24', src='http://192.168.25.104:8069/web/image?model=res.users&field=image_small&id=1&unique=20170313113712', title='hassan')
+                            .oe_clear
+                .o_kanban_group(data-id='1')
+                    .o_kanban_header(data-delay='500', title='', data-original-title='<p>1 records</p>')
+                        span.o_column_title Today
+                        span.o_column_unfold
+                            i.fa.fa-arrows-h
+                        span.o_kanban_config.dropdown
+                            a.dropdown-toggle(data-toggle='dropdown', href='#')
+                                i.fa.fa-gear
+                            ul.dropdown-menu.memu-p(role='menu')
+                                li
+                                    a.o_kanban_toggle_fold(href='#') Fold
+                                li
+                                    a.o_column_edit(href='#') Edit Stage
+                                li
+                                    a.o_column_delete(href='#') Delete
+                                li
+                                    a.o_column_archive(href='#') Archive Records
+                                li
+                                    a.o_column_unarchive(href='#') Restore Records
+                        span.o_kanban_quick_add
+                            i.fa.fa-plus#click
+                    .o_kanban_quick_create#opencreate1(style='display:none')
+                        input(placeholder='Add', type='text')
+                        button.btn.btn-sm.btn-primary.o_kanban_add Add
+                        button.btn.btn-sm.btn-default.o_kanban_cancel Discard
+                    #sortable1.connectedSortable(style='min-height:50%')
+                        .oe_kanban_color_0.oe_kanban_global_click.o_kanban_record
+                            .o_dropdown_kanban.dropdown
+                                a.dropdown-toggle.btn(data-toggle='dropdown', href='#')
+                                    span.fa.fa-bars.fa-lg
+                                ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
+                                    li.memu-p
+                                        a.oe_kanban_action.oe_kanban_action_a(data-type='edit', href='#') Edit
+                                    li.memu-p
+                                        a.oe_kanban_action.oe_kanban_action_a(data-type='delete', href='#') Delete
+                                    li.memu-p
+                                        a.oe_kanban_action.oe_kanban_action_a(data-name='action_set_unactive', data-type='object', href='#') Archive
+                                    li
+                                        ul.oe_kanban_colorpicker(data-field='color')
+                                            li
+                                                a.oe_kanban_color_0.colorbg(href='#', data-color='0')
+                                            li
+                                                a.oe_kanban_color_1.colorbg(href='#', data-color='1')
+                                            li
+                                                a.oe_kanban_color_2.colorbg(href='#', data-color='2')
+                                            li
+                                                a.oe_kanban_color_3.colorbg(href='#', data-color='3')
+                                            li
+                                                a.oe_kanban_color_4.colorbg(href='#', data-color='4')
+                                            li
+                                                a.oe_kanban_color_5.colorbg(href='#', data-color='5')
+                                            li
+                                                a.oe_kanban_color_6.colorbg(href='#', data-color='6')
+                                            li
+                                                a.oe_kanban_color_7.colorbg(href='#', data-color='7')
+                                            li
+                                                a.oe_kanban_color_8.colorbg(href='#', data-color='8')
+                                            li
+                                                a.oe_kanban_color_9.colorbg(href='#', data-color='9')
+
+                            router-link(to='notespipelinecreate')
+                                .oe_kanban_content
+                                    div
+                                        .oe_form_field.o_form_field_many2manytags.o_kanban_tags(name='tag_ids', can_create='true', can_write='true', modifiers='{}')
+                                    div(style='margin-top: 20px;')
+                                        span
+                                            a.oe_kanban_action.oe_kanban_action_a(data-name='action_close', data-type='object', href='#')
+                                                i.fa.fa-check
+                                        span.oe_kanban_content
+                                            | Read some documentation about Odoo before diving into the code
+
+                                    .text-muted
+                                    .o_kanban_footer
+                                        .o_priority
+                                            fieldset.rating
+                            div.modalopen
+                                .o_kanban_inline_block
+                                img.oe_kanban_avatar(width='24', height='24', src='http://192.168.25.104:8069/web/image?model=res.users&field=image_small&id=1&unique=20170313113712', title='hassan')
+                            .oe_clear
+                .o_kanban_group(data-id='1')
+                    .o_kanban_header(data-delay='500', title='', data-original-title='<p>1 records</p>')
+                        span.o_column_title This Week
+                        span.o_column_unfold
+                            i.fa.fa-arrows-h
+                        span.o_kanban_config.dropdown
+                            a.dropdown-toggle(data-toggle='dropdown', href='#')
+                                i.fa.fa-gear
+                            ul.dropdown-menu.memu-p(role='menu')
+                                li
+                                    a.o_kanban_toggle_fold(href='#') Fold
+                                li
+                                    a.o_column_edit(href='#') Edit Stage
+                                li
+                                    a.o_column_delete(href='#') Delete
+                                li
+                                    a.o_column_archive(href='#') Archive Records
+                                li
+                                    a.o_column_unarchive(href='#') Restore Records
+                        span.o_kanban_quick_add
+                            i.fa.fa-plus#click
+                    .o_kanban_quick_create#opencreate2(style='display:none')
+                        input(placeholder='Add', type='text')
+                        button.btn.btn-sm.btn-primary.o_kanban_add Add
+                        button.btn.btn-sm.btn-default.o_kanban_cancel Discard
+                    #sortable1.connectedSortable(style='min-height:50%')
+                        .oe_kanban_color_0.oe_kanban_global_click.o_kanban_record
+                            .o_dropdown_kanban.dropdown
+                                a.dropdown-toggle.btn(data-toggle='dropdown', href='#')
+                                    span.fa.fa-bars.fa-lg
+                                ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
+                                    li.memu-p
+                                        a.oe_kanban_action.oe_kanban_action_a(data-type='edit', href='#') Edit
+                                    li.memu-p
+                                        a.oe_kanban_action.oe_kanban_action_a(data-type='delete', href='#') Delete
+                                    li.memu-p
+                                        a.oe_kanban_action.oe_kanban_action_a(data-name='action_set_unactive', data-type='object', href='#') Archive
+                                    li
+                                        ul.oe_kanban_colorpicker(data-field='color')
+                                            li
+                                                a.oe_kanban_color_0.colorbg(href='#', data-color='0')
+                                            li
+                                                a.oe_kanban_color_1.colorbg(href='#', data-color='1')
+                                            li
+                                                a.oe_kanban_color_2.colorbg(href='#', data-color='2')
+                                            li
+                                                a.oe_kanban_color_3.colorbg(href='#', data-color='3')
+                                            li
+                                                a.oe_kanban_color_4.colorbg(href='#', data-color='4')
+                                            li
+                                                a.oe_kanban_color_5.colorbg(href='#', data-color='5')
+                                            li
+                                                a.oe_kanban_color_6.colorbg(href='#', data-color='6')
+                                            li
+                                                a.oe_kanban_color_7.colorbg(href='#', data-color='7')
+                                            li
+                                                a.oe_kanban_color_8.colorbg(href='#', data-color='8')
+                                            li
+                                                a.oe_kanban_color_9.colorbg(href='#', data-color='9')
+
+                            router-link(to='notespipelinecreate')
+                                .oe_kanban_content
+                                    div
+                                        .oe_form_field.o_form_field_many2manytags.o_kanban_tags(name='tag_ids', can_create='true', can_write='true', modifiers='{}')
+                                    div(style='margin-top: 20px;')
+                                        span
+                                            a.oe_kanban_action.oe_kanban_action_a(data-name='action_close', data-type='object', href='#')
+                                                i.fa.fa-check
+                                        span.oe_kanban_content
+                                            | Read some documentation about Odoo before diving into the code
+
+                                    .text-muted
+                                    .o_kanban_footer
+                                        .o_priority
+                                            fieldset.rating
+                            div.modalopen
+                                .o_kanban_inline_block
+                                img.oe_kanban_avatar(width='24', height='24', src='http://192.168.25.104:8069/web/image?model=res.users&field=image_small&id=1&unique=20170313113712', title='hassan')
+                            .oe_clear
+                .o_kanban_group(data-id='1')
+                    .o_kanban_header(data-delay='500', title='', data-original-title='<p>1 records</p>')
+                        span.o_column_title New Month
+                        span.o_column_unfold
+                            i.fa.fa-arrows-h
+                        span.o_kanban_config.dropdown
+                            a.dropdown-toggle(data-toggle='dropdown', href='#')
+                                i.fa.fa-gear
+                            ul.dropdown-menu.memu-p(role='menu')
+                                li
+                                    a.o_kanban_toggle_fold(href='#') Fold
+                                li
+                                    a.o_column_edit(href='#') Edit Stage
+                                li
+                                    a.o_column_delete(href='#') Delete
+                                li
+                                    a.o_column_archive(href='#') Archive Records
+                                li
+                                    a.o_column_unarchive(href='#') Restore Records
+                        span.o_kanban_quick_add
+                            i.fa.fa-plus#click
+                    .o_kanban_quick_create#opencreate3(style='display:none')
+                        input(placeholder='Add', type='text')
+                        button.btn.btn-sm.btn-primary.o_kanban_add Add
+                        button.btn.btn-sm.btn-default.o_kanban_cancel Discard
+                    #sortable1.connectedSortable(style='min-height:50%')
+                        .oe_kanban_color_0.oe_kanban_global_click.o_kanban_record
+                            .o_dropdown_kanban.dropdown
+                                a.dropdown-toggle.btn(data-toggle='dropdown', href='#')
+                                    span.fa.fa-bars.fa-lg
+                                ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
+                                    li.memu-p
+                                        a.oe_kanban_action.oe_kanban_action_a(data-type='edit', href='#') Edit
+                                    li.memu-p
+                                        a.oe_kanban_action.oe_kanban_action_a(data-type='delete', href='#') Delete
+                                    li.memu-p
+                                        a.oe_kanban_action.oe_kanban_action_a(data-name='action_set_unactive', data-type='object', href='#') Archive
+                                    li
+                                        ul.oe_kanban_colorpicker(data-field='color')
+                                            li
+                                                a.oe_kanban_color_0.colorbg(href='#', data-color='0')
+                                            li
+                                                a.oe_kanban_color_1.colorbg(href='#', data-color='1')
+                                            li
+                                                a.oe_kanban_color_2.colorbg(href='#', data-color='2')
+                                            li
+                                                a.oe_kanban_color_3.colorbg(href='#', data-color='3')
+                                            li
+                                                a.oe_kanban_color_4.colorbg(href='#', data-color='4')
+                                            li
+                                                a.oe_kanban_color_5.colorbg(href='#', data-color='5')
+                                            li
+                                                a.oe_kanban_color_6.colorbg(href='#', data-color='6')
+                                            li
+                                                a.oe_kanban_color_7.colorbg(href='#', data-color='7')
+                                            li
+                                                a.oe_kanban_color_8.colorbg(href='#', data-color='8')
+                                            li
+                                                a.oe_kanban_color_9.colorbg(href='#', data-color='9')
+
+                            router-link(to='notespipelinecreate')
+                                .oe_kanban_content
+                                    div
+                                        .oe_form_field.o_form_field_many2manytags.o_kanban_tags(name='tag_ids', can_create='true', can_write='true', modifiers='{}')
+                                    div(style='margin-top: 20px;')
+                                        span
+                                            a.oe_kanban_action.oe_kanban_action_a(data-name='action_close', data-type='object', href='#')
+                                                i.fa.fa-check
+                                        span.oe_kanban_content
+
+
+                                    .text-muted
+                                    .o_kanban_footer
+                                        .o_priority
+                                            fieldset.rating
+                            div.modalopen
+                                .o_kanban_inline_block
+                                img.oe_kanban_avatar(width='24', height='24', src='http://192.168.25.104:8069/web/image?model=res.users&field=image_small&id=1&unique=20170313113712', title='hassan')
+                            .oe_clear
+                .o_column_quick_create#addnew
+                    .o_column_header
+                        span.o_kanban_add_column
+                            i.fa.fa-chevron-right
+                        span.o_kanban_title Add new Column
+                        .o_kanban_quick_create
+                            input(placeholder='Add', type='text')
+                            button.btn.btn-sm.btn-primary.o_kanban_add Add
+                            button.btn.btn-sm.btn-default.o_kanban_cancel Discard
+                .o_kanban_group#addshow(data-id='5', style='display:none')
+                    .o_kanban_header(data-delay='500', title='', data-original-title='<p>0 records</p>')
+                        span.o_column_title
+                    .o_kanban_quick_create
+                        input(placeholder='Add', type='text')
+                        br
+                        button.btn.btn-sm.btn-primary.o_kanban_add Add
+                        button.btn.btn-sm.btn-default.o_kanban_cancel#discard Discard
+

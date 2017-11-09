@@ -1,0 +1,55 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Title
+        link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/samoform.css')
+        style.
+            body{
+            }
+            .centered-form{
+                margin-top: 192px;
+                margin-left: 600px;
+            }
+            .bgl
+            {
+                width: 100%;
+                height: 100%;
+            }
+            .centered-form .panel{
+                background: rgba(255, 255, 255, 0.8);
+                box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+            }
+
+            /* These are just a test styles - you don't need them in your project */
+    body
+        .container
+            .row(style='margin-left: 294px;margin-top: 147px;')
+                // Card Projects
+                .col-md-6.col-md-offset-4.divmain
+                    .card.signincard(style='border-color: white;')
+                        .signindiv5
+                            img.signinimg(src='/images/sprout_4splash.png')
+                        .signindiv1.col-md-offset-1
+                            p.signP1
+                                | Access and manage your instances from this Sprout account.
+                        .card-content(style='    border-top: 1px solid rgba(0, 0, 0, 0.17);')
+                            form(method='post' action='/signin')
+                                .form-group(style='margin-bottom: 0px')
+                                    label(for='email') Email address:
+                                    input#email.form-control(type='email' name='email')
+                                .form-group
+                                    label(for='pwd') Password:
+                                    input#pwd.form-control(type='password' name='password')
+                                .signindiv2
+                                    p.signinp4 Reset Password
+                                    a(href='signup')
+                                        p.signinp3 Sign up
+                                button.btn.btn-success.signinbtn(type='submit', style='background: #4aabae;') SIGN IN
+
+
+
+
+
+

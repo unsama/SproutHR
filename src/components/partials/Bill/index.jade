@@ -1,0 +1,63 @@
+.container-fluid
+    button.btn.btn-primary(data-toggle='modal', data-target='.bd-example-modal-lg') Large modal
+    .modal.fade.bd-example-modal-lg(tabindex='-1', role='dialog', aria-labelledby='myLargeModalLabel', aria-hidden='true')
+        .modal-dialog.modal-lg
+            .modal-content(style='width: 109%;')
+                .modal-header
+                    h5 Open: Invoice Lines
+                    button.close(type='button', data-dismiss='modal') ×
+                .modal-body
+
+                        .row
+                            .col-md-3
+
+                                .one
+                                    label(style='font-size:13px;padding-right:25px;font-weight:bold;')
+                                        | Product			            	Quantity
+                                    br
+
+                                    label(style='font-size:13px;font-weight:bold;')
+                                        | Unit Price
+                                    br
+
+                            .col-md-3
+
+
+                                    label(style='font-size:13px;')
+                                        | 1.000
+                                    br
+                                    label(style='font-size:13px;')
+                                        | 4,999.99
+                                    br
+                            .col-md-3
+
+                                .one
+                                    label(style='font-size:13px;padding-right:25px;font-weight:bold;')
+                                        | Purchase Order		Account
+                                    br
+                                    label(style='font-size:13px;font-weight:bold;')
+                                        | Taxes
+                                    br
+                                    label(style='font-size:13px;font-weight:bold;')
+                                        | Company
+                                    br
+
+                            .col-md-3
+
+                                a.o_form_uri.o_form_field.o_form_required(href='#') 211000 Foreign Exchange Loss
+                                br
+                                span.badge.badge-default(style='background-color:darkgrey !important;') Tax 15.00%
+
+                                br
+                                a.o_form_uri.o_form_field.o_form_required(href='#') Alupak Industriess
+                                br
+                        label(style='font-size:13px;padding-right:25px;font-weight:bold;')
+                            | Description
+                        p(style='background-color:#D2D2FF; ') Coffee Machine with huge 'employee's performances boosting perk'
+
+
+                .modal-footer
+                    button.btn.btn-primary.samobuttopcontroller1(type='button',data-dismiss='modal') Close
+
+
+

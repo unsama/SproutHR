@@ -1,0 +1,106 @@
+.Product_inner_Edit
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:num1='false',v-bind:num2='false',v1-bind:paginbtn1='true',v1-bind:paginbtn2='true',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false',v-bind:dropdownbtn1='false',v-bind:dropdownbtn2='false',v-bind:dropdownbtn3='false',v-bind:actionbtn='false',v-bind:Attachmentbtn='false',v-bind:printbtn='false')
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_editable.oe_form_dirty
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_106')
+                                                | Stage Name
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_106.o_form_input.o_form_field.o_form_required(type='text')
+                                            button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_107', data-original-title='', title='')
+                                                | Email Template
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_107.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_108', data-original-title='', title='')
+                                                | Folded in Kanban
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_checkbox.o_form_field_boolean.o_form_field
+                                                input#o_field_input_108(type='checkbox', name='fold')
+                                                span
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible
+                                                | Projects
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2manytags.o_form_field.o_form_invisible
+                                                .o_form_field_many2one.o_form_field.o_form_invisible
+                                                    .o_form_input_dropdown
+                                                        input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible(for='o_field_input_110')
+                                                | Sequence
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_110.o_form_input.o_form_field.o_form_invisible.o_form_field_number(type='text')
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td(colspan='2', style='width: 100%;')
+                                        .o_horizontal_separator
+                                            | Stage Description and Tooltips
+                                tr
+                                    td(colspan='2', style='width: 100%;')
+                                        p.text-muted(colspan='2')
+                                            | At each stage employees can block or make task/issue ready for next stage.
+                                            | You can define here labels that will be displayed for the state instead
+                                            | of the default labels.
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        span.spancircles1
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_111.o_form_input.o_form_field(type='text')
+                                        button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        span.spancircles2
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_112.o_form_input.o_form_field(type='text')
+                                        button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        span.spancircles3
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_113.o_form_input.o_form_field(type='text')
+                                        button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                tr
+                                    td(colspan='2', style='width: 100%;')
+                                        p.text-muted(colspan='2')
+                                            | You can also give a tooltip about the use of the stars available in the kanban and form views.
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help.fa.fa-star.fa-lg.o_star_on.oe_project_kanban_legend(for='o_field_input_114', data-original-title='', title='')
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_114.o_form_input.o_form_field(type='text')
+                                        button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                tr
+                                    td(colspan='2', style='width: 100%;')
+                                        p.text-muted(colspan='2')
+                                            | You can also add a description to help your coworkers understand the meaning and purpose of the stage.
+                                tr
+                                    td(colspan='2', style='width: 100%;')
+                                        textarea.o_form_textarea.o_form_field(rows='6', name='description', placeholder='Add a description...', style='height: 50px; margin: 0px 0px 5px; width: 826px;')
+                                        button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                        textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 826px;')
+
+
+
+

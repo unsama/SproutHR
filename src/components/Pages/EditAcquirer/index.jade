@@ -1,0 +1,143 @@
+.Vendormenu
+    DashboardController(v-bind:savedbtn='true',v-bind:heading="head",v-bind:discardbtn='true',v-bind:links="btnlinks", v-bind:num1='true', v-bind:num2='true')
+    .o_content(style='margin-left: -15px;margin-right: -15px;')
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .row
+                            .col-sm-2
+                                .img
+                                    img.img-responsive(style='width:92px;height:86px;float:left;')(src='/images/paypal.png')
+                            .col-sm-3.samocol4(style='margin-left: -34px;')
+                                input#o_field_input_213.o_form_input.o_form_field(style='background-color: #D2D2FF; height: 60%; width: 183%; font-weight:bold; font-size: 173%;')(value='Paypal' type='text')
+
+
+                            .col-sm-3.samohascol3
+                                .oe_button_box(name='button_box')
+
+                                    button.btn.btn-sm.oe_stat_button(type='button', style='')
+                                        .fa.fa-fw.fa-stop.o_button_icon.sale
+                                        .o_form_field.o_stat_info
+                                            span.o_stat_value(style='color:orange;')
+                                                | Test
+                                                span.o_stat_text(style='color:black;') Environment
+                                                .oe_button_box(name='button_box')
+                                    button.btn.btn-sm.oe_stat_button(type='button', style='')
+                                        .fa.fa-fw.fa-money.o_button_icon.trace
+                                        .o_form_field.o_stat_info.trace_text
+                                            span.o_stat_value(style='color:black;') Payments
+
+                        table.o_group.o_inner_group
+                            tbody
+
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label(style='font-size: 0.9rem; ')
+                                            | Company
+                                    td.two(colspan='1', style='width: 100%;')
+                                        select#o_field_input_176.o_form_input.o_form_field(style='font-size:0.9rem; width: 40%; background-color:#D2D2FF;')(name='format')
+                                            option(value='true') Alupak Industriess
+                                            option(value='') My Company;wojjfp;ofo, Chicago
+
+
+
+                        .o_notebook(style='margin-top: 10px;')
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile1', role='tab', data-toggle='tab') Credentials
+                                li.nav-item
+                                    a.nav-link(href='#profile2', role='tab', data-toggle='tab') Messages
+                                li.nav-item
+                                    a.nav-link(href='#profile3', role='tab', data-toggle='tab') Configurations
+
+                            .tab-content
+                                #profile1.tab-pane.fade.in.active(role='tabpanel')
+                                    table.o_group.o_inner_group
+                                        tbody
+
+                                            tr
+                                                td.o_td_label.one(colspan='1')
+                                                    label.o_form_label(style='font-size: 0.9rem; ')
+                                                        | Paypal Email ID
+                                                td.two(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_213.o_form_input.o_form_field(style='font-size: 0.9rem; ')(value='mavia@ziprelay.com' type='text')
+
+
+                                            tr
+                                                td.o_td_label.one(colspan='1')
+                                                    label.o_form_label(style='font-size: 0.9rem; ')
+                                                        | Paypal Merchant ID
+                                                td.two(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_213.o_form_input.o_form_field(style='font-size: 0.9rem; ')(value='mavia@ziprelay.com' type='text')
+
+                                            tr
+                                                td.o_td_label.one(colspan='1')
+                                                    label.o_form_label(style='font-size: 0.9rem; ')
+                                                        | Use IPN
+                                                td.two(colspan='1', style='width: 100%;')
+                                                    .o_checkbox
+                                                        input(type='checkbox')
+                                                        span
+
+                                    a.o_form_uri.o_form_field.o_form_required(href='https://www.odoo.com/documentation/user/10.0/ecommerce/shopper_experience/paypal.html')(style='font-size: 0.9rem; ') How to configure your paypal account?
+
+
+
+                                #profile2.tab-pane.fade.in(role='tabpanel')
+
+                                #profile3.tab-pane.fade.in(role='tabpanel')
+                                    table.o_group.o_inner_group
+                                        tbody
+
+                                            tr
+                                                td.o_td_label.one(colspan='1')
+                                                    label.o_form_label(style='font-size: 0.9rem; ')
+                                                        | Order Confirmation
+                                                td.two(colspan='1', style='width: 100%; font-size: 0.9rem; ')
+                                                    .o_form_field_radio.o_vertical.o_form_field
+                                                        .o_radio_item
+                                                            input#radio4110.o_form_radio(type='radio', name='radio41', value='01')
+                                                            label.o_form_label(for='radio41_0')
+                                                                | No automatic confirmation
+                                                        .o_radio_item
+                                                            input#radio411.o_form_radio(type='radio', name='radio41', value='02')
+                                                            label.o_form_label(for='radio41_1') Authorize the amount and confirm the SO on acquirer confirmation (capture manually)
+
+                                                        .o_radio_item
+                                                            input#radio410.o_form_radio(type='radio', name='radio41', value='03')
+                                                            label.o_form_label(for='radio41_0')
+                                                                | Authorize & capture the amount and confirm the SO on acquirer confirmation
+
+                                                        .o_radio_item
+                                                            input#radio41.o_form_radio(type='radio', name='radio41', value='10')
+                                                            label.o_form_label(for='radio41_1') Authorize & capture the amount, confirm the SO and auto-validate the invoice on acquirer confirmation
+                                            tr.ty
+                                                td.o_td_label.one#td1(colspan='1')
+                                                    label.o_form_label(style='font-size: 0.9rem; ')
+                                                        | Payment Journal
+                                                td.two#td2(colspan='1', style='width: 100%; font-size: 0.9rem; ')
+                                                    .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                        .o_form_input_dropdown(style='')
+                                                            select#o_field_input_17.o_form_input.o_form_field(style='width: 93%;')(name='format')
+                                                                option(value='true')
+                                                                option(value='') Miscellaneous Operations (EUR)
+                                                                option(value='') Bank (EUR)
+                                                                option(value='') Customer Invoices (EUR)
+
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(style='background-color: transparent; !important')(data-toggle='modal', data-target='#exampleModal')(draggable='false', tabindex='-1', type='button')
+
+
+                                    table.o_group.o_inner_group
+                                        tbody
+
+                                            tr
+                                                td.o_td_label.one(colspan='1')
+                                                    label.o_form_label(style='font-size: 0.9rem; ')
+                                                        | Add Extra Fees
+                                                td.two(colspan='1', style='width: 100%; font-size: 0.9rem; ')
+                                                    .o_checkbox
+                                                        input#box(type='checkbox')
+                                                        span
+
+

@@ -1,0 +1,173 @@
+.configtaxes
+    DashboardController(v-bind:createbtn='true', v-bind:editbtn='true', v-bind:links='btnlinks', v-bind:num1='true', v-bind:heading='head', v-bind:num2='true', v-bind:attachmentbtn='true', v-bind:actionbtn='true' )
+    .o_content.samocontent#tax1(style='margin-left: -15px;margin-right: -15px;')
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .col-xs-12.tax(style='padding-top: 40px;')
+                            .row
+                                .col-xs-3.request_inner3(style='font-weight: bold;')
+                                    .one
+                                        label(style='font-size:15px;padding-right:25px; ')
+                                            | Tax Name
+
+                                .col-xs-4.osahass(style='')
+                                    .two
+
+                                            label(style='font-size:13px;')
+                                                | Tax 15.00%
+
+                                .col-xs-3.request_inner2(style='font-weight: bold;')
+                                    .one
+                                        label(style='font-size:15px;padding-right:25px;')
+                                            | Tax Scope
+
+                                .col-xs-2.osahass(style='')
+                                    .two
+                                        label(style='font-size:13px;')
+                                            | Purchases
+
+                        .o_notebook
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Definition
+                                li.nav-item
+                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') Advanced Option
+                            // Tab panes
+                            .tab-content
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+                                    .o_group
+                                        .col-xs-12.request_inner1
+                                            .row
+                                                .col-xs-3.request_inner3(style='font-weight: bold;')
+                                                    .one
+                                                        label(style='font-size:15px;padding-right:25px;')
+                                                            | Tax Computation
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Amount
+                                                        br
+
+
+                                                .col-xs-4.osahass(style='')
+                                                    .two
+                                                        label(style='font-size:13px;')
+                                                            | Percentage of Price
+                                                        br
+                                                        label(style='font-size:13px;')
+                                                            | 15.0000 %
+
+                                                .col-xs-3.request_inner2(style='font-weight: bold;')
+                                                    .one
+                                                        label(style='font-size:15px;padding-right:25px;')
+                                                            |Tax Account
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Tax Account on Refunds
+                                                        br
+
+
+
+                                                .col-xs-2.osahass(style='')
+                                                    .two
+                                                        label(style='font-size:13px;')
+                                                            | 101300 Tax Paid
+                                                        br
+                                                        label(style='font-size:13px;')
+                                                            | 101300 Tax Paid
+
+
+
+
+
+                                #buzz.tab-pane.fade.in(role='tabpanel')
+                                    .o_group
+                                        .col-xs-12.request_inner1
+                                            .row
+                                                .col-xs-3.request_inner3(style='font-weight: bold;')
+                                                    .one
+                                                        label(style='font-size:15px;padding-right:25px;')
+                                                            | Label on Invoices
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Tax Group
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Tags
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Company
+                                                        br
+
+
+                                                .col-xs-4.osahass(style='')
+                                                    .two
+                                                        label(style='font-size:13px;')
+                                                            | 15.00%
+                                                        br
+                                                        a.o_form_uri.o_form_field.o_form_required#clk(href='http://192.168.25.104:8040/#/app/accounting/taxes') Taxes
+                                                        br
+                                                        label(style='font-size:13px;')
+
+                                                        br
+                                                        a.o_form_uri.o_form_field.o_form_required(href='#') Alupak Industries
+                                                        br
+
+                                                .col-xs-3.request_inner2(style='font-weight: bold;')
+                                                    .one
+                                                        label(style='font-size:15px;padding-right:25px;')
+                                                            | Included in Price
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Affect Base of Subsequent Taxes
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Tax adjustment
+                                                        br
+
+
+
+                                                .col-xs-2.osahass(style='')
+                                                    .two
+                                                        label(style='font-size:13px;')
+                                                            .o_form_field.o_form_field_boolean.oe_inline
+                                                                .o_checkbox.o_form_field_boolean
+                                                                    input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                                        br
+                                                        label(style='font-size:13px;')
+                                                            .o_form_field.o_form_field_boolean.oe_inline
+                                                                .o_checkbox.o_form_field_boolean
+                                                                    input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                                        br
+                                                        .o_form_field.o_form_field_boolean.oe_inline
+                                                            .o_checkbox.o_form_field_boolean(style='margin-top: 18px;')
+                                                                input#o_field_input_10(type='checkbox', name='module_website_sign')
+
+    .o_content.samocontent#tax2
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .col-xs-12.tax(style='padding-top: 40px;')
+                            .row
+                                .col-xs-3.request_inner3(style='font-weight: bold;')
+                                    .one
+                                        label(style='font-size:15px;padding-right:25px;')
+                                            | Name
+
+                                .col-xs-4.osahass(style='')
+                                    .two
+
+                                        label(style='font-size:13px;')
+                                            | Taxes
+
+                                .col-xs-3.request_inner2(style='font-weight: bold;')
+                                    .one
+                                        label(style='font-size:15px;padding-right:25px;')
+                                            | Sequence
+
+                                .col-xs-2.osahass(style='')
+                                    .two
+                                        label(style='font-size:13px;')
+                                            | 0

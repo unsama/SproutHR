@@ -1,0 +1,212 @@
+.container-fluid(style='margin-left: -15px;margin-right: -15px;')
+    .dashboardsetting
+        .row
+            .col-sm-12.main.samodashcont1
+                .col-sm-6.samodashheadingmain
+                    h4.samodashheading Sales to Invoice
+                .col-sm-6.samodashsearch
+                    .input-group#serch_hide
+                        input.form-control(type='text', placeholder='Search')
+                        .input-group-btn.samodashinputbutt
+                            button.btn.btn-default.samosearchicon(type='submit')
+                                i.searchview_more.fa.fa-search-plus
+                .row
+                    .col-sm-6.dashcontrollerbutton
+                        button.btn.btn-primary.samobuttopcontroller1#hasS(type='button', href='users')
+                            | Edit
+                        button.btn.btn-primary.samobuttopcontroller1#save(type='button', href='users', style='display: none')
+                            | Save
+                        //button.btn.btn-default.samobuttopcontroller#hasHafdide(type='button', href='#home')
+                        //    | Discard
+                        button.btn.btn-secondary.samobuttopcontrollerusa#hasHide(type='button') Discard
+                        //button.btn.btn-primary.samobuttopcontroller#hasS(type='button', href='users')
+                        //    | Edit
+                        //button.btn.btn-default.samobuttopcontroller2#hasHide(type='button', href='#home')
+                        //    | Discard
+                    .col-sm-6.samodashcorner
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-filter.iconbutton
+                                | filters
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Action
+                                a.dropdown-item(href='#') Another action
+                                a.dropdown-item(href='#') Something else here
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-bars.iconbutton
+                                | Group By
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Action
+                                a.dropdown-item(href='#') Another action
+                                a.dropdown-item(href='#') Something else here
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-star.iconbutton
+                                | Favourite
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Action
+                                a.dropdown-item(href='#') Another action
+                                a.dropdown-item(href='#') Something else here
+                        div(style='float:right;')
+                            span.o_pager_value 1-24
+                                |  /
+                                span.o_pager_limit 24
+                                span.btn-group.btn-group-sm
+                                    button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p', disabled='')
+                                    button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n', disabled='')
+                                    .col-xs-1
+                                        //.btn-group.btn-group-sm.o_cp_switch_buttons.samodashbuttcorner
+                                        //    button(data-toggle='tab', href='#home').btn.btn-icon.fa.fa-lg.fa-th-large.o_cp_switch_kanban.active(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button' accesskey='k', data-view-type='kanban', title='', data-original-title='Kanban')
+                                        //    button(data-toggle='tab', href='#menu1').btn.btn-icon.fa.fa-lg.fa-list-ul.o_cp_switch_list(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button', accesskey='l', data-view-type='list', title='', data-original-title='List')
+                                        //    button(data-toggle='tab', href='#home').btn.btn-icon.fa.fa-lg.fa-table.o_cp_switch_pivot(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button' accesskey='k', data-view-type='kanban', title='', data-original-title='Kanban')
+                                        //    button(data-toggle='tab', href='#menu1').btn.btn-icon.fa.fa-lg.fa-bar-chart.o_cp_switch_graph(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button', accesskey='l', data-view-type='list', title='', data-original-title='List')
+                                        //    router-link.links(to='app/purchase/Calendar')
+                                        //        button(data-toggle='tab', href='').btn.btn-icon.fa.fa-lg.fa-calendar.o_cp_switch_calendar(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button' accesskey='k', data-view-type='kanban', title='', data-original-title='Kanban')
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_nosheet.o_form_readonly#hasH
+                span.o_form_field.o_form_invisible res.partner
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_1091')
+                                    | Template Name
+                            td(colspan='1', style='width: 100%;')
+                                span.o_form_field.o_form_required Partner Review
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_1092')
+                                    | Active
+                            td(colspan='1', style='width: 100%;')
+                                .o_checkbox.o_form_field_boolean.o_form_field
+                                    input#o_field_input_1092(type='checkbox', name='active', disabled='')
+                                    span
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_1093')
+                                    | Model
+                            td(colspan='1', style='width: 100%;')
+                                router-link.o_form_uri.o_form_field.o_form_required(to='/app/partner') Partner
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_1094')
+                                    | Filter
+                            td(colspan='1', style='width: 100%;')
+                                div
+                                    router-link.o_form_uri.o_form_field(to='/app/temp_customer') Customer
+                                    p.oe_grey
+                                        b To create a new filter:
+                                        br
+                                        |   - Go to the Odoo document you want to filter. For instance, go to Opportunities and search on Sales Department.
+                                        br
+                                        |   - In this "Search" view, select the option "Save Current Filter", enter the name (Ex: Sales Department)
+                                        br
+                                        |   - If you select "Share with all users", link of google document in "More" options will appear for all users in opportunities of Sales Department.
+                                        br
+                                        |   - If you don't select "Share with all users", link of google document in "More" options will not appear for other users in opportunities of Sales Department.
+                                        br
+                                        |   - If filter is not specified, link of google document will appear in "More" option for all users for all opportunities.
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_1095')
+                                    | Template URL
+                            td(colspan='1', style='width: 100%;')
+                                span.o_form_field.o_form_required
+                                    | https://docs.google.com/spreadsheet/ccc?key=1eIM-q7PX9wp1vEUUdUvrmAe8V3Do60vXDETulNmI9mA#gid=0
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_invisible(for='o_field_input_1096')
+                                    | Resource Id
+                            td(colspan='1', style='width: 100%;')
+                                span.o_form_field.o_form_invisible 1eIM-q7PX9wp1vEUUdUvrmAe8V3Do60vXDETulNmI9mA
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_1097', data-original-title='', title='')
+                                    | Google Drive Name Pattern
+                            td(colspan='1', style='width: 100%;')
+                                div
+                                    span.o_form_field.o_form_required Partner Review %(name)s
+                                    p.oe_grey
+                                        | The name of the attached document can use fixed or variable data. To distinguish between documents in
+                                        | Google Drive, use fixed words and fields. For instance, in the example above, if you wrote Agrolait_%(name)s_Sales
+                                        | in the Google Drive name field, the document in your Google Drive and in Odoo attachment will be named
+                                        | 'Agrolait_SO0001_Sales'.
+
+            .o_form_view.o_form_nosheet.o_form_readonly#hh(style="display: none")
+                span.o_form_field.o_form_invisible res.partner
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | Template Name
+                            td(colspan='1', style='width: 100%;')
+                                input(type='', value='Partner Review', style='width: 100%;background-color: #9493bb;')
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_1092')
+                                    | Active
+                            td(colspan='1', style='width: 100%;')
+                                .o_checkbox.o_form_field_boolean.o_form_field
+                                    input#o_field_input_10921(type='checkbox', name='active')
+                                    span
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | Model
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_many2one.o_with_button.o_form_field
+                                    .o_form_input_dropdown
+                                        input#o_field_input_1581.o_form_input.ui-autocomplete-input(type='text',value='Partner', autocomplete='off' , style='background-color: #9493bb;')
+                                        span.o_dropdown_button(draggable='false')
+                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | Filter
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_many2one.o_with_button.o_form_field
+                                    .o_form_input_dropdown
+                                        input#o_field_input_158.o_form_input.ui-autocomplete-input(type='text', value='Customer', autocomplete='off',style='background-color: #9493bb;')
+                                        span.o_dropdown_button(draggable='false')
+                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                p.oe_grey
+                                    b To create a new filter:
+                                    br
+                                    |   - Go to the Odoo document you want to filter. For instance, go to Opportunities and search on Sales Department.
+                                    br
+                                    |   - In this "Search" view, select the option "Save Current Filter", enter the name (Ex: Sales Department)
+                                    br
+                                    |   - If you select "Share with all users", link of google document in "More" options will appear for all users in opportunities of Sales Department.
+                                    br
+                                    |   - If you don't select "Share with all users", link of google document in "More" options will not appear for other users in opportunities of Sales Department.
+                                    br
+                                    |   - If filter is not specified, link of google document will appear in "More" option for all users for all opportunities.
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | Template URL
+                            td(colspan='1')
+                                input(type='', value='https://docs.google.com/spreadsheet/ccc?key=1eIM-q7PX9wp1vEUUdUvrmAe8V3Do60vXDETulNmI9mA#gid=0', style='width: 100%;background-color: #9493bb;')
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_invisible
+                                    | Resource Id
+                            td(colspan='1', style='width: 100%;')
+                                span.o_form_field.o_form_invisible 1eIM-q7PX9wp1vEUUdUvrmAe8V3Do60vXDETulNmI9mA
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                    | Google Drive Name Pattern
+                            td(colspan='1', style='width: 100%;')
+                                div
+                                    input(type='', value='Partner Review %(name)s', style='width: 100%;background-color: #9493bb;')
+                                p.oe_grey
+                                    | The name of the attached document can use fixed or variable data. To distinguish between documents in
+                                    | Google Drive, use fixed words and fields. For instance, in the example above, if you wrote Agrolait_%(name)s_Sales
+                                    | in the Google Drive name field, the document in your Google Drive and in Odoo attachment will be named
+                                    | 'Agrolait_SO0001_Sales'.
+
+

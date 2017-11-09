@@ -1,0 +1,96 @@
+.nextactivities
+    DashboardController(v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks")
+    .o_content.samocontent
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                table.o_group.o_inner_group
+                    tbody
+
+                        tr
+                            td.o_td_label.one(colspan='1')
+                                label.o_form_label(style='font-size: 0.9rem;')
+                                    | Report Name
+                            td.two(colspan='1', style='width: 50%;')
+                                input#o_field_input_213.o_form_input.o_form_field(style='width: 77%; background-color: #D2D2FF;')( type='text')
+                            td.o_td_label.one(colspan='1')
+                                label.o_form_label
+                                    | Parent
+                            td.two(colspan='1', style='width: 50%;')
+                                select#o_field_input_186.o_form_input.o_form_field(style='width: 219px; ')(name='format')
+                                    option(value='true') Balance Sheet
+                                    option(value='"A0"') Profit and Loss
+                                    option(value='"A0"') Income
+                                    option(value='"A0"') Expense
+                                button.fa.fa-external-link.btn.btn-default.o_external_button(style='padding-left:2px; color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button')
+                        tr
+                            td.o_td_label.one(colspan='1')
+                                label.o_form_label
+                                    | Sequence
+                            td.two(colspan='1', style='width: 50%;')
+                                input#o_field_input_213.o_form_input.o_form_field(style='width: 76%; ')( value='0', type='text')
+
+                            td.o_td_label.one(colspan='1')
+                                label.o_form_label
+                                    | Type
+                            td.two(colspan='1', style='width: 50%;')
+                                select#check1.o_form_input.o_form_field(style='width: 219px; ')(name='format')
+
+                                    option(value='View') View
+                                    option(value='Accounts') Accounts
+                                    option(value='Account Type') Account Type
+                                    option(value='Report Value') Report Value
+                        tr
+                            td.o_td_label.one(colspan='1')
+                                label.o_form_label
+                                    | Sign on Reports
+                            td.two(colspan='1', style='width: 50%;')
+                                select#o_field_input_186.o_form_input.o_form_field(style='width: 280px; background-color: #D2D2FF;')(name='format')
+                                    option(value='true') Reverse Balance Sign
+                                    option(value='"A0"') Preserve Balance Sign
+
+                            td.o_td_label.one(colspan='1')
+                                label.o_form_label
+                                    | Financial Report Style
+                            td.two(colspan='1', style='width: 50%;')
+                                select#o_field_input_186.o_form_input.o_form_field(style='width: 219px; ')(name='format')
+                                    option(value='true') Automatic Formating
+                                    option(value='"A0"') Main Title1
+                                    option(value='"A0"')  Title2
+                                    option(value='"A0"')  Title3
+                                    option(value='"A0"')  Normal Text
+
+                .o_notebook(style='margin-top:45px;')
+                    ul.nav.nav-tabs#tabs(role='tablist')
+                        li.nav-item
+                            a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Report
+
+
+                table#table.o_group.o_inner_group
+                    tbody
+
+                        tr
+                            td.o_td_label.one(colspan='1')
+                                label.o_form_label(style='font-size: 0.9rem;')
+                                    | Display Details
+                            td.two(colspan='1', style='width: 100%;')
+                                select#o_field_input_186.o_form_input.o_form_field(style='width: 100%; ')(name='format')
+                                    option(value='true') Balance Sheet
+                                    option(value='"A0"') Profit and Loss
+
+                TableMain#tb(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata")(style='margin-left: -12px;')
+                TableMain#tbl(v-bind:tableheader='tableheader1', v-bind:tabledata="tabledata1")(style='margin-left: -12px;')
+
+                table#table2.o_group.o_inner_group
+                    tbody
+
+                        tr
+                            td.o_td_label.one(colspan='1')
+                                label.o_form_label(style='font-size: 0.9rem;')
+                                    | Report Value
+                            td.two(colspan='1', style='width: 100%;')
+                                .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                    .o_form_input_dropdown
+                                        select#o_field_input_186.o_form_input.o_form_field(style='width: 95%; ')(name='format')
+                                            option(value='true') Balance Sheet
+                                            option(value='"A0"') Profit and Loss
+                                        button.fa.fa-external-link.btn.btn-default.o_external_button(style='padding-left:2px; color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button')

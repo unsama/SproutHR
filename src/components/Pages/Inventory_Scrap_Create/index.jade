@@ -1,0 +1,59 @@
+.inventory_scrap_create
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:num1='false',v-bind:num2='false',v-bind:paginbtn1='false',v-bind:paginbtn2='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false',v-bind:dropdownbtn1='false',v-bind:dropdownbtn2='false',v-bind:dropdownbtn3='false',v-bind:actionbtn='false',v-bind:Attachmentbtn='false',v-bind:printbtn='false')
+    .row
+        .col-md-12.pull-left.samotopcontroller
+            .col-md-5.pull-left
+
+
+            .col-md-1.pull-left
+            .col-md-3.pull-left
+            .col-md-3.pull-right
+                .btn-group.btn-breadcrumb.samobreadcrum1
+                    a.btn.btn-primary.samobreadbutt(href='#') Draft
+                    a.btn.btn-primary.samobreadbutt1(href='#') Done
+
+    .o_content.samocontent
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_title
+                            h1
+                                span.o_form_field.o_form_required(style='font-size: 26px;font-weight: bold;color: #4c4c4c;') New
+                                .col-sm-12(style='padding: 0px;padding-top: 15px;')
+                                    .col-sm-6(style='padding: 0px;')
+                                        .form-group.row
+                                            label.col-2.col-form-label(for='example-text-input',style='font-size: 16px;padding-top: 0px;margin-top: -6px;padding:0px;padding-right: 106px;margin-left: 15px;') Product
+                                            .col-8(style='padding:0px;padding-left: 16px;border-left: 1px solid lightgrey;')
+                                                select.form-control(style='width: 223px;height: 30px;background-color: #D2D2FF;')
+                                                    option Ice cream
+                                                    option Air Flight.
+                                                    option Computer Case
+                                                    option Graphics Card
+                                                    option Ice cream
+
+
+                                            label.col-2.col-form-label(for='example-text-input',style='font-size: 16px;padding-top: 0px;margin-top: -6px;padding:0px;padding-right: 106px;margin-left: 15px;padding-top: 8px;') Quantity
+                                            .col-8(style='padding:0px;padding-left: 16px;border-left: 1px solid lightgrey;padding-top: 10px;')
+                                                input#example-text-input.form-control(type='text', value='',style='width: 223px;height: 27px;background-color: #D2D2FF;')
+
+
+
+
+                                    .col-sm-6(style='padding: 0px;')
+                                        .form-group.row
+                                            label.col-2.col-form-label(for='example-text-input',style='font-size: 16px;padding-top: 0px;margin-top: 0px;padding:0px;padding-right: 106px;margin-left: 15px;padding-top: 8px;') Quantity
+                                            .col-8(style='padding:0px;padding-left: 16px;border-left: 1px solid lightgrey;padding-top: 10px;')
+                                                input#example-text-input.form-control(type='text', value='',style='width: 223px;height: 27px;')
+                                            label.col-2.col-form-label(for='example-text-input',style='font-size: 16px;padding-top: 0px;margin-top: 0px;padding:0px;padding-right: 106px;margin-left: 15px;') Expected Date
+                                            .col-8(style='padding:0px;padding-left: 16px;border-left: 1px solid lightgrey;padding-top: 10px;')
+                                                form#dateRangeForm.form-horizontal(method='post')
+                                                    .form-group
+                                                        #dateRangePicker.input-group.input-append.date(style='padding-left: 15px;')
+                                                            input.input-group-addon.form-control(type='text', name='date',style='width: 223px;height: 27px;')
+                                        
+
+
+
+
+

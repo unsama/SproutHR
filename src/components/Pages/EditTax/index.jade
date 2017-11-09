@@ -1,0 +1,186 @@
+.request_quotation_inner
+    DashboardController(v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks", v-bind:heading="head")
+    .o_content.samocontent#tax1(style='margin-left: -15px;margin-right: -15px;')
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .row
+
+                            table.o_group.o_inner_group
+                                tbody
+
+                                    tr
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label(style='font-size: 0.9rem; padding-left: 13px;')
+                                                | Tax Name
+                                        td.two(colspan='1', style='width: 50%;')
+                                            input#o_field_input_87.o_form_input.o_form_field(style='width: 92%; background-color: #D2D2FF;')(value='Tax 15.00%',type='text')
+
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label
+                                                | Tax Scope
+                                        td.two(colspan='1', style='width: 50%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                .o_form_input_dropdown(style='')
+                                                    select#o_field_input_176.o_form_input.o_form_field(style='background-color: #D2D2FF;')(name='format')
+                                                        option(value='true') Sales
+                                                        option(value='') Purchases
+                                                        option(value='') None
+
+                            .o_notebook(style='margin-top: 41px; padding-left:13px;')
+                                ul.nav.nav-tabs(role='tablist')
+                                    li.nav-item
+                                        a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Tax Mapping
+                                    li.nav-item
+                                        a.nav-link(href='#buzz', role='tab', data-toggle='tab') Account Mapping
+                                // Tab panes
+                                .tab-content
+                                    #profile.tab-pane.fade.in.active(role='tabpanel')
+                                        .row
+
+                                            table.o_group.o_inner_group
+                                                tbody
+
+                                                    tr
+                                                        td.o_td_label.one(colspan='1')
+                                                            label.o_form_label(style='font-size: 0.9rem; padding-left: 13px;')
+                                                                | Tax Computation
+                                                        td.two(colspan='1', style='width: 50%;')
+                                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                                .o_form_input_dropdown(style='')
+                                                                    select#o_field_input_176.o_form_input.o_form_field(style='background-color: #D2D2FF;')(name='format')
+                                                                        option(value='true') Fixed
+                                                                        option(value='') Percentage of price
+                                                                        option(value='') Percentage of price Tax
+
+                                                        td.o_td_label.one(colspan='1')
+                                                            label.o_form_label
+                                                                | Tax Account
+                                                        td.two(colspan='1', style='width: 50%;')
+                                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                                .o_form_input_dropdown(style='')
+                                                                    select#o_field_input_176.o_form_input.o_form_field(style='width:91%; background-color: transparent')(name='format')
+                                                                        option(value='true') 090000 abc
+                                                                        option(value='') 100000 Fixed Asset Account
+                                                                        option(value='') 101000 Current Assets
+                                                                        option(value='') 101110 Stock Valuation Account
+                                                                    button.fa.fa-external-link.btn.btn-default.o_external_button#bttn(style='color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button')
+
+
+                                                    tr
+                                                        td.o_td_label.one(colspan='1')
+                                                            label.o_form_label(style='font-size: 0.9rem; padding-left: 13px;')
+                                                                | Amount
+                                                        td.two(colspan='1', style='width: 50%;')
+                                                            input#o_field_input_87.o_form_input.o_form_field(style='width: 70%; background-color: #D2D2FF;')(value='15.0000', type='text')
+                                                            label %
+
+                                                        td.o_td_label.one(colspan='1')
+                                                            label.o_form_label
+                                                                | Tax Account on Refunds
+                                                        td.two(colspan='1', style='width: 50%;')
+                                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                                .o_form_input_dropdown(style='')
+                                                                    select#o_field_input_176.o_form_input.o_form_field(style='width:91%; background-color: transparent')(name='format')
+                                                                        option(value='true') 090000 abc
+                                                                        option(value='') 100000 Fixed Asset Account
+                                                                        option(value='') 101000 Current Assets
+                                                                        option(value='') 101110 Stock Valuation Account
+                                                                    button.fa.fa-external-link.btn.btn-default.o_external_button#bttn(style='color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button')
+
+
+
+
+
+                                    #buzz.tab-pane.fade.in(role='tabpanel')
+
+                                        .row
+
+                                            table.o_group.o_inner_group
+                                                tbody
+
+                                                    tr
+                                                        td.o_td_label.one(colspan='1')
+                                                            label.o_form_label(style='font-size: 0.9rem; padding-left: 13px;')
+                                                                | Label on Invoices
+                                                        td.two(colspan='1', style='width: 50%;')
+                                                            input#o_field_input_87.o_form_input.o_form_field(value='Tax 15.00%',type='text')(style='width: 91%;')
+
+                                                        td.o_td_label.one(colspan='1')
+                                                            label.o_form_label
+                                                                | Included in Price
+                                                        td.two(colspan='1', style='width: 50%;')
+                                                            .o_form_field.o_form_field_boolean.oe_inline
+                                                                .o_checkbox.o_form_field_boolean
+                                                                    input#o_field_input_10(type='checkbox', name='module_website_sign')
+
+                                                    tr
+                                                        td.o_td_label.one(colspan='1')
+                                                            label.o_form_label(style='font-size: 0.9rem; padding-left: 13px;')
+                                                                | Tax Group
+                                                        td.two(colspan='1', style='width: 50%;')
+                                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                                .o_form_input_dropdown(style='')
+                                                                    select#o_field_input_176.o_form_input.o_form_field(style='background-color: #D2D2FF; width: 91%;')(name='format')
+                                                                        option(value='true') Alupak Industriess
+                                                                        option(value='') My Company;wojjfp;ofo, Chicago
+                                                                    button.fa.fa-external-link.btn.btn-default.o_external_button#bttn(style='color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button',data-toggle='modal', href='#myModal2')
+
+
+                                                        td.o_td_label.one(colspan='1')
+                                                            label.o_form_label
+                                                                | Affect Base of Subsequent Taxes
+                                                        td.two(colspan='1', style='width: 50%;')
+                                                            .o_form_field.o_form_field_boolean.oe_inline
+                                                                .o_checkbox.o_form_field_boolean
+                                                                    input#o_field_input_10(type='checkbox', name='module_website_sign')
+
+                                                    tr
+                                                        td.o_td_label.one(colspan='1')
+                                                            label.o_form_label(style='font-size: 0.9rem; padding-left: 13px;')
+                                                                | Tags
+                                                        td.two(colspan='1', style='width: 50%;')
+                                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                                .o_form_input_dropdown(style='')
+                                                                    select#o_field_input_176.o_form_input.o_form_field(style='background-color: transparent; width: 91%;')(name='format')
+                                                                        option(value='true')
+                                                                        option(value='true') Create& Edit
+
+
+                                                        td.o_td_label.one(colspan='1')
+                                                            label.o_form_label
+                                                                | Tax adjustment
+                                                        td.two(colspan='1', style='width: 50%;')
+                                                            .o_form_field.o_form_field_boolean.oe_inline
+                                                                .o_checkbox.o_form_field_boolean
+                                                                    input#o_field_input_10(type='checkbox', name='module_website_sign')
+
+                                                    tr
+                                                        td.o_td_label.one(colspan='1')
+                                                            label.o_form_label(style='font-size: 0.9rem; padding-left: 13px;')
+                                                                | Company
+                                                        td.two(colspan='1', style='width: 50%;')
+                                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                                .o_form_input_dropdown(style='')
+                                                                    select#o_field_input_176.o_form_input.o_form_field(style='background-color: #D2D2FF; width: 91%;')(name='format')
+                                                                        option(value='true') Alupak Industriess
+                                                                        option(value='true') My Company;wojjfp;ofo, Chicago
+                                                                    button.fa.fa-external-link.btn.btn-default.o_external_button#bttn(style='color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button')
+
+
+
+
+
+    #myModal2.modal.fade.bd-example-modal-lg(tabindex='-1', role='dialog', aria-labelledby='myLargeModalLabel', aria-hidden='true')
+        .modal-dialog.modal-lg
+            .modal-content(style='width: 123%; margin-left: -79px;')
+                .modal-header
+                    h6.modal-title(style='font-weight:bold;') Open: Tax Group
+                    button.close(type='button', data-dismiss='modal') ×
+                .modal-body(style='height: 250px;')
+
+                .modal-footer(style='justify-content: flex-start;')
+                    button.btn.btn-primary.samobuttopcontroller1(style='width: 7%; font-size: 0.9rem; background-color:#7c7bad; border-color: #414168;')(type='button', href='#') Save
+
+                    button.btn.btn-primary.samobuttopcontroller2(type='button', data-dismiss='modal')(style='width: 9%; background-color: transparent; font-size: 0.9rem; color:black; border-color: #8c8c8c;') Discard

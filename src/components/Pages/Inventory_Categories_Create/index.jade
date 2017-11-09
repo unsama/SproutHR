@@ -1,0 +1,174 @@
+.inevntory_adjustments_create
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:num1='false',v-bind:num2='false',v-bind:paginbtn1='false',v-bind:paginbtn2='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false',v-bind:dropdownbtn1='false',v-bind:dropdownbtn2='false',v-bind:dropdownbtn3='false',v-bind:actionbtn='false',v-bind:Attachmentbtn='false',v-bind:printbtn='false')
+    .o_content
+        .o_view_manager_content
+            .o_form_view.oe_form_configuration.o_form_editable
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-th-list.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value
+                                        span.o_form_field.o_form_field_number(data-original-title='', title='') 0
+                                    span.o_stat_text  Products
+                        .oe_title
+                            label.o_form_label.oe_edit_only(for='o_field_input_242')
+                                | Category name
+                            h1
+                                input#o_field_input_242.o_form_input.o_form_field.o_form_required(placeholder='e.g. Lamps', type='text')
+                                button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td(colspan='4', style='width: 100%;')
+                                        .o_horizontal_separator
+                                            | Category Type
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_243')
+                                            | Parent Category
+                                    td(colspan='1', style='width: 50%;')
+                                        select#o_field_input_246.o_form_input.o_form_field.o_form_required(name='property_valuation',style='background-color:white;')
+                                            option(value='false')
+                                            option(value='"manual_periodic"') Periodic (manual)
+                                            option(value='"real_time"') Perpetual (automated)
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help(for='o_field_input_244', data-original-title='', title='')
+                                            | Category Type
+                                    td(colspan='1', style='width: 50%;')
+                                        select#o_field_input_244.o_form_input.o_form_field(name='type')
+                                            option(value='false')
+                                            option(value='"view"') View
+                                            option(value='"normal"') Normal
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Inventory Valuation
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_245', data-original-title='', title='')
+                                                | Costing Method
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_245.o_form_input.o_form_field.o_form_required.o_form_invisible(name='property_cost_method')
+                                                option(value='false')
+                                                option(value='"standard"') Standard Price
+                                                option(value='"average"') Average Price
+                                                option(value='"real"') Real Price
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_246', data-original-title='', title='')
+                                                | Inventory Valuation
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_246.o_form_input.o_form_field.o_form_required(name='property_valuation')
+                                                option(value='false')
+                                                option(value='"manual_periodic"') Periodic (manual)
+                                                option(value='"real_time"') Perpetual (automated)
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Account Properties
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_246', data-original-title='', title='')
+                                                | Price Difference Account
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_246.o_form_input.o_form_field.o_form_required(name='property_valuation',style='background-color:white;')
+                                                option(value='false')
+                                                option(value='"manual_periodic"') Periodic (manual)
+                                                option(value='"real_time"') Perpetual (automated)
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_246', data-original-title='', title='')
+                                                | Income Account
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_246.o_form_input.o_form_field.o_form_required(name='property_valuation',style='background-color:white;')
+                                                option(value='false')
+                                                option(value='"manual_periodic"') Periodic (manual)
+                                                option(value='"real_time"') Perpetual (automated)
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_246', data-original-title='', title='')
+                                                | Expense Account
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_246.o_form_input.o_form_field.o_form_required(name='property_valuation',style='background-color:white;')
+                                                option(value='false')
+                                                option(value='"manual_periodic"') Periodic (manual)
+                                                option(value='"real_time"') Perpetual (automated)
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Account Stock Properties
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_246', data-original-title='', title='')
+                                                | Stock Input Account
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_246.o_form_input.o_form_field.o_form_required(name='property_valuation',style='background-color:white;')
+                                                option(value='false')
+                                                option(value='"manual_periodic"') Periodic (manual)
+                                                option(value='"real_time"') Perpetual (automated)
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_246', data-original-title='', title='')
+                                                | Stock Output Account
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_246.o_form_input.o_form_field.o_form_required(name='property_valuation',style='background-color:white;')
+                                                option(value='false')
+                                                option(value='"manual_periodic"') Periodic (manual)
+                                                option(value='"real_time"') Perpetual (automated)
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_246', data-original-title='', title='')
+                                                | Stock Valuation Account
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_246.o_form_input.o_form_field.o_form_required(name='property_valuation',style='background-color:white;')
+                                                option(value='false')
+                                                option(value='"manual_periodic"') Periodic (manual)
+                                                option(value='"real_time"') Perpetual (automated)
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_246', data-original-title='', title='')
+                                                | Stock Journal
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_246.o_form_input.o_form_field.o_form_required(name='property_valuation',style='background-color:white;')
+                                                option(value='false')
+                                                option(value='"manual_periodic"') Periodic (manual)
+                                                option(value='"real_time"') Perpetual (automated)
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td(colspan='2', style='width: 100%;')
+                                        .o_horizontal_separator
+                                            | Logistics
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_254')
+                                            | Routes
+                                    td(colspan='1', style='width: 100%;')
+                                        select#o_field_input_246.o_form_input.o_form_field.o_form_required(name='property_valuation',style='background-color:white;')
+                                            option(value='false')
+                                            option(value='"manual_periodic"') Periodic (manual)
+                                            option(value='"real_time"') Perpetual (automated)
+                                tr
+                                    td(colspan='2', style='width: 100%;')
+                                        .o_form_invisible(colspan='2', attrs="{'invisible': [('parent_id', '=', False)]}")
+                                            | The following routes will apply to the products in this category taking into account parent categories:
+                                            .o_form_field_many2manytags.o_form_field.o_form_field_empty
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help(for='o_field_input_255', data-original-title='', title='')
+                                            | Force Removal Strategy
+                                    td(colspan='1', style='width: 100%;')
+                                        select#o_field_input_246.o_form_input.o_form_field.o_form_required(name='property_valuation',style='background-color:white;')
+                                            option(value='false')
+                                            option(value='"manual_periodic"') Periodic (manual)
+                                            option(value='"real_time"') Perpetual (automated)

@@ -1,0 +1,297 @@
+.container
+    .modal-header
+        button.close(aria-hidden='true', data-dismiss='modal', type='button') ×
+        h4.modal-title
+            | Change My Preferences
+            span.o_subtitle.text-muted.small
+    .modal-body.o_act_window
+        .o_view_manager_content
+            .o_form_view.o_form_nosheet.o_form_editable.oe_form_dirty
+                .o_form_field_image.oe_right.oe_avatar.o_form_field(data-original-title='', title='')
+                    img(border='1', name='image', src='/web/static/src/img/placeholder.png')
+                    .o_form_image_controls
+                        span.fa.fa-pencil.fa-lg.pull-left.o_select_file_button(title='Edit')
+                        span.fa.fa-trash-o.fa-lg.pull-right.o_clear_file_button(title='Clear')
+                        span.o_form_binary_progress Uploading...
+                        .o_hidden_input_file
+                            form.o_form_binary_form(enctype='multipart/form-data', method='post', action='/web/binary/upload')
+                                input(name='csrf_token', type='hidden', value='4ad7ec03d654ee0b311e208af2e8e5411ce3ff90o')
+                                input(name='callback', type='hidden')
+                                input.o_form_input_file(accept='image/*', name='ufile', type='file')
+                            iframe(style='display: none')
+                h1
+                    span.oe_inline.o_form_field Administrator
+                button.btn.btn-sm.oe_link(type='button')
+                    span Change password
+
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_4', data-original-title='', title='')
+                                    | Language
+                            td(colspan='1', style='width: 50%;')
+                                select#o_field_input_4.o_form_input.o_form_field(name='lang')
+                                    option(value='false')
+                                    option(value='"am_ET"') Amharic / ?????
+                                    option(value='"en_US"') English
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_5', data-original-title='', title='')
+                                    | Timezone
+                                span.fa.fa-exclamation-triangle.o_tz_warning(data-original-title='', title='')
+                            td(colspan='1', style='width: 50%;')
+                                select#o_field_input_5.o_form_input.o_form_field(name='tz')
+                                    option(value='false')
+                                    option(value='"Africa/Abidjan"') Africa/Abidjan
+                                    option(value='"Africa/Accra"') Africa/Accra
+                                    option(value='"Africa/Addis_Ababa"') Africa/Addis_Ababa
+                                    option(value='"Africa/Algiers"') Africa/Algiers
+                                    option(value='"Africa/Asmara"') Africa/Asmara
+                                    option(value='"Africa/Asmera"') Africa/Asmera
+                                    option(value='"Africa/Bamako"') Africa/Bamako
+                                    option(value='"Africa/Bangui"') Africa/Bangui
+                                    option(value='"Africa/Banjul"') Africa/Banjul
+                                    option(value='"Africa/Bissau"') Africa/Bissau
+                                    option(value='"Africa/Blantyre"') Africa/Blantyre
+                                    option(value='"Africa/Brazzaville"') Africa/Brazzaville
+                                    option(value='"Africa/Bujumbura"') Africa/Bujumbura
+                                    option(value='"Africa/Cairo"') Africa/Cairo
+                                    option(value='"Africa/Casablanca"') Africa/Casablanca
+                                    option(value='"Africa/Ceuta"') Africa/Ceuta
+                                    option(value='"Africa/Conakry"') Africa/Conakry
+                                    option(value='"Africa/Dakar"') Africa/Dakar
+                                    option(value='"Africa/Dar_es_Salaam"') Africa/Dar_es_Salaam
+                                    option(value='"Africa/Djibouti"') Africa/Djibouti
+                                    option(value='"Africa/Douala"') Africa/Douala
+                                    option(value='"Africa/El_Aaiun"') Africa/El_Aaiun
+                                    option(value='"Africa/Freetown"') Africa/Freetown
+                                    option(value='"Africa/Gaborone"') Africa/Gaborone
+                                    option(value='"Africa/Harare"') Africa/Harare
+                                    option(value='"Africa/Johannesburg"') Africa/Johannesburg
+                                    option(value='"Africa/Juba"') Africa/Juba
+                                    option(value='"Africa/Kampala"') Africa/Kampala
+                                    option(value='"Africa/Khartoum"') Africa/Khartoum
+                                    option(value='"Africa/Kigali"') Africa/Kigali
+                                    option(value='"Africa/Kinshasa"') Africa/Kinshasa
+                                    option(value='"Africa/Lagos"') Africa/Lagos
+                                    option(value='"Africa/Libreville"') Africa/Libreville
+                                    option(value='"Africa/Lome"') Africa/Lome
+                                    option(value='"Africa/Luanda"') Africa/Luanda
+                                    option(value='"Africa/Lubumbashi"') Africa/Lubumbashi
+                                    option(value='"Africa/Lusaka"') Africa/Lusaka
+                                    option(value='"Africa/Malabo"') Africa/Malabo
+                                    option(value='"Africa/Maputo"') Africa/Maputo
+                                    option(value='"Africa/Maseru"') Africa/Maseru
+                                    option(value='"Africa/Mbabane"') Africa/Mbabane
+                                    option(value='"Africa/Mogadishu"') Africa/Mogadishu
+                                    option(value='"Africa/Monrovia"') Africa/Monrovia
+                                    option(value='"Africa/Nairobi"') Africa/Nairobi
+                                    option(value='"Africa/Ndjamena"') Africa/Ndjamena
+                                    option(value='"Africa/Niamey"') Africa/Niamey
+                                    option(value='"Africa/Nouakchott"') Africa/Nouakchott
+                                    option(value='"Africa/Ouagadougou"') Africa/Ouagadougou
+                                    option(value='"Africa/Porto-Novo"') Africa/Porto-Novo
+                                    option(value='"Africa/Sao_Tome"') Africa/Sao_Tome
+                                    option(value='"Africa/Timbuktu"') Africa/Timbuktu
+                                    option(value='"Africa/Tripoli"') Africa/Tripoli
+                                    option(value='"Africa/Tunis"') Africa/Tunis
+                                    option(value='"Africa/Windhoek"') Africa/Windhoek
+                                    option(value='"America/Adak"') America/Adak
+                                    option(value='"America/Anchorage"') America/Anchorage
+                                    option(value='"America/Anguilla"') America/Anguilla
+                                    option(value='"America/Antigua"') America/Antigua
+                                    option(value='"America/Araguaina"') America/Araguaina
+                                    option(value='"America/Argentina/Buenos_Aires"') America/Argentina/Buenos_Aires
+                                    option(value='"America/Argentina/Catamarca"') America/Argentina/Catamarca
+                                    option(value='"America/Argentina/ComodRivadavia"') America/Argentina/ComodRivadavia
+                                    option(value='"America/Argentina/Cordoba"') America/Argentina/Cordoba
+                                    option(value='"America/Argentina/Jujuy"') America/Argentina/Jujuy
+                                    option(value='"America/Argentina/La_Rioja"') America/Argentina/La_Rioja
+                                    option(value='"America/Argentina/Mendoza"') America/Argentina/Mendoza
+                                    option(value='"America/Argentina/Rio_Gallegos"') America/Argentina/Rio_Gallegos
+                                    option(value='"America/Argentina/Salta"') America/Argentina/Salta
+                                    option(value='"America/Argentina/San_Juan"') America/Argentina/San_Juan
+                                    option(value='"America/Argentina/San_Luis"') America/Argentina/San_Luis
+                                    option(value='"America/Argentina/Tucuman"') America/Argentina/Tucuman
+                                    option(value='"America/Argentina/Ushuaia"') America/Argentina/Ushuaia
+                                    option(value='"America/Aruba"') America/Aruba
+                                    option(value='"America/Asuncion"') America/Asuncion
+                                    option(value='"America/Atikokan"') America/Atikokan
+                                    option(value='"America/Atka"') America/Atka
+                                    option(value='"America/Bahia"') America/Bahia
+                                    option(value='"America/Bahia_Banderas"') America/Bahia_Banderas
+                                    option(value='"America/Barbados"') America/Barbados
+                                    option(value='"America/Belem"') America/Belem
+                                    option(value='"America/Belize"') America/Belize
+                                    option(value='"America/Blanc-Sablon"') America/Blanc-Sablon
+                                    option(value='"America/Boa_Vista"') America/Boa_Vista
+                                    option(value='"America/Bogota"') America/Bogota
+                                    option(value='"America/Boise"') America/Boise
+                                    option(value='"America/Buenos_Aires"') America/Buenos_Aires
+                                    option(value='"America/Cambridge_Bay"') America/Cambridge_Bay
+                                    option(value='"America/Campo_Grande"') America/Campo_Grande
+                                    option(value='"America/Cancun"') America/Cancun
+                                    option(value='"America/Caracas"') America/Caracas
+                                    option(value='"America/Catamarca"') America/Catamarca
+                                    option(value='"America/Cayenne"') America/Cayenne
+                                    option(value='"America/Cayman"') America/Cayman
+                                    option(value='"America/Chicago"') America/Chicago
+                                    option(value='"America/Chihuahua"') America/Chihuahua
+                                    option(value='"America/Coral_Harbour"') America/Coral_Harbour
+                                    option(value='"America/Cordoba"') America/Cordoba
+                                    option(value='"America/Costa_Rica"') America/Costa_Rica
+                                    option(value='"America/Creston"') America/Creston
+                                    option(value='"America/Cuiaba"') America/Cuiaba
+                                    option(value='"America/Curacao"') America/Curacao
+                                    option(value='"America/Danmarkshavn"') America/Danmarkshavn
+                                    option(value='"America/Dawson"') America/Dawson
+                                    option(value='"America/Dawson_Creek"') America/Dawson_Creek
+                                    option(value='"America/Denver"') America/Denver
+                                    option(value='"America/Detroit"') America/Detroit
+                                    option(value='"America/Dominica"') America/Dominica
+                                    option(value='"America/Edmonton"') America/Edmonton
+                                    option(value='"America/Eirunepe"') America/Eirunepe
+                                    option(value='"America/El_Salvador"') America/El_Salvador
+                                    option(value='"America/Ensenada"') America/Ensenada
+                                    option(value='"America/Fort_Wayne"') America/Fort_Wayne
+                                    option(value='"America/Fortaleza"') America/Fortaleza
+                                    option(value='"America/Glace_Bay"') America/Glace_Bay
+                                    option(value='"America/Godthab"') America/Godthab
+                                    option(value='"America/Goose_Bay"') America/Goose_Bay
+                                    option(value='"America/Grand_Turk"') America/Grand_Turk
+                                    option(value='"America/Grenada"') America/Grenada
+                                    option(value='"America/Guadeloupe"') America/Guadeloupe
+                                    option(value='"America/Guatemala"') America/Guatemala
+                                    option(value='"America/Guayaquil"') America/Guayaquil
+                                    option(value='"America/Guyana"') America/Guyana
+                                    option(value='"America/Halifax"') America/Halifax
+                                    option(value='"America/Havana"') America/Havana
+                                    option(value='"America/Hermosillo"') America/Hermosillo
+                                    option(value='"America/Indiana/Indianapolis"') America/Indiana/Indianapolis
+                                    option(value='"America/Indiana/Knox"') America/Indiana/Knox
+                                    option(value='"America/Indiana/Marengo"') America/Indiana/Marengo
+                                    option(value='"America/Indiana/Petersburg"') America/Indiana/Petersburg
+                                    option(value='"America/Indiana/Tell_City"') America/Indiana/Tell_City
+                                    option(value='"America/Indiana/Vevay"') America/Indiana/Vevay
+                                    option(value='"America/Indiana/Vincennes"') America/Indiana/Vincennes
+                                    option(value='"America/Indiana/Winamac"') America/Indiana/Winamac
+                                    option(value='"America/Indianapolis"') America/Indianapolis
+                                    option(value='"America/Inuvik"') America/Inuvik
+                                    option(value='"America/Iqaluit"') America/Iqaluit
+                                    option(value='"America/Jamaica"') America/Jamaica
+                                    option(value='"America/Jujuy"') America/Jujuy
+                                    option(value='"America/Juneau"') America/Juneau
+                                    option(value='"America/Kentucky/Louisville"') America/Kentucky/Louisville
+                                    option(value='"America/Kentucky/Monticello"') America/Kentucky/Monticello
+                                    option(value='"America/Knox_IN"') America/Knox_IN
+                                    option(value='"America/Kralendijk"') America/Kralendijk
+                                    option(value='"America/La_Paz"') America/La_Paz
+                                    option(value='"America/Lima"') America/Lima
+                                    option(value='"America/Los_Angeles"') America/Los_Angeles
+                                    option(value='"America/Louisville"') America/Louisville
+                                    option(value='"America/Lower_Princes"') America/Lower_Princes
+                                    option(value='"America/Maceio"') America/Maceio
+                                    option(value='"America/Managua"') America/Managua
+                                    option(value='"America/Manaus"') America/Manaus
+                                    option(value='"America/Marigot"') America/Marigot
+                                    option(value='"America/Martinique"') America/Martinique
+                                    option(value='"America/Matamoros"') America/Matamoros
+                                    option(value='"America/Mazatlan"') America/Mazatlan
+                                    option(value='"America/Mendoza"') America/Mendoza
+                                    option(value='"America/Menominee"') America/Menominee
+                                    option(value='"America/Merida"') America/Merida
+                                    option(value='"America/Metlakatla"') America/Metlakatla
+                                    option(value='"America/Mexico_City"') America/Mexico_City
+                                    option(value='"America/Miquelon"') America/Miquelon
+                                    option(value='"America/Moncton"') America/Moncton
+                                    option(value='"America/Monterrey"') America/Monterrey
+                                    option(value='"America/Montevideo"') America/Montevideo
+                                    option(value='"America/Montreal"') America/Montreal
+                                    option(value='"America/Montserrat"') America/Montserrat
+                                    option(value='"America/Nassau"') America/Nassau
+                                    option(value='"America/New_York"') America/New_York
+                                    option(value='"America/Nipigon"') America/Nipigon
+                                    option(value='"America/Nome"') America/Nome
+                                    option(value='"America/Noronha"') America/Noronha
+                                    option(value='"America/North_Dakota/Beulah"') America/North_Dakota/Beulah
+                                    option(value='"America/North_Dakota/Center"') America/North_Dakota/Center
+                                    option(value='"America/North_Dakota/New_Salem"') America/North_Dakota/New_Salem
+                                    option(value='"America/Ojinaga"') America/Ojinaga
+                                    option(value='"America/Panama"') America/Panama
+                                    option(value='"America/Pangnirtung"') America/Pangnirtung
+                                    option(value='"America/Paramaribo"') America/Paramaribo
+                                    option(value='"America/Phoenix"') America/Phoenix
+                                    option(value='"America/Port-au-Prince"') America/Port-au-Prince
+                                    option(value='"America/Port_of_Spain"') America/Port_of_Spain
+                                    option(value='"America/Porto_Acre"') America/Porto_Acre
+                                    option(value='"America/Porto_Velho"') America/Porto_Velho
+                                    option(value='"America/Puerto_Rico"') America/Puerto_Rico
+                                    option(value='"America/Rainy_River"') America/Rainy_River
+                                    option(value='"America/Rankin_Inlet"') America/Rankin_Inlet
+                                    option(value='"America/Recife"') America/Recife
+                                    option(value='"America/Regina"') America/Regina
+                                    option(value='"America/Resolute"') America/Resolute
+                                    option(value='"America/Rio_Branco"') America/Rio_Branco
+                                    option(value='"America/Rosario"') America/Rosario
+                                    option(value='"America/Santa_Isabel"') America/Santa_Isabel
+                                    option(value='"America/Santarem"') America/Santarem
+                                    option(value='"America/Santiago"') America/Santiago
+                                    option(value='"America/Santo_Domingo"') America/Santo_Domingo
+
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_invisible
+                                    | Timezone offset
+                            td(colspan='1', style='width: 50%;')
+                                span.o_form_field.o_form_invisible +0100
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_7', data-original-title='', title='')
+                                    | Company
+                            td(colspan='1', style='width: 50%;')
+                                .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                    .o_form_input_dropdown
+                                        input#o_field_input_7.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                        span.o_dropdown_button(draggable='false')
+                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: block;')
+
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Email Preferences
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help
+                                    | Email Messages and Notifications
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field.o_form_required
+                                    .o_radio_item
+                                        input#radio75_none.o_form_radio(type='radio', name='radio75', value='none')
+                                        label.o_form_label(for='radio75_none') Never
+                                    .o_radio_item
+                                        input#radio75_always.o_form_radio(type='radio', name='radio75', value='always')
+                                        label.o_form_label(for='radio75_always') All Messages
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_73')
+                                    | Email
+                            td(colspan='1', style='width: 100%;')
+                                input#o_field_input_73.o_form_input.o_form_field(type='text')
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_labe
+                                    | Signature
+                            td(colspan='1', style='width: 100%;')
+                                textarea.form-control(name="editor1" id="editor1" rows="10" cols="80")
+    .row
+        .col-xs-12
+            .modal-footer
+                div
+                    footer
+                        button.btn.btn-sm.btn-primary(type='button')
+                            span Save
+                        button.btn.btn-sm.btn-default(type='button')
+                            span Cancel
+
+        

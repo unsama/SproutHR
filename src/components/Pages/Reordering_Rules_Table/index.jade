@@ -1,0 +1,104 @@
+.reordering_rules_table
+    DashboardController(v-bind:heading="nextactivity",v-bind:savedbtn='false',v-bind:editbtn='true',v-bind:editform='createbtn',v-bind:createbtn='true', v-bind:links="btnlinks", v-bind:Attachmentbtn="true", v-bind:actionbtn="true", v-bind:paginbtn1="true", v-bind:paginbtn2="true", v-bind:num1="true", v-bind:num2="true")
+    .o_content.samocontent
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                .o_stat_info.o_form_field(data-original-title='', title='')
+                                    span.o_stat_text.o_not_hover.text-success Active
+                                    span.o_stat_text.o_hover.text-danger Archive
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-refresh.o_button_icon
+                                span Procurements
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Name
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required OP/00001
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Product
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_required(href='#') [PROD_DEL02] Datacard
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible
+                                                | Warehouse
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required.o_form_invisible YourCompany
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(data-original-title='', title='')
+                                                | Product Unit of Measure
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required.o_form_invisible Unit(s)
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible
+                                                | Location
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_required.o_form_invisible(href='#') WH/Stock
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(data-original-title='', title='')
+                                                | Procurement Group
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Company
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_required(href='#') Alupak Industriess
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Rules
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                | Minimum Quantity
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required.o_form_field_number 5.000
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                | Maximum Quantity
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required.o_form_field_number 10.000
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                | Quantity Multiple
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required.o_form_field_number 1.000
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Misc
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                | Lead Time
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_row
+                                                span.o_form_field.o_form_field_number 1
+                                                span.o_form_field.o_form_required Day(s) to purchase
+                    
+

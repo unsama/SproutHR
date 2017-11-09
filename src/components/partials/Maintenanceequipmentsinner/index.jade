@@ -1,0 +1,146 @@
+.o_content(style='margin-left:-15px;margin-right:-15px;')
+    .o_view_manager_content
+        .o_form_view.o_form_readonly
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .oe_button_box(name='button_box')
+                        button.btn.btn-sm.oe_stat_button(type='button')
+                            .fa.fa-fw.fa-ticket.o_button_icon
+                            .o_form_field.o_stat_info
+                                span.o_stat_value 0
+                                span.o_stat_text Maintenance
+                    .oe_title
+                        label.o_form_label.oe_edit_only
+                            | Equipment Name
+                        h1
+                            span.o_form_field.o_form_required Samsung Monitor 15"
+                            button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                    .o_group
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Equipment Category
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field Monitors
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Owner
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field(href='#') Administrators
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_empty.o_form_label_false
+                                            | Maintenance Team
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Technician
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field(href='#') Administrators
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible
+                                            | Assigned Date
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field_date.o_form_field.o_form_invisible 02/10/2017
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false
+                                            | Scrap Date
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field_date.o_form_field.o_form_invisible.o_form_field_empty
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_empty.o_form_label_false
+                                            | Used in location
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field.o_form_field_empty
+                    .o_notebook
+                        ul.nav.nav-tabs(role='tablist')
+                            li.active
+                                a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_14', aria-expanded='true')
+                                    | Description
+                            li
+                                a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_15', aria-expanded='false')
+                                    | Product Information
+                            li
+                                a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_16', aria-expanded='false')
+                                    | Maintenance
+                        .tab-content.nav.nav-tabs
+                            #notebook_page_14.tab-pane.active(role='tabpanel')
+                                span.o_form_textarea.o_form_field.o_form_field_empty
+                            #notebook_page_15.tab-pane(role='tabpanel')
+                                .o_group
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_empty.o_form_label_false
+                                                        | Vendor
+                                                td(colspan='1', style='width: 100%;')
+                                                    a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_empty.o_form_label_false
+                                                        | Vendor Reference
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.o_form_field.o_form_field_empty
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Model
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.o_form_field NP300E5X
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Serial Number
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.o_form_field MT/122/11112222
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible
+                                                        | Cost
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.o_form_field.o_form_invisible.o_form_field_number 0.00
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_empty.o_form_label_false
+                                                        | Warranty
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.o_form_field_date.o_form_field.o_form_field_empty
+                            #notebook_page_16.tab-pane(role='tabpanel')
+                                .o_group
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.oe_read_only.o_form_label_empty.o_form_label_false
+                                                        | Next Preventive Maintenance
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.o_form_field_date.oe_read_only.o_form_field.o_form_field_empty
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Preventive Maintenance Frequency
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_row
+                                                        span.o_form_field.o_form_field_number 0
+                                                        |  days
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                        | Maintenance Duration
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_row
+                                                        span.o_form_field.o_form_field_number 0.00
+                                                        |  hours

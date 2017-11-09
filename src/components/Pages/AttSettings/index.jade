@@ -1,0 +1,31 @@
+.container-fluid(style='margin-left: -15px;margin-right:-15px;background-color:White;')
+    .o_content
+        .o_view_manager_content
+            .o_form_view.oe_form_configuration.o_form_nosheet.o_form_editable
+                header(style='margin-left: -32px;margin-right: -32px;')
+                    button.btn.btn-sm.oe_highlight(v-on:click='submit()',type='button')
+                        span Apply
+                    button.btn.btn-sm.oe_link(type='button')
+                        span Cancels
+                table.o_group.o_inner_group(style='margin-left: -13px;')
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Settings
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                    | Employee PIN
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio337_0.o_form_radio(type='radio', name='radio337', value='0',v-model='name')
+                                        label.o_form_label(for='radio337_0')
+                                            | Employees do not need to enter their PIN to check in manually in the "Kiosk Mode".
+                                    .o_radio_item
+                                        input#radio337_1.o_form_radio(type='radio', name='radio337', value='1',v-model='name')
+                                        label.o_form_label(for='radio337_1') Employees must enter their PIN to check in manually in the "Kiosk Mode".
+                                    .o_radio_item
+                                        input#radio337_67.o_form_radio(type='radio', name='radio337', value='2',v-model='name')
+                                        label.o_form_label(for='radio337_1') Employees must enter their PIN to check in manually in the "Kiosk Mode".

@@ -1,0 +1,119 @@
+.o_form_sheet_bg
+    .row
+        .col-md-12
+            .row
+                .col-md-2.invoicecol2
+                    img.invoiceimg1(src='images/placeholder.png')
+
+                    
+                .col-md-3.invoicecol3
+                    .oe_title
+                        label.o_form_label.oe_edit_only(for='o_field_input_60') Product Name
+                        h1
+                            input#o_field_input_60.o_form_input.o_form_field.o_form_required(placeholder='Product Name', type='text')
+                            a.o_form_uri.oe_inline.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                        div(name='options')
+                            div
+                                .o_checkbox.o_form_field_boolean.o_form_field
+                                    input#o_field_input_61(name='sale_ok', type='checkbox')
+                                    span
+                                        label.o_form_label.o_form_label_help(for='o_field_input_61', data-original-title='', title='') Can be Sold
+                            div
+                                .o_checkbox.o_form_field_boolean.o_form_field
+                                    input#o_field_input_62(name='purchase_ok', type='checkbox')
+                                    span
+                                        label.o_form_label.o_form_label_help(for='o_field_input_61', data-original-title='', title='') Can be Purchased
+                        .o_form_field_many2manytags.o_form_field.o_form_invisible
+                            .o_form_field_many2one.o_form_field.o_form_invisible
+                                .o_form_input_dropdown
+                                    span.o_dropdown_button(draggable='false')
+                .col-md-4.invoicecol4
+                    .oe_button_box(name='button_box')
+                        button.btn.btn-sm.oe_stat_button(type='button', style='')
+                            .fa.fa-fw.fa-archive.o_button_icon.trash
+                            .o_stat_info.o_form_field(data-original-title='', title='')
+                                span.o_stat_text.o_not_hover.text-success Active
+                                span.o_stat_text.o_hover.text-danger
+                                    | Archive
+                                    .oe_button_box(name='button_box')
+                        button.btn.btn-sm.oe_stat_button(type='button', style='')
+                            .fa.fa-fw.fa-usd.o_button_icon.sale
+                            .o_form_field.o_stat_info
+                                span.o_stat_value
+                                    | 0
+                                    span.o_stat_text Sales
+                                    .oe_button_box(name='button_box')
+                        button.btn.btn-sm.oe_stat_button(type='button', style='')
+                            .fa.fa-fw.fa-arrows-v.o_button_icon.trace
+                            .o_form_field.o_stat_info.trace_text
+                                span Traceability
+            .col-md-12
+                ul.nav.nav-tabs
+                    li.nav-item
+                        a.nav-link.active(href='#') General Information
+                    li.nav-item
+                        a.nav-link(href='#') Inventory
+                    li.nav-item
+                        a.nav-link(href='#') Sale
+
+                    li.nav-item
+                        a.nav-link(href='#') Invoice
+
+                    li.nav-item
+                        a.nav-link(href='#') Notes
+
+
+            .col-md-12
+                .row
+                    .col-md-6
+                        .row
+                            .col-md-5
+                                label Product Type
+                            .col-xs-6.col-sm-3
+                                .form-group
+                                    .col-xs-5.selectContainer
+                                        select.form-control(name='Product')
+                                            option(value='') Cunsumable
+                                            option(value='') Stock
+                                            option(value='') Service
+
+
+
+                    .col-md-6
+                        .row
+                            .col-md-5
+                                .cost
+                                    label Sales price
+                            .col-xs-6.col-sm-3
+                                .form-group
+                                    input.form-control.input-lg(type='text')
+            .col-md-12
+                .row
+                    .col-md-6
+                        .row
+                            .col-md-5
+                                label Internal Reference
+                            .col-xs-6.col-sm-3
+                                .form-group
+                                    input.form-control.input-lg(type='text')
+
+                    .col-md-6
+                        .row
+                            .col-md-5
+                                .cost
+                                    label Cost
+                            .col-xs-6.col-sm-3
+                                .form-group
+                                    input.form-control.input-lg(type='text')
+            .col-md-12
+                .row
+                    .col-md-6
+                        .row
+                            .col-md-5
+                                label Barcode
+                            .col-xs-6.col-sm-3
+                                .form-group
+                                    input.form-control.input-lg(type='text')
+
+
+

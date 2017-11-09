@@ -1,0 +1,80 @@
+.outgoingemailservercreate
+    DashboardController(v-bind:savedbtn='true', v-bind:discardbtn='true',v-bind:heading="head",v-bind:links="btnlinks")
+        .col-sm-6(style='padding:0px;' ,slot='heading')
+            h4.samodashheading(style="font-size: 18px;") General Settings / Outgoing Mail Servers / New
+    outgoingemailservercreatecompo
+        .o_form_view.o_form_editable(slot='outgoing')
+            .o_form_sheet_bg
+                .o_form_sheet
+                    table.o_group.o_inner_group
+                        tbody
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label(for='o_field_input_36')
+                                        | Description
+                                td(colspan='1', style='width: 50%;')
+                                    input#o_field_input_36.o_form_input.o_form_field.o_form_required(type='text', v-model='description_e')
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help(for='o_field_input_37', data-original-title='', title='')
+                                        | Priority
+                                td(colspan='1', style='width: 50%;')
+                                    input#o_field_input_37.o_form_input.o_form_field.o_form_field_number(type='text',v-model='priority_e')
+                    table.o_group.o_inner_group
+                        tbody
+                            tr
+                                td(colspan='4', style='width: 100%;')
+                                    .o_horizontal_separator
+                                        | Connection Information
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help(for='o_field_input_38', data-original-title='', title='')
+                                        | SMTP Server
+                                td(colspan='1', style='width: 50%;')
+                                    input#o_field_input_38.o_form_input.o_form_field.o_form_required(type='text',v-model='smtp_server_e')
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help(for='o_field_input_39', data-original-title='', title='')
+                                        | SMTP Port
+                                td(colspan='1', style='width: 50%;')
+                                    input#o_field_input_39.o_form_input.o_form_field.o_form_required.o_form_field_number(type='text',v-model='smtp_port_e')
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_40', data-original-title='', title='')
+                                        | Debugging
+                                td(colspan='1', style='width: 33.3333%;')
+                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                        input#o_field_input_40(type='checkbox', name='smtp_debug')
+                                        span
+                    table.o_group.o_inner_group
+                        tbody
+                            tr
+                                td(colspan='2', style='width: 100%;')
+                                    .o_horizontal_separator
+                                        | Security and Authentication
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help(for='o_field_input_41', data-original-title='', title='')
+                                        | Connection Security
+                                td(colspan='1', style='width: 100%;')
+                                    select#o_field_input_41.o_form_input.o_form_field.o_form_required(name='smtp_encryption',v-model='connection_security_e')
+                                        option(value='false')
+                                        option(value='none') None
+                                        option(value='TLS(STARTTLS)') TLS (STARTTLS)
+                                        option(value='SSL/TLS') SSL/TLS
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help(for='o_field_input_42', data-original-title='', title='')
+                                        | Username
+                                td(colspan='1', style='width: 100%;')
+                                    input#o_field_input_42.o_form_input.o_form_field(maxlength='64', type='text', v-model='username_e')
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help(for='o_field_input_43', data-original-title='', title='')
+                                        | Password
+                                td(colspan='1', style='width: 100%;')
+                                    input#o_field_input_43.o_form_input.o_form_field(autocomplete='new-password', maxlength='64', type='password', v-model='password_e')
+                            tr
+                                td(colspan='1', style='width: 50%;')
+                                    button.btn.btn-sm(type='button')
+                                        .fa.fa-fw.fa-television.o_button_icon
+                                        span#test Test Connection
+

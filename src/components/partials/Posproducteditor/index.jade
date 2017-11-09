@@ -1,0 +1,495 @@
+.o_content.samocontent(style='margin-left:-15px;margin-right:-15px;')
+    .o_view_manager_content
+        .o_form_view.o_form_readonly
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .container
+                            .oe_button_box(name='button_box')
+                                button.btn.btn-sm.oe_stat_button(type='button')
+                                    .fa.fa-fw.fa-archive.o_button_icon
+                                    .o_stat_info.o_form_field(data-original-title='', title='')
+                                        span.o_stat_text.o_not_hover.text-success Active
+                                        span.o_stat_text.o_hover.text-danger Archive
+                                button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                    .fa.fa-fw.fa-sitemap.o_button_icon
+                                    .o_form_field.o_stat_info
+                                        span.o_stat_value 1
+                                        span.o_stat_text Variants
+                                button.btn.btn-sm.oe_stat_button(type='button')
+                                    .fa.fa-fw.fa-flask.o_button_icon
+                                    .o_form_field.o_stat_info
+                                        span.o_stat_value 0
+                                        span.o_stat_text Bill of Materials
+                                button.btn.btn-sm.oe_stat_button(type='button')
+                                    .fa.fa-fw.fa-list-alt.o_button_icon
+                                    .o_form_field.o_stat_info
+                                        span.o_stat_value 0
+                                        span.o_stat_text Manufacturing
+                                button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                    .fa.fa-fw.fa-truck.o_button_icon
+                                    span Procurements
+                                button.btn.btn-sm.oe_stat_button(type='button')
+                                    .fa.fa-fw.fa-shopping-cart.o_button_icon
+                                    .o_form_field.o_stat_info
+                                        span.o_stat_value 0
+                                        span.o_stat_text Purchases
+                                button.btn.btn-sm.oe_stat_button(type='button')
+                                    .fa.fa-fw.fa-usd.o_button_icon
+                                    .o_form_field.o_stat_info
+                                        span.o_stat_value 0
+                                        span.o_stat_text Sales
+                                button.btn.btn-sm.oe_stat_button(type='button')
+                                    .fa.fa-fw.fa-building-o.o_button_icon
+                                    .o_form_field.o_stat_info
+                                        span.o_stat_value 18
+                                        span.o_stat_text On Hand
+                                button.btn.btn-sm.oe_stat_button(type='button')
+                                    .fa.fa-fw.fa-building-o.o_button_icon
+                                    .o_form_field.o_stat_info
+                                        span.o_stat_value
+                                            span.o_form_field.o_form_field_number 18
+                                            span.o_form_invisible(invisible='1')
+                                                | (-
+                                                span.o_form_field.o_form_field_number 0
+                                                | +
+                                                span.o_form_field.o_form_field_number 0
+                                                | )
+                                        span.o_stat_text Forecasted
+                                button.btn.btn-sm.oe_stat_button(type='button')
+                                    .fa.fa-fw.fa-arrows-v.o_button_icon
+                                    span Traceability
+                                button.btn.btn-sm.oe_stat_button(type='button')
+                                    .fa.fa-fw.fa-refresh.o_button_icon
+                                    .o_form_field.o_stat_info
+                                        span.o_stat_value 0
+                                        span.o_stat_text Reordering Rules
+                                button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                    .fa.fa-fw.fa-refresh.o_button_icon
+                                    .o_form_field.o_stat_info.mr4
+                                        span.o_stat_text Min:
+                                        span.o_stat_text Max:
+                                    .o_form_field.o_stat_info
+                                        span.o_stat_value
+                                            span.o_form_field.o_form_field_number 0.00
+                                        span.o_stat_value
+                                            span.o_form_field.o_form_field_number 0.00
+                                button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                    .fa.fa-fw.fa-cogs.o_button_icon
+                                    span Routes
+
+                            .o_form_field_image.oe_avatar.o_form_field(data-original-title='', title='')
+                                img(border='1', name='image_medium', src='images/placeholder.png',style='width: 80px;')
+                            .oe_title
+                                label.o_form_label.oe_edit_only(for='o_field_input_4')
+                                    | Product Name
+                                h1
+                                    span.o_form_field.o_form_required(style='font-size: 13px;') Product name
+                                    button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                .col-8(style='padding:0px;')
+                                    input#example-text-input.form-control(type='text', value='',style='width: 282px;height: 50px;background-color: #D2D2FF;margin-top: -11px;')
+                                div(name='options')
+                                    div
+                                        .o_checkbox.o_form_field_boolean.o_form_field
+                                            input#o_field_input_5(type='checkbox', name='sale_ok', disabled='')
+                                            span
+                                        label.o_form_label.o_form_label_help(for='o_field_input_5', data-original-title='', title='')
+                                            | Can be Sold
+                                    div
+                                        .o_checkbox.o_form_field_boolean.o_form_field
+                                            input#o_field_input_6(type='checkbox', name='purchase_ok', disabled='')
+                                            span
+                                        label.o_form_label(for='o_field_input_6')
+                                            | Can be Purchased
+                                    div
+                                        .o_checkbox.o_form_field_boolean.o_form_field
+                                            input#o_field_input_7(type='checkbox', name='can_be_expensed', disabled='')
+                                            span
+                                        label.o_form_label.o_form_label_help.o_form_label_false(for='o_field_input_7', data-original-title='', title='')
+                                            | Can be Expensed
+
+                            .row
+                                .col-md-12.kachraytabs
+                                    .o_notebook(style='margin-top:0px;')
+                                        ul.nav.nav-tabs(role='tablist')
+                                            li.nav-item
+                                                a.nav-link.active(href='#profile', role='tab', data-toggle='tab') General Information
+                                            li.nav-item
+                                                a.nav-link(href='#buzz', role='tab', data-toggle='tab') Inventory
+                                            li.nav-item
+                                                a.nav-link(href='#buzz1', role='tab', data-toggle='tab') Sales
+                                            li.nav-item
+                                                a.nav-link(href='#buzz2', role='tab', data-toggle='tab') Invoicing
+                                            li.nav-item
+                                                a.nav-link(href='#buzz3', role='tab', data-toggle='tab') Notes
+                                        // Tab panes
+                                    .tab-content
+                                        #profile.tab-pane.fade.in.active(role='tabpanel')
+                                            .col-sm-12(style='padding: 0px;padding-top: 15px;')
+                                                .col-sm-6(style='padding: 0px;')
+                                                    .form-group.row
+                                                        label.col-2.col-form-label(for='example-text-input',style='font-size: 13px;padding-top: 0px;margin-top: -6px;padding:0px;padding-right: 121px;font-weight:bold;') Product Type
+                                                        .col-8(style='padding:0px;padding-left: 16px;border-left: 1px solid lightgrey;')
+                                                            select.form-control(style='width: 223px;height: 30px;background-color: #D2D2FF;')
+                                                                option Ice cream
+                                                                option Air Flight.
+                                                                option Computer Case
+                                                                option Graphics Card
+                                                                option Ice cream
+                                                        label.col-2.col-form-label(for='example-text-input',style='font-size: 13px;padding-top: 0px;margin-top: 0px;padding:0px;padding-right: 121px;padding-top: 8px;font-weight:bold;') Internal Reference
+                                                        .col-8(style='padding:0px;padding-left: 16px;border-left: 1px solid lightgrey;padding-top: 10px;')
+                                                            input#example-text-input.form-control(type='text', value='',style='width: 223px;height: 27px;')
+                                                        label.col-2.col-form-label(for='example-text-input',style='font-size: 13px;padding-top: 0px;margin-top: 0px;padding:0px;padding-right: 121px;padding-top: 8px;font-weight:bold;') Barcode
+                                                        .col-8(style='padding:0px;padding-left: 16px;border-left: 1px solid lightgrey;padding-top: 10px;')
+                                                            input#example-text-input.form-control(type='text', value='',style='width: 223px;height: 27px;')
+                                                .col-sm-6(style='padding: 0px;')
+                                                    .form-group.row
+                                                        label.col-2.col-form-label(for='example-text-input',style='font-size: 13px;padding-top: 0px;margin-top: 0px;padding:0px;padding-right: 121px;padding-top: 8px;font-weight:bold;') Sale Price
+                                                        .col-8(style='padding:0px;padding-left: 16px;border-left: 1px solid lightgrey;padding-top: 10px;')
+                                                            input#example-text-input.form-control(type='text', value='',style='width: 223px;height: 27px;')
+                                                        label.col-2.col-form-label(for='example-text-input',style='font-size: 13px;padding-top: 0px;margin-top: 0px;padding:0px;padding-right: 121px;padding-top: 8px;font-weight:bold;') Cost
+                                                        .col-8(style='padding:0px;padding-left: 16px;border-left: 1px solid lightgrey;padding-top: 10px;')
+                                                            input#example-text-input.form-control(type='text', value='',style='width: 223px;height: 27px;')
+                                                        label.col-2.col-form-label(for='example-text-input',style='font-size: 13px;padding-top: 0px;margin-top: -6px;padding:0px;padding-right: 121px;font-weight:bold;') Company
+                                                        .col-8(style='padding-top:6px;padding-left: 16px;border-left: 1px solid lightgrey;padding-right: 0px;display: -webkit-inline-box;')
+                                                            select.form-control(style='width: 223px;height: 30px;')
+                                                                option Alupak Industries
+                                                                option Alupak Industries
+                                                                option Alupak Industries
+                                                                option Alupak Industries
+                                                                option Ice cream
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button',style='padding: 0px;color: #7C7BAD;background-color: white;')
+
+                                                        label.col-2.col-form-label(for='example-text-input',style='font-size: 13px;padding-top: 0px;margin-top: 0px;padding:0px;padding-right: 121px;padding-top: 8px;font-weight:bold;') Control Purchase Bills
+                                                        .col-8(style='padding:0px;padding-left: 16px;border-left: 1px solid lightgrey;padding-top: 10px;')
+                                                            .radio
+                                                                label
+                                                                    input(type='radio', name='optradio',style='margin-top: 6px;')
+                                                                    | On Ordered Quantities
+                                                            .radio
+                                                                label
+                                                                    input(type='radio', name='optradio',style='margin-top: 6px;')
+                                                                    | On Recieved Quantites
+
+
+                                        #buzz.tab-pane.fade.in(role='tabpanel')
+                                            .col-sm-12(style='padding: 0px;padding-top: 15px;')
+                                                .col-sm-6(style='padding: 0px;')
+                                                    .form-group.row
+                                                        label.col-2.col-form-label(for='example-text-input',style='font-size: 13px;padding-top: 0px;margin-top: 0px;padding:0px;padding-right: 121px;padding-top: 8px;font-weight:bold;') Routes
+                                                        .col-8(style='padding:0px;padding-left: 16px;border-left: 1px solid lightgrey;')
+                                                            .radio
+                                                                label
+                                                                    input(type='radio', name='optradio',style='margin-top: 6px;')
+                                                                    | On Ordered Quantities
+                                                            .radio
+                                                                label
+                                                                    input(type='radio', name='optradio',style='margin-top: 6px;')
+                                                                    | On Recieved Quantites
+
+                                                            .radio
+                                                                label
+                                                                    input(type='radio', name='optradio',style='margin-top: 6px;')
+                                                                    | On Recieved Quantites
+
+                                                .col-sm-6(style='padding: 0px;')
+                                                    .form-group.row
+                                                        label.col-2.col-form-label(for='example-text-input',style='font-size: 13px;padding-top: 0px;margin-top: 0px;padding:0px;padding-right: 121px;padding-top: 8px;font-weight:bold;') Weight
+                                                        .col-8(style='padding:0px;padding-left: 16px;border-left: 1px solid lightgrey;')
+                                                            input#example-text-input.form-control(type='text', value='',style='width: 223px;height: 27px;')
+                                                        label.col-2.col-form-label(for='example-text-input',style='font-size: 13px;padding-top: 0px;margin-top: 0px;padding:0px;padding-right: 121px;padding-top: 8px;font-weight:bold;') Volume
+                                                        .col-8(style='padding:0px;padding-left: 16px;border-left: 1px solid lightgrey;padding-top: 10px;')
+                                                            input#example-text-input.form-control(type='text', value='',style='width: 223px;height: 27px;')
+                                            .col-sm-12(style='padding: 0px;padding-top: 15px;')
+                                                .col-sm-6(style='padding: 0px;')
+                                                    .form-group.row
+                                                        label.col-2.col-form-label(for='example-text-input',style='font-size: 13px;padding-top: 0px;margin-top: -6px;padding:0px;padding-right: 121px;font-weight:bold;') Company
+                                                        .col-8(style='padding-top:6px;padding-left: 16px;border-left: 1px solid lightgrey;padding-right: 0px;display: -webkit-inline-box;')
+                                                            select.form-control(style='width: 223px;height: 30px;background-color: #D2D2FF;')
+                                                                option Alupak Industries
+                                                                option Alupak Industries
+                                                                option Alupak Industries
+                                                                option Alupak Industries
+                                                                option Ice cream
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button',style='padding: 0px;color: #7C7BAD;background-color: white;')
+
+                                            .o_horizontal_separator
+                                                | Vendors
+
+                                            .table-responsive
+                                                table.o_list_view.table.table-condensed.table-striped
+                                                    thead
+                                                        tr
+                                                            th.o_column_sortable(data-id='sequence', width='1')
+                                                                span.o_row_handle.fa.fa-arrows.invisible
+                                                            th.o_column_sortable(data-id='name')
+                                                                | Rule Name
+                                                            th.o_column_sortable(data-id='type')
+                                                                | Type
+                                                            th.o_column_sortable(data-id='encoding')
+                                                                | Encoding
+                                                            th.o_column_sortable(data-id='pattern')
+                                                                | Barcode Pattern
+                                                            th.o_list_record_delete
+                                                    tfoot
+                                                        tr
+                                                            td
+                                                            td
+                                                            td
+                                                            td
+                                                            td
+                                                            td.o_list_record_delete
+                                                    tbody.ui-sortable
+                                                        tr
+                                                            td.o_form_field_x2many_list_row_add(colspan='6')
+                                                                a(data-toggle='modal', data-target='.bd-example-modal-lg') Add an item
+                                                        tr
+                                                            td.o_form_field_x2many_list_row_add(colspan='6')
+                                                                a(data-toggle='modal', data-target='.bd-example-modal-lg') Add an item
+                                                        tr
+                                                            td(title='')  
+                                                            td(title='Rule Name')  
+                                                            td(title='Type')  
+                                                            td(title='Encoding')  
+                                                            td(title='Barcode Pattern')  
+                                                            td.o_list_record_delete
+                                                        tr
+                                                            td(title='')  
+                                                            td(title='Rule Name')  
+                                                            td(title='Type')  
+                                                            td(title='Encoding')  
+                                                            td(title='Barcode Pattern')  
+                                                            td.o_list_record_delete
+                                                        tr
+                                                            td(title='')  
+                                                            td(title='Rule Name')  
+                                                            td(title='Type')  
+                                                            td(title='Encoding')  
+                                                            td(title='Barcode Pattern')  
+                                                            td.o_list_record_delete
+                                        #buzz1.tab-pane.fade.in(role='tabpanel')
+                                            .col-sm-12(style='padding: 0px;padding-top: 15px;')
+                                                .col-sm-6(style='padding: 0px;')
+                                                    table.o_group.o_inner_group.o_group_col_6(style='margin-left: -17px;')
+                                                        tbody
+                                                            tr
+                                                                td(colspan='2', style='width: 100%;')
+                                                                    .o_horizontal_separator
+                                                                        | Sale Conditions
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label.o_form_invisible(for='o_field_input_36')
+                                                                        | Warranty
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    .o_form_invisible(invisible='1')
+                                                                        input#o_field_input_36.o_form_input.oe_inline.o_form_field.o_form_field_number(type='text')
+                                                                        |  months
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label.o_form_label_help(for='o_field_input_37', data-original-title='', title='')
+                                                                        | Customer Lead Time
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    div(style='display: flex;')
+                                                                        input#o_field_input_37.o_form_input.oe_inline.o_form_field.o_form_field_number(type='text', style='vertical-align:baseline;padding: 0px;')
+                                                                        |  days
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label.o_form_label_help(for='o_field_input_38', data-original-title='', title='')
+                                                                        | Manufacturing Lead Time
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    div(style='display: flex;')
+                                                                        input#o_field_input_38.o_form_input.oe_inline.o_form_field.o_form_field_number(type='text',style=';padding: 0px;')
+                                                                        |  days
+
+                                                .col-sm-6(style='padding: 0px;')
+                                                    table.o_group.o_inner_group.o_group_col_6
+                                                        tbody
+                                                            tr
+                                                                td(colspan='2', style='width: 100%;')
+                                                                    .o_horizontal_separator
+                                                                        | Point of Sale
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label.o_form_label_help(for='o_field_input_39', data-original-title='', title='')
+                                                                        | Available in the Point of Sale
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    .o_checkbox.o_form_field_boolean.o_form_field
+                                                                        input#o_field_input_39(type='checkbox', name='available_in_pos')
+                                                                        span
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label.o_form_label_help(for='o_field_input_40', data-original-title='', title='')
+                                                                        | Point of Sale Category
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    select.form-control(style='width: 223px;height: 30px;')
+                                                                        option Alupak Industries
+                                                                        option Alupak Industries
+                                                                        option Alupak Industries
+                                                                        option Alupak Industries
+                                                                        option Ice cream
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label.o_form_label_help(for='o_field_input_41', data-original-title='', title='')
+                                                                        | To Weigh With Scale
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    .o_checkbox.o_form_field_boolean.o_form_field
+                                                                        input#o_field_input_41(type='checkbox', name='to_weight')
+                                                                        span
+
+
+
+
+                                        #buzz2.tab-pane.fade.in(role='tabpanel')
+                                            .o_group(style='display: flex;')
+                                                table.o_group.o_inner_group.o_group_col_6
+                                                    tbody
+                                                        tr
+                                                            td.o_td_label(colspan='1')
+                                                                label.o_form_label.o_form_label_help(for='o_field_input_42', data-original-title='', title='')
+                                                                    | Income Account
+                                                            td(colspan='1', style='width: 100%;')
+                                                                select.form-control(style='width: 223px;height: 30px;')
+                                                                    option Alupak Industries
+                                                                    option Alupak Industries
+                                                                    option Alupak Industries
+                                                                    option Alupak Industries
+                                                                    option Ice cream
+                                                        tr
+                                                            td.o_td_label(colspan='1')
+                                                                label.o_form_label(for='o_field_input_43')
+                                                                    | Customer Taxes
+                                                            td(colspan='1', style='width: 100%;')
+                                                                select.form-control(style='width: 223px;height: 30px;')
+                                                                    option Alupak Industries
+                                                                    option Alupak Industries
+                                                                    option Alupak Industries
+                                                                    option Alupak Industries
+                                                                    option Ice cream
+
+                                                table.o_group.o_inner_group.o_group_col_6
+                                                    tbody
+                                                        tr
+                                                            td.o_td_label(colspan='1')
+                                                                label.o_form_label.o_form_label_help(for='o_field_input_44', data-original-title='', title='')
+                                                                    | Expense Account
+                                                            td(colspan='1', style='width: 100%;')
+                                                                select.form-control(style='width: 223px;height: 30px;')
+                                                                    option Alupak Industries
+                                                                    option Alupak Industries
+                                                                    option Alupak Industries
+                                                                    option Alupak Industries
+                                                                    option Ice cream
+                                                        tr
+                                                            td.o_td_label(colspan='1')
+                                                                label.o_form_label(for='o_field_input_45')
+                                                                    | Vendor Taxes
+                                                            td(colspan='1', style='width: 100%;')
+                                                                select.form-control(style='width: 223px;height: 30px;')
+                                                                    option Alupak Industries
+                                                                    option Alupak Industries
+                                                                    option Alupak Industries
+                                                                    option Alupak Industries
+                                                                    option Ice cream
+                                                        tr
+                                                            td.o_td_label(colspan='2')
+                                                                label.o_form_label
+                                                        tr
+                                                            td.o_td_label(colspan='1')
+                                                                label.o_form_label.o_form_label_help(for='o_field_input_46', data-original-title='', title='')
+                                                                    | Price Difference Account
+                                                            td(colspan='1', style='width: 100%;')
+                                                                select.form-control(style='width: 223px;height: 30px;')
+                                                                    option Alupak Industries
+                                                                    option Alupak Industries
+                                                                    option Alupak Industries
+                                                                    option Alupak Industries
+                                                                    option Ice cream
+                                            .o_horizontal_separator
+                                                | Invoicing Policy
+
+                                            table.o_group.o_inner_group
+                                                tbody
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_help(for='o_field_input_50', data-original-title='', title='')
+                                                                | Invoicing Policy
+                                                        td(colspan='1', style='width: 100%;')
+                                                            .o_form_field_radio.o_vertical.o_form_field
+                                                                .o_radio_item
+                                                                    input#radio56_order.o_form_radio(type='radio', name='radio56', value='order')
+                                                                    label.o_form_label(for='radio56_order') Ordered quantities
+                                                                .o_radio_item
+                                                                    input#radio56_delivery.o_form_radio(type='radio', name='radio56', value='delivery')
+                                                                    label.o_form_label(for='radio56_delivery') Delivered quantities
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_invisible(for='o_field_input_51')
+                                                                | Re-Invoice Expenses
+                                                        td(colspan='1', style='width: 100%;')
+                                                            .o_form_field_radio.o_vertical.o_form_field.o_form_invisible
+                                                                .o_radio_item
+                                                                    input#radio57_no.o_form_radio(type='radio', name='radio57', value='no')
+                                                                    label.o_form_label(for='radio57_no') No
+                                                                .o_radio_item
+                                                                    input#radio57_cost.o_form_radio(type='radio', name='radio57', value='cost')
+                                                                    label.o_form_label(for='radio57_cost') At cost
+                                                                .o_radio_item
+                                                                    input#radio57_sales_price.o_form_radio(type='radio', name='radio57', value='sales_price')
+                                                                    label.o_form_label(for='radio57_sales_price') At sale price
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_52', data-original-title='', title='')
+                                                                | Track Service
+                                                        td(colspan='1', style='width: 100%;')
+                                                            .o_form_field_radio.o_vertical.o_form_field.o_form_invisible
+                                                                .o_radio_item
+                                                                    input#radio58_manual.o_form_radio(type='radio', name='radio58', value='manual')
+                                                                    label.o_form_label(for='radio58_manual') Manually set quantities on order
+                                                                .o_radio_item
+                                                                    input#radio58_timesheet.o_form_radio(type='radio', name='radio58', value='timesheet')
+                                                                    label.o_form_label(for='radio58_timesheet') Timesheets on project
+                                                                .o_radio_item
+                                                                    input#radio58_task.o_form_radio(type='radio', name='radio58', value='task')
+                                                                    label.o_form_label(for='radio58_task') Create a task and track hours
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_53', data-original-title='', title='')
+                                                                | Project
+                                                        td(colspan='1', style='width: 100%;')
+                                                            .o_form_field_many2one.o_form_field.o_form_invisible
+                                                                .o_form_input_dropdown
+                                                                    input#o_field_input_53.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                    span.o_dropdown_button(draggable='false')
+                                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+
+                                        #buzz3.tab-pane.fade.in(role='tabpanel')
+                                            table.o_group.o_inner_group
+                                                tbody
+                                                    tr
+                                                        td(colspan='4', style='width: 200%;')
+                                                            .o_horizontal_separator
+                                                                | Description for Quotations
+                                                    tr
+                                                        td(colspan='4', style='width: 200%;')
+                                                            textarea.o_form_textarea.o_form_field(rows='6', name='description_sale', placeholder='This note will be displayed on the quotations.', data-original-title='', title='', style='height: 50px;')
+                                                            button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                                            textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 826px;')
+                                                    tr
+                                                        td(colspan='4', style='width: 200%;')
+                                                            .o_horizontal_separator
+                                                                | Description for Vendors
+                                                    tr
+                                                        td(colspan='4', style='width: 200%;')
+                                                            textarea.o_form_textarea.o_form_field(rows='6', name='description_purchase', placeholder='This note will be displayed on requests for quotation.', data-original-title='', title='', style='height: 50px;')
+                                                            button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                                            textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 110px;')
+                                                    tr
+                                                        td(colspan='4', style='width: 200%;')
+                                                            .o_horizontal_separator
+                                                                | Description for Pickings
+                                                    tr
+                                                        td(colspan='4', style='width: 200%;')
+                                                            textarea.o_form_textarea.o_form_field(rows='6', name='description_picking', placeholder='Description for Pickings (Rack, Row and Case Information)', style='height: 50px;')
+                                                            button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                                            textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 110px;')
+
+

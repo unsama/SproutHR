@@ -1,0 +1,25 @@
+.row
+    //Modal(v-bind:save='true',v-bind:create='true',v-bind:heading="modal",v-bind:modal='"bd-example-modal-lg"')
+    //    SidebarModal
+    .sidenav.samosidenav
+        .imagehover(style='position:relative;')
+            span.samospan(data-toggle='modal', data-target='.bd-example-modal-lg52') edit company data
+            img.samoimgside(src='/images/company_logo.jpg')
+        ul.samoulside(v-for="(title, key) in headings")
+            router-link.samoulside(style='padding-left: 12px;')(v-bind:to='title' v-if="typeof title !== 'object'") {{ titleSet(key) }}
+            span(style='padding-left: 12px;')(v-else) {{ titleSet(key) }}
+            router-link.samoatag(v-for="link in title" v-if="typeof title === 'object' && link.url" v-bind:to="link.url")
+                li.samoliside#abc(style='padding-left: 30px;') {{ link.title }}
+            a(v-else-if="typeof link.modal === 'object'" data-toggle='modal' v-bind:data-target="link.modal.data_target")
+                li.samoliside(style='padding-left: 30px;') {{ link.title }}
+            a(v-else-if="typeof link.childrens === 'object'")
+                li.samoliside.tog.pointer &#9656; {{ link.title }}
+                ul.sidebarui(style='padding-left: 12px;')
+                    router-link(v-for="c_obj in link.childrens" v-if="c_obj.url" v-bind:to="c_obj.url")
+                        li.samoliside {{ c_obj.title }}
+                    a( v-else-if="typeof c_obj.modal === 'object'" data-toggle='modal' v-bind:data-target="c_obj.modal.data_target")
+                        li.samoliside {{ c_obj.title }}
+
+        br.samobr
+        h6(style='font-size: 13px;margin-bottom: 0px;text-align: center;position: absolute;bottom: 4px;width: 100%;') Powered By
+            span(style='padding: 4px;color: #875a7b;font-weight: bold;padding-bottom:opx;') Sprout

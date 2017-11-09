@@ -1,0 +1,170 @@
+.all_transfers_table
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false',v-bind:dropdownbtn1='false',v-bind:dropdownbtn2='false',v-bind:dropdownbtn3='false',v-bind:actionbtn='true',v-bind:Attachmentbtn='true',v-bind:printbtn='true')
+    .o_content.row(style='height:89vh;overflow:auto;')
+        .col-md-12
+            .row
+                .col-md-12.pull-left.samotopcontroller
+                    .col-md-5.pull-left
+                        button.btn.btn-primary.samobutton2(type='button',style='margin-right: 5px;') Produce
+                        button.btn.btn-primary.samobutton1(type='button',style='margin-right: 5px;') Cancel
+                        button.btn.btn-primary.samobutton1(type='button',style='margin-right: 5px;') Scrap
+                        button.btn.btn-primary.samobutton1(type='button') Unreverse
+
+                    .col-md-1.pull-left
+                    .col-md-3.pull-left
+                    .col-md-3.pull-right
+                        .btn-group.btn-breadcrumb.samobreadcrum1
+                            a.btn.btn-primary.samobreadbutt(href='#') In Progress
+                            a.btn.btn-primary.samobreadbutt1(href='#') Confirmed
+                            a.btn.btn-primary.samobreadbutt(href='#') Done
+            .o_view_manager_content
+                .o_form_view.o_form_readonly
+                    .o_form_sheet_bg
+                        .o_form_sheet
+                            .row
+
+                                .col-sm-12.samocol4
+                                    h1(style='font-weight:bold;font-size:30px;font-size: 26px;color: #4c4c4c;') MO/00002
+
+
+                            .o_group
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_invisible(for='o_field_input_127')
+                                                    | Has moves
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                    input#o_field_input_127(type='checkbox', name='has_moves', disabled='')
+                                                    span
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_false(for='o_field_input_128', data-original-title='', title='')
+                                                    | Check Produced Qty
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                    input#o_field_input_128(type='checkbox', name='check_to_done', disabled='')
+                                                    span
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Product
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_required(href='#') [HDD-DEM] HDD on Demand
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_invisible
+                                                    | Product Template
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_invisible(href='#') [HDD-DEM] HDD on Demand
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Quantity To Produce
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_row
+                                                    span.o_form_field.o_form_required.o_form_field_number 1.000
+                                                    span.o_form_field.o_form_required.o_form_invisible Unit(s)
+                                                    button.btn.btn-sm.oe_link(type='button')
+                                                        span Update
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                    | Bill of Material
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_required(href='#') [HDD-DEM] HDD on Demand
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(data-original-title='', title='')
+                                                    | Routing
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Deadline Start
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field_date.o_form_field.o_form_required 02/18/2017 18:26:07
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_invisible
+                                                    | Deadline End
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field_date.o_form_field.o_form_invisible 02/18/2017 18:26:07
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Responsible
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field(href='#') Administrators
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false(data-original-title='', title='')
+                                                    | Source
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field.o_form_field_empty
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Company
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_required(href='#') Alupak Industriess
+
+
+
+                            .o_notebook
+                                ul.nav.nav-tabs(role='tablist')
+                                    li.nav-item
+                                        a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Consumed Materials
+                                    li.nav-item
+                                        a.nav-link(href='#buzz', role='tab', data-toggle='tab') Finished Products
+                                    li.nav-item
+                                        a.nav-link(href='#buzz1', role='tab', data-toggle='tab') Miscellaneous
+
+                                // Tab panes
+                                .tab-content
+                                    #profile.tab-pane.fade.in.active(role='tabpanel')
+                                        TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter")
+
+                                    #buzz.tab-pane.fade.in(role='tabpanel')
+                                        TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter")
+                                    #buzz1.tab-pane.fade.in(role='tabpanel')
+                                        .o_group
+                                            table.o_group.o_inner_group.o_form_invisible.o_group_col_6
+                                                tbody
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label
+                                                                | Picking Type
+                                                        td(colspan='1', style='width: 100%;')
+                                                            a.o_form_uri.o_form_field.o_form_required(href='#') YourCompany: Manufacturing
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                                | Raw Materials Location
+                                                        td(colspan='1', style='width: 100%;')
+                                                            a.o_form_uri.o_form_field.o_form_required(href='#') WH/Stock
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                                | Finished Products Location
+                                                        td(colspan='1', style='width: 100%;')
+                                                            a.o_form_uri.o_form_field.o_form_required(href='#') WH/Stock
+                                            table.o_group.o_inner_group.o_group_col_6
+                                                tbody
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label
+                                                                | Availability
+                                                        td(colspan='1', style='width: 100%;')
+                                                            span.o_form_field Available
+
+
+
+
+            Message
+            Request_quotation_lower
+          

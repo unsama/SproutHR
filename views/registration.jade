@@ -1,0 +1,61 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Title
+        link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/samoform.css')
+        style.
+            body{
+            }
+            .centered-form{
+                margin-top: 192px;
+                margin-left: 600px;
+            }
+            .bgl
+            {
+                width: 100%;
+                height: 100%;
+            }
+            .centered-form .panel{
+                background: rgba(255, 255, 255, 0.8);
+                box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+            }
+
+    body
+        .container
+            .row
+                // Card Projects
+                .col-md-6.col-md-offset-4.divmain(style='margin-left: 341px;margin-top: 129px;')
+                    .card.signincard1(style='border-color: white;')
+                        .signindiv5
+                            img.signinimg(src='/images/sprout_4splash.png')
+                        .signindiv1.col-md-offset-1
+                            p.signP1
+                                | Access and manage your instances from this Sprout account.
+                        .card-content(style='    border-top: 1px solid rgba(0, 0, 0, 0.17);')
+                            form(method='post' action='/check')
+                                .form-group(style='margin-bottom: 0px')
+                                    label Username:
+                                    input.form-control(type='text' name='username')
+                                .form-group(style='margin-bottom: 0px')
+                                    label Email:
+                                    input.form-control(type='email' name='email')
+                                .form-group(style='margin-bottom: 0px')
+                                    label Company Name:
+                                    input.form-control(type='text' name='company_name')
+                                .form-group(style='margin-bottom: 0px')
+                                    label Phone Number:
+                                    input.form-control(type='text' name='phone_no')
+                                .form-group(style='margin-bottom: 0px')
+                                    label Country:
+                                    input.form-control(type='text' name='country')
+                                .signindiv2
+                                    a(href='/login')
+                                        p.signinp4(style='font-size: smaller;') I ALREADY HAVE AN ACCOUNT
+                                br
+                                if(typeof errors !== 'undefined')
+                                    each err in errors
+                                        p.alert.alert-danger=err.msg
+                                button.btn.btn-success.signinbtn(type='submit', style='background: #4aabae;') SIGN IN
+

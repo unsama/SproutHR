@@ -1,0 +1,19 @@
+.samokanban{
+    display: -webkit-inline-box;
+
+}
+.samoimg{
+
+    width: 64px;
+    height: 90px;
+}
+.samokanbanimage{
+    padding-right: 10px;
+
+}
+
+.samothumbnaildet{
+    font-size: 13px;
+    color: #5a5a5a;
+
+}

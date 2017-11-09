@@ -1,0 +1,239 @@
+input[type="text"], input[type="password"], input[type="number"], textarea, select {
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 2px 4px;
+    color: #1f1f1f;
+    outline: none;
+
+}
+.samobuttopcontroller1 {
+    background-color: #7c7bad;
+    border-color: #7c7bad;
+    border-radius: 3px;
+
+}
+
+.samobuttopcontroller1:hover{
+    background-color: #5f5e97;
+    border-color:#7c7bad ;
+}
+
+.samobuttopcontroller2 {
+    color: #4c4c4c;
+    background-color: white;
+    border-color: #cccccc;
+
+}
+
+.samobuttopcontroller2:hover{
+    background-color: white;
+    border-color: #cccccc;
+}
+
+body {
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #292b2c;
+    background-color: #fff;
+}
+
+
+
+.o_group.o_inner_group > tbody > tr > td.o_td_label[data-v-7089500b] {
+    width: 0%;
+    padding: 0 15px 0 0;
+    min-width: 218px;
+}
+
+
+/*button, input, optgroup, select, textarea {*/
+/*font-family: sans-serif;*/
+/*font-size: 94%;*/
+/*line-height: 1.15;*/
+/*margin: 0;*/
+/*}*/
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.5rem 0rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+
+
+
+
+
+.two{
+
+    padding-left:9px;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+.one{
+    padding-left:9px;
+    border-right:1px solid #ddd;
+    border-collapse: separate;
+    border-spacing: 2px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.osahass{
+    padding-right: 150px !important;
+
+}
+.samohead{
+
+    color:#7c7bad;
+    font-weight: bold;
+}
+
+.samoone{
+    color: #4c4c4c;
+    font-size: 13px;
+}
+.samocheckbox{
+    margin-left: -4px;
+}
+
+.samopaddcol{
+    padding-top: 54px;
+}
+
+
+
+
+.o_group {
+    display: inline-block;
+    width: 100%;
+    margin: 10px 0;
+}
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: #efeff8 !important;
+}
+
+.table.table-striped {
+    margin-top: -35px;
+}
+thead {
+    background-color: #eee;
+}
+.table.table-striped > tbody > tr > td {
+    padding: 4px;
+}
+.table.table-striped > tbody > tr {
+    padding: 4px;
+}
+.o_group.o_inner_group {
+    display: inline-table;
+}
+.o_group.o_inner_group > tbody > tr > td {
+    vertical-align: top;
+}
+.o_group.o_inner_group > tbody > tr > td.o_td_label {
+    width: 0%;
+    padding: 0 15px 0 0;
+    min-width: 150px;
+}
+.o_group.o_inner_group > tbody > tr > td span.o_form_field, .o_form_view .o_group.o_inner_group > tbody > tr > td .o_form_field_boolean.o_form_field, .o_form_view .o_group.o_inner_group > tbody > tr > td .oe_avatar.o_form_field, .o_form_view .o_group.o_inner_group > tbody > tr > td .o_form_uri.o_form_field {
+    width: auto;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td, th {
+    padding: 0;
+}
+.table {
+    border-collapse: collapse !important;
+}
+
+.table td, .table th {
+    background-color: #fff !important;
+}
+
+
+
+td[data-v-c1365864], th[data-v-c1365864] {
+    padding: 6px;
+    padding-top: 6px;
+    padding-right: 6px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+}
+.o_group.o_inner_group > tbody > tr > td.o_td_label[data-v-c1365864] {
+    width: 0%;
+    padding: 0px 11px 0 0;
+    min-width: 115px;
+}
+
+
+.custom-control {
+    position: relative;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    min-height: 1.5rem;
+    padding-left: 2.5rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+
+
+.samotablehead{
+    color: #4c4c4c;
+    background-color: #eee;
+    border-bottom: 3px solid #cacaca;
+}
+.samotable tbody tr:nth-of-type(odd){
+
+    background-color: #efeff8;
+}
+
+.samotable{
+    font-size:13px;
+
+}
+.samotableheadborder{
+    border-right: 1px solid lightgrey;
+    line-height: 0.4em;
+    vertical-align: middle;
+}
+
+.samotbody{
+
+    line-height: 0.4em;
+}
+
+.samotablepadd{
+    vertical-align: middle;
+
+}
+.links{
+    color:black;}
+.links:hover{
+
+    color:black;
+    text-decoration: none;
+}

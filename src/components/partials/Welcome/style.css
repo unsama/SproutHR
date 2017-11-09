@@ -1,0 +1,44 @@
+.cus-toggle:first-child {
+    display: block;
+}
+
+.cus-toggle {
+    display: none;
+
+}
+.lf
+{
+    justify-content: flex-start;
+}
+.li-cl{
+    color: black;
+}
+.li-cl-hide{
+    color: white;
+}
+.sm
+{
+    font-size: 1rem;
+}
+.left
+{
+    margin-left: 281px;
+}
+.modelm
+{
+    width: 962px;
+    margin-left: -105px;
+}
+.hed{
+    color: #000000;
+}
+.a {
+    color: #7c7bad;
+}
+
+.bx {
+    box-shadow: 1px 0px 2px #b3b3b3;
+}
+.nav-c {
+    color: #8e959c;
+}

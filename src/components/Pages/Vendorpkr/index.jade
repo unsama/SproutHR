@@ -1,0 +1,152 @@
+.Vendorpkr
+    .row.samorequestinnerrow
+        .dashboardcontroller
+            .bro
+                .col-sm-6.samodashheadingmain(style='margin-top: 10px;')
+                    h4.samodashheading Requests for Quotation/PO00007: 637.50 Rs.
+                .col-sm-6.samodashsearch
+                    h1(style='color: #f0eeee;') s
+            .bro
+                .col-sm-6.samodashheadingmain
+                    button.btn.btn-primary.samobuttopcontroller#hasS(type='button', href='users')
+                        router-link.links.samolinks(to='Imported') Edit
+                    button.btn.btn-default.samobuttopcontroller2#hasHide(type='button', href='#home')
+                        router-link.links.samolinks(to='Imported') Create
+                            Discard
+                    .dropdown1
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-filter.iconbutton
+                                | Print
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Purchase order
+                                a.dropdown-item(href='#') Request For Quotation
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton2.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-bars.iconbutton
+                                | Attachment
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Add
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-star.iconbutton
+                                | Action
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Delete
+                                a.dropdown-item(href='#') Duplicate
+                .col-sm-6.samodashsearch
+                    div(style='float:right;')
+                        span.o_pager_value 1-24
+                            |  /
+                            span.o_pager_limit 24
+                            span.btn-group.btn-group-sm
+                                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p', disabled='')
+                                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n', disabled='')
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .row
+                            .col-sm-12
+                                h1(style='font-size: 24px;font-weight: bold;') Vendor Bills
+                                .row
+                                    .col-xs-3.request_inner3(style='font-weight: bold;')
+                                        .one
+                                            label(style='font-size:15px;padding-right:25px;')
+                                                | Type
+                                            br
+
+                                    .col-xs-4.osahass(style='')
+                                        .two
+                                            router-link(to='Vendormenu')
+                                                label(style='font-size:13px;')
+                                                    | Purchase
+
+
+                                    .col-xs-3.request_inner2(style='font-weight: bold;')
+                                        .one
+                                            label(style='font-size:15px;padding-right:25px;')
+                                                | Company
+
+
+
+                                    .col-xs-2.osahass(style='')
+                                        .two
+                                            label(style='font-size:13px;')
+                                                | Alupak Industriess
+                                            br
+
+
+
+                        .o_notebook(style='margin-top: -6px;')
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Bill
+                                li.nav-item
+                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab')  Advanced Setting
+                            // Tab panes
+                            .tab-content
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+                                    .row(style='padding-top:20px;')
+                                        .col-xs-3(style='font-weight: bold;')
+                                            .one
+                                                label(style='font-size:15px;padding-right:25px;')
+                                                    | Short Code
+                                                br
+
+                                        .col-xs-3(style='')
+                                            .two
+                                                router-link(to='Vendormenu')
+                                                    label(style='font-size:13px;')
+                                                        | BILL
+
+
+                                        .col-xs-3(style='font-weight: bold;')
+                                            .one
+                                                label(style='font-size:15px;padding-right:25px;')
+                                                    | Default Debit Account
+                                                label(style='font-size:15px;padding-right:25px;')
+                                                    | Default Credit
+                                                label(style='font-size:15px;padding-right:25px;')
+                                                    | Account	 Expenses	Currency
+
+
+
+                                        .col-xs-3(style='')
+                                            .two
+                                                label(style='font-size:13px;')
+                                                    | 220000 Expenses
+                                                br
+                                                label(style='font-size:13px;')
+                                                    | 220000 Expenses
+                                                br
+
+
+
+
+                                #buzz.tab-pane.fade.in(role='tabpanel')
+                                    .row(style='margin-top:20px;')
+                                        .col-sm-6
+                                            h1(style='color:#7c7bad;font-size:21px;font-weight: bold;padding-left: 10px;') Miscellaneous
+
+
+                                    .row
+                                        .col-xs-3.request_inner3(style='font-weight: bold;')
+                                            .one
+                                                label(style='font-size:15px;padding-right:25px;')
+                                                    | Group Invoice Lines
+                                                br
+
+                                        .col-xs-4.osahass(style='')
+                                            .two
+                                                .checkbox.disabled(style='padding-left:25px;')
+                                                    input(type='checkbox', value='', disabled='')
+
+
+
+
+
+
+
+

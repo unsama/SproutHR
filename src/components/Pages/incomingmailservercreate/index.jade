@@ -1,0 +1,191 @@
+.incomingmailservercreate
+    DashboardController(v-bind:savedbtn='true', v-bind:discardbtn='true',v-bind:heading="head",v-bind:links="btnlinks")
+        .col-sm-6(style='padding:0px;' ,slot='heading')
+            h4.samodashheading(style="font-size: 18px;") General Settings / Incoming Mail Servers / New
+    incomingmailservercreatecompo
+        .o_view_manager_content(slot='incoming')
+            .o_form_view.o_form_editable
+                header
+                    button.btn.btn-sm(type='button')
+                        span Test & Confirm
+                    button.btn.btn-sm.o_form_invisible(type='button')
+                        span Fetch Now
+                    button.btn.btn-sm.o_form_invisible(type='button')
+                        span Reset Confirmation
+                    ul.oe_form_field_status.oe_form_status.o_form_field
+                        li.oe_active(data-id='draft')
+                            span.label Not Confirmed
+                            span.arrow
+                                span
+                        li(data-id='done')
+                            span.label Confirmed
+                            span.arrow
+                                span
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_293')
+                                            | Name
+                                    td(colspan='1', style='width: 50%;')
+                                        input#o_field_input_293.o_form_input.o_form_field.o_form_required(type='text' ,v-model='name')
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_294')
+                                            | Server Type
+                                    td(colspan='1', style='width: 50%;')
+                                        select#o_field_input_294.o_form_input.o_form_field.o_form_required(name='type',v-model='servertype')
+                                            option(value='false')
+                                            option(value='pop') POP Server
+                                            option(value='imap') IMAP Server
+                                            option(value='local') Local Server
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_295')
+                                            | Last Fetch Date
+                                    td(colspan='1', style='width: 33.3333%;')
+                                        span.o_form_field_date.o_form_field.o_form_field_empty
+                        .o_notebook
+                            ul.nav.nav-tabs(role='tablist')
+                                li.active
+                                    a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_296')
+                                        | Server & Login
+                                li.o_form_invisible
+                                    a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_297')
+                                        | Advanced
+                            .tab-content.nav.nav-tabs
+                                #notebook_page_296.tab-pane.active(role='tabpanel')
+                                    .o_group
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Server Information
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_298', data-original-title='', title='')
+                                                            | Server Name
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_298.o_form_input.o_form_field.o_form_required(type='text',v-model='servername')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_299')
+                                                            | Port
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_299.o_form_input.o_form_field.o_form_required.o_form_field_number(type='text',v-model='port')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_300', data-original-title='', title='')
+                                                            | SSL/TLS
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_checkbox.o_form_field_boolean.o_form_field
+                                                            input#o_field_input_300(type='checkbox', name='is_ssl',v-model='ssl')
+                                                            span
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Login Information
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_301')
+                                                            | Username
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_301.o_form_input.o_form_field.o_form_required(type='text',v-model='username')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_302')
+                                                            | Password
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_302.o_form_input.o_form_field.o_form_required(autocomplete='new-password', type='password', v-model='password')
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Actions to Perform on Incoming Mails
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_303', data-original-title='', title='')
+                                                            | Create a New Record
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_303.o_form_input.ui-autocomplete-input(type='text', autocomplete='off',v-model='newrecord')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_304', data-original-title='', title='')
+                                                            | Server Action
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_form_field.o_form_invisible
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_304.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        table.o_group.o_inner_group.o_group_col_6.o_form_invisible
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Configuration
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_305')
+                                                            | Configuration
+                                                tr
+                                                    td(colspan='3', style='width: 150%;')
+                                                        span.o_form_textarea.o_form_field
+                                                            | Use the below script with the following command line options with your Mail Transport Agent (MTA)
+                                                            | openerp_mailgate.py --host=HOSTNAME --port=PORT -u 1 -p PASSWORD -d unsama
+                                                            | Example configuration for the postfix mta running locally:
+                                                            | /etc/postfix/virtual_aliases:
+                                                            | @youdomain openerp_mailgate@localhost
+                                                            | /etc/aliases:
+                                                            | openerp_mailgate: "|/path/to/openerp-mailgate.py --host=localhost -u 1 -p PASSWORD -d unsama"
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_306')
+                                                            | Script
+                                                tr
+                                                    td(colspan='3', style='width: 150%;')
+                                                        a.o_form_uri.o_text_overflow.o_form_field(href='/mail/static/scripts/openerp_mailgate.py', target='_blank') /mail/static/scripts/openerp_mailgate.py
+                                #notebook_page_297.tab-pane(role='tabpanel')
+                                    table.o_group.o_inner_group
+                                        tbody
+                                            tr
+                                                td(colspan='4', style='width: 100%;')
+                                                    .o_horizontal_separator
+                                                        | Advanced Options
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_307', data-original-title='', title='')
+                                                        | Server Priority
+                                                td(colspan='1', style='width: 50%;')
+                                                    input#o_field_input_307.o_form_input.o_form_field.o_form_field_number(type='text')
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_308', data-original-title='', title='')
+                                                        | Keep Attachments
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field
+                                                        input#o_field_input_308(type='checkbox', name='attach')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_309', data-original-title='', title='')
+                                                        | Keep Original
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field
+                                                        input#o_field_input_309(type='checkbox', name='original')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_310')
+                                                        | Active
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field
+                                                        input#o_field_input_310(type='checkbox', name='active')
+                                                        span

@@ -1,0 +1,235 @@
+.o_content(style='margin-left:-15px;margin-right:-15px;')
+    .o_view_manager_content
+        .o_form_view.o_form_editable
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .oe_title
+                        label.o_form_label.oe_edit_only(for='o_field_input_93')
+                            | Journal Name
+                        h1
+                            input#o_field_input_93.o_form_input.oe_inline.o_form_field.o_form_required(type='text')
+                    .o_group
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help(for='o_field_input_94', data-original-title='', title='')
+                                            | Type
+                                    td(colspan='1', style='width: 100%;')
+                                        select#o_field_input_94.o_form_input.o_form_field.o_form_required(name='type')
+                                            option(value='false')
+                                            option(value='"sale"') Sale
+                                            option(value='"purchase"') Purchase
+                                            option(value='"cash"') Cash
+                                            option(value='"bank"') Bank
+                                            option(value='"general"') Miscellaneous
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help(for='o_field_input_95', data-original-title='', title='')
+                                            | Company
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                            .o_form_input_dropdown
+                                                input#o_field_input_95.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                    .o_notebook
+                        ul.nav.nav-tabs(role='tablist')
+                            li.nav-item
+                                a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Journal Entries
+                            li.nav-item
+                                a.nav-link(href='#buzz', role='tab', data-toggle='tab') Adavanced Settings
+                            li.nav-item
+                                a.nav-link(href='#buzz1', role='tab', data-toggle='tab') Point of Sale
+
+
+                        .tab-content
+                            #profile.tab-pane.fade.in.active(role='tabpanel')
+                                .o_group
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_100', data-original-title='', title='')
+                                                        | Short Code
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_100.o_form_input.o_form_field.o_form_required(maxlength='5', type='text')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_101', data-original-title='', title='')
+                                                        | Dedicated Refund Sequence
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_101(type='checkbox', name='refund_sequence')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_102', data-original-title='', title='')
+                                                        | Entry Sequence
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_with_button.o_form_field.o_form_invisible
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_102.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_103', data-original-title='', title='')
+                                                        | Refund Entry Sequence
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field.o_form_invisible
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_103.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_104', data-original-title='', title='')
+                                                        | Default Debit Account
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_with_button.o_form_field
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_104.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_105', data-original-title='', title='')
+                                                        | Default Credit Account
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_with_button.o_form_field
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_105.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_106', data-original-title='', title='')
+                                                        | Currency
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_106.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                            #buzz.tab-pane.fade.in(role='tabpanel')
+                                .o_group
+                                    table.o_group.o_inner_group.o_form_invisible.o_group_col_6
+                                        tbody
+                                            tr
+                                                td(colspan='2', style='width: 100%;')
+                                                    .o_horizontal_separator
+                                                        | Control-Access
+                                            tr
+                                                td(colspan='2', style='width: 100%;')
+                                                    .text-muted(colspan='2') Keep empty for no control
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_107')
+                                                        | Account Types Allowed
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2manytags.o_form_field
+                                                        .o_form_field_many2one.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_108')
+                                                        | Accounts Allowed
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2manytags.o_form_field
+                                                        .o_form_field_many2one.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td(colspan='2', style='width: 100%;')
+                                                    .o_horizontal_separator
+                                                        | Miscellaneous
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_109', data-original-title='', title='')
+                                                        | Debit Methods
+                                                td(colspan='1', style='width: 100%;')
+                                                    .oe_form_many2many_checkboxes.o_form_field
+                                                        div
+                                                            .o_checkbox
+                                                                input(checked='checked', type='checkbox', data-record-id='1')
+                                                                span
+                                                            label.o_form_label Manual
+                                                        div
+                                                            .o_checkbox
+                                                                input(type='checkbox', data-record-id='3')
+                                                                span
+                                                            label.o_form_label Electronic
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_110', data-original-title='', title='')
+                                                        | Payment Methods
+                                                td(colspan='1', style='width: 100%;')
+                                                    .oe_form_many2many_checkboxes.o_form_field
+                                                        div
+                                                            .o_checkbox
+                                                                input(checked='checked', type='checkbox', data-record-id='2')
+                                                                span
+                                                            label.o_form_label Manual
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_111', data-original-title='', title='')
+                                                        | Group Invoice Lines
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_111(type='checkbox', name='group_invoice_lines')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_112', data-original-title='', title='')
+                                                        | Profit Account
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_112.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_113', data-original-title='', title='')
+                                                        | Loss Account
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_113.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_114', data-original-title='', title='')
+                                                        | Show journal on dashboard
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_114(type='checkbox', name='show_on_dashboard')
+                                                        span
+                            #buzz1.tab-pane.fade.in(role='tabpanel')
+                                .o_group
+                                    table.o_group.o_inner_group
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_119', data-original-title='', title='')
+                                                        | Active in Point of Sale
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field
+                                                        input#o_field_input_119(type='checkbox', name='journal_user')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_120', data-original-title='', title='')
+                                                        | Amount Authorized Difference
+                                                td(colspan='1', style='width: 50%;')
+                                                    input#o_field_input_120.o_form_input.o_form_field.o_form_field_number(type='text')

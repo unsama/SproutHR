@@ -1,0 +1,197 @@
+.Vendor_inner
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true',v-bind:dropdownMenuButton='true',v-bind:Attachmentbtn='true',v-bind:actionbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+
+                        .tophead
+                            h6 Bill
+                            h1 BILL/2017/0002
+
+                        .col-xs-12.request_inner1
+                            .row
+                                .col-xs-3.request_inner3(style='font-weight: bold;')
+                                    .one
+                                        label(style='font-size:15px;padding-right:25px;')
+                                            | Vendor
+                                        br
+                                        label(style='font-size:15px;')
+                                            | Vendor Reference
+                                        br
+
+
+                                .col-xs-4.osahass(style='')
+                                    .two
+                                        label(style='font-size:13px;')
+                                            | ASUSTeK
+                                        br
+
+
+                                .col-xs-3.request_inner2(style='font-weight: bold;')
+                                    .one
+                                        label(style='font-size:15px;padding-right:25px;')
+                                            | Bill Date
+                                        br
+                                        label(style='font-size:15px;')
+                                            | Due Date
+                                        br
+                                        label(style='font-size:15px;')
+                                            | Currency
+
+
+                                .col-xs-2.osahass(style='')
+                                    .two
+                                        label(style='font-size:13px;')
+                                            | 01/15/2017
+                                        br
+                                        label(style='font-size:13px;')
+                                            | 02/28/2017
+                                        br
+                                        label(style='font-size:13px;')
+                                            | USD
+
+                        .o_notebook
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Bill
+                                li.nav-item
+                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') Other Info
+                            // Tab panes
+                            .tab-content
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+                                    table.table.table-striped.samotable
+                                        thead.samotablehead
+                                            tr
+
+                                                th.samotableheadborder Product
+                                                th.samotableheadborder Description
+                                                th.samotableheadborder Account
+                                                th.samotableheadborder Quantity
+                                                th.samotableheadborder Unit Price
+                                                th.samotableheadborder Texas Amount
+                                                th.samotableheadborder Due Date
+
+                                        tfoot.samotfoot
+                                            tr
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+
+                                        tbody.samotbody
+                                            tr
+
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+
+                                            tr
+
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+
+
+
+                                            tr
+
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+                                                td.samotablepadd
+
+
+                                #buzz.tab-pane.fade.in(role='tabpanel')
+                                    .o_group
+                                        .col-xs-12.request_inner1
+                                            .row
+                                                .col-xs-3.request_inner3(style='font-weight: bold;')
+                                                    .one
+                                                        label(style='font-size:15px;padding-right:25px;')
+                                                            | Journal
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Responsible
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Account
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Payment Terms
+                                                        br
+
+
+
+                                                .col-xs-3.osahass(style='')
+                                                    .two
+                                                        router-link(to='vendorpkr')
+                                                            label(style='font-size:13px;')
+                                                                | Vendor Bills (PKR)
+                                                        br
+                                                        router-link(to='Administrators')
+                                                            label(style='font-size:13px;')
+                                                                | Administrators
+                                                            br
+                                                        label(style='font-size:13px;')
+                                                            | 111100 Account Payable
+                                                        br
+                                                        label(style='font-size:13px;')
+                                                            | End of Following Month
+                                                        br
+
+
+                                                .col-xs-3.request_inner2(style='font-weight: bold;')
+                                                    .one
+                                                        label(style='font-size:15px;padding-right:25px;')
+                                                            | Fiscal Position
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Journal Entry
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Accounting Date
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Company
+                                                        br
+
+
+
+                                                .col-xs-3.osahass(style='')
+                                                    .two
+                                                        label(style='font-size:13px;')
+                                                            | Vendor Bills (PKR)
+                                                        br
+                                                        router-link(to='Billing')
+
+                                                            label(style='font-size:13px;')
+                                                                | BILL/2017/0002
+                                                            br
+
+                                                        label(style='font-size:13px;')
+                                                            | 01/15/2017
+                                                        br
+
+                                                        router-link(to='profile')
+                                                            label(style='font-size:13px;')
+                                                                | Alupak Industriess
+                                                        br
+
+    Message
+    Request_quotation_lower

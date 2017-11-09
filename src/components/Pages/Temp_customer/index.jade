@@ -1,0 +1,234 @@
+.container-fluid(style='margin-left: -15px;margin-right: -15px;')
+    .dashboardsetting
+        .row
+            .col-sm-12.main.samodashcont1
+                .col-sm-6.samodashheadingmain
+                    h4.samodashheading Sales to Invoice
+                .col-sm-6.samodashsearch
+                    .input-group
+                        input.form-control(type='text', placeholder='Search')
+                        .input-group-btn.samodashinputbutt
+                            button.btn.btn-default.samosearchicon(type='submit')
+                                i.searchview_more.fa.fa-search-plus
+                .row
+                    .col-sm-6.dashcontrollerbutton
+                        button.btn.btn-primary.samobuttopcontroller1#temp_show(type='button', href='users')
+                            | Edit
+                        button.btn.btn-primary.samobuttopcontroller1#save(type='button', href='users', style='display:none')
+                            | Save
+                        //button.btn.btn-default.samobuttopcontroller#temp_hide(type='button', href='#home')
+                        //    | Discard
+                        button.btn.btn-secondary.samobuttopcontrollerusa#temp_hide(type='button') Discard
+                        //button.btn.btn-primary.samobuttopcontroller#hasS(type='button', href='users')
+                        //    | Edit
+                        //button.btn.btn-default.samobuttopcontroller2#hasHide(type='button', href='#home')
+                        //    | Discard
+                    .col-sm-6.samodashcorner
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-filter.iconbutton
+                                | filters
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Action
+                                a.dropdown-item(href='#') Another action
+                                a.dropdown-item(href='#') Something else here
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-bars.iconbutton
+                                | Group By
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Action
+                                a.dropdown-item(href='#') Another action
+                                a.dropdown-item(href='#') Something else here
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-star.iconbutton
+                                | Favourite
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Action
+                                a.dropdown-item(href='#') Another action
+                                a.dropdown-item(href='#') Something else here
+                        div(style='float:right;')
+                            span.o_pager_value 1-24
+                                |  /
+                                span.o_pager_limit 24
+                                span.btn-group.btn-group-sm
+                                    button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p', disabled='')
+                                    button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n', disabled='')
+                                    .col-xs-1
+                                        //.btn-group.btn-group-sm.o_cp_switch_buttons.samodashbuttcorner
+                                        //    button(data-toggle='tab', href='#home').btn.btn-icon.fa.fa-lg.fa-th-large.o_cp_switch_kanban.active(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button' accesskey='k', data-view-type='kanban', title='', data-original-title='Kanban')
+                                        //    button(data-toggle='tab', href='#menu1').btn.btn-icon.fa.fa-lg.fa-list-ul.o_cp_switch_list(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button', accesskey='l', data-view-type='list', title='', data-original-title='List')
+                                        //    button(data-toggle='tab', href='#home').btn.btn-icon.fa.fa-lg.fa-table.o_cp_switch_pivot(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button' accesskey='k', data-view-type='kanban', title='', data-original-title='Kanban')
+                                        //    button(data-toggle='tab', href='#menu1').btn.btn-icon.fa.fa-lg.fa-bar-chart.o_cp_switch_graph(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button', accesskey='l', data-view-type='list', title='', data-original-title='List')
+                                        //    router-link.links(to='app/purchase/Calendar')
+                                        //        button(data-toggle='tab', href='').btn.btn-icon.fa.fa-lg.fa-calendar.o_cp_switch_calendar(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button' accesskey='k', data-view-type='kanban', title='', data-original-title='Kanban')
+    .o_content#tem_hide
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .ca.o_group.o_inner_group
+                            .row
+                                .col-md-3
+                                    .one
+                                        label(style='font-size:13px;padding-right:25px;font-weight:bold;')
+                                            | Filter Name
+                                        br
+                                        label(style='font-size:13px;font-weight:bold;')
+                                            | Model
+                                        br
+                                        label(style='font-size:13px;font-weight:bold;')
+                                            | Action
+                                        br
+                                .col-md-3
+                                    label(style='font-size:13px;padding-right:25px;')
+                                        | Customer
+                                    br
+                                    label(style='font-size:13px;')
+                                        | Partner
+                                    br
+                                    label(style='font-size:13px;')
+                                        | [CPUi5] Processor Core i5 2.70 Ghz
+                                    br
+
+                                .col-md-3
+                                    .one
+                                        label(style='font-size:16px;font-weight:bold;')
+                                            | User
+                                        br
+                                        label(style='font-size:16px;font-weight:bold;')
+                                            | Default filter
+                                        br
+                                        label(style='font-size:16px;font-weight:bold;')
+                                            | Active
+                                        br
+                                .col-md-3
+                                    .checkbox.disabled
+                                        label
+                                            input(type='checkbox', value='', disabled='')
+
+                                    .checkbox.disabled
+                                        label
+                                            input(type='checkbox', value='', disabled='')
+
+                                    .checkbox.disabled
+                                        label
+                                            input(type='checkbox', value='', disabled='')
+                            .row
+                                .col-md-3
+
+                                    .one
+                                        label(style='font-size:13px;padding-right:25px;font-weight:bold;')
+                                            | Domain
+                                        br
+                                        label(style='font-size:13px;font-weight:bold;')
+                                            | Context
+                                        br
+                                        label(style='font-size:13px;font-weight:bold;')
+                                            | Sort
+                                        br
+
+
+
+
+
+                                .col-sm-4
+                                    label(style='font-size:13px;padding-right:25px;background-color:#D2D2FF;')
+                                        | [['customer', '=', 1]]
+                                    br
+                                    router-link(to='/#/app/purchase/vendor/Vendormenu')
+                                        label(style='font-size:13px;background-color:#D2D2FF;')
+                                            | {}
+                                        br
+                                    label(style='font-size:13px;background-color:#D2D2FF;')
+                                        | []
+                                    br
+    .o_content#tem_show(style="display: none")
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .ca
+                            table.o_group.o_inner_group
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_344')
+                                                | Filter Name
+                                            td(colspan='1', style='width: 50%;')
+                                                input#o_field_input_344.o_form_input.o_form_field.o_form_required(type='text', value='Customer')
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                | User
+                                        td(colspan='1', style='width: 50%;')
+                                            select#o_field_input_346.o_form_input.o_form_field.o_form_required(name='model_id', style='width: 199px;',)
+                                                option(value='false')
+                                                option(value='"_unknown"') Test
+                                                option(value='"res.groups"') Sample
+                                                option(value='"account.account"') Alipak
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_346')
+                                                | Model
+                                        td(colspan='1')
+                                            select#o_field_input_3465.o_form_input.o_form_field.o_form_required(name='model_id', style='width: 199px;')
+                                                option(value='false')
+                                                option(value='"_unknown"') _unknown
+                                                option(value='"res.groups"') Access Groups
+                                                option(value='"account.account"') Account
+                                                option(value='"account.aged.trial.balance"') Account Aged Trial balance Report
+                                                option(value='"account.bank.statement.cashbox"') Account Bank Statement Cashbox Details
+                                                option(value='"account.bank.statement.closebalance"') Account Bank Statement closing balance
+
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_347')
+                                                | Default filter
+                                        td(colspan='1', style='width: 50%;')
+                                            .o_checkbox.o_form_field_boolean.o_form_field
+                                                input#o_field_input_347(type='checkbox', name='is_default')
+                                                span
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_348', data-original-title='', title='')
+                                                | Action
+                                        td(colspan='1', style='width: 50%;')
+                                            .o_form_field_many2one.o_form_field
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_348.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_349')
+                                                | Active
+                                        td(colspan='1', style='width: 50%;')
+                                            .o_checkbox.o_form_field_boolean.o_form_field
+                                                input#o_field_input_349(type='checkbox', name='active')
+                                                span
+                            table.o_group.o_inner_group
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Domain
+                                        td(colspan='1', style='width: 100%;')
+                                            textarea.o_form_textarea.o_form_field.o_form_required(rows='8', name='domain', style='resize: horizontal; height: 50px; margin-left: 0px; margin-right: 0px; width: 640px;background-color: #d2d2ff;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Context
+                                        td(colspan='1', style='width: 100%;')
+                                            textarea.o_form_textarea.o_form_field.o_form_required(rows='6', name='context', style='resize: horizontal; height: 50px; margin-left: 0px; margin-right: 0px; width: 640px;background-color: #d2d2ff;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Sort
+                                        td(colspan='1', style='width: 100%;')
+                                            textarea.o_form_textarea.o_form_field.o_form_required(rows='6', name='sort', style='resize: horizontal; height: 50px; margin-left: 0px; margin-right: 0px; width: 640px;background-color: #d2d2ff;')
+
+
+
+
+
+
+

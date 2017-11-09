@@ -1,0 +1,22 @@
+.request_quotation_lower
+    .container(style='margin-right: 82px;')
+        .o_mail_thread(v-for="row in data")
+            .o_thread_date_separator
+                span.o_thread_date
+                    | February 25, 2017
+            .o_thread_message.samothreadmessage(data-message-id='1038')
+                .o_thread_message_sidebar
+                    img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/images/image_small.png' style='width: 33px;a')
+                .o_thread_message_core.o_mail_note.samothreadmessage1
+                    p.o_mail_info
+                        | Note by
+                        strong(data-oe-model='res.partner', data-oe-id='')
+                            | YourCompany, Administrators
+                        |                     -
+                        small.o_mail_timestamp(title='Sat Feb 25 2017 16:35:56 GMT+0500') 9 days ago
+                        span
+                            i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='1038')
+                    ul.o_mail_thread_message_tracking
+                        li
+                            | Untaxed Amount:
+                            span  637.5

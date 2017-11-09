@@ -1,0 +1,22 @@
+.ReqCalandar
+    DashboardController(v-bind:editbtn='false',v-bind:heading="quotation",v-bind:createbtn='false',v-bind:importbtn='false',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='false',v-bind:paginbtn2='false',v-bind:firstbtn='true',v-bind:secondbtn='true',v-bind:fifthbtn='true',v-bind:thirdbtn='true',v-bind:fourthbtn='true',v-bind:searchbar='true')
+    .rows
+        .col-md-10.pull-left.full
+            #wrap
+                #calendar
+                div(style='clear:both')
+        .col-md-2.pull-right.half.cld
+            button#Closebutton.btnnn(type='button',style='position: inherit;background-color: transparent;border: none;margin-left: 213px;') x
+            .card(style='padding-left: 45px;')
+                #embeddingDatePicker
+                hr
+                button.o_google_sync_button.oe_button.btn.btn-sm.btn-default.hascal(type='button')
+                    img(src='images/calendar_32.png')
+                    | Sync with
+                    b Google
+                .col-sm-12
+                    .col-sm-1
+                    .col-sm-1
+                    .col-sm-7
+                    .col-sm-1
+

@@ -1,0 +1,50 @@
+.table
+{
+    background-color: white;
+
+
+    padding: 15px 15px 15px 15px;
+    border:1px solid ;
+    border-color: darkgray;
+    border-radius:04px ;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+}
+.badge{
+    border-radius: 7px;
+
+
+    background-color:#7c7bad;
+
+}
+.bs{
+    color: #4c4c4c;
+    background-color: white;
+    border-color: #cccccc;
+}
+.blue{
+    background-color: #4CD98E;
+    width:30px;
+    color: white !important;
+    text-decoration: none;
+    height:10px;
+}
+.green{
+    background-color: #FF80CE;
+    width:30px;
+    height:10px;
+    text-decoration: none;
+
+}
+.b.btn.btn-secondary{
+    background-color: black;
+    width:30px;
+    text-decoration: none;
+    height:10px;
+}
+
+@media (min-width: 576px) {
+    .offset-sm-1 {
+        margin-left: 35.333333%;
+
+    }
+}

@@ -1,0 +1,48 @@
+.all_transfers_table
+    DashboardController(v-bind:heading="head",v-bind:editbtn='true',v-bind:createbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:attachmentbtn='true',v-bind:actionbtn='true',v-bind:printbtn='true')
+    .o_content.samocontent(style='margin-left: -15px;margin-right: -15px;')
+        .o_view_manager_content
+            .o_form_view.o_form_readonly#hasH
+                .o_form_sheet_bg
+
+
+                        table.o_group.o_inner_group
+                            tbody
+
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label(style='font-size: 0.9rem; ')
+                                            | Report Name
+                                    td.two(colspan='1', style='width: 50%;')
+                                        label Profit and Loss
+
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label
+                                            | Parent
+                                    td.two(colspan='1', style='width: 50%;')
+
+
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label(style='font-size: 0.9rem; ')
+                                            | Sequence
+                                    td.two(colspan='1', style='width: 50%;')
+                                        label 0
+
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label
+                                            | Type
+                                    td.two(colspan='1', style='width: 50%;')
+                                        label View
+
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label(style='font-size: 0.9rem; ')
+                                            | Sign on Reports
+                                    td.two(colspan='1', style='width: 50%;')
+                                        label Reverse balance sign
+
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label
+                                            | Financial Report Style
+                                    td.two(colspan='1', style='width: 50%;')

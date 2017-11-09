@@ -1,0 +1,426 @@
+.sales
+    DashboardController(v-bind:save='true',v-bind:heading="vendormenu",v-bind:editbtn='true',v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:printbtn='true',v-bind:Attachmentbtn='true',v-bind:actionbtn='true',v-bind:createbtn='true',v-bind:links="btnlinks")
+    Modal(v-bind:close='true',v-bind:heading="modal",v-bind:modal='"bd-example-modal-lg"')
+        .o_form_view.o_form_readonly
+            .o_form_sheet_bg
+                .o_form_sheet
+                    span.o_form_field.o_form_required(data-original-title='', title='') Contact
+                    hr
+                    .o_group
+
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Contact Name
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field.o_form_required Alex
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Title
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field(href='#') Engr
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Job Position
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field sales directives
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Email
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field jdkjf@gmail.com
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Phone
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field 093098298
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Mobile
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field 489489898
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_empty.o_form_label_false
+                                            | Notes
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_textarea.o_form_field.o_form_field_empty
+                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible(data-original-title='', title='')
+                        input(type='checkbox', name='supplier', disabled='')
+                        span
+                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible(data-original-title='', title='')
+                        input(type='checkbox', name='customer', disabled='')
+                        span
+                    span.o_form_field.o_form_invisible(data-original-title='', title='') English
+                    a.o_form_uri.o_form_field.o_form_invisible(href='javascript:void(0)', data-original-title='', title='')
+                        span.fa.fa-download
+
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg(style='margin-left: -15px;margin-right: -15px;')
+                    .o_form_sheet
+                        .row
+                            .col-sm-2
+                                .img
+                                    img.img-responsive(style='width:80px;height:90px;float:let;')(src='/images/1.jpg')
+                            .col-sm-3.samocol4
+                                h1(style='font-weight:bold;font-size:30px;') Camptocamp
+
+                            .col-sm-3.samohascol3(style='margin-left: 334px;')
+                                .oe_button_box(name='button_box')
+                                    button.btn.btn-sm.oe_stat_button(type='button')
+                                        .fa.fa-fw.fa-archive.o_button_icon
+                                        .o_stat_info.o_form_field
+                                            span.o_stat_text.o_not_hover.text-success Active
+                                            span.o_stat_text.o_hover.text-danger Archive
+                                    button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                        .fa.fa-fw.fa-shopping-bag.o_button_icon
+                                        .o_form_field.o_stat_info(data-original-title='', title='')
+                                            span.o_stat_value 0
+                                            span.o_stat_text POS Sales
+                                    router-link(to='salescustomeropportunities')
+                                        button.btn.btn-sm.oe_stat_button.o_res_partner_tip_opp(type='button')
+                                            .fa.fa-fw.fa-star.o_button_icon
+                                            .o_form_field.o_stat_info
+                                                span.o_stat_value 0
+                                                span.o_stat_text Opportunities
+                                    router-link(to='salescustomermeeting')
+                                        button.btn.btn-sm.oe_stat_button(type='button')
+                                            .fa.fa-fw.fa-calendar.o_button_icon
+                                            .o_form_field.o_stat_info
+                                                span.o_stat_value 1
+                                                span.o_stat_text Meetings
+                                    router-link(to='nextactivities')
+                                        button.btn.btn-sm.oe_stat_button(type='button')
+                                            .fa.fa-fw.fa-clock-o.o_button_icon
+                                            .o_form_field.o_stat_info
+                                                span.o_stat_value 0
+                                                span.o_stat_text Activities
+                                    router-link(to='salescustomerinvoice')
+                                        button.btn.btn-sm.oe_stat_button(type='button')
+                                            .fa.fa-fw.fa-pencil-square-o.o_button_icon
+                                            .o_form_field.o_stat_info
+                                                span.o_stat_value
+                                                    span.o_form_field.o_form_field_number
+                                                        | 0.00
+                                                        span €
+                                                span.o_stat_text Invoiced
+                                    router-link(to='salesofinvoices')
+                                        button.btn.btn-sm.oe_stat_button(type='button')
+                                            .fa.fa-fw.fa-usd.o_button_icon
+                                            .o_form_field.o_stat_info
+                                                span.o_stat_value 0
+                                                span.o_stat_text Sales
+                                    button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button', data-original-title='', title='')
+                                        .fa.fa-fw.fa-pencil-square-o.o_button_icon
+                                        .o_form_field.o_stat_info
+                                            span.o_stat_value 0
+                                            span.o_stat_text Vendor Bills.
+                                    button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                        .fa.fa-fw.fa-shopping-cart.o_button_icon
+                                        .o_form_field.o_stat_info
+                                            span.o_stat_value 0
+                                            span.o_stat_text Purchases
+                                    button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                        .fa.fa-fw.fa-book.o_button_icon
+                                        .o_form_field.o_stat_info
+                                            span.o_stat_value 0
+                                            span.o_stat_text Analytic Accounts
+                                    router-link(to='salescustomerissue')
+                                        button.btn.btn-sm.oe_stat_button(type='button')
+                                            .fa.fa-fw.fa-bug.o_button_icon
+                                            .o_form_field.o_stat_info
+                                                span.o_stat_value 0
+                                                span.o_stat_text Issues
+                                    router-link(to='salescustomertask')
+                                        button.btn.btn-sm.oe_stat_button(type='button')
+                                            .fa.fa-fw.fa-tasks.o_button_icon
+                                            .o_form_field.o_stat_info
+                                                span.o_stat_value 0
+                                                span.o_stat_text Tasks
+
+
+
+                        .col-xs-12.request_inner1
+                            .row(style='margin-top: 37px;')
+                                .col-xs-3.request_inner3(style='font-weight: bold;width: 22%;')
+                                    .one
+                                        label(style='font-size:15px;padding-right:25px;')
+                                            | Address
+                                        br
+                                        br
+                                        br
+                                        label(style='font-size:15px;')
+                                            | Website
+                                        br
+                                        label(style='font-size:15px;')
+                                            | Tags
+
+
+                                .col-xs-4.osahass(style='')
+                                    .two(style='margin-left: -23px;')
+                                        label(style='font-size:13px;')
+                                            | 93, Press Avenue
+                                            br
+                                            | Le Bourget du Lac73377
+                                            br
+                                            | France
+
+                                        label(style='font-size:13px;')
+                                            | http://www.camptocamp.com
+                                        br
+                                        .row
+                                            .col-xs-5(style='width: 148px;')
+                                                .dropdown
+                                                    a.dropdown-toggle.btn.btn-default.btn-color(style='color:white;height: 31px;border-radius: 53px;background-color:#ffed38;width: 117px;padding: 1px;height: 21px;')(data-toggle='dropdown', href='#')
+                                                        span Partner/Gold
+                                                    ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
+                                                        table
+                                                            tr
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:#d11600')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:#f96302')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:#ffed38')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:#e5e111')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:#cee007')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:#339e35')
+                                                            tr
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:#60afdd')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:#9b4f96')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:#fc0093')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:#c6c699')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:tan')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:white')
+
+                                            .col-xs-6(style='margin-left: -24px;')
+                                                .dropdown
+                                                    a.dropdown-toggle.btn.btn-default.btn-color(style='color:white;height: 31px;border-radius: 53px;background-color:blue;width: 117px;padding: 1px;height: 21px;')(data-toggle='dropdown', href='#')
+                                                        span#color-name Services
+                                                    ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
+                                                        table
+                                                            tr
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:#d11600')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:#f96302')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:#ffed38')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:#e5e111')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:#cee007')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:#339e35')
+                                                            tr
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(id='Lunar Blue', style='background-color:#60afdd')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:#9b4f96')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(id='Hot Pink', style='background-color:#fc0093')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:#c6c699')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:tan')
+                                                                td
+                                                                    .swatch.swatch-clickable.colorbg(style='background-color:white')
+
+
+                                        //button.btn.btn-success.b(type='button', style='color: #ffffff;background-color: #F2D600;border:none;line-height: 0.5em;width: 115px;border-radius: 10px;') Partner/Gold
+                                        //button.btn.btn-success.c(type='button', style='background-color:#00C2E0;color: #ffffff;border:none;line-height: 0.5em;border-radius: 10px;') Service
+
+
+                                .col-xs-3.request_inner2(style='font-weight: bold;margin-left: -48px;')
+                                    .one
+                                        label(style='font-size:15px;padding-right:25px;')
+                                            | Phone
+                                        br
+                                        label(style='font-size:15px;')
+                                            | Mobile
+                                        br
+                                        label(style='font-size:15px;')
+                                            | Fax
+                                        br
+                                        label(style='font-size:15px;')
+                                            | Email
+                                        br
+                                        label(style='font-size:15px;')
+                                            | Language
+                                        br
+
+                                .col-xs-2.osahass(style='')
+                                    .two(style='margin-left: -23px;')
+                                        label(style='font-size:13px;')
+                                            | +33 4 49 23 44 54
+                                        br
+                                        label(style='font-size:13px;')
+                                            | s
+                                        br
+                                        label(style='font-size:13px;')
+                                            | s
+                                        br
+                                        label(style='font-size:13px;')
+                                            | camptocamp@yourcompany
+                                            br
+                                            | .example.com
+                                        label(style='font-size:13px;')
+                                            | English
+
+                        .o_notebook
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Contacts and Addresses
+                                li.nav-item
+                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') InTernal Notes
+                                li.nav-item
+                                    a.nav-link(href='#buzz1', role='tab', data-toggle='tab') Sales and Purchases
+                                li.nav-item
+                                    a.nav-link(href='#buzz2', role='tab', data-toggle='tab') Accounting
+                            // Tab panes
+                            .tab-content
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+                                    .row(style='padding-left:15px;')
+                                        .col-xs-1
+                                            .oe_kanban_color_0.oe_kanban_global_click.o_kanban_record.samokanban
+                                                .o_kanban_image.samokanbanimage
+                                                    img.samoimg(src='images/download.png',data-toggle='modal', data-target='.bd-example-modal-lg')
+                                        .col-xs-6
+                                            .oe_kanban_details.samothumbnaildet
+                                                | Chao Wang
+                                                div Marketing Manager
+                                                div chao.wang@chinaexport.example.com
+
+                                #buzz.tab-pane.fade.in(role='tabpanel')
+
+                                #buzz1.tab-pane.fade.in(role='tabpanel')
+                                    .row
+                                        .col-sm-3
+                                            h1(style='color: #7c7bad;font-weight: bold;font-size:16px;padding-left:10px;') Sale
+                                            .one
+                                                label(style='font-size:13px;padding-right:25px;font-weight:bold;')
+                                                    | Is a Customer
+                                                br
+                                                label(style='font-size:13px;font-weight:bold;')
+                                                    | Salesperson
+                                                br
+                                            h1(style='color: #7c7bad;font-weight: bold;font-size:16px;padding-left:10px;') Misc
+                                            .one
+                                                label(style='font-size:15px;padding-right:25px;font-weight:bold;')
+                                                    | Internal Reference Company
+                                                br
+
+
+
+                                        .col-sm-3(style='margin-top: 16px;')
+                                            input#o_field_input_151(style='margin-top:34px;')(type='checkbox', name='supplier', disabled='')
+                                            br
+                                            br
+                                            br
+                                            br
+                                            br
+                                            a(href='#') Alupak Industriess
+                                        .col-sm-3
+                                            h1(style='color: #7c7bad;font-weight: bold;font-size:16px;padding-left:10px;') Purchase
+                                            .one
+                                                label(style='font-size:16px;font-weight:bold;')
+                                                    | Is a Vendor
+                                                br
+                                                label(style='font-size:16px;font-weight:bold;')
+                                                    | Supplier Currency
+                                                br
+
+                                            h1(style='color: #7c7bad;font-weight: bold;font-size:16px;padding-left:10px;') Point of Sale
+                                            .one
+                                                label(style='font-size:13px;font-weight:bold;')
+                                                    | Barcode
+                                                br
+
+                                        .col-sm-3(style='margin-top: 16px;')
+                                            input.o_field_input_151(style='margin-top:34px;')(type='checkbox', name='supplier', disabled='')
+                                            br
+                                            br
+                                            br
+                                            br
+                                            label(style='padding-top:13px;font-size:13px;') 0420800000008
+                                            br
+                                    .row
+                                        .col-xs-12
+                                            h1(style='color: #7c7bad;font-weight: bold;font-size:16px;padding-left:22px;') Payments
+
+                                    .row
+                                        .col-xs-4
+                                            button.btn.btn-success.a(type='button', style='background-color: transparent;color: #7c7bad;border:none;') 0 Bank Account(s)
+                                        .col-xs-6
+                                            button.btn.btn-success.a(type='button', style='background-color: transparent;color: #7c7bad;border:none;') 0 Credit Card(s)
+
+
+                                #buzz2.tab-pane.fade.in(role='tabpanel')
+                                    .row
+                                        .col-sm-3
+                                            h1(style='color: #7c7bad;font-weight: bold;font-size:16px;padding-left:10px;') Sale
+                                            .one
+                                                label(style='font-size:13px;padding-right:25px;font-weight:bold;')
+                                                    | Customer Payment Terms
+                                                br
+                                                label(style='font-size:13px;font-weight:bold;')
+                                                    | Degree of trust you have in this debtor
+                                                br
+                                            h1(style='color: #7c7bad;font-weight: bold;font-size:16px;padding-left:10px;') Fiscal Information
+                                            .one
+                                                label(style='font-size:15px;padding-right:25px;font-weight:bold;')
+                                                    | Fiscal Position
+                                                br
+
+
+
+                                        .col-sm-3(style='margin-top: 16px;')
+                                            label(style='font-size:15px;padding-right:25px;font-weight:bold;')
+                                                | End of Following Month
+                                            br
+                                            label(style='font-size:15px;padding-right:25px;font-weight:bold;')
+                                                | Normal Debtor
+
+
+                                        .col-sm-3
+                                            h1(style='color: #7c7bad;font-weight: bold;font-size:16px;padding-left:10px;') Purchase
+                                            .one
+                                                label(style='font-size:16px;font-weight:bold;')
+                                                    | Is a Vendor
+                                                br
+                                                label(style='font-size:16px;font-weight:bold;')
+                                                    | Supplier Currency
+                                                br
+
+                                            h1(style='color: #7c7bad;font-weight: bold;font-size:16px;padding-left:10px;') Accounting Entries
+                                            .one
+                                                label(style='font-size:13px;font-weight:bold;')
+                                                    | Barcode
+                                                br
+
+                                        .col-sm-3(style='margin-top: 16px;')
+                                            input.o_field_input_151(style='margin-top:34px;')(type='checkbox', name='supplier', disabled='')
+                                            br
+                                            br
+                                            label(style='padding-top:13px;font-size:13px;') 0420800000008
+                                            br
+    Message
+    Request_quotation_lower

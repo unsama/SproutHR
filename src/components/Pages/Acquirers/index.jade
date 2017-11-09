@@ -1,0 +1,151 @@
+.Vendormenu
+    DashboardController(v-bind:attachmentbtn='true',v-bind:actionbtn='true', v-bind:num1='true', v-bind:num2='true',v-bind:heading="head",v-bind:editbtn='true',v-bind:createbtn='true',v-bind:links="btnlinks")
+    .o_content(style='margin-left: -15px;margin-right: -15px;')
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .row
+                            .col-sm-2
+                                .img
+                                    img.img-responsive(style='width:92px;height:86px;float:left;')(src='/images/paypal.png')
+                            .col-sm-3.samocol4
+                                h1(style='font-weight:bold;font-size:30px;') PayPal
+
+                            .col-sm-3.samohascol3
+                                .oe_button_box(name='button_box')
+
+                                    button.btn.btn-sm.oe_stat_button(type='button', style='')
+                                        .fa.fa-fw.fa-stop.o_button_icon.sale
+                                        .o_form_field.o_stat_info
+                                            span.o_stat_value(style='color:orange;')
+                                                | Test
+                                                span.o_stat_text(style='color:black;') Environment
+                                                .oe_button_box(name='button_box')
+                                    button.btn.btn-sm.oe_stat_button(type='button', style='')
+                                        .fa.fa-fw.fa-money.o_button_icon.trace
+                                        .o_form_field.o_stat_info.trace_text
+                                            span.o_stat_value(style='color:black;') Payments
+
+                        table.o_group.o_inner_group
+                            tbody
+
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label(style='font-size: 0.9rem; ')
+                                            | Company
+                                    td.two(colspan='1', style='width: 100%;')
+                                        span Alupak Industriess
+
+
+
+                        .o_notebook(style='margin-top: 10px;')
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile1', role='tab', data-toggle='tab') Credentials
+                                li.nav-item
+                                    a.nav-link(href='#profile2', role='tab', data-toggle='tab') Messages
+                                li.nav-item
+                                    a.nav-link(href='#profile3', role='tab', data-toggle='tab') Configurations
+
+                            .tab-content
+                                #profile1.tab-pane.fade.in.active(role='tabpanel')
+
+                                    table.o_group.o_inner_group
+                                        tbody
+
+                                            tr
+                                                td.o_td_label.one(colspan='1')
+                                                    label.o_form_label(style='font-size: 0.9rem; ')
+                                                        | Paypal Email ID
+                                                td.two(colspan='1', style='width: 100%;')
+                                                    span mavia@ziprelay.com
+
+                                            tr
+                                                td.o_td_label.one(colspan='1')
+                                                    label.o_form_label(style='font-size: 0.9rem; ')
+                                                        | Paypal Merchant ID
+                                                td.two(colspan='1', style='width: 100%;')
+                                                    span mavia@ziprelay.com
+
+                                            tr
+                                                td.o_td_label.one(colspan='1')
+                                                    label.o_form_label(style='font-size: 0.9rem; ')
+                                                        | Use IPN
+                                                td.two(colspan='1', style='width: 100%;')
+                                                    .o_checkbox
+                                                        input(type='checkbox')
+                                                        span
+
+                                    a.o_form_uri.o_form_field.o_form_required(href='https://www.odoo.com/documentation/user/10.0/ecommerce/shopper_experience/paypal.html')(style='font-size: 0.9rem; ') How to configure your paypal account?
+
+                                #profile2.tab-pane.fade.in(role='tabpanel')
+                                    table.o_group.o_inner_group
+                                        tbody
+
+                                            tr
+                                                td.o_td_label.one(colspan='1')
+                                                    label.o_form_label(style='font-size: 0.9rem; ')
+                                                        | Help Message
+                                                td.two(colspan='1', style='width: 100%; font-size: 0.9rem; ')
+                                                    span You will be redirected to the Paypal website after clicking on the payment button.
+
+
+                                            tr
+                                                td.o_td_label.one(colspan='1')
+                                                    label.o_form_label(style='font-size: 0.9rem; ')
+                                                        | Thanks Message
+                                                td.two(colspan='1', style='width: 100%; font-size: 0.9rem; ')
+                                                    span
+
+                                            tr
+                                                td.o_td_label.one(colspan='1')
+                                                    label.o_form_label(style='font-size: 0.9rem; ')
+                                                        | Pending Message
+                                                td.two(colspan='1', style='width: 100%; font-size: 0.9rem; ')
+                                                    span Pending, Your online payment has been successfully processed. But your order is not validated yet.
+
+                                            tr
+                                                td.o_td_label.one(colspan='1')
+                                                    label.o_form_label(style='font-size: 0.9rem; ')
+                                                        | Done Message
+                                                td.two(colspan='1', style='width: 100%; font-size: 0.9rem; ')
+                                                    span Done, Your online payment has been successfully processed. Thank you for your order.
+
+                                            tr
+                                                td.o_td_label.one(colspan='1')
+                                                    label.o_form_label(style='font-size: 0.9rem; ')
+                                                        | Cancel Message
+                                                td.two(colspan='1', style='width: 100%; font-size: 0.9rem; ')
+                                                    span Cancel, Your payment has been cancelled.
+
+                                            tr
+                                                td.o_td_label.one(colspan='1')
+                                                    label.o_form_label(style='font-size: 0.9rem; ')
+                                                        | Error Message
+                                                td.two(colspan='1', style='width: 100%; font-size: 0.9rem; ')
+                                                    span Error, Please be aware that an error occurred during the transaction. The order has been confirmed but will not be paid. Do not hesitate to contact us if you have any questions on the status of your order.
+
+                                #profile3.tab-pane.fade.in(role='tabpanel')
+                                    table.o_group.o_inner_group
+                                        tbody
+
+                                            tr
+                                                td.o_td_label.one(colspan='1')
+                                                    label.o_form_label(style='font-size: 0.9rem; ')
+                                                        | Help Message
+                                                td.two(colspan='1', style='width: 100%; font-size: 0.9rem; ')
+                                                    span Authorize & capture the amount and confirm the SO on acquirer confirmation.
+
+                                    table.o_group.o_inner_group
+                                        tbody
+
+                                            tr
+                                                td.o_td_label.one(colspan='1')
+                                                    label.o_form_label(style='font-size: 0.9rem; ')
+                                                        | Add Extra Fees
+                                                td.two(colspan='1', style='width: 100%; font-size: 0.9rem; ')
+                                                    .o_checkbox
+                                                        input#box(type='checkbox')
+                                                        span
+

@@ -1,0 +1,246 @@
+.possessionedit
+    Modal( v-bind:saveclose='true',v-bind:modal='"bd-example-modal-lg11"',v-bind:savenew='true',v-bind:discard='true',v-bind:heading="modalheading")
+    .o_content(style='margin-left:-15px; margin-right:-15px')
+        .o_view_manager_content
+            .o_form_view.o_cannot_create.o_form_editable
+                header
+                    button.btn.btn-sm.oe_highlight.o_form_invisible(type='button')
+                        span Open Session
+                    button.btn.btn-sm.oe_highlight(type='button')
+                        span Continue Selling
+                    button.btn.btn-sm.oe_highlight.o_form_invisible(type='button')
+                        span End of Session
+                    button.btn.btn-sm.oe_highlight(type='button')
+                        span Validate Closing & Post Entries
+                    button.btn.btn-sm.oe_highlight.o_form_invisible(type='button')
+                        span Validate Closing & Post Entries
+                    ul.oe_form_field_status.oe_form_status.o_form_field.o_form_required
+                        li(data-id='opening_control')
+                            span.label Opening Control
+                            span.arrow
+                                span
+                        li.oe_active(data-id='opened')
+                            span.label In Progress
+                            span.arrow
+                                span
+                        li(data-id='closing_control')
+                            span.label Closing Control
+                            span.arrow
+                                span
+                        li(data-id='closed')
+                            span.label Closed & Posted
+                            span.arrow
+                                span
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                        .oe_button_box
+                            button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                .fa.fa-fw.fa-level-down.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_text Put
+                                    span.o_stat_text Money In
+                            button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                .fa.fa-fw.fa-level-up.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_text Take
+                                    span.o_stat_text Money Out
+                            button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                .fa.fa-fw.fa-money.o_button_icon
+                                span.o_stat_text Set Opening Balance
+                            button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                .fa.fa-fw.fa-money.o_button_icon
+                                span.o_stat_text Set Closing Balance
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-arrows-v.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value 3
+                                    span.o_stat_text Picking Errors
+                        h1.oe_title
+                            | Session:
+                            span.oe_inline.o_form_field.o_form_required POS/2017/03/08/03
+                        .o_group
+                            label.o_form_label.o_form_invisible.o_group_col_6.o_form_label_false(for='o_field_input_23')
+                                | Has Cash Control
+                            .o_checkbox.o_form_field_boolean.o_group_col_6.o_form_field.o_form_invisible
+                                input#o_field_input_23(type='checkbox', name='cash_control', disabled='')
+                                span
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Responsible
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_required(href='#') Administrators
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible
+                                                | Currency
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible(href='#') EUR
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_26', data-original-title='', title='')
+                                                | Point of Sale
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_26.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                .fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Opening Date
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field_date.o_form_field 03/08/2017 18:52:55
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                | Closing Date
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field_date.o_form_field.o_form_invisible.o_form_field_empty
+                            br
+                            .o_group_col_6.o_form_invisible(attrs="{'invisible' : [('cash_control', '=', False)]}")
+                                table.o_group.o_inner_group.oe_subtotal_footer.oe_right
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.oe_subtotal_footer_separator( data-original-title='', title='')
+                                                    | Opening Balance
+                                            td(colspan='1', style='width: 100%;')
+                                                span.oe_subtotal_footer_separator.o_form_field.o_form_field_number
+                                                    | 0.00
+                                                    span €
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.oe_force_bold.oe_opening_total( data-original-title='', title='')
+                                                    | + Transactions
+                                            td(colspan='1', style='width: 100%;')
+                                                span.oe_bold.oe_pos_total.o_form_field.o_form_field_number
+                                                    | 0.00
+                                                    span €
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.oe_force_bold.oe_opening_total( data-original-title='', title='')
+                                                    | = Theoretical Closing Balance
+                                            td(colspan='1', style='width: 100%;')
+                                                span.oe_bold.oe_pos_total.o_form_field.o_form_field_number
+                                                    | 0.00
+                                                    span €
+                                .oe_clear
+                                .oe_view_nocontent.o_form_invisible(attrs="{'invisible' : ['|', ('cash_journal_id', '=', False), ('state', '!=', 'opening_control')]}")
+                                    p.oe_view_nocontent_create
+                                        | You can define another list of available currencies on the
+                                        i Cash Registers
+                                        |  tab of the
+                                        b
+                                            a.o_form_uri.oe_inline.o_form_field.o_form_field_empty(href='#')
+                                        |                                 payment method.
+                            .o_group_col_6
+                                table.o_group.o_inner_group.oe_subtotal_footer.oe_right.o_form_invisible
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.oe_subtotal_footer_separator( data-original-title='', title='')
+                                                    | Real Closing Balance
+                                            td(colspan='1', style='width: 100%;')
+                                                span.oe_subtotal_footer_separator.o_form_field.o_form_field_number
+                                                    | 0.00
+                                                    span €
+                                table.o_group.o_inner_group
+                                table.o_group.o_inner_group
+                                table.o_group.o_inner_group.oe_subtotal_footer.oe_right.o_form_invisible
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.oe_subtotal_footer_separator.oe_right.oe_pos_total.oe_pos_difference( data-original-title='', title='')
+                                                    | Difference
+                                            td(colspan='1', style='width: 100%;')
+                                                span.oe_subtotal_footer_separator.oe_right.oe_pos_total.oe_pos_difference.o_form_field.o_form_field_number
+                                                    | 0.00
+                                                    span €
+                        .o_horizontal_separator
+                            | Summary by Payment Methods
+                        .o_form_field.o_form_field_one2many.o_view_manager_content
+                            .o_x2m_control_panel
+                                .o_cp_buttons
+                                .o_cp_pager
+                                    .o_hidden
+                                        span.o_pager_value
+                                        |  /
+                                        span.o_pager_limit
+                                        span.btn-group.btn-group-sm
+                                            button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                            button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                            div
+                                .table-responsive
+                                    table.o_list_view.table.table-condensed.table-striped
+                                        thead
+                                            tr
+                                                th.o_column_sortable(data-id='name')
+                                                    | Reference
+                                                th.o_column_sortable(data-id='journal_id')
+                                                    | Journal
+                                                th.o_column_sortable(data-id='balance_start')
+                                                    | Starting Balance
+                                                th.o_column_sortable(data-id='total_entry_encoding')
+                                                    | Transactions Subtotal
+                                                th.o_column_sortable(data-id='balance_end_real')
+                                                    | Ending Balance
+                                                th.o_column_sortable(data-id='difference')
+                                                    | Difference
+                                                th(data-id='currency_id')
+                                                    | Currency
+                                                th.o_column_sortable(data-id='state')
+                                                    | Status
+                                        tfoot
+                                            tr
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                        tbody
+                                            tr(data-id='5', style='')(data-toggle='modal', data-target='.bd-example-modal-lg11')
+                                                td(data-field='name') POS/2017/03/08/03
+                                                td(data-field='journal_id') Cash (EUR)
+                                                td.o_list_number(data-field='balance_start') 0.00 €
+                                                td.o_readonly.o_list_number(data-field='total_entry_encoding', title='Total of transaction lines.') 9,400.80 €
+                                                td.o_list_number(data-field='balance_end_real') 0.00 €
+                                                td.o_readonly.o_list_number(data-field='difference', title='Difference between the computed ending balance and the specified ending balance.') -9,400.80 €
+                                                td.o_readonly(data-field='currency_id') EUR
+                                                td.o_readonly(data-field='state') New
+                                            tr
+                                                td(title='Reference')  
+                                                td(title='Journal')  
+                                                td(title='Starting Balance')  
+                                                td(title='Transactions Subtotal')  
+                                                td(title='Ending Balance')  
+                                                td(title='Difference')  
+                                                td(title='Currency')  
+                                                td(title='Status')  
+                                            tr
+                                                td(title='Reference')  
+                                                td(title='Journal')  
+                                                td(title='Starting Balance')  
+                                                td(title='Transactions Subtotal')  
+                                                td(title='Ending Balance')  
+                                                td(title='Difference')  
+                                                td(title='Currency')  
+                                                td(title='Status')  
+                                            tr
+                                                td(title='Reference')  
+                                                td(title='Journal')  
+                                                td(title='Starting Balance')  
+                                                td(title='Transactions Subtotal')  
+                                                td(title='Ending Balance')  
+                                                td(title='Difference')  
+                                                td(title='Currency')  
+                                                td(title='Status')  

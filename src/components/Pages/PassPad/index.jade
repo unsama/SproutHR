@@ -1,0 +1,111 @@
+.PassPad
+    .row
+        .col-md-12(style='background-color: rgba(0, 0, 0, 0.78);')
+            .container-fluid
+                // time to add the controls
+                input#start(name='controls', type='radio')
+                input#stop(name='controls', type='radio')
+                input#reset(name='controls', type='radio')
+                .timer(style='background-color:black;')
+                    .cell
+                        .numbers.tenhour.moveten 0 1 2 3 4 5 6 7 8 9
+                    .cell
+                        .numbers.hour.moveten 0 1 2 3 4 5 6 7 8 9
+                    .cell.divider
+                        .numbers :
+                    .cell
+                        .numbers.tenminute.movesix 0 1 2 3 4 5 6
+                    .cell
+                        .numbers.minute.moveten 0 1 2 3 4 5 6 7 8 9
+                    .cell.divider
+                        .numbers :
+                    .cell
+                        .numbers.tensecond.movesix 0 1 2 3 4 5 6
+                    .cell
+                        .numbers.second.moveten 0 1 2 3 4 5 6 7 8 9
+                    .cell.divider
+                        .numbers :
+                    .cell
+                        .numbers.milisecond.moveten 0 1 2 3 4 5 6 7 8 9
+                    .cell
+                        .numbers.tenmilisecond.moveten 0 1 2 3 4 5 6 7 8 9
+                    .cell
+                        .numbers.hundredmilisecond.moveten 0 1 2 3 4 5 6 7 8 9
+                // Lables for the controls
+                #timer_controls(style='float: right;padding-top: 12px;')
+
+                    label(for='start',style='padding: 15px;font-size: 18px;background-color: transparent;color: rgba(140,225,255,1);border-radius: 14;border: 1px solid rgba(140,225,255,1);border-color: rgba(140,225,255,1);display: inline-block;') Check In
+                        img.img-responsive(src='/images/Checkin.png',style='display: inline-block;width: 25px;padding-left: 5px;')
+                    label(for='stop',style='padding: 15px;font-size: 18px;background-color: transparent;color: rgba(140,225,255,1);border-radius: 14;border: 1px solid rgba(140,225,255,1);border-color: rgba(140,225,255,1);display: inline-block;') Check Out
+                        img.img-responsive(src='/images/Checkout.png',style='display: inline-block;width: 25px;padding-left: 5px;')
+                    label(for='reset',style='padding: 15px;font-size: 18px;background-color: transparent;color: rgba(140,225,255,1);border-radius: 14;border: 1px solid rgba(140,225,255,1);border-color: rgba(140,225,255,1);display: inline-block;') Break In
+                        img.img-responsive(src='/images/Breakin.png',style='display: inline-block;width: 25px;padding-left: 5px;')
+                    label(for='start',style='padding: 15px;font-size: 18px;background-color: transparent;color: rgba(140,225,255,1);border-radius: 14;border: 1px solid rgba(140,225,255,1);border-color: rgba(140,225,255,1);display: inline-block;') Break Out
+                        img.img-responsive(src='/images/Breakin.png',style='display: inline-block;width: 25px;padding-left: 5px;')
+                    //img.img-responsive(src='/images/checkout.png')
+                    //label(for='stop', style='padding: 15px;font-size: 18px;background-color: aqua;margin-left: 10px;') Stops
+                    //img.img-responsive(src='/images/checkout.png')
+                    //label(for='reset', style='padding: 15px;font-size: 18px;background-color: aqua;margin-left: 10px;') Reset
+
+
+
+
+
+
+    //#main
+    //.row
+    //    .col-md-3
+    //        p(style='float: right;padding-top: 21px;font-size: 21px;')
+    //            span#seconds 00
+    //            | :
+    //            span#tens 00
+    //    .col-md-9
+    //        #float(style='float: right;')
+    //            button#button-start Start
+    //            button#button-stop Stop
+    //            button#button-reset Reset
+
+    //.row
+    //    .col-sm-12
+    //        .time
+    //            p#demo(style='float:right;font-weight:bold;background-color: beige;' )
+    //.row
+    //    .col-sm-12
+    //        .o_hr_attendance_kiosk_mode(style='position: relative;margin-left: 34%;margin-top: 12%;height: 487px;')
+    //            h1 Welcome Jan Van Eyck
+    //            h2 Please enter your PIN to check out
+    //            .row
+    //                .col-sm-8.col-sm-offset-2
+    //                    form(name='calc')
+    //                        .row
+    //                            .col-xs-4.col-xs-offset-4
+    //                                input.o_hr_attendance_PINbox(name='display',disabled='true', type='password')
+    //                        .row.o_hr_attendance_pin_pad
+    //                            .col-xs-4.o_hr_attendance_pin_pad_border
+    //                                a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_1(type='button',style='color: white;',onclick="calc.display.value+='1'") 1
+    //                            .col-xs-4.o_hr_attendance_pin_pad_border
+    //                                a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_2(type='button',style='color: white;',onclick="calc.display.value+='2'") 2
+    //                            .col-xs-4.o_hr_attendance_pin_pad_border
+    //                                a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_3(type='button',style='color: white;',onclick="calc.display.value+='3'") 3
+    //                            .col-xs-4.o_hr_attendance_pin_pad_border
+    //                                a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_4(type='button',style='color: white;',onclick="calc.display.value+='4'") 4
+    //                            .col-xs-4.o_hr_attendance_pin_pad_border
+    //                                a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_5(type='button',style='color: white;',onclick="calc.display.value+='5'") 5
+    //                            .col-xs-4.o_hr_attendance_pin_pad_border
+    //                                a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_6(type='button',style='color: white;',onclick="calc.display.value+='6'") 6
+    //                            .col-xs-4.o_hr_attendance_pin_pad_border
+    //                                a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_7(type='button',style='color: white;',onclick="calc.display.value+='7'") 7
+    //                            .col-xs-4.o_hr_attendance_pin_pad_border
+    //                                a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_8(type='button',style='color: white;',onclick="calc.display.value+='8'") 8
+    //                            .col-xs-4.o_hr_attendance_pin_pad_border
+    //                                a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_9(type='button',style='color: white;',onclick="calc.display.value+='9'") 9
+    //                            .col-xs-4.o_hr_attendance_pin_pad_border
+    //                                a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_C(type='button',style='color: white;',onclick="calc.display.value+=''") C
+    //                            .col-xs-4.o_hr_attendance_pin_pad_border
+    //                                a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_0(type='button',style='color: white;',onclick="calc.display.value+='0'") 0
+    //                            .col-xs-4.o_hr_attendance_pin_pad_border
+    //                                a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_ok(type='button',style='color: white;',onclick="calc.display.value+=''") ok
+    //            br
+    //            .oe_attendance_sign_in_out
+    //            router-link(to='Mode')
+    //                .o_hr_attendance_back_button.btn.btn-danger.fa.fa-times(style='width: 70px;border-radisus: 72;border-radius: 30px;height: 71px;font-size: 40px;border-radius: 52;')

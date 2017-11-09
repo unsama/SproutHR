@@ -1,0 +1,40 @@
+.select_attendance_info
+    DashboardController( v-bind:save='true',v-bind:duplicatedropbtn='true',v-bind:deletedropbtn='true',v-bind:planorderbtn='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true',v-bind:dropdownMenuButton='true',v-bind:Attachmentbtn='true',v-bind:actionbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Attendance / {{d}} From / {{CheckIn}} to {{CheckOut}}
+        span.o_pager_value(slot='page') {{counter}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="counter--",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="counter++",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Employees
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_required(href='#') {{d}}
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Check In
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field_date.o_form_field.o_form_required {{CheckIn}}
+                                        //span.o_form_field.o_form_required {{CheckIn}}
+
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Check Out
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field_date.o_form_field {{CheckOut}}
+
+

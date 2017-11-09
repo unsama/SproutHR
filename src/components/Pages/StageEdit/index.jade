@@ -1,0 +1,71 @@
+.StageEdit
+    DashboardController(v-bind:heading="nextactivity",v-bind:savebtn='true',v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;",v-model='name') Stages/ {{name}}
+        span.o_pager_value(slot='page') {{counter}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="counter--",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="counter++",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+    .row
+        .col-sm-12
+            #success-alert(style='background-color:red;display:none;position:absolute;right: 0px;z-index: 1;')
+                button.close(type="button", data-dismiss="alert",style='color:white;') x
+                .o_notification.o_error
+                    .o_notification_title
+                        span.o_icon.fa.fa-3x.fa-exclamation(style='color:white;border-bottom: 3px solid white;font-size: 16px') The following fields are invalid:
+
+                    .o_notification_content(style='padding-top: 16px;')
+                        ul
+                            li#leave(style='color:white;') Stage Name
+    StagesEdits
+        table.o_group.o_inner_group.o_group_col_6(slot='stage')
+            tbody
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label(for='o_field_input_58')
+                            | Stage name
+                    td(colspan='1', style='width: 100%;')
+                        input#o_field_input_58.o_form_input.o_form_field.o_form_required(name='name',v-model='name',v-validate:name.initial="'required|alpha'", :class="{'input': true, 'is-danger': errors.has('name') }",type='text')
+                        i.fa.fa-warning.cl(v-show="errors.has('name')",style='color:red;')
+                        span.help.is-danger.cl(v-show="errors.has('name')",style='color:red;') {{ errors.first('name') }}
+                        button.o_field_translate.fa.fa-globe.btn.btn-link.o_translate_active(type='button')
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_59', data-original-title='', title='')
+                            | Sequences
+                    td(colspan='1', style='width: 100%;')
+                        input#o_field_input_59.o_form_input.o_form_field.o_form_invisible.o_form_field_number(type='text')
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                            | Job Specific
+                    td(colspan='1', style='width: 100%;')
+                        select(v-model='job_specific')
+                            option(v-for='option in options2', v-bind:value="option.id")
+                                | {{ option.job_tittle }}
+                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+        table.o_group.o_inner_group.o_group_col_6(slot='folded')
+            tbody
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                            | Folded in Recruitment Pipe
+                    td(colspan='1', style='width: 100%;')
+                        input#one(type='checkbox',name='my-checkbox3')
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                            | Use template
+                    td(colspan='1', style='width: 100%;')
+                        select(v-model='email_template_id')
+                            option(v-for='option in options', v-bind:value="option.id")
+                                | {{ option.name }}
+                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+        .o_horizontal_separator(slot='requirment')
+            | Requirements
+            textarea.o_form_textarea.o_form_field(v-model='description',rows='6', name='requirements', style='resize: horizontal; height: 50px;')
+            textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 1428px;')
+

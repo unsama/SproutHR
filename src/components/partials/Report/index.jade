@@ -1,0 +1,176 @@
+.container-fluid
+    .o_content
+        .o_view_manager_content
+            .o_pivot.o_enable_linking
+                .o_field_selection
+                    ul.dropdown-menu.o_pivot_field_menu(role='menu')
+                        li.o_inline_dropdown(data-field='check_in')
+                            a.o_pivot_field_selection(href='#')
+                                | Check In
+                            ul.dropdown-menu
+                                li(data-field='check_in')
+                                    a(href='#', data-interval='day') Day
+                                li(data-field='check_in')
+                                    a(href='#', data-interval='week') Week
+                                li(data-field='check_in')
+                                    a(href='#', data-interval='month') Month
+                                li(data-field='check_in')
+                                    a(href='#', data-interval='quarter') Quarter
+                                li(data-field='check_in')
+                                    a(href='#', data-interval='year') Year
+                        li.o_inline_dropdown(data-field='check_out')
+                            a.o_pivot_field_selection(href='#')
+                                | Check Out
+                            ul.dropdown-menu
+                                li(data-field='check_out')
+                                    a(href='#', data-interval='day') Day
+                                li(data-field='check_out')
+                                    a(href='#', data-interval='week') Week
+                                li(data-field='check_out')
+                                    a(href='#', data-interval='month') Month
+                                li(data-field='check_out')
+                                    a(href='#', data-interval='quarter') Quarter
+                                li(data-field='check_out')
+                                    a(href='#', data-interval='year') Year
+                        li(data-field='create_uid')
+                            a(href='#') Created by
+                        li.o_inline_dropdown(data-field='create_date')
+                            a.o_pivot_field_selection(href='#')
+                                | Created on
+                            ul.dropdown-menu
+                                li(data-field='create_date')
+                                    a(href='#', data-interval='day') Day
+                                li(data-field='create_date')
+                                    a(href='#', data-interval='week') Week
+                                li(data-field='create_date')
+                                    a(href='#', data-interval='month') Month
+                                li(data-field='create_date')
+                                    a(href='#', data-interval='quarter') Quarter
+                                li(data-field='create_date')
+                                    a(href='#', data-interval='year') Year
+                        li(data-field='employee_id')
+                            a(href='#') Employee
+                        li(data-field='write_uid')
+                            a(href='#') Last Updated by
+                        li.o_inline_dropdown(data-field='write_date')
+                            a.o_pivot_field_selection(href='#')
+                                | Last Updated on
+                            ul.dropdown-menu
+                                li(data-field='write_date')
+                                    a(href='#', data-interval='day') Day
+                                li(data-field='write_date')
+                                    a(href='#', data-interval='week') Week
+                                li(data-field='write_date')
+                                    a(href='#', data-interval='month') Month
+                                li(data-field='write_date')
+                                    a(href='#', data-interval='quarter') Quarter
+                                li(data-field='write_date')
+                                    a(href='#', data-interval='year') Year
+                table.table.table-hover.table-condensed.table-bordered
+                    col
+                    col
+                    col
+                    col
+                    thead
+                        tr
+                            th(rowspan='3', colspan='1', style='padding: 0px;')
+                            th.o_pivot_header_cell_opened.hidden-xs(rowspan='1', colspan='2', data-original-title='', title='') Total
+                            th(rowspan='2', colspan='1', style='padding: 0px;')
+                        tr
+                            th.o_pivot_header_cell_closed.hidden-xs(rowspan='1', colspan='1', title='', data-original-title='Check In') February 2017
+                            th.o_pivot_header_cell_closed.hidden-xs(rowspan='1', colspan='1', title='', data-original-title='Check In') March 2017
+                        tr
+                            th.o_pivot_measure_row.text-muted.hidden-xs Worked Hours
+                            th.o_pivot_measure_row.text-muted.hidden-xs Worked Hours
+                            th.o_pivot_measure_row.text-muted Worked Hours
+                    tbody
+                        tr
+                            td.o_pivot_header_cell_opened(style='padding-left: 5px;', data-original-title='', title='') Total
+                            td.o_pivot_cell_value.text-right.hidden-xs(style='font-weight: bold;') 2,439.40
+                            td.o_pivot_cell_value.text-right.hidden-xs(style='font-weight: bold;') 432.49
+                            td.o_pivot_cell_value.text-right(style='font-weight: bold;') 2,871.89
+                        tr
+                            td.o_pivot_header_cell_closed(title='', style='padding-left: 35px;', data-original-title='Employee') Administrators
+                            td.o_pivot_cell_value.text-right.hidden-xs 594.86
+                            td.o_pivot_cell_value.text-right.hidden-xs 1.10
+                            td.o_pivot_cell_value.text-right(style='font-weight: bold;') 595.96
+                        tr
+                            td.o_pivot_header_cell_closed(title='', style='padding-left: 35px;', data-original-title='Employee') David Samson
+                            td.o_empty.o_pivot_cell_value.text-right.hidden-xs
+                            td.o_pivot_cell_value.text-right.hidden-xs 47.70
+                            td.o_pivot_cell_value.text-right(style='font-weight: bold;') 47.70
+                        tr
+                            td.o_pivot_header_cell_closed(title='', style='padding-left: 35px;', data-original-title='Employee') Famke Jenssens
+                            td.o_empty.o_pivot_cell_value.text-right.hidden-xs
+                            td.o_pivot_cell_value.text-right.hidden-xs 49.23
+                            td.o_pivot_cell_value.text-right(style='font-weight: bold;') 49.23
+                        tr
+                            td.o_pivot_header_cell_closed(title='', style='padding-left: 35px;', data-original-title='Employees') Gilles Gravie
+                            td.o_pivot_cell_value.text-right.hidden-xs 49.40
+                            td.o_pivot_cell_value.text-right.hidden-xs 0.00
+                            td.o_pivot_cell_value.text-right(style='font-weight: bold;') 49.40
+                        tr
+                            td.o_pivot_header_cell_closed(title='', style='padding-left: 35px;', data-original-title='Employees') Jan Van Eyck
+                            td.o_empty.o_pivot_cell_value.text-right.hidden-xs
+                            td.o_pivot_cell_value.text-right.hidden-xs 21.29
+                            td.o_pivot_cell_value.text-right(style='font-weight: bold;') 21.29
+                        tr
+                            td.o_pivot_header_cell_closed(title='', style='padding-left: 35px;', data-original-title='Employee') Jean-Pierre Carnaud
+                            td.o_empty.o_pivot_cell_value.text-right.hidden-xs
+                            td.o_pivot_cell_value.text-right.hidden-xs 19.53
+                            td.o_pivot_cell_value.text-right(style='font-weight: bold;') 19.53
+                        tr
+                            td.o_pivot_header_cell_closed(title='', style='padding-left: 35px;', data-original-title='Employees') Jimmy Kosikin
+                            td.o_empty.o_pivot_cell_value.text-right.hidden-xs
+                            td.o_pivot_cell_value.text-right.hidden-xs 0.90
+                            td.o_pivot_cell_value.text-right(style='font-weight: bold;') 0.90
+                        tr
+                            td.o_pivot_header_cell_closed(title='', style='padding-left: 35px;', data-original-title='Employee') João Gomer
+                            td.o_empty.o_pivot_cell_value.text-right.hidden-xs
+                            td.o_pivot_cell_value.text-right.hidden-xs 0.00
+                            td.o_pivot_cell_value.text-right(style='font-weight: bold;') 0.00
+                        tr
+                            td.o_pivot_header_cell_closed(title='', style='padding-left: 35px;', data-original-title='Employee') John Smith
+                            td.o_empty.o_pivot_cell_value.text-right.hidden-xs
+                            td.o_pivot_cell_value.text-right.hidden-xs 0.00
+                            td.o_pivot_cell_value.text-right(style='font-weight: bold;') 0.00
+                        tr
+                            td.o_pivot_header_cell_closed(title='', style='padding-left: 35px;', data-original-title='Employee') Juan Gomez
+                            td.o_empty.o_pivot_cell_value.text-right.hidden-xs
+                            td.o_pivot_cell_value.text-right.hidden-xs 68.54
+                            td.o_pivot_cell_value.text-right(style='font-weight: bold;') 68.54
+                        tr
+                            td.o_pivot_header_cell_closed(title='', style='padding-left: 35px;', data-original-title='Employee') Liam Nelson
+                            td.o_empty.o_pivot_cell_value.text-right.hidden-xs
+                            td.o_pivot_cell_value.text-right.hidden-xs 67.35
+                            td.o_pivot_cell_value.text-right(style='font-weight: bold;') 67.35
+                        tr
+                            td.o_pivot_header_cell_closed(title='', style='padding-left: 35px;', data-original-title='Employee') Martin Lawrence
+                            td.o_pivot_cell_value.text-right.hidden-xs 611.96
+                            td.o_empty.o_pivot_cell_value.text-right.hidden-xs
+                            td.o_pivot_cell_value.text-right(style='font-weight: bold;') 611.96
+                        tr
+                            td.o_pivot_header_cell_closed(title='', style='padding-left: 35px;', data-original-title='Employee') Michael Hawkins
+                            td.o_empty.o_pivot_cell_value.text-right.hidden-xs
+                            td.o_pivot_cell_value.text-right.hidden-xs 68.03
+                            td.o_pivot_cell_value.text-right(style='font-weight: bold;') 68.03
+                        tr
+                            td.o_pivot_header_cell_closed(title='', style='padding-left: 35px;', data-original-title='Employee') Rahemeen
+                            td.o_pivot_cell_value.text-right.hidden-xs 571.21
+                            td.o_pivot_cell_value.text-right.hidden-xs 21.02
+                            td.o_pivot_cell_value.text-right(style='font-weight: bold;') 592.23
+                        tr
+                            td.o_pivot_header_cell_closed(title='', style='padding-left: 35px;', data-original-title='Employee') S
+                            td.o_pivot_cell_value.text-right.hidden-xs 611.98
+                            td.o_pivot_cell_value.text-right.hidden-xs 0.00
+                            td.o_pivot_cell_value.text-right(style='font-weight: bold;') 611.98
+                        tr
+                            td.o_pivot_header_cell_closed(title='', style='padding-left: 35px;', data-original-title='Employees') 佐藤さくら (demo_ja_JP)
+                            td.o_empty.o_pivot_cell_value.text-right.hidden-xs
+                            td.o_pivot_cell_value.text-right.hidden-xs 0.00
+                            td.o_pivot_cell_value.text-right(style='font-weight: bold;') 0.00
+                        tr
+                            td.o_pivot_header_cell_closed(title='', style='padding-left: 35px;', data-original-title='Employee') 趙生 (demo_zh_CN)
+                            td.o_empty.o_pivot_cell_value.text-right.hidden-xs
+                            td.o_pivot_cell_value.text-right.hidden-xs 67.78
+                            td.o_pivot_cell_value.text-right(style='font-weight: bold;') 67.78

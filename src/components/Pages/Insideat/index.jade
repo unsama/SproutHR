@@ -1,0 +1,86 @@
+.Insideat
+    DashboardController(v-bind:heading="nextactivity",v-bind:savedbtn='false',v-bind:editbtn='true',v-bind:editform='createbtn',v-bind:createbtn='true',v-bind:Attachmentbtn='true',v-bind:actionbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+    
+    .o_content#createform
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                .o_stat_info.o_form_field
+                                    span.o_stat_text.o_not_hover.text-success Active
+                                    span.o_stat_text.o_hover.text-danger Archive
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Department Name
+                                    td(colspan='1', style='width: 50%;')
+                                        span.o_form_field.o_form_required Research & Development
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_empty.o_form_label_false
+                                            | Manager
+                                    td(colspan='1', style='width: 50%;')
+                                        a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_empty.o_form_label_false
+                                            | Parent Department
+                                    td(colspan='1', style='width: 50%;')
+                                        a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Company
+                                    td(colspan='1', style='width: 50%;')
+                                        a.o_form_uri.o_form_field(href='#') Alupak Industriess
+
+    .o_content#createedit(style='display:none;')
+        .o_view_manager_content
+            .o_form_view.o_form_editable
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                .o_stat_info.o_form_field
+                                    span.o_stat_text.o_not_hover.text-success Active
+                                    span.o_stat_text.o_hover.text-danger Archive
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_155')
+                                            | Department Name
+                                    td(colspan='1', style='width: 50%;')
+                                        input#o_field_input_155.o_form_input.o_form_field.o_form_required(type='text')
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_156')
+                                            | Manager
+                                    td(colspan='1', style='width: 50%;')
+                                        .o_form_field_many2one.o_form_field
+                                            .o_form_input_dropdown
+                                                input#o_field_input_156.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_157')
+                                            | Parent Department
+                                    td(colspan='1', style='width: 50%;')
+                                        .o_form_field_many2one.o_form_field
+                                            .o_form_input_dropdown
+                                                input#o_field_input_157.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_158')
+                                            | Company
+                                    td(colspan='1', style='width: 50%;')
+                                        .o_form_field_many2one.o_with_button.o_form_field
+                                            .o_form_input_dropdown
+                                                input#o_field_input_158.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')

@@ -1,0 +1,338 @@
+.EmpDash(style='height:100vh;overflow:auto;')
+    DashboardController(v-bind:save='true',v-bind:heading="nextactivity",v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true',v-bind:createbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:firstbtn='true',v-bind:secondbtn='true')
+        .col-sm-6(style='padding:0px;' ,slot='job')
+            h4.samodashheading(style="font-size: 18px;") Departments
+    .o-content
+        .row(v-for="row in names", style='display: inline-block; padding-left: 5px;')
+            .col-sm-3
+                .card.samocard
+                    .col-sm-12.samocolsm12_1
+                        span.whc
+                            .col-sm-6.pull-left
+                                h6.samoh61 {{row.name}}
+                                br
+                                h6.fa.fa-envelope-o.samoh61  Alupak Industries
+
+                            .col-sm-6.pull-right
+                                .dropdown
+                                    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownbtn(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style='float: right;margin-top: -9px;')
+                                        | More
+                                    .dropdown-menu(aria-labelledby='dropdownMenuButton',style='margin-top: 38px;margin-left: -183px;min-width: 21.0rem;height: 196px;')
+                                        .row(style='')
+
+                                            .col-sm-4
+                                                h6(style='font-size: 11px;margin-left: 6px;') To DO
+                                                hr(style='margin-left: 6px;margin-top: 0px;')
+                                            .col-sm-4
+                                                h6(style='font-size: 11px;') To Approval
+                                                hr(style='margin-top: 0px;')
+                                            .col-sm-4
+                                                h6(style='font-size: 11px;') Reports
+                                                hr(style='margin-top: 0px;')
+
+                                        .row(style='margin-top: -35px;')
+                                            .col-sm-4
+                                                router-link(to='Ctype')
+                                                    a.samoalink(style='font-size: 11px;margin-left: 6px;') 1 New Applicants
+
+                                            .col-sm-4
+                                                router-link(to='LeaveRequest')
+                                                    a.samoalink(style='font-size: 11px;') 1 Leave Req..
+                                                br
+                                                router-link(to='AllocationRequests')
+                                                    a.samoalink(style='font-size: 11px;') 1 Allocation..
+                                                br
+                                                //router-link(to='DepExp')
+                                                //    a.samoalink(style='font-size: 11px;') 0 Expense Reports
+                                                //br
+
+                                            .col-sm-4
+                                                router-link(to='ReportRecruitmentsEmployees')
+                                                    a.samoalink(style='font-size: 11px;') Recruitments
+                                                br
+                                                router-link(to='ReportLeaves')
+                                                    a.samoalink(style='font-size: 11px;') Leaves
+                                                br
+                                                router-link(to='ReportAttendanceEmployees')
+                                                    a.samoalink(style='font-size: 11px;') Attendances
+                                                br
+                                                router-link(to='ReportTimesheets')
+                                                    a.samoalink(style='font-size: 11px;') Timesheets
+                                                br
+                                                router-link(to='ReportExpense')
+                                                    a.samoalink(style='font-size: 11px;') Expense Reports
+
+
+                                        hr(style='margin-top: 0px;')
+                                        .col-sm-12(style='margin-top: -43px;')
+                                            .col-sm-7.pull-left(style='padding: 0px;margin-top: 17px;')
+                                                ul(style='list-style-type:none;display: -webkit-box;padding: 0;')
+                                                    li
+                                                        a.color1.colorbg(href='#', data-color='1')
+                                                    li
+                                                        a.color2.colorbg(href='#', data-color='2')
+                                                    li
+                                                        a.color3.colorbg(href='#', data-color='3')
+                                                    li
+                                                        a.color4.colorbg(href='#', data-color='4')
+                                                    li
+                                                        a.color5.colorbg(href='#', data-color='5')
+                                                    li
+                                                        a.color6.colorbg(href='#', data-color='6')
+                                                    li
+                                                        a.color7.colorbg(href='#', data-color='7')
+                                                    li
+                                                        a.color8.colorbg(href='#', data-color='8')
+                                                    li
+                                                        a.color9.colorbg(href='#', data-color='9')
+                                                    li
+                                                        a.color10.colorbg(href='#', data-color='10')
+
+                                            .col-sm-5.pull-right(style='margin-top: 12px;')
+                                                router-link(v-bind:to="'ReqSettingEdit/'+row.id")
+                                                    a.samoalink(style='margin-left: 57px;font-size: 13px;') Settings
+
+                        .container.o_kanban_card_content.o_visible(style='')
+                            .row(style='margin-top: 30px;')
+                                .col-xs-6.o_kanban_primary_left(name='to_replace_in_sale_crm')
+                                    router-link(v-bind:to="'NewDep/'+row.id")
+                                        button.btn.btn-primary.oe_kanban_action.oe_kanban_action_button( data-name='742', data-type='action', type='button',style='background-color: #7c7bad;font-size: 13px;') Employees
+
+                                .col-xs-6.o_kanban_primary_right(style='margin-left: 151px;margin-top: -24px;')
+                                    .mb4
+
+                                .col-xs-12.o_kanban_primary_bottom
+                                    .o_progressbar
+
+
+                        //.footer(style='')
+                        //    ul(style='list-style-type:none;padding: 0px;display: -webkit-inline-box;')
+                        //        router-link(to='Absent')
+                        //            li(style='padding-right: 14px;padding-top: 9px;padding-left: 10px;font-size: 13px;') Absenses
+                        //        li.progress(style='width: 152px;height: 11px;margin-top: 13px;')
+                        //            .progress-bar.pro(role='progressbar', style='width: 25%', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100')
+                        //        li(style='margin-top: 10px;padding-left: 10px;font-size: 13px;') 1/3
+                        .footer(style='margin-top: 38.5px;')
+                            ul(style='list-style-type:none;padding: 0px;display: -webkit-inline-box;')
+                                router-link(to='Absent')
+                                    li(style='padding-right: 14px;padding-top: 9px;padding-left: 10px;font-size: 13px;') Absenses
+                                li.progress(style='width: 152px;height: 15px;margin-top: 13px;')
+                                    .szlider
+                                        .szliderbar
+                                        .szazalek
+                                    //.progress-bar.pro#progressbar(role='progressbar', style='width: 25%', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100')
+                                li(style='margin-top: 10px;padding-left: 10px;font-size: 13px;')
+                                       //{{rec.hiredemployees}}/{{rec.expected}}
+                //.card.samocard
+                    .col-sm-12.samocolsm12_1
+                        span.whc
+                            .col-sm-6.pull-left
+                                h6.samoh61 Checking
+                                br
+                                h6.fa.fa-envelope-o.samoh61  Alupak Industriess
+                            .col-sm-6.pull-right
+                                .dropdown
+                                    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownbtn(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style='float: right;')
+                                        | More
+                                    .dropdown-menu(aria-labelledby='dropdownMenuButton',style='margin-top: 38px;margin-left: -289px;min-width: 34.3rem;height: 201px;')
+                                        .row(style='margin-top: -5px;')
+
+                                            .col-sm-4
+                                                    h6 To DO
+                                                    hr
+                                            .col-sm-4
+                                                h6 Reports
+                                                hr
+                                            .col-sm-4
+                                                h6 To Approve
+                                                hrasdasdas
+
+                                        .row(style='margin-top: -16px;')
+                                            .col-sm-4
+                                                router-link(to='Ctype')
+                                                    a.samoalink 1 New Applicants
+                                                br
+                                            .col-sm-4
+                                                router-link(to='LeaveRequest')
+                                                    a.samoalink 1 Leave Requests
+                                                br
+                                                router-link(to='AllocationRequests')
+                                                    a.samoalink 1 Allocation Requests
+                                                br
+                                                router-link(to='DepExp')
+                                                    a.samoalink 0 Expense Reports
+                                            .col-sm-4
+                                                router-link(to='sales/quotation')
+                                                    a.samoalink Recruitments
+                                                br
+                                                router-link(to='sales/quotation')
+                                                    a.samoalink Leaves
+                                                br
+                                                router-link(to='sales/quotation')
+                                                    a.samoalink Attendances
+                                                br
+                                                router-link(to='sales/quotation')
+                                                    a.samoalink Timesheets
+                                                br
+                                                router-link(to='sales/quotation')
+                                                    a.samoalink Expense Reports
+
+                                        hr
+                                        .col-sm-12(style='margin-top: -20px;')
+                                            .col-sm-7.pull-left(style='padding: 0px;margin-top: 11px;')
+                                                ul(style='list-style-type:none;display: -webkit-box;padding: 0;')
+                                                    li
+                                                        a.color1.colorbg(href='#', data-color='1')
+                                                    li
+                                                        a.color2.colorbg(href='#', data-color='2')
+                                                    li
+                                                        a.color3.colorbg(href='#', data-color='3')
+                                                    li
+                                                        a.color4.colorbg(href='#', data-color='4')
+                                                    li
+                                                        a.color5.colorbg(href='#', data-color='5')
+                                                    li
+                                                        a.color6.colorbg(href='#', data-color='6')
+                                                    li
+                                                        a.color7.colorbg(href='#', data-color='7')
+                                                    li
+                                                        a.color8.colorbg(href='#', data-color='8')
+                                                    li
+                                                        a.color9.colorbg(href='#', data-color='9')
+                                                    li
+                                                        a.color10.colorbg(href='#', data-color='10')
+
+                                            .col-sm-5.pull-right
+                                                router-link(to='DepSetting')
+                                                    a.samoalink(style='margin-left: 155px;') Settings
+
+                        .container.o_kanban_card_content.o_visible(style='margin-top: 12px;')
+                            .row
+                                .col-xs-6.o_kanban_primary_left(name='to_replace_in_sale_crm')
+                                    a(href='/#/app/Employees/NewDep')
+                                        button.btn.btn-primary.oe_kanban_action.oe_kanban_action_button( data-name='742', data-type='action', type='button',style='background-color: #7c7bad;') Employee
+                                .col-xs-6.o_kanban_primary_right(style='margin-left: 161px;')
+
+                                .col-xs-12.o_kanban_primary_bottom
+                                    .o_progressbar
+
+
+                        .footer
+                            ul(style='list-style-type:none;padding: 0px;display: -webkit-inline-box;')
+                                router-link(to='Absent')
+                                    li(style='padding-right: 14px;padding-top: 9px;padding-left: 10px;') Absenses
+                                li.progress(style='width: 370px;height: 15px;margin-top: 14px;')
+                                    .progress-bar.pro(role='progressbar', style='width: 25%', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100')
+                                li(style='margin-top: 10px;padding-left: 10px;') 2k / 250k
+
+               // .card.samocard
+                    .col-sm-12.samocolsm12_1
+                        span.whc
+                            .col-sm-6.pull-left
+                                h6.samoh61 Chief Executive Officer
+                                br
+                                h6.fa.fa-envelope-o.samoh61  Alupak Industriess
+
+                            .col-sm-6.pull-right
+                                .dropdown
+                                    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownbtn(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style='float: right;margin-top: -9px;')
+                                        | More
+                                    .dropdown-menu(aria-labelledby='dropdownMenuButton',style='margin-top: 38px;margin-left: -183px;min-width: 21.0rem;height: 196px;')
+                                        .row(style='')
+
+                                            .col-sm-4
+                                                h6(style='font-size: 11px;margin-left: 6px;') To DO
+                                                hr(style='margin-left: 6px;')
+                                            .col-sm-4
+                                                h6(style='font-size: 11px;') To Approval
+                                                hr
+                                            .col-sm-4
+                                                h6(style='font-size: 11px;') Reports
+                                                hr
+
+                                        .row(style='margin-top: -58px;')
+                                            .col-sm-4
+                                                router-link(to='Ctype')
+                                                    a.samoalink(style='font-size: 11px;margin-left: 6px;') 1 New Applicants
+
+                                            .col-sm-4
+                                                router-link(to='LeaveRequest')
+                                                    a.samoalink(style='font-size: 11px;') 1 Leave Requests
+                                                br
+                                                router-link(to='AllocationRequests')
+                                                    a.samoalink(style='font-size: 11px;') 1 Allocation Requests
+                                                br
+                                                router-link(to='DepExp')
+                                                    a.samoalink(style='font-size: 11px;') 0 Expense Reports
+                                                br
+
+                                            .col-sm-4
+                                                router-link(to='ReportRecruitmentsEmployees ')
+                                                    a.samoalink(style='font-size: 11px;') Recruitments
+                                                br
+                                                router-link(to='ReportLeaves')
+                                                    a.samoalink(style='font-size: 11px;') Leaves
+                                                br
+                                                router-link(to='ReportAttendanceEmployees')
+                                                    a.samoalink(style='font-size: 11px;') Attendances
+                                                br
+                                                router-link(to='ReportTimesheets')
+                                                    a.samoalink(style='font-size: 11px;') Timesheets
+                                                br
+                                                router-link(to='ReportExpense')
+                                                    a.samoalink(style='font-size: 11px;') Expense Reports
+
+
+                                        hr
+                                        .col-sm-12(style='margin-top: -43px;')
+                                            .col-sm-7.pull-left(style='padding: 0px;margin-top: -13px;')
+                                                ul(style='list-style-type:none;display: -webkit-box;padding: 0;')
+                                                    li
+                                                        a.color1.colorbg(href='#', data-color='1')
+                                                    li
+                                                        a.color2.colorbg(href='#', data-color='2')
+                                                    li
+                                                        a.color3.colorbg(href='#', data-color='3')
+                                                    li
+                                                        a.color4.colorbg(href='#', data-color='4')
+                                                    li
+                                                        a.color5.colorbg(href='#', data-color='5')
+                                                    li
+                                                        a.color6.colorbg(href='#', data-color='6')
+                                                    li
+                                                        a.color7.colorbg(href='#', data-color='7')
+                                                    li
+                                                        a.color8.colorbg(href='#', data-color='8')
+                                                    li
+                                                        a.color9.colorbg(href='#', data-color='9')
+                                                    li
+                                                        a.color10.colorbg(href='#', data-color='10')
+
+                                            .col-sm-5.pull-right(style='margin-top: -19px;')
+                                                router-link(to='ReqSettingEdit')
+                                                    a.samoalink(style='margin-left: 57px;font-size: 13px;') Settings
+
+                        .container.o_kanban_card_content.o_visible(style='')
+                            .row(style='margin-top: 30px;')
+                                .col-xs-6.o_kanban_primary_left(name='to_replace_in_sale_crm')
+                                    a(href='/#/app/Employees/NewDep')
+                                        button.btn.btn-primary.oe_kanban_action.oe_kanban_action_button( data-name='742', data-type='action', type='button',style='background-color: #7c7bad;font-size: 13px;') Empolyee
+
+                                .col-xs-6.o_kanban_primary_right(style='margin-left: 151px;margin-top: -24px;')
+                                    .mb4
+
+                                .col-xs-12.o_kanban_primary_bottom
+                                    .o_progressbar
+
+
+                        .footer(style='')
+                            ul(style='list-style-type:none;padding: 0px;display: -webkit-inline-box;')
+                                router-link(to='Absent')
+                                    li(style='padding-right: 14px;padding-top: 9px;padding-left: 10px;font-size: 13px;') Absenses
+                                li.progress(style='width: 152px;height: 11px;margin-top: 13px;')
+                                    .progress-bar.pro(role='progressbar', style='width: 25%', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100')
+                                li(style='margin-top: 10px;padding-left: 10px;font-size: 13px;') 1/3
+
+
+
+

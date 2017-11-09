@@ -1,0 +1,788 @@
+.usersinedit
+    DashboardController(v-bind:savedbtn='true',v-bind:discardbtn='true',v-bind:actionbtn='true',v-bind:links='btnlinks',v-bind:heading='head' )
+        .col-sm-6(style='padding:0px;' ,slot='heading')
+            h4.samodashheading(style="font-size: 18px;") Users / {{ username }}
+    .o_content(style='overflow-y: auto;margin-left: -15px;margin-right: -15px;height: 89vh;')
+        .o_view_manager_content
+            .o_form_view.o_form_editable
+                header
+                    button.btn.btn-sm(type='button', data-original-title='', title='')
+                        span Change Password
+                    button.btn.btn-sm.o_form_invisible(type='button')
+                        span Send Reset Password Instructions
+                    button.btn.btn-sm.o_form_invisible(type='button')
+                        span Send an Invitation Email
+                    ul.oe_form_field_status.oe_form_status.o_form_field.o_form_field_empty
+                        li(data-id='new')
+                            span.label Never Connected
+                            span.arrow
+                                span
+                        li(data-id='active')
+                            span.label Confirmed
+                            span.arrow
+                                span
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        span.o_form_field.o_form_invisible.o_form_field_empty
+                        //.oe_button_box(name='button_box')
+                        //    button.btn.btn-sm.oe_stat_button(type='button')
+                        //        .fa.fa-fw.fa-check.o_button_icon
+                        //        .o_stat_info.o_form_field
+                        //            span.o_stat_text.o_not_hover.text-success Active
+                        //            span.o_stat_text.o_hover.text-danger Deactivate
+                        .alert.alert-success.text-center.o_form_header.o_form_invisible
+                            a.close(data-dismiss='alert', href='#', aria-hidden='true') x
+                            .o_form_invisible
+                                strong
+                                    | A password reset has been requested for this user. An email containing the following link has been sent:
+                            .o_form_invisible
+                                strong An invitation email containing the following subscription link has been sent:
+                            div
+                                a.o_form_uri.o_text_overflow.o_form_field.o_form_field_empty(href='http://false', target='_blank')
+                            .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                input(type='checkbox', name='signup_valid', disabled='')
+                                span
+                        .o_form_field_image.oe_avatar.o_form_field(data-original-title='', title='')
+                            img(border='1', name='image', src='/web/static/src/img/placeholder.png')
+                            .o_form_image_controls
+                                span.fa.fa-pencil.fa-lg.pull-left.o_select_file_button(title='Edit')
+                                span.fa.fa-trash-o.fa-lg.pull-right.o_clear_file_button(title='Clear')
+                                span.o_form_binary_progress Uploading...
+                                .o_hidden_input_file
+                                    form.o_form_binary_form(enctype='multipart/form-data', method='post', action='/web/binary/upload')
+                                        input(name='csrf_token', type='hidden', value='5ff3188ad0c59ca90490e3cc5faaa1e7caa3f2eco')
+                                        input(name='callback', type='hidden')
+                                        input.o_form_input_file(accept='image/*', name='ufile', type='file')
+                                    iframe(style='display: none')
+                        form(style='margin-top: 59px;margin-left: 13px;')(@submit.prevent='validateBeforeSubmit')
+                            .oe_title
+                                label.o_form_label.oe_edit_only
+                                    | Name
+                                h1
+                                    input.o_form_input.o_form_field.o_form_required(type='text' , v-model='username')
+                                label.o_form_label.o_form_label_help.oe_edit_only
+                                    | Email Address
+                                h2
+                                    input.o_form_input.o_form_field.o_form_required(type='text' , v-model='email')
+                                table.o_group.o_inner_group
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                    | Related Partner
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+
+
+                            .o_notebook(style='margin-top:0px;')
+                                ul.nav.nav-tabs(role='tablist')
+                                    li.nav-item
+                                        a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Access Rights
+                                    li.nav-item
+                                        a.nav-link(href='#buzz', role='tab', data-toggle='tab') Preferences
+                                    //li.nav-item
+                                    //    a.nav-link(href='#buzz1', role='tab', data-toggle='tab') Calendar
+                                    li.nav-item
+                                        a.nav-link(href='#buzz2', role='tab', data-toggle='tab') Point of Sale
+
+                                // Tab panes
+
+                            .tab-content
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+                                    table.o_group.o_inner_group
+                                        tbody
+                                            tr
+                                                td(colspan='2', style='width: 100%;')
+                                                    .o_horizontal_separator
+                                                        | Multi Companies
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Allowed Companies
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2manytags.o_form_field
+                                                        span.badge.dropdown.o_tag_color_10(data-color='10', data-id='1', data-index='0')
+                                                            //span.o_badge_text(title='Alupak Industriesss') Alupak Industriesss
+                                                            //span.fa.fa-times.o_delete
+                                                        .o_form_field_many2one.o_form_field
+                                                            .o_form_input_dropdown
+                                                                select
+                                                                    option(v-for='option in options', v-bind:value="option.id")
+                                                                        | {{ option.company_name }}
+                                                                //input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off', v-model='company_id')
+                                                                //span.o_dropdown_button(draggable='false')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_14', data-original-title='', title='')
+                                                        | Current Company
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                        .o_form_input_dropdown
+                                                            select(v-model='current_company')
+                                                                option(v-for='option in options', v-bind:value="option.id")
+                                                                    | {{ option.company_name }}
+                                                            //input#o_field_input_14.o_form_input.ui-autocomplete-input(type='text', v-model='current_company')
+                                                            //span.o_dropdown_button(draggable='false')
+                                                        .fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible
+                                                        | Companies count
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.o_form_field.o_form_invisible.o_form_field_number 2
+
+                                    table.o_group.o_inner_group
+                                        tbody
+                                            tr
+                                                td(colspan='2', style='width: 100%;')
+                                                    .o_horizontal_separator
+                                                        | Application
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_16', data-original-title='', title='')
+                                                        | Sales
+                                                td(colspan='1', style='width: 100%;')
+                                                    select#o_field_input_16.o_form_input.o_form_field(name='sel_groups_22_23_24' v-model='sales')
+                                                        option(value='sales')
+                                                        option(value='User: Own Documents Only') User: Own Documents Only
+                                                        option(value='User: All Documents') User: All Documents
+                                                        option(value='Manager') Manager
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_17')
+                                                        | Project
+                                                td(colspan='1', style='width: 100%;')
+                                                    select#o_field_input_17.o_form_input.o_form_field(name='sel_groups_64_65' v-model='project')
+                                                        option(value='project')
+                                                        option(value='User') User
+                                                        option(value='Manager') Manager
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_18')
+                                                        | Inventory
+                                                td(colspan='1', style='width: 100%;')
+                                                    select#o_field_input_18.o_form_input.o_form_field(name='sel_groups_41_42' v-model='inventory')
+                                                        option(value='inventory')
+                                                        option(value='User') User
+                                                        option(value='Manager') Manager
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_19')
+                                                        | Manufacturing
+                                                td(colspan='1', style='width: 100%;')
+                                                    select#o_field_input_19.o_form_input.o_form_field(name='sel_groups_72_73' v-model='manufacturing')
+                                                        option(value='false')
+                                                        option(value='User') User
+                                                        option(value='Manager') Manager
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_20')
+                                                        | Accounting & Finance
+                                                td(colspan='1', style='width: 100%;')
+                                                    select#o_field_input_20.o_form_input.o_form_field(name='sel_groups_25_26_27' v-model='accounting')
+                                                        option(value='false')
+                                                        option(value='Billing') Billing
+                                                        option(value='Accountant') Accountant
+                                                        option(value='Adviser') Adviser
+                                            tr(v-if='purchases !== ""')
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_21')
+                                                        | Purchases
+                                                td(colspan='1', style='width: 100%;')
+                                                    select#o_field_input_21.o_form_input.o_form_field(name='sel_groups_75_76' v-model='purchases')
+                                                        option(value='false')
+                                                        option(value='User') User
+                                                        option(value='Manager') Manager
+
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_23')
+                                                        | Recruitment
+                                                td(colspan='1', style='width: 100%;')
+                                                    select#o_field_input_23.o_form_input.o_form_field(name='sel_groups_55_56' v-model='recruitment')
+                                                        option(value='false')
+                                                        option(value='Officer') Officer
+                                                        option(value='Manager') Manager
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_24')
+                                                        | Expenses
+                                                td(colspan='1', style='width: 100%;')
+                                                    select#o_field_input_24.o_form_input.o_form_field(name='sel_groups_70_71' v-model='expenses')
+                                                        option(value='false')
+                                                        option(value='Officer') Officer
+                                                        option(value='Manager') Manager
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_25')
+                                                        | Timesheets
+                                                td(colspan='1', style='width: 100%;')
+                                                    select#o_field_input_25.o_form_input.o_form_field(name='sel_groups_69' v-model='timesheets')
+                                                        option(value='false')
+                                                        option(value='Officer') Officer
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_26', data-original-title='', title='')
+                                                        | Attendance
+                                                td(colspan='1', style='width: 100%;')
+                                                    select#o_field_input_26.o_form_input.o_form_field(name='sel_groups_13_59_60' v-model='attendance')
+                                                        option(value='false')
+                                                        option(value='Manual Attendance') Manual Attendance
+                                                        option(value='Officer') Officer
+                                                        option(value='Manager') Manager
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_27')
+                                                        | Fleet
+                                                td(colspan='1', style='width: 100%;')
+                                                    select#o_field_input_27.o_form_input.o_form_field(name='sel_groups_62_63' v-model='fleet')
+                                                        option(value='false')
+                                                        option(value='User') User
+                                                        option(value='Manager') Manager
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_28')
+                                                        | Mass Mailing
+                                                td(colspan='1', style='width: 100%;')
+                                                    select#o_field_input_28.o_form_input.o_form_field(name='sel_groups_81' v-model='massmalling')
+                                                        option(value='false')
+                                                        option(value='User') User
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_30')
+                                                        | Point of Sale
+                                                td(colspan='1', style='width: 100%;')
+                                                    select#o_field_input_30.o_form_input.o_form_field(name='sel_groups_50_51' v-model='pointofsale')
+                                                        option(value='false')
+                                                        option(value='User') User
+                                                        option(value='Manager') Manager
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_31')
+                                                        | Administration
+                                                td(colspan='1', style='width: 100%;')
+                                                    select#o_field_input_31.o_form_input.o_form_field(name='sel_groups_3_4' v-model='administration')
+                                                        option(value='false')
+                                                        option(value='Access_Rights') Access Rights
+                                                        option(value='Settings') Settings
+                                    table.o_group.o_inner_group.o_label_nowrap
+                                        tbody
+                                            tr
+                                                td(colspan='4', style='width: 100%;')
+                                                    .o_horizontal_separator.o_form_invisible
+                                                        | Technical Settings
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_32')
+                                                        | A warning can be set on a partner (Account)
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_32(type='checkbox', name='in_group_29')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_33')
+                                                        | A warning can be set on a partner (Stock)
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_33(type='checkbox', name='in_group_47')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_34')
+                                                        | A warning can be set on a product or a customer (Purchase)
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_34(type='checkbox', name='in_group_79')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_35')
+                                                        | A warning can be set on a product or a customer (Sale)
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_35(type='checkbox', name='in_group_37')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_36')
+                                                        | Addresses in Sales Orders
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_36(type='checkbox', name='in_group_31')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_37')
+                                                        | Analytic Accounting
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_37(type='checkbox', name='in_group_14')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_38')
+                                                        | Analytic Accounting for Purchases
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_38(type='checkbox', name='in_group_77')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_39')
+                                                        | Analytic Accounting for Sales
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_39(type='checkbox', name='in_group_38')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_40')
+                                                        | Discount on lines
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_40(type='checkbox', name='in_group_35')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_41')
+                                                        | Display incoterms on Sales Order and related invoices
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_41(type='checkbox', name='in_group_36')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_42', data-original-title='', title='')
+                                                        | Enable PIN use
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_42(type='checkbox', name='in_group_61')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_43')
+                                                        | Enable Route on Sales Order Line
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_43(type='checkbox', name='in_group_49')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_44')
+                                                        | Manage Different Stock Owners
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_44(type='checkbox', name='in_group_46')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_45')
+                                                        | Manage Inventory Valuation and Costing Methods
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_45(type='checkbox', name='in_group_48')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_46')
+                                                        | Manage Lots / Serial Numbers
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_46(type='checkbox', name='in_group_43')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_47')
+                                                        | Manage Mass Mailing Campaigns
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_47(type='checkbox', name='in_group_82')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_48')
+                                                        | Manage multiple stock_locations
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_48(type='checkbox', name='in_group_39')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_49')
+                                                        | Manage Multiple Units of Measure
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_49(type='checkbox', name='in_group_18')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_50')
+                                                        | Manage multiple warehouses
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_50(type='checkbox', name='in_group_40')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_51')
+                                                        | Manage Packages
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_51(type='checkbox', name='in_group_44')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_52')
+                                                        | Manage Pricelist Items
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_52(type='checkbox', name='in_group_16')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_53')
+                                                        | Manage Product Packaging
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_53(type='checkbox', name='in_group_19')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_54')
+                                                        | Manage Product Variants
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_54(type='checkbox', name='in_group_21')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_55')
+                                                        | Manage Properties of Product
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_55(type='checkbox', name='in_group_20')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_56')
+                                                        | Manage Push and Pull inventory flows
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_56(type='checkbox', name='in_group_45')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_57')
+                                                        | Manage Vendor Price
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_57(type='checkbox', name='in_group_78')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_58')
+                                                        | Manage Work Order Operations
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_58(type='checkbox', name='in_group_74')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_59')
+                                                        | Personalize sale order and invoice report
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_59(type='checkbox', name='in_group_30')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_60')
+                                                        | Pricelists On Product
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_60(type='checkbox', name='in_group_17')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_61')
+                                                        | Pro-forma Invoices
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_61(type='checkbox', name='in_group_28')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_62')
+                                                        | Properties on lines
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_62(type='checkbox', name='in_group_34')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_63')
+                                                        | Sales Pricelists
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_63(type='checkbox', name='in_group_15')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_64')
+                                                        | Show Lead Menu
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_64(type='checkbox', name='in_group_83')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_65', data-original-title='', title='')
+                                                        | Tax display B2B
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_65(type='checkbox', name='in_group_32')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_66', data-original-title='', title='')
+                                                        | Tax display B2C
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_66(type='checkbox', name='in_group_33')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_67')
+                                                        | Time Estimation on Tasks
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_67(type='checkbox', name='in_group_66')
+                                                        span
+                                            tr
+                                                td(colspan='4', style='width: 100%;')
+                                                    .o_horizontal_separator
+                                                        | Employees
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_68')
+                                                        | Employee
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox
+                                                        input#o_field_input_68(type='checkbox', v-bind:true-value='1', v-bind:false-value='0' , v-model='employees')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_69')
+                                                        | Equipment Manager
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox
+                                                        input#o_field_input_69(type='checkbox', v-bind:true-value='1', v-bind:false-value='0', v-model='equipment_manager')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_70')
+                                                        | Manager
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field
+                                                        input#o_field_input_70(type='checkbox', v-bind:true-value='1', v-bind:false-value='0', v-model='manager')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_71')
+                                                        | Officer
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field
+                                                        input#o_field_input_71(type='checkbox',v-bind:true-value='1', v-bind:false-value='0', v-model='officer')
+                                                        span
+                                            tr
+                                                td(colspan='4', style='width: 100%;')
+                                                    .o_horizontal_separator.o_form_invisible
+                                                        | Extra Rights
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_72')
+                                                        | Multi Companies
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_72(type='checkbox', name='in_group_5')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_73')
+                                                        | Multi Currencies
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_73(type='checkbox', name='in_group_6')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_74')
+                                                        | Technical Features
+                                                td(colspan='1', style='width: 33.3333%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_74(type='checkbox', name='in_group_7')
+                                                        span
+                                            tr
+                                                td(colspan='4', style='width: 100%;')
+                                                    .o_horizontal_separator.o_form_invisible
+                                                        | Other Extra Rights
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_75')
+                                                        | Contact Creation
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_75(type='checkbox', name='in_group_8')
+                                                        span
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_76', data-original-title='', title='')
+                                                        | Portal
+                                                td(colspan='1', style='width: 50%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_76(type='checkbox', name='in_group_9')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_77', data-original-title='', title='')
+                                                        | Public
+                                                td(colspan='1', style='width: 33.3333%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_77(type='checkbox', name='in_group_10')
+                                                        span
+
+
+                                //button(type='submit') Submit
+                                #buzz.tab-pane.fade.in(role='tabpanel')
+                                    .o_group
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Localization
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_78', data-original-title='', title='')
+                                                            | Language
+                                                    td(colspan='1', style='width: 100%;')
+                                                        select#o_field_input_78.o_form_input.o_form_field(name='lang' v-model='language')
+                                                            option(value='false')
+                                                            option(value='English') English
+                                                            option(value='Urdu') Urdu
+
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_79')
+                                                            | Timezone
+                                                    td(colspan='1', style='width: 100%;')
+                                                        select#o_field_input_79.o_form_input.o_form_field(name='tz' v-model='timezone')
+                                                            option(value='false')
+                                                            option(value='India') India
+                                                            option(value='pakistan') Pakistan
+
+
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                            | Timezone offset
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_invisible.o_form_field_empty
+                                        table.o_group.o_inner_group.o_form_invisible.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Menus Customization
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_81', data-original-title='', title='')
+                                                            | Home Action
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_81.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    table.o_group.o_inner_group
+                                        tbody
+                                            tr
+                                                td(colspan='2', style='width: 100%;')
+                                                    .o_horizontal_separator
+                                                        | Messaging and Social
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                        | Email Messages and Notifications
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_radio.o_vertical.o_form_field.o_form_required
+                                                        .o_radio_item
+                                                            input#radio93_none.o_form_radio(type='radio', name='radio93', value='Never' ,v-model='emailmessages')
+                                                            label.o_form_label(for='radio93_none') Never
+                                                        .o_radio_item
+                                                            input#radio93_always.o_form_radio(type='radio', name='radio93', value='always' v-model='emailmessages')
+                                                            label.o_form_label(for='radio93_always') All Messages
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help
+                                                        | Alias
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field
+                                                        .o_form_input_dropdown
+                                                            select(v-model='alias')
+                                                                option(v-for='option in options2', v-bind:value="option.id" )
+                                                                    | {{ option.name }}
+                                                            //input#o_field_input_83.o_form_input.ui-autocomplete-input(type='text', autocomplete='off' v-model='alias')
+                                                            //span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_84', data-original-title='', title='')
+                                                        | Alias Contact Security
+                                                td(colspan='1', style='width: 100%;')
+                                                    select#o_field_input_84.o_form_input.o_form_field.o_form_invisible(name='alias_contact')
+                                                        option(value='false')
+                                                        option(value='"everyone"') Everyone
+                                                        option(value='"partners"') Authenticated Partners
+                                                        option(value='"followers"') Followers only
+                                                        option(value='"employees"') Authenticated Employees
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Signature
+                                                td(colspan='1', style='width: 100%;')
+                                                    .oe_form_field.oe_form_field_html_text.o_form_field
+                                                        textarea(name='editor1' , v-model='signature')
+
+                                //#buzz1.tab-pane.fade.in(role='tabpanel')
+                                //    table.o_group.o_inner_group
+                                //        tbody
+                                //            tr
+                                //                td.o_td_label(colspan='1')
+                                //                    label.o_form_label(for='o_field_input_86')
+                                //                        | Refresh Token
+                                //                td(colspan='1', style='width: 100%;')
+                                //                    input#o_field_input_86.o_form_input.o_form_field(type='text')
+                                //            tr
+                                //                td.o_td_label(colspan='1')
+                                //                    label.o_form_label(for='o_field_input_87')
+                                //                        | User token
+                                //                td(colspan='1', style='width: 100%;')
+                                //                    input#o_field_input_87.o_form_input.o_form_field(type='text')
+                                //            tr
+                                //                td.o_td_label(colspan='1')
+                                //                    label.o_form_label(for='o_field_input_88')
+                                //                        | Token Validity
+                                //                td(colspan='1', style='width: 100%;')
+                                //                    .o_datepicker.o_form_field_date.o_form_field
+                                //                        input.o_datepicker_input.o_form_input(type='text', name='google_calendar_token_validity')
+                                //                        span.o_datepicker_button
+                                //            tr
+                                //                td.o_td_label(colspan='1')
+                                //                    label.o_form_label(for='o_field_input_89')
+                                //                        | Last synchro date
+                                //                td(colspan='1', style='width: 100%;')
+                                //                    .o_datepicker.o_form_field_date.o_form_field
+                                //                        input.o_datepicker_input.o_form_input(type='text', name='google_calendar_last_sync_date')
+                                //                        span.o_datepicker_button
+                                //            tr
+                                //                td.o_td_label(colspan='1')
+                                //                    label.o_form_label.o_form_label_help(for='o_field_input_90', data-original-title='', title='')
+                                //                        | Calendar ID
+                                //                td(colspan='1', style='width: 100%;')
+                                //                    input#o_field_input_90.o_form_input.o_form_field(type='text')
+
+                                #buzz2.tab-pane.fade.in(role='tabpanel')
+                                    table.o_group.o_inner_group
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_91', data-original-title='', title='')
+                                                        | Barcode
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_91.o_form_input.o_form_field(type='text' v-model='barcode')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_92', data-original-title='', title='')
+                                                        | Security PIN
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_92.o_form_input.o_form_field(maxlength='32', type='text' v-model='security_pin')

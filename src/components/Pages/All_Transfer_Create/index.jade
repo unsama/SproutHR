@@ -1,0 +1,195 @@
+.Product_inner_Edit
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:num1='false',v-bind:num2='false',v1-bind:paginbtn1='true',v1-bind:paginbtn2='true',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false',v-bind:dropdownbtn1='false',v-bind:dropdownbtn2='false',v-bind:dropdownbtn3='false',v-bind:actionbtn='false',v-bind:Attachmentbtn='false',v-bind:printbtn='false')
+    .row
+        .col-md-12.pull-left.samotopcontroller
+            .col-md-5.pull-left
+                button.btn.btn-primary.samobutton2(type='button',style='margin-right: 5px;') Mark as todo
+                button.btn.btn-primary.samobutton2(type='button',style='margin-right: 5px;') Validate
+                button.btn.btn-primary.samobutton1(type='button') Cancel
+
+            .col-md-1.pull-left
+            .col-md-3.pull-left
+            .col-md-3.pull-right
+                .btn-group.btn-breadcrumb.samobreadcrum1
+                    a.btn.btn-primary.samobreadbutt(href='#') Draft
+                    a.btn.btn-primary.samobreadbutt1(href='#') Waiting Availability
+                    a.btn.btn-primary.samobreadbutt(href='#') Partially Available
+                    a.btn.btn-primary.samobreadbutt(href='#') Available
+                    a.btn.btn-primary.samobreadbutt(href='#') Done
+
+    .o_content.samocontent
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .container
+                            .o_form_sheet_bg
+                                .o_group.hidden-xs
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Partner
+                                                td(colspan='1', style='width: 100%;')
+                                                    select#o_field_input_145.o_form_input.o_form_field(name='priority')
+                                                        option(value='false')
+                                                        option(value='"0"') Not urgent
+                                                        option(value='"1"') Normal
+                                                        option(value='"2"') Urgent
+                                                        option(value='"3"') Very Urgent
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_130')
+                                                        | Source Location Zone
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field.o_form_required.o_form_invisible
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_130.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_131')
+                                                        | Destination Location Zone
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field.o_form_required.o_form_invisible
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_131.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(data-original-title='', title='')
+                                                        | Back Order of
+                                                td(colspan='1', style='width: 100%;')
+                                                    a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                        | Scheduled Date
+                                                td(colspan='1', style='width: 100%;')
+                                                    form#dateRangeForm.form-horizontal(method='post')
+                                                        .form-group
+                                                            #dateRangePicker.input-group.input-append.date(style='padding-left: 15px;')
+                                                                input.input-group-addon.form-control(type='text', name='date',style='width: 223px;height: 27px;')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.oe_inline(for='o_field_input_134', data-original-title='', title='')
+                                                        | Source Document
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_134.o_form_input.oe_inline.o_form_field(placeholder='e.g. PO0032', type='text')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_135', data-original-title='', title='')
+                                                        | Owner
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_invisible(invisible='1')
+                                                        .o_form_field_many2one.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_135.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                                        button.btn.btn-sm.oe_link.oe_edit_only.o_form_invisible(type='button')
+                                                            span Assign Owner
+
+
+
+                                .row
+                                    .col-md-12.kachraytabs
+                                        .o_notebook(style='margin-top:0px;')
+                                            ul.nav.nav-tabs(role='tablist')
+                                                li.nav-item
+                                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Intial Demand
+                                                li.nav-item
+                                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') Additional Info
+
+                                            // Tab panes
+                                        .tab-content
+                                            #profile.tab-pane.fade.in.active(role='tabpanel')
+                                                TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter")
+                                                textarea.o_form_textarea.oe_inline.o_form_field(rows='6', name='note', placeholder='Add an internal note that will be printed on the Picking Operations sheet', style='height: 50px;')
+
+
+                                            #buzz.tab-pane.fade.in(role='tabpanel')
+                                                .o_group
+                                                    table.o_group.o_inner_group.o_group_col_6
+                                                        tbody
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label.o_form_label_help(for='o_field_input_139', data-original-title='', title='')
+                                                                        | Delivery Type
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    select#o_field_input_139.o_form_input.o_form_field.o_form_required(name='move_type',style='background-color: #D2D2FF;')
+                                                                        option(value='false')
+                                                                        option(value='"direct"') Partial
+                                                                        option(value='"one"') All at once
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    select#o_field_input_145.o_form_input.o_form_field(name='priority',style='background-color: #D2D2FF;')
+                                                                        option(value='false')
+                                                                        option(value='"0"') Not urgent
+                                                                        option(value='"1"') Normal
+                                                                        option(value='"2"') Urgent
+                                                                        option(value='"3"') Very Urgent
+                                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label.o_form_invisible(for='o_field_input_141')
+                                                                        | Type of Operation
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    select#o_field_input_141.o_form_input.o_form_field.o_form_invisible(name='picking_type_code')
+                                                                        option(value='false')
+                                                                        option(value='"incoming"') Vendors
+                                                                        option(value='"outgoing"') Customers
+                                                                        option(value='"internal"') Internal
+                                                                        option(value='"mrp_operation"') Manufacturing Operation
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_false(for='o_field_input_142', data-original-title='', title='')
+                                                                        | Has quants already reserved
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                                        input#o_field_input_142(type='checkbox', name='quant_reserved_exist', disabled='')
+                                                                        span
+                                                    table.o_group.o_inner_group.o_group_col_6
+                                                        tbody
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label
+                                                                        | Company
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    select#o_field_input_145.o_form_input.o_form_field(name='priority',style='background-color: #D2D2FF;')
+                                                                        option(value='false')
+                                                                        option(value='"0"') Not urgent
+                                                                        option(value='"1"') Normal
+                                                                        option(value='"2"') Urgent
+                                                                        option(value='"3"') Very Urgent
+                                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: block;')
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label.o_form_label_empty.o_form_label_false
+                                                                        | Procurement Group
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label.o_form_label_help(for='o_field_input_145', data-original-title='', title='')
+                                                                        | Priority
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    select#o_field_input_145.o_form_input.o_form_field(name='priority')
+                                                                        option(value='false')
+                                                                        option(value='"0"') Not urgent
+                                                                        option(value='"1"') Normal
+                                                                        option(value='"2"') Urgent
+                                                                        option(value='"3"') Very Urgent
+
+
+
+
+

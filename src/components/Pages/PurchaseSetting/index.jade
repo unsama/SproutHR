@@ -1,0 +1,166 @@
+.o_content(style='margin-left:-15px;margin-right:-15px;')
+    .o_view_manager_content
+        .o_form_view.oe_form_configuration.o_form_nosheet.o_form_editable
+            header
+                button.btn.btn-sm.oe_highlight(type='button')
+                    span Apply
+                button.btn.btn-sm.oe_link(type='button')
+                    span Cancel
+            .o_group
+                .o_horizontal_separator
+                    | Logistics
+                table.o_group.o_inner_group.o_group_col_6
+                    tbody
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_invisible(for='o_field_input_5')
+                                    | Company
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_many2one.o_with_button.o_form_field.o_form_required.o_form_invisible
+                                    .o_form_input_dropdown
+                                        input#o_field_input_5.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                        span.o_dropdown_button(draggable='false')
+                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_6', data-original-title='', title='')
+                                    | Currency
+                            td(colspan='1', style='width: 100%;')
+                                a.o_form_uri.o_form_field.o_form_invisible(href='#') USD
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_7', data-original-title='', title='')
+                                    | Purchase Lead Time *
+                            td(colspan='1', style='width: 100%;')
+                                input#o_field_input_7.o_form_input.o_form_field.o_form_field_number(type='text')
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_8', data-original-title='', title='')
+                                    | Purchase Order Modification *
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio18_edit.o_form_radio(type='radio', name='radio18', value='edit')
+                                        label.o_form_label(for='radio18_edit') Allow to edit purchase orders
+                                    .o_radio_item
+                                        input#radio18_lock.o_form_radio(type='radio', name='radio18', value='lock')
+                                        label.o_form_label(for='radio18_lock') Confirmed purchase orders are not editable
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_9', data-original-title='', title='')
+                                    | Levels of Approvals *
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio19_one_step.o_form_radio(type='radio', name='radio19', value='one_step')
+                                        label.o_form_label(for='radio19_one_step') Confirm purchase orders in one step
+                                    .o_radio_item
+                                        input#radio19_two_step.o_form_radio(type='radio', name='radio19', value='two_step')
+                                        label.o_form_label(for='radio19_two_step') Get 2 levels of approvals to confirm a purchase order
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_10', data-original-title='', title='')
+                                    | Double validation amount *
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_monetary.o_form_field.o_form_field_number.o_form_invisible
+                                    span $
+                                    input#o_field_input_10.o_form_input(type='text')
+            table.o_group.o_inner_group
+                tbody
+                    tr
+                        td(colspan='2', style='width: 100%;')
+                            .o_horizontal_separator
+                                | Purchase Order
+                    tr
+                        td.o_td_label(colspan='1')
+                            label.o_form_label.o_form_label_help(for='o_field_input_11', data-original-title='', title='')
+                                | Product Variants
+                        td(colspan='1', style='width: 100%;')
+                            .o_form_field_radio.o_vertical.o_form_field
+                                .o_radio_item
+                                    input#radio20_0.o_form_radio(type='radio', name='radio20', value='0')
+                                    label.o_form_label(for='radio20_0') No variants on products
+                                .o_radio_item
+                                    input#radio20_1.o_form_radio(type='radio', name='radio20', value='1')
+                                    label.o_form_label(for='radio20_1')
+                                        | Products can have several attributes, defining variants (Example: size, color,...)
+                    tr
+                        td.o_td_label(colspan='1')
+                            label.o_form_label.o_form_label_help(for='o_field_input_12', data-original-title='', title='')
+                                | Units of Measure
+                        td(colspan='1', style='width: 100%;')
+                            .o_form_field_radio.o_vertical.o_form_field
+                                .o_radio_item
+                                    input#radio21_0.o_form_radio(type='radio', name='radio21', value='0')
+                                    label.o_form_label(for='radio21_0') Products have only one unit of measure (easier)
+                                .o_radio_item
+                                    input#radio21_1.o_form_radio(type='radio', name='radio21', value='1')
+                                    label.o_form_label(for='radio21_1') Some products may be sold/puchased in different units of measure (advanced)
+                    tr
+                        td.o_td_label(colspan='1')
+                            label.o_form_label.o_form_label_help(for='o_field_input_13', data-original-title='', title='')
+                                | Costing Methods
+                        td(colspan='1', style='width: 100%;')
+                            .o_form_field_radio.o_vertical.o_form_field
+                                .o_radio_item
+                                    input#radio22_0.o_form_radio(type='radio', name='radio22', value='0')
+                                    label.o_form_label(for='radio22_0') Set a fixed cost price on each product
+                                .o_radio_item
+                                    input#radio22_1.o_form_radio(type='radio', name='radio22', value='1')
+                                    label.o_form_label(for='radio22_1') Use a 'Fixed', 'Real' or 'Average' price costing method
+                    tr
+                        td.o_td_label(colspan='1')
+                            label.o_form_label.o_form_label_help(for='o_field_input_14', data-original-title='', title='')
+                                | Calls for Tenders
+                        td(colspan='1', style='width: 100%;')
+                            .o_form_field_radio.o_vertical.o_form_field
+                                .o_radio_item
+                                    input#radio23_0.o_form_radio(type='radio', name='radio23', value='0')
+                                    label.o_form_label(for='radio23_0') Purchase propositions trigger draft purchase orders to a single supplier
+                                .o_radio_item
+                                    input#radio23_1.o_form_radio(type='radio', name='radio23', value='1')
+                                    label.o_form_label(for='radio23_1') Allow using call for tenders to get quotes from multiple suppliers (advanced)
+                    tr
+                        td.o_td_label(colspan='1')
+                            label.o_form_label(for='o_field_input_15')
+                                | Vendor Price
+                        td(colspan='1', style='width: 100%;')
+                            .o_form_field_radio.o_vertical.o_form_field
+                                .o_radio_item
+                                    input#radio24_0.o_form_radio(type='radio', name='radio24', value='0')
+                                    label.o_form_label(for='radio24_0') Manage vendor price on the product form
+                                .o_radio_item
+                                    input#radio24_1.o_form_radio(type='radio', name='radio24', value='1')
+                                    label.o_form_label(for='radio24_1') Allow using and importing vendor pricelists
+                    tr
+                        td.o_td_label(colspan='1')
+                            label.o_form_label(for='o_field_input_16')
+                                | Warning
+                        td(colspan='1', style='width: 100%;')
+                            .o_form_field_radio.o_vertical.o_form_field
+                                .o_radio_item
+                                    input#radio25_0.o_form_radio(type='radio', name='radio25', value='0')
+                                    label.o_form_label(for='radio25_0') All the products and the customers can be used in purchase orders
+                                .o_radio_item
+                                    input#radio25_1.o_form_radio(type='radio', name='radio25', value='1')
+                                    label.o_form_label(for='radio25_1') An informative or blocking warning can be set on a product or a customer
+            table.o_group.o_inner_group
+                tbody
+                    tr
+                        td(colspan='2', style='width: 100%;')
+                            .o_horizontal_separator
+                                | Location & Warehouse
+                    tr
+                        td.o_td_label(colspan='1')
+                            label.o_form_label.o_form_label_help(for='o_field_input_17', data-original-title='', title='')
+                                | Dropshipping
+                        td(colspan='1', style='width: 100%;')
+                            .o_form_field_radio.o_vertical.o_form_field
+                                .o_radio_item
+                                    input#radio26_0.o_form_radio(type='radio', name='radio26', value='0')
+                                    label.o_form_label(for='radio26_0') Suppliers always deliver to your warehouse(s)
+                                .o_radio_item
+                                    input#radio26_1.o_form_radio(type='radio', name='radio26', value='1')
+                                    label.o_form_label(for='radio26_1') Allow suppliers to deliver directly to your customers
+            div
+                span (*) This configuration is related to the company you're logged into.

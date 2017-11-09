@@ -1,0 +1,81 @@
+.accounting_dashboard
+    DashboardController(v-bind:heading="dashboard",v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:num1='true',v-bind:num2='true', v-bind:searchbar='true', v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true', v-bind:dropdownbtn3='true')
+    .card.samocard
+        .col-sm-12.samocolsm12_1
+             span
+                .col-sm-6.pull-left
+                    h6.samoh61 Customer Invoices
+                .col-sm-6.pull-right
+                    .dropdown
+                        button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownbtn(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style='float: right;')
+                            | More
+                        .dropdown-menu.dashdropmenu(aria-labelledby='dropdownMenuButton')
+                            .col-sm-12(style='font-size:0.9rem;')
+                                .col-sm-4.pull-left
+                                    h6 View
+                                    hr
+
+                                .col-sm-4.pull-right
+                                    h6 Report
+                                    hr
+                                .col-sm-4.pull-right
+                                    h6 New
+                                    hr
+                            .col-sm-12
+                                .col-sm-4.pull-left
+                                    a.samoalink Invoices
+
+                                .col-sm-4.pull-right
+                                    a.samoalink Invoices Analysis
+
+                                .col-sm-4.pull-right
+                                    a.samoalink Invoice
+                            .col-sm-12
+                                .col-sm-4.pull-left
+                                    a.samoalink Refunds
+
+                                .col-sm-4.pull-right
+                                    a.samoalink
+
+                                .col-sm-4.pull-right
+                                    a.samoalink Refund
+
+                            .col-sm-12
+                                .col-sm-4.pull-left
+                                    a.samoalink Payment matching
+
+
+                            .col-sm-12
+                                .col-sm-7.pull-left(style='padding: 0px;  ')
+                                    i.fa.fa-star(aria-hidden='true')(style='font-size:0.8rem; color:gold;')
+                                    a.samoalink Favorites
+
+
+
+                                .col-sm-5.pull-right(style='margin-right: -111px;')
+                                    a.samoalink Settings
+                h6.samoh63 Sale
+             .col-sm-12(style='padding: 0px;')
+                .col-sm-6.pull-left(style='padding: 0px;')
+                    button.btn.btn-primary.samodashbtn(type='button') New Invoices
+
+                .col-sm-6.pull-right.samocolright
+                    .col-sm-6.samoinventorypadd
+                        a.samoalink(style='font-size:0.9rem;') 2 Invoices to va..
+                        br
+                        a.samoalink(style='font-size:0.9rem;') 4 Awaiting paym..
+                    .col-sm-6(style='margin-top: 4px;')
+                        h6 12,190.26€
+                        h6 4,948.60€
+
+
+
+
+
+
+
+
+
+
+
+

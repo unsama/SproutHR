@@ -1,0 +1,15 @@
+nav.navbar.navbar-toggleable-md.navbar-light.pro-navbar.shadwo-2.bg-accent
+    button.navbar-toggler.navbar-toggler-right(type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+    a.navbar-brand(href="/")
+        img.img-fluid.top-side-logo(src="/images/logo-side.png")
+
+    div.collapse.navbar-collapse#navbarMain
+        ul.navbar-nav.mr-auto
+        div.pro-navbar-dropdown.float-right
+            a.nav-link.dropdown-toggle(href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                = full_name
+            div.dropdown-menu(aria-labelledby="navbarDropdownMenuLink")
+                a.dropdown-item(href='/') Profile
+                a.dropdown-item(href='/user/logout') Logout
+

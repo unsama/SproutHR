@@ -1,0 +1,164 @@
+.internalheader
+    DashboardController(v-bind:editbtn="true",v-bind:heading="activityimport",v-bind:Attachmentbtn='true',v-bind:actionbtn='true',v-bind:createbtn='true',v-bind:links="btnlinks")
+    .o_content(style='margin-left:-15px;margin-right-15px;')
+        .o_view_manager_content
+            .o_form_view.o_form_readonly.usamascroll
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_212')
+                                                | View Name
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required {{viewname}}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_213')
+                                                | View Type
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field {{viewtype}}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_214')
+                                                | Model
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field {{model}}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_215')
+                                                | Sequence
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required.o_form_field_number {{sequence}}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_216', data-original-title='', title='')
+                                                | Active
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_checkbox.o_form_field_boolean.o_form_field
+                                                input#o_field_input_216(type='checkbox', name='active', disabled='',v-model='active')
+                                                span
+                            table.o_group.o_inner_group.o_form_invisible.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_217')
+                                                | Child Field
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_field_empty
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_218')
+                                                | Inherited View
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_219', data-original-title='', title='')
+                                                | View inheritance mode
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required Base view
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_220')
+                                                | Model Data
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field(href='#') internal_layout
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_221', data-original-title='', title='')
+                                                | External ID
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field report.internal_layout
+                        .o_notebook
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Architecture
+                                li.nav-item
+                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') Access Rights
+                                li.nav-item
+                                    a.nav-link(href='#buzz1', role='tab', data-toggle='tab') Inherited Views
+                            .tab-content.nav.nav-tabs
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+                                    button.btn.btn-sm.oe_link.oe_right(type='button')
+                                        span Edit Translations
+                                    .oe_form_field.oe_form_field_text.o_form_field
+                                        span.oe_form_text_content {{ckeditor}}
+                                #buzz.tab-pane.fade.in(role='tabpanel', style='width:100%;')
+                                    .o_form_field.o_form_field_many2many.o_form_field_empty.o_view_manager_content(data-original-title='', title='')
+                                        .o_x2m_control_panel
+                                            .o_cp_buttons
+                                            .o_cp_pager
+                                                .o_hidden
+                                                    span.o_pager_value
+                                                    |  /
+                                                    span.o_pager_limit
+                                                    span.btn-group.btn-group-sm
+                                                        button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                        button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                        div
+                                            .table-responsive
+                                                table.o_list_view.table.table-condensed.table-striped
+                                                    thead
+                                                        tr
+                                                            th(data-id='full_name')
+                                                                | Group Name
+                                                    tfoot
+                                                        tr
+                                                            td
+                                                    tbody
+                                                        tr
+                                                            td(title='Group Name')  
+                                                        tr
+                                                            td(title='Group Name')  
+                                                        tr
+                                                            td(title='Group Name')  
+                                                        tr
+                                                            td(title='Group Name')  
+                                #buzz1.tab-pane.fade.in(role='tabpanel' style='width:100%;')
+                                    .o_form_field.o_form_field_one2many.o_view_manager_content
+                                        .o_x2m_control_panel
+                                            .o_cp_buttons
+                                            .o_cp_pager
+                                                .o_hidden
+                                                    span.o_pager_value
+                                                    |  /
+                                                    span.o_pager_limit
+                                                    span.btn-group.btn-group-sm
+                                                        button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                        button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                        div
+                                            .table-responsive
+                                                table.o_list_view.table.table-condensed.table-striped
+                                                    thead
+                                                        tr
+                                                            th.o_column_sortable(data-id='priority')
+                                                                | Sequence
+                                                            th.o_column_sortable(data-id='name')
+                                                                | View Name
+                                                            th(data-id='xml_id')
+                                                                | External ID
+                                                    tfoot
+                                                        tr
+                                                            td
+                                                            td
+                                                            td
+                                                    tbody
+                                                        tr
+                                                            td(title='Sequence')  
+                                                            td(title='View Name')  
+                                                            td(title='External ID')  
+                                                        tr
+                                                            td(title='Sequence')  
+                                                            td(title='View Name')  
+                                                            td(title='External ID')  
+                                                        tr
+                                                            td(title='Sequence')  
+                                                            td(title='View Name')  
+                                                            td(title='External ID')  
+                                                        tr
+                                                            td(title='Sequence')  
+                                                            td(title='View Name')  
+                                                            td(title='External ID')  

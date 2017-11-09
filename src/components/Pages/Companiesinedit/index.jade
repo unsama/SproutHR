@@ -1,0 +1,70 @@
+.companiesinedit
+    DashboardController(v-bind:savedbtn='true',v-bind:discardbtn='true',v-bind:links='btnlinks',v-bind:num1='true',v-bind:heading='head')
+    Modal(v-bind:cancel='true',v-bind:save='true',v-bind:heading="modal",v-bind:modal='"bd-example-modal-lg"')
+        .modal-body.o_act_window(style='margin-left: -29px;margin-right: -29px;margin-top: -31px;')
+            .o_form_view.o_form_editable
+                header
+                    button.btn.btn-sm(type='button')
+                        span View Rates
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                .o_stat_info.o_form_field
+                                    span.o_stat_text.o_not_hover.text-success Active
+                                    span.o_stat_text.o_hover.text-danger Deactivate
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help(for='o_field_input_22', data-original-title='', title='')
+                                            | Currency
+                                    td(colspan='1', style='width: 50%;')
+                                        input#o_field_input_22.o_form_input.o_form_field.o_form_required(maxlength='3', type='text' v-model='project_name')
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help(for='o_field_input_23', data-original-title='', title='')
+                                            | Current Rate
+                                    td(colspan='1', style='width: 50%;')
+                                        span.o_form_field.o_form_field_number 1.528900
+                        .o_group.o_form_invisible
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Price Accuracy
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_24')
+                                                | Rounding Factor
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_24.o_form_input.o_form_field.o_form_field_number(type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_25')
+                                                | Decimal places
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_field_number 2
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Display
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_26', data-original-title='', title='')
+                                                | Symbol
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_26.o_form_input.o_form_field.o_form_required(type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_27', data-original-title='', title='')
+                                                | Symbol Position
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_27.o_form_input.o_form_field(name='position')
+                                                option(value='false')
+                                                option(value='"after"') After Amount
+                                                option(value='"before"') Before Amount
+    Companyeditcompo

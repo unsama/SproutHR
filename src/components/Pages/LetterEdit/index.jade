@@ -1,0 +1,68 @@
+.LetterEdit
+    DashboardController(v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:savebtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:searchbar='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:fifthbtn='false',v-bind:num1='true',v-bind:num2='true')
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Resumes and Letters
+    .row
+        .col-sm-12
+            #success-alert(style='background-color:red;display:none;position:absolute;right: 0px;z-index: 1;')
+                button.close(type="button", data-dismiss="alert",style='color:white;') x
+                .o_notification.o_error
+                    .o_notification_title
+                        span.o_icon.fa.fa-3x.fa-exclamation(style='color:white;border-bottom: 3px solid white;font-size: 16px') The following fields are invalid:
+
+                    .o_notification_content(style='padding-top: 16px;')
+                        ul
+                            li#leave(style='color:white;') Attachment Name
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_cannot_create.o_form_editable
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        label.o_form_label.oe_edit_only(for='o_field_input_64')
+                            | Attachment Name
+                        h1
+                            input#o_field_input_64.o_form_input.o_form_field.o_form_required(v-model='application_tittle',type='text')
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_65', data-original-title='', title='')
+                                                | Type
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_65.o_form_input.o_form_field.o_form_required(v-model='type',name='type')
+                                                option(value="1")
+                                                option#url(value='"url"') URL
+                                                option#file(value='"File"') File
+                                    tr#fils(style='display:none;')
+                                        td.o_td_label
+                                            label.o_form_label
+                                                | File Content
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_binary_file
+                                                button.btn.btn-sm.btn-default.fa.fa-pencil.o_select_file_button#mybutton(for="fileupload",type='button', name='pic',title='Select')
+                                                    input#myfile(type='file')
+                                                input#mytext(v-model='document_url',type='text')
+                                                button.btn.btn-sm.btn-primary.o_select_file_button.o_hidden(title='Select') Upload your file
+                                                button.btn.btn-sm.btn-default.fa.fa-trash-o.o_clear_file_button(title='Clear', type='button')
+                                                span.o_form_binary_progress Uploading...
+                                                .o_hidden_input_file(style='overflow-x: hidden')
+                                                    form.o_form_binary_form(enctype='multipart/form-data', method='post', action='/web/binary/upload')
+                                                        input(name='csrf_token', type='hidden', value='616929304a51b7102a984369878e15a6ca21cbe0o')
+                                                        input(name='callback', type='hidden')
+                                                        input.o_form_input_file(name='ufile', type='file')
+                                                    iframe(style='display: none')
+                                    tr#urls
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_68')
+                                                | Url
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_68.o_form_input.o_form_field(v-model='document_url',maxlength='1024', type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible.oe_inline.oe_right(for='o_field_input_67')
+                                                | File Name
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_67.o_form_input.oe_inline.oe_right.o_form_field.o_form_invisible(type='text')
+
+

@@ -1,0 +1,23 @@
+.Channelgrid
+    dashconterller(v-show='k',v-bind:createbtn='true',v-bind:heading="nextactivity",v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true',v-bind:importbtn='false', v-bind:links="btnlinks", v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true')
+    .row(style="margin-top: 10px;")
+        .col-md-3(style='padding-right: 0px;')
+            .table
+                router-link(to='Channelgridsetting')
+                    .row
+                        .col-sm-3
+                            img.oe_module_icon(src='/images/placeholder.png')
+                        .col-sm-5
+                            .oe_module_desc
+                                h4(style='font-size: 15px;') #general
+                                p.oe_module_name(style='font-size: 12px;')
+                                    | General announcements for all employees.
+
+                        .col-sm-3
+                            button.btn.btn-primary.pull-right.btn-sm.oe_kanban_action.oe_kanban_action_button(attrs="{'invisible':[('is_subscribed','=',True)]}", modifiers='{"invisible": [["is_subscribed", "=", true]]}', data-type='object', data-name='channel_join_and_get_info', type='button') Join
+
+
+
+    
+
+

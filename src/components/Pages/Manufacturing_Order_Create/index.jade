@@ -1,0 +1,294 @@
+.manufacturing_order_edit
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:num1='false',v-bind:num2='false',v-bind:paginbtn1='false',v-bind:paginbtn2='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false',v-bind:dropdownbtn1='false',v-bind:dropdownbtn2='false',v-bind:dropdownbtn3='false',v-bind:actionbtn='false',v-bind:Attachmentbtn='false',v-bind:printbtn='false')
+    .o_content.row(style='height:89vh;overflow:auto;')
+        .col-md-12
+            .row
+                .col-md-12.pull-left.samotopcontroller
+                    .col-md-5.pull-left
+
+                        button.btn.btn-primary.samobutton1(type='button',style='margin-right: 5px;') Cancel
+
+
+                    .col-md-1.pull-left
+                    .col-md-3.pull-left
+                    .col-md-3.pull-right
+                        .btn-group.btn-breadcrumb.samobreadcrum1
+                            a.btn.btn-primary.samobreadbutt(href='#') In Progress
+                            a.btn.btn-primary.samobreadbutt1(href='#') Confirmed
+                            a.btn.btn-primary.samobreadbutt(href='#') Done
+            .o_view_manager_content
+                .o_form_view.o_form_readonly
+                    .o_form_sheet_bg
+                        .o_form_sheet
+                            .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible(data-original-title='', title='')
+                                input(type='checkbox', name='post_visible', disabled='')
+                                span
+                            .oe_button_box(name='button_box')
+                                button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                    .fa.fa-fw.fa-play-circle-o.o_button_icon
+                                    .o_form_field.o_stat_info
+                                        span.o_stat_value
+                                            .o_form_field.o_stat_info
+                                                span.o_stat_value 0
+                                                span.o_stat_text
+                                            |  /
+                                            .o_form_field.o_stat_info
+                                                span.o_stat_value 0
+                                                span.o_stat_text
+                                        span.o_stat_text Work Orders
+                                button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                    .fa.fa-fw.fa-arrows-v.o_button_icon
+                                    span Inventory Moves
+                                button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                    .fa.fa-fw.fa-arrows-v.o_button_icon
+                                    .o_form_field.o_stat_info
+                                        span.o_stat_value
+                                            span.o_form_field.o_form_field_number 0
+                                        span.o_stat_text Scraps
+                                .o_form_field.o_form_invisible.o_form_field_one2many.o_view_manager_content
+                                    .o_x2m_control_panel
+                                        .o_cp_buttons
+                                        .o_cp_pager
+                                            .o_hidden
+                                                span.o_pager_value
+                                                |  /
+                                                span.o_pager_limit
+                                                span.btn-group.btn-group-sm
+                                                    button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                    button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                    .o_cannot_create
+                                        .table-responsive
+                                            table.o_list_view.table.table-condensed.table-striped
+                                                thead
+                                                    tr
+                                                        th.o_column_sortable(data-id='name')
+                                                            | Work Order
+                                                        th.o_column_sortable(data-id='date_planned_start')
+                                                            | Scheduled Date Start
+                                                        th.o_column_sortable(data-id='workcenter_id')
+                                                            | Work Center
+                                                        th.o_column_sortable(data-id='production_id')
+                                                            | Manufacturing Order
+                                                        th(data-id='product_id')
+                                                            | Product
+                                                        th(data-id='qty_production')
+                                                            | Original Production Quantity
+                                                        th(data-id='product_uom_id')
+                                                            | Unit of Measure
+                                                        th.o_column_sortable(data-id='state')
+                                                            | Status
+                                                tfoot
+                                                    tr
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                tbody
+                                                    tr
+                                                        td(title='Work Order')  
+                                                        td(title='Scheduled Date Start')  
+                                                        td(title='Work Center')  
+                                                        td(title='Manufacturing Order')  
+                                                        td(title='Product')  
+                                                        td(title='Original Production Quantity')  
+                                                        td(title='Unit of Measure')  
+                                                        td(title='Status')  
+                                                    tr
+                                                        td(title='Work Order')  
+                                                        td(title='Scheduled Date Start')  
+                                                        td(title='Work Center')  
+                                                        td(title='Manufacturing Order')  
+                                                        td(title='Product')  
+                                                        td(title='Original Production Quantity')  
+                                                        td(title='Unit of Measure')  
+                                                        td(title='Status')  
+                                                    tr
+                                                        td(title='Work Order')  
+                                                        td(title='Scheduled Date Start')  
+                                                        td(title='Work Center')  
+                                                        td(title='Manufacturing Order')  
+                                                        td(title='Product')  
+                                                        td(title='Original Production Quantity')  
+                                                        td(title='Unit of Measure')  
+                                                        td(title='Status')  
+                                                    tr
+                                                        td(title='Work Order')  
+                                                        td(title='Scheduled Date Start')  
+                                                        td(title='Work Center')  
+                                                        td(title='Manufacturing Order')  
+                                                        td(title='Product')  
+                                                        td(title='Original Production Quantity')  
+                                                        td(title='Unit of Measure')  
+                                                        td(title='Status')  
+                            .oe_title
+                                h1
+                                    span.o_form_field New
+                            .o_group
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_invisible.o_form_label_false(for='o_field_input_333')
+                                                    | Has moves
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                    input#o_field_input_333(type='checkbox', name='has_moves', disabled='')
+                                                    span
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_false(for='o_field_input_334', data-original-title='', title='')
+                                                    | Check Produced Qty
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                    input#o_field_input_334(type='checkbox', name='check_to_done', disabled='')
+                                                    span
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_335')
+                                                    | Product
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_form_field.o_form_required
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_335.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_invisible(for='o_field_input_336')
+                                                    | Product Template
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_form_field.o_form_invisible
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_336.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_337')
+                                                    | Quantity To Produce
+                                            td(colspan='1', style='width: 100%;padding-right: 0;')
+                                                .o_row
+                                                    input#o_field_input_337.o_form_input.o_form_field.o_form_required.o_form_field_number(type='text')
+                                                    .o_form_field_many2one.o_form_field.o_form_required.o_form_invisible
+                                                        .o_form_input_dropdown
+                                                            input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                    button.btn.btn-sm.oe_link(type='button',style='padding: 0px;')
+                                                        span Update
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help(for='o_field_input_338', data-original-title='', title='')
+                                                    | Bill of Material
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_form_field.o_form_required
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_338.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_339', data-original-title='', title='')
+                                                    | Routing
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Deadline Start
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_datepicker.o_form_field_date.o_form_field.o_form_required
+                                                    input.o_datepicker_input.o_form_input(type='text', name='date_planned_start')
+                                                    span.o_datepicker_button
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_invisible
+                                                    | Deadline End
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_datepicker.o_form_field_date.o_form_field.o_form_invisible
+                                                    input.o_datepicker_input.o_form_input(type='text', name='date_planned_finished')
+                                                    span.o_datepicker_button
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_342')
+                                                    | Responsible
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_with_button.o_form_field
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_342.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help(for='o_field_input_343', data-original-title='', title='')
+                                                    | Source
+                                            td(colspan='1', style='width: 100%;')
+                                                input#o_field_input_343.o_form_input.o_form_field(type='text')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_344')
+                                                    | Company
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_344.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+
+
+                                    .o_notebook
+                                ul.nav.nav-tabs(role='tablist')
+                                    li.nav-item
+                                        a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Consumed Materials
+                                    li.nav-item
+                                        a.nav-link(href='#buzz', role='tab', data-toggle='tab') Finished Products
+                                    li.nav-item
+                                        a.nav-link(href='#buzz1', role='tab', data-toggle='tab') Miscellaneous
+
+                                // Tab panes
+                                .tab-content
+                                    #profile.tab-pane.fade.in.active(role='tabpanel')
+                                        TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter")
+
+                                    #buzz.tab-pane.fade.in(role='tabpanel')
+                                        TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter")
+                                    #buzz1.tab-pane.fade.in(role='tabpanel')
+                                        .o_group
+                                            table.o_group.o_inner_group.o_form_invisible.o_group_col_6
+                                                tbody
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label
+                                                                | Picking Type
+                                                        td(colspan='1', style='width: 100%;')
+                                                            a.o_form_uri.o_form_field.o_form_required(href='#') YourCompany: Manufacturing
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                                | Raw Materials Location
+                                                        td(colspan='1', style='width: 100%;')
+                                                            a.o_form_uri.o_form_field.o_form_required(href='#') WH/Stock
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                                | Finished Products Location
+                                                        td(colspan='1', style='width: 100%;')
+                                                            a.o_form_uri.o_form_field.o_form_required(href='#') WH/Stock
+                                            table.o_group.o_inner_group.o_group_col_6
+                                                tbody
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label
+                                                                | Availability
+                                                        td(colspan='1', style='width: 100%;')
+                                                            span.o_form_field Available
+
+
+
+
+            

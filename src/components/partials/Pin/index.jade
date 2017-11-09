@@ -1,0 +1,684 @@
+.Pin
+    dashconterller(v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:searchbar='false',v-bind:num1='false',v-bind:num2='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:fifthbtn='false')
+    Modal(v-bind:Ok='true',v-bind:cancel='true',v-bind:heading="modal60",v-bind:modal='"bd-example-modal-lg60"')
+        .modal-body.o_act_window
+            .o_form_view.o_form_editable
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                .o_stat_info.o_form_field(data-original-title='', title='')
+                                    span.o_stat_text.o_not_hover.text-success Active
+                                    span.o_stat_text.o_hover.text-danger Archive
+                            .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                input(type='checkbox', name='show_leaves', disabled='')
+                                span
+                            button.btn.btn-sm.oe_stat_button(type='button', data-original-title='', title='')
+                                .fa.fa-fw.fa-calendar.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value 0
+                                    span.o_stat_text Leaves Left
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-book.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value 0
+                                    span.o_stat_text Contracts
+                        .o_form_field_image.oe_avatar.o_form_field(data-original-title='', title='')
+                            img(border='1', name='image', src='http://192.168.25.104:8069/web/image?model=hr.employee&id=13&field=image_medium&unique=20170329073506')
+                            .o_form_image_controls
+                                span.fa.fa-pencil.fa-lg.pull-left.o_select_file_button(title='Edit')
+                                span.fa.fa-trash-o.fa-lg.pull-right.o_clear_file_button(title='Clear')
+                                span.o_form_binary_progress Uploading...
+                                .o_hidden_input_file
+                                    form.o_form_binary_form(enctype='multipart/form-data', method='post', action='/web/binary/upload')
+                                        input(name='csrf_token', type='hidden', value='616929304a51b7102a984369878e15a6ca21cbe0o')
+                                        input(name='callback', type='hidden')
+                                        input.o_form_input_file(accept='image/*', name='ufile', type='file')
+                                    iframe(style='display: none')
+                        .oe_title
+                            label.o_form_label.oe_edit_only(for='o_field_input_293')
+                                | Name
+                            h1
+                                #textbox
+                                    .o_form_field(data-original-title='', title='')
+                                        .oe_hr_attendance_status.fa.fa-user.oe_hr_attendance_status_red
+                                    input#o_field_input_293.o_form_input.o_form_field.o_form_required(placeholder="Employees's Name", type='text')
+                        .o_form_field_many2manytags.o_form_field
+                            .o_form_field_many2one.o_form_field
+                                .o_form_input_dropdown
+                                    input.o_form_input.ui-autocomplete-input(type='text', placeholder='e.g. Part Time', autocomplete='off')
+                                    span.o_dropdown_button(draggable='false')
+                        .o_notebook
+                            ul.nav.nav-tabs(role='tablist')
+                                li.active
+                                    a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_294')
+                                        | Public Information
+                                li
+                                    a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_295')
+                                        | Personal Information
+                                li
+                                    a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_296')
+                                        | HR Settings
+                            .tab-content.nav.nav-tabs
+                                #notebook_page_294.tab-pane.active(role='tabpanel')
+                                    .o_group
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Contact Information
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_297')
+                                                            | Working Address
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_with_button.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_297.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_298')
+                                                            | Work Mobile
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_298.o_form_input.o_form_field(type='text')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_299')
+                                                            | Work Location
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_299.o_form_input.o_form_field(type='text')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_300')
+                                                            | Work Email
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_300.o_form_input.o_form_field(type='text')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_301')
+                                                            | Work Phone
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_301.o_form_input.o_form_field(type='text')
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Position
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_302')
+                                                            | Department
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_with_button.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_302.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: block;')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_303')
+                                                            | Job Title
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_with_button.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_303.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: block;')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_304')
+                                                            | Manager
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_with_button.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_304.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: block;')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_305')
+                                                            | Coach
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_305.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible(for='o_field_input_306')
+                                                            | Is a Manager
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                            input#o_field_input_306(type='checkbox', name='manager')
+                                                            span
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_307', data-original-title='', title='')
+                                                            | Working Time
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_with_button.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_307.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: block;')
+                                    textarea.o_form_textarea.o_form_field(rows='6', name='notes', placeholder='Other Information ...')
+                                    textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 0px;')
+                                #notebook_page_295.tab-pane(role='tabpanel')
+                                    .o_group
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Citizenship & Other Information
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_308')
+                                                            | Nationality (Country)
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_308.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_309')
+                                                            | Identification No
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_309.o_form_input.o_form_field(type='text')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_310')
+                                                            | Passport No
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_310.o_form_input.o_form_field(type='text')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_311', data-original-title='', title='')
+                                                            | Bank Account Number
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_with_button.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_311.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: block;')
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Contact Information
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_312')
+                                                            | Home Address
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_with_button.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_312.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Status
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_313')
+                                                            | Gender
+                                                    td(colspan='1', style='width: 100%;')
+                                                        select#o_field_input_313.o_form_input.o_form_field(name='gender')
+                                                            option(value='false')
+                                                            option(value='"male"') Male
+                                                            option(value='"female"') Female
+                                                            option(value='"other"') Other
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_314')
+                                                            | Marital Status
+                                                    td(colspan='1', style='width: 100%;')
+                                                        select#o_field_input_314.o_form_input.o_form_field(name='marital')
+                                                            option(value='false')
+                                                            option(value='"single"') Single
+                                                            option(value='"married"') Married
+                                                            option(value='"widower"') Widower
+                                                            option(value='"divorced"') Divorced
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_315')
+                                                            | Number of Children
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_315.o_form_input.o_form_field.o_form_field_number(type='text')
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Birth
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_316')
+                                                            | Date of Birth
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_datepicker.o_form_field_date.o_form_field
+                                                            input.o_datepicker_input.o_form_input(type='text', name='birthday')
+                                                            span.o_datepicker_button
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_317')
+                                                            | Place of Birth
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_317.o_form_input.o_form_field(type='text')
+                                #notebook_page_296.tab-pane(role='tabpanel')
+                                    .o_group
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Timesheets
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_318')
+                                                            | Timesheet Cost
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_318.o_form_input.o_form_field.o_form_field_number(type='text')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_319')
+                                                            | Account
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_319.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Status
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_320')
+                                                            | Company
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_with_button.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_320.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: block;')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_321', data-original-title='', title='')
+                                                            | Related User
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_with_button.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_321.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: block;')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_322', data-original-title='', title='')
+                                                            | Badge ID
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_322.o_form_input.o_form_field(type='text')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_323', data-original-title='', title='')
+                                                            | PIN
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_323.o_form_input.o_form_field(type='text')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_324', data-original-title='', title='')
+                                                            | Manual Attendance
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_checkbox.o_form_field_boolean.o_form_field
+                                                            input#o_field_input_324(type='checkbox', name='manual_attendance')
+                                                            span
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Current Contract
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_325')
+                                                            | Medical Exam
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_datepicker.o_form_field_date.o_form_field
+                                                            input.o_datepicker_input.o_form_input(type='text', name='medic_exam')
+                                                            span.o_datepicker_button
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_326')
+                                                            | Company Vehicle
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_326.o_form_input.o_form_field(type='text')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_327', data-original-title='', title='')
+                                                            | Home-Work Dist.
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_327.o_form_input.o_form_field.o_form_field_number(type='text')
+                                        table.o_group.o_inner_group.o_form_invisible.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Leaves
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_328', data-original-title='', title='')
+                                                            | Remaining Legal Leaves
+                                                    td(colspan='1', style='width: 100%;')
+                                                        div
+                                                            input#o_field_input_328.o_form_input.oe_inline.o_form_field.o_form_field_number(type='text')
+                                                            |  days
+                .o_chatter.o_form_field.oe_chatter
+                    .o_chatter_topbar
+                        button.btn.btn-sm.btn-primary.o_chatter_button_new_message(title='Send a message', type='button')
+                            | New message
+                        button.btn.btn-sm.btn-link.o_chatter_button_log_note(title='Log a note. Followers will not be notified.')
+                            | Log an internal note
+                        .o_followers.o_form_field
+                            .o_followers_title_box
+                                button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', title='One follower')
+                                    i.fa.fa-user
+                                    span.o_followers_count 1
+                                    span.caret
+                                ul.dropdown-menu.o_followers_list(role='menu')
+                                    li.o_add_follower
+                                        a(href='#')  Add Followers
+                                    li.o_add_follower_channel
+                                        a(href='#')  Add Channels
+                                    li.divider
+                                    li.o_partner
+                                        img(src='/web/image/res.partner/59/image_small')
+                                        a.o_mail_redirect(href='#', data-oe-id='59', data-oe-model='res.partner', title='hassan') hassan
+                                        i.fa.fa-pencil.o_edit_subtype.hide(title='Edit subscription', data-follower-id='757', data-oe-id='59', data-oe-model='res.partner')
+                                        i.fa.fa-remove.o_remove_follower(title='Remove this follower')
+                            .o_followers_actions
+                                .btn-group.btn-group-sm.o_subtypes_list
+                                    button.btn.btn-sm.btn-link.o_followers_follow_button.o_followers_notfollow
+                                        span.o_follow Follow
+                                        span.fa.fa-times.o_followers_unfollow
+                                        span.o_followers_unfollow  Unfollow
+                                        span.fa.fa-check.o_followers_following
+                                        span.o_followers_following  Following
+                                    button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', disabled='disabled')
+                                        span.fa.fa-bell
+                                    ul.dropdown-menu(role='menu')
+                    .o_mail_thread
+                        .o_thread_date_separator
+                            span.o_thread_date
+                                | March 22, 2017
+                        .o_thread_message(data-message-id='1269')
+                            .o_thread_message_sidebar
+                                img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/web/image/res.partner/3/image_small')
+                            .o_thread_message_core.o_mail_note
+                                p.o_mail_info
+                                    | Note by
+                                    strong(data-oe-model='res.partner', data-oe-id='')
+                                        | YourCompany, Administrators
+                                    |                     -
+                                    small.o_mail_timestamp(title='Wed Mar 22 2017 12:41:01 GMT+0500') 7 days ago
+                                    span
+                                        i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='1269')
+                                ul.o_mail_thread_message_tracking
+                                    li
+                                        | Active:
+                                        span
+                                            | true
+                        .o_thread_message(data-message-id='1268')
+                            .o_thread_message_sidebar
+                                img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/web/image/res.partner/3/image_small')
+                            .o_thread_message_core.o_mail_note
+                                p.o_mail_info
+                                    | Note by
+                                    strong(data-oe-model='res.partner', data-oe-id='')
+                                        | YourCompany, Administrators
+                                    |                     -
+                                    small.o_mail_timestamp(title='Wed Mar 22 2017 11:04:09 GMT+0500') 7 days ago
+                                    span
+                                        i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='1268')
+                                ul.o_mail_thread_message_tracking
+                                    li
+                                        | Active:
+                                        span  true
+                                        span.fa.fa-long-arrow-right
+                                        span
+                                            | false
+                        .o_thread_message(data-message-id='1267')
+                            .o_thread_message_sidebar
+                                img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/web/image/res.partner/3/image_small')
+                            .o_thread_message_core.o_mail_note
+                                p.o_mail_info
+                                    | Note by
+                                    strong(data-oe-model='res.partner', data-oe-id='')
+                                        | YourCompany, Administrators
+                                    |                     -
+                                    small.o_mail_timestamp(title='Wed Mar 22 2017 11:04:07 GMT+0500') 7 days ago
+                                    span
+                                        i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='1267')
+                                ul.o_mail_thread_message_tracking
+                                    li
+                                        | Active:
+                                        span
+                                            | true
+                        .o_thread_message(data-message-id='1266')
+                            .o_thread_message_sidebar
+                                img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/web/image/res.partner/3/image_small')
+                            .o_thread_message_core.o_mail_note
+                                p.o_mail_info
+                                    | Note by
+                                    strong(data-oe-model='res.partner', data-oe-id='')
+                                        | YourCompany, Administrators
+                                    |                     -
+                                    small.o_mail_timestamp(title='Wed Mar 22 2017 11:04:07 GMT+0500') 7 days ago
+                                    span
+                                        i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='1266')
+                                ul.o_mail_thread_message_tracking
+                                    li
+                                        | Active:
+                                        span  true
+                                        span.fa.fa-long-arrow-right
+                                        span
+                                            | false
+                        .o_thread_message(data-message-id='1265')
+                            .o_thread_message_sidebar
+                                img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/web/image/res.partner/3/image_small')
+                            .o_thread_message_core.o_mail_note
+                                p.o_mail_info
+                                    | Note by
+                                    strong(data-oe-model='res.partner', data-oe-id='')
+                                        | YourCompany, Administrators
+                                    |                     -
+                                    small.o_mail_timestamp(title='Wed Mar 22 2017 11:04:05 GMT+0500') 7 days ago
+                                    span
+                                        i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='1265')
+                                ul.o_mail_thread_message_tracking
+                                    li
+                                        | Active:
+                                        span
+                                            | true
+                        .o_thread_date_separator
+                            span.o_thread_date
+                                | March 21, 2017
+                        .o_thread_message(data-message-id='1262')
+                            .o_thread_message_sidebar
+                                img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/web/image/res.partner/3/image_small')
+                            .o_thread_message_core.o_mail_note
+                                p.o_mail_info
+                                    | Note by
+                                    strong(data-oe-model='res.partner', data-oe-id='')
+                                        | YourCompany, Administrators
+                                    |                     -
+                                    small.o_mail_timestamp(title='Tue Mar 21 2017 17:35:21 GMT+0500') 8 days ago
+                                    span
+                                        i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='1262')
+                                ul.o_mail_thread_message_tracking
+                                    li
+                                        | Active:
+                                        span  true
+                                        span.fa.fa-long-arrow-right
+                                        span
+                                            | false
+                        .o_thread_message(data-message-id='1261')
+                            .o_thread_message_sidebar
+                                img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/web/image/res.partner/3/image_small')
+                            .o_thread_message_core.o_mail_note
+                                p.o_mail_info
+                                    | Note by
+                                    strong(data-oe-model='res.partner', data-oe-id='')
+                                        | YourCompany, Administrators
+                                    |                     -
+                                    small.o_mail_timestamp(title='Tue Mar 21 2017 17:35:20 GMT+0500') 8 days ago
+                                    span
+                                        i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='1261')
+                                ul.o_mail_thread_message_tracking
+                                    li
+                                        | Active:
+                                        span
+                                            | true
+                        .o_thread_message(data-message-id='1260')
+                            .o_thread_message_sidebar
+                                img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/web/image/res.partner/3/image_small')
+                            .o_thread_message_core.o_mail_note
+                                p.o_mail_info
+                                    | Note by
+                                    strong(data-oe-model='res.partner', data-oe-id='')
+                                        | YourCompany, Administrators
+                                    |                     -
+                                    small.o_mail_timestamp(title='Tue Mar 21 2017 17:35:20 GMT+0500') 8 days ago
+                                    span
+                                        i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='1260')
+                                ul.o_mail_thread_message_tracking
+                                    li
+                                        | Active:
+                                        span  true
+                                        span.fa.fa-long-arrow-right
+                                        span
+                                            | false
+                        .o_thread_message(data-message-id='1259')
+                            .o_thread_message_sidebar
+                                img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/web/image/res.partner/3/image_small')
+                            .o_thread_message_core.o_mail_note
+                                p.o_mail_info
+                                    | Note by
+                                    strong(data-oe-model='res.partner', data-oe-id='')
+                                        | YourCompany, Administrators
+                                    |                     -
+                                    small.o_mail_timestamp(title='Tue Mar 21 2017 17:35:19 GMT+0500') 8 days ago
+                                    span
+                                        i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='1259')
+                                ul.o_mail_thread_message_tracking
+                                    li
+                                        | Active:
+                                        span
+                                            | true
+                        .o_thread_message(data-message-id='1258')
+                            .o_thread_message_sidebar
+                                img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/web/image/res.partner/3/image_small')
+                            .o_thread_message_core.o_mail_note
+                                p.o_mail_info
+                                    | Note by
+                                    strong(data-oe-model='res.partner', data-oe-id='')
+                                        | YourCompany, Administrators
+                                    |                     -
+                                    small.o_mail_timestamp(title='Tue Mar 21 2017 17:35:18 GMT+0500') 8 days ago
+                                    span
+                                        i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='1258')
+                                ul.o_mail_thread_message_tracking
+                                    li
+                                        | Active:
+                                        span  true
+                                        span.fa.fa-long-arrow-right
+                                        span
+                                            | false
+                        .o_thread_date_separator
+                            span.o_thread_date
+                                | January 28, 2017
+                        .o_thread_message(data-message-id='72')
+                            .o_thread_message_sidebar
+                                img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/web/image/res.partner/3/image_small')
+                            .o_thread_message_core.o_mail_note
+                                p.o_mail_info
+                                    | Note by
+                                    strong(data-oe-model='res.partner', data-oe-id='')
+                                        | YourCompany, Administrators
+                                    |                     -
+                                    small.o_mail_timestamp(title='Sat Jan 28 2017 18:12:17 GMT+0500') 2 months ago
+                                    span
+                                        i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='72')
+                                ul.o_mail_thread_message_tracking
+                                    li
+                                        | Active:
+                                        span
+                                            | true
+                        .o_thread_message(data-message-id='71')
+                            .o_thread_message_sidebar
+                                img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/web/image/res.partner/3/image_small')
+                            .o_thread_message_core.o_mail_note
+                                p.o_mail_info
+                                    | Note by
+                                    strong(data-oe-model='res.partner', data-oe-id='')
+                                        | YourCompany, Administrators
+                                    |                     -
+                                    small.o_mail_timestamp(title='Sat Jan 28 2017 18:12:17 GMT+0500') 2 months ago
+                                    span
+                                        i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='71')
+                                p Employee created
+
+    .center(style='text-align:center;')
+        .row(style='padding-left:13px;margin-top:10px;display: inline-block;')
+            .col-xs-12
+                .test
+                    .row(style='margin-left: -87px;')
+                        .col-xs-3(style='padding-left:15px;font-weight: bold;')
+                            .one
+                                label(style='font-size:15px;')
+                                    | Employee
+                                br
+                                br
+                                label(style='font-size:15px;')
+                                    | Check In
+                                br
+                                br
+                                label(style='font-size:15px;')
+                                    | Check Out
+                                br
+
+
+                        .col-xs-6(style='')
+                            .two
+                                form
+                                    .form-group
+                                        select#sel1.form-control(style='background-color: #D2D2FF;width: 588px;height: 37px;border-radius: 10px;')
+                                            option Famke Jenssens
+                                            option Gilles Gravie
+                                            option Hans Anders
+                                            option Jack Macklin
+                                            option Hans Anders
+                                            option Jack Macklin
+                                        .fa.fa-external-link.btn.btn-default.o_external_button(style='margin-top: -71px;margin-left: 589px;',draggable='false', tabindex='-1', type='button',data-toggle='modal', data-target='.bd-example-modal-lg60')
+                                        br
+
+                                .dateRangeForm.form-horizontal.datetime(method='post')(style='margin-top:-20px;background-color: #D2D2FF;width: 588px;height: 37px;border-radius: 10px;')
+                                    .dateRangePicker.input-group.input-append.date(style='border-radius: 19px;')
+                                        input.input-group-addon.form-control(type='text', name='date' style='background-color: #D2D2FF;border-radius: 14px; border-color: #D2D2FF !important; border: 0px solid #D2D2FF;border-radius: 6px; text-align:left;')
+                                .dateRangeForm.form-horizontal.datetime(method='post')(style='margin-top: 19px;width: 588px;height: 37px;border: 1px solid #cccccc;border-radius: 14px;')
+                                    .dateRangePicker.input-group.input-append.date(style='border-radius: 19px;')
+                                        input.input-group-addon.form-control(type='text', name='date' style=' border-color: #D2D2FF !important;border-radius: 14px; border: 0px solid #D2D2FF;border-radius: 6px; text-align:left;')

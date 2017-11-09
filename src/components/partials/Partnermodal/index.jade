@@ -1,0 +1,213 @@
+.container-fluid
+    .o_content
+        .o_view_manager_content
+            #myModal_new.modal.fade
+                .modal-dialog(role='document')
+                    .modal-content
+                        .modal-header
+                            h4 Open: Fields
+                            button.close(type='button', data-dismiss='modal', aria-label='Close')
+                                span(aria-hidden='true') ×
+                        .modal-body
+                            .o_form_view.o_form_readonly
+                                .o_form_sheet_bg
+                                    .o_form_sheet
+                                        .o_form_field_image.oe_avatar.o_form_field(data-original-title='', title='')
+                                            table.o_group.o_inner_group
+                                                tbody
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label
+                                                                | Field Name
+                                                        td(colspan='1', style='width: 100%;') _last_update
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                                | Field Label
+                                                        td(colspan='1', style='width: 100%;')  Last Modified On
+
+                                        .o_notebook
+                                            ul.nav.nav-tabs(role='tablist')
+                                                li.nav-item
+                                                    a.nav-link.active(href='#field', role='tab', data-toggle='tab') Properties
+                                                li.nav-item
+                                                    a.nav-link(href='#rights', role='tab', data-toggle='tab') Access Rights
+                                            .tab-content
+                                                #field.tab-pane.fade.in.active(role='tabpanel')
+                                                    table.o_group.o_inner_group
+                                                        h3 Base properties
+                                                        tbody
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label
+                                                                        | Required
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    input.case(type='checkbox', name='case', value='1')
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                                        |  Read Only
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    input.case(type='checkbox', name='case', value='2')
+                                                #rights.tab-pane.fade(role='tabpanel')
+                                                    table.o_group.o_inner_group
+                                                        tbody
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label
+                                                                        | Field Name
+                                                                td(colspan='1', style='width: 100%;') abc
+
+
+                        .modal-footer
+                            button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+         .o_form_view.o_form_readonly
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .o_form_field_image.oe_avatar.o_form_field(data-original-title='', title='')
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Model Description
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_required(href='#') Partner
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                            | Model
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_required(href='#') res.partner
+                    .o_notebook
+                        ul.nav.nav-tabs(role='tablist')
+                            li.nav-item
+                                a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Fields
+                            li.nav-item
+                                a.nav-link(href='#buzz', role='tab', data-toggle='tab') Access Rights
+
+                        // Tab panes
+                        .tab-content
+                            #profile.tab-pane.fade.in.active(role='tabpanel')
+                                table#tableadd.table.table-striped.samotable
+                                    thead.samotablehead
+                                        tr
+                                            th.samotableheadborder Field Name
+                                            th.samotableheadborder Field Lable
+                                            th.samotableheadborder Field Type
+                                            th.samotableheadborder Required
+                                            th.samotableheadborder Readonly
+
+                                    tbody.samotbody
+                                        tr
+                                            td.samotablepadd Active
+                                            td.samotablepadd Bank
+                                            td.samotablepadd Date
+                                            th.o_list_record_selector.samotablepadd
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                                    span
+                                            th.o_list_record_selector.samotablepadd(width='1')
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                                    span
+                                        tr
+                                            td.samotablepadd Color
+                                            td.samotablepadd Tags
+                                            td.samotablepadd Time
+                                            th.o_list_record_selector.samotablepadd(width='1')
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                                    span
+                                            th.o_list_record_selector.samotablepadd(width='1')
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                                    span
+                                        tr
+                                            td.samotablepadd Comment
+                                            td.samotablepadd Company
+                                            td.samotablepadd Integer
+                                            th.o_list_record_selector.samotablepadd(width='1')
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                                    span
+                                            th.o_list_record_selector.samotablepadd(width='1')
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                                    span
+
+                                        tr
+                                            td.samotablepadd Otto
+                                            td.samotablepadd Notes
+                                            td.samotablepadd Char
+                                            th.o_list_record_selector.samotablepadd(width='1')
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                                    span
+                                            th.o_list_record_selector.samotablepadd(width='1')
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                                    span
+
+                            #buzz.tab-pane.fade(role='tabpanel')
+                                table.table.table-striped.samotable
+                                    thead.samotablehead
+                                        tr
+                                            th.samotableheadborder Group
+                                            th.samotableheadborder Read Access
+                                            th.samotableheadborder Write Acess
+                                            th.samotableheadborder Create Access
+                                            th.samotableheadborder Delete Access
+                                            th.samotableheadborder Name
+
+                                    tbody.samotbody
+                                        tr
+                                            td.samotablepadd PO00007
+                                            td.o_list_record_selector.samotablepadd
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                            td.o_list_record_selector.samotablepadd
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                            td.o_list_record_selector.samotablepadd
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                            td.o_list_record_selector.samotablepadd
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                            td.samotablepadd Demo
+                                        tr
+                                            td.samotablepadd PO00007
+                                            td.o_list_record_selector.samotablepadd
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                            td.o_list_record_selector.samotablepadd
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                            td.o_list_record_selector.samotablepadd
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                            td.o_list_record_selector.samotablepadd
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                            td.samotablepadd Demo
+                                        tr
+                                            td.samotablepadd PO00007
+                                            td.o_list_record_selector.samotablepadd
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                            td.o_list_record_selector.samotablepadd
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                            td.o_list_record_selector.samotablepadd
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                            td.o_list_record_selector.samotablepadd
+                                                .o_checkbox
+                                                    input(type='checkbox')
+                                            td.samotablepadd Demo
+
+
+
+
+

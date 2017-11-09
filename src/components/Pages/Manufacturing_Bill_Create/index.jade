@@ -1,0 +1,146 @@
+._manufacturing_product_inner
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:num1='false',v-bind:num2='false',v-bind:paginbtn1='false',v-bind:paginbtn2='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false',v-bind:dropdownbtn1='false',v-bind:dropdownbtn2='false',v-bind:dropdownbtn3='false',v-bind:actionbtn='false',v-bind:Attachmentbtn='false',v-bind:printbtn='false')
+    .o_content(style='height:89vh;overflow:auto;')
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .container
+                            .o_form_sheet_bg
+                                .oe_button_box(name='button_box')
+                                    button.btn.btn-sm.oe_stat_button(type='button')
+                                        .fa.fa-fw.fa-archive.o_button_icon
+                                        .o_stat_info.o_form_field(data-original-title='', title='')
+                                            span.o_stat_text.o_not_hover.text-success Active
+                                            span.o_stat_text.o_hover.text-danger Archive
+
+                                .o_group
+                                    table.o_group.o_inner_group.o_group_col_6.pull-left(style='width:49%')
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_366')
+                                                        | Product
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_366.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_367', data-original-title='', title='')
+                                                        | Product Variant
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field.o_form_invisible
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_367.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_368')
+                                                        | Quantity
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_row
+                                                        input#o_field_input_368.o_form_input.o_form_field.o_form_required.o_form_field_number(type='text')
+                                                        .o_form_field_many2one.o_form_field.o_form_required.o_form_invisible(data-original-title='', title='')
+                                                            .o_form_input_dropdown
+                                                                input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_369', data-original-title='', title='')
+                                                        | Routing
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_with_button.o_form_field.o_form_invisible
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_369.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                    table.o_group.o_inner_group.o_group_col_6.pull-right(style='width:49%')
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_370')
+                                                        | Reference
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_370.o_form_input.o_form_field(type='text')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                        | BoM Type
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_radio.o_vertical.o_form_field.o_form_required
+                                                        .o_radio_item
+                                                            input#radio378_normal.o_form_radio(type='radio', name='radio378', value='normal')
+                                                            label.o_form_label(for='radio378_normal') Manufacture this product
+                                                        .o_radio_item
+                                                            input#radio378_phantom.o_form_radio(type='radio', name='radio378', value='phantom')
+                                                            label.o_form_label(for='radio378_phantom') Ship this product as a set of components (kit)
+                                            tr
+                                                td(colspan='2', style='width: 100%;')
+                                                    p.oe_grey.o_form_invisible(colspan='2', attrs="{'invisible': [('type','=','normal')]}")
+                                                        | When processing a sales order for this product, the delivery order
+                                                        | will contain the raw materials, instead of the finished product.
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_372')
+                                                        | Company
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_372.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+
+
+                                .row
+                                    .col-md-12.kachraytabs
+                                        .o_notebook(style='margin-top:0px;')
+                                            ul.nav.nav-tabs(role='tablist')
+                                                li.nav-item
+                                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Components
+                                                li.nav-item
+                                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') Miscellaneous
+                                            // Tab panes
+                                        .tab-content
+                                            #profile.tab-pane.fade.in.active(role='tabpanel')
+                                                TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata")
+
+                                            #buzz.tab-pane.fade.in(role='tabpanel')
+                                                .o_group
+                                                    table.o_group.o_inner_group.o_group_col_6
+                                                        tbody
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label.o_form_label_help(for='o_field_input_375', data-original-title='', title='')
+                                                                        | Sequence
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    input#o_field_input_375.o_form_input.o_form_field.o_form_field_number(type='text')
+                                                    table.o_group.o_inner_group.o_group_col_6
+                                                        tbody
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label(for='o_field_input_376')
+                                                                        | Manufacturing Readiness
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    select#o_field_input_376.o_form_input.o_form_field.o_form_required(name='ready_to_produce')
+                                                                        option(value='false')
+                                                                        option(value='"all_available"') All components available
+                                                                        option(value='"asap"') The components of 1st operation
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label.o_form_label_help(for='o_field_input_377', data-original-title='', title='')
+                                                                        | Operation
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    .o_form_field_many2one.o_form_field
+                                                                        .o_form_input_dropdown
+                                                                            input#o_field_input_377.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                            span.o_dropdown_button(draggable='false')
+                                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+
+
+
+
+

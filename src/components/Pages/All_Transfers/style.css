@@ -1,0 +1,39 @@
+.samotablehead{
+    color: #4c4c4c;
+    background-color: #eee;
+    border-bottom: 3px solid #cacaca;
+}
+.samotable tbody tr:nth-of-type(odd){
+
+    background-color: #efeff8;
+}
+
+.samotable{
+    font-size:13px;
+
+}
+.samotableheadborder{
+    border-right: 1px solid lightgrey;
+    line-height: 0.4em;
+    vertical-align: middle;
+}
+
+.samotbody{
+
+    line-height: 0.4em;
+}
+
+.samotablepadd{
+    vertical-align: middle;
+
+}
+.links{
+    color:black;}
+.links:hover{
+
+    color:black;
+    text-decoration: none;
+}
+.a{
+    color:black;
+}

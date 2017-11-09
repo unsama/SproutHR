@@ -1,0 +1,213 @@
+.o_content(style='margin-left:-15px;margin-right:-15px;')
+    .o_view_manager_content
+        .o_form_view.o_form_editable
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .oe_button_box(name='button_box')
+                        button.btn.btn-sm.oe_stat_button(type='button')
+                            .fa.fa-fw.fa-ticket.o_button_icon
+                            .o_form_field.o_stat_info
+                                span.o_stat_value 0
+                                span.o_stat_text Maintenance
+                    .oe_title
+                        label.o_form_label.oe_edit_only(for='o_field_input_2')
+                            | Equipment Name
+                        h1
+                            input#o_field_input_2.o_form_input.o_form_field.o_form_required(placeholder='Equipment Name', type='text')
+                            button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                    .o_group
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_3')
+                                            | Equipment Category
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_form_field
+                                            .o_form_input_dropdown
+                                                input#o_field_input_3.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_4')
+                                            | Owner
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_form_field
+                                            .o_form_input_dropdown
+                                                input#o_field_input_4.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_5')
+                                            | Maintenance Team
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_form_field
+                                            .o_form_input_dropdown
+                                                input#o_field_input_5.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_6')
+                                            | Technician
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_form_field
+                                            .o_form_input_dropdown
+                                                input#o_field_input_6.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible
+                                            | Assigned Date
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_datepicker.o_form_field_date.o_form_field.o_form_invisible
+                                            input.o_datepicker_input.o_form_input(type='text', name='assign_date')
+                                            span.o_datepicker_button
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible
+                                            | Scrap Date
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_datepicker.o_form_field_date.o_form_field.o_form_invisible
+                                            input.o_datepicker_input.o_form_input(type='text', name='scrap_date')
+                                            span.o_datepicker_button
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_9')
+                                            | Used in location
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_9.o_form_input.o_form_field(type='text')
+                    .o_notebook
+                        ul.nav.nav-tabs(role='tablist')
+                            li.active
+                                a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_10', aria-expanded='true')
+                                    | Description
+                            li
+                                a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_11', aria-expanded='false')
+                                    | Product Information
+                            li
+                                a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_12', aria-expanded='false')
+                                    | Maintenance
+                        .tab-content.nav.nav-tabs
+                            #notebook_page_10.tab-pane.active(role='tabpanel')
+                                textarea.o_form_textarea.o_form_field(rows='6', name='note', style='resize: horizontal; height: 50px;')
+                                textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 825px;')
+                            #notebook_page_11.tab-pane(role='tabpanel')
+                                .o_group
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_13')
+                                                        | Vendor
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_13.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_14')
+                                                        | Vendor Reference
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_14.o_form_input.o_form_field(type='text')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_15')
+                                                        | Model
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_15.o_form_input.o_form_field(type='text')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_16')
+                                                        | Serial Number
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_16.o_form_input.o_form_field(type='text')
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_17')
+                                                        | Cost
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_17.o_form_input.o_form_field.o_form_invisible.o_form_field_number(type='text')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Warranty
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_datepicker.o_form_field_date.o_form_field
+                                                        input.o_datepicker_input.o_form_input(type='text', name='warranty')
+                                                        span.o_datepicker_button
+                            #notebook_page_12.tab-pane(role='tabpanel')
+                                .o_group
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.oe_read_only.o_form_label_empty.o_form_label_false
+                                                        | Next Preventive Maintenance
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.o_form_field_date.oe_read_only.o_form_field.o_form_field_empty
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_20')
+                                                        | Preventive Maintenance Frequency
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_row
+                                                        input#o_field_input_20.o_form_input.o_form_field.o_form_field_number(type='text')
+                                                        |  days
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_21', data-original-title='', title='')
+                                                        | Maintenance Duration
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_row
+                                                        input#o_field_input_21.o_form_input.o_form_field.o_form_field_number(type='text')
+                                                        |  hours
+            .o_chatter.o_form_field.oe_chatter.o_form_invisible
+                .o_chatter_topbar
+                    button.btn.btn-sm.btn-primary.o_chatter_button_new_message(title='Send a message', type='button')
+                        | New message
+                    button.btn.btn-sm.btn-link.o_chatter_button_log_note(title='Log a note. Followers will not be notified.')
+                        | Log an internal note
+                    .o_followers.o_form_field.o_form_invisible
+                        .o_followers_title_box
+                            button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', title='No follower')
+                                i.fa.fa-user
+                                span.o_followers_count 0
+                                span.caret
+                            ul.dropdown-menu.o_followers_list(role='menu')
+                                li.o_add_follower
+                                    a(href='#')  Add Followers
+                                li.o_add_follower_channel
+                                    a(href='#')  Add Channels
+                        .o_followers_actions
+                            .btn-group.btn-group-sm.o_subtypes_list
+                                button.btn.btn-sm.btn-link.o_followers_follow_button.o_followers_notfollow
+                                    span.o_follow Follow
+                                    span.fa.fa-times.o_followers_unfollow
+                                    span.o_followers_unfollow  Unfollow
+                                    span.fa.fa-check.o_followers_following
+                                    span.o_followers_following  Following
+                                button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', disabled='disabled')
+                                    span.fa.fa-bell
+                                ul.dropdown-menu(role='menu')
+                                    li.o_subtype
+                                        input#input_mail_followers_subtype_1.o_subtype_checkbox(type='checkbox', checked='true', data-id='1', name='Discussions')
+                                        span(for='input_mail_followers_subtype_1')
+                                            | Discussions
+                                    li.o_subtype
+                                        input#input_mail_followers_subtype_2.o_subtype_checkbox(type='checkbox', data-id='2', name='Note')
+                                        span(for='input_mail_followers_subtype_2')
+                                            | Note
+                                    li.o_subtype
+                                        input#input_mail_followers_subtype_91.o_subtype_checkbox(type='checkbox', checked='true', data-id='91', name='Equipment Assigned')
+                                        span(for='input_mail_followers_subtype_91')
+                                            | Equipment Assigned
+                .o_mail_thread

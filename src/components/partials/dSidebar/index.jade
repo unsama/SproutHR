@@ -1,0 +1,91 @@
+.dSidebar
+    dashconterller(v-show='b',v-bind:heading="star",v-bind:validatebtn='false',v-bind:starbtn='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn3='true',v-bind:importbtn='false',v-bind:cancelbtn='false', v-bind:links="btnlinks",v-bind:searchbar='true',v-bind:num1='false',v-bind:num2='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:fifthbtn='false')
+    dashconterller(v-show='a',v-bind:heading="nextactivity",v-bind:validatebtn='false',v-bind:Markbtn='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn3='true',v-bind:importbtn='false',v-bind:cancelbtn='false', v-bind:links="btnlinks",v-bind:searchbar='true',v-bind:num1='false',v-bind:num2='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:fifthbtn='false')
+    dashconterller(v-show='c',v-bind:heading="channal",v-bind:validatebtn='false',v-bind:dropdownbtn1='true',v-bind:dropdownbtn3='true',v-bind:importbtn='false',v-bind:cancelbtn='false', v-bind:links="btnlinks",v-bind:searchbar='true',v-bind:num1='false',v-bind:num2='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:fifthbtn='false')
+    dashconterller(v-show='d',v-bind:heading="channalone",v-bind:validatebtn='false',v-bind:Invitebtn='true',v-bind:Unsubscribebtn='true',v-bind:Settingsbtn='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn3='true',v-bind:importbtn='false',v-bind:cancelbtn='false', v-bind:links="btnlinks",v-bind:searchbar='true',v-bind:num1='false',v-bind:num2='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:fifthbtn='false')
+    .row
+        .col-md-2
+            .nav-side-menu
+                i.fa.fa-bars.fa-2x.toggle-btn(data-toggle='collapse', data-target='#menu-content')
+                .row
+                    .col-sm-12
+                        .row.hcolor
+                            .col-sm-4.offset-sm-1
+                                .o_mail_chat_channel_item.o_active(data-channel-id='channel_inbox')
+                                    router-link(to='/Discuess/Inbox')
+                                        span.o_channel_name(style='color: white;',v-on:click='a=true,b=false,c=false,d=false')
+                                            i.fa.fa-at
+                                            |  Inbox
+                            .col-sm-2.offset-sm-4
+                                span.o_mail_sidebar_needaction.badge
+                                    | 5
+                        .row.hcolor(style='padding-top: 2px;')
+                            .col-sm-4.offset-sm-1
+                                .o_mail_chat_channel_item(data-channel-id='channel_starred')
+                                    router-link(to='/Discuess/StarDicuses')
+                                        span.o_channel_name(style='color: white;',v-on:click='a=false,b=true,c=false,d=false')
+                                            i.fa.fa-star-o
+                                            |  Starred
+                            .col-sm-2.offset-sm-4
+                                span.o_mail_sidebar_needaction.badge
+                                    | 1
+                        .row
+                            .col-sm-4.offset-sm-1
+                                router-link(to='/Discuess/ChannelGrid')
+                                    .o_mail_sidebar_title
+                                        h4.o_mail_open_channels(style='color:white;') Channels
+                            .col-sm-2.offset-sm-4
+                                span.a.fa.fa-plus.o_add.as(v-on:click='t=true',style=' padding-top: 15px;margin-left: 5px;',title='Add', data-type='public')
+
+                        .row.hcolor
+                            .col-sm-4.offset-sm-1
+                                .o_mail_chat_channel_item(data-channel-id='8', title='Project & Tasks')
+                                    router-link(to='/Discuess/channals')
+                                        span.o_channel_name(style='color: white;',v-on:click='a=false,b=false,c=false,d=true')
+                                            span.o_mail_hash #
+                                            |     Public
+                            .col-sm-2.offset-sm-4
+                                span.fa.fa-times.o_mail_partner_unpin(style='margin-left: 5px;',title='Leave this channel', data-channel-id='8')
+                        .row(style='' )
+                            .col-sm-9.offset-sm-1
+                                .o_mail_add_channel(data-type='public')
+                                    input.ui-autocomplete-input.ak(style='display:none;',type='text', placeholder='#Add a channel', autocomplete='off')
+
+                        .row
+                            .col-sm-8.offset-sm-1
+                                .o_mail_sidebar_title
+                                    h4 Direct Messages
+                            .col-sm-2.offset-sm-0
+                                span.fa.fa-plus.o_add.aa(v-on:click='r=true',style='padding-top: 15px;margin-left: 5px;',title='Add', data-type='dm')
+                        .row.hcolor
+                            .col-sm-4.offset-sm-1
+                                router-link(to='DirectMessage')
+                                    span.o_channel_name(style='color: white;',v-on:click='a=false,b=false,c=true,d=false')
+                                        span
+                                            i.o_mail_user_status.fa.fa-circle-o()
+                                        |                     Mavia
+                            .col-sm-2.offset-sm-4
+                                span.fa.fa-times.o_mail_partner_unpin(style='display:none;margin-left: 5px;',title='Leave this channel', data-channel-id='9')
+                        .row(style='' )
+                            .col-sm-9.offset-sm-1
+                                .o_mail_add_channel(data-type='public')
+                                    input.ui-autocomplete-input.al(style='display:none;',type='text', placeholder='#Open Chat', autocomplete='off')
+                        .row
+                            .col-sm-8.offset-sm-1
+                                .o_mail_sidebar_title
+                                    h4 Private Channels
+                            .col-sm-2.offset-sm-0
+                                span.fa.fa-plus.o_add.ba(onclick="document.getElementById('.row.k').style.display='none'" ,style='padding-top: 15px;margin-left: 5px;',title='Add', data-type='private')
+                        .row.hcolor
+                            .col-sm-4.offset-sm-1
+                                .o_mail_chat_channel_item(data-channel-id='5', title='general')
+                                    router-link(to='/Discuess/channal')
+                                        span.o_channel_name(style='color: white;',v-on:click='a=false,b=false,c=false,d=true')
+                                            span.o_mail_hash #
+                                            |                     general
+                            .col-sm-2.offset-sm-4
+                                span.fa.fa-times.o_mail_partner_unpin(style='margin-left: 5px;',title='Leave this channel', data-channel-id='5')
+                        .row.k(style='display: block;')
+                            .col-sm-9.offset-sm-1
+                                .o_mail_add_channel(data-type='public')
+                                    input.ui-autocomplete-input.bb(style='display:none;',type='text', placeholder='#Add a channel', autocomplete='off')

@@ -1,0 +1,95 @@
+.request_quotation_inner
+    DashboardController(v-bind:createbtn='true',v-bind:editbtn='true', v-bind:links="btnlinks", v-bind:heading="head", v-bind:attachmentbtn="true", v-bind:actionbtn='true', v-bind:num1="true", v-bind:num2='true')
+    .o_content.samocontent#tax1(style='margin-left:-15px; margin-right:-15px;')
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                header
+                    button.btn.btn-sm.oe_highlight(type='button')
+                        span Confirm
+                    button.btn.btn-sm.oe_highlight.o_form_invisible(type='button')
+                        span Capture Transaction
+                    button.btn.btn-sm.o_form_invisible(type='button')
+                        span Void Transaction
+                    ul.oe_form_field_status.oe_form_status_clickable.o_form_field.o_form_required
+                        li.oe_active(data-id='draft')
+                            span.label Draft
+                            span.arrow
+                                span
+                        li(data-id='pending')
+                            span.label Posted
+                            span.arrow(style='color: transparent;')
+                                span
+                        li(data-id='authorized')
+                            span.label Reconciled
+                            span.arrow
+                                span
+
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .row
+
+                            table.o_group.o_inner_group
+                                tbody(style='line-height: 2.5;')
+
+                                    tr
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label(style='font-size: 0.9rem; padding-left: 13px;')
+                                                | Payment Type
+                                        td.two(colspan='1', style='width: 50%;')
+                                            span Recieve Money
+                                            
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label
+                                                | Payment Date
+                                        td.two(colspan='1', style='width: 50%;')
+                                            span 03/08/2017
+
+
+
+                                    tr
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label(style='padding-left: 13px;')
+                                                | Customer
+                                        td.two(colspan='1', style='width: 50%;')
+                                            a.o_form_uri.o_form_field.o_form_required(href='#') Administrators, Pieter Parter's
+                                            span Farm
+
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label(style='font-size: 0.8rem;')
+                                                | Memo
+                                        td.two(colspan='1', style='width: 50%;')
+                                            span asdas
+
+                                    tr
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label(style='padding-left: 13px;')
+                                                | Payment Journal
+                                        td.two(colspan='1', style='width: 50%;')
+                                            span Bank (EUR)
+
+                                        td.o_td_label.one(colspan='1')
+
+                                        td.two(colspan='1', style='width: 50%;')
+
+                                    tr
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label(style='padding-left: 13px;')
+                                                | Payment Amount
+                                        td.two(colspan='1', style='width: 50%;')
+                                            span 25.00Rs.pas
+
+                                        td.o_td_label.one(colspan='1')
+
+                                        td.two(colspan='1', style='width: 50%;')
+
+                                    tr
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label(style='padding-left: 13px;')
+                                                | Payment Transaction
+                                        td.two(colspan='1', style='width: 50%;')
+                                            a.o_form_uri.o_form_field.o_form_required(href='http://192.168.25.104:8040/#/app/accounting/paymenttransactiontab') gg
+
+                                        td.o_td_label.one(colspan='1')
+
+                                        td.two(colspan='1', style='width: 50%;')
+

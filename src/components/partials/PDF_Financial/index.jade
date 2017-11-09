@@ -1,0 +1,229 @@
+.container-fluid
+    #myModal.modal.fade.bd-example-modal-lg8(tabindex='-1', role='dialog', aria-labelledby='myLargeModalLabel', aria-hidden='true')
+        .modal-dialog.modal-lg
+            .modal-content(style='width: 123%; margin-left: -79px;')
+                .modal-header
+                    h6.modal-title(style='font-weight:bold;') Financial Reports
+                    button.close(type='button', data-dismiss='modal') ×
+                .modal-body
+                    .row
+
+                    table.o_group.o_inner_group
+                        tbody
+
+                            tr
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label(style='font-size: 0.9rem;')
+                                        | Account Reports
+                                td.two(colspan='1', style='width: 50%;')
+                                    .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                        .o_form_input_dropdown(style='')
+                                            select#o_field_input_186.o_form_input.o_form_field(style='width: 298px; background-color: #D2D2FF;')(name='format')
+                                                option(value='true') Profit and Loss
+                                                option(value='"A0"') Balance Sheet
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button#bttn(style='font-size: 1.3rem; color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button', data-toggle='modal', href='#myModal2')
+
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label
+                                        | Target Moves
+                                td.two(colspan='1', style='width: 50%;')
+                                    .o_form_field_radio.o_vertical.o_form_field.o_form_required
+                                        .o_radio_item
+                                            input#radio21_posted.o_form_radio(type='radio', name='radio21', value='posted')
+                                            label.o_form_label(for='radio21_posted') All Posted Entries
+                                        .o_radio_item
+                                            input#radio21_all.o_form_radio(type='radio', name='radio21', value='all')
+                                            label.o_form_label(for='radio21_all') All Entries
+
+
+
+                            tr
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label
+                                        | Enable Comparison
+                                td.two(colspan='1', style='width: 50%;')
+                                    .o_checkbox
+                                        input#chkbox(type='checkbox')
+                                        span
+
+                                td.o_td_label.one#td1(colspan='1')
+                                    label.o_form_label(style='font-size: 0.8rem;')
+                                        | Display Debit/Credit Columns
+                                td.two#td2(colspan='1', style='width: 50%;')
+                                    .o_checkbox
+                                        input(type='checkbox')
+                                        span
+                            tr
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label
+                                        | Start Date
+                                td.two(colspan='1', style='width: 50%;')
+                                    form#dateRangeForm.form-horizontal(method='post')
+                                        .form-group
+                                            #dateRangePicker.input-group.input-append.date
+                                                input.input-group-addon.form-control(type='text', name='date', style='height:25px; width: 250px;  text-align: left; background-color: transparent; margin-right: 10px;')
+
+
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label
+                                        | End Date
+                                td.two(colspan='1', style='width: 50%;')
+                                    form#dateRangeForm1.form-horizontal(method='post')
+                                        .form-group
+                                            #dateRangePicker1.input-group.input-append.date
+                                                input.input-group-addon.form-control(type='text', name='date', style='height:25px;  width: 250px;  text-align: left; background-color: transparent;')
+                    .o_notebook(style='margin-top:45px;')
+                        ul.nav.nav-tabs#tabs1(role='tablist')
+                            li.nav-item
+                                a.nav-link.active#tab(href='#profile', role='tab', data-toggle='tab') Comparision
+                    table#tab1.o_group.o_inner_group
+                        tbody
+
+                            tr
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label(style='font-size: 0.9rem;')
+                                        | Column Label
+                                td.two(colspan='1', style='width: 100%;')
+                                    input#o_field_input_87.o_form_input.o_form_field(style='width: 100%; background-color: #D2D2FF;')(type='text')
+                            tr
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label(style='font-size: 0.9rem;')
+                                        | Filter by
+                                td.two(colspan='1', style='width: 100%;')
+                                    select#o_field_input_18.o_form_input.o_form_field(style='width: 100%; background-color: #D2D2FF;')(name='format')
+                                        option(value='nofilter') No filter
+                                        option(value='date') Date
+                    table#tab2.o_group.o_inner_group
+                        tbody
+                            h4(style='color:#7c7bad; font-weight: bold; ') Date
+
+                            tr
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label(style='font-size: 0.9rem;')
+                                        | Start Date
+                                td.two(colspan='1', style='width: 100%;')
+                                    form#dateRangeForm2.form-horizontal(method='post')
+                                        .form-group
+                                            #dateRangePicker2.input-group.input-append.date
+                                                input.input-group-addon.form-control(type='text', name='date', style='height:25px;  width: 250px;  text-align: left; background-color: #D2D2FF;')
+                            tr
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label(style='font-size: 0.9rem;')
+                                        | End Date
+                                td.two(colspan='1', style='width: 100%;')
+                                    form#dateRangeForm3.form-horizontal(method='post')
+                                        .form-group
+                                            #dateRangePicker3.input-group.input-append.date
+                                                input.input-group-addon.form-control(type='text', name='date', style='height:25px;  width: 250px;  text-align: left; background-color: #D2D2FF;')
+
+
+                .modal-footer(style='justify-content: flex-start;')
+                    button.btn.btn-primary.samobuttopcontroller1(style='width: 7%; font-size: 0.9rem;')(type='button', href='#') Print
+                    p(style='margin-bottom: 0rem;') or
+                    button.btn.btn-primary.samobuttopcontroller2(type='button', data-dismiss='modal')(style='width: 6%; background-color: lightgray; font-size: 0.9rem;') Cancel
+
+    #myModal2.modal.fade.bd-example-modal-lg(tabindex='-1', role='dialog', aria-labelledby='myLargeModalLabel', aria-hidden='true')
+        .modal-dialog.modal-lg
+            .modal-content(style='width: 123%; margin-left: -79px;')
+                .modal-header
+                    h6.modal-title(style='font-weight:bold;') Open: Account Reports
+                    button.close(type='button', data-dismiss='modal') ×
+                .modal-body
+                    .row
+
+                    table.o_group.o_inner_group
+                        tbody
+
+                            tr
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label(style='font-size: 0.9rem;')
+                                        | Report Name
+                                td.two(colspan='1', style='width: 50%;')
+                                    input#o_field_input_213.o_form_input.o_form_field(style='width: 77%; background-color: #D2D2FF;')(value='Profit and Loss', type='text')
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label
+                                        | Parent
+                                td.two(colspan='1', style='width: 50%;')
+                                    select#o_field_input_186.o_form_input.o_form_field(style='width: 219px; ')(name='format')
+                                        option(value='true') Balance Sheet
+                                        option(value='"A0"') Profit and Loss
+                            tr
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label
+                                        | Sequence
+                                td.two(colspan='1', style='width: 50%;')
+                                    input#o_field_input_213.o_form_input.o_form_field(style='width: 76%; ')( type='text')
+
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label
+                                        | Type
+                                td.two(colspan='1', style='width: 50%;')
+                                    select#check1.o_form_input.o_form_field(style='width: 219px; ')(name='format')
+
+                                        option(value='View') View
+                                        option(value='Accounts') Accounts
+                                        option(value='Account Type') Account Type
+                                        option(value='Report Value') Report Value
+                            tr
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label
+                                        | Sign on Reports
+                                td.two(colspan='1', style='width: 50%;')
+                                    select#o_field_input_186.o_form_input.o_form_field(style='width: 247px; background-color: #D2D2FF;')(name='format')
+                                        option(value='true') Balance Sheet
+                                        option(value='"A0"') Profit and Loss
+
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label
+                                        | Financial Report Style
+                                td.two(colspan='1', style='width: 50%;')
+                                    select#o_field_input_186.o_form_input.o_form_field(style='width: 219px; ')(name='format')
+                                        option(value='true') Balance Sheet
+                                        option(value='"A0"') Profit and Loss
+
+
+                    .o_notebook(style='margin-top:45px;')
+                        ul.nav.nav-tabs(role='tablist')
+                            li.nav-item
+                                a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Report
+
+
+
+                    table#table.o_group.o_inner_group
+                        tbody
+
+                            tr
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label(style='font-size: 0.9rem;')
+                                        | Display Details
+                                td.two(colspan='1', style='width: 100%;')
+                                    select#o_field_input_186.o_form_input.o_form_field(style='width: 100%; ')(name='format')
+                                        option(value='true') Balance Sheet
+                                        option(value='"A0"') Profit and Loss
+
+                    TableMain#tb(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata")
+                    TableMain#tbl(v-bind:tableheader='tableheader1', v-bind:tabledata="tabledata1")
+
+                    table#table2.o_group.o_inner_group
+                        tbody
+
+                            tr
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label(style='font-size: 0.9rem;')
+                                        | Report Value
+                                td.two(colspan='1', style='width: 100%;')
+                                    select#o_field_input_186.o_form_input.o_form_field(style='width: 100%; ')(name='format')
+                                        option(value='true') Balance Sheet
+                                        option(value='"A0"') Profit and Loss
+
+
+
+                .modal-footer(style='justify-content: flex-start;')
+                    button.btn.btn-primary.samobuttopcontroller1(style='width: 7%; font-size: 0.9rem;')(type='button', href='#') Save
+
+                    button.btn.btn-primary.samobuttopcontroller2(type='button', data-dismiss='modal')(style='width: 6%; background-color: whitesmoke; font-size: 0.9rem;') Discard
+
+
+
+
+

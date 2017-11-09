@@ -1,0 +1,350 @@
+.inventory_settings
+    .o_content.row(style='height: 100vh;overflow: auto;')
+        .o_view_manager_content
+            .o_form_view.oe_form_configuration.o_form_nosheet.o_form_editable
+                header
+                    button.btn.btn-sm.oe_highlight(type='button')
+                        span Apply
+                    button.btn.btn-sm.oe_link(type='button')
+                        span Cancel
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Traceability
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_3', data-original-title='', title='')
+                                    | Lots and Serial Numbers
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio34_0.o_form_radio(type='radio', name='radio34', value='0')
+                                        label.o_form_label(for='radio34_0') Do not track individual product items
+                                    .o_radio_item
+                                        input#radio34_1.o_form_radio(type='radio', name='radio34', value='1')
+                                        label.o_form_label(for='radio34_1') Track lots or serial numbers
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_4', data-original-title='', title='')
+                                    | Expiration Dates
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio35_0.o_form_radio(type='radio', name='radio35', value='0')
+                                        label.o_form_label(for='radio35_0') Do not use Expiration Date on serial numbers
+                                    .o_radio_item
+                                        input#radio35_1.o_form_radio(type='radio', name='radio35', value='1')
+                                        label.o_form_label(for='radio35_1') Define Expiration Date on serial numbers
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_5', data-original-title='', title='')
+                                    | Packages
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio36_0.o_form_radio(type='radio', name='radio36', value='0')
+                                        label.o_form_label(for='radio36_0') Do not manage packaging
+                                    .o_radio_item
+                                        input#radio36_1.o_form_radio(type='radio', name='radio36', value='1')
+                                        label.o_form_label(for='radio36_1') Record packages used on packing: pallets, boxes, ...
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_6', data-original-title='', title='')
+                                    | Product Owners
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio37_0.o_form_radio(type='radio', name='radio37', value='0')
+                                        label.o_form_label(for='radio37_0') All products in your warehouse belong to your company
+                                    .o_radio_item
+                                        input#radio37_1.o_form_radio(type='radio', name='radio37', value='1')
+                                        label.o_form_label(for='radio37_1') Manage consignee stocks (advanced)
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_7')
+                                    | Barcode Interface
+                            td(colspan='1', style='width: 100%;')
+                                div
+                                    div
+                                        .o_form_field.o_form_field_boolean
+                                            .o_checkbox.o_form_field_boolean
+                                                input#o_field_input_8(type='checkbox', name='module_stock_barcode')
+                                                span
+                                        label.o_form_label(for='o_field_input_8')
+                                            | Barcode scanner support
+                                        span.label.label-primary.oe_inline Enterprise
+                                        a(href='https://www.odoo.com/page/warehouse-features', target='_blank')  More Info
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Stock Accounting
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_9', data-original-title='', title='')
+                                    | Landed Costs
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio38_0.o_form_radio(type='radio', name='radio38', value='0')
+                                        label.o_form_label(for='radio38_0') No landed costs
+                                    .o_radio_item
+                                        input#radio38_1.o_form_radio(type='radio', name='radio38', value='1')
+                                        label.o_form_label(for='radio38_1') Include landed costs in product costing computation
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_10', data-original-title='', title='')
+                                    | Inventory Valuation
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio39_0.o_form_radio(type='radio', name='radio39', value='0')
+                                        label.o_form_label(for='radio39_0') Periodic inventory valuation (recommended)
+                                    .o_radio_item
+                                        input#radio39_1.o_form_radio(type='radio', name='radio39', value='1')
+                                        label.o_form_label(for='radio39_1') Perpetual inventory valuation (stock move generates accounting entries)
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Shipping Connectors
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_11')
+                                    | Carriers
+                            td(colspan='1', style='width: 100%;')
+                                div
+                                    div
+                                        .o_form_field.o_form_field_boolean
+                                            .o_checkbox.o_form_field_boolean
+                                                input#o_field_input_12(type='checkbox', name='module_delivery_dhl')
+                                                span
+                                        label.o_form_label(for='o_field_input_12')
+                                            | DHL integration
+                                        span.label.label-primary.oe_inline Enterprise
+                                    div
+                                        .o_form_field.o_form_field_boolean
+                                            .o_checkbox.o_form_field_boolean
+                                                input#o_field_input_13(type='checkbox', name='module_delivery_fedex')
+                                                span
+                                        label.o_form_label(for='o_field_input_13')
+                                            | Fedex integration
+                                        span.label.label-primary.oe_inline Enterprise
+                                    div
+                                        .o_form_field.o_form_field_boolean
+                                            .o_checkbox.o_form_field_boolean
+                                                input#o_field_input_14(type='checkbox', name='module_delivery_temando')
+                                                span
+                                        label.o_form_label(for='o_field_input_14')
+                                            | Temando integration
+                                        span.label.label-primary.oe_inline Enterprise
+                                    div
+                                        .o_form_field.o_form_field_boolean
+                                            .o_checkbox.o_form_field_boolean
+                                                input#o_field_input_15(type='checkbox', name='module_delivery_ups')
+                                                span
+                                        label.o_form_label(for='o_field_input_15')
+                                            | UPS integration
+                                        span.label.label-primary.oe_inline Enterprise
+                                    div
+                                        .o_form_field.o_form_field_boolean
+                                            .o_checkbox.o_form_field_boolean
+                                                input#o_field_input_16(type='checkbox', name='module_delivery_usps')
+                                                span
+                                        label.o_form_label(for='o_field_input_16')
+                                            | USPS integration
+                                        span.label.label-primary.oe_inline Enterprise
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Location & Warehouse
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_17', data-original-title='', title='')
+                                    | Procurements
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio40_1.o_form_radio(type='radio', name='radio40', value='1')
+                                        label.o_form_label(for='radio40_1') Reserve products immediately after the sale order confirmation
+                                    .o_radio_item
+                                        input#radio40_0.o_form_radio(type='radio', name='radio40', value='0')
+                                        label.o_form_label(for='radio40_0') Reserve products manually or based on automatic scheduler
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_18')
+                                    | Warehouses and Locations usage level
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio41_0.o_form_radio(type='radio', name='radio41', value='0')
+                                        label.o_form_label(for='radio41_0') Manage only 1 Warehouse with only 1 stock location
+                                    .o_radio_item
+                                        input#radio41_1.o_form_radio(type='radio', name='radio41', value='1')
+                                        label.o_form_label(for='radio41_1') Manage only 1 Warehouse, composed by several stock locations
+                                    .o_radio_item
+                                        input#radio41_2.o_form_radio(type='radio', name='radio41', value='2')
+                                        label.o_form_label(for='radio41_2') Manage several Warehouses, each one composed by several stock locations
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_invisible(for='o_field_input_19')
+                                    | Manage several stock locations
+                            td(colspan='1', style='width: 100%;')
+                                .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                    input#o_field_input_19(type='checkbox', name='group_stock_multi_locations')
+                                    span
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_invisible(for='o_field_input_20')
+                                    | Manage several warehouses
+                            td(colspan='1', style='width: 100%;')
+                                .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                    input#o_field_input_20(type='checkbox', name='group_stock_multi_warehouses')
+                                    span
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_21', data-original-title='', title='')
+                                    | Routes
+                            td(colspan='1', style='width: 100%;')
+                                div
+                                    .o_form_field_radio.o_vertical.o_form_field
+                                        .o_radio_item
+                                            input#radio42_0.o_form_radio(type='radio', name='radio42', value='0')
+                                            label.o_form_label(for='radio42_0') No automatic routing of products
+                                        .o_radio_item
+                                            input#radio42_1.o_form_radio(type='radio', name='radio42', value='1')
+                                            label.o_form_label(for='radio42_1') Advanced routing of products using rules
+                                    .o_form_invisible(attrs="{'invisible': [('group_stock_adv_location', '=', 0)]}")
+                                        label.o_form_label(for='o_field_input_22')
+                                            | Minimum days to trigger a propagation of date change in pushed/pull flows.
+                                        input#o_field_input_22.o_form_input.oe_inline.o_form_field.o_form_field_number(type='text')
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_invisible(for='o_field_input_23')
+                                    | Products
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_invisible(name='config_products', invisible='1')
+                                    label.o_form_label.o_form_label_help(for='o_field_input_24', data-original-title='', title='')
+                                        | Decimal precision on weight
+                                    input#o_field_input_24.o_form_input.oe_inline.o_form_field.o_form_field_number(type='text')
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_25', data-original-title='', title='')
+                                    | Dropshipping
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio43_0.o_form_radio(type='radio', name='radio43', value='0')
+                                        label.o_form_label(for='radio43_0') Suppliers always deliver to your warehouse(s)
+                                    .o_radio_item
+                                        input#radio43_1.o_form_radio(type='radio', name='radio43', value='1')
+                                        label.o_form_label(for='radio43_1') Allow suppliers to deliver directly to your customers
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_26', data-original-title='', title='')
+                                    | Picking Waves
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio44_0.o_form_radio(type='radio', name='radio44', value='0')
+                                        label.o_form_label(for='radio44_0') Manage pickings one at a time
+                                    .o_radio_item
+                                        input#radio44_1.o_form_radio(type='radio', name='radio44', value='1')
+                                        label.o_form_label(for='radio44_1') Manage picking in batch per worker
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_27', data-original-title='', title='')
+                                    | Minimum Stock Rules
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio45_0.o_form_radio(type='radio', name='radio45', value='0')
+                                        label.o_form_label(for='radio45_0') Set lead times in calendar days (easy)
+                                    .o_radio_item
+                                        input#radio45_1.o_form_radio(type='radio', name='radio45', value='1')
+                                        label.o_form_label(for='radio45_1') Adapt lead times using the suppliers' open days calendars (advanced)
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_28')
+                                    | Warning
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio46_0.o_form_radio(type='radio', name='radio46', value='0')
+                                        label.o_form_label(for='radio46_0') All the partners can be used in pickings
+                                    .o_radio_item
+                                        input#radio46_1.o_form_radio(type='radio', name='radio46', value='1')
+                                        label.o_form_label(for='radio46_1') An informative or blocking warning can be set on a partner
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Products
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_29', data-original-title='', title='')
+                                    | Units of Measure
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio47_0.o_form_radio(type='radio', name='radio47', value='0')
+                                        label.o_form_label(for='radio47_0') Products have only one unit of measure (easier)
+                                    .o_radio_item
+                                        input#radio47_1.o_form_radio(type='radio', name='radio47', value='1')
+                                        label.o_form_label(for='radio47_1') Some products may be sold/purchased in different units of measure (advanced)
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_30', data-original-title='', title='')
+                                    | Product Variants
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio48_0.o_form_radio(type='radio', name='radio48', value='0')
+                                        label.o_form_label(for='radio48_0') No variants on products
+                                    .o_radio_item
+                                        input#radio48_1.o_form_radio(type='radio', name='radio48', value='1')
+                                        label.o_form_label(for='radio48_1')
+                                            | Products can have several attributes, defining variants (Example: size, color,...)
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_31', data-original-title='', title='')
+                                    | Packaging Methods
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio49_0.o_form_radio(type='radio', name='radio49', value='0')
+                                        label.o_form_label(for='radio49_0') Do not manage packaging
+                                    .o_radio_item
+                                        input#radio49_1.o_form_radio(type='radio', name='radio49', value='1')
+                                        label.o_form_label(for='radio49_1') Manage available packaging options per products
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Extra Features
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_32')
+                                    | Quality
+                            td(colspan='1', style='width: 100%;')
+                                div
+                                    div
+                                        .o_form_field.o_form_field_boolean
+                                            .o_checkbox.o_form_field_boolean
+                                                input#o_field_input_33(type='checkbox', name='module_quality')
+                                                span
+                                        label.o_form_label.o_form_label_help(for='o_field_input_33', data-original-title='', title='')
+                                            | Manage quality control points, checks and measures
+                                        span.label.label-primary.oe_inline Enterprise
+
+
+
+                                                                                                                                                                                                                                      

@@ -1,0 +1,202 @@
+.All
+    .row.samorequestinnerrow
+        .dashboardcontroller
+            .bro
+                .col-sm-6.samodashheadingmain(style='margin-top: 10px;')
+                    h4.samodashheading Requests for Quotation/PO00007: 637.50 Rs.
+                .col-sm-6.samodashsearch
+                    h1(style='color: #f0eeee;') s
+            .bro
+                .col-sm-6.samodashheadingmain
+                    button.btn.btn-primary.samobuttopcontroller#hasS(type='button', href='users')
+                        router-link.links.samolinks(to='Imported') Edit
+                    button.btn.btn-default.samobuttopcontroller2#hasHide(type='button', href='#home')
+                        router-link.links.samolinks(to='Imported') Create
+                            Discard
+                    .dropdown1
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton2.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-bars.iconbutton
+                                | Attachment
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Add
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-star.iconbutton
+                                | Action
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Delete
+                                a.dropdown-item(href='#') Duplicate
+                .col-sm-6.samodashsearch
+                    div(style='float:right;')
+                        span.o_pager_value 1-24
+                            |  /
+                            span.o_pager_limit 24
+                            span.btn-group.btn-group-sm
+                                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p', disabled='')
+                                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n', disabled='')
+    .o_content.samocontent
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .row
+                            .col-sm-6
+                                h1(style='font-weight:bold;') All
+
+                            .col-sm-6
+                                .oe_button_box(name='button_box')(style='float:right;')
+                                    button.btn.btn-sm.oe_stat_button(type='button')
+                                        .fa.fa-fw.fa-th-list.o_button_icon
+                                        .o_form_field.o_stat_info
+                                            span.o_stat_value
+                                                span.o_form_field.o_form_field_number(data-original-title='', title='') 30
+                                            span.o_stat_text  Products
+
+
+                        .row
+                            .col-sm-6
+                                h1(style='color:#7c7bad;font-size:21px;font-weight: bold;padding-left: 10px;') Category Type
+
+                        .row
+                            .col-xs-3.request_inner3(style='font-weight: bold;')
+                                .one
+                                    a(href='#', data-toggle='tooltip', title='Today, data is used in English both as a plural noun meaning “facts or pieces of information” ( These data are described more fully elsewhere) and as a singular mass noun meaning “information”: Not much data is available on flood control in Brazil.')
+                                        label(style='font-size:15px;padding-right:25px;color:black;')
+                                            | Parent Category
+                                        br
+
+                            .col-xs-4.osahass(style='')
+                                .two
+
+
+
+                            .col-xs-3.request_inner2(style='font-weight: bold;')
+                                .one
+                                    a(href='#', data-toggle='tooltip', title='Today, data is used in English both as a plural noun meaning “facts or pieces of information” ( These data are described more fully elsewhere) and as a singular mass noun meaning “information”: Not much data is available on flood control in Brazil.')
+                                        label(style='font-size:15px;padding-right:25px;color:black;')
+                                            | Category Type
+
+
+
+                            .col-xs-2.osahass(style='')
+                                .two
+                                    label(style='font-size:13px;')
+                                        | Normal
+                                    br
+
+                        .row(style='padding-top:39px;')
+                            .col-sm-6
+                                h1(style='color:#7c7bad;font-size:21px;font-weight: bold;padding-left: 10px;') Inventory Valuation
+
+                        .row
+                            .col-xs-3.request_inner3(style='font-weight: bold;')
+                                .one
+                                    a(href='#', data-toggle='tooltip', title='Today, data is used in English both as a plural noun meaning “facts or pieces of information” ( These data are described more fully elsewhere) and as a singular mass noun meaning “information”: Not much data is available on flood control in Brazil.')
+                                        label(style='font-size:15px;padding-right:25px;color:black;')
+                                            | Inventory Valuation
+                                        br
+
+                            .col-xs-4.osahass(style='')
+                                .two
+                                    label(style='font-size:13px;')
+                                        | Periodic (manual)
+                                    br
+
+                        .row(style='padding-top: 39px;')
+                            .col-sm-5
+                                h1(style='color:#7c7bad;font-size: 21px;padding-left: 10px;font-weight: bold;') Account Properties
+
+                            .col-sm-6
+                                h1(style='color:#7c7bad;font-size: 21px;padding-left: 10px;font-weight: bold;padding-left: 84px;') Account Stock Properties
+
+                        .row(style='margin-top:20px;')
+                            .col-sm-3
+                                .one
+                                    a(href='#', data-toggle='tooltip', title='Today, data is used in English both as a plural noun meaning “facts or pieces of information” ( These data are described more fully elsewhere) and as a singular mass noun meaning “information”: Not much data is available on flood control in Brazil.')
+                                        label(style='font-size:13px;padding-right:25px;font-weight:bold;color:black;')
+                                            | Price Difference Account
+                                        br
+                                    a(href='#', data-toggle='tooltip', title='Today, data is used in English both as a plural noun meaning “facts or pieces of information” ( These data are described more fully elsewhere) and as a singular mass noun meaning “information”: Not much data is available on flood control in Brazil.')
+                                        label(style='font-size:13px;padding-right:25px;font-weight:bold;color:black;')
+                                            | Income Account
+                                        br
+                                    a(href='#', data-toggle='tooltip', title='Today, data is used in English both as a plural noun meaning “facts or pieces of information” ( These data are described more fully elsewhere) and as a singular mass noun meaning “information”: Not much data is available on flood control in Brazil.')
+                                        label(style='font-size:13px;padding-right:25px;font-weight:bold;color:black;')
+                                            | Expense Account
+                                        br
+
+                            .col-sm-3
+                                br
+                                router-link(to='sales')
+                                    label(style='font-size:13px;padding-right:25px;padding-top:20px;')
+                                        | 200000 Product Sales
+                                br
+                                router-link(to='sales')
+                                    label(style='font-size:13px;padding-right:25px;')
+                                        | 220000 Expenses
+                                br
+
+
+
+
+
+                            .col-sm-3
+                                .one
+                                    a(href='#', data-toggle='tooltip', title='Today, data is used in English both as a plural noun meaning “facts or pieces of information” ( These data are described more fully elsewhere) and as a singular mass noun meaning “information”: Not much data is available on flood control in Brazil.')
+                                        label(style='font-size:13px;padding-right:5px;font-weight:bold;color:black;')
+                                            | Stock Input Account
+                                        br
+                                        br
+                                    a(href='#', data-toggle='tooltip', title='Today, data is used in English both as a plural noun meaning “facts or pieces of information” ( These data are described more fully elsewhere) and as a singular mass noun meaning “information”: Not much data is available on flood control in Brazil.')
+                                        label(style='font-size:13px;padding-right:5px;font-weight:bold;color:black;')
+                                            | Stock Output Account
+                                        br
+                                        br
+                                    a(href='#', data-toggle='tooltip', title='Today, data is used in English both as a plural noun meaning “facts or pieces of information” ( These data are described more fully elsewhere) and as a singular mass noun meaning “information”: Not much data is available on flood control in Brazil.')
+                                        label(style='font-size:13px;padding-right:5px;font-weight:bold;color:black;')
+                                            | Stock Valuation Account
+                                        br
+                                        br
+                                    a(href='#', data-toggle='tooltip', title='Today, data is used in English both as a plural noun meaning “facts or pieces of information” ( These data are described more fully elsewhere) and as a singular mass noun meaning “information”: Not much data is available on flood control in Brazil.')
+                                        label(style='font-size:13px;padding-right:5px;font-weight:bold;color:black;')
+                                            | Stock Journal
+                                        br
+                            .col-sm-3
+                                router-link(to='sales')
+                                    label(style='font-size:13px;padding-right:25px;')
+                                        | 101120 Stock Interim Account (Received)
+                                br
+                                router-link(to='sales')
+                                    label(style='font-size:13px;padding-right:25px;padding-top: 15px;')
+                                        | 101130 Stock Interim Account (Delivered)
+                                br
+                                router-link(to='sales')
+                                    label(style='font-size:13px;padding-right:25px;')
+                                        | 101110 Stock Valuation Account
+                                br
+                                router-link(to='pkr')
+                                    label(style='font-size:13px;padding-right:25px;')
+                                        | Stock Journal	Stock Journal (PKR)
+                                br
+
+
+                        .row
+                            .col-sm-6
+                                h1(style='color:#7c7bad;font-size:21px;font-weight: bold;padding-left: 10px;') Logistics
+
+                        .row
+                            .col-xs-3.request_inner3(style='font-weight: bold;')
+                                .one
+                                    a(href='#', data-toggle='tooltip', title='Today, data is used in English both as a plural noun meaning “facts or pieces of information” ( These data are described more fully elsewhere) and as a singular mass noun meaning “information”: Not much data is available on flood control in Brazil.')
+                                        label(style='font-size:15px;padding-right:25px;color:black;')
+                                            | Routes Force Removal Strategy
+                                        br
+
+                            .col-xs-4.osahass(style='')
+                                .two
+
+
+
+
+

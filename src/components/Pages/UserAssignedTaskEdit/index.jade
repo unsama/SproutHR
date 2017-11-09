@@ -1,0 +1,291 @@
+.usersin
+    DashboardController(v-bind:discardbtn='true',v-bind:actionbtn='true',v-bind:savedbtn='true',v-bind:duplicate='true',v-bind:deletebtn='true',v-bind:assignedtasks='true',v-bind:changepassword='true',v-bind:links='btnlinks',v-bind:heading='head')
+    Modal(v-bind:close='true',v-bind:heading="modal",v-bind:modal='"bd-example-modal-lg"')
+        .modal-body.o_act_window
+            .o_form_view.o_form_editable
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .o_form_field_many2one.o_with_button.o_form_field.o_form_invisible(data-original-title='', title='')
+                            .o_form_input_dropdown
+                                input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                span.o_dropdown_button(draggable='false')
+                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: block;')
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-files-o.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value 0
+                                    span.o_stat_text Documents
+                            button.btn.btn-sm.oe_stat_button#task_show1(type='button')
+                                .fa.fa-fw.fa-tasks.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value 4
+                                    span.o_stat_text Database
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                .o_stat_info.o_form_field(data-original-title='', title='')
+                                    span.o_stat_text.o_not_hover.text-success Active
+                                    span.o_stat_text.o_hover.text-danger Archive
+                        .oe_title
+                            h1
+                                input.o_form_input.o_form_field.o_form_required(placeholder='Project Name', type='text' , v-model='project_name')
+
+                            .oe_edit_only(name='options_active')
+                                div
+                                    .o_checkbox.o_form_field_boolean.oe_inline.o_form_field
+                                        input#task_hide(type='checkbox', name='use_tasks')
+                                        span
+                                    label.o_form_label.o_form_label_help.oe_inline
+                                        | Tasks
+                                    span as
+                                    input#task_show.o_form_input.oe_inline.oe_input_align.o_form_field(v-model='task_as_name')
+                        .o_notebook(style='margin-top: 14px;')
+                            ul.nav.nav-tabs(role='tablist')
+                                li.active
+                                    a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_384')
+                                        | Settings
+                                li.o_form_invisible
+                                    a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_385')
+                                        | Emails
+                            .tab-content.nav.nav-tabs
+                                #notebook_page_384.tab-pane.active(role='tabpanel')
+                                    table.o_group.o_inner_group
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Project Manager
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_with_button.o_form_field
+                                                        .o_form_input_dropdown
+                                                            select
+                                                                option(v-for='projectmanager in user_id', v-bind:value="projectmanager.id")
+                                                                    | {{ projectmanager.username }}
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: block;')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help
+                                                        | Privacy
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_radio.o_vertical.o_form_field.o_form_required
+                                                        .o_radio_item
+                                                            input#radio394_followers.o_form_radio(type='radio', name='radio394', value='On_invitation_only' v-model="privacy")
+                                                            label.o_form_label(for='radio394_followers') On invitation only
+                                                        .o_radio_item
+                                                            input#radio394_employees.o_form_radio(type='radio', name='radio394', value='Visible_by_all_employees' v-model="privacy")
+                                                            label.o_form_label(for='radio394_employees') Visible by all employees
+                                                        .o_radio_item
+                                                            input#radio394_portal.o_form_radio(type='radio', name='radio394', value='Visible_by_following_customers' v-model="privacy")
+                                                            label.o_form_label(for='radio394_portal') Visible by following customers
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Customer
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field
+                                                        .o_form_input_dropdown
+                                                            select
+                                                                option(v-for='contact_detail in contact_id', v-bind:value="contact_detail.id")
+                                                                    | {{ contact_detail.name }}
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    .o_group
+                                        table.o_group.o_inner_group.o_form_invisible.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Configuration
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_389', data-original-title='', title='')
+                                                            | Sequence
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_389.o_form_input.o_form_field.o_form_invisible.o_form_field_number(type='text')
+                                        table.o_group.o_inner_group.o_form_invisible.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Time Scheduling
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_390', data-original-title='', title='')
+                                                            | Working Time
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_form_field.o_form_invisible
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_390.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                #notebook_page_385.tab-pane.o_form_invisible(role='tabpanel')
+                                    table.o_group.o_inner_group
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_391', data-original-title='', title='')
+                                                        | Email Alias
+                                                td(colspan='1', style='width: 100%;')
+                                                    div(name='alias_def')
+                                                        .o_form_field_many2one.o_with_button.oe_read_only.oe_inline.o_form_field(data-original-title='', title='')
+                                                            .o_form_input_dropdown
+                                                                input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: block;')
+                                                        .oe_edit_only.oe_inline(name='edit_alias', style='display: inline;')
+                                                            input#o_field_input_391.o_form_input.oe_inline.o_form_field(type='text')
+                                                            | @
+                                                            span.oe_inline.o_form_field.o_form_field_empty
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.oe_edit_only(for='o_field_input_392', data-original-title='', title='')
+                                                        | Incoming Emails create
+                                                td(colspan='1', style='width: 100%;')
+                                                    select#o_field_input_392.o_form_input.oe_inline.oe_edit_only.o_form_field.o_form_required(name='alias_model')
+                                                        option(value='false')
+                                                        option(value='"project.task"') Tasks
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.oe_inline.oe_edit_only(for='o_field_input_393', data-original-title='', title='')
+                                                        | Accept Emails From
+                                                td(colspan='1', style='width: 100%;')
+                                                    select#o_field_input_393.o_form_input.oe_inline.oe_edit_only.o_form_field.o_form_required(name='alias_contact')
+                                                        option(value='false')
+                                                        option(value='"everyone"') Everyone
+                                                        option(value='"partners"') Authenticated Partners
+                                                        option(value='"followers"') Followers only
+                .oe_chatter
+                    .o_followers.o_form_field(data-original-title='', title='')
+                        .o_followers_title_box
+                            button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', title='One follower')
+                                i.fa.fa-user
+                                span.o_followers_count 1
+                                span.caret
+                            ul.dropdown-menu.o_followers_list(role='menu')
+                                li.o_add_follower
+                                    a(href='#')  Add Followers
+                                li.o_add_follower_channel
+                                    a(href='#')  Add Channels
+                                li.divider
+                                li.o_partner
+                                    img(src='/web/image/mail.channel/5/image_small')
+                                    a.o_mail_redirect(href='#', data-oe-id='5', data-oe-model='mail.channel', title='Projects & Tasks') Projects & Tasks
+                                    i.fa.fa-pencil.o_edit_subtype.hide(title='Edit subscription', data-follower-id='171', data-oe-id='5', data-oe-model='mail.channel')
+                                    i.fa.fa-remove.o_remove_follower(title='Remove this follower')
+                        .o_followers_actions
+                            .btn-group.btn-group-sm.o_subtypes_list
+                                button.btn.btn-sm.btn-link.o_followers_follow_button.o_followers_notfollow
+                                    span.o_follow Follow
+                                    span.fa.fa-times.o_followers_unfollow
+                                    span.o_followers_unfollow  Unfollow
+                                    span.fa.fa-check.o_followers_following
+                                    span.o_followers_following  Following
+                                button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', disabled='disabled')
+                                    span.fa.fa-bell
+                                ul.dropdown-menu(role='menu')
+
+    .o_content.samocontent(style='margin-left: -15px;margin-right: -15px;')
+        .o_view_manager_content#create
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                .o_stat_info.o_form_field
+                                    span.o_stat_text.o_not_hover.text-success Active
+                                    span.o_stat_text.o_hover.text-danger Archive
+                        .btn-group.o_kanban_selection.o_form_field.o_form_required(data-original-title='', title='')
+                            a(data-toggle='dropdown', href='#')
+                                span.oe_kanban_status
+                            ul.dropdown-menu.state(role='menu')
+                                li(data-value='done')
+                                    a(href='#')
+                                        span.oe_kanban_status.oe_kanban_status_green
+                                        |             Ready for next stage
+                                li(data-value='blocked')
+                                    a(href='#')
+                                        span.oe_kanban_status.oe_kanban_status_red
+                                        |             Blocked
+                        form(style='margin-top: 59px;margin-left: 13px;')(@submit.prevent='validateBeforeSubmit')
+                            .oe_title(style='margin-top: -6%;')
+                                h1.o_row
+                                    .o_priority.o_form_field
+                                        fieldset.rating
+                                            input#star5(type='radio', name='rating', value='5')
+                                            label.full(for='star5', title='Awesome - 5 stars')
+                                            input#star4half(type='radio', name='rating', value='4 and a half')
+                                    input.o_form_input.o_form_field.o_form_required(placeholder='Task Title...', type='text' , style="height: 40px;" v-model='task_tittle')
+
+                            .o_group
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Project
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_form_field
+                                                    .o_form_input_dropdown
+                                                        select(v-model='product_detail')
+                                                            option(v-for='option in options', v-bind:value="option.id" v-model='option.name')
+                                                                | {{ option.name }}
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', @click='project_modal' tabindex='-1', type='button',style='padding: 0px;color: #7C7BAD;background-color: white;',data-toggle='modal', data-target='.bd-example-modal-lg')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_task_user_field
+                                                    | Assigned to
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_task_user_field.o_form_field
+                                                    .o_form_input_dropdown
+                                                        select(v-model='user_data')
+                                                            option(v-for='us in user_id', v-bind:value="us.id")
+                                                                | {{ us.username }}
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Deadline
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_datepicker
+                                                    input.o_datepicker_input.o_form_input#datepicker()(type='text', v-model='date_deadline')
+                                                    span.o_datepicker_button
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Tags
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2manytags.o_form_field
+                                                    .o_form_field_many2one.o_form_field
+                                                        .o_form_input_dropdown
+                                                            select(v-model='tag_details')
+                                                                option(v-for='tags_detail in tag_id', v-bind:value="tags_detail.id")
+                                                                    | {{ tags_detail.name }}
+
+                            .o_notebook(style='margin-top: 15px;')
+                                ul.nav.nav-tabs(role='tablist')
+                                    li.nav-item
+                                        a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Description
+                                    li.nav-item
+                                        a.nav-link(href='#buzz', role='tab', data-toggle='tab') Extra Info
+                                // Tab panes
+                                .tab-content
+                                    #profile.tab-pane.fade.in.active(role='tabpanel')
+                                        textarea(name='editor1' v-model='task_description')
+                                    #buzz.tab-pane.fade.in(role='tabpanel')
+                                        .o_group
+                                            table.o_group.o_inner_group.o_group_col_6
+                                                tbody
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label
+                                                                | Customer
+                                                        td(colspan='1', style='width: 100%;')
+                                                            .o_form_field_many2one.o_form_field
+                                                                .o_form_input_dropdown
+                                                                    select(v-model='customer_data')
+                                                                        option(v-for='contact_detail in contact_id', v-bind:value="contact_detail.id")
+                                                                            | {{ contact_detail.name }}
+                                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+
+

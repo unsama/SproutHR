@@ -1,0 +1,80 @@
+.samocard
+    .col-sm-12.samocolsm12_1
+        span
+            .col-sm-6.pull-left
+                h6.samoh61 Internal Maintenance
+            .col-sm-6.pull-right
+                .dropdown
+                    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownbtn(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style='float: right;')
+                        | More
+                    .dropdown-menu.dashdropmenu(aria-labelledby='dropdownMenuButton',style='margin-top: 44px;margin-left: -255px;min-width: 29.9rem;height: 139px; border-bottom: 1px solid #dddddd;')
+                        .col-sm-12.bottom
+                            .col-sm-6.pull-left.samoleft
+                                h6.mar View
+                                hr
+                                a(href='/#/app/Maintenance/Maintenanceblocked') All
+                                br
+                                a(href='/#/app/Maintenance/Maintenanceblocked') To Do
+                                br
+                                a(href='/#/app/Maintenance/Maintenanceblocked') In Progress
+                                br
+                                a(href='/#/app/Maintenance/Maintenanceblocked') Done
+
+                            .col-sm-6.pull-right
+                                h6.mar Reports
+                                hr
+                                a(href='#')
+                        .col-sm-12.set(style='margin-top: 134px;')
+                            .col-sm-7.pull-left(style='padding: 0px;')
+                                ul(style='list-style-type:none;display: -webkit-inline-box;padding: 0px;margin-bottom: -4px;')
+                                    li
+                                        a.color1.colorbg(href='#', data-color='1')
+                                    li
+                                        a.color2.colorbg(href='#', data-color='2')
+                                    li
+                                        a.color3.colorbg(href='#', data-color='3')
+                                    li
+                                        a.color4.colorbg(href='#', data-color='4')
+                                    li
+                                        a.color5.colorbg(href='#', data-color='5')
+                                    li
+                                        a.color6.colorbg(href='#', data-color='6')
+                                    li
+                                        a.color7.colorbg(href='#', data-color='7')
+                                    li
+                                        a.color8.colorbg(href='#', data-color='8')
+                                    li
+                                        a.color9.colorbg(href='#', data-color='9')
+                                    li
+                                        a.color10.colorbg(href='#', data-color='10')
+
+
+
+                            .col-sm-5.pull-right
+                                router-link(to='maintenancedashsetting')
+                                    a.samoalink Settings
+
+
+
+            h6.samoh63
+        .col-sm-12(style='padding: 0px;')
+            .col-sm-6.pull-left(style='padding: 0px;')
+                router-link(to='maintenancetodo')
+                    button.btn.btn-primary.samodashbtn(type='button') 3 To Do
+            .col-sm-6.pull-right.samocolright
+                .col-sm-6.samoinventorypadd
+                    router-link(to='')
+                        h6.samoh61 Scheduled
+                        br
+                    router-link(to='maintenancetop')
+                        h6.samoh61 Top Priorities
+                        br
+                    router-link(to='maintenanceblocked')
+                        h6.samoh61 Blocked
+                .col-sm-6(style='margin-top: 4px;')
+                    h6.samoh61 0
+                    br
+                    h6.samoh61 0
+                    br
+                    h6.samoh61 0
+

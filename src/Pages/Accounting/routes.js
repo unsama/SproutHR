@@ -1,0 +1,241 @@
+import Test from "./../../components/Pages/Test/Test.vue"
+import AccountingLayout  from "./../../components/Pages/AccountingLayout/AccountingLayout.vue"
+import Accounting_Dashboard   from "./../../components/Pages/Accounting_Dashboard/Accounting_Dashboard.vue"
+import AccountingCustomerInvoice  from "./../../components/Pages/AccountingCustomerInvoice/AccountingCustomerInvoice.vue"
+import AccountingCustomerInvoiceView  from "./../../components/Pages/AccountingCustomerInvoiceView/AccountingCustomerInvoiceView.vue"
+import AccountingCustomerInvoiceEdit  from "./../../components/Pages/AccountingCustomerInvoiceEdit/AccountingCustomerInvoiceEdit.vue"
+import AccountingCustomer  from "./../../components/Pages/AccountingCustomer/AccountingCustomer.vue"
+import AccountingCustomerView  from "./../../components/Pages/AccountingCustomerView/AccountingCustomerView.vue"
+import AccountingVendorBox  from "./../../components/partials/AccountingVendorBox/AccountingVendorBox.vue"
+import AccountingManualPayment  from "./../../components/Pages/AccountingManualPayment/AccountingManualPayment.vue"
+import AccountingVendorBills  from "./../../components/Pages/AccountingVendorBills/AccountingVendorBills.vue"
+import AccountingInvoice  from "./../../components/Pages/AccountingInvoice/AccountingInvoice.vue"
+import AccountingVendors  from "./../../components/Pages/AccountingVendors/AccountingVendors.vue"
+import AccountingPurchaseableProducts  from "./../../components/Pages/AccountingPurchaseableProducts/AccountingPurchaseableProducts.vue"
+import AccountingCustomerEdit  from "./../../components/Pages/AccountingCustomerEdit/AccountingCustomerEdit.vue"
+import AccountingCustomerCreate  from "./../../components/Pages/AccountingCustomerCreate/AccountingCustomerCreate.vue"
+import AccountingCustomerListView  from "./../../components/Pages/AccountingCustomerListView/AccountingCustomerListView.vue"
+import AccountingCustomerImport  from "./../../components/Pages/AccountingCustomerImport/AccountingCustomerImport.vue"
+import AccountingProductBox  from "./../../components/partials/AccountingProductBox/AccountingProductBox.vue"
+import AccountingSaleableProductView  from "./../../components/Pages/AccountingSaleableProductView/AccountingSaleableProductView.vue"
+import AccountingSellableProductEdit  from "./../../components/Pages/AccountingSellableProductEdit/AccountingSellableProductEdit.vue"
+import AccountingSaleableProductCreate  from "./../../components/Pages/AccountingSaleableProductCreate/AccountingSaleableProductCreate.vue"
+import AccountingSaleableListView  from "./../../components/Pages/AccountingSaleableListView/AccountingSaleableListView.vue"
+import AccountingSaleableProductImport  from "./../../components/Pages/AccountingSaleableProductImport/AccountingSaleableProductImport.vue"
+import AccountingVendorBillView  from "./../../components/Pages/AccountingVendorBillView/AccountingVendorBillView.vue"
+import AccountingVendorBillEdit  from "./../../components/Pages/AccountingVendorBillEdit/AccountingVendorBillEdit.vue"
+import AccountingVendorView  from "./../../components/Pages/AccountingVendorView/AccountingVendorView.vue"
+import AccountingVendorEdit  from "./../../components/Pages/AccountingVendorEdit/AccountingVendorEdit.vue"
+import AccountingVendorCreate  from "./../../components/Pages/AccountingVendorCreate/AccountingVendorCreate.vue"
+import AccountingVendorListView  from "./../../components/Pages/AccountingVendorListView/AccountingVendorListView.vue"
+import AccountingVendorImport  from "./../../components/Pages/AccountingVendorImport/AccountingVendorImport.vue"
+import AccountingCustomerInvoiceCreate  from "./../../components/Pages/AccountingCustomerInvoiceCreate/AccountingCustomerInvoiceCreate.vue"
+import AccountingCustomerInvoiceImport  from "./../../components/Pages/AccountingCustomerInvoiceImport/AccountingCustomerInvoiceImport.vue"
+import AccountingPaymentImport  from "./../../components/Pages/AccountingPaymentImport/AccountingPaymentImport.vue"
+import AccountingPaymentTransactionImport  from "./../../components/Pages/AccountingPaymentTransactionImport/AccountingPaymentTransactionImport.vue"
+import AccountingAccountReportImport  from "./../../components/Pages/AccountingAccountReportImport/AccountingAccountReportImport.vue"
+import AccountingConfigManagementImport  from "./../../components/Pages/AccountingConfigManagementImport/AccountingConfigManagementImport.vue"
+import AccountingCurrency  from "./../../components/Pages/AccountingCurrency/AccountingCurrency.vue"
+import AccountingFiscalPositionsImport  from "./../../components/Pages/AccountingFiscalPositionsImport/AccountingFiscalPositionsImport.vue"
+import AccountingConfigTaxesImport  from "./../../components/Pages/AccountingConfigTaxesImport/AccountingConfigTaxesImport.vue"
+import AccountingChartofAccountImport  from "./../../components/Pages/AccountingChartofAccountImport/AccountingChartofAccountImport.vue"
+import AccountingJournalEntriesImport  from "./../../components/Pages/AccountingJournalEntriesImport/AccountingJournalEntriesImport.vue"
+import AccountingCurrenciesView  from "./../../components/Pages/AccountingCurrenciesView/AccountingCurrenciesView.vue"
+import AccountingCurrenciesEdit  from "./../../components/Pages/AccountingCurrenciesEdit/AccountingCurrenciesEdit.vue"
+import AccountingCurrenciesCreate  from "./../../components/Pages/AccountingCurrenciesCreate/AccountingCurrenciesCreate.vue"
+import BankAccount   from "./../../components/Pages/BankAccount/BankAccount.vue"
+import AccountReport   from "./../../components/Pages/AccountReport/AccountReport.vue"
+import FinancialAccount   from "./../../components/Pages/FinancialAccount/FinancialAccount.vue"
+import AccountHierarchy   from "./../../components/Pages/AccountHierarchy/AccountHierarchy.vue"
+import JournalTab  from "./../../components/partials/JournalTab/JournalTab.vue"
+import PurchasesPayment   from "./../../components/Pages/PurchasesPayment/PurchasesPayment.vue"
+import PaymentsEdit   from "./../../components/Pages/PaymentsEdit/PaymentsEdit.vue"
+import PaymentsCreate   from "./../../components/Pages/PaymentsCreate/PaymentsCreate.vue"
+import PaymentsTab   from "./../../components/Pages/PaymentsTab/PaymentsTab.vue"
+import Payments   from "./../../components/Pages/Payments/Payments.vue"
+import CurrencyRateEdit   from "./../../components/Pages/CurrencyRateEdit/CurrencyRateEdit.vue"
+import CurrencyRateCreate   from "./../../components/Pages/CurrencyRateCreate/CurrencyRateCreate.vue"
+import CurrencyRateTable   from "./../../components/Pages/CurrencyRateTable/CurrencyRateTable.vue"
+import EditTransaction   from "./../../components/Pages/EditTransaction/EditTransaction.vue"
+import EditAcquirer   from "./../../components/Pages/EditAcquirer/EditAcquirer.vue"
+import AccountReportEdit   from "./../../components/Pages/AccountReportEdit/AccountReportEdit.vue"
+import AccountReportCreate   from "./../../components/Pages/AccountReportCreate/AccountReportCreate.vue"
+import CurrencyRates   from "./../../components/Pages/CurrencyRates/CurrencyRates.vue"
+import EditManagement   from "./../../components/Pages/EditManagement/EditManagement.vue"
+import ConfigJournalEdit   from "./../../components/Pages/ConfigJournalEdit/ConfigJournalEdit.vue"
+import ConfigJournalTable   from "./../../components/Pages/ConfigJournalTable/ConfigJournalTable.vue"
+import EditBank   from "./../../components/Pages/EditBank/EditBank.vue"
+import EditTax   from "./../../components/Pages/EditTax/EditTax.vue"
+import COA_Edit   from "./../../components/Pages/COA_Edit/COA_Edit.vue"
+import EditJournalEntry   from "./../../components/Pages/EditJournalEntry/EditJournalEntry.vue"
+import EditCurrency   from "./../../components/Pages/EditCurrency/EditCurrency.vue"
+import PDF_Financial   from "./../../components/partials/PDF_Financial/PDF_Financial.vue"
+import PDFaged   from "./../../components/partials/PDFaged/PDFaged.vue"
+import CreateAcquirer   from "./../../components/Pages/CreateAcquirer/CreateAcquirer.vue"
+import PaymentAcquirers   from "./../../components/Pages/PaymentAcquirers/PaymentAcquirers.vue"
+import Acquirers   from "./../../components/Pages/Acquirers/Acquirers.vue"
+import CreateTransaction   from "./../../components/Pages/CreateTransaction/CreateTransaction.vue"
+import PDFBalanceSheet   from "./../../components/partials/PDFBalanceSheet/PDFBalanceSheet.vue"
+import PDFtrial   from "./../../components/partials/PDFtrial/PDFtrial.vue"
+import PDFgeneral   from "./../../components/partials/PDFgeneral/PDFgeneral.vue"
+import PDFJournal   from "./../../components/partials/PDFJournal/PDFJournal.vue"
+import PaymentTransactionTab   from "./../../components/Pages/PaymentTransactionTab/PaymentTransactionTab.vue"
+import PaymentTransactions   from "./../../components/Pages/PaymentTransactions/PaymentTransactions.vue"
+import CreateCurrency   from "./../../components/Pages/CreateCurrency/CreateCurrency.vue"
+import Currencies   from "./../../components/Pages/Currencies/Currencies.vue"
+import ConfigCurrencies   from "./../../components/Pages/ConfigCurrencies/ConfigCurrencies.vue"
+import CreateManagement   from "./../../components/Pages/CreateManagement/CreateManagement.vue"
+import ConfigManagement   from "./../../components/Pages/ConfigManagement/ConfigManagement.vue"
+import Management   from "./../../components/Pages/Management/Management.vue"
+import ConfigJournal   from "./../../components/Pages/ConfigJournal/ConfigJournal.vue"
+import CreateJournal   from "./../../components/Pages/CreateJournal/CreateJournal.vue"
+import ConfigFiscal   from "./../../components/Pages/ConfigFiscal/ConfigFiscal.vue"
+import CreateFiscal   from "./../../components/Pages/CreateFiscal/CreateFiscal.vue"
+import ConfigBank   from "./../../components/Pages/ConfigBank/ConfigBank.vue"
+import CreateBank   from "./../../components/Pages/CreateBank/CreateBank.vue"
+import CreateTax   from "./../../components/Pages/CreateTax/CreateTax.vue"
+import ConfigTaxes   from "./../../components/Pages/ConfigTaxes/ConfigTaxes.vue"
+import AccountsaleableProduct   from "./../../components/Pages/AccountsaleableProduct/AccountsaleableProduct.vue"
+import Taxes   from "./../../components/Pages/Taxes/Taxes.vue"
+import AccountingSettings   from "./../../components/Pages/AccountingSettings/AccountingSettings.vue"
+import ManualTax  from "./../../components/partials/ManualTax/ManualTax.vue"
+import PDFpartner   from "./../../components/partials/PDFpartner/PDFpartner.vue"
+import PDFProfitAndLoss   from "./../../components/partials/PDFProfitAndLoss/PDFProfitAndLoss.vue"
+import COA_Table  from "./../../components/Pages/COA_Table/COA_Table.vue"
+import COA_Create  from "./../../components/Pages/COA_Create/COA_Create.vue"
+import ChartOfAccount  from "./../../components/partials/ChartOfAccount/ChartOfAccount.vue"
+import JournalCreate  from "./../../components/partials/JournalCreate/JournalCreate.vue"
+import JournalEntries  from "./../../components/partials/JournalEntries/JournalEntries.vue"
+import JournalItems  from "./../../components/partials/JournalItem/JournalItems.vue"
+
+const routes = [
+
+    {
+        path: '/accounting', component: Test,
+        children: [
+            {
+                path: '', component: AccountingLayout,
+                children: [
+                    {path: '', component: Accounting_Dashboard},
+                    {path: 'journalentry', component: JournalEntries},
+                    {path: 'journalitem', component: JournalItems},
+                    {path: 'journaltab', component: JournalTab},
+                    {path: 'journalcreate', component: JournalCreate},
+                    {path: 'coa', component: ChartOfAccount},
+                    {path: 'coatable', component: COA_Table},
+                    {path: 'coacreate', component: COA_Create},
+                    {path: 'PDFProfitAndLoss', component: PDFProfitAndLoss},
+                    {path: 'PDFpartner', component: PDFpartner},
+                    // { path: 'Example', component: Example},
+                    {path: 'ManualTax', component: ManualTax},
+                    {path: 'AccountingSettings', component: AccountingSettings},
+                    {path: 'ConfigTaxes', component: ConfigTaxes},
+                    {path: 'Taxes', component: Taxes},
+                    {path: 'CreateTax', component: CreateTax},
+                    {path: 'ConfigFiscal', component: ConfigFiscal},
+                    {path: 'CreateFiscal', component: CreateFiscal},
+                    {path: 'ConfigBank', component: ConfigBank},
+                    {path: 'CreateBank', component: CreateBank},
+                    {path: 'BankAccount', component: BankAccount},
+                    {path: 'ConfigJournal', component: ConfigJournal},
+                    {path: 'CreateJournal', component: CreateJournal},
+                    {path: 'ConfigManagement', component: ConfigManagement},
+                    {path: 'Management', component: Management},
+                    {path: 'CreateManagement', component: CreateManagement},
+                    {path: 'ConfigCurrencies', component: ConfigCurrencies},
+                    {path: 'Currencies', component: Currencies},
+                    {path: 'CreateCurrency', component: CreateCurrency},
+                    {path: 'AccountReport', component: AccountReport},
+                    {path: 'FinancialAccount', component: FinancialAccount},
+                    {path: 'AccountHierarchy', component: AccountHierarchy},
+                    {path: 'PaymentAcquirers', component: PaymentAcquirers},
+                    {path: 'PaymentTransactions', component: PaymentTransactions},
+                    {path: 'PaymentTransactionTab', component: PaymentTransactionTab},
+                    {path: 'PDFJournal', component: PDFJournal},
+                    {path: 'PDFgeneral', component: PDFgeneral},
+                    {path: 'PDFtrial', component: PDFtrial},
+                    {path: 'PDFBalanceSheet', component: PDFBalanceSheet},
+                    {path: 'CreateTransaction', component: CreateTransaction},
+                    {path: 'acquirers', component: Acquirers},
+                    {path: 'CreateAcquirer', component: CreateAcquirer},
+                    {path: 'PDFaged', component: PDFaged},
+                    {path: 'PDFFinancial', component: PDF_Financial},
+                    {path: 'EditCurrency', component: EditCurrency},
+                    {path: 'EditJournalEntry', component: EditJournalEntry},
+                    {path: 'coaedit', component: COA_Edit},
+                    {path: 'EditTax', component: EditTax},
+                    {path: 'EditBank', component: EditBank},
+                    {path: 'ConfigJournalTable', component: ConfigJournalTable},
+                    {path: 'ConfigJournalEdit', component: ConfigJournalEdit},
+                    {path: 'EditManagement', component: EditManagement},
+                    {path: 'CurrencyRates', component: CurrencyRates},
+                    {path: 'AccountReportCreate', component: AccountReportCreate},
+                    {path: 'AccountReportEdit', component: AccountReportEdit},
+                    {path: 'EditAcquirer', component: EditAcquirer},
+                    {path: 'EditTransaction', component: EditTransaction},
+                    {path: 'CurrencyRateTable', component: CurrencyRateTable},
+                    {path: 'CurrencyRateCreate', component: CurrencyRateCreate},
+                    {path: 'CurrencyRateEdit', component: CurrencyRateEdit},
+                    {path: 'Payments', component: Payments},
+                    {path: 'PaymentsTab', component: PaymentsTab},
+                    {path: 'PaymentsCreate', component: PaymentsCreate},
+                    {path: 'PaymentsEdit', component: PaymentsEdit},
+                    {path: 'PurchasesPayment', component: PurchasesPayment},
+                    {path: 'customerinvoice', component: AccountingCustomerInvoice},
+                    {path: 'customerinvoiceview', component: AccountingCustomerInvoiceView},
+                    {path: 'customerinvoiceedit', component: AccountingCustomerInvoiceEdit},
+                    {path: 'customer', component: AccountingCustomer},
+                    {path: 'customerview', component: AccountingCustomerView},
+                    {path: 'vendorbox', component: AccountingVendorBox},
+                    {path: 'accountsaleableproduct', component: AccountsaleableProduct},
+                    {path: 'manualpayment', component: AccountingManualPayment},
+                    {path: 'vendorbills', component: AccountingVendorBills},
+                    {path: 'invoice', component: AccountingInvoice},
+                    {path: 'vendors', component: AccountingVendors},
+                    {path: 'purchaseableproducts', component: AccountingPurchaseableProducts},
+                    {path: 'customeredit', component: AccountingCustomerEdit},
+                    {path: 'customercreate', component: AccountingCustomerCreate},
+                    {path: 'customerlistview', component: AccountingCustomerListView},
+                    {path: 'customerimport', component: AccountingCustomerImport},
+                    {path: 'accountingproductbox', component: AccountingProductBox},
+                    {path: 'saleableproductview', component: AccountingSaleableProductView},
+                    {path: 'sellableproductedit', component: AccountingSellableProductEdit},
+                    {path: 'saleableproductcreate', component: AccountingSaleableProductCreate},
+                    {path: 'saleablelistview', component: AccountingSaleableListView},
+                    {path: 'saleableproductimport', component: AccountingSaleableProductImport},
+                    {path: 'accountingvendorbillview', component: AccountingVendorBillView},
+                    {path: 'vendorbilledit', component: AccountingVendorBillEdit},
+                    {path: 'vendorview', component: AccountingVendorView},
+                    {path: 'vendoredit', component: AccountingVendorEdit},
+                    {path: 'vendorcreate', component: AccountingVendorCreate},
+                    {path: 'vendorlistview', component: AccountingVendorListView},
+                    {path: 'vendorimport', component: AccountingVendorImport},
+                    {path: 'customerinvoicecreate', component: AccountingCustomerInvoiceCreate},
+                    {path: 'customerinvoiceimport', component: AccountingCustomerInvoiceImport},
+                    {path: 'paymentimport', component: AccountingPaymentImport},
+                    {path: 'paymenttransactionimport', component: AccountingPaymentTransactionImport},
+                    {path: 'accountreportimport', component: AccountingAccountReportImport},
+                    {path: 'configmanagementimport', component: AccountingConfigManagementImport},
+                    {path: 'accountingcurrency', component: AccountingCurrency},
+                    {path: 'fiscalpositionsimport', component: AccountingFiscalPositionsImport},
+                    {path: 'configtaxesimport', component: AccountingConfigTaxesImport},
+                    {path: 'chartofaccountimport', component: AccountingChartofAccountImport},
+                    {path: 'journalentriesimport', component: AccountingJournalEntriesImport},
+                    {path: 'JournalTab', component: JournalTab},
+                    {path: 'currenciesview', component: AccountingCurrenciesView},
+                    {path: 'currenciesedit', component: AccountingCurrenciesEdit},
+                    {path: 'currenciescreate', component: AccountingCurrenciesCreate},
+
+                ]
+            },
+
+        ]
+    },
+    {
+        path: '*', component: { template: "<div>Not Found</div>" },
+    }
+
+
+];
+
+module.exports = routes

@@ -1,0 +1,69 @@
+.hierarchy
+    DashboardController( v-bind:heading="nextactivity")
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Subordinate Hierarchy
+    .o_view_manager_content(style='margin-left: -15px;margin-right: -15px;')
+        div
+            table.o_treeview_table
+                thead
+                    tr
+                        th.treeview-header
+                            | Name
+                        th.treeview-header
+                            | Work Phone
+                        th.treeview-header
+                            | Work Email
+                        th.treeview-header
+                            | Department
+                        th.treeview-header
+                            | Job Title
+                tbody
+                    tr#mainz(data-id='2', data-level='1')
+                        td.treeview-tr.o_treeview_first(data-id='2', style='background-position: 0px; padding-left: 4px;')
+                            span
+                                | {{employeename}}
+                        td.treeview-td(data-id='2', style='')
+                            span
+                                | {{work_phone}}
+                        td.treeview-td(data-id='2', style='')
+                            span
+                                | {{work_email}}
+                        td.treeview-td(data-id='2', style='')
+                            span
+                                | {{DepartmentName2}}
+                        td.treeview-td(data-id='2', style='')
+                            span
+                                | {{job_tittle }}
+                    tr.tmain(data-id='7', data-level='2', data-row-parent-id='2', style='display: table-row;',v-for="row in names")
+                        td.treeview-td.o_treeview_first(v-on:click='selectids(row.id)',data-id='7', style='background-position: 19px; padding-left: 23px;')
+                            span
+                                | {{row.employeename}}
+                        td.treeview-td(data-id='7', style='')
+                            span
+                                | {{row.work_phone}}
+                        td.treeview-td(data-id='7', style='')
+                            span
+                                | {{row.work_email}}
+                        td.treeview-td(data-id='7', style='')
+                            span
+                                | {{row.DepartmentName2}}
+                        td.treeview-td(data-id='7', style='')
+                            span {{row.job_tittle}}
+                    tr(data-id='7', data-level='2', data-row-parent-id='2', style='display: table-row;',v-for="row1 in names1")
+                        td.treeview-td.o_treeview_first(data-id='7', style='background-position: 19px; padding-left: 23px;')
+                            span.thirdwala
+                                | {{row1.employeename}}
+                        td.treeview-td(data-id='7', style='')
+                            span
+                                | {{row1.work_phone}}
+                        td.treeview-td(data-id='7', style='')
+                            span
+                                | {{row1.work_email}}
+                        td.treeview-td(data-id='7', style='')
+                            span
+                                | {{row1.DepartmentName2}}
+                        td.treeview-td(data-id='7', style='')
+                            span {{row1.job_tittle}}
+
+
+

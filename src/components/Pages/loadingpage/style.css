@@ -1,0 +1,25 @@
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url("../../../images/2.gif") center no-repeat black;
+}
+.abc{
+    color:#5a5983;
+    font-size:50px;
+    font-family:" Beyond Sky";
+    text-align:center;
+    margin-top:300px;
+
+}
+
+.content {
+    background: url("images/alu.jpg")center no-repeat;
+    background-size: 100%;
+    width: 100%;
+}

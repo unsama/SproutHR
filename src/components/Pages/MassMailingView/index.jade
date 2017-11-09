@@ -1,0 +1,77 @@
+.sales
+    DashboardController(v-bind:save='true',v-bind:heading="vendormenu",v-bind:editbtn='true',v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:printbtn='true',v-bind:Attachmentbtn='true',v-bind:actionbtn='true',v-bind:createbtn='true',v-bind:links="btnlinks")
+    .row
+        .col-md-12.pull-left.samotopcontroller
+            .col-md-5.pull-left
+                .col-xs-2.pull-left
+                    button.btn.btn-primary.samobutton2(type='button',style='margin-left: -32px;background-color: #9493bc;color: white;') Test Mailing
+                .col-xs-2.pull-left
+                    button.btn.btn-primary.samobutton2(type='button',style='margin-left:10px;background-color: #9493bc;color: white;') Send to All
+
+            .col-md-1.pull-left
+            .col-md-3.pull-left
+            .col-md-3.pull-right
+                .btn-group.btn-breadcrumb.samobreadcrum1
+                    a.btn.btn-primary.samobreadbutt(href='#') Qualified
+                    a.btn.btn-primary.samobreadbutt1(href='#',style='background-color: #9493bc;color: white;') New
+                    a.btn.btn-primary.samobreadbutt(href='#') Purchase
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        table.o_group.o_inner_group(style='margin-left:29px;margin-top:29px;')
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | From
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field.o_form_required Administrators <rajaunleashed@gmail.com>
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Subject
+                                    td(colspan='1', style='width: 100%;')
+                                        div
+                                            span.o_form_field.o_form_required sdhfdxh
+                                            button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Recipients
+                                    td(colspan='1', style='width: 100%;')
+                                        div
+                                            span.o_form_field.o_form_required Mailing List
+                                            .o_form_field.o_form_invisible
+                                                span.o_count 3  selected records
+                                                button.btn.btn-default(type='button')
+                                                    | See selection
+                                                    span.fa.fa-arrow-right
+                                            div
+                                                label.o_form_label.oe_edit_only.o_form_label_empty
+                                                    | Select mailing lists:
+                                                .o_form_field_many2manytags.oe_inline.o_form_field.o_form_field_empty
+
+                        .o_notebook(style='margin-top: 70px;')
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Mail Body
+                                li.nav-item
+                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') Option
+                            // Tab panes
+                            .tab-content
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+
+                                #buzz.tab-pane.fade.in(role='tabpanel')
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+

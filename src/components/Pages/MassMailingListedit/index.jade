@@ -1,0 +1,27 @@
+.sales
+    DashboardController(v-bind:savedbtn='true',v-bind:heading="vendormenu",v-bind:discardbtn='true',v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:printbtn='true',v-bind:Attachmentbtn='true',v-bind:actionbtn='true',v-bind:links="btnlinks")
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                .o_stat_info.o_form_field
+                                    span.o_stat_text.o_not_hover.text-success Active
+                                    span.o_stat_text.o_hover.text-danger Archive
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-user.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value 2
+                                    span.o_stat_text Recipients
+
+                        .oe_title
+                            label
+                                | Mailing List
+                            h1(style='margin-top: -26px;')
+                                input#o_field_input_36.o_form_input.o_form_field.o_form_required(placeholder='e.g. Consumer Newsletter', type='text',style='height: 35px;font-size: 21px;')
+
+
+

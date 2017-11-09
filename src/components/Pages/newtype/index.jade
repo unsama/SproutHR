@@ -1,0 +1,27 @@
+nav#bottom-nav.navbar.navbar-default.toggle-down
+    .col-md-12
+        #container.col-xs-12
+            // <div id="timer"></div>
+            .col-xs-12.col-sm-4
+                span#timer2(style='color: white; font-size: 40px;') 08:51
+            #attendence-action.col-xs-12.col-sm-8
+                button#start.waves-effect.waves-light.btn.green.accent-4.submit_in
+                    span
+                        img(src='img/Checkin.png', alt='')
+                    | CheckIn
+                button#stop.waves-effect.waves-light.btn.green.accent-4.submit_pause
+                    span
+                        img(src='img/Breakin.png', alt='')
+                    | Break In
+                button#resume.waves-effect.waves-light.btn.green.accent-4.submit_resume
+                    span
+                        img(src='img/Breakout.png', alt='')
+                    | Break Out
+                button#stop_to.waves-effect.waves-light.btn.green.accent-4.submit_out
+                    span
+                        img(src='img/Checkout.png', alt='')
+                    | Check Out
+                input#currenttime_in(type='hidden', name='timein')
+                input#currenttimeout(type='hidden', name='time')
+                input#currenttime_resume(type='hidden', name='time_resume')
+                input#currenttime_stop(type='hidden', name='time_stop')

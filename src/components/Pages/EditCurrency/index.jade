@@ -1,0 +1,34 @@
+.all_transfers_table
+    DashboardController( v-bind:heading="head",v-bind:savedbtn='true',v-bind:discardbtn='true',v-bind:num1='true', v-bind:num2='true', v-bind:links="btnlinks" )
+    .o_content.samocontent
+        .o_view_manager_content
+            .o_form_view.o_form_readonly#hasH
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .row
+                            .col-sm-3.samohascol3
+                                .oe_button_box(name='button_box', style='margin-right: -619px;')
+                                    button.btn.btn-sm.oe_stat_button(type='button', style='')
+                                        .fa.fa-fw.fa-archive.o_button_icon.trash
+                                        .o_stat_info.o_form_field(data-original-title='', title='')
+                                            span.o_stat_text.o_not_hover.text-success Active
+                                            span.o_stat_text.o_hover.text-danger
+                                                | Archive
+                                                .oe_button_box(name='button_box')
+                        table.o_group.o_inner_group
+                            tbody
+
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label(style='font-size: 0.9rem; ')
+                                            | Currency
+                                    td.two(colspan='1', style='width: 50%;')
+                                        input(type='', value='AED',style='width: 92%; background-color: #D2D2FF;')
+
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label
+                                            | Current Rate
+                                    td.two(colspan='1', style='width: 50%;')
+                                        label 4.512532
+
+

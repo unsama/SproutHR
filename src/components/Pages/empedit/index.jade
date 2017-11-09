@@ -1,0 +1,411 @@
+.empedit
+    dashconterller(v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:searchbar='false',v-bind:num1='true',v-bind:num2='true',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:fifthbtn='false')
+        .col-sm-6(style='padding:0px;' ,slot='job')
+            h4.samodashheading(style="font-size: 18px;") Employees / {{employeeName}}
+        span.o_pager_value(slot='page') {{counter}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="counter--",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="counter++",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+    Editing
+        .o_content(slot='profile')
+            .o_view_manager_content
+                .o_form_view.o_form_editable
+                    .o_form_sheet_bg
+                        .o_form_sheet
+                            .oe_button_box(name='button_box')
+                                button.btn.btn-sm.oe_stat_button(type='button')
+                                    .fa.fa-fw.fa-archive.o_button_icon
+                                    .o_stat_info.o_form_field(data-original-title='', title='')
+                                        span.o_stat_text.o_not_hover.text-success Active
+                                        span.o_stat_text.o_hover.text-danger Archive
+                                .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                    input(type='checkbox', name='show_leaves', disabled='')
+                                    span
+                                button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button', data-original-title='', title='')
+                                    .fa.fa-fw.fa-calendar.o_button_icon
+                                    .o_form_field.o_stat_info
+                                        span.o_stat_value 0
+                                        span.o_stat_text Leaves Lefts
+                                button.btn.btn-sm.oe_stat_button(type='button')
+                                    .fa.fa-fw.fa-book.o_button_icon
+                                    .o_form_field.o_stat_info
+                                        span.o_stat_value 0
+                                        span.o_stat_text Contracts
+                            .o_form_field_image.oe_avatar.o_form_field(data-original-title='', title='')
+                                img(border='1', name='image', src='/images/placeholder.png')
+                                .o_form_image_controls
+                                    span.fa.fa-pencil.fa-lg.pull-left.o_select_file_button(title='Edit')
+                                    span.fa.fa-trash-o.fa-lg.pull-right.o_clear_file_button(title='Clear')
+                                    span.o_form_binary_progress Uploading...
+                                    .o_hidden_input_file
+                                        form.o_form_binary_form(enctype='multipart/form-data', method='post', action='/web/binary/upload')
+                                            input(name='csrf_token', type='hidden', value='616929304a51b7102a984369878e15a6ca21cbe0o')
+                                            input(name='callback', type='hidden')
+                                            input.o_form_input_file(accept='image/*', name='ufile', type='file')
+                                        iframe(style='display: none')
+                            .oe_title
+                                label.o_form_label.oe_edit_only(for='o_field_input_591')
+                                    | Name
+                                h1
+                                    #textbox
+                                        .o_form_field.o_form_field_empty(data-original-title='', title='')
+                                            .oe_hr_attendance_status.fa.fa-user
+                                        input#o_field_input_591.o_form_input.o_form_field.o_form_required(placeholder="Employees's Name", type='text', v-model="employeeName")
+                            .o_form_field_many2manytags.o_form_field
+                                .o_form_field_many2one.o_form_field
+                                    .o_form_input_dropdown
+                                        input(type='text' list='designations' placeholder='e.g Part Time' style="border: 1px solid red;" )
+                                        datalist#designations
+                                            option(value='Sales')
+                                            option(value='Trainer')
+                                            option(value='Employee')
+                                            option(value='Consultant')
+                            .o_notebook
+                                ul.nav.nav-tabs(role='tablist')
+                                    li.nav-item.active
+                                        a(data-toggle='tab',  role='tab', href='#notebook_page_592', )
+                                            | Public Information
+                                    li.nav-item
+                                        a(data-toggle='tab', role='tab', href='#notebook_page_593')
+                                            | Personal Information
+                                    li.nav-item
+                                        a(data-toggle='tab',role='tab', href='#notebook_page_594')
+                                            | HR Settings
+                                .tab-content.nav.nav-tabs
+                                    #notebook_page_592.tab-pane.fade.in.active(role='tabpanel')
+                                        .o_group
+                                            table.o_group.o_inner_group.o_group_col_6
+                                                tbody
+                                                    tr
+                                                        td(colspan='2', style='width: 100%;')
+                                                            .o_horizontal_separator
+                                                                | Contact Information
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label(for='o_field_input_595')
+                                                                | Working Address
+                                                        td(colspan='1', style='width: 100%;')
+                                                            select.workingAddressDropdown(v-model='workingAddressId',v-on:click="SelectContactInfo()")
+                                                                option(v-for="addres in workingAddresses" v-bind:value='addres.id')
+                                                                    | {{addres.address}}
+                                                                option
+                                                                    span(data-toggle='' data-taget='') Search More...
+                                                                option
+                                                                    span(data-toggle='modal6' data-target='bd-example-modal-lg6') Create and Edit...
+
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label(for='o_field_input_596')
+                                                                | Work Mobile
+                                                        td(colspan='1', style='width: 100%;')
+                                                            input#o_field_input_596.o_form_input.o_form_field(type='text',v-model="workMobile")
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label(for='o_field_input_597')
+                                                                | Work Location
+                                                        td(colspan='1', style='width: 100%;')
+                                                            input#o_field_input_597.o_form_input.o_form_field(type='text',v-model="workLocation")
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label(for='o_field_input_598')
+                                                                | Work Email
+                                                        td(colspan='1', style='width: 100%;')
+                                                            input#o_field_input_598.o_form_input.o_form_field(type='text',v-model="workEmail")
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label(for='o_field_input_599')
+                                                                | Work Phone
+                                                        td(colspan='1', style='width: 100%;')
+                                                            input#o_field_input_599.o_form_input.o_form_field(type='text',v-model="workPhone")
+                                            table.o_group.o_inner_group.o_group_col_6
+                                                tbody
+                                                    tr
+                                                        td(colspan='2', style='width: 100%;')
+                                                            .o_horizontal_separator
+                                                                | Position
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label(for='o_field_input_600')
+                                                                | Department
+                                                        td(colspan='1', style='width: 100%;')
+
+                                                            select.deptdropdown(v-model='departmentId',v-on:click="selectDepartManagerHussain()")
+                                                                option(v-for="deptName in departnents" ,v-bind:value='deptName.id')
+                                                                    | {{deptName.name}}
+                                                                option
+                                                                    span(data-toggle='' data-taget='') Search More...
+                                                                option
+                                                                    span(data-toggle='modal2' data-target='bd-example-modal-lg1') Create and Edit...
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label(for='o_field_input_601')
+                                                                | Job Title
+                                                        td(colspan='1', style='width: 100%;')
+                                                            select.jobTitledropdown(v-model='jobtitleId')
+                                                                option(v-for="jobTitle in jobTitles" v-bind:value='jobTitle.id')
+                                                                    | {{jobTitle.job_tittle}}
+                                                                option
+                                                                    span(data-toggle='modal3' data-target='bd-example-modal-lg3') Create and Edit...
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label(for='o_field_input_602')
+                                                                | Manager
+                                                        td(colspan='1', style='width: 100%;')
+                                                            select.mgrDropdown(v-model="managerId")
+                                                                option(v-for="mgr in managers" v-bind:value="mgr.id")
+                                                                    | {{mgr.employeename}}
+                                                                option
+                                                                    span(data-toggle='' data-target='') Search More...
+                                                                option
+                                                                    span(data-toggle='modal61' data-target='bd-example-modal-lg61') Create and Edit...
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label(for='o_field_input_603')
+                                                                | Coach
+                                                        td(colspan='1', style='width: 100%;')
+                                                            select.coachDropdown(v-model="coachId")
+                                                                option(v-for="coach in coachs" v-bind:value="coach.id")
+                                                                    | {{coach.employeename}}
+                                                                option
+                                                                    span(data-toggle='' data-target='') Search More...
+                                                                option
+                                                                    span(data-toggle='' data-target='') Create and Edit...
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_invisible(for='o_field_input_604')
+                                                                | Is a Manager
+                                                        td(colspan='1', style='width: 100%;')
+                                                            .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                                input#o_field_input_604(type='checkbox', name='manager')
+                                                                span
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_help(for='o_field_input_605', data-original-title='', title='')
+                                                                | Working Time
+                                                        td(colspan='1', style='width: 100%;')
+                                                            select.workingTimeDropdown(v-model='workingTimeId')
+                                                                option(v-for="workTime in workingScedules" v-bind:value="workTime.id")
+                                                                    | {{workTime.name}}
+                                                                option
+                                                                    span(data-toggle='modal00' data-target='bd-example-modal-lg100') Create and Edit...
+
+                                        textarea.o_form_textarea.o_form_field(rows='6', name='notes', placeholder='Other Information ...', style='height: 50px;')
+                                        textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 826px;')
+                                    #notebook_page_593.tab-pane.fade.in(role='tabpanel')
+                                        .o_group
+                                            table.o_group.o_inner_group.o_group_col_6
+                                                tbody
+                                                    tr
+                                                        td(colspan='2', style='width: 100%;')
+                                                            .o_horizontal_separator
+                                                                | Citizenship & Other Information
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label(for='o_field_input_606')
+                                                                | Nationality (Country)
+                                                        td(colspan='1', style='width: 100%;')
+                                                            select.countryDropdown(v-model='countryId')
+                                                                option(v-for="country in countries", v-bind:value="country.id")
+                                                                    | {{country.country_name}}
+                                                                option
+                                                                    span(data-toggle='', data-target='') Search More...
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label(for='o_field_input_607')
+                                                                | Identification No
+                                                        td(colspan='1', style='width: 100%;')
+                                                            input#o_field_input_607.o_form_input.o_form_field(type='text', v-model="identificationNo")
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label(for='o_field_input_608')
+                                                                | Passport No
+                                                        td(colspan='1', style='width: 100%;')
+                                                            input#o_field_input_608.o_form_input.o_form_field(type='text',v-model="passportNo")
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_help(for='o_field_input_609', data-original-title='', title='')
+                                                                | Bank Account Number
+                                                        td(colspan='1', style='width: 100%;')
+                                                            select.bankAccDropdown(v-model='BankAccountNumbersId')
+                                                                option(v-for="BankAccountNumber in BankAccountNumbers", v-bind:value="BankAccountNumber.id")
+                                                                    | {{BankAccountNumber.account_number}}
+                                                                option
+                                                                    span(data-toggle="modal62" , data-target="bd-example-modal-lg62") Create and Edit...
+                                            table.o_group.o_inner_group.o_group_col_6
+                                                tbody
+                                                    tr
+                                                        td(colspan='2', style='width: 100%;')
+                                                            .o_horizontal_separator
+                                                                | Contact Information
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label(for='o_field_input_610')
+                                                                | Home Address
+                                                        td(colspan='1', style='width: 100%;')
+                                                            select.homeAddressDropdown(v-model="homeAddressId")
+                                                                option(v-for='homeAddress in homeAddresses', v-bind:value='homeAddress.id')
+                                                                    | {{homeAddress.address}}
+                                                                option
+                                                                    span(data-toggle='', data-target='') Search More...
+                                                                option
+                                                                    span(data-toggle='modal6' data-target='bd-example-modal-lg6') Create and Edit...
+
+                                            table.o_group.o_inner_group.o_group_col_6
+                                                tbody
+                                                    tr
+                                                        td(colspan='2', style='width: 100%;')
+                                                            .o_horizontal_separator
+                                                                | Status
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label(for='o_field_input_611')
+                                                                | Gender
+                                                        td(colspan='1', style='width: 100%;')
+                                                            select#o_field_input_611.o_form_input.o_form_field(name='gender', v-model="gender")
+                                                                option(value='false')
+                                                                option(value='male') Male
+                                                                option(value='female') Female
+                                                                option(value='other') Other
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label(for='o_field_input_612')
+                                                                | Marital Status
+                                                        td(colspan='1', style='width: 100%;')
+                                                            select#o_field_input_612.o_form_input.o_form_field(name='marital', v-model="maritalStatus")
+                                                                option(value='false')
+                                                                option(value='single') Single
+                                                                option(value='married') Married
+                                                                option(value='widower') Widower
+                                                                option(value='divorced') Divorced
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label(for='o_field_input_613')
+                                                                | Number of Children
+                                                        td(colspan='1', style='width: 100%;')
+                                                            input#o_field_input_613.o_form_input.o_form_field.o_form_field_number(type='text' value='0',v-model="noOfChildren")
+                                            table.o_group.o_inner_group.o_group_col_6
+                                                tbody
+                                                    tr
+                                                        td(colspan='2', style='width: 100%;')
+                                                            .o_horizontal_separator
+                                                                | Birth
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label
+                                                                | Date of Birth
+                                                        td(colspan='1', style='width: 100%;')
+                                                            .o_datepicker.o_form_field_date.o_form_field
+                                                                input.o_datepicker_input.o_form_input#datepicker6(type='text', name='birthday', v-model="birthDate")
+                                                                span.o_datepicker_button
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label(for='o_field_input_615')
+                                                                | Place of Birth
+                                                        td(colspan='1', style='width: 100%;')
+                                                            input#o_field_input_615.o_form_input.o_form_field(type='text', v-model="placeOfBirth")
+                                    #notebook_page_594.tab-pane.fade.in(role='tabpanel')
+                                        .o_group
+                                            table.o_group.o_inner_group.o_group_col_6
+                                                tbody
+                                                    tr
+                                                        td(colspan='2', style='width: 100%;')
+                                                            .o_horizontal_separator
+                                                                | Timesheets
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label(for='o_field_input_616')
+                                                                | Timesheet Cost
+                                                        td(colspan='1', style='width: 100%;')
+                                                            input#o_field_input_616.o_form_input.o_form_field.o_form_field_number(type='text' value="0.00",v-model="timeSheetCost")
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label
+                                                                | Account
+                                                        td(colspan='1', style='width: 100%;')
+                                                            select.accDropdown(v-model="accountId")
+                                                                option(v-for="account in accounts", v-bind:value="account.id")
+                                                                    | {{account.name}}
+                                                                option
+                                                                    span(data-toggle="", data-target="") Search More...
+                                                                option
+                                                                    span(data-toggle="modal10", data-target="bd-example-modal-lg10") Create and Edit...
+                                            table.o_group.o_inner_group.o_group_col_6
+                                                tbody
+                                                    tr
+                                                        td(colspan='2', style='width: 100%;')
+                                                            .o_horizontal_separator
+                                                                | Status
+
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_help(for='o_field_input_619', data-original-title='', title='')
+                                                                | Related User
+                                                        td(colspan='1', style='width: 100%;')
+                                                            select.relatedUserDropdown(v-model="relatedUserId")
+                                                                option(v-for="relatedUser in relatedUsers", v-bind:value="relatedUser.id")
+                                                                    | {{relatedUser.username}}
+                                                                option
+                                                                    span(data-toggle="modal5",data-target="bd-example-modal-lg5") Create and Edit...
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_help(for='o_field_input_620', data-original-title='', title='')
+                                                                | Badge ID
+                                                        td(colspan='1', style='width: 100%;')
+                                                            input#o_field_input_620.o_form_input.o_form_field(type='text', v-model="badgeId")
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_help(for='o_field_input_621', data-original-title='', title='')
+                                                                | PIN
+                                                        td(colspan='1', style='width: 100%;')
+                                                            input#o_field_input_621.o_form_input.o_form_field(type='text',v-model="pin")
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_help(for='o_field_input_622', data-original-title='', title='')
+                                                                | Manual Attendance
+                                                        td(colspan='1', style='width: 100%;')
+                                                            .o_checkbox.o_form_field_boolean.o_form_field
+                                                                input#o_field_input_622(type='checkbox', name='manual_attendance', v-model="manualAttendance")
+                                                                span
+                                            table.o_group.o_inner_group.o_group_col_6
+                                                tbody
+                                                    tr
+                                                        td(colspan='2', style='width: 100%;')
+                                                            .o_horizontal_separator
+                                                                | Current Contract
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label
+                                                                | Medical Exam
+                                                        td(colspan='1', style='width: 100%;')
+                                                            .o_datepicker.o_form_field_date.o_form_field
+                                                                input.o_datepicker_input.o_form_input#datepicker7(type='text', name='medic_exam', v-model="medicalExamDate")
+                                                                span.o_datepicker_button
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label(for='o_field_input_624')
+                                                                | Company Vehicle
+                                                        td(colspan='1', style='width: 100%;')
+                                                            input#o_field_input_624.o_form_input.o_form_field(type='text', v-model="companyVehicle")
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_help(for='o_field_input_625', data-original-title='', title='')
+                                                                | Home-Work Dist.
+                                                        td(colspan='1', style='width: 100%;')
+                                                            input#o_field_input_625.o_form_input.o_form_field.o_form_field_number(type='text',v-model="HomeDistance")
+                                            table.o_group.o_inner_group.o_form_invisible.o_group_col_6
+                                                tbody
+                                                    tr
+                                                        td(colspan='2', style='width: 100%;')
+                                                            .o_horizontal_separator
+                                                                | Leaves
+                                                    tr
+                                                        td.o_td_label(colspan='1')
+                                                            label.o_form_label.o_form_label_help(for='o_field_input_626', data-original-title='', title='')
+                                                                | Remaining Legal Leaves
+                                                        td(colspan='1', style='width: 100%;')
+                                                            div
+                                                                input#o_field_input_626.o_form_input.oe_inline.o_form_field.o_form_field_number(type='text')
+                                                                |  days

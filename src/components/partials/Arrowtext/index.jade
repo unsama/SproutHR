@@ -1,0 +1,81 @@
+.o_content
+    .o_view_manager_content
+        div
+            .oe_view_nocontent
+                img(src='/images/view_empty_arrow.png')
+                p.oe_view_nocontent_create
+                    
+                    | Click to add a new expense,
+                    br
+                    | or send receipts by email to
+                    a#o_mail_test(href='mailto:expense@localhost?subject=Lunch%20with%20customer%3A%20%2412.32') expense@localhost
+                    | .
+                p
+                    | The steps to process expenses are:
+                ol
+                    li You record expenses,
+                    li Periodically, you submit expenses report to your manager,
+                    li Once approved, your expense report, goes to the accounting,
+                    li The accountant validates entries and reimburse you.
+            .table-responsive
+                table.o_list_view.table.table-condensed.table-striped(style='display: none;')
+                    thead
+                        tr
+                            th.o_list_record_selector(width='1')
+                                .o_checkbox
+                                    input(type='checkbox')
+                                    span
+                            th.o_column_sortable(data-id='date')
+                                | Date
+                            th.o_column_sortable(data-id='name')
+                                | Expense Description
+                            th.o_column_sortable(data-id='employee_id')
+                                | Employee
+                            th.o_column_sortable(data-id='total_amount')
+                                | Total
+                            th.o_column_sortable(data-id='state')
+                                | Status
+                            th(data-id='action_get_attachment_view')
+                    tfoot
+                        tr
+                            td
+                            td
+                            td
+                            td
+                            td.o_list_number(data-field='total_amount', title='Total Amount') 0.00
+                            td
+                            td
+                    tbody
+                        tr
+                            td.o_list_record_selector
+                            td(title='Date')  
+                            td(title='Expense Description')  
+                            td(title='Employees')  
+                            td(title='Total')  
+                            td(title='Status')  
+                            td(title='View Attached Documents')  
+                        tr
+                            td.o_list_record_selector
+                            td(title='Date')  
+                            td(title='Expense Description')  
+                            td(title='Employees')  
+                            td(title='Total')  
+                            td(title='Status')  
+                            td(title='View Attached Documents')  
+                        tr
+                            td.o_list_record_selector
+                            td(title='Date')  
+                            td(title='Expense Description')  
+                            td(title='Employees')  
+                            td(title='Total')  
+                            td(title='Status')  
+                            td(title='View Attached Documents')  
+                        tr
+                            td.o_list_record_selector
+                            td(title='Date')  
+                            td(title='Expense Description')  
+                            td(title='Employees')  
+                            td(title='Total')  
+                            td(title='Status')  
+                            td(title='View Attached Documents')  
+    

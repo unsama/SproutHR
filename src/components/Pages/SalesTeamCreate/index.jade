@@ -1,0 +1,163 @@
+.salesorderquotation
+    DashboardController(v-bind:savedbtn='true',v-bind:heading="quotation",v-bind:discardbtn='true',v-bind:importbtn='false',v-bind:Attachmentbtn='true',v-bind:printbtn='true',v-bind:actionbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='false',v-bind:paginbtn2='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false')
+    Modal(v-bind:save='false',v-bind:heading="modal",v-bind:modal='"bd-example-modal-lg"',v-bind:create='true',v-bind:select='true',v-bind:cancel='true')
+        .input-group.stylish-input-group(style='height: 35px;')
+            input.form-control(type='text', placeholder='Search')
+            span.input-group-addon
+                button#searchbutton(type='submit')
+                    span.fa.fa-search-plus.samofa
+        .o_pager(style='margin-left: 83%;')
+            div
+                span.o_pager_value 1-6
+                |  /
+                span.o_pager_limit 6
+                span.btn-group.btn-group-sm
+                    button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button', accesskey='p', disabled='')
+                    button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button', accesskey='n', disabled='')
+
+
+        TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata")
+    .o_content.samocontent(style='margin-left: -15px;margin-right: -15px;')
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                .o_stat_info.o_form_field(data-original-title='', title='')
+                                    span.o_stat_text.o_not_hover.text-success Active
+                                    span.o_stat_text.o_hover.text-danger Archive
+
+
+                        .oe_title
+                            label.o_form_label.oe_edit_only(for='o_field_input_36')
+                                | Sales team
+                            h1
+                                input#o_field_input_36.o_form_input.o_form_field.o_form_required.salesteam(placeholder='Salesteam name...', type='text')
+                                button.o_field_translate.fa.fa-globe.btn.btn-link.o_translate_active.salesteam-global(type='button')
+                            div(name='options_active')
+                                .o_row
+                                    .o_checkbox.o_form_field_boolean.o_form_field
+                                        input(type='checkbox', name='use_quotations')
+                                        span
+                                    label.o_form_label.o_form_label_help
+                                        | Quotations
+                                    .o_checkbox.o_form_field_boolean.o_form_field
+                                        input(type='checkbox', name='use_invoices')
+                                        span
+                                    label.o_form_label.o_form_label_help
+                                        | Invoices
+                                .o_row
+                                    span.o_row.o_form_invisible(invisible='1')
+                                        .o_checkbox.o_form_field_boolean.o_form_field
+                                            input(type='checkbox', name='use_leads')
+                                            span
+                                        label.o_form_label.o_form_label_help
+                                            | Leads
+                                    .o_checkbox.o_form_field_boolean.o_form_field
+                                        input(type='checkbox', name='use_opportunities')
+                                        span
+                                    label.o_form_label.o_form_label_help
+                                        | Opportunities
+
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Team Leader
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field
+                                                select
+                                                    option(value='volvo') hassan
+                                                    option(value='saab') Saab
+                                                    option(value='mercedes') sameer
+                                                    option(value='audi') osama
+                                                        span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_42', data-original-title='', title='')
+                                                | Email Alias
+                                        td(colspan='1', style='width: 100%;')
+                                            div(name='alias_def', attrs="{'invisible': [('use_leads', '=', False), ('use_opportunities', '=', False)]}")
+                                                .o_form_field_many2one.o_with_button.oe_read_only.oe_inline.o_form_field(data-original-title='', title='')
+                                                    .o_form_input_dropdown
+                                                        input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                .oe_edit_only.oe_inline(name='edit_alias', style='display: inline;')
+                                                    input#o_field_input_42.o_form_input.oe_inline.o_form_field(type='text')
+                                                    | @ localhost
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible.oe_inline(for='o_field_input_43', data-original-title='', title='')
+                                                | Accept Emails From
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_43.o_form_input.oe_inline.o_form_field.o_form_required.o_form_invisible(name='alias_contact')
+                                                option(value='false')
+                                                option(value='"everyone"') Everyone
+                                                option(value='"partners"') Authenticated Partners
+                                                option(value='"followers"') Followers only
+                                                option(value='"employees"') Authenticated Employees
+                            table.o_group.o_inner_group.o_group_col_6
+
+                        .o_notebook
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile1', role='tab', data-toggle='tab') Team Member
+                            // Tab panes
+                            .tab-content
+                                #profile1.tab-pane.fade.in.active(role='tabpanel')
+                                    .o_form_field.o_view_manager_content
+                                        .o_x2m_control_panel
+                                            .o_cp_buttons
+                                                div
+                                                    button.btn.btn-primary.btn-sm.o-kanban-button-new(accesskey='c', type='button',data-toggle='modal', data-target='.bd-example-modal-lg')
+                                                        | Add
+                                            .o_cp_pager
+                                                .o_hidden
+                                                    span.o_pager_value
+                                                    |  /
+                                                    span.o_pager_limit
+                                                    span.btn-group.btn-group-sm
+                                                        button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                        button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                        .o_kanban_view.o_kanban_ungrouped(style='display: flex;')
+
+
+
+        .o_mail_thread(style='margin-left: 336px;')
+            .o_thread_date_separator
+                span.o_thread_date
+                    | February 25, 2017
+
+
+            .o_thread_message.samothreadmessage(data-message-id='1038')
+                .o_thread_message_sidebar
+                    img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/images/image_small.png' style='width: 33px;a')
+                .o_thread_message_core.o_mail_note.samothreadmessage1
+                    p.o_mail_info
+                        | Note by
+                        strong(data-oe-model='res.partner', data-oe-id='')
+                            | YourCompany, Administrators
+                        |                     -
+                        small.o_mail_timestamp(title='Sat Feb 25 2017 16:35:56 GMT+0500') 9 days ago
+                        span
+                            i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='1038')
+                    ul.o_mail_thread_message_tracking
+                        li
+                            | Untaxed Amount:
+                            span  637.5
+                        li
+                            | Vendor:
+                            span  Delta PC
+                        li
+                            | Status:
+                            span  RFQ
+                            span.fa.fa-long-arrow-right
+                            span
+                                | RFQ Sent
+
+
+

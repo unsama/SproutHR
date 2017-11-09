@@ -1,0 +1,77 @@
+.container
+    .o_content.samocontent
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .container
+                            .o_form_sheet_bg
+                                .row
+                                    .col-sm-12
+                                        .oe_button_box(name='button_box')(style='float:right;')
+                                            button.btn.btn-sm.oe_stat_button(type='button', style='')
+                                                .fa.fa-fw.fa-archive.o_button_icon.trash
+                                                .o_stat_info.o_form_field(data-original-title='', title='')
+                                                    span.o_stat_text.o_not_hover.text-success Active
+                                                    span.o_stat_text.o_hover.text-danger
+                                                        | Archive
+                                                        .oe_button_box(name='button_box')
+
+                                .row(style='padding-top:32px;')
+                                    .col-md-3
+
+                                        .one
+                                            label(style='font-size:13px;padding-right:25px;font-weight:bold;')
+                                                | Department Name
+                                            br
+                                            label(style='font-size:13px;font-weight:bold;')
+                                                | Parent Department
+                                            br
+
+
+
+
+
+                                    .col-md-3
+                                        label(style='font-size:13px;padding-right:25px;')
+                                            | Research & Development
+                                        br
+                                        router-link(to='Companysequence')
+                                            label(style='font-size:13px;')
+                                                | Research & Development
+                                            br
+
+
+                                    .col-md-3
+
+                                        .one
+                                            label(style='font-size:16px;font-weight:bold;')
+                                                | Manager
+                                            br
+                                            label(style='font-size:16px;font-weight:bold;')
+                                                | Company
+                                            br
+
+
+
+
+
+                                    .col-md-3
+                                        label(style='font-size:13px;')
+                                            | Vendors
+                                        br
+                                        label(style='font-size:13px;')
+                                            | Alupak Industriess
+                                        br
+
+
+
+                          
+
+
+
+
+
+
+
+

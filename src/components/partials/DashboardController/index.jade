@@ -1,0 +1,458 @@
+.row(style='margin-left: -15px;margin-right: -15px;')
+    .dashboardcontroller
+        .col-sm-12.main.samodashcont1
+            .col-sm-12.samodashheadingmain(style='display: -webkit-inline-box;')
+                slot(name='job')
+                .col-sm-6
+                    .input-group.stylish-input-group(style='height: 35px;',v-if='searchbar')
+                        input.form-control(type='text', placeholder='Search')
+                        span.input-group-addon
+                            button#searchbutton(type='submit')
+                                span.fa.fa-search-plus.samofa
+
+            .col-sm-6.dashcontrollerbutton(style='padding-top: 24px;')
+                router-link.links.btn.btn-primary.samobuttopcontroller1#create(style="color:white;font-size: 13px;" ,v-if='createbtn', v-bind:to="links.createbtnlink")
+                    | Creates
+                router-link.links.btn.btn-primary.samobuttopcontroller1(style="color:white;font-size: 13px;" ,v-if='starbtn', v-bind:to="links.starbtnlink")
+                    | Unstar all
+                router-link.links.btn.btn-primary.samobuttopcontroller(style="color:white;font-size: 13px;" ,v-if='Invitebtn', v-bind:to="links.Invitebtnlink")
+                    | Invite
+                a.links.btn.btn-primary.samobuttopcontroller1(style="color:white;font-size: 13px;" ,v-if='modal',data-toggle='modal', v-bind:data-target='modal')
+                    | Create
+                router-link.linksec.btn.btn-default.samobuttopcontroller(style="font-size: 13px;" ,v-if='importbtn', v-bind:to="links.importbtnlink")
+                    | Import
+                router-link.linksec.btn.btn-default.samobuttopcontroller(style="font-size: 13px;" ,v-if='Markbtn', v-bind:to="links.Markbtnlink")
+                    | Mark All Read
+                router-link.linksec.btn.btn-default.samobuttopcontroller(style="font-size: 13px;" ,v-if='Unsubscribebtn', v-bind:to="links.Unsubscribebtnlink")
+                    | Unsubscribe
+                router-link.linksec.btn.btn-default.samobuttopcontroller(style="font-size: 13px;" ,v-if='Settingsbtn', v-bind:to="links.Settingsbtnlink")
+                    | Settings
+                router-link.links.btn.btn-primary.samobuttopcontroller2(style="font-size: 13px;color:white;",v-if='editbtn', v-bind:to="links.editbtnlink")
+                    | Edit
+                router-link.btn.btn-primary.disabled.samobuttopcontroller2(style="font-size: 13px;color:white;",v-if='validatebtn', v-bind:to="links.validatebtnlink", id='edit1')
+                    | Validate
+                router-link.btn.btn-primary.samobuttopcontroller2#save(style="font-size: 13px;color:white;",v-if='savedbtn',v-bind:to="links.savebtnlink")
+                    | Save
+                router-link.btn.btn-default.samobuttopcontroller(style="font-size: 13px;color: #4c4c4c;", v-if='discardbtn', v-bind:to="links.discardbtnlink")
+                    | Discard
+                a.btn.btn-default.samobuttopcontroller#activity_discardbtn(style="font-size: 13px;display:none;", v-if='discard1btn',v-bind:to="links.discard1btnlink")
+                    | Discard
+                router-link.btn.btn-secondary.samobuttopcontroller(style="font-size: 13px;", v-if='cancelbtn', v-bind:to="links.cancelbtnlink")
+                    | Cancel
+                router-link.btn.btn-secondary.samobuttopcontroller#create_pdf(style="font-size: 13px;",v-if='pbtn', v-bind:to="links.printsbtnlink")
+                    | Prints
+                .button-group.samodropdownbutton2(v-if='measurebtn')
+                    button.btn.btn-default.btn-sm.dropdown-toggle.measurebtn(type='button', data-toggle='dropdown') Measure
+                        span.glyphicon.glyphicon-cog
+                        span.caret
+                router-link.btn.btn-default.fa.fa-expand.o_pivot_flip_button( data-original-title='Flip axis', style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 30px;padding-right: 20px;padding-top: 8px;margin-bottom: 2px;padding-left: 9px;width: 0;font-size: small;margin-left: 9px;' , title='',v-if='sixthbtn',v-bind:to="links.sixthbtnlink")
+                router-link.btn.btn-default.fa.fa-arrows-alt.o_pivot_expand_button( data-original-title='Expand all', style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 30px;padding-right: 20px;padding-top: 8px;margin-bottom: 2px;padding-left: 9px;width: 0;font-size: small;' , title='',v-if='seventhbtn',v-bind:to="links.seventhbtnlink")
+                router-link.btn.btn-default.fa.fa-download.o_pivot_download( data-original-title='Download xls',style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 30px;padding-right: 20px;padding-top: 8px;margin-bottom: 2px;padding-left: 9px;width: 0;font-size: small;' , title='',v-if='eighthbtn',v-bind:to="links.eighthbtnlink")
+
+                    ul.dropdown-menu
+                        li
+                            a.small.dbc(href='#', data-value='option1', tabindex='-1')
+                                input(type='checkbox')
+                                |  Probability
+                        li
+                            a.small.dbc(href='#', data-value='option2', tabindex='-1')
+                                input(type='checkbox')
+                                |  Probable Turnover
+                        li
+                            a.small.dbc(href='#', data-value='option3', tabindex='-1')
+                                input(type='checkbox')
+                                |  Delay to Assign
+                        li
+                            a.small.dbc(href='#', data-value='option4', tabindex='-1')
+                                input(type='checkbox')
+                                |  Delay to Close
+                        li
+                            a.small.dbc(href='#', data-value='option5', tabindex='-1')
+                                input(type='checkbox')
+                                |  Total Revenue
+                        li
+                            a.small.dbc(href='#', data-value='option6', tabindex='-1')
+                                input(type='checkbox')
+                                |  OverPassed Deadline
+                        li
+                            a.small.dbc(href='#', data-value='option6', tabindex='-1')
+                                input(type='checkbox')
+                                |  # of Activities
+                        hr
+                        li
+                            a.small.dbc(href='#', data-value='option6', tabindex='-1')
+                                input(type='checkbox')
+                                |  Count
+                .dropdown.samodropdownbutton2#action(style='float: right;margin-top: -15px;', v-if='actionbtn')
+                    button.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
+                        span.fa.fa-filter.iconbutton
+                        | Action
+                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                        router-link.dropdown-item.delete(v-if='deletedropbtn' v-bind:to="links.deletedropbtnlink") Delete
+                        router-link.dropdown-item.Duplicate(v-if='duplicatedropbtn' v-bind:to="links.duplicatebtnlink") Duplicate
+                        router-link.dropdown-item(v-if='planorderbtn' v-bind:to="links.planorderbtnlink") Plan Orders
+                        router-link.dropdown-item#export(v-if='subordinatebtn' v-bind:to="links.subordinatebtnlink") Subordinate Hierchy
+                        router-link.dropdown-item(v-if='leaveMeetingbtn' v-bind:to="links.leaveMeetingbtnlink") leave Meeting
+                .dropdown.samodropdownbutton2(style='float: right;margin-top: -15px;', v-if='Attachmentbtn')
+                    button#dropdownMenuButton2.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
+                        span.fa.fa-bars.iconbutton
+                        | Attachment(s)
+                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                        a.dropdown-item(href='#') Adds
+                .dropdown.samodropdownbutton2(style='float: right;margin-top: -15px;', v-if='printbtn')
+                    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
+                        span.fa.fa-star.iconbutton
+                        | Print
+                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                        a.dropdown-item.delete_inside#leavesSummary(v-if='leavesSummarybtn' v-bind:to="links.leavesSummarybtnlink") Leaves Summary
+                        router-link.dropdown-item#printBadge(v-if='printBadge' v-bind:to="links.printBadgebtnlink") Print Badge
+                        router-link.dropdown-item#print(v-if='printcontact' v-bind:to="links.printcontactbtnlink") Payment Due
+                        a.dropdown-item(v-if='Production',v-bind:to="links.Productioncontactbtnlink") Production Orders
+            .col-sm-6.samodashcorner
+                .dropdown.samodropdownbutton2(v-if='dropdownbtn1')
+                    button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
+                        span.fa.fa-filter.iconbutton
+                        | filter
+                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                        a.dropdown-item(href='#')#delete Action
+                        a.dropdown-item(href='#') Another action
+                        a.dropdown-item(href='#') Something else here
+                .dropdown.samodropdownbutton2(v-if='dropdownbtn2')
+                    button#dropdownMenuButton2.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
+                        span.fa.fa-bars.iconbutton
+                        | Group By
+                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                        a.dropdown-item(href='#') Action
+                        a.dropdown-item(href='#') Another action
+                        a.dropdown-item(href='#') Something else here
+                .dropdown.samodropdownbutton2(v-if='dropdownbtn3')
+                    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
+                        span.fa.fa-star.iconbutton
+                        | Favourite
+                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                        a.dropdown-item(href='#') Action
+                        a.dropdown-item(href='#') Another action
+                        a.dropdown-item(href='#') Something else here
+
+                div(style='float:right;padding-top: 8px;display: -webkit-inline-box;')
+                    slot(name='page')
+
+                    .col-xs-1
+                        .btn-group.btn-group-sm.o_cp_switch_buttons.samodashbuttcorner
+                            a.btn.btn-icon.fa.fa-lg.fa-th-large.o_cp_switch_kanban.active(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button' , title='',v-if='firstbtn',v-bind:href="links.firstbtnlink")
+                            a.btn.btn-icon.fa.fa-lg.fa-list-ul.o_cp_switch_list(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button',v-if='secondbtn',v-bind:href="links.secondbtnlink")
+                            a.btn.btn-icon.fa.fa-lg.fa-table.o_cp_switch_pivot(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button' ,v-if='thirdbtn',v-bind:href="links.thirdbtnlink")
+                            a.btn.btn-icon.fa.fa-lg.fa-bar-chart.o_cp_switch_graph(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button',v-if='fourthbtn',v-bind:href="links.fourthbtnlink")
+                            a.btn.btn-icon.fa.fa-lg.fa-calendar.o_cp_switch_calendar(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 5px;font-size: inherit;',type='button',v-if='fifthbtn',v-bind:href="links.fifthbtnlink")
+
+
+
+
+
+
+
+
+
+
+
+//.row(style='margin-left: -15px;margin-right: -15px;')
+//    .dashboardcontroller
+//        .col-sm-12.main.samodashcont1
+//            .col-sm-12.samodashheadingmain(style='display: -webkit-inline-box;')
+//                slot(name='job')
+//                .col-sm-6
+//                    .input-group.stylish-input-group(style='height: 35px;',v-if='searchbar')
+//                        input.form-control(type='text', placeholder='Search')
+//                        span.input-group-addon
+//                            button#searchbutton(type='submit')
+//                                span.fa.fa-search-plus.samofa
+//
+//            .col-sm-6.dashcontrollerbutton(style='padding-top: 24px;')
+//                router-link.links.btn.btn-primary.samobuttopcontroller1#create(style="color:white;font-size: 13px;" ,v-if='createbtn', v-bind:to="links.createbtnlink")
+//                    | Create
+//                router-link.links.btn.btn-primary.samobuttopcontroller1(style="color:white;font-size: 13px;",v-if='starbtn', v-bind:to="links.starbtnlink")
+//                    | Unstar all
+//                router-link.links.btn.btn-primary.samobuttopcontroller(style="color:white;font-size: 13px;" ,v-if='Invitebtn', v-bind:to="links.Invitebtnlink")
+//                    | Invite
+//                a.links.btn.btn-primary.samobuttopcontroller1(style="color:white;font-size: 13px;" ,v-if='modal',data-toggle='modal', v-bind:data-target='modal')
+//                    | Create
+//                router-link.linksec.btn.btn-default.samobuttopcontroller(style="font-size: 13px;" ,v-if='importbtn', v-bind:to="links.importbtnlink")
+//                    | Import
+//                router-link.linksec.btn.btn-default.samobuttopcontroller(style="font-size: 13px;" ,v-if='Markbtn', v-bind:to="links.Markbtnlink")
+//                    | Mark All Read
+//                router-link.linksec.btn.btn-default.samobuttopcontroller(style="font-size: 13px;" ,v-if='Unsubscribebtn', v-bind:to="links.Unsubscribebtnlink")
+//                    | Unsubscribe
+//                router-link.linksec.btn.btn-default.samobuttopcontroller(style="font-size: 13px;" ,v-if='Settingsbtn', v-bind:to="links.Settingsbtnlink")
+//                    | Settings
+//                router-link.links.btn.btn-primary.samobuttopcontroller2(style="font-size: 13px;color:white;",v-if='editbtn', v-bind:to="links.editbtnlink")
+//                    | Edits
+//                router-link.btn.btn-primary.disabled.samobuttopcontroller2(style="font-size: 13px;color:white;",v-if='validatebtn', v-bind:to="links.validatebtnlink", id='edit1')
+//                    | Validate
+//                router-link.btn.btn-primary.samobuttopcontroller2#save(style="font-size: 13px;color:white;",v-if='savedbtn', v-bind:to="links.savebtnlink", type="submit")
+//                    | Save
+//                router-link.btn.btn-default.samobuttopcontroller(style="font-size: 13px;color: #4c4c4c;", v-if='discardbtn', v-bind:to="links.discardbtnlink")
+//                    | Discard
+//                a.btn.btn-default.samobuttopcontroller#activity_discardbtn(style="font-size: 13px;display:none;", v-if='discard1btn', v-bind:to="links.discard1btnlink")
+//                    | Discard
+//                router-link.btn.btn-secondary.samobuttopcontroller(style="font-size: 13px;", v-if='cancelbtn', v-bind:to="links.cancelbtnlink")
+//                    | Cancel
+//                .button-group.samodropdownbutton2(v-if='measurebtn')
+//                    button.btn.btn-default.btn-sm.dropdown-toggle.measurebtn(type='button', data-toggle='dropdown') Measure
+//                        span.glyphicon.glyphicon-cog
+//                        span.caret
+//                router-link.btn.btn-default.fa.fa-expand.o_pivot_flip_button( data-original-title='Flip axis', style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 30px;padding-right: 20px;padding-top: 8px;margin-bottom: 2px;padding-left: 9px;width: 0;font-size: small;margin-left: 9px;' , title='',v-if='sixthbtn',v-bind:to="links.sixthbtnlink")
+//                router-link.btn.btn-default.fa.fa-arrows-alt.o_pivot_expand_button( data-original-title='Expand all', style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 30px;padding-right: 20px;padding-top: 8px;margin-bottom: 2px;padding-left: 9px;width: 0;font-size: small;' , title='',v-if='seventhbtn',v-bind:to="links.seventhbtnlink")
+//                router-link.btn.btn-default.fa.fa-download.o_pivot_download( data-original-title='Download xls',style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 30px;padding-right: 20px;padding-top: 8px;margin-bottom: 2px;padding-left: 9px;width: 0;font-size: small;' , title='',v-if='eighthbtn',v-bind:to="links.eighthbtnlink")
+//
+//                    ul.dropdown-menu
+//                        li
+//                            a.small.dbc(href='#', data-value='option1', tabindex='-1')
+//                                input(type='checkbox')
+//                                |  Probability
+//                        li
+//                            a.small.dbc(href='#', data-value='option2', tabindex='-1')
+//                                input(type='checkbox')
+//                                |  Probable Turnover
+//                        li
+//                            a.small.dbc(href='#', data-value='option3', tabindex='-1')
+//                                input(type='checkbox')
+//                                |  Delay to Assign
+//                        li
+//                            a.small.dbc(href='#', data-value='option4', tabindex='-1')
+//                                input(type='checkbox')
+//                                |  Delay to Close
+//                        li
+//                            a.small.dbc(href='#', data-value='option5', tabindex='-1')
+//                                input(type='checkbox')
+//                                |  Total Revenue
+//                        li
+//                            a.small.dbc(href='#', data-value='option6', tabindex='-1')
+//                                input(type='checkbox')
+//                                |  OverPassed Deadline
+//                        li
+//                            a.small.dbc(href='#', data-value='option6', tabindex='-1')
+//                                input(type='checkbox')
+//                                |  # of Activities
+//                        hr
+//                        li
+//                            a.small.dbc(href='#', data-value='option6', tabindex='-1')
+//                                input(type='checkbox')
+//                                |  Count
+//
+//                .dropdown.samodropdownbutton2(style='float: right;margin-top: -15px;', v-if='actionbtn')
+//                    button.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
+//                        span.fa.fa-filter.iconbutton
+//                        | Action
+//                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+//                        a.dropdown-item.delete(href='#') Delete
+//                        a.dropdown-item.Duplicate(href='#') Duplicate
+//                        a.dropdown-item(href='#') Plan Orders
+//                .dropdown.samodropdownbutton2(style='float: right;margin-top: -15px;', v-if='Attachmentbtn')
+//                    button#dropdownMenuButton2.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
+//                        span.fa.fa-bars.iconbutton
+//                        | Attachment(s)
+//                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+//                        a.dropdown-item(href='#') Add
+//
+//                .dropdown.samodropdownbutton2(style='float: right;margin-top: -15px;', v-if='printbtn')
+//                    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
+//                        span.fa.fa-star.iconbutton
+//                        | Print
+//                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+//                        a.dropdown-item(href='#') Production Orders
+//
+//            .col-sm-6.samodashcorner
+//                .dropdown.samodropdownbutton2(v-if='dropdownbtn1')
+//                    button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
+//                        span.fa.fa-filter.iconbutton
+//                        | filters
+//                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+//                        a.dropdown-item(href='#')#delete Action
+//                        a.dropdown-item(href='#') Another action
+//                        a.dropdown-item(href='#') Something else here
+//                .dropdown.samodropdownbutton2(v-if='dropdownbtn2')
+//                    button#dropdownMenuButton2.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
+//                        span.fa.fa-bars.iconbutton
+//                        | Group By
+//                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+//                        a.dropdown-item(href='#') Action
+//                        a.dropdown-item(href='#') Another action
+//                        a.dropdown-item(href='#') Something else here
+//                .dropdown.samodropdownbutton2(v-if='dropdownbtn3')
+//                    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
+//                        span.fa.fa-star.iconbutton
+//                        | Favourite
+//                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+//                        a.dropdown-item(href='#') Action
+//                        a.dropdown-item(href='#') Another action
+//                        a.dropdown-item(href='#') Something else here
+//
+//                div(style='float:right;padding-top: 8px;display: -webkit-inline-box;')
+//                    slot(name='page')
+//
+//                    .col-xs-1
+//                        .btn-group.btn-group-sm.o_cp_switch_buttons.samodashbuttcorner
+//                            a.btn.btn-icon.fa.fa-lg.fa-th-large.o_cp_switch_kanban.active(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button' , title='',v-if='firstbtn',v-bind:href="links.firstbtnlink")
+//                            a.btn.btn-icon.fa.fa-lg.fa-list-ul.o_cp_switch_list(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button',v-if='secondbtn',v-bind:href="links.secondbtnlink")
+//                            a.btn.btn-icon.fa.fa-lg.fa-table.o_cp_switch_pivot(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button' ,v-if='thirdbtn',v-bind:href="links.thirdbtnlink")
+//                            a.btn.btn-icon.fa.fa-lg.fa-bar-chart.o_cp_switch_graph(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button',v-if='fourthbtn',v-bind:href="links.fourthbtnlink")
+//                            a.btn.btn-icon.fa.fa-lg.fa-calendar.o_cp_switch_calendar(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 5px;font-size: inherit;',type='button',v-if='fifthbtn',v-bind:href="links.fifthbtnlink")
+//
+//
+//
+//
+//
+//
+//
+//
+////.row(style='margin-left: -15px;margin-right: -15px;')
+////    .dashboardcontroller
+////        .col-sm-12.main.samodashcont1
+////            .col-sm-12.samodashheadingmain(style='display: -webkit-inline-box;')
+////                .col-sm-6(style='padding:0px;')
+////                    h4.samodashheading(style="font-size: 18px;",v-if='heading') {{ heading }}
+////                .col-sm-6
+////                    .input-group.stylish-input-group(style='height: 35px;',v-if='searchbar')
+////                        input.form-control(type='text', placeholder='Search')
+////                        span.input-group-addon
+////                            button#searchbutton(type='submit')
+////                                span.fa.fa-search-plus.samofa
+////
+////            .col-sm-6.dashcontrollerbutton(style='padding-top: 24px;')
+////                router-link.links.btn.btn-primary.samobuttopcontroller1#create(style="color:white;font-size: 13px;" ,v-if='createbtn', v-bind:to="links.createbtnlink")
+////                    | Create
+////                router-link.links.btn.btn-primary.samobuttopcontroller1(style="color:white;font-size: 13px;" ,v-if='starbtn', v-bind:to="links.starbtnlink")
+////                    | Unstar all
+////                router-link.links.btn.btn-primary.samobuttopcontroller(style="color:white;font-size: 13px;" ,v-if='Invitebtn', v-bind:to="links.Invitebtnlink")
+////                    | Invite
+////                a.links.btn.btn-primary.samobuttopcontroller1(style="color:white;font-size: 13px;" ,v-if='modal',data-toggle='modal', v-bind:data-target='modal')
+////                    | Create
+////                router-link.linksec.btn.btn-default.samobuttopcontroller(style="font-size: 13px;" ,v-if='importbtn', v-bind:to="links.importbtnlink")
+////                    | Import
+////                router-link.linksec.btn.btn-default.samobuttopcontroller(style="font-size: 13px;" ,v-if='Markbtn', v-bind:to="links.Markbtnlink")
+////                    | Mark All Read
+////                router-link.linksec.btn.btn-default.samobuttopcontroller(style="font-size: 13px;" ,v-if='Unsubscribebtn', v-bind:to="links.Unsubscribebtnlink")
+////                    | Unsubscribe
+////                router-link.linksec.btn.btn-default.samobuttopcontroller(style="font-size: 13px;" ,v-if='Settingsbtn', v-bind:to="links.Settingsbtnlink")
+////                    | Settings
+////                router-link.links.btn.btn-primary.samobuttopcontroller2(style="font-size: 13px;color:white;",v-if='editbtn', v-bind:to="links.editbtnlink")
+////                    | Edit
+////                router-link.btn.btn-primary.disabled.samobuttopcontroller2(style="font-size: 13px;color:white;",v-if='validatebtn', v-bind:to="links.validatebtnlink", id='edit1')
+////                    | Validate
+////                router-link.btn.btn-primary.samobuttopcontroller2#save(style="font-size: 13px;color:white;",v-if='savedbtn', v-bind:to="links.savebtnlink", type="submit")
+////                    | Save
+////                router-link.btn.btn-default.samobuttopcontroller(style="font-size: 13px;color: #4c4c4c;", v-if='discardbtn', v-bind:to="links.discardbtnlink")
+////                    | Discard
+////                a.btn.btn-default.samobuttopcontroller#activity_discardbtn(style="font-size: 13px;display:none;", v-if='discard1btn', v-bind:to="links.discard1btnlink")
+////                    | Discard
+////                router-link.btn.btn-secondary.samobuttopcontroller(style="font-size: 13px;", v-if='cancelbtn', v-bind:to="links.cancelbtnlink")
+////                    | Cancel
+////                .button-group.samodropdownbutton2(v-if='measurebtn')
+////                    button.btn.btn-default.btn-sm.dropdown-toggle.measurebtn(type='button', data-toggle='dropdown') Measure
+////                        span.glyphicon.glyphicon-cog
+////                        span.caret
+////                router-link.btn.btn-default.fa.fa-expand.o_pivot_flip_button( data-original-title='Flip axis', style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 30px;padding-right: 20px;padding-top: 8px;margin-bottom: 2px;padding-left: 9px;width: 0;font-size: small;margin-left: 9px;' , title='',v-if='sixthbtn',v-bind:to="links.sixthbtnlink")
+////                router-link.btn.btn-default.fa.fa-arrows-alt.o_pivot_expand_button( data-original-title='Expand all', style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 30px;padding-right: 20px;padding-top: 8px;margin-bottom: 2px;padding-left: 9px;width: 0;font-size: small;' , title='',v-if='seventhbtn',v-bind:to="links.seventhbtnlink")
+////                router-link.btn.btn-default.fa.fa-download.o_pivot_download( data-original-title='Download xls',style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 30px;padding-right: 20px;padding-top: 8px;margin-bottom: 2px;padding-left: 9px;width: 0;font-size: small;' , title='',v-if='eighthbtn',v-bind:to="links.eighthbtnlink")
+////
+////                    ul.dropdown-menu
+////                        li
+////                            a.small.dbc(href='#', data-value='option1', tabindex='-1')
+////                                input(type='checkbox')
+////                                |  Probability
+////                        li
+////                            a.small.dbc(href='#', data-value='option2', tabindex='-1')
+////                                input(type='checkbox')
+////                                |  Probable Turnover
+////                        li
+////                            a.small.dbc(href='#', data-value='option3', tabindex='-1')
+////                                input(type='checkbox')
+////                                |  Delay to Assign
+////                        li
+////                            a.small.dbc(href='#', data-value='option4', tabindex='-1')
+////                                input(type='checkbox')
+////                                |  Delay to Close
+////                        li
+////                            a.small.dbc(href='#', data-value='option5', tabindex='-1')
+////                                input(type='checkbox')
+////                                |  Total Revenue
+////                        li
+////                            a.small.dbc(href='#', data-value='option6', tabindex='-1')
+////                                input(type='checkbox')
+////                                |  OverPassed Deadline
+////                        li
+////                            a.small.dbc(href='#', data-value='option6', tabindex='-1')
+////                                input(type='checkbox')
+////                                |  # of Activities
+////                        hr
+////                        li
+////                            a.small.dbc(href='#', data-value='option6', tabindex='-1')
+////                                input(type='checkbox')
+////                                |  Count
+////                .dropdown.samodropdownbutton2(style='float: right;margin-top: -15px;', v-if='actionbtn')
+////                    button.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
+////                        span.fa.fa-filter.iconbutton
+////                        | Action
+////                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+////                        a.dropdown-item(href='#') Delete
+////                        a.dropdown-item(href='#') Duplicate
+////                        a.dropdown-item(href='#') Plan Orders
+////
+////                .dropdown.samodropdownbutton2(style='float: right;margin-top: -15px;', v-if='Attachmentbtn')
+////                    button#dropdownMenuButton2.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
+////                        span.fa.fa-bars.iconbutton
+////                        | Attachment(s)
+////                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+////                        a.dropdown-item(href='#') Add
+////
+////                .dropdown.samodropdownbutton2(style='float: right;margin-top: -15px;', v-if='printbtn')
+////                    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
+////                        span.fa.fa-star.iconbutton
+////                        | Print
+////                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+////                        a.dropdown-item(href='#') Production Orders
+////
+////            .col-sm-6.samodashcorner
+////                .dropdown.samodropdownbutton2(v-if='dropdownbtn1')
+////                    button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
+////                        span.fa.fa-filter.iconbutton
+////                        | filters
+////                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+////                        a.dropdown-item(href='#') Action
+////                        a.dropdown-item(href='#') Another action
+////                        a.dropdown-item(href='#') Something else here
+////                .dropdown.samodropdownbutton2(v-if='dropdownbtn2')
+////                    button#dropdownMenuButton2.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
+////                        span.fa.fa-bars.iconbutton
+////                        | Group By
+////                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+////                        a.dropdown-item(href='#') Action
+////                        a.dropdown-item(href='#') Another action
+////                        a.dropdown-item(href='#') Something else here
+////                .dropdown.samodropdownbutton2(v-if='dropdownbtn3')
+////                    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
+////                        span.fa.fa-star.iconbutton
+////                        | Favourite
+////                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+////                        a.dropdown-item(href='#') Action
+////                        a.dropdown-item(href='#') Another action
+////                        a.dropdown-item(href='#') Something else here
+////                div(style='float:right;padding-top: 8px;display: -webkit-inline-box;')
+////                    span.o_pager_value(v-if='num1') 1-24
+////                        |  /
+////                        span.o_pager_limit(style="padding-right: 6px;",v-if='num2') 24
+////                        span.btn-group.btn-group-sm
+////                            button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p', disabled='',v1-if='paginbtn1')
+////                            button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n', disabled='',v1-if='paginbtn2')
+////                    .col-xs-1
+////                        .btn-group.btn-group-sm.o_cp_switch_buttons.samodashbuttcorner
+////                            a.btn.btn-icon.fa.fa-lg.fa-th-large.o_cp_switch_kanban.active(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button' , title='',v-if='firstbtn',v-bind:href="links.firstbtnlink")
+////                            a.btn.btn-icon.fa.fa-lg.fa-list-ul.o_cp_switch_list(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button',v-if='secondbtn',v-bind:href="links.secondbtnlink")
+////                            a.btn.btn-icon.fa.fa-lg.fa-table.o_cp_switch_pivot(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button' ,v-if='thirdbtn',v-bind:href="links.thirdbtnlink")
+////                            a.btn.btn-icon.fa.fa-lg.fa-bar-chart.o_cp_switch_graph(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button',v-if='fourthbtn',v-bind:href="links.fourthbtnlink")
+////                            a.btn.btn-icon.fa.fa-lg.fa-calendar.o_cp_switch_calendar(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 5px;font-size: inherit;',type='button',v-if='fifthbtn',v-bind:href="links.fifthbtnlink")
+////
+////
+////
+////
+////

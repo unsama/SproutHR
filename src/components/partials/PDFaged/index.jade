@@ -1,0 +1,77 @@
+.container-fluid
+    .modal.fade.bd-example-modal-lg7(tabindex='-1', role='dialog', aria-labelledby='myLargeModalLabel', aria-hidden='true')
+        .modal-dialog.modal-lg
+            .modal-content(style='width: 123%; margin-left: -79px;')
+                .modal-header
+                    h6.modal-title(style='font-weight:bold;') Aged Partner Balance
+                    button.close(type='button', data-dismiss='modal') ×
+                .modal-body
+                    table.o_group.o_inner_group
+                        tbody
+                            tr
+                                td(colspan='2', style='width: 100%;')
+                                    .o_horizontal_separator(style='font-size: 1.6rem; font-weight:bold; color:#7c7bad;')
+                                        | Aged Partner Balance
+                    p(style='font-weight:600; font-size: 0.9rem; ') Aged Partner Balance is a more detailed report of your receivables by intervals. Odoo calculates a table of credit balance by start Date. So if you request an interval of 30 days Odoo generates an analysis of creditors for the past month, past two months, and so on.
+
+                    .row
+
+                    table.o_group.o_inner_group
+                        tbody
+
+                            tr
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label
+                                        | Start Date
+                                td.two(colspan='1', style='width: 50%;')
+                                    form#dateRangeForm.form-horizontal(method='post')
+                                        .form-group
+                                            #dateRangePicker.input-group.input-append.date
+                                                input.input-group-addon.form-control(type='text', name='date', style='height:25px; width: 95px;  text-align: left; background-color: transparent; margin-right: 10px;')
+
+
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label
+                                        | Period Length (days)
+                                td.two(colspan='1', style='width: 50%;')
+                                    input#o_field_input_87.o_form_input.o_form_field(style='width: 100%; background-color: #D2D2FF;')(type='text')
+                            tr
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label
+                                        | Partner's
+                                td.two(colspan='1', style='width: 50%;')
+                                    .o_form_field_radio.o_vertical.o_form_field.o_form_required
+                                        .o_radio_item
+                                            input#radio21_posted.o_form_radio(type='radio', name='radio21', value='posted')
+                                            label.o_form_label(for='radio21_posted') Receivable Accounts
+
+                                        .o_radio_item
+                                            input#radio21_all.o_form_radio(type='radio', name='radio21', value='all')
+                                            label.o_form_label(for='radio21_all') Payable Accounts
+                                        .o_radio_item
+                                            input#radio21_all.o_form_radio(type='radio', name='radio21', value='all')
+                                            label.o_form_label(for='radio21_all') Receivable and Payable Accounts
+
+
+
+
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label
+                                        | Target Moves
+                                td.two(colspan='1', style='width: 50%;')
+                                    .o_form_field_radio.o_vertical.o_form_field.o_form_required
+                                        .o_radio_item
+                                            input#radio21_posted.o_form_radio(type='radio', name='radio21', value='posted')
+                                            label.o_form_label(for='radio21_posted') All Posted Entries
+                                        .o_radio_item
+                                            input#radio21_all.o_form_radio(type='radio', name='radio21', value='all')
+                                            label.o_form_label(for='radio21_all') All Entries
+
+
+
+                .modal-footer(style='justify-content: flex-start;')
+                    button.btn.btn-primary.samobuttopcontroller1(style='width: 7%; font-size: 0.9rem;')(type='button', href='#') Print
+                    p(style='margin-bottom: 0rem;') or
+                    button.btn.btn-primary.samobuttopcontroller2(type='button', data-dismiss='modal')(style='width: 6%; background-color: lightgray; font-size: 0.9rem;') Cancel
+
+

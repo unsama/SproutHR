@@ -1,0 +1,39 @@
+.all_transfers_table
+    DashboardController( v-bind:heading="head",v-bind:editbtn='true',v-bind:createbtn='true', v-bind:actionbtn='true', v-bind:attachmentbtn='true',v-bind:num1='true', v-bind:num2='true', v-bind:links="btnlinks" )
+    .o_content.samocontent
+        .o_view_manager_content
+            .o_form_view.o_form_readonly#hasH
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .row
+
+                        table.o_group.o_inner_group
+                            tbody
+
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label(style='font-size: 0.9rem; ')
+                                            | Date
+                                    td.two(colspan='1', style='width: 50%;')
+                                        label 01/01/2010 05:00:00
+
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label
+                                            | Currency
+                                    td.two(colspan='1', style='width: 50%;')
+                                        a.o_form_uri.o_form_field.o_form_required(href='http://192.168.25.104:8040/#/app/accounting/currencies')(style='font-size: 0.9rem; ') AED
+
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label(style='font-size: 0.9rem; ')
+                                            | Rate
+                                    td.two(colspan='1', style='width: 50%;')
+                                        label 4.512532
+
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label
+                                            | Company
+                                    td.two(colspan='1', style='width: 50%;')
+                                        a.o_form_uri.o_form_field.o_form_required(href='#')(style='font-size: 0.9rem; ') Alupak Industriess
+
+

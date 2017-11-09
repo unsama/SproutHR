@@ -1,0 +1,193 @@
+.externallayoutfootercreate
+    DashboardController(v-bind:savedbtn="true",v-bind:heading="activityimport",v-bind:Attachmentbtn='true',v-bind:actionbtn='true',v-bind:discardbtn='true',v-bind:links="btnlinks")
+        .col-sm-6(style='padding:0px;' ,slot='heading')
+            h4.samodashheading(style="font-size: 18px;") General Settings / New
+    .o_view_manager_content
+        .o_form_view.o_form_editable
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .o_group
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_35')
+                                            | View Name
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_35.o_form_input.o_form_field.o_form_required(type='text',v-model='viewname')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_36')
+                                            | View Type
+                                    td(colspan='1', style='width: 100%;')
+                                        select#o_field_input_36.o_form_input.o_form_field(name='type',v-model='viewtype')
+                                            option(value='false')
+                                            option(value='tree') Tree
+                                            option(value='form') Form
+                                            option(value='graph') Graph
+                                            option(value='pivot') Pivot
+                                            option(value='calendar') Calendar
+                                            option(value='diagram') Diagram
+                                            option(value='gantt') Gantt
+                                            option(value='kanban') Kanban
+                                            option(value='search') Search
+                                            option(value='qweb') QWeb
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_37')
+                                            | Model
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_37.o_form_input.o_form_field(type='text',v-model='model')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_38')
+                                            | Sequence
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_38.o_form_input.o_form_field.o_form_required.o_form_field_number(type='text',v-model='sequence')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help(for='o_field_input_39', data-original-title='', title='')
+                                            | Active
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_checkbox.o_form_field_boolean.o_form_field
+                                            input#o_field_input_39(type='checkbox', name='active',v-model='active')
+                                            span
+                        table.o_group.o_inner_group.o_form_invisible.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_40')
+                                            | Child Field
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_40.o_form_input.o_form_field(type='text')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_41')
+                                            | Inherited View
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_form_field
+                                            .o_form_input_dropdown
+                                                input#o_field_input_41.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help(for='o_field_input_42', data-original-title='', title='')
+                                            | View inheritance mode
+                                    td(colspan='1', style='width: 100%;')
+                                        select#o_field_input_42.o_form_input.o_form_field.o_form_required(name='mode')
+                                            option(value='false')
+                                            option(value='"primary"') Base view
+                                            option(value='"extension"') Extension View
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_43')
+                                            | Model Data
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false(for='o_field_input_44', data-original-title='', title='')
+                                            | External ID
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field.o_form_field_empty
+                    .o_notebook
+                        ul.nav.nav-tabs(role='tablist')
+                            li.nav-item
+                                a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Architecture
+                            li.nav-item
+                                a.nav-link(href='#buzz', role='tab', data-toggle='tab') Access Rights
+                            li.nav-item
+                                a.nav-link(href='#buzz1', role='tab', data-toggle='tab') Inherited Views
+                        .tab-content.nav.nav-tabs
+                            #profile.tab-pane.fade.in.active(role='tabpanel')
+                                button.btn.btn-sm.oe_link.oe_right(type='button', style='margin-left:144px;')
+                                    span Edit Translations
+                                .oe_form_field.o_ace_view_editor.oe_ace_open.o_form_field
+                                    textarea(name='editor1', id='editor1', rows='10', column='80' value='lahbfkjaegf') gisgohgpinlignoigoiengoinb
+                            #buzz.tab-pane.fade.in(role='tabpanel', style='width:100%;')
+                                .o_form_field.o_view_manager_content(data-original-title='', title='')
+                                    .o_x2m_control_panel
+                                        .o_cp_buttons
+                                        .o_cp_pager
+                                            .o_hidden
+                                                span.o_pager_value
+                                                |  /
+                                                span.o_pager_limit
+                                                span.btn-group.btn-group-sm
+                                                    button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                    button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                    div
+                                        .table-responsive
+                                            table.o_list_view.table.table-condensed.table-striped
+                                                thead
+                                                    tr
+                                                        th(data-id='full_name')
+                                                            | Group Name
+                                                        th.o_list_record_delete
+                                                tfoot
+                                                    tr
+                                                        td
+                                                        td.o_list_record_delete
+                                                tbody
+                                                    tr
+                                                        td.o_form_field_x2many_list_row_add(colspan='2')
+                                                            a(href='#') Add an item
+                                                    tr
+                                                        td(title='Group Name')  
+                                                        td.o_list_record_delete
+                                                    tr
+                                                        td(title='Group Name')  
+                                                        td.o_list_record_delete
+                                                    tr
+                                                        td(title='Group Name')  
+                                                        td.o_list_record_delete
+                            #buzz1.tab-pane.fade.in(role='tabpanel' style='width:100%;')
+                                .o_form_field.o_view_manager_content
+                                    .o_x2m_control_panel
+                                        .o_cp_buttons
+                                        .o_cp_pager
+                                            .o_hidden
+                                                span.o_pager_value
+                                                |  /
+                                                span.o_pager_limit
+                                                span.btn-group.btn-group-sm
+                                                    button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                    button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                    div
+                                        .table-responsive
+                                            table.o_list_view.table.table-condensed.table-striped
+                                                thead
+                                                    tr
+                                                        th.o_column_sortable(data-id='priority')
+                                                            | Sequence
+                                                        th.o_column_sortable(data-id='name')
+                                                            | View Name
+                                                        th(data-id='xml_id')
+                                                            | External ID
+                                                        th.o_list_record_delete
+                                                tfoot
+                                                    tr
+                                                        td
+                                                        td
+                                                        td
+                                                        td.o_list_record_delete
+                                                tbody
+                                                    tr
+                                                        td.o_form_field_x2many_list_row_add(colspan='4')
+                                                            a(href='#') Add an item
+                                                    tr
+                                                        td(title='Sequence')  
+                                                        td(title='View Name')  
+                                                        td(title='External ID')  
+                                                        td.o_list_record_delete
+                                                    tr
+                                                        td(title='Sequence')  
+                                                        td(title='View Name')  
+                                                        td(title='External ID')  
+                                                        td.o_list_record_delete
+                                                    tr
+                                                        td(title='Sequence')  
+                                                        td(title='View Name')  
+                                                        td(title='External ID')  
+                                                        td.o_list_record_delete

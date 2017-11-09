@@ -1,0 +1,154 @@
+.Product_inner_Edit
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:num1='false',v-bind:num2='false',v1-bind:paginbtn1='true',v1-bind:paginbtn2='true',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false',v-bind:dropdownbtn1='false',v-bind:dropdownbtn2='false',v-bind:dropdownbtn3='false',v-bind:actionbtn='false',v-bind:Attachmentbtn='false',v-bind:printbtn='false')
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_editable
+                .o_form_sheet_bg.row
+                    .o_form_sheet
+                        .o_form_field_many2one.o_form_field.o_form_invisible(data-original-title='', title='')
+                            .o_form_input_dropdown
+                                input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                span.o_dropdown_button(draggable='false')
+                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-files-o.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value 0
+                                    span.o_stat_text Documents
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-tasks.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value 0
+                                    span.o_stat_text Tasks
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-bug.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value 0
+                                    span.o_stat_text Issues
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-calendar.o_button_icon
+                                span Timesheets
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                .o_stat_info.o_form_field(data-original-title='', title='')
+                                    span.o_stat_text.o_not_hover.text-success Active
+                                    span.o_stat_text.o_hover.text-danger Archive
+                        .oe_title
+                            h1
+                                input.o_form_input.o_form_field.o_form_required(placeholder='Project Name', type='text')
+                            div(name='options_active')
+                                div
+                                    .o_checkbox.o_form_field_boolean.oe_inline.o_form_field
+                                        input#o_field_input_92(type='checkbox', name='use_tasks')
+                                        span
+                                    label.o_form_label.o_form_label_help.oe_inline(for='o_field_input_92', data-original-title='', title='')
+                                        | Tasks
+                                    span(attrs="{'invisible':[('use_tasks', '=', False)]}",style='padding-right: 5px;') as
+                                    input.o_form_input.oe_inline.oe_input_align.o_form_field(type='text', data-original-title='', title='')
+                                div
+                                    .o_checkbox.o_form_field_boolean.oe_inline.o_form_field
+                                        input#o_field_input_93(type='checkbox', name='use_issues')
+                                        span
+                                    label.o_form_label.o_form_label_help.oe_inline(for='o_field_input_93', data-original-title='', title='')
+                                        | Issues
+                                    span(attrs="{'invisible':[('use_issues', '=', False)]}",style='padding-right: 5px;') as
+                                    input.o_form_input.oe_inline.oe_input_align.o_form_field(type='text', data-original-title='', title='')
+                                div
+                                    .o_checkbox.o_form_field_boolean.oe_inline.o_form_field
+                                        input#o_field_input_94(type='checkbox', name='allow_timesheets')
+                                        span
+                                    label.o_form_label(for='o_field_input_94')
+                                        | Allow timesheets
+                        .o_notebook(style='margin-top:0px;')
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Description
+                                li.nav-item
+                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') Extra Info
+
+
+
+                            .tab-content
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+                                    textarea.o_form_textarea.o_form_field(rows='6', name='description', placeholder='Add an internal note...', style='height: 50px;')
+
+
+
+
+                                #buzz.tab-pane.fade.in(role='tabpanel')
+                                    .o_group
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                            | ID
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_invisible.o_form_field_empty
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label
+                                                            | Days to Assign
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_field_number 0.00
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label
+                                                            | Days to Close
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_field_number 0.00
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(data-original-title='', title='')
+                                                            | Kanban Blocked Explanation
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_invisible.o_form_field_empty
+                                                        button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(data-original-title='', title='')
+                                                            | Kanban Valid Explanation
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_invisible.o_form_field_empty
+                                                        button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(data-original-title='', title='')
+                                                            | Kanban Ongoing Explanation
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_invisible.o_form_field_empty
+                                                        button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label
+                                                            | Working Hours to assign the Issue
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_field_number 00:00
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label
+                                                            | Working Hours to close the Issue
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_field_number 00:00
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                            | Days since last action
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_field_number 0
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                            | Days since creation date
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_field_number 0
+
+
+
+
+
+
+

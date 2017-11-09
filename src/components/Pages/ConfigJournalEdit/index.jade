@@ -1,0 +1,122 @@
+.request_quotation_inner
+    DashboardController(v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks", v-bind:heading='head', v-bind:num1='true', v-bind:num2='true')
+    .o_content.samocontent#tax1(style='margin-left: -15px;margin-right: -15px;')
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .row
+                            h6(style='padding-left: 13px;') Journal Name
+                                input#o_field_input_87.o_form_input.o_form_field(style='width: 77%; font-size: 23px; font-weight:bold; height: 88%; background-color: #D2D2FF; padding-left: 13px;')(value='Miscellaneous Operations' , type='text')
+
+
+
+                            table.o_group.o_inner_group
+                                tbody
+
+                                    tr
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label(style='font-size: 0.9rem; padding-left: 13px;')
+                                                | Type
+                                        td.two(colspan='1', style='width: 50%;')
+                                            select#o_field_input_186.o_form_input.o_form_field(style='width: 211px; background-color: #D2D2FF;')(name='format')
+                                                option(value='"A0"') Miscellaneous
+                                                option(value='true') Sales
+                                                option(value='"A0"') Purchase
+                                                option(value='"A0"') Cash
+
+
+
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label
+                                                | Company
+                                        td.two(colspan='1', style='width: 50%;')
+                                            select#o_field_input_186.o_form_input.o_form_field(style='width: 211px; background-color: #D2D2FF; ')(name='format')
+                                                option(value='true') Alupak Industriess
+                                                option(value='"A0"') My Company;wojjfp;ofo, Chicago
+
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button#bttn(style='color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button', data-toggle='modal', href='#myModal2')
+
+                                    br
+
+
+
+
+                            .o_notebook(style='margin-top:-15px; padding-left:13px;')
+                                ul.nav.nav-tabs(role='tablist')
+                                    li.nav-item
+                                        a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Definition
+                                    li.nav-item
+                                        a.nav-link(href='#buzz', role='tab', data-toggle='tab') Advanced Option
+                                // Tab panes
+                                .tab-content
+                                    #profile.tab-pane.fade.in.active(role='tabpanel')
+
+                                        table.o_group.o_inner_group
+                                            tbody
+
+                                                tr
+                                                    td.o_td_label.one(colspan='1')
+                                                        label.o_form_label(style='font-size: 0.9rem; padding-left: 13px;')
+                                                            | Short Code
+                                                    td.two(colspan='1', style='width: 50%;')
+                                                        input#o_field_input_87.o_form_input.o_form_field(style='width: 108%; background-color: #D2D2FF;')(value='MISC',type='text')
+
+                                                    td.o_td_label.one(colspan='1')
+                                                        label.o_form_label
+                                                            | Default Debit Account
+                                                    td.two(colspan='1', style='width: 50%;')
+                                                        select#o_field_input_186.o_form_input.o_form_field(style='width: 211px; ')(name='format')
+                                                            option(value='true') 090000 abc
+                                                            option(value='"A0"') 100000 Fixed Asset Account
+                                                            option(value='"A0"') 100008 Alfalah Card
+                                                            option(value='"A0"') 101000 Current Assets
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button#bttn(style='color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button', data-toggle='modal', href='#myModal2')
+                                                tr
+                                                    td
+
+                                                    td
+
+                                                    td.o_td_label.one(colspan='1')
+                                                        label.o_form_label
+                                                            | Default Credit Account
+                                                    td.two(colspan='1', style='width: 50%;')
+                                                        select#o_field_input_186.o_form_input.o_form_field(style='width: 211px; ')(name='format')
+                                                                option(value='true') 090000 abc
+                                                                option(value='"A0"') 100000 Fixed Asset Account
+                                                                option(value='"A0"') 100008 Alfalah Card
+                                                                option(value='"A0"') 101000 Current Assets
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button#bttn(style='color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button', data-toggle='modal', href='#myModal2')
+                                                tr
+                                                    td
+
+                                                    td
+
+                                                    td.o_td_label.one(colspan='1')
+                                                        label.o_form_label
+                                                            | Currency
+                                                    td.two(colspan='1', style='width: 50%;')
+                                                        select#o_field_input_186.o_form_input.o_form_field(style='width: 211px; ')(name='format')
+                                                            option(value='true') EUR
+                                                            option(value='"A0"') AED
+                                                            option(value='"A0"') USD
+
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button#bttn(style='color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button', data-toggle='modal', href='#myModal2')
+
+
+                                    #buzz.tab-pane.fade.in(role='tabpanel')
+                                        table.o_group.o_inner_group
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Miscellaneous
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label
+                                                            | Group Invoice Lines
+                                                    td(colspan='1', style='width: 100%; font-size: 0.8rem;')
+                                                        .o_checkbox
+                                                            input(type='checkbox')
+                                                            span
+

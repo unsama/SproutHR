@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+    div.row
+        div.col-md-4.offset-md-4
+            div.logo-con
+                img.img-fluid(src="/images/logo.png")
+            div.card.shadwo-2
+                div.card-block
+                    if (messages.length > 0)
+                        div.alert.alert-danger
+                            for message in messages
+                                p.mb-0= message
+                    form(action='/user/login' method='post')
+                        div.form-group
+                            label(for='username') Username
+                            input.form-control#username(type='text' name='username')
+                        div.form-group
+                            label(for='password') Password
+                            input.form-control#password(type='password' name='password')
+                        div.form-group
+                            label.custom-control.custom-checkbox
+                                input.custom-control-input(type='checkbox' name='remember')
+                                span.custom-control-indicator
+                                span.custom-control-description Remember me
+                        div.text-right
+                            button.btn.btn-success(type='submit') Login
+                            input(type='hidden' name='_csrf' value=csrfToken)
+            div.mt-2
+                p.m-0
+                    b forgot your password?&nbsp;
+                    a(href='/user/forgot_password') click here

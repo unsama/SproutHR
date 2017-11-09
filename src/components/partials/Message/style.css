@@ -1,0 +1,143 @@
+
+.messagebtn1{
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+    color: white;
+    background-color: #7c7bad;
+    border-color: #7c7bad;
+}
+
+.messagebtn2{
+    color: #555487;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+}
+
+.samobtn1,.samobtn2{
+    display: none;
+}
+
+h6{
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #a8a8a8;
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+
+.messageinput1{
+
+    height: 62px;
+    padding: 0px;
+    padding-bottom: 33px;
+    padding-left: 9px;
+    color: lightgrey;
+    font-size: 13px;
+}
+
+/*.samomessagebtn{*/
+    /*border: 1px solid;*/
+    /*color: white !important;*/
+    /*background-color: #7c7bad !important;*/
+    /*border-color: #7c7bad !important;*/
+    /*font-size: 12px;*/
+    /*padding: 5px 10px;*/
+    /*font-size: 12px;*/
+    /*line-height: 1.5;*/
+    /*border-radius: 3px;*/
+/*}*/
+
+/*.samomessagebtn:hover{*/
+    /*color: white;*/
+    /*background-color: #5f5e97;*/
+    /*border-color: #5b5a91;*/
+/*}*/
+
+/*.samomessagebtn1{*/
+    /*border: 1px solid;*/
+    /*color: white !important;*/
+    /*background-color: #7c7bad !important;*/
+    /*border-color: #7c7bad !important;*/
+    /*font-size: 12px;*/
+    /*padding: 5px 10px;*/
+    /*font-size: 12px;*/
+    /*line-height: 1.5;*/
+    /*border-radius: 3px;*/
+/*}*/
+
+/*.samomessagebtn2{*/
+    /*border: 1px solid;*/
+    /*color: white !important;*/
+    /*background-color: #7c7bad !important;*/
+    /*border-color: #7c7bad !important;*/
+    /*font-size: 12px;*/
+
+    /*font-size: 12px;*/
+
+/*}*/
+
+
+/* Popup container - can be anything you want */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+
+

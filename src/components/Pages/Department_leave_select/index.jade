@@ -1,0 +1,117 @@
+.Department_leave_select
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true',v-bind:dropdownMenuButton='true',v-bind:Attachmentbtn='true',v-bind:actionbtn='true',v-bind:duplicatedropbtn='true',v-bind:deletedropbtn='true',v-bind:planorderbtn='false', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Department Leaves Allocation/{{employeename}} on {{type}} :{{duration}} day(s)
+        span.o_pager_value(slot='page') {{counter}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="counter--",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="counter++",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+    leave_type
+    selectallocation
+        .o_form_view.o_form_readonly(slot='selectallocation')
+            .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                input(type='checkbox', name='can_reset', disabled='')
+                span
+            span.o_form_field.o_form_required.o_form_invisible(data-original-title='', title='') Allocation Request
+            header
+                button.btn.btn-sm#c(v-on:click="submit3('confirm')",style='display:none;',type='button',value='confirm')
+                    span Confirm
+                button.btn.btn-sm.oe_highlight#a(v-on:click="submit3('approved')",type='button',value='approve')
+                    span Approve
+                button.btn.btn-sm.oe_highlight.o_form_invisible(type='button')
+                    span Validate
+                button.btn.btn-sm#q(v-on:click="submit3('Refused')",type='button',value='Refuse')
+                    span Refuse
+                button.btn.btn-sm#d(style='display:none;',type='button')
+                    span Reset to Drafts
+                ul.oe_form_field_status.oe_form_status.o_form_field(data-original-title='', title='')
+                    li#submit
+                        span.label To Submit
+                        span.arrow
+                            span
+                    li#toapprrove.oe_active
+                        span.label To Approve
+                        span.arrow
+                            span
+                    li#resused(style='display:none;')
+                        span.label Refused
+                        span.arrow
+                            span
+                    li#aprroved
+                        span.label Approved
+                        span.arrow
+                            span
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .oe_title
+                        h1
+                            span.o_form_field {{employeename}} on {{type}} : {{duration}} day(s)
+                    .o_group
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Description
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field {{description}}
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Leave Type
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field {{type}}
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Duration
+                                    td(colspan='1', style='width: 100%;')
+                                        div
+                                            .o_form_invisible(attrs="{'invisible': [('type', '=', 'add')]}")
+                                                span.o_form_field_date.oe_inline.o_form_field.o_form_field_empty
+                                                label.o_form_label.oe_inline
+                                                    | -
+                                                span.o_form_field_date.oe_inline.o_form_field.o_form_field_empty
+                                            div
+                                                span.oe_inline.o_form_field.o_form_field_number {{duration}}
+                                                |  days
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                            | Mode
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field.o_form_required {{mode}}
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Employee
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_required(href='#') {{employeename}}
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false( data-original-title='', title='')
+                                            | Employee Tag
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Department
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field(href='#') {{name}}
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_false( data-original-title='', title='')
+                                            | Reported in last payslips
+                                    td(colspan='1', style='width: 100%;')
+                                        button.o_icon_button.o_form_field.o_form_invisible(type='button', title='Reported in last payslips')
+                                            i.fa.fa-circle.text-muted(title='Reported in last payslips')
+                        span.o_form_textarea.o_group_col_12.o_form_field.o_form_field_empty
+                        .o_group_col_6(attrs="{'invisible':[('type','=','add')]}")
+                            .o_horizontal_separator
+                                | Comment by Managers
+                            span.o_form_field.o_form_required {{comment_manager}}

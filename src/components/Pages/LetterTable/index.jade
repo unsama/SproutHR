@@ -1,0 +1,12 @@
+.LetterTable
+    DashboardController(v-bind:save='true',v-bind:heading="nextactivity",v-bind:actionbtn='true',v-bind:duplicatedropbtn='true',v-bind:deletedropbtn='true',v-bind:planorderbtn='true',v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:firstbtn='true',v-bind:secondbtn='true')
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Resumes and Letterss
+        span.o_pager_value(slot='page') {{counter}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="select4()",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="select3()",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+    TableMain(v-bind:tableheader='tableheader',v-bind:bullet='false', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter",data-toggle='modal', data-target='.bd-example-modal-lg0')

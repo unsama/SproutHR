@@ -1,0 +1,516 @@
+a {
+    color: orange;
+}
+
+.new-tab-link {
+    padding-right: 14px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3ggXDSIzCeRHfQAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAA9SURBVBjTY2RAA/+XMvxHF2NkwAOwacCq4P9Shv8suFQzRiNsYUEXwKoJ2VhkNrIaJgYiAAs2N2BVRMirAD6JHi10MCdVAAAAAElFTkSuQmCC) no-repeat right center;
+}
+
+#wrapper {
+    position: relative;
+}
+
+.page-title {
+    font: 400 40px/1.5 Open Sans, sans-serif;
+    text-align: center;
+}
+
+.circles {
+    margin-bottom: -10px;
+}
+
+.circle {
+    width: 150px;
+    margin: 6px 6px 20px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.circle canvas {
+    vertical-align: top;
+}
+
+.circle strong {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 30px;
+}
+
+.circle strong i {
+    font-style: normal;
+    font-size: 0.6em;
+    font-weight: normal;
+}
+
+.circle span {
+    display: block;
+    color: #aaa;
+    margin-top: 12px;
+}
+
+
+.install {
+    display: inline-block;
+}
+
+.install a {
+    display: block;
+    width: auto;
+    vertical-align: middle;
+    padding: 6px 12px;
+    line-height: 20px;
+    background-color: #111;
+    color: #fff;
+    border-radius: 3px;
+    text-decoration: none;
+    margin: 5px auto;
+    transition: all .3s;
+}
+
+.install code {
+    padding: 6px 12px;
+    display: block;
+    font: 13px/20px Courier New, Liberation Mono, monospase;
+    background-color: #333333;
+    border-radius: 4px;
+    margin: 5px 0;
+    white-space: nowrap;
+}
+
+.install a:hover {
+    background-color: #222;
+}
+
+.credits {
+    color: #aaa;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.credits img {
+    margin-left: 4px;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.panel-heading .accordion-toggle {
+    text-decoration: none;
+    color: #a1a4aa;
+    font-weight: 600;
+}
+
+.panel-heading .accordion-toggle:hover {
+    -webkit-transition: 0.7s;
+    color: #cc99ff;
+}
+
+.panel-heading .accordion-toggle:hover .panel-heading .accordion-toggle:after {
+    -webkit-transition: 0.7s;
+    color: #cc99ff;
+}
+
+.panel-heading .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings'; /* essential for enabling glyphicon */
+    content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+    float: right; /* adjust as needed */
+    color: grey; /* adjust as needed */
+}
+
+.panel-heading .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+}
+
+.panel-default {
+    border-top: 1px solid #ddd;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    padding: 10px 0px;
+    color: #a1a4aa;
+}
+
+.panel-default:last-child {
+    border-bottom: 1px solid #ddd;
+}
+
+.panel-group .panel + .panel {
+    margin-top: 0px;
+}
+
+.panel-default > .panel-heading {
+    background: transparent;
+    border: 0px;
+}
+
+.panel-group .panel-heading + .panel-collapse > .panel-body {
+    border: 0px;
+}
+
+.text_wwr {
+    padding: 0px;
+    font-size: 17px;
+    color: white;
+}
+
+.text_wwr h3 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+@media (max-height: 600px), (max-width: 480px) {
+    .credits {
+        position: inherit;
+    }
+}
+
+.main_section .d_mb {
+    z-index: 1;
+    position: relative;
+    padding: 40px 0px;
+    display: inline-block;
+    width: 100%;
+}
+
+.main_section .d_mb:before {
+    background: linear-gradient(45deg, #a177ff, #02ceff) !important;
+    box-shadow: 1px 1px 10px #44a9ff !important;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    z-index: -1;
+    -webkit-backface-visibility: hidden;
+}
+
+.zero_padd {
+    padding: 0px;
+}
+
+.top_margg_zero {
+    margin: 0px;
+}
+
+.card {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.card {
+    margin-top: 10px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-clip: padding-box;
+}
+
+.card span.card-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.card .card-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.card .card-image img {
+    border-radius: 2px 2px 0 0;
+    background-clip: padding-box;
+    position: relative;
+    z-index: -1;
+}
+
+.card .card-image span.card-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 16px;
+}
+
+.card .card-content {
+    padding: 16px;
+    border-radius: 0 0 2px 2px;
+    background-clip: padding-box;
+    box-sizing: border-box;
+}
+
+.card .card-content p {
+    margin: 0;
+    color: inherit;
+}
+
+.card .card-content span.card-title {
+    line-height: 48px;
+}
+
+.card .card-action {
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    padding: 16px;
+}
+
+.card .card-action a {
+    color: #ffab40;
+    margin-right: 16px;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.card .card-action a:hover {
+    color: #ffd8a6;
+    text-decoration: none;
+}
+
+.signP1 {
+    text-align: center !important;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.signindiv1 {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
+    width: 400px;
+    height: 47px;
+
+}
+
+@media (min-width: 992px) {
+    .col-md-offset-1 {
+        margin-left: 3.333333% !important;
+    }
+}
+
+.signinbtn {
+    float: none !important;
+    width: 100%;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: small;
+    color: #fff;
+    border-color: #21b799;
+    background-color: #21b799;
+}
+
+.signindiv2 {
+
+    display: -webkit-inline-box;
+    float: right;
+}
+
+.signinp3 {
+    color: #875A7B !important;
+    padding-left: 33px;
+    font-weight: 600;
+    font-size: small;
+}
+
+.signinp4 {
+    color: #875A7B !important;
+    font-weight: 600;
+    font-size: small;
+}
+
+.signincard {
+
+    width: 436px;
+    height: 490px;
+
+}
+
+.signinimg {
+    width: 94px;
+    text-align: center;
+}
+
+.signindiv5 {
+    text-align: center;
+    margin-bottom: 27px !important;
+    margin-top: 32px !important;
+}
+
+.divmain {
+    margin-bottom: 15%;
+    margin-top: 25px;
+}
+
+.signinbtn:hover {
+    box-shadow: none;
+    border: none;
+}
+
+.signincard1 {
+
+    width: 436px;
+    /*height: 540px;*/
+
+}
+
+.membership-pricing-table {
+    width: 920px
+}
+
+.membership-pricing-table table .icon-no, .membership-pricing-table table .icon-yes {
+    font-size: 22px
+}
+
+.membership-pricing-table table .icon-no {
+    color: #a93717
+}
+
+.membership-pricing-table table .icon-yes {
+    color: #209e61
+}
+
+.membership-pricing-table table .plan-header {
+    text-align: center;
+    font-size: 48px;
+    border: 1px solid #e2e2e2;
+    padding: 25px 0
+}
+
+.membership-pricing-table table .plan-header-free {
+    background-color: #eee;
+    color: #555
+}
+
+.membership-pricing-table table .plan-header-blue {
+    color: #fff;
+    background-color: #61a1d1;
+    border-color: #3989c6
+}
+
+.membership-pricing-table table .plan-header-standard {
+    color: #fff;
+    background-color: #ff9317;
+    border-color: #e37900
+}
+
+.membership-pricing-table table td {
+    text-align: center;
+    width: 15%;
+    padding: 7px 10px;
+    background-color: #fafafa;
+    font-size: 14px;
+    -webkit-box-shadow: 0 1px 0 #fff inset;
+    box-shadow: 0 1px 0 #fff inset
+}
+
+.membership-pricing-table table, .membership-pricing-table table td {
+    border: 1px solid #ebebeb
+}
+
+.membership-pricing-table table tr td:first-child {
+    background-color: transparent;
+    text-align: right;
+    width: 24%
+}
+
+.membership-pricing-table table tr td:nth-child(5) {
+    background-color: #FFF
+}
+
+.membership-pricing-table table tr:first-child td, .membership-pricing-table table tr:nth-child(2) td {
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.membership-pricing-table table tr:first-child th:first-child {
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: #e2e2e2
+}
+
+.membership-pricing-table table tr:first-child th .pricing-plan-name {
+    font-size: 22px
+}
+
+.membership-pricing-table table tr:first-child th .pricing-plan-price {
+    line-height: 35px
+}
+
+.membership-pricing-table table tr:first-child th .pricing-plan-price > sup {
+    font-size: 45%
+}
+
+.membership-pricing-table table tr:first-child th .pricing-plan-price > span {
+    font-size: 30%
+}
+
+.membership-pricing-table table tr:first-child th .pricing-plan-period {
+    margin-top: -7px;
+    font-size: 25%
+}
+
+.membership-pricing-table table .header-plan-inner {
+    position: relative
+}
+
+.membership-pricing-table table .recommended-plan-ribbon {
+    box-sizing: content-box;
+    background-color: #dc3b5d;
+    color: #FFF;
+    position: absolute;
+    padding: 3px 6px;
+    font-size: 11px !important;
+    font-weight: 500;
+    left: -6px;
+    top: -22px;
+    z-index: 99;
+    width: 100%;
+    -webkit-box-shadow: 0 -1px #c2284c inset;
+    box-shadow: 0 -1px #c2284c inset;
+    text-shadow: 0 -1px #c2284c
+}
+
+.membership-pricing-table table .recommended-plan-ribbon:before {
+    border: solid;
+    border-color: #c2284c transparent;
+    border-width: 6px 0 0 6px;
+    bottom: -5px;
+    content: "";
+    left: 0;
+    position: absolute;
+    z-index: 90
+}
+
+.membership-pricing-table table .recommended-plan-ribbon:after {
+    border: solid;
+    border-color: #c2284c transparent;
+    border-width: 6px 6px 0 0;
+    bottom: -5px;
+    content: "";
+    right: 0;
+    position: absolute;
+    z-index: 90
+}
+
+.membership-pricing-table table .plan-head {
+    box-sizing: content-box;
+    background-color: #ff9c00;
+    border: 1px solid #cf7300;
+    position: absolute;
+    top: -33px;
+    left: -1px;
+    height: 30px;
+    width: 100%;
+    border-bottom: none
+}

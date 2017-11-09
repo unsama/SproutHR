@@ -1,0 +1,175 @@
+.all_transfers_table
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false',v-bind:dropdownbtn1='false',v-bind:dropdownbtn2='false',v-bind:dropdownbtn3='false',v-bind:actionbtn='false',v-bind:Attachmentbtn='false',v-bind:printbtn='false')
+    .o_content.row(style='height:89vh;overflow:auto;')
+        .col-md-12
+            .row
+                .col-md-12.pull-left.samotopcontroller
+                    .col-md-5.pull-left
+                        button.btn.btn-primary.samobutton1(type='button',style='margin-right: 5px;') Refuse
+
+
+                    .col-md-1.pull-left
+                    .col-md-3.pull-left
+                    .col-md-3.pull-right
+                        .btn-group.btn-breadcrumb.samobreadcrum1
+                            a.btn.btn-primary.samobreadbutt(href='#') To Submit
+                            a.btn.btn-primary.samobreadbutt1(href='#') To Approved
+                            a.btn.btn-primary.samobreadbutt(href='#') Approved
+            .o_view_manager_content
+                .o_form_view.o_form_editable
+                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                        input(type='checkbox', name='can_reset', disabled='')
+                        span
+                    select.o_form_input.o_form_field.o_form_required.o_form_invisible(name='type', data-original-title='', title='')
+                        option(value='false')
+                        option(value='"remove"') Leave Request
+                        option(value='"add"') Allocation Request
+                    
+                    .o_form_sheet_bg
+                        .o_form_sheet
+                            .oe_title
+                                h1
+                                    span.o_form_field.o_form_field_empty
+                            .o_group
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_115')
+                                                    | Description
+                                            td(colspan='1', style='width: 100%;')
+                                                input#o_field_input_115.o_form_input.o_form_field(type='text')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_116')
+                                                    | Leave Type
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_form_field.o_form_required
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_116.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_117')
+                                                    | Duration
+                                            td(colspan='1', style='width: 100%;')
+                                                div
+                                                    div(attrs="{'invisible': [('type', '=', 'add')]}")
+                                                        .o_datepicker.o_form_field_date.oe_inline.o_form_field.o_form_required
+                                                            input.o_datepicker_input.o_form_input(type='text', name='date_from')
+                                                            span.o_datepicker_button
+                                                        label.o_form_label.oe_inline
+                                                            | -
+                                                        .o_datepicker.o_form_field_date.oe_inline.o_form_field.o_form_required
+                                                            input.o_datepicker_input.o_form_input(type='text', name='date_to')
+                                                            span.o_datepicker_button
+                                                    div
+                                                        input#o_field_input_117.o_form_input.oe_inline.o_form_field.o_form_field_number(type='text')
+                                                        |  days
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help(for='o_field_input_118', data-original-title='', title='')
+                                                    | Mode
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field.o_form_required By Employee
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_119')
+                                                    | Employee
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_form_field.o_form_required
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_119.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_120', data-original-title='', title='')
+                                                    | Employee Tag
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_form_field.o_form_invisible
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_120.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_121')
+                                                    | Department
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_form_field
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_121.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help(for='o_field_input_122', data-original-title='', title='')
+                                                    | Reported in last payslips
+                                            td(colspan='1', style='width: 100%;')
+                                                button.o_icon_button.o_form_field(type='button', title='Reported in last payslips')
+                                                    i.fa.fa-circle.text-muted(title='Reported in last payslips')
+                                textarea.o_form_textarea.o_group_col_12.o_form_field.o_form_invisible(rows='6', name='notes', placeholder='Add a reason...', style='resize: horizontal; height: 50px;')
+                                textarea.o_form_textarea.o_group_col_12.o_form_field.o_form_invisible(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 110px;')
+                                .o_group_col_6(attrs="{'invisible':[('type','=','add')]}")
+                                    .o_horizontal_separator
+                                        | Comment by Manager
+                                    textarea.o_form_textarea.o_form_field(rows='6', name='report_note', placeholder='e.g. Report to the next month...', style='resize: horizontal; height: 50px;')
+                                    textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 413px;')
+                                    textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 10px;')
+                    .o_chatter.o_form_field.oe_chatter.o_form_invisible
+                        .o_chatter_topbar
+                            button.btn.btn-sm.o_chatter_button_new_message.btn-primary(title='Send a message', type='button')
+                                | New message
+                            button.btn.btn-sm.btn-link.o_chatter_button_log_note(title='Log a note. Followers will not be notified.')
+                                | Log an internal note
+                            .o_followers.o_form_field.o_form_invisible
+                                .o_followers_title_box
+                                    button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', title='No follower')
+                                        i.fa.fa-user
+                                        span.o_followers_count 0
+                                        span.caret
+                                    ul.dropdown-menu.o_followers_list(role='menu')
+                                        li.o_add_follower
+                                            a(href='#')  Add Followers
+                                        li.o_add_follower_channel
+                                            a(href='#')  Add Channels
+                                .o_followers_actions
+                                    .btn-group.btn-group-sm.o_subtypes_list
+                                        button.btn.btn-sm.btn-link.o_followers_follow_button.o_followers_notfollow
+                                            span.o_follow Follow
+                                            span.fa.fa-times.o_followers_unfollow
+                                            span.o_followers_unfollow  Unfollow
+                                            span.fa.fa-check.o_followers_following
+                                            span.o_followers_following  Following
+                                        button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', disabled='disabled')
+                                            span.fa.fa-bell
+                                        ul.dropdown-menu(role='menu')
+                                            li.o_subtype
+                                                input#input_mail_followers_subtype_1.o_subtype_checkbox(type='checkbox', checked='true', data-id='1', name='Discussions')
+                                                span(for='input_mail_followers_subtype_1')
+                                                    | Discussions
+                                            li.o_subtype
+                                                input#input_mail_followers_subtype_2.o_subtype_checkbox(type='checkbox', data-id='2', name='Note')
+                                                span(for='input_mail_followers_subtype_2')
+                                                    | Note
+                                            li.o_subtype
+                                                input#input_mail_followers_subtype_62.o_subtype_checkbox(type='checkbox', checked='true', data-id='62', name='Confirmed')
+                                                span(for='input_mail_followers_subtype_62')
+                                                    | Confirmed
+                                            li.o_subtype
+                                                input#input_mail_followers_subtype_63.o_subtype_checkbox(type='checkbox', data-id='63', name='Waiting Second Validation')
+                                                span(for='input_mail_followers_subtype_63')
+                                                    | Waiting Second Validation
+                                            li.o_subtype
+                                                input#input_mail_followers_subtype_64.o_subtype_checkbox(type='checkbox', checked='true', data-id='64', name='Approved')
+                                                span(for='input_mail_followers_subtype_64')
+                                                    | Approved
+                                            li.o_subtype
+                                                input#input_mail_followers_subtype_65.o_subtype_checkbox(type='checkbox', data-id='65', name='Refused')
+                                                span(for='input_mail_followers_subtype_65')
+                                                    | Refused
+                        .o_mail_thread

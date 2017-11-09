@@ -1,0 +1,119 @@
+.inventory_adjustments_table
+    DashboardController(v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:firstbtn='true',v-bind:secondbtn='true',v-bind:fifthbtn='true',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true')
+    .row
+        .col-md-12.pull-left.samotopcontroller
+            .col-md-5.pull-left
+
+
+            .col-md-1.pull-left
+            .col-md-3.pull-left
+            .col-md-3.pull-right
+                .btn-group.btn-breadcrumb.samobreadcrum1
+                    a.btn.btn-primary.samobreadbutt(href='#') Draft
+                    a.btn.btn-primary.samobreadbutt1(href='#') In Progress
+                    a.btn.btn-primary.samobreadbutt(href='#') Validated
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .row
+
+                            .col-sm-12.samocol4
+                                h1(style='font-weight:bold;font-size:30px;font-size: 26px;color: #4c4c4c;') Starting Inventory
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible(for='o_field_input_151')
+                                                | Inventoried Location
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_required.o_form_invisible(href='#') WH/Stock
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_152', data-original-title='', title='')
+                                                | Inventory of
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required All products
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_false(for='o_field_input_153')
+                                                | Include Exhausted Products
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_checkbox.o_form_field_boolean.o_form_field
+                                                input#o_field_input_153(type='checkbox', name='exhausted', disabled='')
+                                                span
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_154', data-original-title='', title='')
+                                                | Inventory Date
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field_date.o_form_field.o_form_required 01/28/2017 19:22:52
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false(for='o_field_input_155', data-original-title='', title='')
+                                                | Force Accounting Date
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field_date.o_form_field.o_form_field_empty
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_156')
+                                                | Company
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_required(href='#') Alupak Industriess
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_157', data-original-title='', title='')
+                                                | Inventoried Product
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_158', data-original-title='', title='')
+                                                | Inventoried Category
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_159', data-original-title='', title='')
+                                                | Inventoried Lot/Serial Number
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_160', data-original-title='', title='')
+                                                | Inventoried Owner
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_161', data-original-title='', title='')
+                                                | Inventoried Pack
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+
+
+
+                        .o_notebook
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Inventory DeTails
+                                li.nav-item
+                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') Inventory Adjustments
+
+
+                            // Tab panes
+                            .tab-content
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+                                    TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata")
+                                    h3.oe_grey(style='font-size: large;') Notes
+                                    ul.oe_grey
+                                    li Inventory adjustments will be made by comparing the theoretical and the checked quantities.
+                                    li You can delete lines to ignore some products.
+                                    li If a product is not at the right place, set the checked quantity to 0 and create a new line with correct location.
+
+                                #buzz.tab-pane.fade.in(role='tabpanel')
+                                    TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata")

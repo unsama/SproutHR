@@ -1,0 +1,510 @@
+.o_content(style='margin-left:-15px;margin-right:-15px;')
+    .o_view_manager_content
+        .o_form_view.o_form_editable
+            header
+                button.btn.btn-sm.oe_highlight(type='button')
+                    span Send RFQ by Email
+                button.btn.btn-sm.o_form_invisible(type='button')
+                    span Re-Send RFQ by Email
+                button.btn.btn-sm.oe_highlight(type='button')
+                    span Print RFQ
+                button.btn.btn-sm.o_form_invisible(type='button')
+                    span Print RFQ
+                button.btn.btn-sm(type='button')
+                    span Confirm Order
+                button.btn.btn-sm.oe_highlight.o_form_invisible(type='button')
+                    span Confirm Order
+                button.btn.btn-sm.oe_highlight.o_form_invisible(type='button')
+                    span Approve Order
+                button.btn.btn-sm.o_form_invisible(type='button')
+                    span Send PO by Email
+                button.btn.btn-sm.oe_highlight.o_form_invisible(type='button')
+                    span Receive Products
+                button.btn.btn-sm.o_form_invisible(type='button')
+                    span Set to Draft
+                button.btn.btn-sm(type='button')
+                    span Cancel
+                button.btn.btn-sm.o_form_invisible(type='button')
+                    span Lock
+                button.btn.btn-sm.o_form_invisible(type='button')
+                    span Unlock
+                ul.oe_form_field_status.oe_form_status.o_form_field
+                    li.oe_active(data-id='draft')
+                        span.label RFQ
+                        span.arrow
+                            span
+                    li(data-id='sent')
+                        span.label RFQ Sent
+                        span.arrow
+                            span
+                    li(data-id='purchase')
+                        span.label Purchase Order
+                        span.arrow
+                            span
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .oe_button_box(name='button_box')
+                        button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                            .fa.fa-fw.fa-truck.o_button_icon
+                            .o_form_field.o_stat_info(data-original-title='', title='')
+                                span.o_stat_value 0
+                                span.o_stat_text Shipment
+                            .o_form_field.o_form_invisible.o_form_field_many2many.o_form_field_empty.o_view_manager_content
+                                .o_x2m_control_panel
+                                    .o_cp_buttons
+                                    .o_cp_pager
+                                        .o_hidden
+                                            span.o_pager_value
+                                            |  /
+                                            span.o_pager_limit
+                                            span.btn-group.btn-group-sm
+                                                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                div
+                                    .table-responsive
+                                        table.o_list_view.table.table-condensed.table-striped
+                                            thead
+                                                tr
+                                                    th.o_column_sortable(data-id='name')
+                                                        | Reference
+                                                    th.o_column_sortable(data-id='location_dest_id')
+                                                        | Destination Location Zone
+                                                    th.o_column_sortable(data-id='partner_id')
+                                                        | Partner
+                                                    th.o_column_sortable(data-id='min_date')
+                                                        | Scheduled Date
+                                                    th.o_column_sortable(data-id='origin')
+                                                        | Source Document
+                                                    th.o_column_sortable(data-id='backorder_id')
+                                                        | Back Order of
+                                                    th.o_column_sortable(data-id='state')
+                                                        | Status
+                                            tfoot
+                                                tr
+                                                    td
+                                                    td
+                                                    td
+                                                    td
+                                                    td
+                                                    td
+                                                    td
+                                            tbody
+                                                tr
+                                                    td(title='Reference')  
+                                                    td(title='Destination Location Zone')  
+                                                    td(title='Partner')  
+                                                    td(title='Scheduled Date')  
+                                                    td(title='Source Document')  
+                                                    td(title='Back Order of')  
+                                                    td(title='Status')  
+                                                tr
+                                                    td(title='Reference')  
+                                                    td(title='Destination Location Zone')  
+                                                    td(title='Partner')  
+                                                    td(title='Scheduled Date')  
+                                                    td(title='Source Document')  
+                                                    td(title='Back Order of')  
+                                                    td(title='Status')  
+                                                tr
+                                                    td(title='Reference')  
+                                                    td(title='Destination Location Zone')  
+                                                    td(title='Partner')  
+                                                    td(title='Scheduled Date')  
+                                                    td(title='Source Document')  
+                                                    td(title='Back Order of')  
+                                                    td(title='Status')  
+                                                tr
+                                                    td(title='Reference')  
+                                                    td(title='Destination Location Zone')  
+                                                    td(title='Partner')  
+                                                    td(title='Scheduled Date')  
+                                                    td(title='Source Document')  
+                                                    td(title='Back Order of')  
+                                                    td(title='Status')  
+                        button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                            .fa.fa-fw.fa-pencil-square-o.o_button_icon
+                            .o_form_field.o_stat_info
+                                span.o_stat_value 0
+                                span.o_stat_text Vendor Bills
+                            .o_form_field.o_form_invisible.o_form_field_many2many.o_form_field_empty.o_view_manager_content
+                                .o_x2m_control_panel
+                                    .o_cp_buttons
+                                    .o_cp_pager
+                                        .o_hidden
+                                            span.o_pager_value
+                                            |  /
+                                            span.o_pager_limit
+                                            span.btn-group.btn-group-sm
+                                                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                div
+                                    .table-responsive
+                                        table.o_list_view.table.table-condensed.table-striped
+                                            thead
+                                                tr
+                                                    th.o_column_sortable(data-id='partner_id')
+                                                        | Vendor
+                                                    th.o_column_sortable(data-id='date_invoice')
+                                                        | Bill Date
+                                                    th.o_column_sortable(data-id='number')
+                                                        | Number
+                                                    th.o_column_sortable(data-id='reference')
+                                                        | Vendor Reference
+                                                    th.o_column_sortable(data-id='company_id')
+                                                        | Company
+                                                    th.o_column_sortable(data-id='date_due')
+                                                        | Due Date
+                                                    th.o_column_sortable(data-id='origin')
+                                                        | Source Document
+                                                    th.o_column_sortable(data-id='amount_total_signed')
+                                                        | Total
+                                                    th.o_column_sortable(data-id='residual_signed')
+                                                        | To Pay
+                                                    th.o_column_sortable(data-id='state')
+                                                        | Status
+                                            tfoot
+                                                tr
+                                                    td
+                                                    td
+                                                    td
+                                                    td
+                                                    td
+                                                    td
+                                                    td
+                                                    td.o_list_number(data-field='amount_total_signed', title='Total') 0.00
+                                                    td.o_list_number(data-field='residual_signed', title='To pay') 0.00
+                                                    td
+                                            tbody
+                                                tr
+                                                    td(title='Vendor')  
+                                                    td(title='Bill Date')  
+                                                    td(title='Number')  
+                                                    td(title='Vendor Reference')  
+                                                    td(title='Company')  
+                                                    td(title='Due Date')  
+                                                    td(title='Source Document')  
+                                                    td(title='Total')  
+                                                    td(title='To Pay')  
+                                                    td(title='Status')  
+                                                tr
+                                                    td(title='Vendor')  
+                                                    td(title='Bill Date')  
+                                                    td(title='Number')  
+                                                    td(title='Vendor Reference')  
+                                                    td(title='Company')  
+                                                    td(title='Due Date')  
+                                                    td(title='Source Document')  
+                                                    td(title='Total')  
+                                                    td(title='To Pay')  
+                                                    td(title='Status')  
+                                                tr
+                                                    td(title='Vendor')  
+                                                    td(title='Bill Date')  
+                                                    td(title='Number')  
+                                                    td(title='Vendor Reference')  
+                                                    td(title='Company')  
+                                                    td(title='Due Date')  
+                                                    td(title='Source Document')  
+                                                    td(title='Total')  
+                                                    td(title='To Pay')  
+                                                    td(title='Status')  
+                                                tr
+                                                    td(title='Vendor')  
+                                                    td(title='Bill Date')  
+                                                    td(title='Number')  
+                                                    td(title='Vendor Reference')  
+                                                    td(title='Company')  
+                                                    td(title='Due Date')  
+                                                    td(title='Source Document')  
+                                                    td(title='Total')  
+                                                    td(title='To Pay')  
+                                                    td(title='Status')  
+                    .oe_title
+                        label.o_form_label
+                            | Request for Quotation
+                        label.o_form_label.o_form_invisible
+                            | Purchase Order
+                        h1
+                            span.o_form_field.o_form_required New
+                    .o_group
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_28')
+                                            | Vendor
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_form_field.o_form_required
+                                            .o_form_input_dropdown
+                                                input#o_field_input_28.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help(for='o_field_input_29', data-original-title='', title='')
+                                            | Vendor Reference
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_29.o_form_input.o_form_field(type='text')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_30')
+                                            | Currency
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_form_field.o_form_required
+                                            .o_form_input_dropdown
+                                                input#o_field_input_30.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible.o_form_label_false(for='o_field_input_31')
+                                            | Is shipped
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                            input#o_field_input_31(type='checkbox', name='is_shipped', disabled='')
+                                            span
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help(for='o_field_input_32', data-original-title='', title='')
+                                            | Order Date
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_datepicker.o_form_field_date.o_form_field.o_form_required
+                                            input.o_datepicker_input.o_form_input#datepicker()(type='text', name='date_order')
+                                            span.o_datepicker_button
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_33', data-original-title='', title='')
+                                            | Source Document
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_33.o_form_input.o_form_field.o_form_invisible(type='text')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_34')
+                                            | Company
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                            .o_form_input_dropdown
+                                                input#o_field_input_34.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            .fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1' data-toggle='modal', data-target='.bd-example-modal-lg')
+                    .o_notebook
+                        ul.nav.nav-tabs(role='tablist')
+                            li.nav-item
+                                a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Products
+                            li.nav-item
+                                a.nav-link(href='#buzz', role='tab', data-toggle='tab') Deliveries & Invoices
+                        .tab-content.nav.nav-tabs
+                            #profile.tab-pane.fade.in.active(role='tabpanel')
+                                .o_form_field.o_form_field_one2many.o_view_manager_content
+                                    .o_x2m_control_panel
+                                        .o_cp_buttons
+                                        .o_cp_pager
+                                            .o_hidden
+                                                span.o_pager_value
+                                                |  /
+                                                span.o_pager_limit
+                                                span.btn-group.btn-group-sm
+                                                    button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                    button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                    .o_list_editable
+                                        .o_form_view.o_list_editable_form.o_form_nosheet.o_hidden
+                                            field(name='currency_id', invisible='1', can_create='true', can_write='true', modifiers='{"readonly":true,"tree_invisible":true,"invisible":true}', nolabel='true')
+                                            field(name='state', invisible='1', modifiers='{"readonly":true,"tree_invisible":true,"invisible":true}', nolabel='true')
+                                            field(name='sequence', widget='handle', modifiers='{"readonly":true}', nolabel='true')
+                                            field(name='product_id', attrs="{'readonly': [('state', 'in', ('purchase', 'to approve','done', 'cancel'))]}", context="{'partner_id':parent.partner_id, 'quantity':product_qty,'uom':product_uom, 'company_id': parent.company_id}", on_change='1', can_create='true', can_write='true', modifiers='{"readonly":[["state","in",["purchase","to approve","done","cancel"]]],"required":true}', nolabel='true')
+                                            field(name='name', modifiers='{"required":true}', nolabel='true')
+                                            field(name='date_planned', on_change='1', modifiers='{"required":true}', nolabel='true')
+                                            field(name='company_id', options="{'no_create': True}", can_create='true', can_write='true', modifiers='{"readonly":true}', nolabel='true')
+                                            field(name='account_analytic_id', context="{'default_partner_id':parent.partner_id}", can_create='true', can_write='true', invisible='1', modifiers='{"invisible":true,"tree_invisible":true}', nolabel='true')
+                                            field(name='analytic_tag_ids', widget='many2many_tags', can_create='true', can_write='true', invisible='1', modifiers='{"invisible":true,"tree_invisible":true}', nolabel='true')
+                                            field(name='product_qty', on_change='1', modifiers='{"required":true}', nolabel='true')
+                                            field(name='qty_received', invisible="not context.get('show_purchase', False)", on_change='1', modifiers='{"readonly":true,"tree_invisible":true,"invisible":true}', nolabel='true')
+                                            field(name='qty_invoiced', invisible="not context.get('show_purchase', False)", on_change='1', modifiers='{"readonly":true,"tree_invisible":true,"invisible":true}', nolabel='true')
+                                            field(name='product_uom', on_change='1', can_create='true', can_write='true', invisible='1', modifiers='{"invisible":true,"required":true,"tree_invisible":true}', nolabel='true')
+                                            field(name='price_unit', on_change='1', modifiers='{"required":true}', nolabel='true')
+                                            field(name='taxes_id', widget='many2many_tags', domain="[('type_tax_use','=','purchase')]", context="{'default_type_tax_use': 'purchase'}", on_change='1', can_create='true', can_write='true', modifiers='{}', nolabel='true')
+                                            field(name='price_subtotal', widget='monetary', modifiers='{"readonly":true}', nolabel='true')
+                                        .table-responsive
+                                            table.o_list_view.table.table-condensed.table-striped
+                                                thead
+                                                    tr
+                                                        th.o_column_sortable(data-id='sequence', width='1')
+                                                            span.o_row_handle.fa.fa-arrows.invisible
+                                                        th.o_column_sortable(data-id='product_id')
+                                                            | Product
+                                                        th.o_column_sortable(data-id='name')
+                                                            | Description
+                                                        th.o_column_sortable(data-id='date_planned')
+                                                            | Scheduled Date
+                                                        th.o_column_sortable(data-id='company_id')
+                                                            | Company
+                                                        th.o_column_sortable(data-id='product_qty')
+                                                            | Quantity
+                                                        th.o_column_sortable(data-id='price_unit')
+                                                            | Unit Price
+                                                        th.o_column_sortable(data-id='taxes_id')
+                                                            | Taxes
+                                                        th.o_column_sortable(data-id='price_subtotal')
+                                                            | Subtotal
+                                                        th.o_list_record_delete
+                                                tfoot
+                                                    tr
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td.o_list_record_delete
+                                                tbody.ui-sortable
+                                                    tr
+                                                        td.o_form_field_x2many_list_row_add(colspan='10')
+                                                            a(href='#') Add an item
+                                                    tr
+                                                        td(title='')  
+                                                        td(title='Product')  
+                                                        td(title='Description')  
+                                                        td(title='Scheduled Date')  
+                                                        td(title='Company')  
+                                                        td(title='Quantity')  
+                                                        td(title='Unit Price')  
+                                                        td(title='Taxes')  
+                                                        td(title='Subtotal')  
+                                                        td.o_list_record_delete
+                                                    tr
+                                                        td(title='')  
+                                                        td(title='Product')  
+                                                        td(title='Description')  
+                                                        td(title='Scheduled Date')  
+                                                        td(title='Company')  
+                                                        td(title='Quantity')  
+                                                        td(title='Unit Price')  
+                                                        td(title='Taxes')  
+                                                        td(title='Subtotal')  
+                                                        td.o_list_record_delete
+                                                    tr
+                                                        td(title='')  
+                                                        td(title='Product')  
+                                                        td(title='Description')  
+                                                        td(title='Scheduled Date')  
+                                                        td(title='Company')  
+                                                        td(title='Quantity')  
+                                                        td(title='Unit Price')  
+                                                        td(title='Taxes')  
+                                                        td(title='Subtotal')  
+                                                        td.o_list_record_delete
+                                table.o_group.o_inner_group.oe_subtotal_footer.oe_right
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_37')
+                                                    | Untaxed Amount
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field.o_form_field_number 0.00
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_38')
+                                                    | Taxes
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field.o_form_field_number 0.00
+                                        tr
+                                            td(colspan='1', style='width: 50%;')
+                                                .oe_subtotal_footer_separator.oe_inline
+                                                    label.o_form_label(for='o_field_input_39')
+                                                        | Total
+                                            td(colspan='1', style='width: 50%;')
+                                                span.oe_subtotal_footer_separator.o_form_field.o_form_field_number 0.00
+                                textarea.o_form_textarea.oe_inline.o_form_field(rows='6', name='notes', placeholder='An administrator can set up default Terms and conditions in your Company settings.', style='height: 50px;')
+                                textarea.o_form_textarea.oe_inline.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 372px;')
+                                .oe_clear
+                            #buzz.tab-pane.fade.in(role='tabpanel', style='width:100%;')
+                                .o_group
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_40')
+                                                        | Scheduled Date
+                                                td(colspan='1', style='width: 100%;')
+                                                    div
+                                                        .o_datepicker.o_form_field_date.o_form_field.o_form_required
+                                                            input.o_datepicker_input.o_form_input#datepicker1()(type='text', name='date_planned')
+                                                            span.o_datepicker_button
+                                                        .btn.btn-sm.fa.fa-calendar.o_icon_button.oe_edit_only( data-original-title='', title='')
+                                                            span     Set date to all order lines
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_41', data-original-title='', title='')
+                                                        | Deliver To
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_with_button.o_form_field.o_form_required.o_form_invisible
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_41.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_42', data-original-title='', title='')
+                                                        | Drop Ship Address
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field.o_form_invisible
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_42.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_43', data-original-title='', title='')
+                                                        | Destination Location Type
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.o_form_field.o_form_invisible Internal Location
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_44', data-original-title='', title='')
+                                                        | Incoterm
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_44.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_45')
+                                                        | Billing Status
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.o_form_field Nothing to Bill
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_46')
+                                                        | Payment Terms
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_46.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_47')
+                                                        | Fiscal Position
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_47.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_48')
+                                                        | Approval Date
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.o_form_field_date.o_form_field.o_form_invisible.o_form_field_empty
+
+

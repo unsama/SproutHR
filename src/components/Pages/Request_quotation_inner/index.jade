@@ -1,0 +1,302 @@
+.request_quotation_inner
+    DashboardController(v-bind:createbtn='true',v-bind:importbtn='true', v-bind:links="btnlinks")
+    .o_content.samocontent
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+
+                        .tophead
+                            h6 Request for Quotation
+                            h1 PO00007
+
+                        .col-xs-12.request_inner1
+                            .row
+                                .col-xs-3.request_inner3(style='font-weight: bold;')
+                                    .one
+                                        label(style='font-size:15px;padding-right:25px;')
+                                            | Vendor
+                                        br
+                                        br
+                                        label(style='font-size:15px;')
+                                            | Vendor Reference Currency
+                                        br
+
+
+                                .col-xs-4.osahass(style='')
+                                    .two
+                                        router-link(to='Vendormenu')
+                                            label(style='font-size:13px;')
+                                                | Delta Pc
+                                            br
+                                        br
+                                        router-link(to='pkr')
+                                            label(style='font-size:13px;')
+                                                | Pkr
+
+                                .col-xs-3.request_inner2(style='font-weight: bold;')
+                                    .one
+                                        label(style='font-size:15px;padding-right:25px;')
+                                            | Order Date
+                                        br
+                                        br
+                                        label(style='font-size:15px;')
+                                            | Company
+                                        br
+
+
+                                .col-xs-2.osahass(style='')
+                                    .two
+                                        label(style='font-size:13px;')
+                                            | 02/18/2017 18:28:06
+                                        br
+                                        br
+                                        router-link(to='profile')
+                                            label(style='font-size:13px;')
+                                                | Alupak Industries
+
+                        .o_notebook
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Products
+                                li.nav-item
+                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') Deliveries and Invoices
+                            // Tab panes
+                            .tab-content
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+                                    table.table.table-striped.samotable
+                                        thead.samotablehead
+                                            tr
+                                                th.o_list_record_selector.samotableheadborder(width='1')
+                                                    .o_checkbox
+                                                        input(type='checkbox')
+                                                        span
+
+                                                th.samotableheadborder Vendor
+                                                th.samotableheadborder Bill Date
+                                                th.samotableheadborder Number
+                                                th.samotableheadborder Vendor Reference
+                                                th.samotableheadborder Company
+                                                th.samotableheadborder Due Date
+                                                th.samotableheadborder Source Document
+                                                th.samotableheadborder Total
+                                                th.samotableheadborder Topay
+                                                th.samotableheadborder Status
+                                        tfoot.samotfoot
+                                            tr
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+
+                                        tbody.samotbody
+                                            tr
+                                                th.o_list_record_selector.samotablepadd(width='1')
+                                                    .o_checkbox
+                                                        input(type='checkbox')
+                                                        span
+                                                td.samotablepadd PO00007
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd @mdo
+                                            tr
+                                                th.o_list_record_selector.samotablepadd(width='1')
+                                                    .o_checkbox
+                                                        input(type='checkbox')
+                                                        span
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd @mdo
+
+
+                                            tr
+                                                th.o_list_record_selector(width='1')
+                                                    .o_checkbox
+                                                        input(type='checkbox')
+                                                        span
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd @mdo
+
+                                            tr
+                                                th.o_list_record_selector.samotablepadd(width='1')
+                                                    .o_checkbox
+                                                        input(type='checkbox')
+                                                        span
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd @mdo
+
+                                            tr
+                                                th.o_list_record_selector.samotablepadd(width='1')
+                                                    .o_checkbox
+                                                        input(type='checkbox')
+                                                        span
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd @mdo
+
+                                            tr
+                                                th.o_list_record_selector.samotablepadd(width='1')
+                                                    .o_checkbox
+                                                        input(type='checkbox')
+                                                        span
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd @mdo
+
+                                            tr
+                                                th.o_list_record_selector.samotablepadd(width='1')
+                                                    .o_checkbox
+                                                        input(type='checkbox')
+                                                        span
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd @mdo
+                                            tr
+                                                th.o_list_record_selector.samotablepadd(width='1')
+                                                    .o_checkbox
+                                                        input(type='checkbox')
+                                                        span
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd Mark
+                                                td.samotablepadd Otto
+                                                td.samotablepadd @mdo
+                                                td.samotablepadd @mdo
+
+
+
+
+                                #buzz.tab-pane.fade.in(role='tabpanel')
+                                    .o_group
+                                        .col-xs-12.request_inner1
+                                            .row
+                                                .col-xs-3.request_inner3(style='font-weight: bold;')
+                                                    .one
+                                                        label(style='font-size:15px;padding-right:25px;')
+                                                            | Scheduled Date
+                                                        br
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Incoterm
+                                                        br
+
+
+                                                .col-xs-4.osahass(style='')
+                                                    .two
+                                                        label(style='font-size:13px;')
+                                                            | Incoterm
+
+                                                .col-xs-3.request_inner2(style='font-weight: bold;')
+                                                    .one
+                                                        label(style='font-size:15px;padding-right:25px;')
+                                                            | Billing Status
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Payment Terms
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Fiscal Position
+
+
+                                                .col-xs-2.osahass(style='')
+                                                    .two
+                                                        label(style='font-size:13px;')
+                                                            | Nothing to bills
+                                                        br
+                                                        label(style='font-size:13px;')
+                                                            | 30 days
+
+        .o_mail_thread(style='margin-left: 336px;')
+            .o_thread_date_separator
+                span.o_thread_date
+                    | February 25, 2017
+
+
+            .o_thread_message.samothreadmessage(data-message-id='1038')
+                .o_thread_message_sidebar
+                    img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/images/image_small.png' style='width: 33px;a')
+                .o_thread_message_core.o_mail_note.samothreadmessage1
+                    p.o_mail_info
+                        | Note by
+                        strong(data-oe-model='res.partner', data-oe-id='')
+                            | YourCompany, Administrators
+                        |                     -
+                        small.o_mail_timestamp(title='Sat Feb 25 2017 16:35:56 GMT+0500') 9 days ago
+                        span
+                            i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='1038')
+                    ul.o_mail_thread_message_tracking
+                        li
+                            | Untaxed Amount:
+                            span  637.5
+                        li
+                            | Vendor:
+                            span  Delta PC
+                        li
+                            | Status:
+                            span  RFQ
+                            span.fa.fa-long-arrow-right
+                            span
+                                | RFQ Sent
+
+

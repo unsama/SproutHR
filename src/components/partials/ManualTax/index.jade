@@ -1,0 +1,96 @@
+.container-fluid
+    .modal.fade.bd-example-modal-lg(tabindex='-1', role='dialog', aria-labelledby='myLargeModalLabel', aria-hidden='true')
+        .modal-dialog.modal-lg
+            .modal-content(style='width: 123%; margin-left: -79px;')
+                .modal-header
+                    h6.modal-title(style='font-weight:bold;') Make Manual Tax Adjustments
+                    button.close(type='button', data-dismiss='modal') ×
+                .modal-body
+                    input#o_field_input_87.o_form_input.o_form_field(style='background-color: #D2D2FF;width: 33%; height: 10%; font-size: 185%; font-weight:bold; ')(placeholder='Reasons..',type='text')
+                    .row
+
+                    table.o_group.o_inner_group
+                        tbody
+
+                            tr
+                                td.o_td_label.one(colspan='1')(style='padding-right: 119px;')
+                                    span(style='padding-right: 68px !important;') Amount
+                                td.two(colspan='1', style='width: 50%;')
+                                    input#o_field_input_213.o_form_input.o_form_field(style='width: 86%; background-color: #D2D2FF;')(placeholder='0.00', type='text')
+
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label
+                                        | Adjustment Tax
+                                td.two(colspan='1', style='width: 50%;')
+                                    .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                        .o_form_input_dropdown
+                                            select#o_field_input_178.o_form_input.o_form_field(style='width: 88%; background-color: #D2D2FF;')(name='format')
+                                                option(value='true')
+
+
+                    .row
+
+                    table.o_group.o_inner_group
+                        tbody
+                            tr
+                                td(colspan='2', style='width: 100%;')
+                                    .o_horizontal_separator
+                                        h4(style='color: #7c7bad;') Accounts
+                                td(colspan='2', style='width: 100%;')
+                                    .o_horizontal_separator
+                                        h4(style='color: #7c7bad;') Options
+
+                            tr
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label
+                                        | Debit account
+                                td.two(colspan='1', style='width: 50%; ')
+                                    select#o_field_input_186.o_form_input.o_form_field(style='width: 196px; background-color: #D2D2FF;')(name='format')
+                                        option(value='true') 100000 Fixed Asset Account
+                                        option(value='"A0"') 100008 Alfalah Card
+                                        option(value='"A0"') 101000 Current Assets
+                                        option(value='"A0"') 101110 Stock Valuation Account
+
+                                    button.fa.fa-external-link.btn.btn-default.o_external_button#bttn(style='font-size: 1.3rem; color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button', data-toggle='modal', href='#myModal2')
+
+
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label(style='padding-left: 20px;')
+                                        | Journal
+                                td.two(colspan='1', style='width: 50%;')
+                                    select#o_field_input_187.o_form_input.o_form_field(style='width: 217px; background-color: #D2D2FF;')(name='format')
+                                            option(value='true') 100000 Fixed Asset Account
+                                            option(value='"A0"') 100008 Alfalah Card
+                                            option(value='"A0"') 101000 Current Assets
+                                            option(value='"A0"') 101110 Stock Valuation Account
+
+                                    button.fa.fa-external-link.btn.btn-default.o_external_button(style='font-size: 1.3rem; color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button', data-toggle='modal', href='#myModal2')
+
+
+                            tr
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                        | Credit account
+                                td.two(colspan='1', style='width: 50%; ')
+                                    select#o_field_input_186.o_form_input.o_form_field(style='width: 196px; background-color: #D2D2FF;')(name='format')
+                                        option(value='true') Profit and Loss
+                                        option(value='"A0"') Balance Sheet
+
+                                    button.fa.fa-external-link.btn.btn-default.o_external_button#bttn(style='font-size: 1.3rem; color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button', data-toggle='modal', href='#myModal2')
+
+                                td.o_td_label.one(colspan='1')
+                                    label.o_form_label.o_form_label_help(style='padding-left: 20px;')( data-original-title='', title='')
+                                        | Date
+                                td.two(colspan='1', style='width: 50%;')
+                                    form#dateRangeForm.form-horizontal(method='post')
+                                        .form-group
+                                            #dateRangePicker.input-group.input-append.date
+                                                input.input-group-addon.form-control(type='text', name='date', style='height: 25px; width: 240px; background-color: #D2D2FF !important; text-align: left;')
+
+
+                .modal-footer(style='justify-content: flex-start;')
+                    button.btn.btn-primary.samobuttopcontroller1(type='button', href='#', style='font-size: 0.9rem;') Create or Post move
+                    p(style='margin-bottom: 0rem;') or
+                    button.btn.btn-primary.samobuttopcontroller2(type='button', href='#', data-dismiss='modal',style='font-size: 0.9rem; width: 6%; background-color: lightgrey;') Cancel
+
+

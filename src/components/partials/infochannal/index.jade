@@ -1,0 +1,126 @@
+.o_content
+    .o_view_manager_content
+        .o_form_view.o_form_readonly
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .oe_button_box(name='button_box')
+                    .o_form_field_image.oe_avatar.o_form_field(data-original-title='', title='')
+                        img(border='1', name='image', src='http://192.168.25.104:8069/web/image?model=mail.channel&id=20&field=image_medium&unique=20170417122326', style='width: 90px; height: 90px;')
+                    .oe_title
+                        .oe_edit_only
+                            label.o_form_label
+                                | Name
+                        h1
+                            | #
+                            span.o_form_field.o_form_required zxzx
+                            button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                    table.o_group.o_inner_group.o_label_nowrap
+                        tbody
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_false(for='o_field_input_171')
+                                        | Send messages by email
+                                td(colspan='1', style='width: 100%;')
+                                    .o_checkbox.o_form_field_boolean.o_form_field
+                                        input#o_field_input_171(type='checkbox', name='email_send', disabled='')
+                                        span
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_empty.o_form_label_false
+                                        | Description
+                                td(colspan='1', style='width: 100%;')
+                                    span.o_form_textarea.o_form_field.o_form_field_empty
+                                    textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 10.2222px;')
+                    table.o_group.o_inner_group
+                        tbody
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help.fa.fa-envelope-o( style='min-width: 20px;', data-original-title='', title='')
+                                td(colspan='1', style='width: 100%;')
+                                    div(name='alias_def')
+                                        a.o_form_uri.oe_read_only.oe_inline.o_form_field(href='#') Inactive Alias
+                                        .oe_edit_only.oe_inline(name='edit_alias', style='display: inline;')
+                                            span.oe_inline.o_form_field.o_form_field_empty(data-original-title='', title='')
+                                            | @
+                                            span.oe_inline.o_form_field localhost
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help.fa.fa-lock( style='min-width: 20px;', data-original-title='', title='')
+                                td(colspan='1', style='width: 100%;')
+                                    span.oe_inline.o_form_field.o_form_required Everyone
+                    .o_notebook
+                        ul.nav.nav-tabs(role='tablist')
+                            li
+                                a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_175', aria-expanded='false')
+                                    | Privacy
+                            li.active
+                                a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_176', aria-expanded='true')
+                                    | Members
+                        .tab-content.nav.nav-tabs
+                            #notebook_page_175.tab-pane(role='tabpanel')
+                                table.o_group.o_inner_group.o_label_nowrap
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                    | Who can follow the group's activities?
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field.o_form_required Invited people only
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_invisible
+                                                    | Authorized Group
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_invisible(href='#') Employees / Employee
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.o_form_label_empty( data-original-title='', title='')
+                                                    | Auto Subscription
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2manytags.o_form_field.o_form_field_empty
+                            #notebook_page_176.tab-pane.active(role='tabpanel')
+                                .o_form_field.o_view_manager_content
+                                    .o_x2m_control_panel
+                                        .o_cp_buttons
+                                        .o_cp_pager
+                                            .o_hidden
+                                                span.o_pager_value
+                                                |  /
+                                                span.o_pager_limit
+                                                span.btn-group.btn-group-sm
+                                                    button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                    button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                    div
+                                        .table-responsive
+                                            table.o_list_view.table.table-condensed.table-striped
+                                                thead
+                                                    tr
+                                                        th.o_column_sortable(data-id='name')
+                                                            | Name
+                                                        th.o_column_sortable(data-id='email')
+                                                            | Email
+                                                        th(data-id='im_status')
+                                                            | IM Status
+                                                tfoot
+                                                    tr
+                                                        td
+                                                        td
+                                                        td
+                                                tbody
+                                                    tr
+                                                        td(title='Name')  
+                                                        td(title='Email')  
+                                                        td(title='IM Status')  
+                                                    tr
+                                                        td(title='Name')  
+                                                        td(title='Email')  
+                                                        td(title='IM Status')  
+                                                    tr
+                                                        td(title='Name')  
+                                                        td(title='Email')  
+                                                        td(title='IM Status')  
+                                                    tr
+                                                        td(title='Name')  
+                                                        td(title='Email')  
+                                                        td(title='IM Status')  
+

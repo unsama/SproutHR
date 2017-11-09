@@ -1,0 +1,67 @@
+.grids
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true',v-bind:createbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:firstbtn='true',v-bind:secondbtn='true')
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Employees
+        span.o_pager_value(slot='page') {{counter}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="select4()",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="select3()",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+    .row(v-for="record in employeenames",style='display: inline-block; padding-left: 5px;')
+        .col-md-12
+            ProTwo(style='padding-top:10px;')
+                .table(slot='pro')
+                    router-link(v-bind:to="'Hr/'+record.id")
+                        .row(style='margin-left: -15px;')
+                            .col-xs-2
+                                a(href='#', data-toggle='tooltip', data-placement='top', title='CheckIn')
+                                    .blue
+                            .col-xs-3
+                                a(href='#', data-toggle='tooltip', data-placement='top', title='Check Out')
+                                    .green
+                        .row
+                            .col-xs-3(style='margin-left: -15px;')
+                                .img
+                                    img.img-responsive(style='width:80px;')(src='/images/image.jpg')
+                                .row(style='margin-top:5px;padding-left:10px;')
+                                    .col-xs-3
+                                        i.fa.fa-comments(aria-hidden='true',style='font-size: small;color: #4c4c4c;')
+                                            | 12s
+                                    .col-xs-3.offset-sm-1
+                                        i.fa.fa-users(style='font-size: small;color: #4c4c4c;')
+                                            | 12
+
+                            .col-xs-3(style='color: black;padding-left: 14px;font-size:13px;color: #4c4c4c;')
+                                address
+                                    strong
+                                        a(href='mailto:webmaster@example.com',style='color: #4c4c4c;') {{record.employeename}}
+                                        | .
+                                    br(style='font-size:10px;')
+                                    |    {{record.job_tittle}}
+                                    br(style='font-size:10px;')
+                                    |    {{record.work_address_id}}
+                                    br(style='font-size:10px;')
+                                    span.glyphicon.glyphicon-earphone
+                                    |    {{record.work_phone}}
+                                    br(style='font-size:10px;')
+                                    span.fa.fa-envelope
+                                    |    {{record.work_email}}
+                            .col-xs-3.pull-right(style='margin-left: 43px;')
+                                i.fa.fa-user(v-if="record.statuss.data[0] == 0",aria-hidden='true',style='float:right;color:red;margin-left: 34px;')
+                                i.fa.fa-user(v-if="record.statuss.data[0] == 1",aria-hidden='true',style='float:right;color:green;margin-left: 34px;')
+
+
+                        .row(style='margin-left: 274px;')
+                            .col-sm-12(style='')
+                                button.btn.btn-default.bs(style='float:right;margin-top: -35px;font-size: 13px;margin-right: -8px;')(type='button') Follow
+    //.row#createform()
+    //    .col-md-12
+    //        Pro(style='padding-top:10px;')
+    //        Pro(style='padding-top:10px;')
+    //        Pro(style='padding-top:10px;')
+
+            
+
+    //Editing#createedit

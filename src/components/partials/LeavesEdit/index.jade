@@ -1,0 +1,103 @@
+.o_content
+    .o_view_manager_content
+        .o_form_view.o_form_readonly
+            .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                input(type='checkbox', name='can_reset', disabled='')
+                span
+            span.o_form_field.o_form_required.o_form_invisible(data-original-title='', title='') Leave Request
+            header(style='margin-left:-15px;margin-right:-15px;')
+                button.btn.btn-sm.oe_highlight.o_form_invisible(type='button')
+                    span Confirm
+                button.btn.btn-sm.oe_highlight(type='button')
+                    span Approve
+                button.btn.btn-sm.oe_highlight.o_form_invisible(type='button')
+                    span Validate
+                button.btn.btn-sm(type='button')
+                    span Refuse
+                button.btn.btn-sm(type='button')
+                    span Reset to Draft
+                ul.oe_form_field_status.oe_form_status.o_form_field(data-original-title='', title='')
+                    li(data-id='draft')
+                        span.label To Submit
+                        span.arrow
+                            span
+                    li.oe_active(data-id='confirm')
+                        span.label To Approve
+                        span.arrow
+                            span
+                    li(data-id='validate')
+                        span.label Approved
+                        span.arrow
+                            span
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .oe_title
+                        h1
+                            span.o_form_field Jack Macklin on Unpaid : 44.00 day(s)
+                    .o_group
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Description
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field gfhfgh
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Leave Type
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_required(href='#') Unpaid
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Duration
+                                    td(colspan='1', style='width: 100%;')
+                                        div
+                                            div(attrs="{'invisible': [('type', '=', 'add')]}")
+                                                span.o_form_field_date.oe_inline.o_form_field.o_form_required 04/11/2017 12:37:45
+                                                label.o_form_label.oe_inline
+                                                    | -
+                                                span.o_form_field_date.oe_inline.o_form_field.o_form_required 05/24/2017 20:37:45
+                                            div
+                                                span.oe_inline.o_form_field.o_form_field_number 44.00
+                                                |  days
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                            | Mode
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field.o_form_required By Employee
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Employee
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_required(href='#') Jack Macklin
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false( data-original-title='', title='')
+                                            | Employee Tag
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Department
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field(href='#') Research & Development
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                            | Reported in last payslips
+                                    td(colspan='1', style='width: 100%;')
+                                        button.o_icon_button.o_form_field(type='button', title='Reported in last payslips')
+                                            i.fa.fa-circle.o_toggle_button_success(title='Reported in last payslips')
+                        span.o_form_textarea.o_group_col_12.o_form_field.o_form_invisible.o_form_field_empty
+                        .o_group_col_6(attrs="{'invisible':[('type','=','add')]}")
+                            .o_horizontal_separator
+                                | Comment by Manager
+                            span.o_form_textarea.o_form_field vgbngc

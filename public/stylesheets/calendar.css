@@ -1,0 +1,58 @@
+.fc-button-group {
+    position: absolute;
+    margin-top: -42px;
+    margin-left: -52px !important;
+    z-index: 1;
+    width: 100%;
+    float: left;
+    top: 0;
+    left: 200px;
+}
+
+.fc-left {
+    margin-left: 45px !important;
+}
+
+.fc-today-button {
+    margin-top: -42px !important;
+    background-color: #7c7bad !important;
+    color: white !important;
+    background: #7c7bad
+}
+
+.fc-prev-button {
+    margin-left: -133px !important;
+    background-color: #7c7bad !important;
+    border-color: #7c7bad;
+    color: white !important;
+    background: #7c7bad
+}
+
+.fc-next-button {
+    margin-left: -10px !important;
+    background-color: #7c7bad !important;
+    color: white !important;
+
+}
+.fc-month-button
+{
+    margin-left: 49px !important;
+}
+.fc-state-default
+{
+    /*display: none !important;*/
+}
+
+.fc-next-button{
+    background-color: #7c7bad !important;
+    border-color: #7c7bad;
+    margin-top: 34px;
+    background: #7c7bad
+}
+.fc-ltr
+{
+    float: left;
+    left: 0;
+    width: 100%;
+    position: absolute;
+}

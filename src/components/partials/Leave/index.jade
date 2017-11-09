@@ -1,0 +1,50 @@
+.Leave
+    dashconterller(v-show='k',v-bind:createbtn='true',v-bind:heading="nextactivity",v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true',v-bind:importbtn='true', v-bind:links="btnlinks")
+
+    .o_content#createform(style='margin-left: -15px;margin-right: -15px;')
+        .o_view_manager_content
+            div
+                .table-responsive
+                    table.o_list_view.table.table-condensed.table-striped.o_list_view_grouped
+                        thead
+                            tr
+                                th
+                                th.o_list_record_selector(width='1')
+                                    .o_checkbox
+                                        input(type='checkbox')
+                                        span
+                                th.o_column_sortable(data-id='employee_id')
+                                    | Employee
+                                th.o_column_sortable(data-id='holiday_type')
+                                    | Allocation Mode
+                                th.o_column_sortable(data-id='category_id')
+                                    | Employee Tag
+                                th.o_column_sortable(data-id='holiday_status_id')
+                                    | Leave Type
+                                th.o_column_sortable(data-id='name')
+                                    | Description
+                                th.o_column_sortable(data-id='number_of_days')
+                                    | Allocated Days
+                                th.o_column_sortable(data-id='date_from')
+                                    | Start Date
+                                th.o_column_sortable(data-id='date_to')
+                                    | End Date
+                                th.o_column_sortable(data-id='state')
+                                    | Status
+                        tfoot
+                            tr
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td.o_list_number(data-field='number_of_days', title='Remaining Days') 0.00
+                                td
+                                td
+                                td
+                        tbody
+
+    
+

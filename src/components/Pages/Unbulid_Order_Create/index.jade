@@ -1,0 +1,147 @@
+.all_transfers_table
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:discardbtn='true',v-bind:savedbtn='true', v-bind:links="btnlinks")
+    .o_content.row(style='height:89vh;overflow:auto;')
+        .col-md-12
+            .row
+                .col-md-12.pull-left.samotopcontroller
+                    .col-md-5.pull-left
+                        button.btn.btn-primary.samobutton2(type='button',style='margin-right: 5px;') Unbuild
+
+
+                    .col-md-1.pull-left
+                    .col-md-3.pull-left
+                    .col-md-3.pull-right
+                        .btn-group.btn-breadcrumb.samobreadcrum1
+                            a.btn.btn-primary.samobreadbutt(href='#') Draft
+                            a.btn.btn-primary.samobreadbutt1(href='#') Done
+
+
+            .o_view_manager_content
+                .o_form_view.o_form_editable.oe_form_dirty
+                    .o_form_sheet_bg
+                        .o_form_sheet
+                            .oe_button_box(name='button_box')
+                                button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                    .fa.fa-fw.fa-arrows-v.o_button_icon
+                                    span Moves
+                            .oe_title
+                                h1
+                                    span.o_form_field New
+                            .o_group
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Product
+                                            td(colspan='1', style='width: 100%;')
+                                                select#o_field_input_145.o_form_input.o_form_field(name='priority',style='background-color:#D2D2FF;')
+                                                    option(value='false')
+                                                    option(value='"0"') Not urgent
+                                                    option(value='"1"') Normal
+                                                    option(value='"2"') Urgent
+                                                    option(value='"3"') Very Urgent
+                                                    i.fa.fa-external-link(aria-hidden='true')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Bill of Material
+                                            td(colspan='1', style='width: 100%;')
+                                                select#o_field_input_145.o_form_input.o_form_field(name='priority',style='background-color:#D2D2FF;')
+                                                    option(value='false')
+                                                    option(value='"0"') Not urgent
+                                                    option(value='"1"') Normal
+                                                    option(value='"2"') Urgent
+                                                    option(value='"3"') Very Urgent
+                                                    option create
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_4')
+                                                    | Quantity
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_row
+                                                    input#o_field_input_4.o_form_input.o_form_field.o_form_required.o_form_field_number(type='text')
+                                                    .o_form_field_many2one.o_form_field.o_form_required.o_form_invisible
+                                                        .o_form_input_dropdown
+                                                            input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Manufacturing Order
+                                            td(colspan='1', style='width: 100%;')
+                                                select#o_field_input_145.o_form_input.o_form_field(name='priority')
+                                                    option(value='false')
+                                                    option(value='"0"') Not urgent
+                                                    option(value='"1"') Normal
+                                                    option(value='"2"') Urgent
+                                                    option(value='"3"') Very Urgent
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_invisible(for='o_field_input_6')
+                                                    | Location
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_with_button.o_form_field.o_form_required.o_form_invisible
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_6.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_invisible(for='o_field_input_7')
+                                                    | Destination Location
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_with_button.o_form_field.o_form_required.o_form_invisible
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_7.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_invisible
+                                                    | Tracking
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field.o_form_invisible No Tracking
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_invisible(for='o_field_input_9')
+                                                    | Lot
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_form_field.o_form_invisible
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_9.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button
+                    .o_chatter.o_form_field.oe_chatter.o_form_invisible
+                        .o_chatter_topbar
+                            button.btn.btn-sm.btn-primary.o_chatter_button_new_message(title='Send a message', type='button')
+                                | New message
+                            button.btn.btn-sm.btn-link.o_chatter_button_log_note(title='Log a note. Followers will not be notified.')
+                                | Log an internal note
+                            .o_followers.o_form_field.o_form_invisible
+                                .o_followers_title_box
+                                    button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', title='No follower')
+                                        i.fa.fa-user
+                                        span.o_followers_count 0
+                                        span.caret
+                                    ul.dropdown-menu.o_followers_list(role='menu')
+                                        li.o_add_follower
+                                            a(href='#')  Add Followers
+                                        li.o_add_follower_channel
+                                            a(href='#')  Add Channels
+                                .o_followers_actions
+                                    .btn-group.btn-group-sm.o_subtypes_list
+                                        button.btn.btn-sm.btn-link.o_followers_follow_button.o_followers_notfollow
+                                            span.o_follow Follow
+                                            span.fa.fa-times.o_followers_unfollow
+                                            span.o_followers_unfollow  Unfollow
+                                            span.fa.fa-check.o_followers_following
+                                            span.o_followers_following  Following
+                                        button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', disabled='disabled')
+                                            span.fa.fa-bell
+                                        ul.dropdown-menu(role='menu')
+                        .o_mail_thread

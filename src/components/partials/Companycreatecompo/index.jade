@@ -1,0 +1,156 @@
+.o_content(style='margin-left:-15px;margin-right:-15px;')
+    .o_view_manager_content
+        .o_form_view.o_form_editable.oe_form_dirty
+            .o_form_sheet_bg
+                .o_form_sheet
+                    span(v-show="errors.has('upload')") {{ errors.first('csrf_token') }}
+                    .o_form_field_image.oe_avatar.o_form_field(data-original-title='', title='')
+                        img(border='1', name='logo', v-bind:src="imageSrc")
+
+                        .o_form_image_controls
+                            span.fa.fa-pencil-square.fa-lg.pull-left.o_select_file_button(title='Edit', onclick="document.getElementById('companyImageUpload').click()")
+                            span.fa.fa-trash-o.fa-lg.pull-right.o_clear_file_button(title='Clear' v-on:click="deleteImg")
+                            span.o_form_binary_progress Uploading...
+
+                    form.row(@submit.prevent="validateBeforeSubmit" v-if="!formSubmitted")
+
+                        .o_hidden_input_file
+                            input(name='csrf_token', id='companyImageUpload', type='file', value='5ff3188ad0c59ca90490e3cc5faaa1e7caa3f2eco' v-on:change="companyImageUpload" style='display: none' v-validate="'image'")
+                            input(name='callback', type='hidden')
+                            input.o_form_input_file(accept='image/*', name='ufile', type='file')
+                            iframe(style='display: none')
+                        .oe_title(style='margin-left: 35px;')
+                            label.o_form_label.oe_edit_only(for='o_field_input_5')
+                                | Company Name
+                            h1
+                                input#o_field_input_5.o_form_input.oe_inline.o_form_field.o_form_required(type='text' name='name' v-model='companyName' v-validate="'required'")
+                            span(v-show="errors.has('name')") {{ errors.first('name') }}
+                            br
+
+                            label.o_form_label.o_form_label_help.oe_edit_only(for='o_field_input_6', data-original-title='', title='')
+                                | Company Tagline
+                            h3
+                                input#o_field_input_6.o_form_input.o_form_field(placeholder='e.g. Global Business Solutions', type='text' v-model='companyTagline')
+                    .o_notebook
+                        ul.nav.nav-tabs(role='tablist')
+                            li.active
+                                a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_7')
+                                    | General Information
+                        .tab-content.nav.nav-tabs
+                            #notebook_page_7.tab-pane.active(role='tabpanel')
+                                .o_group
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                        | Partner
+                                                td(colspan='1', style='width: 100%;')
+                                                    a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_9')
+                                                        | Address
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_address_format
+                                                        input.o_form_input.o_address_street.o_form_field(placeholder='Street...',name='street' type='text' v-model='companyStreetOne' v-validate="'required|min:3'")
+                                                        span(v-show="errors.has('street')") {{ errors.first('street') }}
+                                                        input.o_form_input.o_address_street.o_form_field(placeholder='Street 2...', type='text' v-model='companyStreetTwo')
+                                                        input.o_form_input.o_address_city.o_form_field(placeholder='City', type='text' v-model='companyCity' v-validate="'required|alpha|min:3'" name='city')
+
+                                                        .o_form_field_many2one.o_address_state.o_form_field
+                                                            .o_form_input_dropdown
+                                                                select.o_form_input.ui-autocomplete-input(v-model='companyStateId' v-validate="'required'" name='state')
+                                                                    option(v-for='companyStateOptions in companyStateOptions', v-bind:value='companyStateOptions.id') {{companyStateOptions.state_name}}
+
+                                                        input.o_form_input.o_address_zip.o_form_field(placeholder='ZIP', type='text' v-model='companyZip')
+                                                        .o_form_field_many2one.o_address_country.o_form_field
+                                                            .o_form_input_dropdown
+                                                                select.o_form_input.ui-autocomplete-input(v-model='companyCountryId' @change="changeItem" v-validate="'required'" name= 'country')
+                                                                    option(v-for='companyCountryOptions in companyCountryOptions', v-bind:value='companyCountryOptions.id') {{companyCountryOptions.country_name}}
+                                                        span(v-show="errors.has('city')") {{ errors.first('city') }}
+                                                        br
+                                                        span(v-show="errors.has('state')") {{ errors.first('state') }}
+                                                        br
+                                                        span(v-show="errors.has('country')") {{ errors.first('country') }}
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_10', data-original-title='', title='')
+                                                        | Website
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_10.o_form_input.o_form_field(placeholder='e.g. www.odoo.com', type='text' v-model='companyWebsite' )
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_11')
+                                                        | Phone
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_11.o_form_input.o_form_field(type='text' v-model='companyPhone' name='phone' v-validate="'required|alpha_num'")
+                                                    span(v-show="errors.has('phone')") {{ errors.first('phone') }}
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_12')
+                                                        | Fax
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_12.o_form_input.o_form_field(type='text' v-model='companyFax')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_13')
+                                                        | Email
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_13.o_form_input.o_form_field(type='text' name='email' v-model='companyEmail' v-validate="'required|email'" )
+                                                    span(v-show="errors.has('email')") {{ errors.first('email') }}
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_14', data-original-title='', title='')
+                                                        | Tax ID
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_14.o_form_input.o_form_field(type='text' v-model='companyTaxID' name='taxId' v-validate="'required|alpha_num'")
+                                                    span(v-show="errors.has('taxId')") {{ errors.first('taxId') }}
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_15')
+                                                        | Company registry
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_15.o_form_input.o_form_field(type='text' v-model='companyRegistry')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_16')
+                                                        | Currency
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                        .o_form_input_dropdown
+                                                            select.o_form_input.ui-autocomplete-input(v-model='companyCurrencyId' name='currency' v-validate="'required'")
+                                                                option(v-for='companyCurrencyOptions in companyCurrencyOptions', v-bind:value='companyCurrencyOptions.id') {{companyCurrencyOptions.currency}}
+                                                        .fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1',  style='display: block;' ,data-toggle='modal', data-target='.bd-example-modal-lg')
+
+                                            tr
+
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                    span(v-show="errors.has('currency')") {{ errors.first('currency') }}
+                                                td(colspan='1', style='width: 100%;')
+
+                                                    p.text-muted
+                                                        | Activate
+                                                        a(href='', type='action', name='68') here
+                                                        |  a new currency before creating a new company.
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_18')
+                                                        | Parent Company
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field
+                                                        .o_form_input_dropdown
+                                                            select.o_form_input.ui-autocomplete-input(v-model='companyParentCompanyId')
+                                                                option(v-for='companyParentCompanyOptions in companyParentCompanyOptions', v-bind:value='companyParentCompanyOptions.id') {{companyParentCompanyOptions.company_name}}
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_19', data-original-title='', title='')
+                                                        | Sequence
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_19.o_form_input.o_form_field.o_form_invisible.o_form_field_number(type='text' v-model='companySequence')
+                                            button(type="submit", id="submitButton" style='display: none') Submit

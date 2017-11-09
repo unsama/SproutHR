@@ -1,0 +1,39 @@
+.DepSetting
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true',v-bind:dropdownMenuButton='true',v-bind:Attachmentbtn='true',v-bind:actionbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                .o_stat_info.o_form_field
+                                    span.o_stat_text.o_not_hover.text-success Active
+                                    span.o_stat_text.o_hover.text-danger Archive
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Department Name
+                                    td(colspan='1', style='width: 50%;')
+                                        span.o_form_field.o_form_required as
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Manager
+                                    td(colspan='1', style='width: 50%;')
+                                        a.o_form_uri.o_form_field(href='#') Jan Van Eyck
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Parent Department
+                                    td(colspan='1', style='width: 50%;')
+                                        a.o_form_uri.o_form_field(href='#') Management
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Company
+                                    td(colspan='1', style='width: 50%;')
+                                        a.o_form_uri.o_form_field(href='#') Alupak Industriess
+    Message
+    Request_quotation_lower

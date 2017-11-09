@@ -1,0 +1,100 @@
+.all_transfers_table
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false',v-bind:dropdownbtn1='false',v-bind:dropdownbtn2='false',v-bind:dropdownbtn3='false',v-bind:actionbtn='true',v-bind:Attachmentbtn='true',v-bind:printbtn='false')
+    .o_content.row(style='height:89vh;overflow:auto;')
+        .col-md-12
+            .row
+                .col-md-12.pull-left.samotopcontroller
+                    .col-md-5.pull-left
+                        button.btn.btn-primary.samobutton1(type='button',style='margin-right: 5px;') Refuse
+
+
+                    .col-md-1.pull-left
+                    .col-md-3.pull-left
+                    .col-md-3.pull-right
+                        .btn-group.btn-breadcrumb.samobreadcrum1
+                            a.btn.btn-primary.samobreadbutt(href='#') To Submit
+                            a.btn.btn-primary.samobreadbutt1(href='#') To Approved
+                            a.btn.btn-primary.samobreadbutt(href='#') Approved
+            .o_view_manager_content
+                .o_form_view.o_form_readonly
+                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                        input(type='checkbox', name='can_reset', disabled='')
+                        span
+                    span.o_form_field.o_form_required.o_form_invisible(data-original-title='', title='') Leave Request
+
+                    .o_form_sheet_bg
+                        .o_form_sheet
+                            .oe_title
+                                h1
+                                    span.o_form_field Administrators on Sick Leaves : 3.00 day(s)
+                            .o_group
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Description
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field Doctor Appointment
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Leave Type
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_required(href='#') Sick Leaves
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Duration
+                                            td(colspan='1', style='width: 100%;')
+                                                div
+                                                    div(attrs="{'invisible': [('type', '=', 'add')]}")
+                                                        span.o_form_field_date.oe_inline.o_form_field.o_form_required 02/20/2017 05:00:00
+                                                        label.o_form_label.oe_inline
+                                                            | -
+                                                        span.o_form_field_date.oe_inline.o_form_field.o_form_required 02/22/2017 05:00:00
+                                                    div
+                                                        span.oe_inline.o_form_field.o_form_field_number 3.00
+                                                        |  days
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                    | Mode
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field.o_form_required By Employee
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Employee
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_required(href='#') Administrators
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(data-original-title='', title='')
+                                                    | Employee Tag
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_empty.o_form_label_false
+                                                    | Department
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.o_form_label_false(data-original-title='', title='')
+                                                    | Reported in last payslips
+                                            td(colspan='1', style='width: 100%;')
+                                                button.o_icon_button.o_form_field(type='button', title='Reported in last payslips')
+                                                    i.fa.fa-circle.text-muted(title='Reported in last payslips')
+                                span.o_form_textarea.o_group_col_12.o_form_field.o_form_invisible.o_form_field_empty
+                                .o_group_col_6(attrs="{'invisible':[('type','=','add')]}")
+                                    .o_horizontal_separator
+                                        | Comment by Manager
+                                    span.o_form_textarea.o_form_field.o_form_field_empty
+
+
+            Message
+            Request_quotation_lower

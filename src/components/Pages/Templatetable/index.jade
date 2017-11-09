@@ -1,0 +1,5 @@
+.templatetable
+    DashboardController(v-bind:createbtn='true',v-bind:importbtn='true',v-bind:actionbtn='true',v-bind:exportbtn='true',v-bind:deletebtn='true',v-bind:links='btnlinks',v-bind:searchbar='true',v-bind:num1='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true',v-bind:heading='head' )
+        .col-sm-6(style='padding:0px;' ,slot='heading')
+            h4.samodashheading(style="font-size: 18px;") Templates
+    TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata",v-bind:tablefoot="tablefoot")

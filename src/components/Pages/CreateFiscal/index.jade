@@ -1,0 +1,124 @@
+.request_quotation_inner
+    DashboardController(v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks", v-bind:heading="head")
+    .o_content.samocontent#tax1(style='margin-left: -15px;margin-right: -15px;')
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                           .row
+
+                            table.o_group.o_inner_group
+                                tbody
+
+                                    tr
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label(style='font-size: 0.9rem; padding-left: 13px;')
+                                                | Fiscal Position
+                                        td.two(colspan='1', style='width: 50%;')
+                                            input#o_field_input_87.o_form_input.o_form_field(style='width: 92%; background-color: #D2D2FF;')(type='text')
+
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label
+                                                | Detect Automatically
+                                        td.two(colspan='1', style='width: 50%;')
+                                            .o_checkbox
+                                                input#box(type='checkbox')
+                                                span
+
+
+
+                                    tr
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label(style='padding-left: 13px;')
+                                                | Active
+                                        td.two(colspan='1', style='width: 50%;')
+                                            .o_checkbox
+                                                input(type='checkbox')
+                                                span
+
+                                        td.o_td_label.one#td1(colspan='1')
+                                            label.o_form_label(style='font-size: 0.8rem;')
+                                                | VAT required
+                                        td.two#td2(colspan='1', style='width: 50%;')
+                                            .o_checkbox
+                                                input(type='checkbox')
+                                                span
+
+                                    tr
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label(style='padding-left: 13px;')
+                                                | Company
+                                        td.two(colspan='1', style='width: 50%;')
+                                            select#o_field_input_186.o_form_input.o_form_field(style='width: 211px; ')(name='format')
+                                                option(value='true') Profit and Loss
+                                                option(value='"A0"') Balance Sheet
+
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button#bttn(style='color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button', data-toggle='modal', href='#myModal2')
+
+
+                                        td.o_td_label.one#td3(colspan='1')
+                                            label.o_form_label(style='font-size: 0.8rem;')
+                                                | Country Group
+                                        td.two#td4(colspan='1', style='width: 50%;')
+                                            select#o_field_input_16.o_form_input.o_form_field(style='width: 211px; ')(name='format')
+                                                option(value='')
+                                                option(value='Europe') Europe
+                                                option(value='"A0"') Create& edit
+
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button#bttn(style='color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button', data-toggle='modal', href='#myModal2')
+
+                                    tr
+                                        td
+                                        td
+
+                                        td.o_td_label.one#td5(colspan='1')
+                                            label.o_form_label(style='font-size: 0.8rem;')
+                                                | Country
+                                        td.two#td6(colspan='1', style='width: 50%;')
+                                            select#o_field_input_186.o_form_input.o_form_field(style='width: 211px; ')(name='format')
+                                                option(value='true') Profit and Loss
+                                                option(value='"A0"') Balance Sheet
+
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button#bttn(style='color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button', data-toggle='modal', href='#myModal2')
+
+
+                                    tr
+                                        td
+                                        td
+
+                                        td.o_td_label.one#td7(colspan='1')
+                                            label.o_form_label(style='font-size: 0.8rem;')
+                                                | Zip Range
+                                        td.two#td8(colspan='1', style='width: 50%;')
+                                            p From
+                                              input#o_field_input_87.o_form_input.o_form_field(style='width: 50%; ')(type='text')
+                                            p To
+                                                input#o_field_input_87.o_form_input.o_form_field(style='width: 50%; ')(type='text')
+
+
+                                br
+
+                            .o_notebook(style='margin-top:-15px; padding-left:13px;')
+                                   ul.nav.nav-tabs(role='tablist')
+                                       li.nav-item
+                                           a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Tax Mapping
+                                       li.nav-item
+                                           a.nav-link(href='#buzz', role='tab', data-toggle='tab') Account Mapping
+                                   // Tab panes
+                                   .tab-content
+                                       #profile.tab-pane.fade.in.active(role='tabpanel')
+                                           TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter")(style='width: 815px !important; margin-left: 13px;')
+                                           textarea.o_form_textarea.o_form_field(rows='6', name='sale_note',placeholder='Legal Notes..', style='height: 50px; width: 100%;')
+                                           button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                           textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 1397px;')
+
+
+
+
+
+                                       #buzz.tab-pane.fade.in(role='tabpanel')
+                                           TableMain(v-bind:tableheader='tableheader1', v-bind:tabledata="tabledata1", v-bind:tablefoot="tablefooter1")(style='width: 815px !important; margin-left: 13px;')
+                                           textarea.o_form_textarea.o_form_field(rows='6', name='sale_note',placeholder='Legal Notes..', style='height: 50px; width: 100%;')
+                                           button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                           textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 1397px;')
+

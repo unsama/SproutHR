@@ -1,0 +1,40 @@
+.container
+    .row
+        .container.logo
+            img(src='/images/company_logo.jpg')
+
+    form.row(@submit.prevent='validateBeforeSubmit')
+        .col-md-12
+            .container.col-md-6
+                label.label Name
+                p.control.has-icon.has-icon-right
+                    input.form-control(name='name', v-model='username', v-validate:name.initial="'required|alpha'", :class="{'input': true, 'is-danger': errors.has('name') }", type='text', placeholder='Name',style='width: 100%;')
+                    i.fa.fa-warning.cl(v-show="errors.has('name')")
+                    span.help.is-danger.cl(v-show="errors.has('name')") {{ errors.first('name') }}
+            .container.col-md-6
+                label.label Email
+                p.control.has-icon.has-icon-right
+                    input.form-control(name='email', v-model='email', v-validate:email.initial="'required|email'", :class="{'input': true, 'is-danger': errors.has('email') }", type='text', placeholder='Email',style='width: 100%;')
+                    i.fa.fa-warning.cl(v-show="errors.has('email')")
+                    span.help.is-danger.cl(v-show="errors.has('email')") {{ errors.first('email') }}
+            .container.col-md-6
+                label.label Password
+                p.control.has-icon.has-icon-right
+                    input.form-control(name='password', v-model='password',v-validate="'required|min:6'", :class="{'input': true, 'is-danger': errors.has('password') }", type='password', placeholder='Password',style='width: 100%;')
+                    i.fa.fa-warning.cl(v-show="errors.has('password')")
+                    span.help.is-danger.cl(v-show="errors.has('password')") {{ errors.first('password') }}
+
+            //ul.text-left
+            //    li Name: {{username}}
+            //    li Email: {{email}}
+            //    li Password: {{password}}
+
+
+        .col-md-6.container(style='margin-left: 290px;')
+            button.btn.btn-primary.log(type="submit") Register
+        .col-md-8(style='position: relative;left: 372px;')
+            button.btn.btn-link.man(type="button") Manage Databases
+            | &nbsp; |
+            | &nbsp;
+            button.btn.btn-link.odo(type="button") Powered by odoo
+

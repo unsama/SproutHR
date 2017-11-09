@@ -1,0 +1,134 @@
+.sidebar
+    .modal-body.o_act_window
+        .o_view_manager_content
+            .o_form_view.o_form_editable
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .o_form_field_image.oe_avatar.o_form_field(data-original-title='', title='')
+                            img(border='1',style='width: 95px;', name='logo', src='http://192.168.25.104:8069/web/image?model=res.company&id=1&field=logo&unique=20170418133753')
+                            .o_form_image_controls
+                                span.fa.fa-pencil.fa-lg.pull-left.o_select_file_button(title='Edit')
+                                span.fa.fa-trash-o.fa-lg.pull-right.o_clear_file_button(title='Clear')
+                                span.o_form_binary_progress Uploading...
+                                .o_hidden_input_file
+                                    form.o_form_binary_form(enctype='multipart/form-data', method='post', action='/web/binary/upload')
+                                        input(name='csrf_token', type='hidden', value='50b3acac64bb114a619beb5def5f2c4e9250cb6do')
+                                        input(name='callback', type='hidden')
+                                        input.o_form_input_file(accept='image/*', name='ufile', type='file')
+                                    iframe(style='display: none')
+                        .oe_title(style='margin-left: 118px;margin-top: -121px;')
+                            label.o_form_label.oe_edit_only(for='o_field_input_5')
+                                | Company Name
+                            h1
+                                input#o_field_input_5.o_form_input.oe_inline.o_form_field.o_form_required(type='text',style='height: 33px;')
+                            label.o_form_label.o_form_label_help.oe_edit_only(for='o_field_input_6', data-original-title='', title='')
+                                | Company Tagline
+                            h3
+                                input#o_field_input_6.o_form_input.o_form_field(placeholder='e.g. Global Business Solutions', type='text',style='height: 33px;')
+                        .o_notebook(style='margin-top: 53px;')
+                            ul.nav.nav-tabs(role='tablist')
+                                li.active
+                                    a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_7')
+                                        | General Information
+                            .tab-content.nav.nav-tabs
+                                #notebook_page_7.tab-pane.active(role='tabpanel')
+                                    .o_group
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible(for='o_field_input_8')
+                                                            | Partner
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_invisible(href='#') Alupak Industriesss
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_9')
+                                                            | Address
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_address_format
+                                                            input#o_field_input_9.o_form_input.o_address_street.o_form_field(placeholder='Street...', type='text')
+                                                            input.o_form_input.o_address_street.o_form_field(placeholder='Street 2...', type='text')
+                                                            input.o_form_input.o_address_city.o_form_field(placeholder='City', type='text')
+                                                            .o_form_field_many2one.o_address_state.o_form_field
+                                                                .o_form_input_dropdown
+                                                                    input.o_form_input.ui-autocomplete-input(type='text', placeholder='State', autocomplete='off')
+                                                                    span.o_dropdown_button(draggable='false')
+                                                            input.o_form_input.o_address_zip.o_form_field(placeholder='ZIP', type='text')
+                                                            .o_form_field_many2one.o_address_country.o_form_field
+                                                                .o_form_input_dropdown
+                                                                    input.o_form_input.ui-autocomplete-input(type='text', placeholder='Country', autocomplete='off')
+                                                                    span.o_dropdown_button(draggable='false')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_10', data-original-title='', title='')
+                                                            | Website
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_10.o_form_input.o_form_field(placeholder='e.g. www.odoo.com', type='text')
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_11')
+                                                            | Phone
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_11.o_form_input.o_form_field(type='text')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_12')
+                                                            | Fax
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_12.o_form_input.o_form_field(type='text')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_13')
+                                                            | Email
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_13.o_form_input.o_form_field(type='text')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_14', data-original-title='', title='')
+                                                            | Tax ID
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_14.o_form_input.o_form_field(type='text')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_15')
+                                                            | Company registry
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_15.o_form_input.o_form_field(type='text')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_16')
+                                                            | Currency
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_16.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: block;')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_17')
+                                                    td(colspan='1', style='width: 100%;')
+                                                        p.text-muted
+                                                            | Activate
+                                                            a(href='', type='action', name='68') here
+                                                            |  a new currency before creating a new company.
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_18')
+                                                            | Parent Company
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_18.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_19', data-original-title='', title='')
+                                                            | Sequence
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_19.o_form_input.o_form_field.o_form_invisible.o_form_field_number(type='text')
+    

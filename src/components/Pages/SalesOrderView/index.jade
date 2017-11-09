@@ -1,0 +1,280 @@
+.salesorderquotation
+    DashboardController(v-bind:editbtn='true',v-bind:heading="quotation",v-bind:createbtn='true',v-bind:importbtn='false',v-bind:Attachmentbtn='true',v-bind:printbtn='true',v-bind:actionbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='false',v-bind:paginbtn2='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false')
+    .row
+        .col-md-12.pull-left.samotopcontroller
+            .col-md-5.pull-left
+                .col-xs-2.pull-left
+                    button.btn.btn-primary.samobutton2(type='button',style='margin-left: -32px;background-color: #9493bc;color: white;') Create Invoice
+                .col-xs-2.pull-left
+                    button.btn.btn-primary.samobutton2(type='button',style='margin-left: -7px;') Print
+                .col-xs-2.pull-left
+                    button.btn.btn-primary.samobutton2(type='button',style='margin-left: -41px;') Send by Email
+                .col-xs-2.pull-left
+                    button.btn.btn-primary.samobutton2(type='button',style='margin-left: -19px;') Cancel
+                .col-xs-2.pull-left
+                    button.btn.btn-primary.samobutton2(type='button',style='margin-left: -42px;') Lock
+
+
+
+            .col-md-1.pull-left
+            .col-md-3.pull-left
+            .col-md-3.pull-right
+                .btn-group.btn-breadcrumb.samobreadcrum1
+                    a.btn.btn-primary.samobreadbutt(href='#') Qualified
+                    a.btn.btn-primary.samobreadbutt1(href='#') New
+                    a.btn.btn-primary.samobreadbutt(href='#') Purchase
+    .o_content.samocontent(style='margin-left: -15px;margin-right: -15px;')
+        .o_view_manager_content#create
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .tophead
+                            h4 SO014
+                        br
+                        .col-xs-12.request_inner1
+                            .xyz
+                                .col-xs-3.request_inner3(style='font-weight: bold;')
+                                    .one
+                                        label(style='font-size:15px;padding-right:25px;')
+                                            | Customer
+                                        br
+
+
+
+                                .col-xs-4.osahass(style='')
+                                    .two
+                                        router-link(to='Vendormenu')
+                                            label(style='font-size:13px;')
+                                                | China Export
+                                                | ChinaShanghai52 Chop Suey street 200000
+                                            br
+
+                                .col-xs-3.request_inner2(style='font-weight: bold;')
+                                    .one
+                                        label(style='font-size:15px;padding-right:25px;')
+                                            | Expiration Date
+                                        label(style='font-size:15px;')
+                                            | Pricelist
+                                        br
+                                        label(style='font-size:15px;')
+                                            | Payment Terms
+                                        br
+
+
+                                .col-xs-2.osahass(style='')
+                                    .two
+                                        label(style='font-size:13px;')
+                                        label(style='font-size:13px;')
+                                            | Public Pricelist (USD)
+                                        br
+                                        br
+                                        router-link(to='profile')
+                                            label(style='font-size:13px;')
+
+
+                        .o_notebook
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Order Line
+                                li.nav-item
+                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') Other Information
+                            // Tab panes
+                            .tab-content
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+                                    TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter")
+                                    table.o_group
+                                            tbody(style="float: right;")
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label
+                                                            | Untaxed Amount
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_field_number
+                                                            span $
+                                                            | 7,315.00
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label
+                                                            | Taxes
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_field_number
+                                                            span $
+                                                            | 0.00
+                                                tr
+                                                    td(colspan='1', style='width: 50%;')
+                                                        .oe_subtotal_footer_separator.oe_inline.o_td_label
+                                                            label.o_form_label
+                                                                | Total
+                                                            button.btn.btn-sm.oe_edit_only.oe_link.o_form_invisible(type='button')
+                                                                span (update)
+                                                    td(colspan='1', style='width: 50%;')
+                                                        span.oe_subtotal_footer_separator.o_form_field.o_form_field_number
+                                                            span $
+                                                            | 7,315.00
+
+
+                                #buzz.tab-pane.fade.in(role='tabpanel')
+                                    .o_group
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Shipping Information
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible
+                                                            | Warehouse
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_required.o_form_invisible(href='#') YourCompany
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false
+                                                            | Incoterms
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_field_empty
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label
+                                                            | Shipping Policy
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_required Deliver each product when available
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Sales Information
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label
+                                                            | Salesperson
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field(href='#') Administrators
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_empty
+                                                            | Tags
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2manytags.o_form_field.o_form_field_empty
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label
+                                                            | Sales Team
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field(href='#') Direct Sales
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_empty.o_form_label_false
+                                                            | Customer Reference
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_field_empty
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label
+                                                            | Company
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field(href='#') Alupak Industriess
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                            | Analytic Account
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                            | Analytic Account
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Invoicing
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_empty.o_form_label_false
+                                                            | Fiscal Position
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible
+                                                            | Invoice Status
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_invisible Nothing to Invoice
+                                        table.o_group.o_inner_group.o_form_invisible.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Reporting
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                            | Source Document
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_invisible.o_form_field_empty
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                            | Campaign
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                            | Medium
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                            | Source
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible
+                                                            | Opportunity
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_invisible(href='#') Interest in your customizable Pcs
+
+        Message
+        .o_mail_thread(style='margin-left: 336px;')
+            .o_thread_date_separator
+                span.o_thread_date
+                    | February 25, 2017
+
+
+            .o_thread_message.samothreadmessage(data-message-id='1038')
+                .o_thread_message_sidebar
+                    img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/images/image_small.png' style='width: 33px;a')
+                .o_thread_message_core.o_mail_note.samothreadmessage1
+                    p.o_mail_info
+                        | Note by
+                        strong(data-oe-model='res.partner', data-oe-id='')
+                            | YourCompany, Administrators
+                        |                     -
+                        small.o_mail_timestamp(title='Sat Feb 25 2017 16:35:56 GMT+0500') 9 days ago
+                        span
+                            i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='1038')
+                    ul.o_mail_thread_message_tracking
+                        li
+                            | Untaxed Amount:
+                            span  637.5
+                        li
+                            | Vendor:
+                            span  Delta PC
+                        li
+                            | Status:
+                            span  RFQ
+                            span.fa.fa-long-arrow-right
+                            span
+                                | RFQ Sent
+
+
+
+

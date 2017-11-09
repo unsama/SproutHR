@@ -1,0 +1,24 @@
+.accountinglayout
+    modal(v-bind:save='false',v-bind:heading="'Run Schedulers'", v-bind:sheduaeactivity='true', v-bind:noactivity='true')
+        ManualTax
+    modal(v-bind:save='false',v-bind:heading="'Run Schedulers'", v-bind:sheduaeactivity='true', v-bind:noactivity='true')
+        PDFJournal
+    modal(v-bind:save='false',v-bind:heading="'Run Schedulers'", v-bind:sheduaeactivity='true', v-bind:noactivity='true')
+        PDFpartner
+    modal(v-bind:save='false',v-bind:heading="'Run Schedulers'", v-bind:sheduaeactivity='true', v-bind:noactivity='true')
+        PDFgeneral
+    modal(v-bind:save='false',v-bind:heading="'Run Schedulers'", v-bind:sheduaeactivity='true', v-bind:noactivity='true')
+        PDFtrial
+    modal(v-bind:save='false',v-bind:heading="'Run Schedulers'", v-bind:sheduaeactivity='true', v-bind:noactivity='true')
+        PDFProfitAndLoss
+    modal(v-bind:save='false',v-bind:heading="'Run Schedulers'", v-bind:sheduaeactivity='true', v-bind:noactivity='true')
+        PDFBalanceSheet
+    modal(v-bind:save='false',v-bind:heading="'Run Schedulers'", v-bind:sheduaeactivity='true', v-bind:noactivity='true')
+        PDFaged
+    modal(v-bind:save='false',v-bind:heading="'Run Schedulers'", v-bind:sheduaeactivity='true', v-bind:noactivity='true')
+        PDF_Financial
+    .row
+        .col-md-2
+            sidebar(v-bind:headings='sidebarData')
+        .col-md-10.cl
+            router-view

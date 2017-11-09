@@ -1,0 +1,46 @@
+.Stager
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_nosheet.o_form_readonly
+                .o_group
+                    .o_horizontal_separator
+                        | Stage Definition
+                    table.o_group.o_inner_group.o_group_col_6
+                        tbody
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label
+                                        | Stage name
+                                td(colspan='1', style='width: 100%;')
+                                    span.o_form_field.o_form_required() {{ name }}
+                                    button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help.o_form_invisible( data-original-title='', title='')
+                                        | Sequence
+                                td(colspan='1', style='width: 100%;')
+                                    span.o_form_field.o_form_invisible.o_form_field_number
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false( data-original-title='', title='')
+                                        | Job Specific
+                                td(colspan='1', style='width: 100%;')
+                                    span.o_form_field.o_form_required(href='#')(v-model='job_tittle') {{ job_tittle }}
+                    table.o_group.o_inner_group.o_group_col_6
+                        tbody
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help.o_form_label_false( data-original-title='', title='')
+                                        | Folded in Recruitment Pipes
+                                td(colspan='1', style='width: 100%;')
+                                    input(type='checkbox', name='my-checkbox', value='1', v-bind:true-value='1', v-bind:false-value='0', v-model='folded')
+
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false( data-original-title='', title='')
+                                        | Use templates
+                                td(colspan='1', style='width: 100%;')
+                                    span.o_form_field.o_form_required(href='#')(v-model='emailname') {{ emailname }}
+                .o_horizontal_separator
+                    | Requirements
+                span.o_form_field.o_form_required(v-model='description')  {{ description }}

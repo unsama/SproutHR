@@ -1,0 +1,52 @@
+div.card.h-100.shadwo-2.bg-accent
+    ul.list-group.list-group-flush
+        li.list-group-item
+            router-link(to="/")
+                i.fa.fa-tachometer
+                | Dashboard
+        li.list-group-item
+            router-link(to="/users")
+                i.fa.fa-user
+                | All Users
+        li.list-group-item
+            router-link(to="/departments")
+                i.fa.fa-users
+                | All Departments
+        li.list-group-item
+            a.nav-toggle-arrow(href="#")
+                i.fa.fa-pie-chart
+                | Attendance
+                i.fa.fa-angle-left
+            ul.list-group.list-group-flush
+                li.list-group-item
+                    a(href="#")
+                        i.fa.fa-user-plus
+                        | Users Attendance
+                li.list-group-item
+                    a(href="#")
+                        i.fa.fa-book
+                        | Generate Reports
+                li.list-group-item
+                    a(href="#")
+                        i.fa.fa-money
+                        | Users Deduction
+                li.list-group-item
+                    a(href="#")
+                        i.fa.fa-money
+                        | Users Loan
+                li.list-group-item
+                    a(href="#")
+                        i.fa.fa-paperclip
+                        | Attendance Requests
+        li.list-group-item
+            a(href="#")
+                i.fa.fa-list-alt
+                | Holidays
+        li.list-group-item
+            a(href="#")
+                i.fa.fa-paperclip
+                | Task
+        li.list-group-item
+            a(href="#")
+                i.fa.fa-paperclip
+                | Leave Requests

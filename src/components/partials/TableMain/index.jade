@@ -1,0 +1,39 @@
+.tablemain
+    .row(style='margin-left: -15px;')
+        table.table.table-striped.samotable
+            thead.samotablehead
+                tr
+                    th.o_list_record_selector.samotableheadborder(width='1')
+                        .o_checkbox()
+                            input#ckbCheckAll1(type='checkbox')
+                            span
+
+                    th.samotableheadborder(v-for='head in tableheader') {{ head }}
+                    th
+
+            tbody.samotbody
+                tr(v-for='tr in tabledata')
+                    th.o_list_record_selector.samotableheadborder(width='1')
+                        .o_checkbox
+                            input.checkBoxClass(type='checkbox' v-bind:value="tr.data[0]")
+                            span
+
+                    td.samotablepadd(v-for='td in tr.data')
+                        router-link(v-if="tr.url != ''" v-bind:to='tr.url') {{ td }}
+                        a(v-else-if="typeof tr.modal !== 'undefined' && tr.modal != ''" data-toggle='modal' v-bind:data-target="tr.modal") {{ td }}
+                    td(v-if="typeof tr.checkbox !== 'undefined' && tr.checkbox")
+                        .o_checkbox
+                            input.checkBoxClass(type='checkbox')
+                            span
+                    td
+                        button#jQueryColorChange.Button(v-if='bullet')
+
+
+                        //button.o_icon_button.o_form_field(type='button', title='Reported in last payslips')
+                            i.fa.fa-circle.o_toggle_button_success(title='Reported in last payslips')
+            tfoot.samofoot
+                tr
+                    td(v-for='tdata in tablefoot') {{ tdata }}
+                    td
+
+

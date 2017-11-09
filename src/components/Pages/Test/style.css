@@ -1,0 +1,286 @@
+#nav-main {
+    *zoom: 1;
+}
+#nav-main:before,
+#nav-main:after {
+    display: table;
+    content: "";
+}
+#nav-main:after {
+    clear: both;
+}
+body {
+    margin: 40px auto 0;
+    width: 80%;
+}
+#nav-main {
+    background: #222222;
+    clear: both;
+    height:32px;
+    border-color: #080808;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0px 0px 10px 15px !important;
+    position: relative;
+    width: 100%;
+}
+#nav-main > ul {
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+}
+#nav-main > ul > li {
+    background: none;
+    float: left;
+    font-size: 16px;
+    margin-bottom: 0;
+    padding-left: 0;
+    position: relative;
+    text-transform: uppercase;
+}
+#nav-main > ul > li.hidden {
+    display: none;
+}
+#nav-main > ul > li:hover {
+    background: transparent;
+}
+#nav-main > ul > li:hover ul {
+    display: block;
+}
+#nav-main a {
+    color: #d9d9d9;
+    display: block;
+    opacity: .75;
+    padding: 7px !important;
+}
+#nav-main a:hover {
+    opacity: 1;
+    color:white;
+}
+#nav-main ul ul {
+    background: white;
+
+    list-style: none;
+    margin: 0;
+    padding: 15px 0 0;
+    position: absolute;
+    top: 100%;
+    right: 0;
+}
+
+
+#nav-main ul ul a {
+    margin-bottom: 15px;
+    padding: 0 15px;
+    white-space: nowrap;
+    color: black;
+}
+.form-search {
+    float: right;
+    margin: 12px 0 0 0;
+    position: relative;
+    width: 200px;
+    margin-right: -215px;
+}
+.form-search input[type="search"] {
+    border: 2px solid #ccc;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 30px;
+    width: 100%;
+}
+.form-search button {
+    background: #aaa;
+    border: none;
+    height: 26px;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 24px;
+}
+
+
+.menunames{
+    font-size:13px;
+}
+
+.menunames:hover{
+    text-decoration: none !important;
+}
+
+#dropdownMenuButton{
+    background-color: transparent;
+    border-color: transparent;
+    color: #fff;
+    font-size: 13px;
+}
+
+.maindrop{
+    left: 42px;
+    top: -23px;
+}
+
+.samoimg{
+    width: 21px;
+    border-radius: 10px;
+}
+
+#main{
+    list-style-type: none;
+    display: -webkit-box;
+    padding: inherit;
+}
+
+.profilebtn{
+
+background-color: transparent;
+    display: inline-block;
+    padding-right: 0px;
+    border: none !important;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    color: #d9d9d9;
+}
+
+.profilebtn:active{
+
+    border:none;
+}
+.profilebtn:focus{
+
+    border:none !important;
+}
+.profilebtn:visited{
+
+    border:none;
+}
+
+.profiledropdown{
+    position: absolute;
+    top: 52px;
+    left: -30px;
+}
+
+.samocomment{
+
+
+
+    font-size: 13px;
+    color: #d9d9d9;
+}
+
+.samoat{
+
+    font-size: 13px;
+    color: #d9d9d9;
+}
+
+.counter{
+
+    color: #d9d9d9;
+    font-size: 13px;
+}
+
+
+.dropdownitem{
+    color: black !important;
+}
+
+.mainprogress{
+    width: 70px;
+    height: 13px;
+
+
+}
+
+
+.profilea{
+    background: transparent !important;
+    color: white !important;
+    border: none;
+}
+
+
+.profilea:focus{
+    box-shadow: none;
+}
+
+.profilea::after{
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+}
+
+.item1{
+    color: black !important;
+}
+
+.show>.btn-secondary.dropdown-toggle{
+
+    background-color: transparent !important;
+    color: white !important;
+    border-color: none !important;
+}
+
+
+
+.progress-bar{
+    width:28px;
+    height: 20px;
+}
+
+@media (max-width: 991px){
+.mobilenav{
+    background: rgb(34, 34, 34) !important;
+    margin-top: 32px !important;
+    padding-top: 0px;
+
+}
+}
+
+
+@media (max-width: 991px){
+    #nav-main{
+        height:41px;
+    }
+
+    .mobilenav{
+        background: rgb(34, 34, 34) !important;
+        margin-top: 32px !important;
+        padding-top: 0px;
+    }
+
+    .rightmenus{
+        padding:0px;
+    }
+
+    .progress{
+        margin-left: 9px !important;
+    }
+
+    .menuattag{
+        padding-left: 10px !important;
+        margin-top: 8px;
+    }
+
+    .menuptag{
+        margin-top: -4px !important;
+        padding-left: 9px !important;
+    }
+    .menucomment{
+        margin-top: -8px !important;
+        padding-left: 8px !important;
+
+    }
+
+    .dropdown{
+        padding-left: 4px !important;
+     }
+}

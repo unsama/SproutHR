@@ -1,0 +1,72 @@
+.AppReqCreate
+    DashboardController(v-bind:heading="nextactivity",v-bind:savebtn='true',v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks")
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Document/New
+    .row
+        .col-sm-12
+            #success-alert(style='background-color:red;position:absolute;display:none;right: 0px;z-index: 1;')
+                button.close(type="button", data-dismiss="alert",style='color:white;') x
+                .o_notification.o_error
+                    .o_notification_title
+                        span.o_icon.fa.fa-3x.fa-exclamation(style='color:white;border-bottom: 3px solid white;font-size: 16px') The following fields are invalid:
+
+                    .o_notification_content(style='padding-top: 16px;')
+                        ul
+                            li#leave(style='color:white;') Attachment Name
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_editable.oe_form_dirty
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        label.o_form_label.oe_edit_only(for='o_field_input_2')
+                            | Attachment Name
+                        h1
+                            input#o_field_input_2.o_form_input.o_form_field.o_form_required(v-model='application_tittle',type='text')
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_3', data-original-title='', title='')
+                                                | Type
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_3.o_form_input.o_form_field.o_form_required(v-model='type',name='type')
+                                                option(value='false')
+                                                option(value='url') URL
+                                                option(value='File') File
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible
+                                                | File Content
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_binary_file.o_form_field.o_form_invisible
+                                                input.o_form_input.o_hidden(readonly='readonly', type='text', name='datas')
+                                                button.btn.btn-sm.btn-primary.o_select_file_button(title='Select', type='button') Upload your file
+                                                button.btn.btn-sm.btn-default.fa.fa-pencil.o_select_file_button.o_hidden(title='Select', type='button')
+                                                button.btn.btn-sm.btn-default.fa.fa-trash-o.o_clear_file_button.o_hidden(title='Clear', type='button')
+                                                span.o_form_binary_progress.o_hidden Uploading...
+                                                .o_hidden_input_file.o_hidden(style='overflow-x: hidden')
+                                                    form.o_form_binary_form(enctype='multipart/form-data', method='post', action='/web/binary/upload')
+                                                        input(name='csrf_token', type='hidden', value='9193389fd56f6dc3dd4290a549967c4a5a41d100o')
+                                                        input(name='callback', type='hidden')
+                                                        input.o_form_input_file(name='ufile', type='file')
+                                                    iframe(style='display: none')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible.oe_inline.oe_right(for='o_field_input_5')
+                                                | File Name
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_5.o_form_input.oe_inline.oe_right.o_form_field.o_form_invisible(type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_6')
+                                                | Url
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_6.o_form_input.o_form_field(v-model='document_url',maxlength='1024', type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                | Mime Type
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_invisible.o_form_field_empty
+

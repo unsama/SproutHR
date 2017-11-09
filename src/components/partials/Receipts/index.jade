@@ -1,0 +1,150 @@
+.Receipts
+    .row.samorequestinnerrow
+        .dashboardcontroller
+            .bro
+                .col-sm-6.samodashheadingmain(style='margin-top: 10px;')
+                    h4.samodashheading Requests for Quotation/PO00007: 637.50 Rs.
+                .col-sm-6.samodashsearch
+                    h1(style='color: #f0eeee;') s
+            .bro
+                .col-sm-6.samodashheadingmain
+                    button.btn.btn-primary.samobuttopcontroller#hasS(type='button', href='users')
+                        router-link.links.samolinks(to='Imported') Edit
+                    button.btn.btn-default.samobuttopcontroller2#hasHide(type='button', href='#home')
+                        router-link.links.samolinks(to='Imported') Create
+                            Discard
+                    .dropdown1
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-filter.iconbutton
+                                | Print
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Purchase order
+                                a.dropdown-item(href='#') Request For Quotation
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton2.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-bars.iconbutton
+                                | Attachment
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Add
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-star.iconbutton
+                                | Action
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Delete
+                                a.dropdown-item(href='#') Duplicate
+                .col-sm-6.samodashsearch
+                    div(style='float:right;')
+                        span.o_pager_value 1-24
+                            |  /
+                            span.o_pager_limit 24
+                            span.btn-group.btn-group-sm
+                                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p', disabled='')
+                                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n', disabled='')
+    .o_content.samocontent
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .container
+                            .o_form_sheet_bg
+                                .row
+                                    .col-sm-12
+                                        .oe_button_box(name='button_box')(style='float:right;')
+                                            button.btn.btn-sm.oe_stat_button(type='button', style='')
+                                                .fa.fa-fw.fa-archive.o_button_icon.trash
+                                                .o_stat_info.o_form_field(data-original-title='', title='')
+                                                    span.o_stat_text.o_not_hover.text-success Active
+                                                    span.o_stat_text.o_hover.text-danger
+                                                        | Archive
+                                                        .oe_button_box(name='button_box')
+
+                                .row
+                                    .col-md-3
+
+                                        .one
+                                            label(style='font-size:13px;padding-right:25px;font-weight:bold;')
+                                                | Picking Type Name
+                                            br
+                                            label(style='font-size:13px;font-weight:bold;')
+                                                | Reference Sequence
+                                            br
+                                            label(style='font-size:13px;font-weight:bold;')
+                                                | Warehouse
+                                            br
+
+
+
+
+                                    .col-md-3
+                                        label(style='font-size:13px;padding-right:25px;')
+                                            | Receipts
+                                        br
+                                        router-link(to='Companysequence')
+                                            label(style='font-size:13px;')
+                                                | YourCompanySequence in
+                                            br
+                                        router-link(to='Yourcompany')
+                                            label(style='font-size:13px;')
+                                                | YourCompany
+                                            br
+
+                                    .col-md-3
+
+                                        .one
+                                            label(style='font-size:16px;font-weight:bold;')
+                                                | Type of Operation
+                                            br
+                                            label(style='font-size:16px;font-weight:bold;')
+                                                | Picking Type for Returns
+                                            br
+
+
+
+
+
+                                    .col-md-3
+                                        label(style='font-size:13px;')
+                                            | Vendors
+                                        br
+                                        label(style='font-size:13px;')
+                                            | YourCompany: Delivery Orders
+                                        br
+
+
+
+                                .row(style='padding-top:31px;padding-left:5px;')
+                                    .col-xs-12
+                                        h1(style='color: #7c7bad;font-size:16px;padding-left:17px;font-size:30px;') Locations
+
+                                .row
+                                    .col-md-3
+
+                                        .one
+                                            label(style='font-size:13px;padding-right:25px;font-weight:bold;')
+                                                | Default Source Location
+                                            br
+                                            label(style='font-size:13px;font-weight:bold;')
+                                                | Default Destination Location
+                                            br
+
+
+
+
+
+                                    .col-sm-4
+                                        label(style='font-size:13px;padding-right:25px;')
+                                            | Source Document
+                                        br
+                                        br
+                                        router-link(to='stock')
+                                            label(style='font-size:13px;')
+                                                | WH/Stock
+                                            br
+
+
+
+
+
+

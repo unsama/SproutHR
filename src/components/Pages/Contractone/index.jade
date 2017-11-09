@@ -1,0 +1,172 @@
+.contractone
+    DashboardController(v-bind:createbtn='true',v-bind:actionbtn='true',v-bind:editbtn='true',v-bind:num1='true',v-bind:deletebtn='true',v-bind:assignedtasks='true',v-bind:changepassword='true',v-bind:links='btnlinks',v-bind:heading='head',v-bind:Attachmentbtn='true',v-bind:duplicate="true")
+        .col-sm-6(style='padding:0px;' ,slot='heading')
+            h4.samodashheading(style="font-size: 18px;")  Contracts /  {{reference}}
+        span.o_pager_value(slot='page') {{counter}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="counter--",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="counter++",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+    //.row
+    //    .col-md-12.pull-left.samotopcontroller
+    //        .col-md-5.pull-left
+    //            .col-xs-3.pull-left
+    //                //button.btn.btn-primary.samobutton2(type='button',style='margin-left: 7px;')
+    //            .col-xs-3.pull-left
+    //                //button.btn.btn-primary.samobutton2(type='button',style='margin-left: 7px;')
+    //            .col-xs-3.pull-left
+    //                //button.btn.btn-primary.samobutton2(type='button',style='margin-left: 9px;,',data-toggle='modal', data-target='.marklostmodal')
+    //            .col-xs-3.pull-left
+    //                //button.btn.btn-primary.mark(type='button',style='margin-left: 5px;')
+    //
+    //
+    //        .col-md-1.pull-left
+    //        .col-md-2.pull-left
+    //        .col-md-4.pull-right
+    //            .btn-group.btn-breadcrumb.samobreadcrum1(v-for='optionasd, index in status_name_drop')
+    //                a.btn.btn-primary.samobreadbutt.link( v-model='status_name',v-on:click="select2(optionasd.id)")
+    //                    | {{ optionasd.name }}
+    ContractNew
+    .o_content(slot='newcontract')
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                header(style='margin-left: -15px;margin-right: -15px;')
+                    ul.oe_form_field_status.oe_form_status_clickable.o_form_field(data-original-title='', title='')
+                        li#new.oe_active(data-id='draft',v-on:click="getStatusValue('new')")
+                            span.label New
+                            span.arrow
+                                span
+                        li#running(data-id='open',v-on:click="getStatusValue('running')")
+                            span.label Runnings
+                            span.arrow
+                                span
+                        li#toRenew(data-id='pending',v-on:click="getStatusValue('toRenew')")
+                            span.label To Renew
+                            span.arrow
+                                span
+                        li#expired(data-id='close',v-on:click="getStatusValue('expired')")
+                            span.label Expired
+                            span.arrow
+                                span
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_title
+                            label.o_form_label.oe_edit_only
+                                | Contract Reference
+                            h1
+                                span.o_form_field.o_form_required  {{reference}}
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Employee
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_required(href='#') {{employeename}}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Job Title
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_required(href='#') {{job_tittle}}
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Department
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field(href='#') {{d_name}}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Contract Type
+                                        td(colspan='1', style='width: 100%;')
+                                            router-link(to='EmpContracts')
+                                                a.o_form_uri.o_form_field.o_form_required(href='#') {{contractname}}
+                        .o_notebook
+                            ul.nav.nav-tabs(role='tablist')
+                                li.active
+                                    a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_27')
+                                        | Information
+                                li
+                                    a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_28')
+                                        | Work Permit
+                            .tab-content.nav.nav-tabs
+                                #notebook_page_27.tab-pane.active(role='tabpanel')
+                                    .o_group
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Salary and Advantages
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                            | Wage
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_required.o_form_field_number {{wage}}
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        span.o_form_textarea.o_form_field.o_form_field_empty
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_horizontal_separator
+                                                            | Duration
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_empty.o_form_label_false
+                                                            | Trial Period Duration
+                                                    td(colspan='1', style='width: 100%;')
+                                                        div
+                                                            span.o_form_field_date.oe_inline.o_form_field.o_form_field_empty
+                                                            | {{trial_period_duration_from}}
+                                                            span.o_form_field_date.oe_inline.o_form_field.o_form_field_empty
+                                                            | - {{trial_period_duration_to}}
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label
+                                                            | Duration
+                                                    td(colspan='1', style='width: 100%;')
+                                                        div
+                                                            span.o_form_field_date.oe_inline.o_form_field.o_form_required
+                                                            |  {{duration_from}}
+                                                            span.o_form_field_date.oe_inline.o_form_field.o_form_field_empty
+                                                            | -   {{duration_to}}
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_empty.o_form_label_false
+                                                            | work_schedule
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field(href='#') {{workschedule}}
+                                    .o_horizontal_separator
+                                        | Notes
+                                    span.o_form_textarea.o_form_field {{notes}}
+                                #notebook_page_28.tab-pane(role='tabpanel')
+                                    table.o_group.o_inner_group
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_empty.o_form_label_false
+                                                        | Visa No
+                                                td(colspan='1', style='width: 50%;')
+                                                    span.o_form_field {{visa_no}}
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_empty.o_form_label_false
+                                                        | Work Permit No
+                                                td(colspan='1', style='width: 50%;')
+                                                    span.o_form_field {{work_permit_no}}
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_empty.o_form_label_false
+                                                        | Visa Expire Date
+                                                td(colspan='1', style='width: 33.3333%;')
+                                                    span.o_form_field_date.o_form_field {{visa_expire_date}}
+    Message
+    Request_quotation_lower

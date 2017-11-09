@@ -1,0 +1,214 @@
+.o_main_content
+    Dashboardsetting
+    .modal.fade.in.bd-example-modal-lg(tabindex='-1', role='dialog', aria-labelledby='myLargeModalLabel', aria-hidden='true')
+        .modal-dialog.modal-lg
+            .modal-content
+                .o_content
+                    .o_view_manager_content
+                        .o_form_view.o_form_readonly
+                            .o_form_sheet_bg
+                                .o_form_sheet
+                                    .o_form_field_image.oe_avatar.o_form_field(data-original-title='', title='')
+                                        table.o_group.o_inner_group
+                                            h2 Open: Fields
+                                            hr.hr-width
+                                            tbody
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label
+                                                            | Field Name
+                                                    td(colspan='1', style='width: 100%;')
+                                                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                            | __last_update
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                            | Model
+                                                    td(colspan='1', style='width: 100%;')
+                                                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                            | Last Modified on
+
+                                    .o_notebook
+                                        ul.nav.nav-tabs(role='tablist')
+                                            li.nav-item
+                                                a.nav-link.active(href='#profile1', role='tab', data-toggle='tab') Properties
+                                            li.nav-item
+                                                a.nav-link(href='#buzz1', role='tab', data-toggle='tab') Access Rights
+
+                                        // Tab panes
+                                        .tab-content
+                                            #profile1.tab-pane.fade.in.active(role='tabpanel')
+                                                h1 Base Properties
+                                                table.o_group.o_inner_group
+                                                    tbody
+                                                        tr
+                                                            td.o_td_label(colspan='1' , style='width: 30px;')
+                                                                label.o_form_label
+                                                                    | Required
+                                                            td.o_list_record_selector.samotablepadd
+                                                                .o_checkbox
+                                                                    input(type='checkbox')
+                                                        tr
+                                                            td.o_td_label(colspan='1')
+                                                                label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                                    | Readonly
+                                                            td.o_list_record_selector.samotablepadd
+                                                                .o_checkbox
+                                                                    input(type='checkbox')
+                                            #buzz1.tab-pane.fade.in(role='tabpanel')
+
+    //.row
+    //    .col-sm-12.main.samodashcont1
+    //        .col-sm-6.samodashheadingmain
+    //            h4.samodashheading Sales to Invoice
+    //        .col-sm-6.samodashsearch
+    //            .input-group
+    //                input.form-control(type='text', placeholder='Search')
+    //                .input-group-btn.samodashinputbutt
+    //                    button.btn.btn-default.samosearchicon(type='submit')
+    //                        i.searchview_more.fa.fa-search-plus
+    //        .row
+    //            .col-sm-6.dashcontrollerbutton
+    //                button.btn.btn-primary.samobuttopcontroller1(type='button', href='users')
+    //                    router-link.linksd(to='Temp_create') Create
+    //                button.btn.btn-secondary.samobuttopcontroller(type='button')
+    //                    router-link.linksec(to='Imported') Import
+    //                //button.btn.btn-primary.samobuttopcontroller#hasS(type='button', href='users')
+    //                //    | Edit
+    //                //button.btn.btn-default.samobuttopcontroller2#hasHide(type='button', href='#home')
+    //                //    | Discard
+    //            .col-sm-6.samodashcorner
+    //                .dropdown.samodropdownbutton2
+    //                    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+    //                        span.fa.fa-filter.iconbutton
+    //                        | filters
+    //                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+    //                        a.dropdown-item(href='#') Action
+    //                        a.dropdown-item(href='#') Another action
+    //                        a.dropdown-item(href='#') Something else here
+    //                .dropdown.samodropdownbutton2
+    //                    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+    //                        span.fa.fa-bars.iconbutton
+    //                        | Group By
+    //                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+    //                        a.dropdown-item(href='#') Action
+    //                        a.dropdown-item(href='#') Another action
+    //                        a.dropdown-item(href='#') Something else here
+    //                .dropdown.samodropdownbutton2
+    //                    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+    //                        span.fa.fa-star.iconbutton
+    //                        | Favourite
+    //                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+    //                        a.dropdown-item(href='#') Action
+    //                        a.dropdown-item(href='#') Another action
+    //                        a.dropdown-item(href='#') Something else here
+    //                div(style='float:right;')
+    //                    span.o_pager_value 1-24
+    //                        |  /
+    //                        span.o_pager_limit 24
+    //                        span.btn-group.btn-group-sm
+    //                            button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p', disabled='')
+    //                            button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n', disabled='')
+    //                            .col-xs-1
+    //                                //.btn-group.btn-group-sm.o_cp_switch_buttons.samodashbuttcorner
+    //                                //    button(data-toggle='tab', href='#home').btn.btn-icon.fa.fa-lg.fa-th-large.o_cp_switch_kanban.active(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button' accesskey='k', data-view-type='kanban', title='', data-original-title='Kanban')
+    //                                //    button(data-toggle='tab', href='#menu1').btn.btn-icon.fa.fa-lg.fa-list-ul.o_cp_switch_list(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button', accesskey='l', data-view-type='list', title='', data-original-title='List')
+    //                                //    button(data-toggle='tab', href='#home').btn.btn-icon.fa.fa-lg.fa-table.o_cp_switch_pivot(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button' accesskey='k', data-view-type='kanban', title='', data-original-title='Kanban')
+    //                                //    button(data-toggle='tab', href='#menu1').btn.btn-icon.fa.fa-lg.fa-bar-chart.o_cp_switch_graph(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button', accesskey='l', data-view-type='list', title='', data-original-title='List')
+    //                                //    router-link.links(to='app/purchase/Calendar')
+    //                                //        button(data-toggle='tab', href='').btn.btn-icon.fa.fa-lg.fa-calendar.o_cp_switch_calendar(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button' accesskey='k', data-view-type='kanban', title='', data-original-title='Kanban')
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .o_form_field_image.oe_avatar.o_form_field(data-original-title='', title='')
+                            table.o_group.o_inner_group
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Model Description
+                                        td(colspan='1', style='width: 100%;')
+                                            label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                | Partner
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                | Model
+                                        td(colspan='1', style='width: 100%;')
+                                            label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                | res.partner
+
+                        .o_notebook
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Fields
+                                li.nav-item
+                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') Access Rights
+                            // Tab panes
+                            .tab-content
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+                                    table.table.table-striped.samotable
+                                        thead.samotablehead
+                                            tr
+                                                th.samotableheadborder Field Name
+                                                th.samotableheadborder Field Lable
+                                                th.samotableheadborder Field Type
+                                                th.samotableheadborder Required
+                                                th.samotableheadborder Readonly
+
+                                        tbody.samotbody
+                                            tr
+                                                td.samotablepadd
+                                                    router-link(to='', data-toggle='modal', data-target='.bd-example-modal-lg') Active
+                                                td.samotablepadd Bank
+                                                td.samotablepadd Date
+                                                th.o_list_record_selector.samotablepadd
+                                                    .o_checkbox
+                                                        input(type='checkbox')
+                                                        span
+                                                th.o_list_record_selector.samotablepadd(width='1')
+                                                    .o_checkbox
+                                                        input(type='checkbox')
+                                                        span
+                                            tr
+                                                td.samotablepadd Color
+                                                td.samotablepadd Tags
+                                                td.samotablepadd Time
+                                                th.o_list_record_selector.samotablepadd(width='1')
+                                                    .o_checkbox
+                                                        input(type='checkbox')
+                                                        span
+                                                th.o_list_record_selector.samotablepadd(width='1')
+                                                    .o_checkbox
+                                                        input(type='checkbox')
+                                                        span
+                                            tr
+                                                td.samotablepadd Comment
+                                                td.samotablepadd Company
+                                                td.samotablepadd Integer
+                                                th.o_list_record_selector.samotablepadd(width='1')
+                                                    .o_checkbox
+                                                        input(type='checkbox')
+                                                        span
+                                                th.o_list_record_selector.samotablepadd(width='1')
+                                                    .o_checkbox
+                                                        input(type='checkbox')
+                                                        span
+
+                                            tr
+                                                td.samotablepadd Otto
+                                                td.samotablepadd Notes
+                                                td.samotablepadd Char
+                                                th.o_list_record_selector.samotablepadd(width='1')
+                                                    .o_checkbox
+                                                        input(type='checkbox')
+                                                        span
+                                                th.o_list_record_selector.samotablepadd(width='1')
+                                                    .o_checkbox
+                                                        input(type='checkbox')
+                                                        span
+
+                                #buzz.tab-pane.fade.in(role='tabpanel')
+

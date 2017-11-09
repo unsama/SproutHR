@@ -1,0 +1,444 @@
+.VendorBillEdits
+    DashboardController(v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_editable
+                header(style='margin-left:-15px;margin-right:-15px;')
+                    button.btn.btn-sm.oe_highlight(type='button')
+                        span Validate
+                    button.btn.btn-sm.oe_highlight.o_form_invisible(type='button')
+                        span Register Payment
+                    button.btn.btn-sm.o_form_invisible(type='button')
+                        span Ask Refund
+                    button.btn.btn-sm(type='button')
+                        span Cancel Bill
+                    button.btn.btn-sm.o_form_invisible(type='button')
+                        span Set to Draft
+                    ul.oe_form_field_status.oe_form_status.o_form_field(data-original-title='', title='')
+                        li.oe_active(data-id='draft')
+                            span.label Draft
+                            span.arrow
+                                span
+                        li(data-id='open')
+                            span.label Open
+                            span.arrow
+                                span
+                        li(data-id='paid')
+                            span.label Paid
+                            span.arrow
+                                span
+                .alert.alert-info.o_form_invisible(role='alert', style='margin-bottom:0px;', attrs="{'invisible': [('has_outstanding','=',False)]}")
+                    | You have
+                    bold
+                        a.alert-link(href='#outstanding', role='button') outstanding debits
+                    |  for this supplier. You can allocate them to mark this bill as paid.
+                .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                    input(type='checkbox', name='has_outstanding', disabled='')
+                    span
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        div
+                            label.o_form_label
+                                | Draft Bill
+                            label.o_form_label.o_form_invisible
+                                | Draft Refund
+                            label.o_form_label.o_form_invisible
+                                | Bill
+                            label.o_form_label.o_form_invisible
+                                | Refund
+                            h1.mt0
+                                span.oe_inline.o_form_field.o_form_field_empty.o_form_invisible
+                        span.o_form_field.o_form_invisible Vendor Bill
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_252')
+                                                | Vendor
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field.o_form_required
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_252.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_253', data-original-title='', title='')
+                                                | Vendor Reference
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_253.o_form_input.o_form_field(type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.oe_edit_only(for='o_field_input_254', data-original-title='', title='')
+                                                | Add Purchase Order
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.oe_edit_only.o_form_field
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_254.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_255', data-original-title='', title='')
+                                                | Source Document
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_255.o_form_input.o_form_field.o_form_invisible(type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_256', data-original-title='', title='')
+                                                | Bill Date
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_datepicker.o_form_field_date.o_form_field
+                                                input.o_datepicker_input.o_form_input(type='text', name='date_invoice')
+                                                span.o_datepicker_button
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_257', data-original-title='', title='')
+                                                | Due Date
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_datepicker.o_form_field_date.o_form_field
+                                                input.o_datepicker_input.o_form_input(type='text', name='date_due')
+                                                span.o_datepicker_button
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_258', data-original-title='', title='')
+                                                | Journal Entry Name
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_258.o_form_input.o_form_field.o_form_invisible(type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_259')
+                                                | Currency
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field.o_form_required
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_259.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible(for='o_field_input_260')
+                                                | Company Currency
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible(href='#') EUR
+                        .o_notebook
+                            ul.nav.nav-tabs(role='tablist')
+                                li.active
+                                    a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_261', aria-expanded='true')
+                                        | Bill
+                                li
+                                    a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_262', aria-expanded='false')
+                                        | Other Info
+                            .tab-content.nav.nav-tabs
+                                #notebook_page_261.tab-pane.active(role='tabpanel')
+                                    .o_form_field.o_view_manager_content
+                                        .o_x2m_control_panel
+                                            .o_cp_buttons
+                                            .o_cp_pager
+                                                .o_hidden
+                                                    span.o_pager_value
+                                                    |  /
+                                                    span.o_pager_limit
+                                                    span.btn-group.btn-group-sm
+                                                        button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                        button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                        .o_list_editable
+                                            .o_form_view.o_list_editable_form.o_form_nosheet.o_hidden
+                                                field(name='sequence', widget='handle', modifiers='{"readonly":true}', nolabel='true')
+                                                field(name='product_id', context="{'partner_id': parent.partner_id}", on_change='1', can_create='true', can_write='true', modifiers='{}', nolabel='true')
+                                                field(name='name', modifiers='{"required":true}', nolabel='true')
+                                                field(name='company_id', invisible='1', can_create='true', can_write='true', modifiers='{"readonly":true,"tree_invisible":true,"invisible":true}', nolabel='true')
+                                                field(name='purchase_line_id', invisible='1', on_change='1', can_create='true', can_write='true', modifiers='{"readonly":true,"tree_invisible":true,"invisible":true}', nolabel='true')
+                                                field(name='purchase_id', invisible='1', can_create='true', can_write='true', modifiers='{"readonly":true,"tree_invisible":true,"invisible":true}', nolabel='true')
+                                                field(name='account_id', domain="[('company_id', '=', parent.company_id), ('internal_type', '=', 'other')]", on_change='1', can_create='true', can_write='true', modifiers='{"required":true}', nolabel='true')
+                                                field(name='account_analytic_id', domain="[('company_id', '=', parent.company_id)]", can_create='true', can_write='true', invisible='1', modifiers='{"invisible":true,"tree_invisible":true}', nolabel='true')
+                                                field(name='analytic_tag_ids', widget='many2many_tags', can_create='true', can_write='true', invisible='1', modifiers='{"invisible":true,"tree_invisible":true}', nolabel='true')
+                                                field(name='quantity', on_change='1', modifiers='{"required":true}', nolabel='true')
+                                                field(name='uom_id', on_change='1', can_create='true', can_write='true', invisible='1', modifiers='{"invisible":true,"tree_invisible":true}', nolabel='true')
+                                                field(name='price_unit', on_change='1', modifiers='{"required":true}', nolabel='true')
+                                                field(name='discount', on_change='1', invisible='1', modifiers='{"invisible":true,"tree_invisible":true}', nolabel='true')
+                                                field(name='invoice_line_tax_ids', widget='many2many_tags', context="{'type':parent.type}", domain="[('type_tax_use','=','purchase'),('company_id', '=', parent.company_id)]", options="{'no_create': True}", on_change='1', can_create='true', can_write='true', modifiers='{}', nolabel='true')
+                                                field(name='price_subtotal', on_change='1', modifiers='{"readonly":true}', nolabel='true')
+                                                field(name='currency_id', invisible='1', can_create='true', can_write='true', modifiers='{"readonly":true,"tree_invisible":true,"invisible":true}', nolabel='true')
+                                            .table-responsive
+                                                table.o_list_view.table.table-condensed.table-striped
+                                                    thead
+                                                        tr
+                                                            th.o_column_sortable(data-id='sequence', width='1')
+                                                                span.o_row_handle.fa.fa-arrows.invisible
+                                                            th.o_column_sortable(data-id='product_id')
+                                                                | Product
+                                                            th.o_column_sortable(data-id='name')
+                                                                | Description
+                                                            th.o_column_sortable(data-id='account_id')
+                                                                | Account
+                                                            th.o_column_sortable(data-id='quantity')
+                                                                | Quantity
+                                                            th.o_column_sortable(data-id='price_unit')
+                                                                | Unit Price
+                                                            th.o_column_sortable(data-id='invoice_line_tax_ids')
+                                                                | Taxes
+                                                            th.o_column_sortable(data-id='price_subtotal')
+                                                                | Amount
+                                                            th.o_list_record_delete
+                                                    tfoot
+                                                        tr
+                                                            td
+                                                            td
+                                                            td
+                                                            td
+                                                            td
+                                                            td
+                                                            td
+                                                            td
+                                                            td.o_list_record_delete
+                                                    tbody.ui-sortable
+                                                        tr
+                                                            td.o_form_field_x2many_list_row_add(colspan='9')
+                                                                a(href='#') Add an item
+                                                        tr
+                                                            td(title='')  
+                                                            td(title='Product')  
+                                                            td(title='Description')  
+                                                            td(title='Account')  
+                                                            td(title='Quantity')  
+                                                            td(title='Unit Price')  
+                                                            td(title='Taxes')  
+                                                            td(title='Amount')  
+                                                            td.o_list_record_delete
+                                                        tr
+                                                            td(title='')  
+                                                            td(title='Product')  
+                                                            td(title='Description')  
+                                                            td(title='Account')  
+                                                            td(title='Quantity')  
+                                                            td(title='Unit Price')  
+                                                            td(title='Taxes')  
+                                                            td(title='Amount')  
+                                                            td.o_list_record_delete
+                                                        tr
+                                                            td(title='')  
+                                                            td(title='Product')  
+                                                            td(title='Description')  
+                                                            td(title='Account')  
+                                                            td(title='Quantity')  
+                                                            td(title='Unit Price')  
+                                                            td(title='Taxes')  
+                                                            td(title='Amount')  
+                                                            td.o_list_record_delete
+                                    .o_group
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td(colspan='1', style='width: 50%;')
+                                                        .oe_inline
+                                                            .o_form_field.o_view_manager_content
+                                                                .o_x2m_control_panel
+                                                                    .o_cp_buttons
+                                                                    .o_cp_pager
+                                                                        .o_hidden
+                                                                            span.o_pager_value
+                                                                            |  /
+                                                                            span.o_pager_limit
+                                                                            span.btn-group.btn-group-sm
+                                                                                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                                                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                                                .o_list_editable
+                                                                    .o_form_view.o_list_editable_form.o_form_nosheet.o_hidden
+                                                                        field(name='name', modifiers='{"required":true}', nolabel='true')
+                                                                        field(name='tax_id', invisible='1', can_create='true', can_write='true', modifiers='{"tree_invisible":true,"invisible":true}', nolabel='true')
+                                                                        field(name='sequence', invisible='1', modifiers='{"tree_invisible":true,"invisible":true}', nolabel='true')
+                                                                        field(name='manual', invisible='1', modifiers='{"tree_invisible":true,"invisible":true}', nolabel='true')
+                                                                        field(name='account_id', can_create='true', can_write='true', modifiers='{"required":true}', nolabel='true')
+                                                                        field(name='account_analytic_id', domain="[('company_id', '=', parent.company_id)]", can_create='true', can_write='true', invisible='1', modifiers='{"invisible":true,"tree_invisible":true}', nolabel='true')
+                                                                        field(name='amount', on_change='1', modifiers='{}', nolabel='true')
+                                                                        field(name='currency_id', invisible='1', can_create='true', can_write='true', modifiers='{"readonly":true,"tree_invisible":true,"invisible":true}', nolabel='true')
+                                                                    .table-responsive
+                                                                        table.o_list_view.table.table-condensed.table-striped
+                                                                            thead
+                                                                                tr
+                                                                                    th.o_column_sortable(data-id='name')
+                                                                                        | Tax Description
+                                                                                    th.o_column_sortable(data-id='account_id')
+                                                                                        | Tax Account
+                                                                                    th.o_column_sortable(data-id='amount')
+                                                                                        | Amount
+                                                                                    th.o_list_record_delete
+                                                                            tfoot
+                                                                                tr
+                                                                                    td
+                                                                                    td
+                                                                                    td
+                                                                                    td.o_list_record_delete
+                                                                            tbody.ui-sortable
+                                                                                tr
+                                                                                    td.o_form_field_x2many_list_row_add(colspan='4')
+                                                                                        a(href='#') Add an item
+                                                                                tr
+                                                                                    td(title='Tax Description')  
+                                                                                    td(title='Tax Account')  
+                                                                                    td(title='Amount')  
+                                                                                    td.o_list_record_delete
+                                                                                tr
+                                                                                    td(title='Tax Description')  
+                                                                                    td(title='Tax Account')  
+                                                                                    td(title='Amount')  
+                                                                                    td.o_list_record_delete
+                                                                                tr
+                                                                                    td(title='Tax Description')  
+                                                                                    td(title='Tax Account')  
+                                                                                    td(title='Amount')  
+                                                                                    td.o_list_record_delete
+                                        table.o_group.o_inner_group.oe_subtotal_footer.oe_right.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_263')
+                                                            | Untaxed Amount
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_field_number
+                                                            | 0.00
+                                                            span €
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_264')
+                                                            | Tax
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_field_number
+                                                            | 0.00
+                                                            span €
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.oe_subtotal_footer_separator(for='o_field_input_265')
+                                                            | Total
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.oe_subtotal_footer_separator.o_form_field.o_form_field_number
+                                                            | 0.00
+                                                            span €
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_form_field.o_form_field_empty
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.oe_subtotal_footer_separator.o_form_invisible(for='o_field_input_266', data-original-title='', title='')
+                                                            | Amount Due
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.oe_subtotal_footer_separator.o_form_field.o_form_field_number.o_form_invisible
+                                                            | 0.00
+                                                            span €
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_267', data-original-title='', title='')
+                                                            | Paid/Reconciled
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                            input#o_field_input_267(type='checkbox', name='reconciled', disabled='')
+                                                            span
+                                                tr
+                                                    td(colspan='2', style='width: 100%;')
+                                                        .o_form_field.o_form_field_empty.o_form_invisible
+                                    div
+                                        textarea.o_form_textarea.o_form_field(rows='6', name='comment', placeholder='Additional notes...', style='resize: horizontal; height: 50px;')
+                                        textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 826px;')
+                                        textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 9.81818px;')
+                                        textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 9.81818px;')
+                                #notebook_page_262.tab-pane(role='tabpanel')
+                                    .o_group
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_268')
+                                                            | Journal
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_268.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_269', data-original-title='', title='')
+                                                            | Bank Account
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_form_field.o_form_invisible
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_269.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_270')
+                                                            | Responsible
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_with_button.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_270.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_271', data-original-title='', title='')
+                                                            | Account
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_form_field.o_form_required
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_271.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_272', data-original-title='', title='')
+                                                            | Reference/Description
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_272.o_form_input.o_form_field.o_form_invisible(type='text')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_273', data-original-title='', title='')
+                                                            | Payment Terms
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_form_field.o_form_invisible
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_273.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_274')
+                                                            | Fiscal Position
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_274.o_form_input.ui-autocomplete-input(type='text', placeholder='Auto-detect', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false.o_form_invisible(for='o_field_input_275', data-original-title='', title='')
+                                                            | Journal Entry
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_field_empty.o_form_invisible(href='#')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_276', data-original-title='', title='')
+                                                            | Accounting Date
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_datepicker.o_form_field_date.o_form_field
+                                                            input.o_datepicker_input.o_form_input(type='text', name='date')
+                                                            span.o_datepicker_button
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_277')
+                                                            | Company
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_277.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+    Message
+    Request_quotation_lower

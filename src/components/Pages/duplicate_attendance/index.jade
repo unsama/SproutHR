@@ -1,0 +1,46 @@
+.duplicate_attendance
+    DashboardController(v-bind:heading="nextactivity",v-bind:savebtn='true',v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Attendance / {{d}} From / {{CheckIn}} to {{CheckOut}}
+        span.o_pager_value(slot='page') {{counter}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="counter--",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="counter++",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_editable
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Employee
+                                    td(colspan='1', style='width: 100%;')
+                                        select(v-model='emp_id')
+                                            option(v-for='option in options',v-bind:value="option.id")
+                                                | {{ option.employeename }}
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Check In
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_datepicker
+                                            input.o_datepicker_input.o_form_input#datepicker()(type='text', v-model='CheckIn')
+                                            span.o_datepicker_button
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Check Out
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_datepicker
+                                            input.o_datepicker_input.o_form_input#datepicker1()(type='text', v-model='CheckOut')
+                                            span.o_datepicker_button
+
+
+

@@ -1,0 +1,47 @@
+.posdashboard
+    DashboardController(v-bind:heading="head",v-bind:searchbar='true',v-bind:num1='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true', v-bind:links="btncancellink",v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:firstbtn='true',v-bind:secondbtn='true',)
+    .card.samocard
+        .col-sm-12.samocolsm12_1
+            span
+                .col-sm-6.pull-left
+                    h6.samoh61 Main
+                .col-sm-6.pull-right
+                    .dropdown
+                        button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownbtn(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style='float: right;')
+                            | More
+                        .dropdown-menu(aria-labelledby='dropdownMenuButton',style='margin-top: 44px;margin-left: -290px;min-width: 34.4rem;height: 103px; border-bottom: 1px solid #dddddd;')
+                            .col-sm-12.bottom
+                                .col-sm-6.pull-left.samoleft
+                                    h6.mar View
+                                    hr
+                                    router-link(to='/pointofsale/possession') Sessions
+                                    br
+                                    router-link(to='/pointofsale/posorders') Sales Orders
+
+
+
+                                .col-sm-6.pull-right
+                                    h6.mar Reports
+                                    hr
+                                    a(href='/pointofsale/posorderreport') Orders
+                            .col-sm-12.set(style='margin-top: 95px;margin-left: 450px;')
+                                router-link(to='/pointofsale/posdashboardsetting') Settings
+
+
+                h6.samoh63 Administrators
+            .col-sm-12(style='padding: 0px;')
+                .col-sm-6.pull-left(style='padding: 0px;')
+                    router-link(to='/pointofsale/posmarket')
+                        button.btn.btn-primary.samodashbtn(type='button') Resume
+                    router-link(to='/pointofsale/possessionin')
+                        button.btn.btn-primary.samodashbtn1(type='button') Close
+                .col-sm-6.pull-right.samocolright
+                    .col-sm-6.samoinventorypadd
+                        a Last Closing Date Cash Balance
+                    .col-sm-6(style='margin-top: 4px;')
+                        h6 03/08/2017  0.00€
+
+
+
+
+

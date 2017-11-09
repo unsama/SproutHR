@@ -1,0 +1,8 @@
+.subview
+    modal( v-bind:save='false',v-bind:heading="'CheckHassan'", v-bind:sheduaeactivity='true', v-bind:noactivity='true')
+        h1 Check Content
+    .row
+        .col-md-2
+            sidebar(v-bind:headings='sidebarData')
+        .col-md-10.mainn
+            router-view

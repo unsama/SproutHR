@@ -1,0 +1,72 @@
+.Vendormenu
+    DashboardController(v-bind:save='true',v-bind:heading="vendormenu",v-bind:editbtn='true',v-bind:createbtn='true',v-bind:links="btnlinks")
+    .o_content(style='margin-left: -15px;margin-right: -15px;')
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                .o_stat_info.o_form_field
+                                    span.o_stat_text.o_not_hover.text-danger Inactive
+                                    span.o_stat_text.o_hover.text-success Activate
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help(for='o_field_input_28', data-original-title='', title='')
+                                            | Currency
+                                    td(colspan='1', style='width: 50%;')
+                                        span.o_form_field.o_form_required AED
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help(for='o_field_input_29', data-original-title='', title='')
+                                            | Current Rate
+                                    td(colspan='1', style='width: 50%;')
+                                        span.o_form_field.o_form_field_number 4.512532
+                        .o_group.o_form_invisible
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Price Accuracy
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_30')
+                                                | Rounding Factor
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_field_number 0.010000
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_31')
+                                                | Decimal places
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_field_number 2
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Display
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_32', data-original-title='', title='')
+                                                | Symbol
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required د.إ
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_33', data-original-title='', title='')
+                                                | Symbol Position
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field After Amount
+
+
+
+
+
+
+
+
+

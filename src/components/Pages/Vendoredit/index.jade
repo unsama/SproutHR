@@ -1,0 +1,293 @@
+.Vendormenu
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .row
+                            .col-sm-2
+                                .img
+                                    img.img-responsive(style='width:80px;height:90px;float:let;')(src='/images/1.jpg')
+                            .col-sm-3.samocol4
+                                h1
+                                    input.o_form_input.o_form_field.o_form_required(style='width: 150%; ')(placeholder='Camptocamp', type='text')
+
+
+
+                            .col-sm-3.samohascol3
+                                .oe_button_box(name='button_box')
+                                    button.btn.btn-sm.oe_stat_button(type='button', style='')
+                                        .fa.fa-fw.fa-archive.o_button_icon.trash
+                                        .o_stat_info.o_form_field(data-original-title='', title='')
+                                            span.o_stat_text.o_not_hover.text-success Active
+                                            span.o_stat_text.o_hover.text-danger
+                                                | Archive
+                                                .oe_button_box(name='button_box')
+                                    button.btn.btn-sm.oe_stat_button(type='button', style='')
+                                        .fa.fa-fw.fa-usd.o_button_icon.sale
+                                        .o_form_field.o_stat_info
+                                            span.o_stat_value
+                                                | 0
+                                                span.o_stat_text Sales
+                                                .oe_button_box(name='button_box')
+                                    button.btn.btn-sm.oe_stat_button(type='button', style='')
+                                        .fa.fa-fw.fa-arrows-v.o_button_icon.trace
+                                        .o_form_field.o_stat_info.trace_text
+                                            span Traceability
+
+
+                        .col-xs-12.request_inner1
+                            .row(style='margin-top:10px;')
+                                .col-md-3
+
+                                    .one
+                                        label(style='font-size:13px;padding-right:25px;font-weight:bold;')
+                                            | Address
+                                        br
+                                        br
+                                        br
+                                        br
+                                        br
+                                        label(style='font-size:13px;font-weight:bold;')
+                                            | Website
+                                        br
+                                        br
+                                        label(style='font-size:13px;font-weight:bold;')
+                                            | Tags
+                                        br
+                                        br
+                                .col-md-3
+                                    .o_address_format
+                                        input#o_field_input_213.o_form_input.o_address_street.o_form_field(style='width:192px !important')(placeholder='Street...', type='text')
+                                        input.o_form_input.o_address_street.o_form_field(style='width:192px !important')(placeholder='Street 2...', type='text')
+                                    .row
+                                        .col-md-4
+                                            input.o_form_input.o_address_city.o_form_field(style='width:178% !important')(placeholder='City', type='text')
+                                        .col-md-4
+                                            select.empty(style=' padding-bottom: 7px; width:183% !important;')
+                                                option(value='', selected='', disabled='') State
+                                                option(value='1')(style='color:black !important;') Sindh
+                                                option(value='2')(style='color:black !important;') Beja
+                                                option(value='3')(style='color:black !important;') Braga
+
+                                        .col-md-4
+                                            input.o_form_input.o_address_zip.o_form_field(style='width:127% !important')(placeholder='ZIP', type='text')
+                                    select.empty(style=' width:106% !important;')
+                                        option(style='')(value='', selected='', disabled='') Country
+                                        option(value='1')(style='color:black !important;') Pakistan
+                                        option(value='2')(style='color:black !important;') United State
+                                        option(value='3')(style='color:black !important;') Algeria
+                                    input#o_field_input_85.o_form_input.o_form_field(style='margin-top: 7px !important; width: 106% !important;')(type='text')
+
+                                    br
+                                    .o_form_field_many2manytags.o_form_field
+
+                                        .o_form_field_many2manytags.o_form_field
+                                            span.badge.dropdown.o_tag_color_6(data-color='6', data-id='10', data-index='0')
+                                                span.o_badge_text(title='Components Buyer') Components Buyer
+                                                span.fa.fa-times.o_delete
+                                            span.badge.dropdown.o_tag_color_1(data-color='1', data-id='12', data-index='1')
+                                                span.o_badge_text(title='Office Supplies') Office Supplies
+                                                span.fa.fa-times.o_delete
+                                            .o_form_field_many2one.o_form_field
+                                                .o_form_input_dropdown
+                                                    input.o_form_input.ui-autocomplete-input(type='text', placeholder='Tags...', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+
+
+
+                                .col-md-3
+
+                                    .one
+                                        label(style='font-size:16px;font-weight:bold;')
+                                            | Phone
+                                        br
+                                        label(style='font-size:16px;font-weight:bold;')
+                                            | Mobile
+                                        br
+                                        label(style='font-size:16px;font-weight:bold;')
+                                            | Fax
+                                        br
+                                        label(style='font-size:16px;font-weight:bold;')
+                                            | Email
+                                        br
+                                        label(style='font-size:16px;font-weight:bold;')
+                                            | Language
+                                        br
+
+
+                                .col-md-3
+                                    input#o_field_input_852.o_form_input.o_form_field(style='width:184px !important')(type='text')
+                                    br
+                                    input#o_field_input_853.o_form_input.o_form_field(type='text')
+                                    br
+                                    input#o_field_input_855.o_form_input.o_form_field(type='text')
+                                    br
+                                    input#o_field_input_85.o_form_input.o_form_field(type='text')
+                                    br
+                                    .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                        .o_form_input_dropdown(style='padding-right: 93px !important;')
+                                            select#o_field_input_176.o_form_input.o_form_field(style='width: 209% !important; background-color: transparent;')(name='format')
+                                                option(value='true') English
+                                                option(value='') Arabic
+                                                option(value='') Ahmaric
+
+
+                        .o_notebook
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Contacts and Addresses
+                                li.nav-item
+                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') InTernal Notes
+                                li.nav-item
+                                    a.nav-link(href='#buzz1', role='tab', data-toggle='tab') Sales and Purchases
+                                li.nav-item
+                                    a.nav-link(href='#buzz2', role='tab', data-toggle='tab') Accounting
+                            // Tab panes
+                            .tab-content
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+                                    .row(style='padding-left:15px;')
+                                        .col-xs-1
+                                            .oe_kanban_color_0.oe_kanban_global_click.o_kanban_record.samokanban
+                                                .o_kanban_image.samokanbanimage
+                                                    img.samoimg(src='images/download.png')
+                                        .col-xs-6
+                                            .oe_kanban_details.samothumbnaildet
+                                                | Chao Wang
+                                                div Marketing Manager
+                                                div chao.wang@chinaexport.example.com
+                                    .row(style='padding-left:15px;padding-top: 17px;')
+                                        .col-xs-1
+                                            .oe_kanban_color_0.oe_kanban_global_click.o_kanban_record.samokanban
+                                                .o_kanban_image.samokanbanimage
+                                                    img.samoimg(src='images/download.png')
+                                        .col-xs-6
+                                            .oe_kanban_details.samothumbnaildet
+                                                | Chao Wang
+                                                div Marketing Manager
+                                                div chao.wang@chinaexport.example.com
+
+
+
+                                #buzz.tab-pane.fade.in(role='tabpanel')
+
+                                #buzz1.tab-pane.fade.in(role='tabpanel')
+                                    .row
+                                        .col-sm-3
+                                            h1(style='color: #7c7bad;font-weight: bold;font-size:16px;padding-left:10px;') Sale
+                                            .one
+                                                label(style='font-size:13px;padding-right:25px;font-weight:bold;')
+                                                    | Is a Customer
+                                                br
+                                                label(style='font-size:13px;font-weight:bold;')
+                                                    | Salesperson
+                                                br
+                                            h1(style='color: #7c7bad;font-weight: bold;font-size:16px;padding-left:10px;') Misc
+                                            .one
+                                                label(style='font-size:15px;padding-right:25px;font-weight:bold;')
+                                                    | Internal Reference Company
+                                                br
+
+
+
+                                        .col-sm-3(style='margin-top: 16px;')
+                                            input#o_field_input_151(style='margin-top:34px;')(type='checkbox', name='supplier', disabled='')
+                                            br
+                                            br
+                                            br
+                                            br
+                                            br
+                                            a(href='#') Alupak Industriess
+                                        .col-sm-3
+                                            h1(style='color: #7c7bad;font-weight: bold;font-size:16px;padding-left:10px;') Purchase
+                                            .one
+                                                label(style='font-size:16px;font-weight:bold;')
+                                                    | Is a Vendor
+                                                br
+                                                label(style='font-size:16px;font-weight:bold;')
+                                                    | Supplier Currency
+                                                br
+
+                                            h1(style='color: #7c7bad;font-weight: bold;font-size:16px;padding-left:10px;') Point of Sale
+                                            .one
+                                                label(style='font-size:13px;font-weight:bold;')
+                                                    | Barcode
+                                                br
+
+                                        .col-sm-3(style='margin-top: 16px;')
+                                            input.o_field_input_151(style='margin-top:34px;')(type='checkbox', name='supplier', disabled='')
+                                            br
+                                            br
+                                            br
+                                            br
+                                            label(style='padding-top:13px;font-size:13px;') 0420800000008
+                                            br
+                                    .row
+                                        .col-xs-12
+                                            h1(style='color: #7c7bad;font-weight: bold;font-size:16px;padding-left:22px;') Payments
+
+                                    .row
+                                        .col-xs-4
+                                            button.btn.btn-success.a(type='button', style='background-color: transparent;color: #7c7bad;border:none;') 0 Bank Account(s)
+                                        .col-xs-6
+                                            button.btn.btn-success.a(type='button', style='background-color: transparent;color: #7c7bad;border:none;') 0 Credit Card(s)
+
+
+                                #buzz2.tab-pane.fade.in(role='tabpanel')
+                                    .row
+                                        .col-sm-3
+                                            h1(style='color: #7c7bad;font-weight: bold;font-size:16px;padding-left:10px;') Sale
+                                            .one
+                                                label(style='font-size:13px;padding-right:25px;font-weight:bold;')
+                                                    | Is a Customer
+                                                br
+                                                label(style='font-size:13px;font-weight:bold;')
+                                                    | Salesperson
+                                                br
+                                            h1(style='color: #7c7bad;font-weight: bold;font-size:16px;padding-left:10px;') Misc
+                                            .one
+                                                label(style='font-size:15px;padding-right:25px;font-weight:bold;')
+                                                    | Internal Reference Company
+                                                br
+
+
+
+                                        .col-sm-3(style='margin-top: 16px;')
+                                            input#o_field_input_151(style='margin-top:34px;')(type='checkbox', name='supplier', disabled='')
+                                            br
+                                            br
+                                            br
+                                            br
+                                            br
+                                            a(href='#') Alupak Industriess
+                                        .col-sm-3
+                                            h1(style='color: #7c7bad;font-weight: bold;font-size:16px;padding-left:10px;') Purchase
+                                            .one
+                                                label(style='font-size:16px;font-weight:bold;')
+                                                    | Is a Vendor
+                                                br
+                                                label(style='font-size:16px;font-weight:bold;')
+                                                    | Supplier Currency
+                                                br
+
+                                            h1(style='color: #7c7bad;font-weight: bold;font-size:16px;padding-left:10px;') Point of Sale
+                                            .one
+                                                label(style='font-size:13px;font-weight:bold;')
+                                                    | Barcode
+                                                br
+
+                                        .col-sm-3(style='margin-top: 16px;')
+                                            input.o_field_input_151(style='margin-top:34px;')(type='checkbox', name='supplier', disabled='')
+                                            br
+                                            br
+                                            br
+                                            br
+                                            label(style='padding-top:13px;font-size:13px;') 0420800000008
+                                            br
+
+
+
+
+
+
+

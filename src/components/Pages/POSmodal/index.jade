@@ -1,0 +1,183 @@
+.container-fluid
+    a.btn.btn-primary(data-toggle='modal', href='#myModal') Launch modal
+    #myModal.modal
+        .modal-dialog.modal-lg
+            .modal-content
+                .modal-header
+                    button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                    h4.modal-title Modal title
+                .container
+                .modal-body
+                    .o_view_manager_content
+                        .o_form_view.o_form_nosheet.o_form_editable.oe_form_dirty
+                            table.o_group.o_inner_group
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_67')
+                                                | Start date
+                                        td(colspan='1', style='width: 100%;')
+                                            .form-group
+                                            #dateRangeForm.form-horizontal.datetime(method='post')
+                                                #dateRangePicker.input-group.input-append.date
+                                                    input.input-group-addon.form-control(type='text', name='date' style='background-color: #D2D2FF; border-color: #D2D2FF !important; border: 0px solid #D2D2FF;border-radius: 6px; text-align:left;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_68')
+                                                | End date
+                                        td(colspan='1', style='width: 100%;')
+                                            #dateRangeForm1.form-horizontal.datetime(method='post')
+                                                #dateRangePicker1.input-group.input-append.date
+                                                    input.input-group-addon.form-control(type='text', name='date' style='background-color: #D2D2FF; border-color: #D2D2FF; border: 0px solid #D2D2FF;border-radius: 6px; text-align:left;')
+                            table.o_group.o_inner_group
+                                tbody
+                                    tr
+                                        td(colspan='4', style='width: 200%;')
+                                            .o_form_field.o_form_field_many2many.o_view_manager_content
+                                                .o_x2m_control_panel
+                                                    .o_cp_buttons
+                                                    .o_cp_pager
+                                                        .o_hidden
+                                                            span.o_pager_value
+                                                            |  /
+                                                            span.o_pager_limit
+                                                            span.btn-group.btn-group-sm
+                                                                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                div
+                                    .table-responsive
+                                        table.o_list_view.table.table-condensed.table-striped
+                                            thead
+                                                tr
+                                                    th.o_column_sortable(data-id='name')
+                                                        | Point of Sale Name
+                                                    th.o_list_record_delete
+                                            tfoot
+                                                tr
+                                                    td
+                                                    td.o_list_record_delete
+                                            tbody
+                                                tr(data-id='1', style='')
+                                                    td(data-field='name', title='An internal identification of the point of sale') Main
+                                                    td.o_list_record_delete
+                                                        span.fa.fa-trash-o(name='delete')
+                                                tr
+                                                    td.o_form_field_x2many_list_row_add(colspan='2')
+                                                        a(data-toggle='modal', href='#myModal2') Add an item
+
+                                                tr
+                                                    td(title='Point of Sale Name')  
+                                                    td.o_list_record_delete
+                                                tr
+                                                    td(title='Point of Sale Name')  
+                                                    td.o_list_record_delete
+                .modal-footer
+                    a.btn(href='#', data-dismiss='modal') Close
+                    a.btn.btn-primary(href='#') Save changes
+    #myModal2.modal(data-backdrop='static')
+        .modal-dialog.modal-lg
+            .modal-content
+                button.close(aria-hidden='true', data-dismiss='modal', type='button') ×
+                    h4.modal-title
+                        | Add: Pos config ids
+                        span.o_subtitle.text-muted.small
+                .modal-body.o_act_window
+                    .o_modal_header
+                        .o_searchview
+                            span.o_searchview_more.fa.fa-search-plus(title='Advanced Search...')
+                            ul.dropdown-menu.o_searchview_autocomplete(role='menu')
+                            input.o_searchview_input(placeholder='Search...', type='text')
+                        .o_pager
+                            .o_hidden
+                                span.o_pager_value
+                                |  /
+                                span.o_pager_limit
+                                span.btn-group.btn-group-sm
+                                    button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button', accesskey='p')
+                                    button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button', accesskey='n')
+                        .o_search_options(style='display: none;')
+                            .btn-group.o_dropdown
+                                button.o_dropdown_toggler_btn.btn.btn-sm.dropdown-toggle(data-toggle='dropdown')
+                                    span.fa.fa-filter
+                                    |  Filters
+                                    span.caret
+                                ul.dropdown-menu.o_filters_menu(role='menu')
+                                    li(data-index='0')
+                                        a(href='#') Inactive
+                                    li.divider
+                                    li.o_add_filter.o_closed_menu
+                                        a(href='#') Add Custom Filter
+                                    li.o_add_filter_menu
+                                        button.btn.btn-primary.btn-sm.o_apply_filter(type='button') Apply
+                                        button.btn.btn-default.btn-sm.o_add_condition(type='button')
+                                            span.fa.fa-plus-circle
+                                            |  Add a condition
+                            .btn-group.hidden-xs.o_dropdown
+                                button.o_dropdown_toggler_btn.btn.btn-sm.dropdown-toggle(data-toggle='dropdown')
+                                    span.fa.fa-bars
+                                    |  Group By
+                                    span.caret
+                                ul.dropdown-menu.o_group_by_menu(role='menu')
+                                    li.divider
+                                    li.o_add_custom_group.o_closed_menu
+                                        a(href='#') Add custom group
+                            .btn-group.o_dropdown
+                                button.o_dropdown_toggler_btn.btn.btn-sm.dropdown-toggle(data-toggle='dropdown')
+                                    span.fa.fa-star
+                                    |  Favorites
+                                    span.caret
+                                ul.dropdown-menu.o_favorites_menu(role='menu')
+                                    li.divider
+                                    li.o_save_search.o_closed_menu
+                                        a(href='#') Save current search
+                                    li.o_save_name
+                                        input(type='text')
+                                    li.o_save_name
+                                        span
+                                            .o_checkbox
+                                                input(type='checkbox')
+                                                span
+                                            |  Use by default
+                                    li.o_save_name
+                                        span
+                                            .o_checkbox
+                                                input(type='checkbox')
+                                                span
+                                            |  Share with all users
+                                        span.fa.fa-users
+                                    li.o_save_name
+                                        button.btn.btn-primary.btn-sm(type='button') Save
+                    div
+                        .table-responsive
+                            table.o_list_view.table.table-condensed.table-striped
+                                thead
+                                    tr
+                                        th.o_list_record_selector(width='1')
+                                            .o_checkbox
+                                                input(type='checkbox')
+                                                span
+                                        th.o_column_sortable(data-id='name')
+                                            | Point of Sale Name
+                                tfoot
+                                    tr
+                                        td
+                                        td
+                                tbody
+                                    tr
+                                        td.o_list_record_selector
+                                        td(title='Point of Sale Name')  
+                                    tr
+                                        td.o_list_record_selector
+                                        td(title='Point of Sale Name')  
+                                    tr
+                                        td.o_list_record_selector
+                                        td(title='Point of Sale Name')  
+                                    tr
+                                        td.o_list_record_selector
+                                        td(title='Point of Sale Name')  
+                .modal-footer
+                    a.btn(href='#', data-dismiss='modal') Close
+                    a.btn.btn-primary(href='#') Save changes
+
+
+

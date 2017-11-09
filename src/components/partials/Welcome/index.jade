@@ -1,0 +1,884 @@
+.welcome
+    #myModal.modal.fade(role='dialog')
+        .modal-dialog.modal-lg
+            .modal-content.modelm
+                .modal-header(style='background: #825877;')
+                    h4.sm.modal-title#head(style='display: inline-block;')
+                    .progress(style='width: 109px;float: right;margin-right: 548px;')
+                        .progress-bar(role='progressbar', aria-valuenow='70', aria-valuemin='0', aria-valuemax='50', style='width:21%')
+                            span.sr-only 70% Complete
+                            | 21%
+                    button.close(type='button', data-dismiss='modal', aria-hidden='true',style='opacity: initial;')
+                        img(src='images/crosss.png')
+                .modal-body(style='height: 700px;overflow-y: auto;')
+                    .row
+                        .col-sm-4
+                            .sidebar-nav
+                                .navbar.navbar-default(role='navigation')
+                                    .navbar-header
+                                        span.sr-only Toggle navigation
+                                        span.icon-bar
+                                        span.icon-bar
+                                        span.icon-bar
+                                    .navbar.sidebar-navbar-collapse.bx(style='padding-bottom: 100%;')
+                                        ul(aria-labelledby='dLabel', role='menu' style='margin-top: 13px;float: left;padding-left: 5px;')
+                                            li.active.li-cl-hide
+                                                a.cus-link(href='#Welcome0')
+                                                    span.fa.fa-fw
+                                                    .nav-c
+                                                        | Welcome
+                                                hr
+                                            h4.sm
+                                                i.fa.fa-trophy
+                                                | KPIs
+                                            li.li-cl-hide
+                                                a.cus-link.nav-c(href='#YourExpectations1')
+                                                    Your Expectations
+                                            li.li-cl-hide
+                                                a.cus-link.nav-c(href='#YourKPIs2')
+                                                    Your KPIs
+                                            hr
+                                            h4.sm
+                                                i.fa.fa-tag
+                                                | Sale Flow
+                                            li.li-cl-hide
+                                                a.cus-link.nav-c(href='#Pipeline3')
+                                                    | Pipeline
+                                            li.li-cl-hide
+                                                a.cus-link.nav-c(href='#Proposal4')
+                                                    | Proposal
+                                            hr
+                                            h4.sm
+                                                i.fa.fa-magic
+                                                | Deployment
+                                            li.li-cl-hide
+                                                a.cus-link.nav-c(href='#IncomingEmails5')
+                                                    | Incoming Emails
+                                            li.li-cl-hide
+                                                a.cus-link.nav-c(href='#Customers6')
+                                                    | Customers
+                                            li.li-cl-hide
+                                                a.cus-link.nav-c(href='#Products7')
+                                                    | Products
+                                            li.li-cl-hide
+                                                a.cus-link.nav-c(href='#PricingDiscounts8')
+                                                    | Pricing & Discounts
+                                            li.li-cl-hide
+                                                a.cus-link.nav-c( href='#Reporting9')
+                                                    | Reporting
+                                            li.li-cl-hide
+                                                a.cus-link.nav-c(href='#Customizations10')
+                                                    | Customizations
+                                            hr
+                                            h4.sm
+                                                i.fa.fa-bolt
+                                                | Grow revenues
+                                            li.li-cl-hide
+                                                a.cus-link.nav-c(href='#WeeklyMeetings11')
+                                                    | Weekly Meetings
+                                            li.li-cl-hide
+                                                a.cus-link.nav-c(href='#SalesTools12')
+                                                    | Sales Tools
+                                            li.li-cl-hide
+                                                a.cus-link.nav-c(href='#AddFeatures13')
+                                                    | Add Features
+
+                                    // /.nav-collapse
+                        #mainDivs.col-sm-8
+                            #Welcome0.cus-toggle.o_planner_page.container-fluid(title='Welcome')
+                                h1.fon(data-menutitle='Welcome',style='color: #a0a0a0;') Welcome
+                                .o_planner_intro
+                                    p
+                                        | Setting up your sales funnel is just the first step. To achieve a
+                                        | significant boost, we will help you get the most out of
+                                        | CRM to transform how your salespeople work.
+                                        | That's the purpose of this guide.
+                                    p
+                                        | The whole process may take a few hours. But it's worth doing
+                                        | it.
+                                    p
+                                        | We are here to help you. If you get stuck, do not hesitate to
+                                        | reach our
+                                        a(href='#') support team
+                                        |  or
+                                        a(href='#') browse the documentation
+                                        | .
+                                    p
+                                        | Have fun deploying your sales strategy,
+                                    .mt32
+                                        address
+                                            | For the ERP Team,
+                                            br
+                                            | Fabien Pinckaers, Founder
+
+                            #YourExpectations1.cus-toggle.o_planner_page(title='Your Expectations')
+                                h1(data-menutitle='Your Expectations',style='color: #a0a0a0;') Your Expectations
+                                p.text-muted
+                                    | What are your sales objectives? What challenges are you
+                                    | dealing with? Being clear on your expectations is the first step
+                                    | of a successful implementation.
+                                .row(style='background-color: #fcf8e3;')
+                                    .o_planner_notebook_container.col-md-12
+                                        ul
+                                            .o_planner_notebook_line_separator
+                                            li
+                                                h5
+                                                    strong Sales objectives
+                                                    | :
+                                                a.pull-right(data-toggle='collapse', href='#o_planner_page2_help')
+                                                    i.fa.fa-question-circle  view examples
+                                                #o_planner_page2_help.collapse
+                                                    h5 Examples
+                                                    ul
+                                                        li  Better visibility on team activities
+                                                        li  Have clear forecasts on sales
+                                                        li  Grow leads acquisition
+                                                        li  Improve average revenue per salesperson
+                                                        li  Upsell more to existing customers
+                                                        li  Better structure the sales process
+                                            li
+                                                textarea#input_element_exp1(value='', line='1', type='text' , style='width: 77%;')
+                                                textarea(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 0px;')
+                                            li
+                                                textarea#input_element_exp2(value='', line='1', type='text', style='width: 77%;')
+                                                textarea(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 0px;')
+                                            li
+                                                textarea#input_element_exp3(value='', line='1', type='text', style='width: 77%;')
+                                                textarea(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 0px;')
+                                            li
+                                                textarea#input_element_exp4(value='', line='1', type='text', style='width: 77%;')
+                                                textarea(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 0px;')
+                                .alert.alert-info.info_icon(role='alert')
+                                    span.fa.fa-lightbulb-o.fa-lg
+                                    p
+                                        | At the end of the deployment process, your expectations should be reached.
+                                        br
+                                        |                         If not, our CRM experts are available to help you achieve your KPIs.
+
+                            #YourKPIs2.cus-toggle.o_planner_page.container-fluid(title='Your KPIs')
+                                h1(data-menutitle='Your KPIs',style='color: #a0a0a0;') Your KPIs
+                                p.text-muted
+                                    | What are the main KPIs you need to track for your the sales activities?
+                                .row(style='background-color: #fcf8e3;')
+                                    .o_planner_notebook_container.col-md-12
+                                        ul.o_planner_notebook
+                                            .o_planner_notebook_line_separator
+                                            li.o_planner_notebook_header
+                                                h5
+                                                    strong Your Main KPIs:
+                                                a.pull-right(data-toggle='collapse', href='#o_planner_page3_help')
+                                                    i.fa.fa-question-circle  view examples
+                                                #o_planner_page3_help.collapse
+                                                    h5 Examples
+                                                    ul
+                                                        li  Sales Forecasts (month+1)
+                                                        li  Win / Loss Ratio
+                                                        li  Revenue by Salesperson
+                                                        li  Time to Close a Deal
+                                                        li  Time to Qualify a Lead
+                                                        li  Leads by Source
+                                            li
+                                                textarea#input_element_kpi1(value='', line='1', cols='45', type='text')
+                                                textarea(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 0px;')
+                                            li
+                                                textarea#input_element_kpi2(value='', line='1', cols='45', type='text')
+                                                textarea(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 0px;')
+                                            li
+                                                textarea#input_element_kpi3(value='', line='1', cols='45', type='text')
+                                                textarea(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 0px;')
+                                            li
+                                                textarea#input_element_kpi4(value='', line='1', cols='45', type='text')
+                                                textarea(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 0px;')
+
+                            #Pipeline3.cus-toggle.o_planner_page.container-fluid(title='Pipeline')
+                                h1(data-menutitle='Pipeline',style='color: #a0a0a0;') Pipeline
+                                p.text-muted
+                                    | Systematic organization is what makes the difference
+                                    | between good and great salespeople! Setup a pipeline
+                                    | that is in line with your sales cycle.
+                                p.text-muted
+                                    | Aligning your sales organization on a systematic
+                                    | process will allow you to continuously improve your
+                                    | sales performance.
+                                .row(style='background-color: #fcf8e3;')
+                                    .o_planner_notebook_container.col-md-12
+                                        ul(style='list-style: none;')
+                                            li.row.o_planner_notebook_header
+                                                .col-md-4.col-md-push-8.fa.fa-lightbulb-o
+                                                    | Examples:
+                                                    select#input_element_pipeline
+                                                        option(value='odoo_default') Odoo Default
+                                                        option(value='solution_selling') Solution Selling
+                                                        option(value='b2c') B2C
+                                                        option(value='b2b') B2B
+                                                h5.col-md-8.col-md-pull-4
+                                                    strong Sales Stages
+                                            li.row
+                                                .col-md-6
+                                                    span #1
+                                                    input#input_element_stage_0(type='text', value='')
+                                                .col-md-6
+                                                    textarea#input_element_stage_7(type='text')
+                                                    textarea(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 0px;')
+                                            li.row
+                                                .col-md-6
+                                                    span #2
+                                                    input#input_element_stage_1(type='text', value='')
+                                                .col-md-6
+                                                    textarea#input_element_stage_8(type='text')
+                                                    textarea(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 0px;')
+                                            li.row
+                                                .col-md-6
+                                                    span #3
+                                                    input#input_element_stage_2(type='text', value='')
+                                                .col-md-6
+                                                    textarea#input_element_stage_9(type='text')
+                                                    textarea(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 0px;')
+                                            li.row
+                                                .col-md-6
+                                                    span #4
+                                                    input#input_element_stage_3(type='text', value='')
+                                                .col-md-6
+                                                    textarea#input_element_stage_10(type='text')
+                                                    textarea(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 0px;')
+                                            li.row
+                                                .col-md-6
+                                                    span #5
+                                                    input#input_element_stage_4(type='text', value='')
+                                                .col-md-6
+                                                    textarea#input_element_stage_11(type='text')
+                                                    textarea(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 0px;')
+                                            li.row
+                                                .col-md-6
+                                                    span #6
+                                                    input#input_element_stage_5(type='text', value='')
+                                                .col-md-6
+                                                    textarea#input_element_stage_12(type='text')
+                                                    textarea(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 0px;')
+                                            li.row
+                                                .col-md-6
+                                                    span #7
+                                                    input#input_element_stage_6(type='text')
+                                                .col-md-6
+                                                    textarea#input_element_stage_13(type='text')
+                                                    textarea(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 0px;')
+                                            .o_planner_notebook_line_separator
+                                .alert.alert-info.info_icon(role='alert')
+                                    span.fa.fa-lightbulb-o.fa-lg
+                                    li A good pipeline should have between 5 and 7 stages
+                                    li The first stage is usually "New" and the last one is "Won"
+                                    li Don't use stages to qualify opportunities, use tags instead
+                                    li
+                                        | Every stage should be a step forward in the buyer's decision-making, not a task to carry out
+                                p
+                                    | Great pipelines have stages
+                                    strong aligned with the buyer's buying process
+                                    | , not your selling process:
+                                table.table
+                                    thead
+                                        tr
+                                            th
+                                            th(width='50%')
+                                                strong Example: Qualified stage
+                                            th
+                                            th(width='50%')
+                                                strong Example: Negotiation stage
+                                    tbody
+                                        tr
+                                            td
+                                                span.fa.fa-thumbs-o-up.fa-2x.text-success
+                                            td
+                                                strong The customer
+                                                |  understood his pain points and proposed the next step in the buying process
+                                            td
+                                                span.fa.fa-thumbs-o-up.fa-2x.text-success
+                                            td
+                                                strong The prospect
+                                                |  started to discuss your offer
+                                        tr
+                                            td
+                                                span.fa.fa-thumbs-o-down.fa-2x.text-danger
+                                            td
+                                                strong You
+                                                |  understand the customer's needs and pain points, and you have a fairly good idea of his budget to spend
+                                            td
+                                                span.fa.fa-thumbs-o-down.fa-2x.text-danger
+                                            td
+                                                strong You
+                                                |  called the prospect for a follow up on your offer
+                                .well.well-lg
+                                    strong Recommended actions:
+                                    li
+                                        a(href='web#view_type=kanban&model=crm.lead&menu_id=300')
+                                            | Configure the stages of your sales pipeline
+                                        |  with your work above
+                                    li
+                                        a(href='web#view_type=kanban&model=crm.lead&menu_id=300')
+                                            | Create the three firsts opportunities
+                                        |  as an exercise
+
+                            #Proposal4.cus-toggle.o_planner_page.container-fluid(title='Proposal')
+                                h1(data-menutitle='Proposal',style='color: #a0a0a0;') Proposal
+                                p.text-muted
+                                    | Odoo will help you create polished, professional quotations and contracts in minutes.
+                                    | Tell us how you sell and we will tell you what
+                                    | configuration will best fit your quotation process.
+                                h4
+                                    | What
+                                    strong kind of proposals
+                                    |  do you usually send to your customers ?
+                                .row
+                                    .col-md-6
+                                        .panel.panel-success
+                                            .panel-heading
+                                                span.panel-title
+                                                    span.fa(data-icon='')
+                                                    strong One-time sale
+                                                    br
+                                                    span.small
+                                            .panel-body
+                                                h4
+                                                    strong Standard quotation
+                                                    span.small (products or services)
+                                                span
+                                                    li This is the default configuration, there is nothing to setup.
+                                                br
+                                                h4
+                                                    strong Quote template
+                                                    span.small (packaged services)
+                                                span
+                                                    li
+                                                        | Activate the 'Online Quotations' option in
+                                                        a(href='/web#action=136&view_type=list') Sales Settings
+                                                    li Create your templates of offers
+                                    .col-md-6
+                                        .panel.panel-success
+                                            .panel-heading
+                                                span.panel-title
+                                                    span.fa(data-icon='')
+                                                    strong Subscriptions
+                                                    br
+                                                    span.small
+                                            .panel-body
+                                                span.text-muted
+                                                    | If you sell subscriptions (whether it's invoiced annually or monthly), activate the
+                                                    a(href='#show_enterprise') Subscription Management
+                                                    |  app.
+                                .alert.alert-info.info_icon(role='alert')
+                                    span.fa.fa-lightbulb-o.fa-lg
+                                    strong Note:
+                                    |                         Using templates can boost the quality of your
+                                    |                         quotations and their success rate. However,
+                                    |                         creating such templates can be a huge effort.
+                                    |                         We recommend to start with standard quotations
+                                    |                         and upgrade later.
+
+                            #IncomingEmails5.cus-toggle.o_planner_page.container-fluid(title='Incoming Emails')
+                                h1(data-menutitle='Incoming Emails',style='color: #a0a0a0;') Incoming Emails
+                                p.text-muted
+                                    | There are several ways for your company to generate leads with Odoo CRM.
+                                    | One of them is using your company's generic email address as a trigger
+                                    | to create a new lead in the system. In Odoo, each one of your sales teams
+                                    | is linked to its own email address from which prospects can reach them.
+                                    | For example, if the personal email address of your Direct team is
+                                    | direct@mycompany.example.com, every email sent when a new prospect
+                                    | contacts you will automatically create a new opportunity into the sales team.
+                                    | That's the easiest way to integrate Odoo with third party apps.
+                                h4
+                                    | The point of contact
+                                    strong for all your prospects
+                                .row
+                                    .col-md-4
+                                        .well.well-sm.text-center
+                                            h4
+                                                span.fa(data-icon='')
+                                                |  sales3@localhost
+                                        .well.well-sm.text-center.relative
+                                            p
+                                                | This email address has been preconfigured as the default
+                                                | for your sales department.
+                                                br
+                                                a(href='/web#action=136&view_type=list') (you can change it here)
+                                            span.arrow-down
+                                    .col-md-4.text-center
+                                        .well.well-lg
+                                            h4
+                                                span.label.label-default.text-center.odoo_purple Incoming email
+                                            span.fa.fa-angle-down.fa-2x
+                                            h4
+                                                span.label.label-default.text-center.odoo_purple Lead
+                                            span.fa.fa-angle-down.fa-2x
+                                            h4
+                                                span.label.label-default.text-center.odoo_purple Opportunity
+                                            span.fa.fa-angle-down.fa-2x
+                                            h4
+                                                span.label.label-default.text-center.odoo_purple Quotation
+                                    .col-md-4
+                                        .well.well-lg
+                                            p
+                                                strong
+                                            h4
+                                                strong
+                                                    a(href='mailto:info@odoo.com?subject=Sales%20Planner', target='_blank') Contact Us
+                                            strong
+                                                | to setup your own domain
+                                                | name (e.g. sales@gmail.com)
+                                            p
+                                .alert.alert-info(role='alert')
+                                    p Don't forget to change this address on:
+                                    ul
+                                        li Your business cards
+                                        li Your document templates
+                                        li Your LinkedIn or social media pages
+                                        li Your website
+
+                            #Customers6.cus-toggle.o_planner_page.container-fluid(title='Customers')
+                                h1(data-menutitle='Customers',style='color: #a0a0a0;') Customers
+                                p.text-muted
+                                    | Unless you are starting a new business, you probably have a list of customers and vendors you'd like to import.
+                                .row
+                                    .col-md-6
+                                        .panel.panel-success
+                                            .panel-heading
+                                                span.panel-title
+                                                    span.fa(data-icon='')
+                                                    strong  Create manually
+                                                    br
+                                                    span.small  200 contacts
+                                            .panel-body
+                                                p
+                                                    | If you have less than 200 contacts, we recommend you
+                                                    | to create them manually.
+                                                ul
+                                                    li
+                                                        a(href='/web#action=55&view_type=kanban') Create Customers
+                                                    li
+                                                        a(href='/web#action=57&view_type=kanban') Create Vendors
+                                                        | , if accounting or purchase is installed
+                                    .col-md-6
+                                        .panel.panel-success
+                                            .panel-heading
+                                                span.panel-title
+                                                    span.fa(data-icon='')
+                                                    strong Import
+                                                    br
+                                                    span.small > 200 contacts
+                                            .panel-body
+                                                p
+                                                    | We can handle the whole import process
+                                                    | for you: simply send your Odoo project
+                                                    | manager a CSV file containing all your
+                                                    | data.
+                                                p
+                                                    | If you want to do it yourself:
+                                                ul
+                                                    li
+                                                        | Download the
+                                                        a(href='/base_import/static/csv/customers.xls') Excel template
+                                                    li
+                                                        | Import using the top left button in
+                                                        a(href='/web#action=55&view_type=list') the list of customers
+                                .alert.alert-info.info_icon(role='alert')
+                                    span.fa.fa-lightbulb-o.fa-lg
+                                    strong Tip:
+                                    |  For developers, you can
+                                    |                         use our API to load data through scripts: read
+                                    |                         the
+                                    a(href='https://www.odoo.com/documentation/9.0/api_integration.html', target='_blank') API documentation
+
+                            #Products7.cus-toggle.o_planner_page.container-fluid(title='Products')
+                                h1(data-menutitle='Products',style='color: #a0a0a0;') Products
+                                p
+                                    | A product in Odoo is something you sell or buy. It could
+                                    | be a goods, consumable or services. Choose how you want to
+                                    | create your products:
+                                .row
+                                    .col-md-6
+                                        .panel.panel-success
+                                            .panel-heading
+                                                span.panel-title
+                                                    span.fa(data-icon='')
+                                                    strong  Create manually
+                                                    br
+                                                    span.small Recommended if <50 items
+                                            .panel-body
+                                                a(target='_blank', href='/web#action=131&view_type=form') Create your product items
+                                    .col-md-6
+                                        .panel.panel-success
+                                            .panel-heading
+                                                span.panel-title
+                                                    span.fa(data-icon='')
+                                                    strong Import a file
+                                                    br
+                                                    span.small Recommended if >50 items
+                                            .panel-body
+                                                p
+                                                    a(href='/base_import/static/csv/products.xls', target='_blank') Use our import templates to get your catalog ready in no time!
+                                .row
+                                    .col-md-12.col-xs-12
+                                        .well.well-lg
+                                            strong For complex imports
+                                            |  (>5000 items, product variants, pictures, etc.):
+                                            li
+                                                | Online users: we do it for you!
+                                                a(href='https://www.odoo.com/help', target='_blank')
+                                                    i.fa.fa-envelope-o
+                                                    |  Ask Our Experts
+                                            li
+                                                | Community & Enterprise users:
+                                                a(href='https://www.odoo.com/documentation/9.0/api_integration.html', target='_blank') use Odoo API to import through scripts
+
+                            #PricingDiscounts8.cus-toggle.o_planner_page.container-fluid(title='Pricing & Discounts')
+                                h1(data-menutitle='Pricing & Discounts',style='color: #a0a0a0;') Pricing & Discounts
+                                p.text-muted
+                                    | In Odoo, there are 3 different ways to manage your prices.
+                                    br
+                                .row
+                                    .col-md-4
+                                        .panel.panel-success
+                                            .panel-heading
+                                                span.panel-title
+                                                    strong Unique Price (default)
+                                            .panel-body
+                                                p
+                                                    | Each product has only one price.
+                                                    br
+                                    .col-md-4
+                                        .panel.panel-success
+                                            .panel-heading
+                                                span.panel-title
+                                                    strong Specific Price per Audience
+                                            .panel-body
+                                                li Basic, Premium
+                                                li Consumers, Retailers
+                                                li USD, EUR, GBP
+                                    .col-md-4
+                                        .panel.panel-success
+                                            .panel-heading
+                                                span.panel-title
+                                                    strong  Rules & Formulas
+                                            .panel-body
+                                                p
+                                                    | Create and combine rules:
+                                                    br
+                                                li e.g. 15% discount when buying more than 3 t-shirts
+                                                li additional 10% during summer sales
+                                                p
+                                .alert.alert-info.info_icon(role='alert')
+                                    span.fa.fa-lightbulb-o.fa-2x
+                                    p
+                                        | To stimulate your customers, show them the public price and the discount applied to it. This is settable in the pricelist configuration if you allow discounts.
+                                .well.well-lg
+                                    strong Next actions:
+                                    li
+                                        a(target='blank', href='/web#action=136&view_type=list')  Select your pricing preference and allow discounts
+                                    li
+                                        a(target='blank', href='/web#action=132&view_type=list')  Configure your pricelists
+                                    li
+                                        a(target='blank', href='/web#action=221&view_type=list')  Apply multi-currencies
+                                    li
+                                        a(href='https://www.odoo.com/documentation/user/9.0/sales.html', target='blank')  Read the documentation about pricing & discounts
+
+                            #Reporting9.cus-toggle.o_planner_page.container-fluid(title='Reporting')
+                                h1(data-menutitle='Reporting',style='color: #a0a0a0;') Reporting
+                                h4
+                                    strong Click on 'Reporting' in the main menu
+                                    | and browse statistics:
+                                .row
+                                    .col-md-4
+                                        .panel.panel-success
+                                            .panel-heading
+                                                span.panel-title
+                                                    span(data-icon='')
+                                                    strong  Exercise 1
+                                                span (Lead Manager)
+                                            .panel-body
+                                                p
+                                                    strong Exercise:
+                                                    |  Try to get the number of leads per salesperson and by creation date
+                                                p
+                                                    a(href='/web#action=461&view_type=pivot') Leads Analysis
+                                                    |  (if leads are activated)
+                                    .col-md-4
+                                        .panel.panel-success
+                                            .panel-heading
+                                                span.panel-title
+                                                    span(data-icon='')
+                                                    strong  Exercise 2
+                                                span (Sales Manager)
+                                            .panel-body
+                                                p
+                                                    | A sales manager will mostly use these two reports:
+                                                li
+                                                    a(href='/web#action=459&view_type=pivot') Opportunities Analysis
+                                                li
+                                                    a(href='/web#action=223&id=42&view_type=pivot') Invoice Analysis
+                                                p
+                                                p
+                                                    strong Exercise:
+                                                    | Try to analyse the average time to close a deal.
+                                                    |                                         Group X Axis: Creation Date
+                                                    |                                         Group Y Axis: Expected Closing Date
+                                                    |                                         Filter: Won Opportunities
+                                    .col-md-4
+                                        .panel.panel-success
+                                            .panel-heading
+                                                span.panel-title
+                                                    span(data-icon='')
+                                                    strong  Exercise 3
+                                                span (Salesperson)
+                                            .panel-body
+                                                p
+                                                    | Every salesperson can analyze their own pipe by clicking on the 'switch view to graph' icon.
+                                                p
+                                                    strong Exercise:
+                                                    | Try to switch the kanban to graph view
+                                                p
+                                                    a(href='web#view_type=kanban&model=crm.lead&menu_id=300') Opportunities pipeline
+                                .alert.alert-info.info_icon(role='alert')
+                                    span.fa.fa-lightbulb-o.fa-2x
+                                    strong Tips:
+                                    li
+                                        | Show advanced filters and options by clicking on the magnifying glass icon next to the search bar.
+                                    li Save filters or add any report to your dashboard with the Favorites menu.
+
+                            #Customizations10.cus-toggle.o_planner_page.container-fluid(title='Customizations')
+                                h1(data-menutitle='Customizations',style='color: #a0a0a0;') Customizations
+                                p.text-muted
+                                    strong Every business is different.
+                                    |  Odoo allows to
+                                    |                         customize every application and it's usually a good
+                                    |                         advice to customize screens to fit your sales process.
+                                    strong Customizations are done by Odoo experts.
+                                p.text-muted
+                                    | Here are some of the
+                                    strong customizations available
+                                    | :
+                                section(data-snippet-id='pricing')
+                                    .row
+                                        .col-md-4
+                                            .panel.panel-success
+                                                .panel-heading
+                                                    span.panel-title
+                                                        span.fa.fa-laptop
+                                                        strong  Screen Customization
+                                                .panel-body
+                                                    p
+                                                        | We can add fields related to your business on any screen, for example
+                                                    li Number of Rooms
+                                                    li Existing Tools
+                                                    li Licences
+                                                    li ....
+                                        .col-md-4
+                                            .panel.panel-success
+                                                .panel-heading
+                                                    span.panel-title
+                                                        span.fa.fa-sitemap
+                                                        strong  Workflow Customization
+                                                .panel-body
+                                                    p We can automate steps in your workflow, for example:
+                                                    li
+                                                        | Send an email to all opportunities in the "Qualified" stage for more than 20 days
+                                                    li Set the sales manager as a follower of every opportunity above $20k
+                                        .col-md-4
+                                            .panel.panel-success
+                                                .panel-heading
+                                                    span.panel-title
+                                                        span.fa.fa-pencil-square-o
+                                                        strong  Create Custom Reports
+                                                .panel-body
+                                                    p
+                                                        | We can implement custom reports for you based on your Word templates, for example:
+                                                    li  Attach a qualification form to every house opportunity
+                                                    li  Change the layout of a quotation
+                                    .row
+                                        .col-md-8
+                                            .well.well-lg
+                                                span
+                                                    strong Contact us to customize your application:
+                                                    br
+                                                    |                                     We have special options for unlimited number of customizations!
+
+                            #WeeklyMeetings11.cus-toggle.o_planner_page.container-fluid(title='Weekly Meetings')
+                                h1(data-menutitle='Weekly Meetings',style='color: #a0a0a0;') Weekly Meetings
+                                p.text-muted
+                                    | Once you’ve deployed your CRM, it’s time to grow your revenues. Start by setting up a continuous improvement approach.We recommend you to organize weekly sales meeting with the team during which you will do a pipeline review.
+                                .o_planner_paragraphs
+                                    .row
+                                        .hidden-xs.hidden-sm.col-md-2.icon
+                                            span(data-icon='')
+                                        .col-md-10
+                                            p
+                                                strong Organize weekly sales meetings
+                                                br
+                                                |                                     It's a great way to see where you can improve and keep track of the progress of your sales team. Start the pipeline review by looking at the big picture; revenues and number of opportunities by stage, by expected closing date and by salespeople.
+                                            p
+                                                | Analyzing the pipeline by expected closing date will help your team efficiently forecast its future revenues. The pipeline review will allow you to identify sales inefficiencies or pick up on the best practices.
+                                        .hidden-xs.hidden-sm.col-md-2.icon
+                                            span(data-icon='')
+                                        .col-md-10
+                                            p
+                                                strong Review the top 5 opportunities
+                                                br
+                                                |                                     Once the big picture is clear, focus on the best opportunities. Start from stages on the right (negotiation, proposal, etc) and review the biggest opportunities one by one with the team.
+                                            p
+                                                | For every deal, review the next action, the expected closing, the pain points, the expected revenues, the buying process, etc.
+                                        .hidden-xs.hidden-sm.col-md-2.icon
+                                            span(data-icon='')
+                                        .col-md-10
+                                            p
+                                                strong Forecast future revenues
+                                                br
+                                                |                                     You can assess the maturity of a sales team by its ability to forecasts future revenues
+                                                |                                     for the coming months or quarters. Train the team to forecast efficiently by having
+                                                |                                     an up-to-date pipeline of opportunities.
+                                                |                                     After a few month, set the real success rate according to the stages, to have
+                                                |                                     accurate expected revenues by closing date.
+                                            p
+                                                | Depending on how complex your business is, it may take between 6 months and 18 months for a new
+                                                | sales team to efficiently forecasts future revenues.
+
+                            #SalesTools12.cus-toggle.o_planner_page.container-fluid(title='Sales Tools')
+                                h1(data-menutitle='Sales Tools',style='color: #a0a0a0;') Sales Tools
+                                p
+                                    | The three main practices to develop a sales force are
+                                    strong methodical organization
+                                    | ,
+                                    strong trainings
+                                    |  and
+                                    strong good sales tools
+                                    | .
+                                p
+                                    | If you followed the preceding steps, you already setup
+                                    | the foundations to a strong process leading to
+                                    | continuous improvements of your sales teams.
+                                .row.o_planner_paragraphs
+                                    .col-md-2.icon
+                                        span(data-icon='')
+                                    .col-md-10
+                                        p
+                                            strong Trainings
+                                            br
+                                            | To build a strong sales training program, you can use the following
+                                            | apps of Odoo:
+                                        ul
+                                            li
+                                                | Use
+                                                a(href='/web#action=37&id=124&view_type=form') survey
+                                                |  to create tests and certifications.
+                                            li
+                                                | Use
+                                                a(href='/web#action=37&id=91&view_type=form') Slides
+                                                |  to organize all your documents like: customer presentations, product sheets, comparisons with competitors, pain points sheets, training materials, etc.
+                                            li
+                                                | Use
+                                                a(href='/web#action=37&id=95&view_type=form') Gamification
+                                                |  to create internal challenge for your salesmen
+                                        p
+                                    .col-md-2.icon
+                                        span(data-icon='')
+                                    .col-md-10
+                                        p
+                                            strong Sales tools
+                                            br
+                                            |                                 Efficiently following up the pipeline will lead to great improvements. But to achieve excellence in your sales organization, you need  to provide your team with sales tools. For every stage of the opportunities pipeline, identify the blocking points and create  documents to train the team.
+                                p
+                                    | Here are a few examples of documents you should provide to your sales team based on the sales stage:
+                                section
+                                    .well.well-lg
+                                        p
+                                            strong New:
+                                        ul
+                                            li Phone scripts
+                                            li Qualification form (you can use the survey app for this)
+                                            li Templates of emails
+                                        p
+                                            strong Qualified:
+                                        ul
+                                            li List of possible pain points by segment/profile
+                                            li VIP letter to potential sponsors
+                                        p
+                                            strong Propositions:
+                                        ul
+                                            li Templates of quotations (use Odoo Online Proposals for this)
+                                            li Competition Matrix comparing prices
+                                        p
+                                            strong Negotiation:
+                                        ul
+                                            li Motivation letter from the management
+                                    p
+                                        | You don't need to review lost opportunities at every sales meeting, but it's good
+                                        | practice to do it at least once a month. Ask your team to set tags on opportunities to
+                                        | identify why they were lost and use this information to generate statistics. Here are
+                                        | some examples of tags to create: no budget, competition, no pain found, etc.
+
+                            #AddFeatures13.cus-toggle.o_planner_page(title='Add Features')
+                                h1(data-menutitle='Add Features',style='color: #a0a0a0;') Add Features
+                                p.text-muted
+                                    | Odoo is the world's only software to have a full integration of Marketing Apps for your sales channel: insight sales, point of sale, ecommerce.
+                                h4
+                                    strong To boost your leads acquisition,
+                                    |  you should have a look at our marketing apps:
+                                section
+                                    .row.o_planner_row_apps
+                                        .text-center.mt8.col-md-6
+                                            span.fa.fa-envelope.fa-4x
+                                            h3
+                                                strong Mass mailing
+                                            p Design efficient email campaigns. Send, convert and track performance.
+                                            a.btn.odoo_purple(href='/web#action=37&id=21&view_type=form')
+                                                span.fa.fa-arrow-circle-o-down
+                                                |  Install Mailing
+                                        .text-center.mt8.col-md-6
+                                            span.fa.fa-comments-o.fa-4x
+                                            h3
+                                                strong Website Live Chat
+                                            p Engage directly with your website visitors to convert them into leads.
+                                            a.btn.odoo_purple(href='/web#action=37&id=97&view_type=form')
+                                                span.fa.fa-arrow-circle-o-down
+                                                |  Install Website Live Chat
+                                    .row.o_planner_row_apps
+                                        .text-center.mt8.col-md-6
+                                            span.fa.fa-check-square-o.fa-4x
+                                            h3
+                                                strong Survey
+                                            p Gain high quality insight from surveys, a great way to engage with prospects
+                                            a.btn.odoo_purple(href='/web#action=37&id=124&view_type=form')
+                                                span.fa.fa-arrow-circle-o-down
+                                                |  Install Surveys
+                                        .text-center.mt8.col-md-6
+                                            span.fa.fa-calendar-o.fa-4x
+                                            h3
+                                                strong Events
+                                            p Create sleek and attractive event pages. Sell online and organize on site.
+                                            a.btn.odoo_purple(href='/web#action=37&id=82&view_type=form')
+                                                span.fa.fa-arrow-circle-o-down
+                                                |  Install Events
+                                    .row.o_planner_row_apps
+                                        .text-center.mt8.col-md-6
+                                            span.fa.fa-credit-card.fa-4x
+                                            h3
+                                                strong e-Commerce
+                                            p Boost your online sales with sleek product pages.
+                                            a.btn.odoo_purple(href='/web#action=37&id=161&view_type=form')
+                                                span.fa.fa-arrow-circle-o-down
+                                                |  Install e-Commerce
+                                        .text-center.mt8.col-md-6
+                                            span.fa.fa-file-powerpoint-o.fa-4x
+                                            h3
+                                                strong Slides
+                                            p Display your brochures, product sheets, showcases etc.
+                                            a.btn.odoo_purple(href='/web#action=37&id=91&view_type=form')
+                                                span.fa.fa-arrow-circle-o-down
+                                                |  Install Slides
+
+                            #End14.cus-toggle.o_planner_page(title='End')
+                                .text-center
+                                    h1 Congratulations, you're done!
+                                #div1
+                                    img(src='images/check.png', width='100', height='100',style=' margin-left: 220px;')
+                                br
+                .modal-footer.lf
+                    button.btn.btn-primary.hd.pull-left(style='width: 137px;float: left;margin-left: 75px;') Mark as Done!
+                    a.next.btn.btn-primary.hd.left(style='width: 255px;' href='#') Next Step >
+

@@ -1,0 +1,62 @@
+.Stagecreate
+    DashboardController(v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:savebtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks")
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Stage/New
+    .row
+        .col-sm-12
+            #success-alert(style='background-color:red;display:none;position:absolute;right: 0px;z-index: 1;')
+                button.close(type="button", data-dismiss="alert",style='color:white;') x
+                .o_notification.o_error
+                    .o_notification_title
+                        span.o_icon.fa.fa-3x.fa-exclamation(style='color:white;border-bottom: 3px solid white;font-size: 16px') The following fields are invalid:
+
+                    .o_notification_content(style='padding-top: 16px;')
+                        ul
+                            li#leave(style='color:white;') Stage Name
+    StagesEdits
+        table.o_group.o_inner_group.o_group_col_6(slot='stage')
+            tbody
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label(for='o_field_input_58')
+                            | Stage name
+                    td(colspan='1', style='width: 100%;')
+                        input#o_field_input_58.o_form_input.o_form_field.o_form_required(name='name',v-model='name', v-validate:name.initial="'required|alpha'", :class="{'input': true, 'is-danger': errors.has('name') }",type='text')
+
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_59', data-original-title='', title='')
+                            | Sequences
+                    td(colspan='1', style='width: 100%;')
+                        input#o_field_input_59.o_form_input.o_form_field.o_form_invisible.o_form_field_number(type='text')
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                            | Job Specific
+                    td(colspan='1', style='width: 100%;')
+                        select(v-model='job_specific')
+                            option(v-for='option in options2', v-bind:value="option.id")
+                                | {{ option.job_tittle }}
+                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+        table.o_group.o_inner_group.o_group_col_6(slot='folded')
+            tbody
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                            | Folded in Recruitment Pipe
+                    td(colspan='1', style='width: 100%;')
+                        .o_checkbox.o_form_field_boolean.o_form_field
+                            input(type='checkbox', name='my-checkbox', value='1', v-bind:true-value='1', v-bind:false-value='0', v-model='folded')
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                            | Use template
+                    td(colspan='1', style='width: 100%;')
+                        select(v-model='email_template_id')
+                            option(v-for='option in options', v-bind:value="option.id")
+                                | {{ option.name }}
+                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+        .o_horizontal_separator(slot='requirment')
+            | Requirement
+            textarea.o_form_textarea.o_form_field(v-model='description',rows='6', name='requirements', style='resize: horizontal; height: 50px;')
+            textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 1428px;')

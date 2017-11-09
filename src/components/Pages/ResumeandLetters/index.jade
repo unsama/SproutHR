@@ -1,0 +1,48 @@
+.ResumeandLetters
+    DashboardController(v-show='p',v-bind:deletedropbtn='true', v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:dropdownMenuButton='true',v-bind:Attachmentbtn='true',v-bind:actionbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Resumes and Letters
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_cannot_create.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        label.o_form_label.oe_edit_only
+                            | Attachment Name
+                        h1
+                            span.o_form_field.o_form_required {{application_tittle}}
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                | Type
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required {{type}}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible
+                                                | File Content
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible(href='javascript:void(0)')
+                                                span.fa.fa-download
+                                                |  Williams_CV.doc
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible.oe_inline.oe_right
+                                                | File Name
+                                        td(colspan='1', style='width: 100%;')
+                                            span.oe_inline.oe_right.o_form_field.o_form_invisible Williams_CV.doc
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false
+                                                | Url
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required {{document_url}}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible
+                                                | Mime Type
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_invisible

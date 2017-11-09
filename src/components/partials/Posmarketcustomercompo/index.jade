@@ -1,0 +1,972 @@
+.pos(style='position: fixed;')
+    .pos-topheader
+        .pos-branding
+            img.pos-logo(src='/point_of_sale/static/src/img/logo.png')
+            span.username
+                | Administrators
+        .pos-rightheader
+            .order-selector
+                span.orders.touch-scrollable
+                    span.order-button.select-order.selected(data-uid='00003-038-0115')
+                        span.order-sequence
+                            | 115
+                        |                             08:02
+                span.order-button.square.neworder-button
+                    i.fa.fa-plus
+                span.order-button.square.deleteorder-button
+                    i.fa.fa-minus
+            .oe_status.js_synch
+                span.js_msg.oe_hidden
+                .js_connected.oe_icon.oe_green
+                    i.fa.fa-fw.fa-wifi
+                .js_connecting.oe_icon.oe_hidden
+                    i.fa.fa-fw.fa-spin.fa-spinner
+                .js_disconnected.oe_icon.oe_red.oe_hidden
+                    i.fa.fa-fw.fa-wifi
+                .js_error.oe_icon.oe_red.oe_hidden
+                    i.fa.fa-fw.fa-warning
+            .header-button
+                | Close
+    .pos-content
+        .window
+            .subwindow
+                .subwindow-container
+                    .subwindow-container-fix.screens
+                        .scale-screen.screen.oe_hidden
+                            .screen-content
+                                .top-content
+                                    span.button.back
+                                        i.fa.fa-angle-double-left
+                                        |                         Back
+                                    h1.product-name Unnamed Product
+                                .centered-content
+                                    .weight.js-weight
+                                        | 0.000 Kg
+                                    .product-price
+                                        | $ 0.00/
+                                    .computed-price
+                                        | 123.14 €
+                                    .buy-product
+                                        | Order
+                                        i.fa.fa-angle-double-right
+                        .product-screen.screen.oe_hidden
+                            .leftpane
+                                .window
+                                    .subwindow
+                                        .subwindow-container
+                                            .subwindow-container-fix
+                                                .order-container
+                                                    .order-scroller.touch-scrollable
+                                                        .order
+                                                            .order-empty
+                                                                i.fa.fa-shopping-cart
+                                                                h1 Your shopping cart is empty
+                                    .subwindow.collapsed
+                                        .subwindow-container
+                                            .subwindow-container-fix.pads
+                                                .control-buttons.oe_hidden
+                                                .actionpad
+                                                    button.button.set-customer
+                                                        i.fa.fa-user
+                                                        |                     Customer
+                                                    button.button.pay
+                                                        .pay-circle
+                                                            i.fa.fa-chevron-right
+                                                        |                 Payment
+                                                .numpad
+                                                    button.input-button.number-char 1
+                                                    button.input-button.number-char 2
+                                                    button.input-button.number-char 3
+                                                    button.mode-button.selected-mode(data-mode='quantity') Qty
+                                                    br
+                                                    button.input-button.number-char 4
+                                                    button.input-button.number-char 5
+                                                    button.input-button.number-char 6
+                                                    button.mode-button(data-mode='discount') Disc
+                                                    br
+                                                    button.input-button.number-char 7
+                                                    button.input-button.number-char 8
+                                                    button.input-button.number-char 9
+                                                    button.mode-button(data-mode='price') Price
+                                                    br
+                                                    button.input-button.numpad-minus +/-
+                                                    button.input-button.number-char 0
+                                                    button.input-button.number-char .
+                                                    button.input-button.numpad-backspace
+                                                        img(height='21', src='/point_of_sale/static/src/img/backspace.png', style='pointer-events: none;', width='24')
+                            .rightpane
+                                table.layout-table
+                                    tbody
+                                        tr.header-row
+                                            td.header-cell
+                                                div
+                                                    header.rightpane-header
+                                                        .breadcrumbs
+                                                            span.breadcrumb
+                                                                span.breadcrumb-button.breadcrumb-home.js-category-switch
+                                                                    i.fa.fa-home
+                                                        .searchbox
+                                                            input(placeholder='Search Products')
+                                                            span.search-clear
+                                                    .categories
+                                                        .category-list-scroller.touch-scrollable
+                                                            .category-list.simple
+                                                                span.category-simple-button.js-category-switch(data-category-id='1')
+                                                                    | Fruits and Vegetables
+                                                                span.category-simple-button.js-category-switch(data-category-id='2')
+                                                                    | Partner Services
+                                        tr.content-row
+                                            td.content-cell
+                                                .content-container
+                                                    .product-list-container
+                                                        .product-list-scroller.touch-scrollable
+                                                            .product-list
+                                                                span.product(data-product-id='72')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=72')
+                                                                        span.price-tag
+                                                                            | $ 898.38
+                                                                    .product-name
+                                                                        | Air Flight
+                                                                span.product(data-product-id='71')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=71')
+                                                                        span.price-tag
+                                                                            | $ 0.64
+                                                                    .product-name
+                                                                        | Car Travel Expenses
+                                                                span.product(data-product-id='76')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=76')
+                                                                        span.price-tag
+                                                                            | $ 188.66
+                                                                    .product-name
+                                                                        | Self Build Kit
+                                                                span.product(data-product-id='81')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=81')
+                                                                        span.price-tag
+                                                                            | $ 2,887.65
+                                                                    .product-name
+                                                                        | Laptop Charger
+                                                                span.product(data-product-id='82')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=82')
+                                                                        span.price-tag
+                                                                            | $ 1,090.89
+                                                                    .product-name
+                                                                        | Laptop Keypad
+                                                                span.product(data-product-id='70')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=70')
+                                                                        span.price-tag
+                                                                            | $ 0.00
+                                                                    .product-name
+                                                                        | Expenses
+                                                                span.product(data-product-id='77')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=77')
+                                                                        span.price-tag
+                                                                            | $ 2,887.65
+                                                                    .product-name
+                                                                        | Computer Desk
+                                                                span.product(data-product-id='78')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=78')
+                                                                        span.price-tag
+                                                                            | $ 2,566.80
+                                                                    .product-name
+                                                                        | Table Head
+                                                                span.product(data-product-id='79')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=79')
+                                                                        span.price-tag
+                                                                            | $ 64.17
+                                                                    .product-name
+                                                                        | Table Leg
+                                                                span.product(data-product-id='80')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=80')
+                                                                        span.price-tag
+                                                                            | $ 16.04
+                                                                    .product-name
+                                                                        | Bolt
+                                                                span.product(data-product-id='73')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=73')
+                                                                        span.price-tag
+                                                                            | $ 513.36
+                                                                    .product-name
+                                                                        | Hotel Accommodation
+                                                                span.product(data-product-id='75')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=75')
+                                                                        span.price-tag
+                                                                            | $ 1,604.25
+                                                                    .product-name
+                                                                        | HDD on Demand
+                                                                span.product(data-product-id='41')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=41')
+                                                                        span.price-tag
+                                                                            | $ 23.10
+                                                                    .product-name
+                                                                        | Miscellaneous
+                                                                span.product(data-product-id='3')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=3')
+                                                                        span.price-tag
+                                                                            | $ 231.01
+                                                                    .product-name
+                                                                        | External Audit
+                                                                span.product(data-product-id='1')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=1')
+                                                                        span.price-tag
+                                                                            | $ 115.51
+                                                                    .product-name
+                                                                        | Prepaid Consulting
+                                                                span.product(data-product-id='40')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=40')
+                                                                        span.price-tag
+                                                                            | $ 32.08
+                                                                    .product-name
+                                                                        | test_products
+                                                                span.product(data-product-id='74')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=74')
+                                                                        span.price-tag
+                                                                            | $ 1.28
+                                                                    .product-name
+                                                                        | Assembly Service Cost
+                                                                span.product(data-product-id='52')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=52')
+                                                                        span.price-tag
+                                                                            | $ 6.16/kg
+                                                                    .product-name
+                                                                        | Black Grapes
+                                                                span.product(data-product-id='42')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=42')
+                                                                        span.price-tag
+                                                                            | $ 2.54/kg
+                                                                    .product-name
+                                                                        | Boni Oranges
+                                                                span.product(data-product-id='68')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=68')
+                                                                        span.price-tag
+                                                                            | $ 1,283.39
+                                                                    .product-name
+                                                                        | camptocamp.com
+                                                                span.product(data-product-id='55')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=55')
+                                                                        span.price-tag
+                                                                            | $ 1.16/kg
+                                                                    .product-name
+                                                                        | Carrots
+                                                                span.product(data-product-id='50')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=50')
+                                                                        span.price-tag
+                                                                            | $ 2.18/kg
+                                                                    .product-name
+                                                                        | Conference pears
+                                                                span.product(data-product-id='67')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=67')
+                                                                        span.price-tag
+                                                                            | $ 1,283.39
+                                                                    .product-name
+                                                                        | Datalp.com
+                                                                span.product(data-product-id='38')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=38')
+                                                                        span.price-tag
+                                                                            | $ 192.51
+                                                                    .product-name
+                                                                        | Deposit
+                                                                span.product(data-product-id='63')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=63')
+                                                                        span.price-tag
+                                                                            | $ 1,283.39
+                                                                    .product-name
+                                                                        | Eezee-It
+                                                                span.product(data-product-id='69')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=69')
+                                                                        span.price-tag
+                                                                            | $ 1,283.39
+                                                                    .product-name
+                                                                        | EGGS-solutions.fr
+                                                                span.product(data-product-id='64')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=64')
+                                                                        span.price-tag
+                                                                            | $ 1,283.39
+                                                                    .product-name
+                                                                        | Ekomurz.nl
+                                                                span.product(data-product-id='54')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=54')
+                                                                        span.price-tag
+                                                                            | $ 2.82/kg
+                                                                    .product-name
+                                                                        | Extra Flandria chicory
+                                                                span.product(data-product-id='49')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=49')
+                                                                        span.price-tag
+                                                                            | $ 2.17/kg
+                                                                    .product-name
+                                                                        | Golden Apples Perlim
+                                                                span.product(data-product-id='47')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=47')
+                                                                        span.price-tag
+                                                                            | $ 2.68/kg
+                                                                    .product-name
+                                                                        | Granny Smith apples
+                                                                span.product(data-product-id='59')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=59')
+                                                                        span.price-tag
+                                                                            | $ 3.85/kg
+                                                                    .product-name
+                                                                        | Green Peppers
+                                                                span.product(data-product-id='56')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=56')
+                                                                        span.price-tag
+                                                                            | $ 2.44/kg
+                                                                    .product-name
+                                                                        | In Cluster Tomatoes
+                                                                span.product(data-product-id='48')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=48')
+                                                                        span.price-tag
+                                                                            | $ 1.41/kg
+                                                                    .product-name
+                                                                        | Jonagold apples
+                                                                span.product(data-product-id='61')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=61')
+                                                                        span.price-tag
+                                                                            | $ 2.94/kg
+                                                                    .product-name
+                                                                        | Leeks
+                                                                span.product(data-product-id='44')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=44')
+                                                                        span.price-tag
+                                                                            | $ 2.54/kg
+                                                                    .product-name
+                                                                        | Lemon
+                                                                span.product(data-product-id='57')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=57')
+                                                                        span.price-tag
+                                                                            | $ 1.64/kg
+                                                                    .product-name
+                                                                        | Onions
+                                                                span.product(data-product-id='43')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=43')
+                                                                        span.price-tag
+                                                                            | $ 3.63/kg
+                                                                    .product-name
+                                                                        | Orange Butterfly
+                                                                span.product(data-product-id='51')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=51')
+                                                                        span.price-tag
+                                                                            | $ 6.55/kg
+                                                                    .product-name
+                                                                        | Peaches
+                                                                span.product(data-product-id='53')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=53')
+                                                                        span.price-tag
+                                                                            | $ 1.78/kg
+                                                                    .product-name
+                                                                        | Potatoes
+                                                                span.product(data-product-id='46')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=46')
+                                                                        span.price-tag
+                                                                            | $ 2.54/kg
+                                                                    .product-name
+                                                                        | Red grapefruit
+                                                                span.product(data-product-id='58')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=58')
+                                                                        span.price-tag
+                                                                            | $ 3.98/kg
+                                                                    .product-name
+                                                                        | Red Pepper
+                                                                span.product(data-product-id='45')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=45')
+                                                                        span.price-tag
+                                                                            | $ 4.09/kg
+                                                                    .product-name
+                                                                        | Stringers
+                                                                span.product(data-product-id='66')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=66')
+                                                                        span.price-tag
+                                                                            | $ 1,283.39
+                                                                    .product-name
+                                                                        | Vauxoo.com
+                                                                span.product(data-product-id='60')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=60')
+                                                                        span.price-tag
+                                                                            | $ 3.47/kg
+                                                                    .product-name
+                                                                        | Yellow Peppers
+                                                                span.product(data-product-id='62')
+                                                                    .product-img
+                                                                        img(src='http://192.168.25.104:8069/web/image?model=product.product&field=image_medium&id=62')
+                                                                        span.price-tag
+                                                                            | $ 1.54/kg
+                                                                    .product-name
+                                                                        | Zucchini
+                                                        span.placeholder-ScrollbarWidget
+                        .clientlist-screen.screen
+                            .screen-content
+                                section.top-content
+                                    span.button.back
+                                        i.fa.fa-angle-double-left
+                                        |                         Cancel
+                                    span.searchbox
+                                        input(placeholder='Search Customers')
+                                        span.search-clear
+                                    span.searchbox
+                                    span.button.new-customer
+                                        i.fa.fa-user
+                                        i.fa.fa-plus
+                                    span.button.next.oe_hidden.highlight
+                                        | Select Customer
+                                        i.fa.fa-angle-double-right
+                                section.full-content
+                                    .window
+                                        section.subwindow.collapsed
+                                            .subwindow-container.collapsed
+                                                .subwindow-container-fix.client-details-contents
+                                        section.subwindow
+                                            .subwindow-container
+                                                .subwindow-container-fix.touch-scrollable.scrollable-y
+                                                    table.client-list
+                                                        thead
+                                                            tr
+                                                                th Name
+                                                                th Address
+                                                                th Phone
+                                                        tbody.client-list-contents
+                                                            tr.client-line(data-id='50')
+                                                                td 4sla
+                                                                td ,  , Åland Islands
+                                                                td
+                                                            tr.client-line(data-id='61')
+                                                                td Alex
+                                                                td ,  , Åland Islands
+                                                                td 093098298
+                                                            tr.client-line(data-id='58')
+                                                                td Pieter Parter's Farm
+                                                                td 215 Vine St, 18503 Scranton, United States
+                                                                td
+                                                            tr.client-line(data-id='8')
+                                                                td Agrolait
+                                                                td 69 rue de Namur, 1300 Wavre, Belgium
+                                                                td +32 10 588 558
+                                                            tr.client-line(data-id='33')
+                                                                td Laith Jubair
+                                                                td 69 rue de Namur, 1300 Wavre, Belgium
+                                                                td
+                                                            tr.client-line(data-id='23')
+                                                                td Michel Fletcher
+                                                                td 69 rue de Namur, 1300 Wavre, Belgium
+                                                                td
+                                                            tr.client-line(data-id='22')
+                                                                td Thomas Passot
+                                                                td 69 rue de Namur, 1300 Wavre, Belgium
+                                                                td
+                                                            tr.client-line(data-id='57')
+                                                                td ASDASDASD
+                                                                td ,  ,
+                                                                td
+                                                            tr.client-line(data-id='12')
+                                                                td Camptocamp
+                                                                td 93, Press Avenue, 73377 Le Bourget du Lac, France
+                                                                td +33 4 49 23 44 54
+                                                            tr.client-line(data-id='30')
+                                                                td Ayaan Agarwal
+                                                                td 93, Press Avenue, 73377 Le Bourget du Lac, France
+                                                                td
+                                                            tr.client-line(data-id='36')
+                                                                td Benjamin Flores
+                                                                td 93, Press Avenue, 73377 Le Bourget du Lac, France
+                                                                td
+                                                            tr.client-line(data-id='29')
+                                                                td Phillipp Miller
+                                                                td 93, Press Avenue, 73377 Le Bourget du Lac, France
+                                                                td
+                                                            tr.client-line(data-id='9')
+                                                                td China Export
+                                                                td 52 Chop Suey street, 200000 Shanghai, China
+                                                                td +86 21 6484 5671
+                                                            tr.client-line(data-id='24')
+                                                                td Chao Wang
+                                                                td 52 Chop Suey street, 200000 Shanghai, China
+                                                                td
+                                                            tr.client-line(data-id='25')
+                                                                td David Simpson
+                                                                td 52 Chop Suey street, 200000 Shanghai, China
+                                                                td
+                                                            tr.client-line(data-id='35')
+                                                                td Jacob Taylor
+                                                                td 52 Chop Suey street, 200000 Shanghai, China
+                                                                td
+                                                            tr.client-line(data-id='26')
+                                                                td John M. Brown
+                                                                td 52 Chop Suey street, 200000 Shanghai, China
+                                                                td
+                                                            tr.client-line(data-id='27')
+                                                                td Charlie Bernard
+                                                                td 3661 Station Street, 94538 Fremont, United States
+                                                                td
+                                                            tr.client-line(data-id='28')
+                                                                td Jessica Dupont
+                                                                td 3661 Station Street, 94538 Fremont, United States
+                                                                td
+                                                            tr.client-line(data-id='40')
+                                                                td Kevin Clarke
+                                                                td 3661 Station Street, 94538 Fremont, United States
+                                                                td
+                                                            tr.client-line(data-id='39')
+                                                                td Morgan Rose
+                                                                td 3661 Station Street, 94538 Fremont, United States
+                                                                td
+                                                            tr.client-line(data-id='34')
+                                                                td Robert Anderson
+                                                                td 3661 Station Street, 94538 Fremont, United States
+                                                                td
+                                                            tr.client-line(data-id='38')
+                                                                td Robin Smith
+                                                                td 3661 Station Street, 94538 Fremont, United States
+                                                                td
+                                                            tr.client-line(data-id='59')
+                                                                td hassan
+                                                                td ,  ,
+                                                                td
+                                                            tr.client-line(data-id='56')
+                                                                td Mavia
+                                                                td ,  ,
+                                                                td 5454654
+                                                            tr.client-line(data-id='45')
+                                                                td My Company;wojjfp;ofo, Chicago
+                                                                td 90 Streets Avenue, 60610 Chicago, United States
+                                                                td +1 312 349 3030
+                                                            tr.client-line(data-id='46')
+                                                                td Steven Hamilton
+                                                                td 90 Streets Avenue, 60610 Chicago, United States
+                                                                td
+                                                            tr.client-line(data-id='51')
+                                                                td Rahemeen
+                                                                td ,  ,
+                                                                td 32132
+                                                            tr.client-line(data-id='48')
+                                                                td test_company
+                                                                td ,  ,
+                                                                td
+                                                            tr.client-line(data-id='53')
+                                                                td 03458254544
+                                                                td Bla Bla Bla, 18540 KArachi, Pakistan
+                                                                td 034554546
+                                                            tr.client-line(data-id='54')
+                                                                td hassan
+                                                                td ,  ,
+                                                                td 031456445
+                                                            tr.client-line(data-id='49')
+                                                                td test_customer
+                                                                td ,  ,
+                                                                td 03254989
+                                                            tr.client-line(data-id='52')
+                                                                td xyz
+                                                                td ,  ,
+                                                                td
+                                                            tr.client-line(data-id='11')
+                                                                td The Jackson Group
+                                                                td 3203 Lamberts Branch Road, 33169 Miami, United States
+                                                                td +1 786 525 0724
+                                                            tr.client-line(data-id='31')
+                                                                td Daniel Jackson
+                                                                td 3203 Lamberts Branch Road, 33169 Miami, United States
+                                                                td
+                                                            tr.client-line(data-id='32')
+                                                                td William Thomas
+                                                                td 3203 Lamberts Branch Road, 33169 Miami, United States
+                                                                td
+                                                            tr.client-line(data-id='13')
+                                                                td Think Big Systems
+                                                                td 89 Lingfield Tower,  London, United Kingdom
+                                                                td +1 857 349 3049
+                                                            tr.client-line(data-id='37')
+                                                                td Lucas Jones
+                                                                td 89 Lingfield Tower,  London, United Kingdom
+                                                                td
+                                                            tr.client-line(data-id='44')
+                                                                td Demo Portal User
+                                                                td Rue Cesar de Paepe, 43, 4683 Vivegnis, Belgium
+                                                                td
+                        .receipt-screen.screen.oe_hidden
+                            .screen-content
+                                .top-content
+                                    h1
+                                        | Change:
+                                        span.change-value 0.00
+                                    span.button.next
+                                        | Next Order
+                                        i.fa.fa-angle-double-right
+                                .centered-content.touch-scrollable
+                                    .button.print
+                                        i.fa.fa-print
+                                        |  Print Receipt
+                                    .pos-receipt-container
+                        .payment-screen.screen.oe_hidden
+                            .screen-content
+                                .top-content
+                                    span.button.back
+                                        i.fa.fa-angle-double-left
+                                        |                         Back
+                                    h1 Payment
+                                    span.button.next.highlight
+                                        | Validate
+                                        i.fa.fa-angle-double-right
+                                .left-content.pc40.touch-scrollable.scrollable-y
+                                    .paymentmethods-container
+                                        .paymentmethods
+                                            .button.paymentmethod(data-id='5')
+                                                | Cash (EUR)
+                                .right-content.pc60.touch-scrollable.scrollable-y
+                                    section.paymentlines-container
+                                        .paymentlines-empty
+                                            .total
+                                                | $ 0.00
+                                            .message
+                                                | Please select a payment method.
+                                    section.payment-numpad
+                                        .numpad
+                                            button.input-button.number-char(data-action='1') 1
+                                            button.input-button.number-char(data-action='2') 2
+                                            button.input-button.number-char(data-action='3') 3
+                                            button.mode-button(data-action='+10') +10
+                                            br
+                                            button.input-button.number-char(data-action='4') 4
+                                            button.input-button.number-char(data-action='5') 5
+                                            button.input-button.number-char(data-action='6') 6
+                                            button.mode-button(data-action='+20') +20
+                                            br
+                                            button.input-button.number-char(data-action='7') 7
+                                            button.input-button.number-char(data-action='8') 8
+                                            button.input-button.number-char(data-action='9') 9
+                                            button.mode-button(data-action='+50') +50
+                                            br
+                                            button.input-button.numpad-char(data-action='CLEAR') C
+                                            button.input-button.number-char(data-action='0') 0
+                                            button.input-button.number-char(data-action='.') .
+                                            button.input-button.numpad-backspace(data-action='BACKSPACE')
+                                                img(height='21', src='/point_of_sale/static/src/img/backspace.png', width='24')
+                                    .payment-buttons
+                                        .button.js_set_customer
+                                            i.fa.fa-user
+                                            span.js_customer_name
+                                                | Customer
+                                        .button.js_invoice
+                                            i.fa.fa-file-text-o
+                                            |  Invoice
+        .keyboard_frame
+            ul.keyboard.simple_keyboard
+                li.symbol.firstitem.row_qwerty
+                    span.off q
+                    span.on 1
+                li.symbol
+                    span.off w
+                    span.on 2
+                li.symbol
+                    span.off e
+                    span.on 3
+                li.symbol
+                    span.off r
+                    span.on 4
+                li.symbol
+                    span.off t
+                    span.on 5
+                li.symbol
+                    span.off y
+                    span.on 6
+                li.symbol
+                    span.off u
+                    span.on 7
+                li.symbol
+                    span.off i
+                    span.on 8
+                li.symbol
+                    span.off o
+                    span.on 9
+                li.symbol.lastitem
+                    span.off p
+                    span.on 0
+                li.symbol.firstitem.row_asdf
+                    span.off a
+                    span.on @
+                li.symbol
+                    span.off s
+                    span.on #
+                li.symbol
+                    span.off d
+                    span.on %
+                li.symbol
+                    span.off f
+                    span.on *
+                li.symbol
+                    span.off g
+                    span.on /
+                li.symbol
+                    span.off h
+                    span.on -
+                li.symbol
+                    span.off j
+                    span.on +
+                li.symbol
+                    span.off k
+                    span.on (
+                li.symbol.lastitem
+                    span.off l
+                    span.on )
+                li.symbol.firstitem.row_zxcv
+                    span.off z
+                    span.on ?
+                li.symbol
+                    span.off x
+                    span.on !
+                li.symbol
+                    span.off c
+                    span.on "
+                li.symbol
+                    span.off v
+                    span.on '
+                li.symbol
+                    span.off b
+                    span.on :
+                li.symbol
+                    span.off n
+                    span.on ;
+                li.symbol
+                    span.off m
+                    span.on ,
+                li.delete.lastitem delete
+                li.numlock.firstitem.row_space
+                    span.off 123
+                    span.on ABC
+                li.space  
+                li.symbol
+                    span.off .
+                    span.on .
+                li.return.lastitem return
+            p.close_button close
+        .debug-widget.oe_hidden
+            h1 Debug Window
+            .toggle
+                i.fa.fa-times
+            .content
+                p.category Electronic Scale
+                ul
+                    li
+                        input.weight(type='text')
+                    li.button.set_weight Set Weight
+                    li.button.reset_weight Reset
+                p.category Barcode Scanner
+                ul
+                    li
+                        input.ean(type='text')
+                    li.button.barcode Scan
+                    li.button.custom_ean Scan EAN-13
+                p.category Orders
+                ul
+                    li.button.delete_orders Delete Paid Orders
+                    li.button.delete_unpaid_orders Delete Unpaid Orders
+                    li.button.export_paid_orders Export Paid Orders
+                    li.button.export_unpaid_orders Export Unpaid Orders
+                    li.button.import_orders(style='position:relative')
+                        | Import Orders
+                        input(style='opacity:0;position:absolute;top:0;left:0;right:0;bottom:0;margin:0;cursor:pointer', type='file')
+                p.category Hardware Status
+                ul
+                    li.status.weighing Weighing
+                p.category Hardware Events
+                ul
+                    li.event.open_cashbox Open Cashbox
+                    li.event.print_receipt Print Receipt
+                    li.event.scale_read Read Weighing Scale
+    .popups
+        .modal-dialog.oe_hidden
+            .popup.popup-alert
+                p.title Alert
+                p.body
+                .footer
+                    .button.cancel
+                        | Ok
+        .modal-dialog.oe_hidden
+            .popup.popup-error
+                p.title Empty Order
+                p.body There must be at least one product in your order before it can be validated
+                .footer
+                    .button.cancel
+                        | Ok
+        .modal-dialog.oe_hidden
+            .popup.popup-error
+                p.title Error
+                p.body.traceback
+                .footer
+                    .button.cancel
+                        | Ok
+                    .button.icon.download
+                        i.fa.fa-download
+                    .button.icon.email
+                        i.fa.fa-paper-plane
+        .modal-dialog.oe_hidden
+            .popup.popup-barcode
+                p.title
+                    | Unknown Barcode
+                    br
+                    span.barcode
+                p.body
+                    | The Point of Sale could not find any product, client, employee
+                    | or action associated with the scanned barcode.
+                .footer
+                    .button.cancel
+                        | Ok
+        .modal-dialog.oe_hidden
+            .popup.popup-confirm
+                p.title Confirm ?
+                p.body
+                .footer
+                    .button.confirm
+                        | Confirm
+                    .button.cancel
+                        | Cancel
+        .modal-dialog.oe_hidden
+            .popup.popup-selection
+                p.title Select
+                .selection.scrollable-y.touch-scrollable
+                .footer
+                    .button.cancel
+                        | Cancel
+        .modal-dialog.oe_hidden
+            .popup.popup-textinput
+                p.title
+                input(type='text', value='')
+                .footer
+                    .button.confirm
+                        | Ok
+                    .button.cancel
+                        | Cancel
+        .modal-dialog.oe_hidden
+            .popup.popup-textinput
+                p.title
+                textarea(cols='40', rows='10')
+                .footer
+                    .button.confirm
+                        | Ok
+                    .button.cancel
+                        | Cancel
+        .modal-dialog.oe_hidden
+            .popup.popup-text
+                p.title
+                .packlot-lines
+                .footer
+                    .button.confirm
+                        | Ok
+                    .button.cancel
+                        | Cancel
+        .modal-dialog.oe_hidden
+            .popup.popup-number
+                p.title
+                .popup-input.value.active
+                .popup-numpad
+                    button.input-button.number-char(data-action='1') 1
+                    button.input-button.number-char(data-action='2') 2
+                    button.input-button.number-char(data-action='3') 3
+                    button.mode-button.add(data-action='+10') +10
+                    br
+                    button.input-button.number-char(data-action='4') 4
+                    button.input-button.number-char(data-action='5') 5
+                    button.input-button.number-char(data-action='6') 6
+                    button.mode-button.add(data-action='+20') +20
+                    br
+                    button.input-button.number-char(data-action='7') 7
+                    button.input-button.number-char(data-action='8') 8
+                    button.input-button.number-char(data-action='9') 9
+                    button.mode-button.add(data-action='+50') +50
+                    br
+                    button.input-button.numpad-char(data-action='CLEAR') C
+                    button.input-button.number-char(data-action='0') 0
+                    button.input-button.number-char.dot
+                    button.input-button.numpad-backspace(data-action='BACKSPACE')
+                        img(height='21', src='/point_of_sale/static/src/img/backspace.png', style='pointer-events: none;', width='24')
+                    br
+                .footer.centered
+                    .button.cancel
+                        | Cancel
+                    .button.confirm
+                        | Ok
+        .modal-dialog.oe_hidden
+            .popup.popup-number.popup-password
+                p.title
+                .popup-input.value.active
+                .popup-numpad
+                    button.input-button.number-char(data-action='1') 1
+                    button.input-button.number-char(data-action='2') 2
+                    button.input-button.number-char(data-action='3') 3
+                    button.mode-button.add(data-action='+10') +10
+                    br
+                    button.input-button.number-char(data-action='4') 4
+                    button.input-button.number-char(data-action='5') 5
+                    button.input-button.number-char(data-action='6') 6
+                    button.mode-button.add(data-action='+20') +20
+                    br
+                    button.input-button.number-char(data-action='7') 7
+                    button.input-button.number-char(data-action='8') 8
+                    button.input-button.number-char(data-action='9') 9
+                    button.mode-button.add(data-action='+50') +50
+                    br
+                    button.input-button.numpad-char(data-action='CLEAR') C
+                    button.input-button.number-char(data-action='0') 0
+                    button.input-button.number-char.dot
+                    button.input-button.numpad-backspace(data-action='BACKSPACE')
+                        img(height='21', src='/point_of_sale/static/src/img/backspace.png', style='pointer-events: none;', width='24')
+                    br
+                .footer.centered
+                    .button.cancel
+                        | Cancel
+                    .button.confirm
+                        | Ok
+        .modal-dialog.oe_hidden
+            .popup.popup-import
+                p.title Finished Importing Orders
+                .footer
+                    .button.cancel
+                        | Ok
+    .loader.oe_hidden(style='opacity: 0;')
+        .loader-feedback.oe_hidden
+            h1.message Loading
+            .progressbar
+                .progress(width='50%')
+            .oe_hidden.button.skip
+                | Skip

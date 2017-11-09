@@ -1,0 +1,161 @@
+.usersin
+    DashboardController(v-bind:editbtn='true',v-bind:actionbtn='true',v-bind:createbtn='true',v-bind:savebtn='true',v-bind:discardbtn='true',v-bind:duplicate='true',v-bind:deletebtn='true',v-bind:assignedtasks='true',v-bind:changepassword='true',v-bind:links='btnlinks',v-bind:heading='head')
+        .col-sm-6(style='padding:0px;' ,slot='heading')
+            h4.samodashheading(style="font-size: 18px;") User / Assigned Task / {{ task_tittle }}
+    .row
+        .col-md-12.pull-left.samotopcontroller
+            .col-md-5.pull-left
+                .col-xs-3.pull-left
+                .col-xs-3.pull-left
+                .col-xs-3.pull-left
+                .col-xs-3.pull-left
+            .col-md-1.pull-left
+            .col-md-3.pull-left
+            .col-md-3.pull-right
+                .btn-group.btn-breadcrumb.samobreadcrum1
+                    button.btn.btn-primary.samobreadbutt.active(type='button' , value='TO-DO' style='border-left: 0.5px solid #cacaca;background-color: #7c7bad;color: white;') To Do
+                    button.btn.btn-primary.samobreadbutt(type='button' value='Progress' ) in Progress
+                    button.btn.btn-primary.samobreadbutt1(type='button' value='Done' ) Done
+                    button.btn.btn-primary.samobreadbutt(type='button' value='Cancelled') Cancelled
+
+    .o_content.samocontent(style='margin-left: -15px;margin-right: -15px;')
+        .o_view_manager_content#create
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box.check(name='button_box' slot='activebtn')
+                            button.SeeMore2.btn.btn-sm.oe_stat_button
+                                .fa.fa-fw.fa-check
+                                | {{ status }}
+                        .btn-group.o_kanban_selection.o_form_field.o_form_required(data-original-title='', title='')
+                            a(data-toggle='dropdown', href='#')
+                                span.oe_kanban_status
+                            ul.dropdown-menu.state(role='menu')
+                                li(data-value='done')
+                                    a(href='#')
+                                        span.oe_kanban_status.oe_kanban_status_green
+                                        |             Ready for next stage
+                                li(data-value='blocked')
+                                    a(href='#')
+                                        span.oe_kanban_status.oe_kanban_status_red
+                                        |             Blocked
+                        .oe_title
+                            h1.o_row
+                                .o_priority.o_form_field
+                                    fieldset.rating
+                                        input#star5(type='radio', name='rating', value='5')
+                                        label.full(for='star5', title='Awesome - 5 stars')
+                                        input#star4half(type='radio', name='rating', value='4 and a half')
+                                span.o_form_field.o_form_required {{ task_tittle }}
+
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Project
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field(href='#') {{ project_name }}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_task_user_field
+                                                | Assigned to
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_task_user_field.o_form_field {{ assigned_username }}
+
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Deadline
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field_date.o_form_field  {{ date_deadline }}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Tags
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2manytags.o_form_field
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='5', style='border-radius: 9px;' data-index='0')
+                                                    span.o_badge_text(style='padding-top: 4px; padding-bottom: 2px;width: 51px;' title='Usability') {{ tags_name }}
+
+                        .o_notebook(style='margin-top: 2px;')
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Description
+                                li.nav-item
+                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') Extra Info
+                            // Tab panes
+                            .tab-content
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+                                    //textarea(name='editor1' v-model='task_description')
+                                    div(v-model='task_description') {{ task_description }}
+                                #buzz.tab-pane.fade.in(role='tabpanel')
+                                    .o_group
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_113', data-original-title='', title='')
+                                                            | Sequence
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field.o_form_invisible.o_form_field_number 10
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label(for='o_field_input_114')
+                                                            | Customer
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field(href='#') {{ customer_name }}
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible(for='o_field_input_115')
+                                                            | Company
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_invisible(href='#') YourCompany
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_116')
+                                                            | Displayed Image
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible(for='o_field_input_117')
+                                                            | Assigning Date
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field_date.o_form_field.o_form_invisible 06/29/2017 05:00:22
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible(for='o_field_input_118')
+                                                            | Last Stage Update
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field_date.o_form_field.o_form_invisible 06/29/2017 05:00:22
+
+        .ns(style='margin-left: 20%;')
+            Message
+        .o_mail_thread(style='margin-left: 336px;')
+            .o_thread_date_separator
+                span.o_thread_date
+                    | February 25, 2017
+
+
+            .o_thread_message.samothreadmessage(data-message-id='1038')
+                .o_thread_message_sidebar
+                    img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/images/image_small.png' style='width: 33px;a')
+                .o_thread_message_core.o_mail_note.samothreadmessage1
+                    p.o_mail_info
+                        | Note by
+                        strong(data-oe-model='res.partner', data-oe-id='')
+                            | YourCompany, Administrators
+                        |                     -
+                        small.o_mail_timestamp(title='Sat Feb 25 2017 16:35:56 GMT+0500') 9 days ago
+                        span
+                            i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='1038')
+
+
+
+

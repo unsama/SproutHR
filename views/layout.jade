@@ -1,0 +1,29 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        title= title
+        link(rel="shortcut icon" href="/images/icon.ico" type="image/x-icon")
+        link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+        if(!error)
+            link(rel='stylesheet' href='/stylesheets/font-awesome.min.css')
+            link(rel='stylesheet', href='/stylesheets/style.css')
+    body.bg-cover
+        div.container-fluid#main
+            if(!error)
+                if(login)
+                    include partials/header
+            if(!login)
+                div.mt-5.mb-5
+                    block content
+            else
+                block content
+
+        if(!error)
+            script(src='/javascripts/jquery.min.js')
+            script(src='/javascripts/tether.min.js')
+            script(src='/javascripts/bootstrap.min.js')
+            if(login)
+                script(src='/javascripts/bundle.js')
+                script(src='/javascripts/app-script.js')

@@ -1,0 +1,134 @@
+.EditHr
+    Modal(v-bind:close='true',v-bind:heading="modal0",v-bind:modal='"bd-example-modal-lg0"')
+        .modal-body.o_act_window
+            .o_form_view.o_form_nosheet.o_form_readonly
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | Name
+                            td(colspan='1', style='width: 100%;')
+                                span.o_form_field.o_form_required Monday morning
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_empty.o_form_label_false
+                                    | Starting Date
+                            td(colspan='1', style='width: 100%;')
+                                span.o_form_field_date.o_form_field.o_form_field_empty
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_empty.o_form_label_false
+                                    | End Date
+                            td(colspan='1', style='width: 100%;')
+                                span.o_form_field_date.o_form_field.o_form_field_empty
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | Day of Week
+                            td(colspan='1', style='width: 100%;')
+                                span.o_form_field.o_form_required Monday
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                    | Hours
+                            td(colspan='1', style='width: 100%;')
+                                div
+                                    span.oe_inline.o_form_field.o_form_required.o_form_field_number 08:00
+                                    |  -
+                                    span.oe_inline.o_form_field.o_form_required.o_form_field_number 12:00
+
+    Modal(v-bind:close='true',v-bind:heading="modal12",v-bind:modal='"bd-example-modal-lg12"')
+        .modal-body.o_act_window
+            .o_form_view.o_form_nosheet.o_form_readonly
+                .o_group
+                    table.o_group.o_inner_group.o_group_col_6
+                        tbody
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label
+                                        | Reason
+                                td(colspan='1', style='width: 100%;')
+                                    span.o_form_field Doctor Appointment
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label
+                                        | Leave Request
+                                td(colspan='1', style='width: 100%;')
+                                    a.o_form_uri.o_form_field(href='#') Administrators on Sick Leaves : 3.00 day(s)
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label
+                                        | Working Time
+                                td(colspan='1', style='width: 100%;')
+                                    a.o_form_uri.o_form_field(href='#') 40 Hours/Week
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label
+                                        | Company
+                                td(colspan='1', style='width: 100%;')
+                                    a.o_form_uri.o_form_field(href='#') Alupak Industriess
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                        | Resource
+                                td(colspan='1', style='width: 100%;')
+                                    a.o_form_uri.o_form_field(href='#') Administrators
+                    table.o_group.o_inner_group.o_group_col_6
+                        tbody
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label
+                                        | Start Date
+                                td(colspan='1', style='width: 100%;')
+                                    span.o_form_field_date.o_form_field.o_form_required 02/20/2017 05:00:00
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label
+                                        | End Date
+                                td(colspan='1', style='width: 100%;')
+                                    span.o_form_field_date.o_form_field.o_form_required 02/22/2017 05:00:00
+
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Name
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required 40 Hours/Week
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Workgroup Manager
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field(href='#') Administrators
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Company
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field(href='#') Alupak Industriess
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible( data-original-title='', title='')
+                                                | Hours per Day
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_required.o_form_invisible(href='#') Hour(s)
+                            label.o_form_label.o_group_col_6
+                                | Working Time
+                        TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefoot",data-toggle='modal', data-target='.bd-example-modal-lg0')
+                        label.o_form_label.o_group_col_6
+                            | Leaves
+
+                        TableMain(v-bind:tableheader='tableheader1', v-bind:tabledata="tabledata1", v-bind:tablefoot="tablefoot",data-toggle='modal', data-target='.bd-example-modal-lg12')
+
+

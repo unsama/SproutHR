@@ -1,0 +1,328 @@
+.salesordercreate
+    DashboardController(v-bind:savedbtn='true',v-bind:heading="quotation",v-bind:discardbtn='true',v-bind:importbtn='false',v-bind:Attachmentbtn='false',v-bind:printbtn='false',v-bind:actionbtn='false', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='false',v-bind:paginbtn2='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false')
+    .o_view_manager_content(style='margin-left: -15px;margin-right: -15px;')
+        .o_form_view.o_form_readonly
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .tophead
+                        h4 SO014
+                    .o_group
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_228')
+                                            | Customer
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_form_field.o_form_required
+                                            select.selectpicker
+                                                option Mustard
+                                                option Ketchup
+                                                option Relish
+                                            span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_229', data-original-title='', title='')
+                                            | Invoice Address
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_form_field.o_form_required.o_form_invisible
+                                            .o_form_input_dropdown
+                                                input#o_field_input_229.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_230', data-original-title='', title='')
+                                            | Delivery Address
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_form_field.o_form_required.o_form_invisible
+                                            .o_form_input_dropdown
+                                                input#o_field_input_230.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_231')
+                                            | Order Date
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_date.o_form_field.o_form_required
+                                            select.selectpicker.o_form_input
+                                                option Mustard
+                                                option Ketchup
+                                                option Relish
+                                            span.o_datepicker_button
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help(for='o_field_input_232', data-original-title='', title='')
+                                            | Expiration Date
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_date.o_form_field
+                                            select.selectpicker.o_form_input
+                                                option Mustard
+                                                option Ketchup
+                                                option Relish
+                                            span.o_datepicker_button
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_233', data-original-title='', title='')
+                                            | Confirmation Date
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field_date.o_form_field.o_form_invisible.o_form_field_empty
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help(for='o_field_input_234', data-original-title='', title='')
+                                            | Pricelist
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_form_field.o_form_required
+                                            .o_form_field_date.o_form_field.o_form_required
+                                                select.selectpicker.o_form_input
+                                                    option Mustard
+                                                    option Ketchup
+                                                    option Relish
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_235')
+                                            | Currency
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_required.o_form_invisible.o_form_field_empty(href='#')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_236')
+                                            | Payment Terms
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_date.o_form_field
+                                            select.selectpicker.o_form_input
+                                                option Mustard
+                                                option Ketchup
+                                                option Relish
+                                            span.o_datepicker_button
+
+                    .o_notebook
+                        ul.nav.nav-tabs(role='tablist')
+                            li.nav-item
+                                a.nav-link.active(href='#profile1', role='tab', data-toggle='tab') Order Line
+                            li.nav-item
+                                a.nav-link(href='#buzz1', role='tab', data-toggle='tab') Other Information
+                        // Tab panes
+                        .tab-content
+                            #profile1.tab-pane.fade.in.active(role='tabpanel')
+                                TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter")
+                                table.o_group
+                                    textarea.o_form_textarea.oe_inline.o_form_field(rows='6', name='note', placeholder='Setup default terms and conditions in your company settings.', style='resize: horizontal; height: 50px;font-size: 13px;')
+                                    tbody(style="float: right;")
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Untaxed Amount
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field.o_form_field_number
+                                                    span $
+                                                    | 7,315.00
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Taxes
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field.o_form_field_number
+                                                    span $
+                                                    | 0.00
+                                        tr
+                                            td(colspan='1', style='width: 50%;')
+                                                .oe_subtotal_footer_separator.oe_inline.o_td_label
+                                                    label.o_form_label
+                                                        | Total
+                                                    button.btn.btn-sm.oe_edit_only.oe_link.o_form_invisible(type='button')
+                                                        span (update)
+                                            td(colspan='1', style='width: 50%;')
+                                                span.oe_subtotal_footer_separator.o_form_field.o_form_field_number
+                                                    span $
+                                                    | 7,315.00
+
+
+                            #buzz1.tab-pane.fade.in(role='tabpanel')
+                                .o_group
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td(colspan='2', style='width: 100%;')
+                                                    .o_horizontal_separator
+                                                        | Shipping Information
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible
+                                                        | Warehouse
+                                                td(colspan='1', style='width: 100%;')
+                                                    a.o_form_uri.o_form_field.o_form_required.o_form_invisible(href='#') YourCompany
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_86', data-original-title='', title='')
+                                                        | Incoterms
+                                                td(colspan='1', style='width: 100%;')
+                                                    select#o_field_input_86.o_form_input.o_form_field(name='incoterm')
+                                                        option(value='false')
+                                                        option(value='1') EX WORKS
+                                                        option(value='2') FREE CARRIER
+                                                        option(value='3') FREE ALONGSIDE SHIP
+
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Shipping Policy
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.o_form_field.o_form_required Deliver each product when available
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td(colspan='2', style='width: 100%;')
+                                                    .o_horizontal_separator
+                                                        | Sales Information
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Salesperson
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_with_button.o_form_field
+                                                        .o_form_input_dropdown
+                                                            select.selectpicker
+                                                                option Demo User
+                                                                option Ketchup
+                                                                option Relish
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button',data-toggle='modal', data-target='.bd-example-modal-lg')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Tags
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2manytags.o_form_field
+                                                        .o_form_field_many2one.o_form_field
+                                                            .o_form_input_dropdown
+                                                                select.selectpicker
+                                                                    option Product
+                                                                    option Ketchup
+                                                                    option Relish
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Sales Team
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_with_button.o_form_field
+                                                        .o_form_input_dropdown
+                                                            select.selectpicker
+                                                                option Indirect Sales
+                                                                option Ketchup
+                                                                option Relish
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button',data-toggle='modal', data-target='.bd-example-modal-lg1')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_91')
+                                                        | Customer Reference
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_91.o_form_input.o_form_field(type='text')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Company
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_with_button.o_form_field
+                                                        .o_form_input_dropdown
+                                                            .o_form_field_many2one.o_with_button.o_form_field
+                                                                select.selectpicker
+                                                                    option Alupak Industries
+                                                                    option Ketchup
+                                                                    option Relish
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button',data-toggle='modal', data-target='.bd-example-modal-lg2')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                        | Analytic Account
+                                                td(colspan='1', style='width: 100%;')
+                                                    a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                        | Analytic Account
+                                                td(colspan='1', style='width: 100%;')
+                                                    a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td(colspan='2', style='width: 100%;')
+                                                    .o_horizontal_separator
+                                                        | Invoicing
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Fiscal Position
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field
+                                                        .o_form_input_dropdown
+                                                            select.selectpicker
+                                                                option Alupak Industries
+                                                                option Ketchup
+                                                                option Relish
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Invoice Status
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.o_form_field To Invoice
+                                    table.o_group.o_inner_group.o_form_invisible.o_group_col_6
+                                        tbody
+                                            tr
+                                                td(colspan='2', style='width: 100%;')
+                                                    .o_horizontal_separator
+                                                        | Reporting
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_97', data-original-title='', title='')
+                                                        | Source Document
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_97.o_form_input.o_form_field.o_form_invisible(type='text')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_98', data-original-title='', title='')
+                                                        | Campaign
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field.o_form_invisible
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_98.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_99', data-original-title='', title='')
+                                                        | Medium
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field.o_form_invisible
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_99.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_100', data-original-title='', title='')
+                                                        | Source
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field.o_form_invisible
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_100.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_101', data-original-title='', title='')
+                                                        | Opportunity
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field.o_form_invisible
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_101.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')

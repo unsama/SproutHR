@@ -1,0 +1,8 @@
+.subview
+    modal( v-bind:save='false',v-bind:heading="'Run Schedulers'", v-bind:sheduaeactivity='true', v-bind:noactivity='true')
+        h6 Compute all procurements in the background.
+    .row
+        .col-md-2
+            sidebar(v-bind:headings='sidebarData')
+        .col-md-10
+            router-view

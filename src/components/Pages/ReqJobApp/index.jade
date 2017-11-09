@@ -1,0 +1,195 @@
+.ReqJobApp
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true',v-bind:dropdownMenuButton='true',v-bind:Attachmentbtn='true',v-bind:actionbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                header(style='margin-left:-15px;margin-right:-15px;')
+                    button.btn.btn-sm.oe_highlight(type='button')
+                        span Create Employee
+                    button.btn.btn-sm(type='button')
+                        span Refuse
+                    button.btn.btn-sm.o_form_invisible(type='button')
+                        span Reopen Application
+                    ul.oe_form_field_status.oe_form_status_clickable.o_form_field
+                        li.oe_active(data-id='8')
+                            span.label asad
+                            span.arrow
+                                span
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button', data-original-title='', title='')
+                                .fa.fa-fw.fa-calendar.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_text Meetings
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-book.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value 0
+                                    span.o_stat_text Documents
+                            button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                .fa.fa-fw.fa-user.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value 0
+                                    span.o_stat_text Employee
+                            button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                .o_stat_info.o_form_field(data-original-title='', title='')
+                                    span.o_stat_text.o_not_hover.text-success Active
+                                    span.o_stat_text.o_hover.text-danger Archive
+                        .oe_title
+                            label.o_form_label.oe_edit_only
+                                | Subject / Application Name
+                            h1
+                                span.o_form_field.o_form_required asas
+                            h2.o_row
+                                div
+                                    label.o_form_label.oe_edit_only.o_form_label_empty.o_form_label_false
+                                        | Applicant's Name
+                                    span.o_form_field.o_form_field_empty
+                                div
+                                    label.o_form_label.oe_edit_only.o_form_label_empty
+                                        | Tags
+                                    .o_form_field_many2manytags.o_form_field.o_form_field_empty
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false
+                                                | Contact
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false data-original-title='', title='')
+                                                | Email
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_text_overflow.o_form_field.o_form_field_empty(href='mailto:false', target='_blank')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false
+                                                | Phone
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_field_empty
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false
+                                                | Mobile
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_field_empty
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false
+                                                | Degree
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Responsible
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field(href='#') Administrators
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false
+                                                | Next Action
+                                        td(colspan='1', style='width: 100%;')
+                                            div
+                                                span.o_form_field_date.o_form_field.o_form_field_empty
+                                                span.oe_inline.o_form_field.o_form_field_empty
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Appreciation
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_priority.o_form_field
+                                                a.o_priority_star.fa.fa-star(href='#', data-value='1', title='Good')
+                                                a.o_priority_star.fa.fa-star(href='#', data-value='2', title='Very Good')
+                                                a.o_priority_star.fa.fa-star-o(href='#', data-value='3', title='Excellent')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false( data-original-title='', title='')
+                                                | Medium
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false( data-original-title='', title='')
+                                                | Source
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false
+                                                | Referred By
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_field_empty
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Job
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false
+                                                | Applied Job
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Department
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field(href='#') as
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Company
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field Alupak Industriess
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Contract
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                | Expected Salary
+                                        td(colspan='1', style='width: 100%;')
+                                            div
+                                                span.oe_inline.o_form_field.o_form_field_number 0.00
+                                                span.oe_inline.o_form_invisible(attrs="{'invisible':[('salary_expected_extra','=',False)]}")  +
+                                                span.oe_inline.o_form_field.o_form_field_empty(data-original-title='', title='')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                | Proposed Salary
+                                        td(colspan='1', style='width: 100%;')
+                                            div
+                                                span.oe_inline.o_form_field.o_form_field_number 0.00
+                                                span.oe_inline.o_form_invisible(attrs="{'invisible':[('salary_proposed_extra','=',False)]}")  +
+                                                span.oe_inline.o_form_field.o_form_field_empty(data-original-title='', title='')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false( data-original-title='', title='')
+                                                | Availability
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field_date.o_form_field.o_form_field_empty
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false( data-original-title='', title='')
+                                                | Employee
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                        .o_horizontal_separator
+                            | Application Summary
+                        span.o_form_textarea.o_form_field.o_form_field_empty
+    Message
+    Request_quotation_lower
+

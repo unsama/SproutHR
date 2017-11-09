@@ -1,0 +1,77 @@
+.manufacturing_orders
+    DashboardController( v-bind:save='true',v-bind:duplicatedropbtn='true',v-bind:deletedropbtn='true',v-bind:planorderbtn='true',v-bind:actionbtn='true',v-bind:heading="nextactivity",v-bind:createbtn='true',v-bind:importbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:firstbtn='false',v-bind:secondbtn='true',v-bind:fifthbtn='true',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true')
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Department Leavess
+        span.o_pager_value(slot='page') {{counter}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="select4()",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="select3()",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+    .table-responsive(style='margin-left:-15px;margin-right:-15px;')
+
+        table.o_list_view.table.table-condensed.table-striped
+            thead
+                tr
+                    th(width='1')
+                        .o_checkbox
+                            input(type='checkbox')
+                            span
+
+                    th(data-id='name')
+                        | Employees
+                    th(data-id='fold')
+                        | Allocation Mode
+                    th(data-id='name')
+                        | Leave type
+
+                    th(data-id='fold')
+                        | Description
+                    th(data-id='name')
+                        | Allocated Days
+                    th(data-id='fold')
+                        | Start Date
+                    th(data-id='fold')
+                        | End Date
+                    th(data-id='fold')
+                        | Status
+
+            tfoot
+                tr
+                    td
+                    td
+                    td
+                    td
+                    td
+                    td {{nums}}
+                    td
+                    td
+                    td
+
+            tbody(v-for="row in names")
+
+                tr
+                    td
+                        .o_checkbox
+                            input#mike.checkBoxClass(type='checkbox', v-bind:value='row.id', v-model='checkedNames')
+                            //input.checkBoxClass(name='radiogroup', type='checkbox')s
+                            span
+                    td
+                        router-link(v-bind:to="'leaves_select/'+row.id") {{row.employeename}}
+                    td {{row.MODE}}
+                    td {{row.type}}
+                    td {{row.description}}
+
+                    td {{row.duration}}
+
+                    td {{row.date_from}}
+
+                    td {{row.date_to}}
+
+                    td {{row.status}}
+
+
+
+
+
+    //TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter")

@@ -1,0 +1,137 @@
+.ReqSetting
+    DashboardController( v-bind:save='true',v-bind:duplicatedropbtn='true',v-bind:deletedropbtn='true',v-bind:planorderbtn='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true',v-bind:dropdownMenuButton='true',v-bind:Attachmentbtn='true',v-bind:actionbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Job Positions/ {{job_tittle}}
+        span.o_pager_value(slot='page') {{counter}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="counter--",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="counter++",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+    Reqjobs
+        header(style='margin-left:-15px;margin-right:-15px;')(slot='header')
+            button.btn.btn-sm#hide(v-on:click="selectid(1)",v-model='dog',type='button',value="1")
+                span Launch
+            button.btn.btn-sm#show(v-on:click="selectid(0)",style='display:none;',v-model='dog',type='button',value="1")
+                span Stop Recruitment
+            ul.oe_form_field_status.oe_form_status.o_form_field.o_form_required(data-original-title='', title='')
+                li#b
+                    span.label Recruitment in Progress
+                    span.arrow
+                        span
+                li#a.oe_active
+                    span.label Not Recruitings
+                    span.arrow
+                        span
+        .oe_title(slot='jobing')
+            label.o_form_label.oe_edit_only
+                | Job Title
+            h1
+                span.o_form_field.o_form_required(v-model='job_tittle') {{ job_tittle }}
+                button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+        table.o_group.o_inner_group.o_group_col_6(slot='job')
+            tbody
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_empty.o_form_label_false
+                            | Department
+                    td(colspan='1', style='width: 100%;')
+                        span.o_form_textarea.o_form_field(v-model='department_id',href='#') {{ p }}
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_empty.o_form_label_false
+                            | Recruitment Responsible
+                    td(colspan='1', style='width: 100%;')
+                        span.o_form_textarea.o_form_field(v-model='d',href='#') {{ d }}
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false( data-original-title='', title='')
+                            | Specific Email Address
+                    td(colspan='1', style='width: 100%;')
+                        div(name='alias_def', attrs="{'invisible': [('alias_domain', '=', False)]}")
+                            a.o_form_uri.oe_read_only.o_form_field(v-model='job_email',href='#', data-original-title='', title='') {{ job_email }}
+                            .oe_edit_only(name='edit_alias')
+                                span.oe_inline.o_form_field.o_form_field_empty
+                                | @
+                                span.oe_inline.o_form_field localhost
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                            | Expected New Employees
+                    td(colspan='1', style='width: 100%;')
+                        span.o_form_field.o_form_field_number(v-model='expected') {{ expected }}
+        table.o_group.o_inner_group.o_group_col_6(slot='jobs')
+            tbody
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                            | Job Location
+                    td(colspan='1', style='width: 100%;')
+                        a.o_form_uri.o_form_field(v-model='j',href='#') {{ j }}
+
+        div(attrs="{'invisible': [('state', '!=', 'recruit')]}")(slot='jobsone')
+            label.o_form_label
+                | Job Description
+            span.o_form_textarea.o_form_field(v-model='description') {{ description }}
+
+    //DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true',v-bind:dropdownMenuButton='true',v-bind:Attachmentbtn='true',v-bind:actionbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+    //    .col-sm-6(style='padding:0px;')(slot='job')
+    //        h4.samodashheading(style="font-size: 18px;") Job Positions/ {{job_tittle}}
+    //    span.o_pager_value(slot='page') 1-{{num}}
+    //        |  /
+    //        span.o_pager_limit(style="padding-right: 6px;") {{num}}
+    //
+    //        span.btn-group.btn-group-sm
+    //            button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+    //            button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+    //Reqjobs
+    //    .oe_title(slot='jobing')
+    //        label.o_form_label.oe_edit_only
+    //            | Job Title
+    //        h1
+    //            span.o_form_field.o_form_required(v-model='job_tittle') {{ job_tittle }}
+    //            button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+    //    table.o_group.o_inner_group.o_group_col_6(slot='job')
+    //        tbody
+    //            tr
+    //                td.o_td_label(colspan='1')
+    //                    label.o_form_label.o_form_label_empty.o_form_label_false
+    //                        | Department
+    //                td(colspan='1', style='width: 100%;')
+    //                    span.o_form_textarea.o_form_field(v-model='department_id',href='#') {{ p }}
+    //            tr
+    //                td.o_td_label(colspan='1')
+    //                    label.o_form_label.o_form_label_empty.o_form_label_false
+    //                        | Recruitment Responsible
+    //                td(colspan='1', style='width: 100%;')
+    //                    span.o_form_textarea.o_form_field(v-model='d',href='#') {{ d }}
+    //            tr
+    //                td.o_td_label(colspan='1')
+    //                    label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false( data-original-title='', title='')
+    //                        | Specific Email Address
+    //                td(colspan='1', style='width: 100%;')
+    //                    div(name='alias_def', attrs="{'invisible': [('alias_domain', '=', False)]}")
+    //                        a.o_form_uri.oe_read_only.o_form_field(v-model='job_email',href='#', data-original-title='', title='') {{ job_email }}
+    //                        .oe_edit_only(name='edit_alias')
+    //                            span.oe_inline.o_form_field.o_form_field_empty
+    //                            | @
+    //                            span.oe_inline.o_form_field localhost
+    //            tr
+    //                td.o_td_label(colspan='1')
+    //                    label.o_form_label.o_form_label_help( data-original-title='', title='')
+    //                        | Expected New Employees
+    //                td(colspan='1', style='width: 100%;')
+    //                    span.o_form_field.o_form_field_number(v-model='expected') {{ expected }}
+    //    table.o_group.o_inner_group.o_group_col_6(slot='jobs')
+    //        tbody
+    //            tr
+    //                td.o_td_label(colspan='1')
+    //                    label.o_form_label.o_form_label_help( data-original-title='', title='')
+    //                        | Job Location
+    //                td(colspan='1', style='width: 100%;')
+    //                    a.o_form_uri.o_form_field(v-model='j',href='#') {{ j }}
+    //
+    //    div(attrs="{'invisible': [('state', '!=', 'recruit')]}")(slot='jobsone')
+    //        label.o_form_label
+    //            | Job Description
+    //        span.o_form_textarea.o_form_field(v-model='description') {{ description }}

@@ -1,0 +1,512 @@
+.o_form_view .o_form_sheet_bg .o_form_sheet {
+    min-width: 650px;
+    max-width: 865px;
+    min-height: 330px;
+    background: white;
+    padding: 16px;
+    margin: 0 auto;
+}
+.o_form_view .o_form_sheet_bg .o_form_sheet {
+    border: 1px solid #c8c8d3;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 16px !important;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    width: 183px;
+    background-color: #D2D2FF;
+    height: 25px;
+}
+.input-lg {
+    width: 716px !important;
+}
+.form-group.note {
+    margin-left: -9px;
+}
+.form-group.sale{
+    margin-left: -8px;
+    margin-bottom: 0px;
+    margin-top: -5px;
+}
+.form-group{
+    margin-left: 20px;
+}
+.input{
+    border-radius: 10px;
+}
+.btn-primary {
+    width: 260px;
+    background-color: white !important;
+    color: white;
+    background-image: linear-gradient(to bottom,#fff 0,#fff 100%) !important;
+}
+.dropdown-menu{
+    margin: -17px 0 0 !important;
+}
+
+/* */
+.btn-default{
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#fff)) !important;
+}
+.btn-default.active:hover{
+    background-color: #fff !important;
+    border-color: #1d1e1f !important;
+}
+.btn-select {
+    position: relative;
+    padding: 0;
+    min-width: 236px;
+    width: 100%;
+    border-radius: 0;
+    margin-bottom: 20px;
+}
+
+.btn-select .btn-select-value {
+    padding: 0px 12px;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0px;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    top: 2px;
+}
+
+.btn-select ul {
+    display: none;
+    background-color: white;
+    color: black;
+    clear: both;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: none !important;
+    position: absolute;
+    left: -1px;
+    right: -1px;
+    top: 33px;
+    z-index: 999;
+}
+
+.btn-select ul li {
+    padding: 3px 6px;
+    text-align: left;
+}
+
+.btn-select ul li:hover {
+    background-color: #f4f4f4;
+}
+
+.btn-select ul li.selected {
+    color: white;
+}
+
+/* Default Start */
+.btn-select.btn-default:hover, .btn-select.btn-default:active, .btn-select.btn-default.active {
+    border-color: white;
+}
+
+.btn-select.btn-default ul li.selected {
+    background-color: #ccc;
+}
+
+.btn-select.btn-default ul, .btn-select.btn-default .btn-select-value {
+    background-color: white;
+    border: white 1px solid;
+}
+
+.btn-select.btn-default:hover, .btn-select.btn-default.active {
+    background-color: white;
+}
+/* Default End */
+
+/* Primary Start */
+.glyphicon{
+    right: -106px !important;
+    top: -1px !important;
+    position: inherit !important; ;
+}
+.row{
+    margin-right: 20px;
+}
+.o_horizontal_separator {
+    color: #7c7bad;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 27px 13px;
+}
+.radio-inline{
+    padding-left: 0px !important;
+}
+.form-group label{
+    color: #7c7bad;
+    font-size: 18px;
+}
+.form-control-edit{
+    margin-left: -58px;
+    height: 26px !important;
+    width: 170px !important;
+    border: 1px solid #cccccc;
+    margin-top: 5px;
+}
+.checkbox {
+    padding-left: 20px;
+    border-radius: 3px;
+}
+.lab{
+    margin-left: -9px;
+    margin-top: 23px;
+}
+.form-control{
+    height: 26px !important;
+    width: 210px !important;
+    margin-left: -21px;
+    padding: 0px;
+}
+.form-group.form-size{
+    width: 220px !important;
+}
+.oe_button_box {
+    width: 466px;
+    text-align: right;
+
+}
+.oe_button_box .oe_stat_button{
+    background-color: white;
+    border-color: #ccc;
+    border-radius: 0;
+}
+.oe_button_box .oe_stat_button:hover {
+    background-color: #e6e6e6;
+}
+.oe_button_box .oe_stat_button {
+    text-align: left;
+    width: 132px !important;
+    height: 45px;
+    margin: 6px -1px -1px 0px;
+    padding: 0;
+}
+.fa {
+    font: normal normal normal 14px/1 FontAwesome ;
+}
+.fa-archive{
+    content: "\f187";
+}
+.oe_button_box .oe_stat_button .o_button_icon {
+    color: #7C7BAD;
+    font-size: 24px;
+    margin-top: 6px;
+}
+oe_button_box .oe_stat_button .o_button_icon {
+    color: #7C7BAD;
+    font-size: 24px;
+
+}
+.oe_button_box .oe_stat_button span {
+    font-size: small;
+    white-space: normal;
+}
+.btn .o_form_field {
+    margin-top: -20px;
+    margin-left: 38px;
+}
+.text-success {
+    color: #41763c;
+    margin-top: -16px;
+}
+.text-danger {
+    color: #d9534f !important;
+    margin-top: -16px;
+}
+.oe_button_box .oe_stat_button .o_stat_info {
+    line-height: 1.2;
+}
+.oe_button_box .oe_stat_button .o_stat_info .o_stat_value {
+    display: block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    font-weight: 700;
+    color: #7c7bad;
+}
+.trash{
+    margin: 11px;
+    margin-left: 4px;
+    margin-bottom: 22px;
+}
+.sale{
+    margin: 11px;
+    margin-left: 0px;
+    margin-bottom: 11px;
+}
+.trace{
+    margin: 11px;
+    margin-left: -3px;
+    margin-bottom: 26px;
+}
+.trace_text{
+    margin-bottom: 5px;
+}
+.oe_button_box .oe_stat_button .o_stat_info .o_stat_text {
+    display: block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    font-size: small;
+}
+.o_form_field_boolean {
+    margin: 0 5px 0 0;
+}
+.o_form_label.o_form_label_help {
+    margin-left: 8px;
+}
+.o_form_label {
+    margin: 0px;
+}
+.o_form_input{
+    background-color: #D2D2FF !important;
+    width: 318px;
+}
+
+.control {
+    height: 50px !important;
+    width: 800px ;
+    margin-left: -4px;
+    border: 1px solid #c2c2c2;
+}
+
+.o_form_field_image.oe_avatar.o_form_field {
+    box-shadow: 6px 1px 11px rgba(0, 0, 14, 0.45);
+    margin-top: 5px;
+    width: 54px;
+    margin-left: -11px;
+}
+
+.o_form_field_image .o_form_image_controls {
+    position: absolute;
+    top: 5px;
+    left: auto;
+    bottom: auto;
+    right: -10px;
+    width: 94%;
+    color: #FFF;
+    background-color: transparent;
+    opacity: 1;
+    height: 17px;
+    margin-right: 10px;
+}
+.o_form_field_image .o_form_image_controls:hover {
+
+    background-color: #7c7bad;
+    transition: opacity ease 200ms;
+    right: -10px;
+    width: 94%;
+    height: 20px;
+    top: 5px;
+    margin-right: 9px;
+}
+.oe_button_box .oe_stat_button:not(:hover) .o_stat_info > .o_hover {
+    display: none !important;
+}
+.oe_button_box .oe_stat_button:hover .o_stat_info > .o_not_hover {
+    display: none !important;
+}
+/* Background container*/
+.o_form_sheet_bg {
+    min-width: 650px;
+    max-width: 860px;
+    min-height: 483px;
+    background: white;
+    padding: 16px;
+    margin: 0 auto;
+    border: 1px solid #c8c8d3;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.form-control-customer {
+    height: 26px !important;
+    width: 196px !important;
+    margin-left: -56px;
+    border: 1px solid #cccccc;
+    margin-top: 24px;
+}
+ul {
+    margin-top: -16px !important;
+}
+.title > h1
+{
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: inherit;
+    font-size: 26px;
+    font-family: "Lucida Grande", Helvetica, Verdana, Arial, sans-serif;
+}
+.sub{
+    font-family: "Lucida Grande", Helvetica, Verdana, Arial, sans-serif;
+    font-size: 25px;
+}
+
+
+.button_box {
+    width: 143px;
+    text-align: left;
+    float: right;
+    padding: 0;
+    border-radius: 0%;
+    border: 1px solid #cccccc;
+    padding-top: 13px;
+}
+.o_group {
+    display: inline-block;
+    width: 100%;
+    margin: 10px 0;
+}
+.o_form_field.o_stat_info {
+    margin-left: 28px;
+    margin-top: -41px;
+    margin-left: 43px
+}
+.fa_size{
+    width: 200px;
+}
+.bs-example.form {
+    margin: 33px !important;
+    margin-left: -1px !important;
+}
+.bs-example {
+    margin: 33px !important;
+    margin-left: -7px !important;
+}
+.bs-example.nav {
+    margin: 35px;
+    margin-left: 0px;
+}
+
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: #efeff8 !important;
+}
+
+.table.table-striped {
+    margin-top: -35px;
+}
+thead {
+    background-color: #eee;
+}
+.table.table-striped > tbody > tr > td {
+    padding: 4px;
+}
+.table.table-striped > tbody > tr {
+    padding: 4px;
+}
+.net-figure, .net-amount{
+    text-align: right;
+}
+.net-figure,.net-amount{
+    float: right;
+    margin-right: -492px;
+}
+.size-font{
+    font-size: 25px;
+    color: #5b5a91;
+    margin-left: -76px;
+}
+.info_sec{
+    margin-left: -22px;
+}
+ul[data-v-b1380d94] {
+    margin-top: 40px !important;
+}
+.nav{
+    margin-bottom: 23px;
+}
+.cost{
+    margin-left: 23px;
+}
+.selectContainer .form-control-feedback {
+    /* Adjust feedback icon position */
+    right: -15px;
+}
+.row {
+    margin-right: -2px;
+}
+.oe_title {
+    margin-left: 13px;
+    font-size: 15px;
+}
+.o_form_field_image.oe_avatar.o_form_field {
+    box-shadow: 7px 2px 10px rgba(0, 0, 14, 0.45);
+    margin-top: 5px;
+    width: 54px;
+    margin-left: 0;
+}
+.o_form_field_image .o_form_image_controls:hover {
+    background-color: #7c7bad;
+    transition: opacity ease 200ms;
+    right: -19px;
+    width: 90%;
+    height: 20px;
+    top: 5px;
+}
+
+.invoiceimg1{
+
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    height: 90px;
+    width: 76px;
+    position: relative;
+}
+.invoicetopimage{
+    position: absolute;
+    top:0px;
+
+}
+.invoiceinput{
+
+
+}
+
+.invoicecol2{
+    padding-left: 26px;
+}
+.invoicecol3{
+    padding: 0px;
+    margin-left: -29px;
+}
+.invoicecol4{
+    padding-left: 64px;
+}
+.invoicelabel1{
+
+    padding-left: 42px;
+}
+.invoicelabel2{
+    padding-left: 2px;
+}

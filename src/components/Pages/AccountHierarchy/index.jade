@@ -1,0 +1,97 @@
+.nextactivities
+    DashboardController(v-bind:heading="nextactivity")
+    .tablemain
+        .table12(style='margin-left: -15px;margin-right: -15px;')
+            .o_content
+                .o_view_manager_content
+                    .o_cannot_create
+                        .table-responsive
+                            table.o_list_view.table.table-condensed.table-striped.o_list_view_grouped
+                                thead(style='background-color:#e2e2e0; color:#4c4c4c;')
+                                    tr
+                                        th(data-id='product_id')
+                                            | Report Name
+                                        th(data-id='qty')(style='border-left: 1px solid #e2e2e0;')
+                                            | Type
+                                        th(data-id='location_id')(style='border-left: 1px solid #e2e2e0;')
+                                            | Report Value
+
+                                tfoot
+                                    tr
+                                        td
+                                        td
+                                        td
+
+                                tbody#searchbutton1(style='font-size: 13px; background-color: white;')
+                                    tr.o_group_header
+                                        th.o_group_name
+                                            span(style='float: left; white-space: pre;')
+                                            span.fa.fa-caret-down(style='padding-right: 5px;')
+                                            | Profit and Loss
+
+                                        td.oe_number(style='border-left: 1px solid lightgrey;') View
+
+                                        td.oe_number(style='border-left: 1px solid lightgrey;')
+                                tbody.samodropdownbutton2#searchbtn(style='font-size: 13px;')
+                                    tr(data-id='15', style='')
+
+
+                                        td.o_readonly.o_list_number(data-field='qty', title='Quantity of products in this quant, in the default unit of measure of the product', style='padding-left: 83px;') Income
+                                        td.o_readonly(data-field='location_id')(style='border-left: 1px solid lightgrey;') Account Type
+
+                                        td.o_readonly.o_list_number(data-field='inventory_value')(style='border-left: 1px solid lightgrey;')
+
+                                    tr(data-id='15', style='')
+
+
+                                        td.o_readonly.o_list_number(data-field='qty', title='Quantity of products in this quant, in the default unit of measure of the product', style='padding-left: 83px;') Expense
+                                        td.o_readonly(data-field='location_id')(style='border-left: 1px solid lightgrey;') Account Type
+
+                                        td.o_readonly.o_list_number(data-field='inventory_value')(style='border-left: 1px solid lightgrey;')
+
+                                tbody#searchbutton2(style='font-size: 13px; background-color: white;')
+                                    tr.o_group_header
+                                        th.o_group_name
+                                            span(style='float: left; white-space: pre;')
+                                            span.fa.fa-caret-down(style='padding-right: 5px;')
+                                            | Balance sheet
+
+                                        td.oe_number(style='border-left: 1px solid lightgrey;') Accounts
+
+                                        td.oe_number(style='border-left: 1px solid lightgrey;')
+
+                                tbody.samodropdownbutton#searchbtn2(style='font-size: 13px;')
+                                    tr(data-id='19', style='')
+
+
+                                        td.o_readonly.o_list_number(data-field='qty', title='Quantity of products in this quant, in the default unit of measure of the product', style='padding-left: 83px;') Assets
+                                        td.o_readonly(data-field='location_id')(style='border-left: 1px solid lightgrey;') Account Type
+
+                                        td.o_readonly.o_list_number(data-field='inventory_value')(style='border-left: 1px solid lightgrey;')
+
+                                tbody#searchbutton3(style='font-size: 13px;')
+                                    tr.o_group_header
+                                        th.o_group_name(style='padding-left: 42px;')
+                                            span(style='float: left; white-space: pre;')
+                                            span.fa.fa-caret-down(style='padding-right: 5px;')
+                                            | Liability
+
+                                        td.oe_number(style='border-left: 1px solid lightgrey;') View
+
+                                        td.oe_number(style='border-left: 1px solid lightgrey;')
+                                tbody.samodropdownbutton2#searchbtn3(style='font-size: 13px;')
+                                    tr(data-id='15', style='')
+
+
+                                        td.o_readonly.o_list_number(data-field='qty', title='Quantity of products in this quant, in the default unit of measure of the product', style='padding-left: 83px;') Liability
+                                        td.o_readonly(data-field='location_id')(style='border-left: 1px solid lightgrey;') Account Type
+
+                                        td.o_readonly.o_list_number(data-field='inventory_value')(style='border-left: 1px solid lightgrey;')
+
+                                    tr(data-id='15', style='')
+
+
+                                        td.o_readonly.o_list_number(data-field='qty', title='Quantity of products in this quant, in the default unit of measure of the product', style='padding-left: 83px;') Profit (Loss) to report
+                                        td.o_readonly(data-field='location_id')(style='border-left: 1px solid lightgrey;') Report Value
+
+                                        td.o_readonly.o_list_number(data-field='inventory_value')(style='border-left: 1px solid lightgrey;') Profit and Loss

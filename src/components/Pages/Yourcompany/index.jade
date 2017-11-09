@@ -1,0 +1,94 @@
+.Yourcompany
+    .row.samorequestinnerrow
+        .dashboardcontroller
+            .bro
+                .col-sm-6.samodashheadingmain(style='margin-top: 10px;')
+                    h4.samodashheading Requests for Quotation/PO00007: 637.50 Rs.
+                .col-sm-6.samodashsearch
+                    h1(style='color: #f0eeee;') s
+            .bro
+                .col-sm-6.samodashheadingmain
+                    button.btn.btn-primary.samobuttopcontroller#hasS(type='button', href='users')
+                        router-link.links.samolinks(to='Imported') Edit
+                    button.btn.btn-default.samobuttopcontroller2#hasHide(type='button', href='#home')
+                        router-link.links.samolinks(to='Imported') Create
+                            Discard
+                    .dropdown1
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-filter.iconbutton
+                                | Print
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Purchase order
+                                a.dropdown-item(href='#') Request For Quotation
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton2.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-bars.iconbutton
+                                | Attachment
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Add
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-star.iconbutton
+                                | Action
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Delete
+                                a.dropdown-item(href='#') Duplicate
+                .col-sm-6.samodashsearch
+                    div(style='float:right;')
+                        span.o_pager_value 1-24
+                            |  /
+                            span.o_pager_limit 24
+                            span.btn-group.btn-group-sm
+                                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p', disabled='')
+                                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n', disabled='')
+    .o_content.samocontent
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .row
+                            .col-sm-6
+                                h1(style='font-weight:bold;') YourCompany
+
+                            .col-sm-6
+                                .oe_button_box(name='button_box')(style='float:right;')
+                                    button.btn.btn-sm.oe_stat_button(type='button', style='')
+                                        .fa.fa-fw.fa-archive.o_button_icon.trash
+                                        .o_stat_info.o_form_field(data-original-title='', title='')
+                                            span.o_stat_text.o_not_hover.text-success Active
+                                            span.o_stat_text.o_hover.text-danger
+                                                | Archive
+                                                .oe_button_box(name='button_box')
+                                    button.btn.btn-sm.oe_stat_button(type='button')
+                                        .fa.fa-fw.fa-refresh.o_button_icon
+                                        span Routes
+
+                        .row(style='margin-top:20px;')
+                            .col-sm-3
+                                .one
+                                    label(style='font-size:13px;padding-right:25px;font-weight:bold;')
+                                        | Short Name
+                                    br
+                            .col-sm-2
+                                label(style='font-size:13px;padding-right:25px;')
+                                    | WH
+                                br
+
+                            .col-sm-3
+                                .one
+                                    label(style='font-size:13px;padding-right:5px;font-weight:bold;')
+                                        | Company
+                                    br
+                                    label(style='font-size:13px;padding-right:5px;font-weight:bold;')
+                                        | Address
+                                    br
+                            .col-sm-3
+                                router-link(to='companypopup')
+                                    label(style='font-size:13px;padding-right:25px;')
+                                        | Alupak Industriess
+                                    br
+                                router-link(to='companypopup')
+                                    label(style='font-size:13px;padding-right:25px;')
+                                        | Alupak Industriess
+                                    br

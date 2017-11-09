@@ -1,0 +1,14 @@
+.container-fluid(style='margin-left: -15px;margin-right: -15px;')
+    DashboardController(v-bind:createbtn='true',v-bind:importbtn='true',v-bind:actionbtn='true',v-bind:exportbtn='true',v-bind:deletebtn='true',v-bind:assignedtasks='true',v-bind:changepassword='true',v-bind:links='btnlinks',v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true',v-bind:heading='head' )
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") user
+        span.o_pager_value(slot='page') {{counter}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="select4()",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="select3()",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+
+
+    TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata",v-bind:tablefoot="tablefoot")
+

@@ -1,0 +1,197 @@
+.leavetype_duplicate
+    DashboardController(v-bind:heading="nextactivity",v-bind:savebtn='true',v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Leave Type/ {{type}}
+        span.o_pager_value(slot='page') {{counter}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="counter--",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="counter++",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+
+        .row
+        .col-sm-12
+            #success-alert(style='background-color:red;display:none;position:absolute;right: 16px;')
+                button.close(type="button", data-dismiss="alert",style='color:white;') x
+                .o_notification.o_error
+                    .o_notification_title
+                        span.o_icon.fa.fa-3x.fa-exclamation(style='color:white;border-bottom: 3px solid white;font-size: 16px') The following fields are invalid:
+
+                    .o_notification_content(style='padding-top: 16px;')
+                        ul
+                            li#leave(style='color:white;') Leave Type
+    Modal(v-bind:discard='true',v-bind:saveTigger="submits",v-bind:save='true',v-bind:heading="modal2",v-bind:modal='"bd-example-modal-lg1"')
+        .modal-body.o_act_window
+            .o_form_view.o_form_editable
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_169')
+                                            | Names
+                                    td(colspan='1', style='width: 33.3333%;')
+                                        input#o_field_input_169.o_form_input.o_form_field.o_form_required(v-model='meetingtypeinsert',type='text')
+                                    td(colspan='1', style='width: 33.3333%;')
+                                        .o_horizontal_separator
+    Modal(v-bind:discard='true',v-bind:saveTigger="submitss",v-bind:save='true',v-bind:heading="modal2",v-bind:modal='"bd-example-modal-lg2"')
+        .modal-body.o_act_window
+            .o_form_view.o_form_editable
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_169')
+                                            | Name
+                                    td(colspan='1', style='width: 33.3333%;')
+                                        input#o_field_input_169.o_form_input.o_form_field.o_form_required(v-model='meetingtypeedit',type='text')
+                                    td(colspan='1', style='width: 33.3333%;')
+                                        .o_horizontal_separator
+
+    leavetype_create
+        table.o_group.o_inner_group.o_group_col_6(slot='dup')
+            tbody
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label(for='o_field_input_194')
+                            | Leave Type
+                    td(colspan='1', style='width: 100%;')
+                        input#o_field_input_194.o_form_input.o_form_field.o_form_required(v-model='type',name='name',type='text')
+
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help(data-original-title='', title='')
+                            | Apply Double Validation
+                    td(colspan='1', style='width: 100%;')
+                        .o_checkbox.o_form_field_boolean.o_form_field
+                            input#one(type='checkbox', name='my-checkbox5', value='1',v-bind:true-value=1,v-bind:false-value=0,v-model='apply_double_validation')
+                            span
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                            | Allow to Override Limits
+                    td(colspan='1', style='width: 100%;')
+                        .o_checkbox.o_form_field_boolean.o_form_field
+                            input#two(type='checkbox', name='my-checkbox2', value='1',v-bind:true-value=1,v-bind:false-value=0,v-model='allow_override_limit')
+                            span
+        table.o_group.o_inner_group.o_group_col_6(slot='dupone')
+            tbody
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                            | Meeting Type
+                    td(colspan='1', style='width: 100%;')
+                        .o_form_field_many2one.o_form_field
+                            .o_form_input_dropdown
+                                select#abcs(v-model='meeting_type',class="dept_dropdown",@click="selectmeetings()")
+                                    option(v-for='option in options',v-bind:value="option.id")
+                                        | {{ option.meeting_type_name }}
+                                    option
+                                        span(data-toggle='modal2', data-target='bd-example-modal-lg1') Create and Edit...
+                                .fa.fa-external-link.btn.btn-default.o_external_button#ss(style='display: none;',data-toggle='modal', data-target='.bd-example-modal-lg2',draggable='false', tabindex='-1', type='button')
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help(for='o_field_input_198', data-original-title='', title='')
+                            | Color in Report
+                    td(colspan='1', style='width: 100%;')
+                        select#o_field_input_198.o_form_input.o_form_field.o_form_required(name='color_name',v-model='color_in_report')
+                            option(value='false')
+                            option(value='red') Red
+                            option(value='blue') Blue
+                            option(value='lightgreen') Light Green
+                            option(value='lightblue') Light Blue
+                            option(value='lightyellow') Light Yellow
+                            option(value='magenta') Magenta
+                            option(value='lightcyan') Light Cyan
+                            option(value='black') Black
+                            option(value='lightpink') Light Pink
+                            option(value='brown') Brown
+                            option(value='violet') Violet
+                            option(value='lightcoral') Light Coral
+                            option(value='lightsalmon') Light Salmon
+                            option(value='lavender') Lavender
+                            option(value='wheat') Wheat
+                            option(value='ivory') Ivory
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                            | Active
+                    td(colspan='1', style='width: 100%;')
+                        .o_checkbox.o_form_field_boolean.o_form_field
+                            input#three(type='checkbox', name='my-checkbox3', value='1',v-bind:true-value=1,v-bind:false-value=0,v-model='active')
+                            span
+    //leavetype_create
+    //    table.o_group.o_inner_group.o_group_col_6(slot='dup')
+    //        tbody
+    //            tr
+    //                td.o_td_label(colspan='1')
+    //                    label.o_form_label(for='o_field_input_194')
+    //                        | Leave Type
+    //                td(colspan='1', style='width: 100%;')
+    //                    input#o_field_input_194.o_form_input.o_form_field.o_form_required(v-model='type',type='text')
+    //                    button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+    //            tr
+    //                td.o_td_label(colspan='1')
+    //                    label.o_form_label.o_form_label_help( data-original-title='', title='')
+    //                        | Apply Double Validation
+    //                td(colspan='1', style='width: 100%;')
+    //                    .o_checkbox.o_form_field_boolean.o_form_field
+    //                        input(type='checkbox', name='my-checkbox',v-bind:true-value='1', v-bind:false-value='0', v-model='apply_double_validation')
+    //                        span
+    //            tr
+    //                td.o_td_label(colspan='1')
+    //                    label.o_form_label.o_form_label_help( data-original-title='', title='')
+    //                        | Allow to Override Limit
+    //                td(colspan='1', style='width: 100%;')
+    //                    .o_checkbox.o_form_field_boolean.o_form_field
+    //                        input(type='checkbox', name='my-checkbox5',v-bind:true-value='1', v-bind:false-value='0', v-model='allow_override_limit')
+    //                        span
+    //    table.o_group.o_inner_group.o_group_col_6(slot='dupone')
+    //        tbody
+    //            tr
+    //                td.o_td_label(colspan='1')
+    //                    label.o_form_label.o_form_label_help( data-original-title='', title='')
+    //                        | Meeting Type
+    //                td(colspan='1', style='width: 100%;')
+    //                    .o_form_field_many2one.o_form_field
+    //                        .o_form_input_dropdown
+    //                            select#abcs(v-model='meeting_type',class="dept_dropdown")
+    //                                option(v-for='option in options',v-bind:value="option.id")
+    //                                    | {{ option.meeting_type_name }}
+    //                                option
+    //                                    span(data-toggle='modal2', data-target='bd-example-modal-lg1') Create and Edit...
+    //                            .fa.fa-external-link.btn.btn-default.o_external_button#ss(style='display: none;',data-toggle='modal', data-target='.bd-example-modal-lg2',draggable='false', tabindex='-1', type='button')
+    //            tr
+    //                td.o_td_label(colspan='1')
+    //                    label.o_form_label.o_form_label_help(for='o_field_input_198', data-original-title='', title='')
+    //                        | Color in Report
+    //                td(colspan='1', style='width: 100%;')
+    //                    select#o_field_input_198.o_form_input.o_form_field.o_form_required(name='color_name',v-model='color_in_report')
+    //                        option(value='false')
+    //                        option(value='red') Red
+    //                        option(value='blue') Blue
+    //                        option(value='lightgreen') Light Green
+    //                        option(value='lightblue') Light Blue
+    //                        option(value='lightyellow') Light Yellow
+    //                        option(value='magenta') Magenta
+    //                        option(value='lightcyan') Light Cyan
+    //                        option(value='black') Black
+    //                        option(value='lightpink') Light Pink
+    //                        option(value='brown') Brown
+    //                        option(value='violet') Violet
+    //                        option(value='lightcoral') Light Coral
+    //                        option(value='lightsalmon') Light Salmon
+    //                        option(value='lavender') Lavender
+    //                        option(value='wheat') Wheat
+    //                        option(value='ivory') Ivory
+    //            tr
+    //                td.o_td_label(colspan='1')
+    //                    label.o_form_label.o_form_label_help( data-original-title='', title='')
+    //                        | Active
+    //                td(colspan='1', style='width: 100%;')
+    //                    .o_checkbox.o_form_field_boolean.o_form_field
+    //                        input(type='checkbox', name='my-checkbox33',v-bind:true-value='1', v-bind:false-value='0', v-model='active')
+    //                        span

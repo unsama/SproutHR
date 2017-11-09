@@ -1,0 +1,154 @@
+.Product_inner_Edit
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v1-bind:paginbtn1='true',v1-bind:paginbtn2='true',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false',v-bind:dropdownbtn1='false',v-bind:dropdownbtn2='false',v-bind:dropdownbtn3='false',v-bind:actionbtn='true',v-bind:Attachmentbtn='true',v-bind:printbtn='false')
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        a.o_form_uri.o_form_field.o_form_invisible(href='#', data-original-title='', title='') Data Import/Export Plugin - Delta PC
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-files-o.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value 0
+                                    span.o_stat_text Documents
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-tasks.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value 4
+                                    span.o_stat_text Databases
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-bug.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value 0
+                                    span.o_stat_text Issues
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-calendar.o_button_icon
+                                span Timesheets
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                .o_stat_info.o_form_field(data-original-title='', title='')
+                                    span.o_stat_text.o_not_hover.text-success Active
+                                    span.o_stat_text.o_hover.text-danger Archive
+                        .oe_title
+                            h1
+                                span.o_form_field.o_form_required Data Import/Export Plugin
+                            div(name='options_active')
+                                div
+                                    .o_checkbox.o_form_field_boolean.oe_inline.o_form_field
+                                        input#o_field_input_109(type='checkbox', name='use_tasks', disabled='')
+                                        span
+                                    label.o_form_label.o_form_label_help.oe_inline(for='o_field_input_109', data-original-title='', title='')
+                                        | Tasks
+                                    span(attrs="{'invisible':[('use_tasks', '=', False)]}") as
+                                    span.oe_inline.oe_input_align.o_form_field(data-original-title='', title='') Databases
+                                div
+                                    .o_checkbox.o_form_field_boolean.oe_inline.o_form_field
+                                        input#o_field_input_110(type='checkbox', name='use_issues', disabled='')
+                                        span
+                                    label.o_form_label.o_form_label_help.oe_inline(for='o_field_input_110', data-original-title='', title='')
+                                        | Issues
+                                    span(attrs="{'invisible':[('use_issues', '=', False)]}") as
+                                    span.oe_inline.oe_input_align.o_form_field(data-original-title='', title='') Issues
+                                div
+                                    .o_checkbox.o_form_field_boolean.oe_inline.o_form_field
+                                        input#o_field_input_111(type='checkbox', name='allow_timesheets', disabled='')
+                                        span
+                                    label.o_form_label(for='o_field_input_111')
+                                        | Allow timesheets
+
+
+                        .o_notebook(style='margin-top:0px;')
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Settings
+                                li.nav-item
+                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') Email
+
+
+
+                            .tab-content
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+                                    table.o_group.o_inner_group
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Project Manager
+                                                td(colspan='1', style='width: 100%;')
+                                                    a.o_form_uri.o_form_field(href='#') Administrators
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(data-original-title='', title='')
+                                                        | Sub-task Project
+                                                td(colspan='1', style='width: 100%;')
+                                                    a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                        | Privacy
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.o_form_field.o_form_required On invitation only
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Customer
+                                                td(colspan='1', style='width: 100%;')
+                                                    a.o_form_uri.o_form_field(href='#') Delta PC
+
+
+                                #buzz.tab-pane.fade.in(role='tabpanel')
+                                    table.o_group.o_inner_group
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                        | Email Alias
+                                                td(colspan='1', style='width: 100%;')
+                                                    div(name='alias_def')
+                                                        a.o_form_uri.oe_read_only.oe_inline.o_form_field(href='#', data-original-title='', title='') data-import-export-plugin@localhost
+                                                        .oe_edit_only.oe_inline(name='edit_alias', style='display: inline;')
+                                                            span.oe_inline.o_form_field data-import-export-plugin
+                                                            | @
+                                                            span.oe_inline.o_form_field localhost
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.oe_edit_only( data-original-title='', title='')
+                                                        | Incoming Emails create
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.oe_inline.oe_edit_only.o_form_field.o_form_required Tasks
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.oe_inline.oe_edit_only(data-original-title='', title='')
+                                                        | Accept Emails From
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.oe_inline.oe_edit_only.o_form_field.o_form_required Everyone
+
+
+                .oe_chatter
+                    .o_followers.o_form_field.o_form_invisible(data-original-title='', title='')
+                        .o_followers_title_box
+                            button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', title='No follower')
+                                i.fa.fa-user
+                                span.o_followers_count 0
+                                span.caret
+                            ul.dropdown-menu.o_followers_list(role='menu')
+                                li.o_add_follower
+                                    a(href='#')  Add Followers
+                                li.o_add_follower_channel
+                                    a(href='#')  Add Channels
+                        .o_followers_actions
+                            .btn-group.btn-group-sm.o_subtypes_list
+                                button.btn.btn-sm.btn-link.o_followers_follow_button.o_followers_notfollow
+                                    span.o_follow Follow
+                                    span.fa.fa-times.o_followers_unfollow
+                                    span.o_followers_unfollow  Unfollow
+                                    span.fa.fa-check.o_followers_following
+                                    span.o_followers_following  Following
+                                button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', disabled='disabled')
+                                    span.fa.fa-bell
+                                ul.dropdown-menu(role='menu')
+
+
+
+

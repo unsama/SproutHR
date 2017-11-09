@@ -1,0 +1,188 @@
+.o_content(style='margin-left:-15px;margin-right:-15px;')
+    .o_view_manager_content
+        .o_form_view.o_form_editable
+            header
+                button.btn.btn-sm(type='button')
+                    span Cancel
+                button.btn.btn-sm.o_form_invisible(type='button')
+                    span Reopen Request
+                ul.oe_form_field_status.oe_form_status_clickable.o_form_field
+                    li.oe_active(data-id='1')
+                        span.label New Request
+                        span.arrow
+                            span
+                    li(data-id='2')
+                        span.label In Progress
+                        span.arrow
+                            span
+                    li(data-id='4')
+                        span.label Scrap
+                        span.arrow
+                            span
+                    li(data-id='3')
+                        span.label Repaired
+                        span.arrow
+                            span
+
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .o_form_invisible(attrs="{'invisible': [('archive', '=', False)]}")
+                        span.label.label-warning.pull-right Canceled
+                    .oe_right
+                        .btn-group.o_kanban_selection.oe_inline.o_form_field.o_form_required
+                            a(data-toggle='dropdown', href='#')
+                                span.oe_kanban_status
+                            ul.dropdown-menu.state(role='menu')
+                                li(data-value='blocked')
+                                    a(href='#')
+                                        span.oe_kanban_status.oe_kanban_status_red
+                                        |             Blocked
+                                li(data-value='done')
+                                    a(href='#')
+                                        span.oe_kanban_status.oe_kanban_status_green
+                                        |             Ready for next stage
+                    .oe_title
+                        label.o_form_label.oe_edit_only(for='o_field_input_92')
+                            | Subject
+                        h1
+                            input#o_field_input_92.o_form_input.o_form_field.o_form_required(placeholder='Maintenance Subject', type='text')
+                    .o_group
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_93')
+                                            | Requested By
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_with_button.o_form_field
+                                            .o_form_input_dropdown
+                                                input#o_field_input_93.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_94')
+                                            | Equipment
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_form_field
+                                            .o_form_input_dropdown
+                                                input#o_field_input_94.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_95')
+                                            | Category
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible(for='o_field_input_96')
+                                            | Request Date
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_datepicker.o_form_field_date.o_form_field.o_form_invisible
+                                            input.o_datepicker_input.o_form_input(type='text', name='request_date')
+                                            span.o_datepicker_button
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible(for='o_field_input_97')
+                                            | Close Date
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_datepicker.o_form_field_date.o_form_field.o_form_invisible
+                                            input.o_datepicker_input.o_form_input(type='text', name='close_date')
+                                            span.o_datepicker_button
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_98', data-original-title='', title='')
+                                            | Archive
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                            input#o_field_input_98(type='checkbox', name='archive')
+                                            span
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_99')
+                                            | Maintenance Type
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_radio.o_vertical.o_form_field
+                                            .o_radio_item
+                                                input#radio104_corrective.o_form_radio(type='radio', name='radio104', value='corrective')
+                                                label.o_form_label(for='radio104_corrective') Corrective
+                                            .o_radio_item
+                                                input#radio104_preventive.o_form_radio(type='radio', name='radio104', value='preventive')
+                                                label.o_form_label(for='radio104_preventive') Preventive
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_100')
+                                            | Team
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                            .o_form_input_dropdown
+                                                input#o_field_input_100.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_101')
+                                            | Responsible
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_form_field
+                                            .o_form_input_dropdown
+                                                input#o_field_input_101.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_102')
+                                            | Scheduled Date
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_row
+                                            .o_datepicker.o_form_field_date.o_form_field
+                                                input.o_datepicker_input.o_form_input(type='text', name='schedule_date')
+                                                span.o_datepicker_button
+                                            label.o_form_label
+                                                | for
+                                            input.o_form_input.oe_inline.o_form_field.o_form_field_number(type='text', data-original-title='', title='')
+                                            |  hours
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_103')
+                                            | Priority
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_priority.o_form_field
+                                            a.o_priority_star.fa.fa-star-o(href='#', data-value='1', title='Low')
+                                            a.o_priority_star.fa.fa-star-o(href='#', data-value='2', title='Normal')
+                                            a.o_priority_star.fa.fa-star-o(href='#', data-value='3', title='High')
+                    textarea.o_form_textarea.o_form_field(rows='6', name='description', placeholder='Internal Note .......', style='height: 50px;')
+                    textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 825px;')
+            .o_chatter.o_form_field.oe_chatter.o_form_invisible
+                .o_chatter_topbar
+                    button.btn.btn-sm.btn-primary.o_chatter_button_new_message(title='Send a message', type='button')
+                        | New message
+                    button.btn.btn-sm.btn-link.o_chatter_button_log_note(title='Log a note. Followers will not be notified.')
+                        | Log an internal note
+                    .o_followers.o_form_field.o_form_invisible
+                        .o_followers_title_box
+                            button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', title='No follower')
+                                i.fa.fa-user
+                                span.o_followers_count 0
+                                span.caret
+                            ul.dropdown-menu.o_followers_list(role='menu')
+                                li.o_add_follower
+                                    a(href='#')  Add Followers
+                                li.o_add_follower_channel
+                                    a(href='#')  Add Channels
+                        .o_followers_actions
+                            .btn-group.btn-group-sm.o_subtypes_list
+                                button.btn.btn-sm.btn-link.o_followers_follow_button.o_followers_notfollow
+                                    span.o_follow Follow
+                                    span.fa.fa-times.o_followers_unfollow
+                                    span.o_followers_unfollow  Unfollow
+                                    span.fa.fa-check.o_followers_following
+                                    span.o_followers_following  Following
+                                button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', disabled='disabled')
+                                    span.fa.fa-bell
+                                ul.dropdown-menu(role='menu')
+                .o_mail_thread

@@ -1,0 +1,213 @@
+.Product_inner_Edit
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:num1='false',v-bind:num2='false',v1-bind:paginbtn1='true',v1-bind:paginbtn2='true',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false',v-bind:dropdownbtn1='false',v-bind:dropdownbtn2='false',v-bind:dropdownbtn3='false',v-bind:actionbtn='false',v-bind:Attachmentbtn='false',v-bind:printbtn='false')
+    .o_content.row
+        .col-md-12
+            .row
+                .col-md-12.pull-left.samotopcontroller
+                    .col-md-5.pull-left
+                        button.btn.btn-primary.samobutton2(type='button',style='margin-right: 5px;') Confirm Repair
+                        button.btn.btn-primary.samobutton1(type='button',style='margin-right: 5px;') Cancel Repair
+
+
+                    .col-md-1.pull-left
+                    .col-md-3.pull-left
+                    .col-md-3.pull-right
+                        .btn-group.btn-breadcrumb.samobreadcrum1
+                            a.btn.btn-primary.samobreadbutt(href='#') Quotation
+                            a.btn.btn-primary.samobreadbutt1(href='#') Confirmed
+                            a.btn.btn-primary.samobreadbutt(href='#') Repaired
+
+            .o_view_manager_content
+                .o_form_view.o_form_editable
+                    .o_form_sheet_bg
+                        .o_form_sheet
+                            label.o_form_label(for='o_field_input_6')
+                                | Repair Reference
+                            h1
+                                input#o_field_input_6.o_form_input.o_form_field.o_form_required(type='text')
+                            .o_group
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_7')
+                                                    | Product to Repair
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_form_field.o_form_required
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_7.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_8')
+                                                    | Product Quantity
+                                            td(colspan='1', style='width: 100%;')
+                                                div
+                                                    input#o_field_input_8.o_form_input.oe_inline.o_form_field.o_form_required.o_form_field_number(type='text')
+                                                    .o_form_field_many2one.oe_inline.o_form_field.o_form_required.o_form_invisible
+                                                        .o_form_input_dropdown
+                                                            input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_9', data-original-title='', title='')
+                                                    | Repaired Lot
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_form_field.o_form_invisible
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_9.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help(for='o_field_input_10', data-original-title='', title='')
+                                                    | Partner
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_form_field
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_10.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_invisible(for='o_field_input_11')
+                                                    | Delivery Address
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_form_field.o_form_invisible
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_11.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_invisible(for='o_field_input_12')
+                                                    | Current Location
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_with_button.o_form_field.o_form_required.o_form_invisible
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_12.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_invisible(for='o_field_input_13')
+                                                    | Delivery Location
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_form_field.o_form_required.o_form_invisible.o_with_button
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_13.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_14')
+                                                    | Company
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_with_button.o_form_field
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_14.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Warranty Expiration
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_datepicker.o_form_field_date.o_form_field
+                                                    input.o_datepicker_input.o_form_input(type='text', name='guarantee_limit')
+                                                    span.o_datepicker_button
+
+
+                            .o_notebook(Style='margin-top: 0px !important;')
+                                ul.nav.nav-tabs(role='tablist')
+                                    li.nav-item
+                                        a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Operations
+                                    li.nav-item
+                                        a.nav-link(href='#buzz', role='tab', data-toggle='tab') Invoicing
+                                    li.nav-item
+                                        a.nav-link(href='#buzz1', role='tab', data-toggle='tab') Notes
+
+                                // Tab panes
+                                .tab-content
+                                    #profile.tab-pane.fade.in.active(role='tabpanel')
+                                        TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter")
+                                        table.o_group
+                                            tbody(style="float: right;")
+                                                tr
+                                                    td.o_td_label(colspan='1',style='border:none')
+                                                        label.o_form_label(style='float: right;')
+                                                            | Untaxed Amount :
+                                                    td(colspan='1', style='width: 100%;padding-right: 0px;')
+                                                        span.o_form_field.o_form_field_number(style='text-align: right;')
+                                                            span $
+                                                            | 7,315.00
+                                                tr(style='border-bottom: 1px solid lightslategrey;')
+                                                    td.o_td_label(colspan='1',style='border:none')
+                                                        label.o_form_label(style='float: right;')
+                                                            | Taxes :
+                                                    td(colspan='1', style='width: 100%;padding-right: 0px;')
+                                                        span.o_form_field.o_form_field_number(style='text-align: right;')
+                                                            span $
+                                                            | 0.00
+
+                                                tr
+                                                    td(colspan='1', style='width: 50%;border:none;')
+                                                        .oe_subtotal_footer_separator.oe_inline.o_td_label
+                                                            label.o_form_label(style='float: right;')
+                                                                | Total :
+                                                            button.btn.btn-sm.oe_edit_only.oe_link.o_form_invisible(type='button')
+                                                                span (update)
+                                                    td(colspan='1', style='width: 50%;border:none;text-align: right;')
+                                                        span.oe_subtotal_footer_separator.o_form_field.o_form_field_number
+                                                            span $
+                                                            | 7,315.00
+
+                                    #buzz.tab-pane.fade.in(role='tabpanel')
+                                        table.o_group.o_inner_group
+                                            tbody
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(for='o_field_input_23', data-original-title='', title='')
+                                                            | Invoice Method
+                                                    td(colspan='1', style='width: 50%;')
+                                                        select#o_field_input_23.o_form_input.o_form_field.o_form_required(name='invoice_method')
+                                                            option(value='false')
+                                                            option(value='"none"') No Invoice
+                                                            option(value='"b4repair"') Before Repair
+                                                            option(value='"after_repair"') After Repair
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_empty.o_form_label_false
+                                                            | Invoice
+                                                    td(colspan='1', style='width: 50%;')
+                                                        a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible(for='o_field_input_25')
+                                                            | Invoicing Address
+                                                    td(colspan='1', style='width: 50%;')
+                                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_invisible
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_25.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                            | Pricelist
+                                                    td(colspan='1', style='width: 50%;')
+                                                        a.o_form_uri.o_form_field(href='#') Public Pricelist (USD)
+
+                                        .o_horizontal_separator
+                                            | Fees
+
+                                        TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter")
+                                    #buzz1.tab-pane.fade.in(role='tabpanel')
+                                        textarea.o_form_textarea.o_form_field(rows='6', name='internal_notes', placeholder='Add internal notes...', style='resize: horizontal; height: 50px;')
+                                        textarea.o_form_textarea.o_form_field(rows='6', name='internal_notes', placeholder='Add internal notes...', style='resize: horizontal; height: 50px;')
+
+
+                            
+

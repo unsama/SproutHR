@@ -1,0 +1,339 @@
+.inventory_adjustments_table
+    DashboardController(v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:firstbtn='true',v-bind:secondbtn='true',v-bind:fifthbtn='true',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true')
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_nosheet.o_cannot_create.o_form_readonly
+                .o_group
+                    table.o_group.o_inner_group.o_group_col_6
+                        tbody
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label(for='o_field_input_284')
+                                        | Product
+                                td(colspan='1', style='width: 100%;')
+                                    a.o_form_uri.o_form_field.o_form_required(href='#') [CARD] Graphics Card
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help(for='o_field_input_285', data-original-title='', title='')
+                                        | Quantity
+                                td(colspan='1', style='width: 100%;')
+                                    span.o_form_field.o_form_required.o_form_field_number 3.00
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_286', data-original-title='', title='')
+                                        | Unit of Measure
+                                td(colspan='1', style='width: 100%;')
+                                    a.o_form_uri.o_form_field.o_form_invisible(href='#') Unit(s)
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_287')
+                                        | Lot/Serial Number
+                                td(colspan='1', style='width: 100%;')
+                                    a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_288', data-original-title='', title='')
+                                        | Package
+                                td(colspan='1', style='width: 100%;')
+                                    a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label(for='o_field_input_289')
+                                        | Location
+                                td(colspan='1', style='width: 100%;')
+                                    a.o_form_uri.o_form_field.o_form_required(href='#') WH/Stock/Shelf 2
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_290', data-original-title='', title='')
+                                        | Owner
+                                td(colspan='1', style='width: 100%;')
+                                    a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                    table.o_group.o_inner_group.o_group_col_6
+                        tbody
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label(for='o_field_input_291')
+                                        | Incoming Date
+                                td(colspan='1', style='width: 100%;')
+                                    span.o_form_field_date.o_form_field 01/28/2017 19:22:52
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help(for='o_field_input_292', data-original-title='', title='')
+                                        | Reserved for Move
+                                td(colspan='1', style='width: 100%;')
+                                    a.o_form_uri.o_form_field(href='#') CARD: Stock>Production
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false(for='o_field_input_293', data-original-title='', title='')
+                                        | Linked Quant
+                                td(colspan='1', style='width: 100%;')
+                                    a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label(for='o_field_input_294')
+                                        | Inventory Value
+                                td(colspan='1', style='width: 100%;')
+                                    span.o_form_field.o_form_field_number 2,628.00
+                    table.o_group.o_inner_group
+                        tbody
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help(for='o_field_input_295', data-original-title='', title='')
+                                        | History
+                                td(colspan='1', style='width: 100%;')
+                                    .o_form_field.o_form_field_many2many.o_view_manager_content
+                                        .o_x2m_control_panel
+                                            .o_cp_buttons
+                                            .o_cp_pager
+                                                .o_hidden
+                                                    span.o_pager_value
+                                                    |  /
+                                                    span.o_pager_limit
+                                                    span.btn-group.btn-group-sm
+                                                        button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                        button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                        div(style='margin-left: 15px;')
+                                            TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata")
+
+    Modal(v-bind:close='true',v-bind:heading="modal2",v-bind:modal='"bd-example-modal-lg3"')
+        .modal-body.o_act_window
+            .o_form_view.o_form_readonly
+                header
+                    ul.oe_form_field_status.oe_form_status.o_form_field(data-original-title='', title='')
+                        li(data-id='draft')
+                            span.label New
+                            span.arrow
+                                span
+                        li(data-id='confirmed')
+                            span.label Waiting Availability
+                            span.arrow
+                                span
+                        li(data-id='assigned')
+                            span.label Available
+                            span.arrow
+                                span
+                        li.oe_active(data-id='done')
+                            span.label Done
+                            span.arrow
+                                span
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .o_group
+                            .o_group.o_group_col_12
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_18')
+                                                    | Product
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_required(href='#') [CARD] Graphics Card
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help(for='o_field_input_19', data-original-title='', title='')
+                                                    | Quantity
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_row
+                                                    span.o_form_field.o_form_required.o_form_field_number 16.000
+                                                    span.o_form_field.o_form_required.o_form_invisible Unit(s)
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_20')
+                                                    | Description
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field.o_form_required INV:Starting Inventory
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_21')
+                                                    | Picking Type
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_22')
+                                                    | Priority
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field Normal
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_23')
+                                                    | Company
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_required(href='#') Alupak Industriess
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_24', data-original-title='', title='')
+                                                    | Expected Date
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field_date.o_form_field.o_form_required.o_form_invisible 01/28/2017 19:22:52
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help(for='o_field_input_25', data-original-title='', title='')
+                                                    | Date
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field_date.o_form_field.o_form_required 01/28/2017 19:22:52
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Origin
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_26')
+                                                | Source Document
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_field_empty
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_27', data-original-title='', title='')
+                                                | Source Location
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_required.o_form_invisible(href='#') Virtual Locations/Inventory adjustment
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_28')
+                                                | Transfer Reference
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible(for='o_field_input_29')
+                                                | Creation Date
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field_date.o_form_field.o_form_invisible 01/28/2017 19:22:44
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_30', data-original-title='', title='')
+                                                | Supply Method
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required.o_form_invisible Default: Take From Stock
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_31')
+                                                | Procurement Group
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                            table.o_group.o_inner_group.o_form_invisible.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Destination
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_32', data-original-title='', title='')
+                                                | Destination Location
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_required(href='#') WH/Stock/Shelf 2
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false(for='o_field_input_33', data-original-title='', title='')
+                                                | Destination Address
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_34')
+                                                | Transfer Destination Address
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_35', data-original-title='', title='')
+                                                | Destination Move
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_36')
+                                                | Purchase Order Line
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                            table.o_group.o_inner_group.o_form_invisible.o_group_col_12
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Reserved Quants
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false(for='o_field_input_37', data-original-title='', title='')
+                                                | Availability
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_textarea.o_form_field.o_form_field_empty
+                            table.o_group.o_inner_group.o_form_invisible.o_group_col_12
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Moved Quants
+                                    tr
+                                        td(colspan='1', style='width: 50%;')
+                                            .o_form_field.o_form_field_many2many.o_view_manager_content
+                                                .o_x2m_control_panel
+                                                    .o_cp_buttons
+                                                    .o_cp_pager
+                                                        .o_hidden
+                                                            span.o_pager_value
+                                                            |  /
+                                                            span.o_pager_limit
+                                                            span.btn-group.btn-group-sm
+                                                                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                                .o_cannot_create
+                                                    .table-responsive
+                                                        table.o_list_view.table.table-condensed.table-striped
+                                                            thead
+                                                                tr
+                                                                    th.o_column_sortable(data-id='product_id')
+                                                                        | Product
+                                                                    th.o_column_sortable(data-id='qty')
+                                                                        | Quantity
+                                                                    th.o_column_sortable(data-id='location_id')
+                                                                        | Location
+                                                                    th.o_column_sortable(data-id='in_date')
+                                                                        | Incoming Date
+                                                                    th(data-id='inventory_value')
+                                                                        | Inventory Value
+                                                                    th.o_column_sortable(data-id='company_id')
+                                                                        | Company
+                                                            tfoot
+                                                                tr
+                                                                    td
+                                                                    td
+                                                                    td
+                                                                    td
+                                                                    td
+                                                                    td
+                                                            tbody
+                                                                tr(data-id='4', style='')
+                                                                    td.o_readonly(data-field='product_id') [CARD] Graphics Card
+                                                                    td.o_readonly.o_list_number(data-field='qty', title='Quantity of products in this quant, in the default unit of measure of the product') 1.00
+                                                                    td.o_readonly(data-field='location_id') Virtual Locations/Scrapped
+                                                                    td.o_readonly(data-field='in_date') 01/28/2017 19:22:52
+                                                                    td.o_readonly.o_list_number(data-field='inventory_value') 876.00
+                                                                    td.o_readonly(data-field='company_id', title='The company to which the quants belong') Alupak Industriess
+                                                                tr(data-id='15', style='')
+                                                                    td.o_readonly(data-field='product_id') [CARD] Graphics Card
+                                                                    td.o_readonly.o_list_number(data-field='qty', title='Quantity of products in this quant, in the default unit of measure of the product') 3.00
+                                                                    td.o_readonly(data-field='location_id') WH/Stock/Shelf 2
+                                                                    td.o_readonly(data-field='in_date') 01/28/2017 19:22:52
+                                                                    td.o_readonly.o_list_number(data-field='inventory_value') 2,628.00
+                                                                    td.o_readonly(data-field='company_id', title='The company to which the quants belong') Alupak Industriess
+                                                                tr(data-id='19', style='')
+                                                                    td.o_readonly(data-field='product_id') [CARD] Graphics Card
+                                                                    td.o_readonly.o_list_number(data-field='qty', title='Quantity of products in this quant, in the default unit of measure of the product') 12.00
+                                                                    td.o_readonly(data-field='location_id') WH/Stock/Shelf 2
+                                                                    td.o_readonly(data-field='in_date') 01/28/2017 19:22:52
+                                                                    td.o_readonly.o_list_number(data-field='inventory_value') 10,512.00
+                                                                    td.o_readonly(data-field='company_id', title='The company to which the quants belong') Alupak Industriess
+                                                                tr
+                                                                    td(title='Product')  
+                                                                    td(title='Quantity')  
+                                                                    td(title='Location')  
+                                                                    td(title='Incoming Date')  
+                                                                    td(title='Inventory Value')  
+                                                                    td(title='Company')  

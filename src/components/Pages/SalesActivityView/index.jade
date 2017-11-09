@@ -1,0 +1,51 @@
+.salesactivityview
+    DashboardController(v-bind:heading="activities",v-bind:editbtn='true',v-bind:createbtn='true',v-bind:attachmentbtn='true',v-bind:actionbtn='true', v-bind:links="btnlinks")
+    .o_content(style='margin-left: -15px;margin-right: -15px;')
+        .o_form_view.o_form_nosheet.o_form_readonly(style='padding:0px')
+            .oe_title
+                label.o_form_label.o_form_label_help.oe_edit_only(for='o_field_input_354', data-original-title='', title='')
+                    | Message Type
+                h1
+                    span.o_form_field.o_form_required Email
+                    button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+            .o_group
+                table.o_group.o_inner_group.o_group_col_6
+                    tbody
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_empty.o_form_label_false
+                                    | Sales Team
+                            td(colspan='1', style='width: 100%;')
+
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false
+                                    | Description
+                            td(colspan='1', style='width: 100%;')
+                                span.o_form_textarea.o_form_field.o_form_field_empty
+                                textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 10px;')
+                                button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_357', data-original-title='', title='')
+                                    | Number of days
+                            td(colspan='1', style='width: 100%;')
+                                span.o_form_field.o_form_field_number 0
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help.o_form_label_false(for='o_field_input_358', data-original-title='', title='')
+                                    | Default
+                            td(colspan='1', style='width: 100%;')
+                                .o_checkbox.o_form_field_boolean.o_form_field
+                                    input(type='checkbox', name='default', disabled='')
+                                    span
+                table.o_group.o_inner_group.o_group_col_6
+                    tbody
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_empty
+                                    | Recommended Next Activities
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_many2manytags.o_form_field.o_form_field_empty
+
+

@@ -1,0 +1,133 @@
+.o_content(style='margin-left:-15px;margin-right:-15px;')
+    .o_view_manager_content
+        .o_form_view.o_form_readonly
+            header
+                button.btn.btn-sm(type='button')
+                    span Cancel
+                button.btn.btn-sm.o_form_invisible(type='button')
+                    span Reopen Request
+                ul.oe_form_field_status.oe_form_status_clickable.o_form_field
+                    li(data-id='1')
+                        span.label New Request
+                        span.arrow
+                            span
+                    li(data-id='2')
+                        span.label In Progress
+                        span.arrow
+                            span
+                    li(data-id='4')
+                        span.label Scrap
+                        span.arrow
+                            span
+                    li.oe_active(data-id='3')
+                        span.label Repaired
+                        span.arrow
+                            span
+                    
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .o_form_invisible(attrs="{'invisible': [('archive', '=', False)]}")
+                        span.label.label-warning.pull-right Canceled
+                    .oe_right
+                        .btn-group.o_kanban_selection.oe_inline.o_form_field.o_form_required
+                            a(data-toggle='dropdown', href='#')
+                                span.oe_kanban_status
+                            ul.dropdown-menu.state(role='menu')
+                                li(data-value='blocked')
+                                    a(href='#')
+                                        span.oe_kanban_status.oe_kanban_status_red
+                                        |             Blocked
+                                li(data-value='done')
+                                    a(href='#')
+                                        span.oe_kanban_status.oe_kanban_status_green
+                                        |             Ready for next stage
+                    .oe_title
+                        label.o_form_label.oe_edit_only
+                            | Subject
+                        h1
+                            span.o_form_field.o_form_required Touchpad not working
+                    .o_group
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Requested By
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field(href='#') Demo User
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Equipment
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field(href='#') HP Laptop/LP/305/17281718
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible
+                                            | Category
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_invisible(href='#') Computers
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible
+                                            | Request Date
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field_date.o_form_field.o_form_invisible 02/18/2017
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible
+                                            | Close Date
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field_date.o_form_field.o_form_invisible 04/11/2017
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_false(for='o_field_input_10', data-original-title='', title='')
+                                            | Archive
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                            input#o_field_input_10(type='checkbox', name='archive', disabled='')
+                                            span
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Maintenance Type
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field Corrective
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Team
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_required(href='#') Internal Maintenance
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Responsible
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field(href='#') Demo User
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_empty.o_form_label_false
+                                            | Scheduled Date
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_row
+                                            span.o_form_field_date.o_form_field.o_form_field_empty
+                                            label.o_form_label
+                                                | for
+                                            span.oe_inline.o_form_field.o_form_field_number(data-original-title='', title='') 0.00
+                                            |  hours
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_empty.o_form_label_false
+                                            | Priority
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_priority.o_form_field.o_form_field_empty
+                                            a.o_priority_star.fa.fa-star-o(href='#', data-value='1', title='Low')
+                                            a.o_priority_star.fa.fa-star-o(href='#', data-value='2', title='Normal')
+                                            a.o_priority_star.fa.fa-star-o(href='#', data-value='3', title='High')
+                    span.o_form_textarea.o_form_field.o_form_field_empty
+
+
+

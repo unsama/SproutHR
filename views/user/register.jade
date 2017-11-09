@@ -1,0 +1,49 @@
+extends ../layout
+
+block content
+    div.row
+        div.col-md-4.offset-md-4
+            div.card
+                div.card-block
+                    if (messages.length > 0)
+                        div.alert.alert-danger
+                            for message in messages
+                                p.mb-0= message
+                    form(action='/user/register' method='post')
+                        div.form-group
+                            label(for='username') Username
+                            input.form-control#username(type='text' name='username')
+                        div.form-group
+                            label(for='password') Password
+                            input.form-control#password(type='password' name='password')
+                        div.form-group
+                            label(for='conpassword') Confirm Password
+                            input.form-control#conpassword(type='password' name='con_password')
+                        div.form-group
+                            label(for='email') Email
+                            input.form-control#email(type='email' name='email')
+                        div.form-group
+                            label(for='name') Full Name
+                            input.form-control#name(type='text' name='full_name')
+                        div.form-group
+                            label.custom-control.custom-radio
+                                input.custom-control-input(type='radio' value='male' name='gender')
+                                span.custom-control-indicator
+                                span.custom-control-description Male
+                            label.custom-control.custom-radio
+                                input.custom-control-input(type='radio' value='female' name='gender')
+                                span.custom-control-indicator
+                                span.custom-control-description FeMale
+                        div.form-group
+                            label.custom-control.custom-checkbox
+                                input.custom-control-input(type='checkbox' name='terms')
+                                span.custom-control-indicator
+                                span.custom-control-description i agree with&nbsp;
+                                    a(href='#') terms
+                        div.text-right
+                            button.btn.btn-success(type='submit') Register
+                            input(type='hidden' name='_csrf' value=csrfToken)
+            div.mt-2
+                p.m-0
+                    b already have an account?&nbsp;
+                    a(href='/user/login') login here

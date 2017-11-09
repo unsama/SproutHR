@@ -1,0 +1,116 @@
+.manufacturing_settings
+    .o_content.row
+        .o_view_manager_content
+            .o_form_view.oe_form_configuration.o_form_nosheet.o_form_editable
+                header
+                    button.btn.btn-sm.oe_highlight(type='button')
+                        span Apply
+                    button.btn.btn-sm.oe_link(type='button')
+                        span Cancel
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Project Management
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_invisible(for='o_field_input_81')
+                                    | Company
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_many2one.o_with_button.o_form_field.o_form_required.o_form_invisible
+                                    .o_form_input_dropdown
+                                        input#o_field_input_81.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                        span.o_dropdown_button(draggable='false')
+                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_82', data-original-title='', title='')
+                                    | Project Time Unit *
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_invisible(invisible='1')
+                                    .o_form_field_many2one.oe_inline.o_form_field.o_with_button
+                                        .o_form_input_dropdown
+                                            input#o_field_input_82.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                            span.o_dropdown_button(draggable='false')
+                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='')
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                    | Pads
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio89_0.o_form_radio(type='radio', name='radio89', value='0')
+                                        label.o_form_label(for='radio89_0') Task description is plain text
+                                    .o_radio_item
+                                        input#radio89_1.o_form_radio(type='radio', name='radio89', value='1')
+                                        label.o_form_label(for='radio89_1') Collaborative rich text on task description
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | Forecasts
+                            td(colspan='1', style='width: 100%;')
+                                div
+                                    div
+                                        .o_form_field.o_form_field_boolean
+                                            .o_checkbox.o_form_field_boolean
+                                                input#o_field_input_85(type='checkbox', name='module_project_forecast')
+                                                span
+                                        label.o_form_label(for='o_field_input_85')
+                                            | Forecasts, planning and Gantt charts
+                                        span.label.label-primary.oe_inline Enterprise
+                                        a(href='https://www.youtube.com/watch?v=PWKez0gn6Ts', target='_blank')  More Info
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                    | Rating on task
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio90_0.o_form_radio(type='radio', name='radio90', value='0')
+                                        label.o_form_label(for='radio90_0') No customer rating
+                                    .o_radio_item
+                                        input#radio90_1.o_form_radio(type='radio', name='radio90', value='1')
+                                        label.o_form_label(for='radio90_1') Track customer satisfaction on tasks
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Timesheets
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                    | Timesheets on Issues
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio91_0.o_form_radio(type='radio', name='radio91', value='0')
+                                        label.o_form_label(for='radio91_0') Do not track working hours on issues
+                                    .o_radio_item
+                                        input#radio91_1.o_form_radio(type='radio', name='radio91', value='1')
+                                        label.o_form_label(for='radio91_1') Activate timesheets on issues
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Helpdesk & Support
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                    | Rating on issue
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input#radio92_0.o_form_radio(type='radio', name='radio92', value='0')
+                                        label.o_form_label(for='radio92_0') No customer rating
+                                    .o_radio_item
+                                        input#radio92_1.o_form_radio(type='radio', name='radio92', value='1')
+                                        label.o_form_label(for='radio92_1') Track customer satisfaction on issues
+                div
+                    span (*) This configuration is related to the company you're logged into.
+
+
+

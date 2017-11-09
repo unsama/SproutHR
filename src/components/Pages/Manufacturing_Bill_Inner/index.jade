@@ -1,0 +1,165 @@
+._manufacturing_product_inner
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:createbtn='true',v-bind:editbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false',v-bind:dropdownbtn1='false',v-bind:dropdownbtn2='false',v-bind:dropdownbtn3='false',v-bind:actionbtn='true',v-bind:Attachmentbtn='true',v-bind:printbtn='true')
+    .o_content(style='height:89vh;overflow:auto;')
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .container
+                            .o_form_sheet_bg
+                                .oe_button_box(name='button_box')
+                                    button.btn.btn-sm.oe_stat_button(type='button')
+                                        .fa.fa-fw.fa-archive.o_button_icon
+                                        .o_stat_info.o_form_field(data-original-title='', title='')
+                                            span.o_stat_text.o_not_hover.text-success Active
+                                            span.o_stat_text.o_hover.text-danger Archive
+
+                                .o_group
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Product
+                                                td(colspan='1', style='width: 100%;')
+                                                    a.o_form_uri.o_form_field.o_form_required(href='#') [FURN001] Computer Desk
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(data-original-title='', title='')
+                                                        | Product Variant
+                                                td(colspan='1', style='width: 100%;')
+                                                    a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Quantity
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_row
+                                                        span.o_form_field.o_form_required.o_form_field_number 1.00
+                                                        span.o_form_field.o_form_required.o_form_invisible(data-original-title='', title='') Unit(s)
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(data-original-title='', title='')
+                                                        | Routing
+                                                td(colspan='1', style='width: 100%;')
+                                                    a.o_form_uri.o_form_field.o_form_invisible(href='#') Assemble Furniture
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_empty.o_form_label_false
+                                                        | Reference
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.o_form_field.o_form_field_empty
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                        | BoM Type
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.o_form_field.o_form_required Manufacture this product
+                                            tr
+                                                td(colspan='2', style='width: 100%;')
+                                                    p.oe_grey.o_form_invisible(colspan='2', attrs="{'invisible': [('type','=','normal')]}")
+                                                        | When processing a sales order for this product, the delivery order
+                                                        | will contain the raw materials, instead of the finished product.
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Company
+                                                td(colspan='1', style='width: 100%;')
+                                                    a.o_form_uri.o_form_field.o_form_required(href='#') Alupak Industriess
+
+                                .row
+                                    .col-md-12.kachraytabs
+                                        .o_notebook(style='margin-top:0px;')
+                                            ul.nav.nav-tabs(role='tablist')
+                                                li.nav-item
+                                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Components
+                                                li.nav-item
+                                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') Miscellaneous
+                                            // Tab panes
+                                        .tab-content
+                                            #profile.tab-pane.fade.in.active(role='tabpanel')
+                                                .table-responsive
+                                                    table.o_list_view.table.table-condensed.table-striped
+                                                        thead
+                                                            tr
+                                                                th.o_column_sortable(data-id='sequence', width='1')
+                                                                    span
+                                                                th.o_column_sortable(data-id='product_id')
+                                                                    | Product
+                                                                th(data-id='action_see_attachments')
+                                                                th(data-id='action_see_attachments')
+                                                                th.o_column_sortable(data-id='product_qty')
+                                                                    | Product Quantity
+                                                        tfoot
+                                                            tr
+                                                                td
+                                                                td
+                                                                td
+                                                                td
+                                                                td
+                                                        tbody.ui-sortable
+                                                            tr(data-id='11', style='')
+                                                                td.o_readonly.o_list_number.o_handle_cell(data-field='sequence', title='Gives the sequence order when displaying.')
+                                                                    span
+                                                                td(data-field='product_id') [FURN002] Table Head
+                                                                td.o_list_button(data-field='action_see_attachments')
+                                                                td.o_list_button(data-field='action_see_attachments')
+                                                                    button.o_icon_button(type='button')
+                                                                        i.fa.fa-file(style='color: #4c4c4c;')
+                                                                td.o_list_number(data-field='product_qty') 1.000
+                                                            tr(data-id='12', style='')
+                                                                td.o_readonly.o_list_number.o_handle_cell(data-field='sequence', title='Gives the sequence order when displaying.')
+                                                                    span
+                                                                td(data-field='product_id') [FURN003] Table Leg
+                                                                td.o_list_button(data-field='action_see_attachments')
+                                                                td.o_list_button(data-field='action_see_attachments')
+                                                                    button.o_icon_button(type='button')
+                                                                        i.fa.fa-file(style='color: #4c4c4c;')
+                                                                td.o_list_number(data-field='product_qty') 4.000
+                                                            tr(data-id='13', style='')
+                                                                td.o_readonly.o_list_number.o_handle_cell(data-field='sequence', title='Gives the sequence order when displaying.')
+                                                                    span
+                                                                td(data-field='product_id') [FURN004] Bolt
+                                                                td.o_list_button(data-field='action_see_attachments')
+                                                                td.o_list_button(data-field='action_see_attachments')
+                                                                    button.o_icon_button(type='button')
+                                                                        i.fa.fa-file(style='color: #4c4c4c;')
+                                                                td.o_list_number(data-field='product_qty') 4.000
+                                                            tr
+                                                                td(title='')  
+                                                                td(title='Product')  
+                                                                td(title='undefined')  
+                                                                td(title='undefined')  
+                                                                td(title='Product Quantity')  
+                                            #buzz.tab-pane.fade.in(role='tabpanel')
+                                                .o_group
+                                                    table.o_group.o_inner_group.o_group_col_6
+                                                        tbody
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                                        | Sequence
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    span.o_form_field.o_form_field_number 3
+                                                    table.o_group.o_inner_group.o_group_col_6
+                                                        tbody
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label
+                                                                        | Manufacturing Readiness
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    span.o_form_field.o_form_required The components of 1st operation
+                                                            tr
+                                                                td.o_td_label(colspan='1')
+                                                                    label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false(data-original-title='', title='')
+                                                                        | Operation
+                                                                td(colspan='1', style='width: 100%;')
+                                                                    a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+
+
+
+
+        Message
+        Request_quotation_lower

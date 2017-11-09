@@ -1,0 +1,132 @@
+.salespricelists
+    DashboardController(v-bind:discardbtn='true',v-bind:heading="pricelists",v-bind:savedbtn='true', v-bind:links="btnlinks",v-bind:num1='false',v-bind:num2='false',v-bind:paginbtn1='false',v-bind:paginbtn2='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false')
+    Modal(v-bind:close='true',v-bind:heading="modal",v-bind:modal='"bd-example-modal-lg"')
+        .modal-body.o_act_window(style='margin-left: -29px;margin-right: -30px;margin-top: -29px;')
+            .o_form_view.o_form_editable
+                header
+                    button.btn.btn-sm(type='button')
+                        span View Rates
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                .o_stat_info.o_form_field
+                                    span.o_stat_text.o_not_hover.text-success Active
+                                    span.o_stat_text.o_hover.text-danger Deactivate
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help
+                                            | Currency
+                                    td(colspan='1', style='width: 50%;')
+                                        input#o_field_input_394.o_form_input.o_form_field.o_form_required(maxlength='3', type='text')
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help
+                                            | Current Rate
+                                    td(colspan='1', style='width: 50%;')
+                                        span.o_form_field.o_form_field_number 1.283400
+                        .o_group.o_form_invisible
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Price Accuracy
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_396')
+                                                | Rounding Factor
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_396.o_form_input.o_form_field.o_form_field_number(type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Decimal places
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_field_number 2
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Display
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_398', data-original-title='', title='')
+                                                | Symbol
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_398.o_form_input.o_form_field.o_form_required(type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_399', data-original-title='', title='')
+                                                | Symbol Position
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_399.o_form_input.o_form_field(name='position')
+                                                option(value='false')
+                                                option(value='"after"') After Amount
+                                                option(value='"before"') Before Amount
+
+    .o_content(style='margin-left: -15px;margin-right: -15px;')
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                .o_stat_info.o_form_field(data-original-title='', title='')
+                                    span.o_stat_text.o_not_hover.text-success Active
+                                    span.o_stat_text.o_hover.text-danger Archive
+                        .oe_title
+                            h1
+                                input.o_form_input.o_form_field.o_form_required.topinput(placeholder='e.g. USD Retailers', type='text')
+                                button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible
+                                            | Discount policy
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_radio.o_vertical.o_form_field.o_form_invisible
+                                            .o_radio_item
+                                                input#radio59_with_discount.o_form_radio(type='radio', name='radio59', value='with_discount')
+                                                label.o_form_label(for='radio59_with_discount') Discount included in the price
+                                            .o_radio_item
+                                                input#radio59_without_discount.o_form_radio(type='radio', name='radio59', value='without_discount')
+                                                label.o_form_label(for='radio59_without_discount') Show public price & discount to the customer
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Currency
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                            select.selectb
+                                                option(value='volvo') ERU
+                                                option(value='saab') AED
+                                                option(value='mercedes') USD
+                                                option(value='audi') RS
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button',data-toggle='modal', data-target='.bd-example-modal-lg')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Company
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_form_field
+                                            select.selectb
+                                                option(value='volvo') Alupak Industriess
+                                                option(value='saab') My Company;wojjfp;ofo, Chicago
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Country Groups
+                                    td
+                                        .tableset
+                                            TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter")
+
+

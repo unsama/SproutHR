@@ -1,0 +1,62 @@
+.o_form_view
+    .o_group.mt0
+        label.o_form_label.o_form_invisible.o_group_col_6
+            | Sales Team
+        .o_form_field_many2one.o_group_col_6.o_form_field.o_form_invisible.o_with_button
+            .o_form_input_dropdown
+                input#o_field_input_194.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                span.o_dropdown_button(draggable='false')
+            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='')
+        label.o_form_label.o_form_invisible.o_group_col_6(for='o_field_input_195')
+            | Lead
+        .o_form_field_many2one.o_with_button.o_group_col_6.o_form_field.o_form_required.o_form_invisible
+            .o_form_input_dropdown
+                input#o_field_input_195.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                span.o_dropdown_button(draggable='false')
+            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+        label.o_form_label.o_form_invisible.o_group_col_6(for='o_field_input_196')
+            | Previous Activity
+        .o_form_field_many2one.o_group_col_6.o_form_field.o_form_invisible
+            .o_form_input_dropdown
+                input#o_field_input_196.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                span.o_dropdown_button(draggable='false')
+            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+        table.o_group.o_inner_group.o_group_col_6
+            tbody
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label(for='o_field_input_197')
+                            | Activity
+                    td(colspan='1', style='width: 100%;')
+                        .o_form_field_many2one.o_form_field
+                            .o_form_input_dropdown
+                                input#o_field_input_197.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                span.o_dropdown_button(draggable='false')
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label
+                            | Next Activity Date
+                    td(colspan='1', style='width: 100%;')
+                        .o_datepicker.o_form_field_date.o_form_field
+                            input.o_datepicker_input.o_form_input(type='text', name='date_action')
+                            span.o_datepicker_button
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label(for='o_field_input_199')
+                            | Summary
+                    td(colspan='1', style='width: 100%;')
+                        input#o_field_input_199.o_form_input.o_form_field(placeholder='e.g. Discuss proposal', type='text')
+        table.o_group.o_inner_group.o_group_col_6
+            tbody
+                tr
+                    td(colspan='1', style='width: 50%;')
+                        div
+                            p
+                                strong Recommended activities:
+                            .o_form_field_radio.o_vertical.o_recommended_activity.o_form_field
+                                .o_radio_item
+                                    input#radio200_6.o_form_radio(type='radio', name='radio200', value='6')
+                                    label.o_form_label(for='radio200_6') Call for Demo
+                                .o_radio_item
+                                    input#radio200_3.o_form_radio(type='radio', name='radio200', value='3')
+                                    label.o_form_label(for='radio200_3') Task

@@ -1,0 +1,91 @@
+.test
+    .row
+
+        nav.navbar.navbar-toggleable-md.navbar-light.bg-faded#nav-main
+            button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation' style='background-color: white;')
+                span.navbar-toggler-icon
+            #navbarSupportedContent.collapse.navbar-collapse.mobilenav(style='padding-top: 22px;')
+                ul#main.navbar-nav.mr-auto(style='padding-top: 13px !important;')
+                    li.nav-item.active
+                        a.nav-link.menunames(href='/discuess')
+                            | Discuss
+                            span.sr-only (current)
+                    li.nav-item
+                        a.nav-link.menunames(href='/calendar') Calendar
+                    li.nav-item
+                        a.nav-link.menunames(href='/contact') Contacts
+                    li.nav-item
+                        a.nav-link.menunames(href='/sales') Sale
+                    li.nav-item
+                        a.nav-link.menunames(href='/pointofsale') Point of sale
+                    li.nav-item
+                        a.nav-link.menunames(href='/purchase') Purchases
+                    li.nav-item
+                        a.nav-link.menunames(href='/inventory') Inventory
+                    li.nav-item
+                        a.nav-link.menunames(href='/manufacturing') Manufacturing
+                    li.nav-item
+                        a.nav-link.menunames(href='/repairs') Repairs
+                    li.nav-item
+                        a.nav-link.menunames(href='/accounting') Accounting
+                    li.nav-item
+                        a.nav-link.menunames(href='/projects') Projects
+                    li.nav-item
+                        a.nav-link.menunames(href='/timesheet') Timesheets
+                    li.nav-item
+                        a.nav-link.menunames(href='/massmailing') Mass Mailing
+                    li.nav-item
+                        a.nav-link.menunames(href='/employees') Employees
+                    li.nav-item
+                        a.nav-link.menunames(href='/recruitment') Recruitment
+                    li.nav-item
+                        a.nav-link.menunames(href='/attendance') Attendances
+                    li.nav-item
+                        a.nav-link.menunames(href='/leaves') Leaves
+                    li.nav-item
+                        a.nav-link.menunames(href='/expenses') Expenses
+                    li.nav-item
+                        a.nav-link.menunames(href='/maintenance') Maintenance
+                    li.nav-item
+                        a.nav-link.menunames(href='/fleets') Fleet
+                    li.nav-item
+                        a.nav-link.menunames(href='/dashboards') Dashboard
+                    li.nav-item
+                        a.nav-link.menunames(href='/setting') Settings
+                    li.nav-item
+                        a.nav-link.menunames(href='/notes') Notes
+                    li.nav-item
+                        a.nav-link.menunames(href='#') Apps
+
+
+                    li.dropdown.more(data-width='80')
+                        a.dropdown-toggle(id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href='#' style="font-size:13px;") More
+                        ul.dropdown-menu(aria-labelledby="dropdownMenuButton" style='top: 35px !important;')
+
+                ul.rightmenus(style='list-style-type:none;display: inherit;')
+                    li.progress(style='width: 68px;height: 17px;margin-top: 24px;')
+                        .progress-bar(role='progressbar', aria-valuenow='0', aria-valuemin='0', aria-valuemax='100')
+                    li.menuattag(style='margin-top: 20px;padding-left: 25px;')
+                        i.fa.fa-at.samoat
+                    li.menuptag(style='margin-top: 23px;padding-left: 3px;font-size: 14px;color:#d9d9d9;')
+                        p 21
+                    li.menucomment(style='margin-top: 23px;padding-left: 12px;font-size: 13px;')
+                        i.fa.fa-comment.samocomment
+
+
+                    li.dropdown(style='margin-top: 14px;padding-left:29px;padding-right:19px;color:#d9d9d9;')
+                        button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle.profilebtn(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                            img.img-circle.oe_topbar_avatar.samoimg(src='images/image.png')
+                            | Administrator
+                        .dropdown-menu(aria-labelledby='dropdownMenuButton' style='top: 31px !important;')
+                            a.dropdown-item(href='#' style='color: black !important;') Documentation
+                            a.dropdown-item(href='#' style='color: black !important;border-bottom:1px solid grey;') support
+                            a.dropdown-item(href='#' style='color: black !important;') References
+                            a.dropdown-item(href='#' style='color: black !important;') Sprout My Account
+                            a.dropdown-item(href='#' style='color: black !important;') Log out
+
+    .discuss
+        router-view
+
+
+

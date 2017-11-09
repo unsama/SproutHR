@@ -1,0 +1,300 @@
+.request_quotation_inner
+    DashboardController(v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks", v-bind:heading="head")
+    Modal(v-bind:save='true',v-bind:discard='true',v-bind:heading="modal",v-bind:modal='"bd-example-modal-lgg21"')
+    Modal(v-bind:save='true',v-bind:discard='true',v-bind:heading='modal',v-bind:modal='"bd-example-modal-lgg22"')
+        .modal-body.o_act_window
+            .o_form_view.o_form_editable(style='margin-top: -30px;width: 106%;margin-left: -29px;')
+                header
+                    button.btn.btn-sm.oe_highlight.o_form_invisible(type='button')
+                        span Capture Transaction
+                    button.btn.btn-sm.o_form_invisible(type='button')
+                        span Void Transaction
+                    ul.oe_form_field_status.oe_form_status_clickable.o_form_field.o_form_required
+                        li.oe_active(data-id='draft')
+                            span.label Draft
+                            span.arrow
+                                span
+                        li(data-id='pending')
+                            span.label Pending
+                            span.arrow
+                                span
+                        li(data-id='authorized')
+                            span.label Authorized
+                            span.arrow
+                                span
+                        li(data-id='done')
+                            span.label Done
+                            span.arrow
+                                span
+                        li(data-id='error')
+                            span.label Error
+                            span.arrow
+                                span
+                        li(data-id='cancel')
+                            span.label Canceled
+                            span.arrow
+                                span
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help
+                                                | Reference
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_79.o_form_input.o_form_field.o_form_required(type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help
+                                                | Amount
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_row
+                                                input#o_field_input_80.o_form_input.oe_inline.o_form_field.o_form_required.o_form_field_number(type='text')
+                                                .o_form_field_many2one.oe_inline.o_form_field.o_form_required
+                                                    .o_form_input_dropdown
+                                                        input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off',style='width: 141px;')
+                                                        span.o_dropdown_button(draggable='false')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_81', data-original-title='', title='')
+                                                | Fees
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_81.o_form_input.o_form_field.o_form_field_number(type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_82')
+                                                | Partner
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_82.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Customer Details
+                                        td(colspan='1', style='width: 100%;')
+                                            div(name='partner_details')
+                                                input.o_form_input.o_form_field(placeholder='Name', type='text')
+                                                input.o_form_input.o_form_field(placeholder='Address', type='text')
+                                                .o_row
+                                                    input.o_form_input.oe_inline.o_form_field(placeholder='ZIP', type='text')
+                                                    input.o_form_input.oe_inline.o_form_field(placeholder='City', type='text')
+                                                .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                    .o_form_input_dropdown
+                                                        input.o_form_input.ui-autocomplete-input(type='text', placeholder='Country', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: block;',data-toggle='modal', data-target='.bd-example-modal-lgg23')
+                                                select.o_form_input.o_form_field(name='partner_lang')
+                                                    option(value='false')
+                                                    option(value='"am_ET"') Amharic / አምሃርኛ
+                                                    option(value='"ar_SY"') Arabic / الْعَرَبيّة
+                                                    option(value='"da_DK"') Danish / Dansk
+                                                    option(value='"en_US"') English
+                                                input.o_form_input.o_form_field(placeholder='E-mail', type='text')
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_84')
+                                                | Acquirer
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_84.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: block;',data-toggle='modal', data-target='.bd-example-modal-lgg24')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_85')
+                                                | Payment Token
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_85.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_86', data-original-title='', title='')
+                                                | Acquirer Reference
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_86.o_form_input.o_form_field(type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_87')
+                                                | Creation Date
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field_date.o_form_field 03/07/2017 19:18:25
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Validation Date
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_datepicker.o_form_field_date.o_form_field
+                                                input.o_datepicker_input.o_form_input(type='text', name='date_validate')
+                                                span.o_datepicker_button
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td(colspan='2', style='width: 100%;')
+                                        .o_horizontal_separator
+                                            | Message
+                                tr
+                                    td(colspan='1', style='width: 50%;')
+                                        textarea.o_form_textarea.o_form_field(rows='6', name='state_message', data-original-title='', title='')
+                                        textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 0px;')
+                        .o_notebook
+                            ul.nav.nav-tabs(role='tablist')
+                                li.active
+                                    a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_89')
+                                        | Paypal TX Details
+                            .tab-content.nav.nav-tabs
+                                #notebook_page_89.tab-pane.active(role='tabpanel')
+                                    table.o_group.o_inner_group
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_90')
+                                                        | Transaction type
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_90.o_form_input.o_form_field(type='text')
+
+    Modal(v-bind:save='true',v-bind:discard='true',v-bind:heading="modal",v-bind:modal='"bd-example-modal-lgg23"')
+    Modal(v-bind:save='true',v-bind:discard='true',v-bind:heading="modal",v-bind:modal='"bd-example-modal-lgg24"')
+    .o_content.samocontent#tax1(style='margin-left:-15px; margin-right:-15px;')
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                header
+                    button.btn.btn-sm.oe_highlight(type='button')
+                        span Confirm
+                    button.btn.btn-sm.oe_highlight.o_form_invisible(type='button')
+                        span Capture Transaction
+                    button.btn.btn-sm.o_form_invisible(type='button')
+                        span Void Transaction
+                    ul.oe_form_field_status.oe_form_status_clickable.o_form_field.o_form_required
+                        li.oe_active(data-id='draft')
+                            span.label Draft
+                            span.arrow
+                                span
+                        li(data-id='pending')
+                            span.label Posted
+                            span.arrow(style='color: transparent;')
+                                span
+                        li(data-id='authorized')
+                            span.label Reconciled
+                            span.arrow
+                                span
+
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .row
+
+                            table.o_group.o_inner_group
+                                tbody(style='line-height: 2.5;')
+
+                                    tr
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label(style='font-size: 0.9rem; padding-left: 13px;')
+                                                | Payment Type
+                                        td.two(colspan='1', style='width: 50%;')
+                                            div
+                                                .o_form_field_radio.o_vertical.o_form_field
+                                                    .o_radio_item
+                                                        input#radio41_0.o_form_radio(type='radio', name='radio41', value='0')
+                                                        label.o_form_label(for='radio41_0')
+                                                            | Send Money
+                                                    .o_radio_item
+                                                        input#radio41_1.o_form_radio(type='radio', name='radio41', value='1')
+                                                        label.o_form_label(for='radio41_1') Recieve Money
+                                                    .o_radio_item
+                                                        input#radio41_1.o_form_radio(type='radio', name='radio41', value='1')
+                                                        label.o_form_label(for='radio41_1') Internal Transfer
+
+
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label
+                                                | Payment Date
+                                        td.two(colspan='1', style='width: 50%;')
+                                            form#dateRangeForm.form-horizontal(method='post')
+                                                .form-group
+                                                    #dateRangePicker.input-group.input-append.date
+                                                        input.input-group-addon.form-control(type='text', name='date', style='background-color: #D2D2FF; height: 25px; width: 250px;  text-align: left;  margin-right: 10px;')
+
+
+
+
+
+                                    tr
+                                        td.o_td_label.one(colspan='1')
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                .o_form_input_dropdown(style='')
+                                                    select#o_field_input_176.o_form_input.o_form_field(style='width:172px;')(name='format')
+                                                        option(value='true') Customer
+                                                        option(value='') Vendor
+                                        td.two(colspan='1', style='width: 50%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                .o_form_input_dropdown(style='')
+                                                    select#o_field_input_176.o_form_input.o_form_field(style='width:151px;')(name='format')
+                                                        option(value='true') Administrators, Pieter Parter's Farm
+                                                        option(value='') My Company;wojjfp;ofo, Chicago
+
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(style='background-color: transparent; !important')(draggable='false', tabindex='-1', type='button',data-toggle='modal', data-target='.bd-example-modal-lgg21')
+
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label(style='font-size: 0.8rem;')
+                                                | Memo
+                                        td.two(colspan='1', style='width: 50%;')
+                                            input#o_field_input_87.o_form_input.o_form_field(style=' height: 24px; ')( type='text')
+
+                                    tr
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label(style='padding-left: 13px;')
+                                                | Payment Journal
+                                        td.two(colspan='1', style='width: 50%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                .o_form_input_dropdown(style='')
+                                                    select#o_field_input_176.o_form_input.o_form_field(style='width:172px;')(name='format')
+                                                        option(value='true') Bank (EUR)
+                                                        option(value='') Cash(EUR)
+
+                                        td.o_td_label.one(colspan='1')
+
+                                        td.two(colspan='1', style='width: 50%;')
+
+                                    tr
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label(style='padding-left: 13px;')
+                                                | Payment Amount
+                                        td.two(colspan='1', style='width: 50%;')
+                                            input#o_field_input_87.o_form_input.o_form_field(style='width: 37%; height: 24px; background-color: #D2D2FF;')(value='0.00', type='text')
+                                            select#o_field_input_176.o_form_input.o_form_field(style='width: 51%; background-color: #D2D2FF;')(name='format')
+                                                option(value='true') EUR
+                                                option(value='') AED
+
+
+                                        td.o_td_label.one(colspan='1')
+
+                                        td.two(colspan='1', style='width: 50%;')
+
+                                    tr
+                                        td.o_td_label.one(colspan='1')
+                                            label.o_form_label(style='padding-left: 13px;')
+                                                | Payment Transaction
+                                        td.two(colspan='1', style='width: 50%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                .o_form_input_dropdown(style='')
+                                                    select#o_field_input_176.o_form_input.o_form_field(style='width:151px;')(name='format')
+                                                        option(value='true') gg
+                                                        option(value='') Create & Edit
+
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(style='background-color: transparent; !important')(draggable='false', tabindex='-1', type='button',data-toggle='modal', data-target='.bd-example-modal-lgg22')
+
+
+                                        td.o_td_label.one(colspan='1')
+
+                                        td.two(colspan='1', style='width: 50%;')
+

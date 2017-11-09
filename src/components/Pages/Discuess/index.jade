@@ -1,0 +1,137 @@
+.Discuess
+    dashconterller(v-bind:heading="nextactivity",v-bind:validatebtn='false',v-bind:Markbtn='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn3='true',v-bind:importbtn='false',v-bind:cancelbtn='false', v-bind:links="btnlinks",v-bind:searchbar='true',v-bind:num1='false',v-bind:num2='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:fifthbtn='false')
+    .khalikaro
+        .row
+
+            .col-md-12(style='margin-left: -5px;')
+                .row
+                    .col-md-5(style='')
+                        hr(style='color:black;')
+                    .col-md-1(style='')
+                        h1(style='font-size: 13px;') Today
+                    .col-md-6(style='')
+                        hr(style='color:black;')
+
+
+
+
+                .row
+                    .col-sm-0
+                        .o_thread_message_sidebar
+                            img.o_thread_message_avatar(src='/images/placeholder.png')
+                    .col-sm-6
+                        .o_thread_message_core
+                            p.o_mail_info
+                                strong
+                                    a.o_mail_mailto(href='mailto:logan_expert@gmail.example.com?subject=Re: Inquiry')
+                                        | logan_expert@gmail.example.com
+                                |                     -
+                                small.o_mail_timestamp(title='Wed Mar 08 2017 14:40:31 GMT+0500') a month ago
+                                |                         on
+                                a(data-oe-id='93', data-oe-model='crm.lead', href='http://192.168.25.104:8069/mail/view?message_id=1064') Product Catalog
+                                span
+                                    i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='1064')
+                                    i.fa.fa-reply.o_thread_message_reply(title='Reply', data-message-id='1064')
+                                    i.fa.fa-check.o_thread_message_needaction(title='Mark as Read', data-message-id='1064')
+                            p
+                                | Hi,
+                                br
+                                | Could you send me your product catalogue please ?
+                                br
+                                | Regards,
+                                br
+                                | David Logan
+                                br
+                                | ESM Expert
+                                br
+
+
+
+
+    //.nav-side-menu
+        i.fa.fa-bars.fa-2x.toggle-btn(data-toggle='collapse', data-target='#menu-content')
+        .row
+            .col-sm-12
+                .row.hcolor
+                    .col-sm-4.offset-sm-1
+                        .o_mail_chat_channel_item.o_active(data-channel-id='channel_inbox')
+                            span.o_channel_name
+                                i.fa.fa-at
+                                |  Inbox
+                    .col-sm-2.offset-sm-4
+                        span.o_mail_sidebar_needaction.badge
+                            | 5
+                .row.hcolor(style='padding-top: 2px;')
+                    .col-sm-4.offset-sm-1
+                        .o_mail_chat_channel_item(data-channel-id='channel_starred')
+                            span.o_channel_name
+                                i.fa.fa-star-o
+                                |  Starred
+                    .col-sm-2.offset-sm-4
+                        span.o_mail_sidebar_needaction.badge
+                            | 1
+                .row
+                    .col-sm-4.offset-sm-1
+                        .o_mail_sidebar_title
+                            h4.o_mail_open_channels Channels
+                    .col-sm-2.offset-sm-4
+                        span.fa.fa-plus.o_add(v-on:click='t=true',style='padding-top: 15px;margin-left: 5px;',title='Add', data-type='public')
+
+                .row.hcolor
+                    .col-sm-4.offset-sm-1
+                        .o_mail_chat_channel_item(data-channel-id='8', title='Projects & Tasks')
+                            span.o_channel_name
+                                span.o_mail_hash #
+                                |     Public
+                    .col-sm-2.offset-sm-4
+                        span.fa.fa-times.o_mail_partner_unpin(title='Leave this channel', data-channel-id='8')
+                .row(style='' v-show='t')
+                    .col-sm-9.offset-sm-1
+                        .o_mail_add_channel(data-type='public')
+                            input.ui-autocomplete-input(type='text', placeholder='#Add a channel', autocomplete='off')
+
+                .row
+                    .col-sm-8.offset-sm-1
+                        .o_mail_sidebar_title
+                            h4 Direct Messages
+                    .col-sm-2.offset-sm-0
+                        span.fa.fa-plus.o_add(v-on:click='r=true',style='padding-top: 15px;margin-left: 5px;',title='Add', data-type='dm')
+                .row.hcolor
+                    .col-sm-4.offset-sm-1
+                        span.o_channel_name
+                            span
+                                i.o_mail_user_status.fa.fa-circle-o(title='Offline')
+                            |                     Mavia
+                    .col-sm-2.offset-sm-4
+                        span.fa.fa-times.o_mail_partner_unpin(title='Leave this channel', data-channel-id='9')
+                .row(style='' v-show='r')
+                    .col-sm-9.offset-sm-1
+                        .o_mail_add_channel(data-type='public')
+                            input.ui-autocomplete-input(type='text', placeholder='#Open Chat', autocomplete='off')
+                .row
+                    .col-sm-8.offset-sm-1
+                        .o_mail_sidebar_title
+                            h4 Private Channels
+                    .col-sm-2.offset-sm-0
+                        span.fa.fa-plus.o_add(onclick="document.getElementById('.row.k').style.display='none'" ,style='padding-top: 15px;margin-left: 5px;',title='Add', data-type='private')
+                .row.hcolor
+                    .col-sm-4.offset-sm-1
+                        .o_mail_chat_channel_item(data-channel-id='5', title='general')
+                            span.o_channel_name
+                                span.o_mail_hash #
+                                |                     general
+                    .col-sm-2.offset-sm-4
+                        span.fa.fa-times.o_mail_partner_unpin(title='Leave this channel', data-channel-id='5')
+                .row.k(style='display: block;')
+                    .col-sm-9.offset-sm-1
+                        .o_mail_add_channel(data-type='public')
+                            input.ui-autocomplete-input(type='text', placeholder='#Add a channel', autocomplete='off')
+
+
+
+
+
+
+
+
+

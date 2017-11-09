@@ -1,0 +1,12 @@
+div.col-md-4.col-sm-6.mb-5
+    div.card.p-2
+        img.card-img-top.img-thumbnail(src='#{product.imagePath}' alt='Product Img')
+        div.card-block
+            h4.card-title= product.title
+            p.card-text= product.description
+            div.float-right
+                div.d-flex
+                    p.m-0.p-2.align-self-center
+                        b $#{product.price}
+                    div.p-2.align-self-center
+                        a.btn.btn-outline-success(href='#') Buy

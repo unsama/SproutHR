@@ -1,0 +1,54 @@
+.ReqStages
+    DashboardController(v-bind:createbtn='true',v-bind:actionbtn='true',v-bind:duplicatedropbtn='true',v-bind:deletedropbtn='true',v-bind:planorderbtn='true',v-bind:heading="nextactivity",v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true',v-bind:importbtn='true', v-bind:links="btnlinks", v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true')
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Stage
+        span.o_pager_value(slot='page') {{counter}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="select4()",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="select3()",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+    //Tabledrag(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefoot")
+    .table-responsive(style='margin-left:-15px;margin-right:-15px;width: 1982px;')
+
+        table.o_list_view.table.table-condensed.table-striped
+            thead
+                tr
+                    th.o_list_record_selector(width='1')
+                        .o_checkbox
+                            input(type='checkbox')
+                            span
+                    th.o_column_sortable(data-id='sequence', width='1')
+                        span.o_row_handle.fa.fa-arrows.invisible
+                    th.o_column_sortable(data-id='name')
+                        | Stage name
+                    th.o_column_sortable(data-id='fold')
+                        | Folded in Recruitment Pipes
+            tfoot
+                tr
+                    td
+                    td
+                    td
+                    td
+            tbody.ui-sortable(v-for="row in names")
+
+                    tr
+                        td.o_list_record_selector
+                            .o_checkbox
+                                input#mike.checkBoxClass(type='checkbox', v-bind:value='row.id', v-model='checkedNames')
+                                //input.checkBoxClass(name='radiogroup', type='checkbox')
+                                span
+
+                        td.o_readonly.o_list_number.o_handle_cell(data-field='sequence', title='Gives the sequence order when displaying a list of stages.')
+                            span.o_row_handle.fa.fa-arrows.ui-sortable-handle
+                        td
+                            router-link(v-bind:to="'Stages/'+row.id") {{row.name}}
+                        td
+                            .o_checkbox
+                                input(type='checkbox', v-model='row.folded.data[0]', disabled='disabled')
+                                span
+
+
+
+

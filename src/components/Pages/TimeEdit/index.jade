@@ -1,0 +1,528 @@
+.TimeEdit
+    DashboardController(v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+    Modal(v-bind:Ok='true',v-bind:cancel='true',v-bind:heading="modal12",v-bind:modal='"bd-example-modal-lg12"')
+        p The record has been modified, your changes will be discarded. Are you sure you want to leave this page ?
+    Modal(v-bind:saveclose='true',v-bind:discard='true',v-bind:heading="modal4",v-bind:modal='"bd-example-modal-lg4"')
+
+        .modal-body.o_act_window
+            .o_form_view.o_form_editable
+                header
+                    button.btn.btn-sm(type='button',data-toggle='modal', data-target='.bd-example-modal-lg12')
+                        span View Rates
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                .o_stat_info.o_form_field
+                                    span.o_stat_text.o_not_hover.text-success Active
+                                    span.o_stat_text.o_hover.text-danger Deactivate
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help(for='o_field_input_1235', data-original-title='', title='')
+                                            | Currency
+                                    td(colspan='1', style='width: 50%;')
+                                        input#o_field_input_1235.o_form_input.o_form_field.o_form_required(maxlength='3', type='text')
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                            | Current Rate
+                                    td(colspan='1', style='width: 50%;')
+                                        span.o_form_field.o_form_field_number 1.000000
+                        .o_group.o_form_invisible
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Price Accuracy
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_1237')
+                                                | Rounding Factor
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_1237.o_form_input.o_form_field.o_form_field_number(type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Decimal places
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_field_number 2
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Display
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_1239', data-original-title='', title='')
+                                                | Symbol
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_1239.o_form_input.o_form_field.o_form_required(type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_1240', data-original-title='', title='')
+                                                | Symbol Position
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_1240.o_form_input.o_form_field(name='position')
+                                                option(value='false')
+                                                option(value='"after"') After Amount
+                                                option(value='"before"') Before Amount
+    Modal(v-bind:saveclose='true',v-bind:discard='true',v-bind:heading="modal25",v-bind:modal='"bd-example-modal-lg25"')
+        .modal-body.o_act_window
+            .o_form_view.o_form_nosheet.o_form_editable
+                .o_group
+                    table.o_group.o_inner_group.o_group_col_6
+                        tbody
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label(for='o_field_input_1553')
+                                        | Name
+                                td(colspan='1', style='width: 100%;')
+                                    input#o_field_input_1553.o_form_input.o_form_field.o_form_required(type='text')
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help(for='o_field_input_1554', data-original-title='', title='')
+                                        | User
+                                td(colspan='1', style='width: 100%;')
+                                    .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                        .o_form_input_dropdown
+                                            input#o_field_input_1554.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                            span.o_dropdown_button(draggable='false')
+                                        .fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button',data-toggle='modal', data-target='.bd-example-modal-lg5')
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label(for='o_field_input_1555')
+                                        | Company
+                                td(colspan='1', style='width: 100%;')
+                                    .o_form_field_many2one.o_with_button.o_form_field
+                                        .o_form_input_dropdown
+                                            input#o_field_input_1555.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                            span.o_dropdown_button(draggable='false')
+                                        .fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button',data-toggle='modal', data-target='.bd-example-modal-lg2')
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help(for='o_field_input_1556', data-original-title='', title='')
+                                        | Active
+                                td(colspan='1', style='width: 100%;')
+                                    .o_checkbox.o_form_field_boolean.o_form_field
+                                        input#o_field_input_1556(type='checkbox', name='active')
+                                        span
+                    table.o_group.o_inner_group.o_group_col_6
+                        tbody
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label(for='o_field_input_1557')
+                                        | Resource Type
+                                td(colspan='1', style='width: 100%;')
+                                    select#o_field_input_1557.o_form_input.o_form_field.o_form_required(name='resource_type')
+                                        option(value='false')
+                                        option(value='"user"') Human
+                                        option(value='"material"') Material
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help(for='o_field_input_1558', data-original-title='', title='')
+                                        | Working Time
+                                td(colspan='1', style='width: 100%;')
+                                    .o_form_field_many2one.o_with_button.o_form_field
+                                        .o_form_input_dropdown
+                                            input#o_field_input_1558.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                            span.o_dropdown_button(draggable='false')
+                                        .fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button',data-toggle='modal', data-target='.bd-example-modal-lg24')
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help(for='o_field_input_1559', data-original-title='', title='')
+                                        | Efficiency Factor
+                                td(colspan='1', style='width: 100%;')
+                                    input#o_field_input_1559.o_form_input.o_form_field.o_form_required.o_form_field_number(type='text')
+
+    Modal(v-bind:saveclose='true',v-bind:discard='true',v-bind:heading="modal24",v-bind:modal='"bd-example-modal-lg24"')
+        .modal-body.o_act_window
+            .o_form_view.o_form_editable
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_1338')
+                                                | Name
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_1338.o_form_input.o_form_field.o_form_required(type='text')
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_1339')
+                                                | Workgroup Manager
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_1339.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                .fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button',data-toggle='modal', data-target='.bd-example-modal-lg5')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_1340')
+                                                | Company
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_1340.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                .fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button',data-toggle='modal', data-target='.bd-example-modal-lg2')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_1341', data-original-title='', title='')
+                                                | Hours per Day
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required.o_form_invisible
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_1341.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: block;')
+                            label.o_form_label.o_group_col_6
+                                | Working Time
+                            TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefoot",data-toggle='modal', data-target='.bd-example-modal-lg0')
+                            label.o_form_label.o_group_col_6
+                                    | Leaves
+
+                            TableMain(v-bind:tableheader='tableheader1', v-bind:tabledata="tabledata1", v-bind:tablefoot="tablefoot",data-toggle='modal', data-target='.bd-example-modal-lg23')
+
+
+
+
+
+    Modal(v-bind:saveclose='true',v-bind:discard='true',v-bind:heading="modal23",v-bind:modal='"bd-example-modal-lg23"')
+            .modal-body.o_act_window
+                .o_form_view.o_form_nosheet.o_form_editable
+                    .o_group
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_1230')
+                                            | Reason
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_1230.o_form_input.o_form_field(type='text')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_1231')
+                                            | Leave Request
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_form_field
+                                            .o_form_input_dropdown
+                                                input#o_field_input_1231.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_1232')
+                                            | Working Time
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_with_button.o_form_field
+                                            .o_form_input_dropdown
+                                                input#o_field_input_1232.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            .fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button',data-toggle='modal', data-target='.bd-example-modal-lg24')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Company
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field(href='#') Alupak Industriess
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help(for='o_field_input_1234', data-original-title='', title='')
+                                            | Resource
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_with_button.o_form_field
+                                            .o_form_input_dropdown
+                                                input#o_field_input_1234.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            .fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button',data-toggle='modal', data-target='.bd-example-modal-lg25')
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Start Date
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_datepicker.o_form_field_date.o_form_field.o_form_required
+                                            input.o_datepicker_input.o_form_input(type='text', name='date_from')
+                                            span.o_datepicker_button
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_1236')
+                                            | End Date
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_datepicker.o_form_field_date.o_form_field.o_form_required
+                                            input.o_datepicker_input.o_form_input(type='text', name='date_to')
+                                            span.o_datepicker_button
+
+
+    Modal(v-bind:saveclose='true',v-bind:discard='true',v-bind:heading="modal2",v-bind:modal='"bd-example-modal-lg2"')
+        .o_form_view.o_form_editable
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .o_form_field_image.oe_avatar.o_form_field(data-original-title='', title='')
+                        img.imgwidth(border='1', name='logo', src='http://192.168.25.104:8069/web/image?model=res.company&id=1&field=logo&unique=20170316141840')
+                        .o_form_image_controls
+                            span.fa.fa-pencil.fa-lg.pull-left.o_select_file_button(title='Edit')
+                            span.fa.fa-trash-o.fa-lg.pull-right.o_clear_file_button(title='Clear')
+                            span.o_form_binary_progress Uploading...Q
+                            .o_hidden_input_file
+                                form.o_form_binary_form(enctype='multipart/form-data', method='post', action='/web/binary/upload')
+                                    input(name='csrf_token', type='hidden', value='fcbc2d44cdc1fc98bf3a5b6b5b49ce0b4051f00bo')
+                                    input(name='callback', type='hidden')
+                                    input.o_form_input_file(accept='image/*', name='ufile', type='file')
+                                iframe(style='display: none')
+
+
+                    .oe_title.fieldset
+                        label.o_form_label.oe_edit_only(for='o_field_input_775')
+                            | Company Name
+                        h1
+                            input#o_field_input_775.o_form_input.oe_inline.o_form_field.o_form_required.sizediv(type='text')
+                        label.o_form_label.o_form_label_help.oe_edit_only(for='o_field_input_776', data-original-title='', title='')
+                            | Company Tagline
+                        h3
+                            input#o_field_input_776.o_form_input.o_form_field.sizediv(placeholder='e.g. Global Business Solutions', type='text')
+                    .o_notebook(style='margin-top: 32px;')
+                        ul.nav.nav-tabs(role='tablist')
+                            li.nav-item
+                                a.nav-link.active(href='#profile3', role='tab', data-toggle='tab') Team Members
+                        // Tab panes
+                        .tab-content
+                            #profile3.tab-pane.fade.in.active(role='tabpanel')
+                                .o_group
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible
+                                                        | Partner
+                                                td(colspan='1', style='width: 100%;')
+                                                    a.o_form_uri.o_form_field.o_form_invisible(href='#') Alupak Industriess
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_779')
+                                                        | Address
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_address_format
+                                                        input#o_field_input_779.o_form_input.o_address_street.o_form_field(placeholder='Street...', type='text')
+                                                        input.o_form_input.o_address_street.o_form_field(placeholder='Street 2...', type='text')
+                                                        input.o_form_input.o_address_city.o_form_field(placeholder='City', type='text')
+                                                        .o_form_field_many2one.o_address_state.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input.o_form_input.ui-autocomplete-input(type='text', placeholder='State', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                        input.o_form_input.o_address_zip.o_form_field(placeholder='ZIP', type='text')
+                                                        .o_form_field_many2one.o_address_country.o_form_field
+                                                            .o_form_input_dropdown
+                                                                input.o_form_input.ui-autocomplete-input(type='text', placeholder='Country', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_780', data-original-title='', title='')
+                                                        | Website
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_780.o_form_input.o_form_field(placeholder='e.g. www.odoo.com', type='text')
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_781')
+                                                        | Phone
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_781.o_form_input.o_form_field(type='text')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_782')
+                                                        | Fax
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_782.o_form_input.o_form_field(type='text')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_783')
+                                                        | Email
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_783.o_form_input.o_form_field(type='text')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_784', data-original-title='', title='')
+                                                        | Tax ID
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_784.o_form_input.o_form_field(type='text')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_785')
+                                                        | Company registry
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_785.o_form_input.o_form_field(type='text')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_786')
+                                                        | Currency
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_786.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        .fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button',data-toggle='modal', data-target='.bd-example-modal-lg4')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_787')
+                                                td(colspan='1', style='width: 100%;')
+                                                    p.text-muted
+                                                        | Activate
+                                                        a(href='', type='action', name='68') here
+                                                        |  a new currency before creating a new company.
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_788')
+                                                        | Parent Company
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_form_field_many2one.o_form_field
+                                                        .o_form_input_dropdown
+                                                            input#o_field_input_788.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+                                                        .fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_789', data-original-title='', title='')
+                                                        | Sequence
+                                                td(colspan='1', style='width: 100%;')
+                                                    input#o_field_input_789.o_form_input.o_form_field.o_form_invisible.o_form_field_number(type='text')
+
+
+    Modal(v-bind:saveclose='true',v-bind:discard='true',v-bind:heading="modal5",v-bind:modal='"bd-example-modal-lg5"')
+
+        .modal-body.o_act_window
+            .o_form_view.o_form_editable
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        span.o_form_field.o_form_invisible 11
+                        .oe_form_box_info.oe_text_center.o_form_invisible(style='margin-bottom: 10px', attrs="{'invisible': [('id', '>', 0)]}")
+                            | You are creating a new user. After saving, the user will receive an invite email containing a link to set its password.
+                        .o_form_field_image.oe_avatar.o_form_field(data-original-title='', title='')
+                            img(border='1', name='image', src='http://192.168.25.104:8069/web/image?model=res.users&id=11&field=image_medium&unique=20170316112708')
+                            .o_form_image_controls
+                                span.fa.fa-pencil.fa-lg.pull-left.o_select_file_button(title='Edit')
+                                span.fa.fa-trash-o.fa-lg.pull-right.o_clear_file_button(title='Clear')
+                                span.o_form_binary_progress Uploading...
+                                .o_hidden_input_file
+                                    form.o_form_binary_form(enctype='multipart/form-data', method='post', action='/web/binary/upload')
+                                        input(name='csrf_token', type='hidden', value='616929304a51b7102a984369878e15a6ca21cbe0o')
+                                        input(name='callback', type='hidden')
+                                        input.o_form_input_file(accept='image/*', name='ufile', type='file')
+                                    iframe(style='display: none')
+                        .oe_title
+                            label.o_form_label.oe_edit_only(for='o_field_input_1466')
+                                | Name
+                            h1
+                                input#o_field_input_1466.o_form_input.o_form_field.o_form_required(type='text')
+                            input.o_form_input.o_form_field.o_form_invisible(type='text')
+                            label.o_form_label.o_form_label_help.oe_edit_only(for='o_field_input_1467', data-original-title='', title='')
+                                | Email Address
+                            h2
+                                input#o_field_input_1467.o_form_input.o_form_field.o_form_required(placeholder='email@yourcompany.com', type='text')
+                            label.o_form_label.o_form_label_help.oe_edit_only(for='o_field_input_1468', data-original-title='', title='')
+                                | Company
+                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                .o_form_input_dropdown
+                                    input#o_field_input_1468.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                    span.o_dropdown_button(draggable='false')
+                                .fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button',data-toggle='modal', data-target='.bd-example-modal-lg2')
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible
+                                            | Access Rights
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_invisible(invisible='1')
+                                            .o_form_field_many2manytags.o_form_field(style='display: inline;')
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='9', data-index='0')
+                                                    span.o_badge_text(title='Other Extra Rights / Portal') Other Extra Rights / Portal
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='32', data-index='1')
+                                                    span.o_badge_text(title='Technical Settings / Tax display B2B') Technical Settings / Tax display B2B
+                                            |  You will be able to define additional access rights by editing the newly created user under the Settings / Users menu.
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_1470')
+                                            | Phone
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_1470.o_form_input.o_form_field(type='text')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_1471')
+                                            | Mobile
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_1471.o_form_input.o_form_field(type='text')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_1472')
+                                            | Fax
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_1472.o_form_input.o_form_field(type='text')
+
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_editable
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_1062')
+                                                | Name
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_1062.o_form_input.o_form_field.o_form_required(type='text')
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_1063')
+                                                | Workgroup Manager
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_1063.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                .fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button',data-toggle='modal', data-target='.bd-example-modal-lg5')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_1064')
+                                                | Company
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_1064.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                .fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button',data-toggle='modal', data-target='.bd-example-modal-lg2')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_1065', data-original-title='', title='')
+                                                | Hours per Day
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required.o_form_invisible
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_1065.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                            label.o_form_label.o_group_col_6
+                                | Working Time
+                        TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefoot",data-toggle='modal', data-target='.bd-example-modal-lg0')
+                        label.o_form_label.o_group_col_6
+                            | Leaves
+
+                        TableMain(v-bind:tableheader='tableheader1', v-bind:tabledata="tabledata1", v-bind:tablefoot="tablefoot",data-toggle='modal', data-target='.bd-example-modal-lg23')
+
+
+

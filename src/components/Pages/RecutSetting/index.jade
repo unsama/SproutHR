@@ -1,0 +1,29 @@
+.container-fluid(style='margin-left: -15px;margin-right:-15px;background-color:White;')
+    .o_content
+        .o_view_manager_content
+            .o_form_view.oe_form_configuration.o_form_nosheet.o_form_editable
+                header(style='margin-left:-32px;margin-right:-32px;')
+                    button.btn.btn-sm.oe_highlight(v-on:click="validateBeforeSubmit",type='button')
+                        span Apply
+                    button.btn.btn-sm.oe_link(type='button')
+                        span Cancel
+                table.o_group.o_inner_group(style='margin-left: -13px;')
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Recruitments
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | Interview Form
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_radio.o_vertical.o_form_field
+                                    .o_radio_item
+                                        input(type='checkbox', name='my-checkbox', v-bind:true-value='1', v-bind:false-value='0', v-model='notinterview_form')
+                                        label.o_form_label Do not use interview forms
+                                    .o_radio_item
+                                        input(type='checkbox', name='my-checkbox3',v-bind:true-value='1', v-bind:false-value='0', v-model='interview_form')
+                                        label.o_form_label Use interview forms during the recruitment process
+
+

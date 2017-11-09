@@ -1,0 +1,117 @@
+.posmodalorder
+    .o_form_view.o_form_nosheet.o_form_readonly
+        table.o_group.o_inner_group
+            tbody
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label(for='o_field_input_77')
+                            | Product
+                    td(colspan='1', style='width: 50%;')
+                        a.o_form_uri.o_form_field.o_form_required(href='#') [AT] Air Flight
+                    td.o_td_label(colspan='1')
+                        label.o_form_label(for='o_field_input_78')
+                            | Quantity
+                    td(colspan='1', style='width: 50%;')
+                        span.o_form_field.o_form_field_number -3.000
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label(for='o_field_input_79')
+                            | Discount (%)
+                    td(colspan='1', style='width: 50%;')
+                        span.o_form_field.o_form_field_number 0.00
+                    td.o_td_label(colspan='1')
+                        label.o_form_label(for='o_field_input_80')
+                            | Unit Price
+                    td(colspan='1', style='width: 50%;')
+                        span.o_form_field.o_form_field_number 898.38
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_invisible(for='o_field_input_81')
+                            | Subtotal w/o Tax
+                    td(colspan='1', style='width: 50%;')
+                        span.o_form_field.o_form_invisible.o_form_field_number -2,695.14
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_invisible(for='o_field_input_82')
+                            | Subtotal
+                    td(colspan='1', style='width: 50%;')
+                        span.o_form_field.o_form_invisible.o_form_field_number -3,099.41
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label(for='o_field_input_83')
+                            | Taxes
+                    td(colspan='1', style='width: 50%;')
+                        .o_form_field_many2manytags.o_form_field
+                            span.badge.dropdown.o_tag_color_10(data-color='10', data-id='1', data-index='0')
+                                span.o_badge_text(title='Tax 15.00%') Tax 15.00%
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_invisible(for='o_field_input_84')
+                            | Taxes
+                    td(colspan='1', style='width: 50%;')
+                        .o_form_field.o_form_invisible.o_form_field_many2many.o_view_manager_content
+                            .o_x2m_control_panel
+                                .o_cp_buttons
+                                .o_cp_pager
+                                    .o_hidden
+                                        span.o_pager_value
+                                        |  /
+                                        span.o_pager_limit
+                                        span.btn-group.btn-group-sm
+                                            button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                            button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                            div
+                                .table-responsive
+                                    table.o_list_view.table.table-condensed.table-striped
+                                        thead
+                                            tr
+                                                th.o_column_sortable(data-id='sequence', width='1')
+                                                    span.o_row_handle.fa.fa-arrows.invisible
+                                                th.o_column_sortable(data-id='name')
+                                                    | Tax Name
+                                                th.o_column_sortable(data-id='type_tax_use')
+                                                    | Tax Scope
+                                                th.o_column_sortable(data-id='description')
+                                                    | Short Name
+                                                th.o_column_sortable(data-id='company_id')
+                                                    | Company
+                                        tfoot
+                                            tr
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                        tbody.ui-sortable
+                                            tr(data-id='1', style='')
+                                                td.o_readonly.o_list_number.o_handle_cell(data-field='sequence', title='The sequence field is used to define order in which the tax lines are applied.')
+                                                    span.o_row_handle.fa.fa-arrows.ui-sortable-handle
+                                                td(data-field='name') Tax 15.00%
+                                                td(data-field='type_tax_use', title="Determines where the tax is selectable. Note : 'None' means a tax can't be used by itself, however it can still be used in a group.") Sales
+                                                td(data-field='description') 15.00%
+                                                td(data-field='company_id') Alupak Industriess
+                                            tr
+                                                td(title='')  
+                                                td(title='Tax Name')  
+                                                td(title='Tax Scope')  
+                                                td(title='Short Name')  
+                                                td(title='Company')  
+                                            tr
+                                                td(title='')  
+                                                td(title='Tax Name')  
+                                                td(title='Tax Scope')  
+                                                td(title='Short Name')  
+                                                td(title='Company')  
+                                            tr
+                                                td(title='')  
+                                                td(title='Tax Name')  
+                                                td(title='Tax Scope')  
+                                                td(title='Short Name')  
+                                                td(title='Company')  
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_85')
+                                                        | Discount Notice
+                                                td(colspan='1', style='width: 33.3333%;')
+                                                    span.o_form_field.o_form_field_empty
+                                            .modal-footer
+                                                button.btn.btn-sm.btn-default.o_form_button_cancel(type='button')
+                                                    span Close

@@ -1,0 +1,124 @@
+.imported
+    .o_content
+        form.oe_import(action='', enctype='multipart/form-data', method='post')
+            input(name='csrf_token', type='hidden', value='eceaf8b21c03574efdfe92abae1df252564af430o')
+            input(name='session_id', type='hidden', value='0d2fcd5f485a661955fdc8e98582ae6abea5ec4f')
+            input(name='import_id', type='hidden', value='79')
+            .oe_import_box.col-sm-9
+                .col-sm-12
+                    p
+                        | Select a CSV or Excel file to import.
+                        a.pull-right(href='', target='new') Help
+                .col-sm-10
+                    .input-group
+                        input.oe_import_file_show.form-control(placeholder='No file chosen...', type='text')
+                        span.input-group-btn
+                            label.btn.btn-primary.fbtn(for='my-file-selector')
+                                input#my-file-selector.oe_import_file(accept='.csv, .xls, .xlsx, .ods', id-attf-id='file_#{_id}', name='file', style='display:none;', type='file')
+                                |                         Load File
+                        span.input-group-btn
+                            button.btn.btn-default.oe_import_file_reload(disabled='disabled', type='button') Reload File
+            //    .oe_import_with_file.col-sm-12
+            //        a.oe_import_toggle(href='#')
+            //            | Options…
+            //        .oe_import_toggled.oe_import_options.js_import_options.col-sm-5
+            //            p
+            //                label(for='encoding_export194')
+            //                    | Encoding:
+            //                #s2id_encoding_export194.select2-container.oe_import_encoding(style='width: 160px;')
+            //                    a.select2-choice(href='javascript:void(0)', tabindex='-1')
+            //                        span#select2-chosen-13.select2-chosen utf-8
+            //                        abbr.select2-search-choice-close
+            //                        span.select2-arrow(role='presentation')
+            //                            b(role='presentation')
+            //                    label.select2-offscreen(for='s2id_autogen13')
+            //                    input#s2id_autogen13.select2-focusser.select2-offscreen(type='text', aria-haspopup='true', role='button', aria-labelledby='select2-chosen-13')
+            //                    .select2-drop.select2-display-none.select2-with-searchbox
+            //                        .select2-search
+            //                            label.select2-offscreen(for='s2id_autogen13_search')
+            //                            input#s2id_autogen13_search.select2-input(type='text', autocomplete='off', autocorrect='off', autocapitalize='off', spellcheck='false', role='combobox', aria-expanded='true', aria-autocomplete='list', aria-owns='select2-results-13', placeholder='')
+            //                        ul#select2-results-13.select2-results(role='listbox')
+            //                input#encoding_export194.oe_import_encoding.select2-offscreen(value='utf-8', tabindex='-1', title='')
+            //            p
+            //                label(for='separator_export194')
+            //                    | Separator:
+            //                #s2id_separator_export194.select2-container.oe_import_separator(style='width: 160px;')
+            //                    a.select2-choice(href='javascript:void(0)', tabindex='-1')
+            //                        span#select2-chosen-14.select2-chosen Comma
+            //                        abbr.select2-search-choice-close
+            //                        span.select2-arrow(role='presentation')
+            //                            b(role='presentation')
+            //                    label.select2-offscreen(for='s2id_autogen14')
+            //                    input#s2id_autogen14.select2-focusser.select2-offscreen(type='text', aria-haspopup='true', role='button', aria-labelledby='select2-chosen-14')
+            //                    .select2-drop.select2-display-none.select2-with-searchbox
+            //                        .select2-search
+            //                            label.select2-offscreen(for='s2id_autogen14_search')
+            //                            input#s2id_autogen14_search.select2-input(type='text', autocomplete='off', autocorrect='off', autocapitalize='off', spellcheck='false', role='combobox', aria-expanded='true', aria-autocomplete='list', aria-owns='select2-results-14', placeholder='')
+            //                        ul#select2-results-14.select2-results(role='listbox')
+            //                input#separator_export194.oe_import_separator.select2-offscreen(value=',', tabindex='-1', title='')
+            //            p
+            //                label(for='quoting_export194')
+            //                    | Text Delimiter:
+            //                input#quoting_export194.oe_import_quoting(value='"')
+            //        .oe_import_toggled.oe_import_options.col-sm-5
+            //            p
+            //                label(for='date_format_export194')
+            //                    | Date Format:
+            //                input#date_format_export194.oe_import_date_format(value='')
+            //            p
+            //                label(for='datetime_format_export194')
+            //                    | Datetime Format:
+            //                input#datetime_format_export194.oe_import_datetime_format(value='')
+            //            p
+            //                label(for='float_thousand_separator_export194')
+            //                    | Thousands Separator:
+            //                #s2id_float_thousand_separator_export194.select2-container.oe_import_float_thousand_separator(style='width: 160px;')
+            //                    a.select2-choice(href='javascript:void(0)', tabindex='-1')
+            //                        span#select2-chosen-15.select2-chosen Comma
+            //                        abbr.select2-search-choice-close
+            //                        span.select2-arrow(role='presentation')
+            //                            b(role='presentation')
+            //                    label.select2-offscreen(for='s2id_autogen15')
+            //                    input#s2id_autogen15.select2-focusser.select2-offscreen(type='text', aria-haspopup='true', role='button', aria-labelledby='select2-chosen-15')
+            //                    .select2-drop.select2-display-none.select2-with-searchbox
+            //                        .select2-search
+            //                            label.select2-offscreen(for='s2id_autogen15_search')
+            //                            input#s2id_autogen15_search.select2-input(type='text', autocomplete='off', autocorrect='off', autocapitalize='off', spellcheck='false', role='combobox', aria-expanded='true', aria-autocomplete='list', aria-owns='select2-results-15', placeholder='')
+            //                        ul#select2-results-15.select2-results(role='listbox')
+            //                input#float_thousand_separator_export194.oe_import_float_thousand_separator.select2-offscreen(value=',', tabindex='-1', title='')
+            //            p
+            //                label(for='float_decimal_separator_export194')
+            //                    | Decimal Separator:
+            //                #s2id_float_decimal_separator_export194.select2-container.oe_import_float_decimal_separator(style='width: 160px;')
+            //                    a.select2-choice(href='javascript:void(0)', tabindex='-1')
+            //                        span#select2-chosen-16.select2-chosen Dot
+            //                        abbr.select2-search-choice-close
+            //                        span.select2-arrow(role='presentation')
+            //                            b(role='presentation')
+            //                    label.select2-offscreen(for='s2id_autogen16')
+            //                    input#s2id_autogen16.select2-focusser.select2-offscreen(type='text', aria-haspopup='true', role='button', aria-labelledby='select2-chosen-16')
+            //                    .select2-drop.select2-display-none.select2-with-searchbox
+            //                        .select2-search
+            //                            label.select2-offscreen(for='s2id_autogen16_search')
+            //                            input#s2id_autogen16_search.select2-input(type='text', autocomplete='off', autocorrect='off', autocapitalize='off', spellcheck='false', role='combobox', aria-expanded='true', aria-autocomplete='list', aria-owns='select2-results-16', placeholder='')
+            //                        ul#select2-results-16.select2-results(role='listbox')
+            //                input#float_decimal_separator_export194.oe_import_float_decimal_separator.select2-offscreen(value='.', tabindex='-1', title='')
+            //.oe_import_with_file.oe_padding.col-sm-12
+            //    h2 Map your columns to import
+            //    .oe_import_tracking(title='If the model uses openchatter, history tracking                             will set up subscriptions and send notifications                             during the import, but lead to a slower import.')
+            //        input#oe_import_tracking(type='checkbox')
+            //        label(for='oe_import_tracking')
+            //            | Track history during import
+            //    input#oe_import_has_header.oe_import_has_header(checked='checked', type='checkbox')
+            //    label(for='oe_import_has_header')
+            //        | The first row
+            //        | contains the label of the column
+            //    input#oe_import_advanced_mode.oe_import_advanced_mode(disabled='disabled', type='checkbox')
+            //    label(for='oe_import_advanced_mode') Show fields of relation fields (advanced)
+            //    p.oe_import_noheaders
+            //        | If the file contains
+            //        | the column names, Odoo can try auto-detecting the
+            //        | field corresponding to the column. This makes imports
+            //        | simpler especially when the file has many columns.
+            //    .oe_import_error_report
+            //    table.table-striped.table-bordered.oe_import_grid

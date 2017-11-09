@@ -1,0 +1,95 @@
+.row
+    .col-sm-3
+        .card.samocard
+            .col-sm-12.samocolsm12_1
+                span.whc
+                    .col-sm-6.pull-left
+                        h6.samoh61(v-model='title',v-for='option in options', v-bind:value="option.id") {{ option.name }}
+                        br
+
+                    .col-sm-6.pull-right
+                        .dropdown
+                            button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownbtn(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style='float: right;margin-top: -9px;')
+                                | More
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton',style='margin-top: 38px;margin-left: -180px;min-width: 20.7rem;height: 145px;')
+                                .row(style='')
+
+                                    .col-sm-4
+                                        h6(style='font-size: 13px;margin-left: 6px;') View
+                                        hr(style='margin-left: 6px;margin-top: 0px;')
+                                    .col-sm-4
+                                        h6(style='font-size: 13px;') New
+                                        hr(style='margin-top: 0px;')
+                                    .col-sm-4
+                                        h6(style='font-size: 13px;') Reports
+                                        hr(style='margin-top: 0px;')
+
+                                .row(style='margin-top: -25px;')
+                                    .col-sm-4
+                                        router-link(to='Reqpipe')
+                                            a.samoalink(style='font-size: 13px;margin-left: 6px;') Applications
+                                        br
+                                        router-link(to='ReqAppDoc')
+                                            a.samoalink(style='font-size: 13px;margin-left: 6px;') Documents
+                                    .col-sm-4
+                                        router-link(to='ReqApp')
+                                            a.samoalink(style='font-size: 13px;') Applications
+                                        br
+
+                                    .col-sm-4
+                                        router-link(to='Reqssettings')
+                                            a.samoalink(style='font-size: 13px;') Recruitment
+                                        br
+
+
+                                hr(style='margin-top: 28px;')
+                                .col-sm-12(style='margin-top: -59px;')
+                                    .col-sm-7.pull-left(style='padding: 0px;margin-top: 31px;')
+                                        ul(style='list-style-type:none;display: -webkit-box;padding: 0;')
+                                            li
+                                                a.color1.colorbg(href='#', data-color='1')
+                                            li
+                                                a.color2.colorbg(href='#', data-color='2')
+                                            li
+                                                a.color3.colorbg(href='#', data-color='3')
+                                            li
+                                                a.color4.colorbg(href='#', data-color='4')
+                                            li
+                                                a.color5.colorbg(href='#', data-color='5')
+                                            li
+                                                a.color6.colorbg(href='#', data-color='6')
+                                            li
+                                                a.color7.colorbg(href='#', data-color='7')
+                                            li
+                                                a.color8.colorbg(href='#', data-color='8')
+                                            li
+                                                a.color9.colorbg(href='#', data-color='9')
+                                            li
+                                                a.color10.colorbg(href='#', data-color='10')
+
+                                    .col-sm-5.pull-right(style='margin-top: 24px;')
+                                        router-link(to='ReqSettingEdit')
+                                            a.samoalink(style='margin-left: 57px;font-size: 13px;') Settings
+
+                .container.o_kanban_card_content.o_visible(style='')
+                    .row(style='margin-top: 30px;')
+                        .col-xs-6.o_kanban_primary_left(name='to_replace_in_sale_crm')
+                            a(href='/recruitment/Reqpipe')
+                                button.btn.btn-primary.oe_kanban_action.oe_kanban_action_button( data-name='742', data-type='action', type='button',style='background-color: #7c7bad;font-size: 13px;') Application(s)
+
+                        .col-xs-6.o_kanban_primary_right(style='margin-left: 151px;margin-top: -24px;')
+                            .mb4
+                                a.oe_kanban_action.oe_kanban_action_a(style='font-size: 13px;',data-name='744', data-type='action', href='#')
+                                    | Recruitment Done
+
+                        .col-xs-12.o_kanban_primary_bottom
+                            .o_progressbar
+
+
+                .footer(style='margin-top: 37.5px;')
+                    ul(style='list-style-type:none;padding: 0px;display: -webkit-inline-box;')
+                        router-link(to='Absent')
+                            li(style='padding-right: 14px;padding-top: 9px;padding-left: 10px;font-size: 13px;') Hired Employees
+                        li.progress(style='width: 152px;height: 11px;margin-top: 13px;')
+                            .progress-bar.pro(role='progressbar', style='width: 25%', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100')
+                        li(style='margin-top: 10px;padding-left: 10px;font-size: 13px;') 1/3

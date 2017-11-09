@@ -1,0 +1,46 @@
+s.subview
+    modal( v-bind:save='false',v-bind:heading="'Run Schedulers'", v-bind:sheduaeactivity='true', v-bind:noactivity='true')
+        table.o_group.o_inner_group
+            tbody
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label
+                            | From
+                    td(colspan='1', style='width: 100%;')
+                        .o_datepicker.o_form_field_date.o_form_field.o_form_required
+                            input.o_datepicker_input.o_form_input(type='text', name='date_from')
+                            span.o_datepicker_button
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label(for='o_field_input_15')
+                            | Leave Type
+                    td(colspan='1', style='width: 100%;')
+                        select#o_field_input_15.o_form_input.o_form_field.o_form_required(name='holiday_type')
+                            option(value='false')
+                            option(value='"Approved"') Approved
+                            option(value='"Confirmed"') Confirmed
+                            option(value='"both"') Both Approved and Confirmed
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label
+                            | Department(s)
+                    td(colspan='1', style='width: 100%;')
+                        .o_form_field.o_form_field_many2many.o_view_manager_content
+                            .o_x2m_control_panel
+                                .o_cp_buttons
+                                .o_cp_pager
+                                    .o_hidden
+                                        span.o_pager_value
+                                        |  /
+                                        span.o_pager_limit
+                                        span.btn-group.btn-group-sm
+                                            button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                            button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                            div
+                                TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter")
+
+    .row
+        .col-md-2
+            sidebar(v-bind:headings='sidebarData')
+        .col-md-10(style='background-color: #f0eeee;')
+            router-view

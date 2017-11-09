@@ -1,0 +1,36 @@
+.expensessetting
+    .o_content(style='margin-left:-15px;margin-right:-15px;')
+        .o_view_manager_content
+            .o_form_view.oe_form_configuration.o_form_nosheet.o_form_editable
+                header
+                    button.btn.btn-sm.oe_highlight(type='button')
+                        span Apply
+                    button.btn.btn-sm.oe_link(type='button')
+                        span Cancel
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Expenses
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_130')
+                                    | Expense Email Alias
+                            td(colspan='1', style='width: 100%;')
+                                div
+                                    .o_form_invisible(attrs="{'invisible': [('alias_domain', 'in', ['localhost', '', False])]}")
+                                        p.text-muted
+                                            | You can setup a generic email alias to create
+                                            | incoming expenses easily. Write an email with the receipt
+                                            | in attachment to create an expense line in one click. If the mail
+                                            | subject contains the product's internal reference between brackets,
+                                            | the product will be set automatically. Type the expense amount
+                                            | in the mail subject to set it on the expense too.
+                                        input.o_form_input.oe_inline.o_form_field(type='text')
+                                        span @
+                                        span.oe_inline.o_form_field localhost
+                                    div(attrs="{'invisible': [('alias_domain', 'not in', ['localhost', '', False])]}")
+                                        button.btn.btn-sm.oe_link(type='button')
+                                            router-link.oe_link(to='expensegeneralsetting')
+                                                span Setup your domain alias

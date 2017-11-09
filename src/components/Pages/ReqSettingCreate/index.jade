@@ -1,0 +1,492 @@
+.ReqSettingCreate
+    .row
+        .col-sm-12
+            #success-alert(style='background-color:red;position:absolute;display:none;right: 0px;z-index: 1;')
+                button.close(type="button", data-dismiss="alert",style='color:white;') x
+                .o_notification.o_error
+                    .o_notification_title
+                        span.o_icon.fa.fa-3x.fa-exclamation(style='color:white;border-bottom: 3px solid white;font-size: 16px') The following fields are invalid:
+
+                    .o_notification_content(style='padding-top: 16px;')
+                        ul
+                            li#leave(style='color:white;') Job Title
+    DashboardController(v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:savebtn='true',v-bind:discardbtn='true',v-bind:links="btnlinks")
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") JobPosition/New
+
+    Modal(v-bind:discard='true',v-bind:saveclose='true',v-bind:savenew='true',v-bind:heading="modal",v-bind:modal='"bd-example-modal-lg1"')
+        .modal-body.o_act_window
+            .o_form_view.o_form_editable
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        span.o_form_field.o_form_invisible 1
+                        .oe_form_box_info.oe_text_center.o_form_invisible(style='margin-bottom: 10px', attrs="{'invisible': [('id', '>', 0)]}")
+                            | You are creating a new user. After saving, the user will receive an invite email containing a link to set its password.
+                        .o_form_field_image.oe_avatar.o_form_field(data-original-title='', title='')
+                            img.img.img-responsive(border='1', name='image', src='http://localhost:8069/web/image?model=res.users&id=1&field=image_medium&unique=20170614053610')
+                            .o_form_image_controls
+                                span.fa.fa-pencil.fa-lg.pull-left.o_select_file_button(title='Edit')
+                                span.fa.fa-trash-o.fa-lg.pull-right.o_clear_file_button(title='Clear')
+                                span.o_form_binary_progress Uploading...
+                                .o_hidden_input_file
+                                    form.o_form_binary_form(enctype='multipart/form-data', method='post', action='/web/binary/upload')
+                                        input(name='csrf_token', type='hidden', value='d1758cc0bcbe465646742c3b802dc29f6946df44o')
+                                        input(name='callback', type='hidden')
+                                        input.o_form_input_file(accept='image/*', name='ufile', type='file')
+                                    iframe(style='display: none')
+                        .oe_title
+                            label.o_form_label.oe_edit_only(for='o_field_input_106')
+                                | Name
+                            h1
+                                input#o_field_input_106.o_form_input.o_form_field.o_form_required(type='text')
+                            input.o_form_input.o_form_field.o_form_invisible(type='text')
+                            label.o_form_label.o_form_label_help.oe_edit_only(for='o_field_input_107', data-original-title='', title='')
+                                | Email Address
+                            h2
+                                input#o_field_input_107.o_form_input.o_form_field.o_form_required(placeholder='email@yourcompany.com', type='text')
+                            label.o_form_label.o_form_label_help.o_form_invisible.oe_edit_only(for='o_field_input_108', data-original-title='', title='')
+                                | Company
+                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required.o_form_invisible
+                                .o_form_input_dropdown
+                                    input#o_field_input_108.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                    span.o_dropdown_button(draggable='false')
+                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: block;')
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible(for='o_field_input_109')
+                                            | Access Rights
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_invisible(invisible='1')
+                                            .o_form_field_many2manytags.o_form_field(style='display: inline;')
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='3', data-index='0')
+                                                    span.o_badge_text(title='Administration / Access Rights') Administration / Access Rights
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='27', data-index='1')
+                                                    span.o_badge_text(title='Accounting &amp; Finance / Accountant') Accounting & Finance / Accountant
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='28', data-index='2')
+                                                    span.o_badge_text(title='Accounting &amp; Finance / Adviser') Accounting & Finance / Adviser
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='26', data-index='3')
+                                                    span.o_badge_text(title='Accounting &amp; Finance / Billing') Accounting & Finance / Billing
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='8', data-index='4')
+                                                    span.o_badge_text(title='Extra Rights / Contact Creation') Extra Rights / Contact Creation
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='82', data-index='5')
+                                                    span.o_badge_text(title='Website / Editor and Designer') Website / Editor and Designer
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='1', data-index='6')
+                                                    span.o_badge_text(title='Employees / Employee') Employees / Employee
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='78', data-index='7')
+                                                    span.o_badge_text(title='Fleet / Manager') Fleet / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='84', data-index='8')
+                                                    span.o_badge_text(title='Survey / Manager') Survey / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='46', data-index='9')
+                                                    span.o_badge_text(title='Expenses / Manager') Expenses / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='32', data-index='10')
+                                                    span.o_badge_text(title='Employees / Manager') Employees / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='52', data-index='11')
+                                                    span.o_badge_text(title='Inventory / Manager') Inventory / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='60', data-index='12')
+                                                    span.o_badge_text(title='Point of Sale / Manager') Point of Sale / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='70', data-index='13')
+                                                    span.o_badge_text(title='Purchases / Manager') Purchases / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='63', data-index='14')
+                                                    span.o_badge_text(title='Manufacturing / Manager') Manufacturing / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='67', data-index='15')
+                                                    span.o_badge_text(title='Attendance / Manager') Attendance / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='35', data-index='16')
+                                                    span.o_badge_text(title='Recruitment / Manager') Recruitment / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='80', data-index='17')
+                                                    span.o_badge_text(title='Live Support / Manager') Live Support / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='13', data-index='18')
+                                                    span.o_badge_text(title='Sales / Manager') Sales / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='24', data-index='19')
+                                                    span.o_badge_text(title='Project / Manager') Project / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='48', data-index='20')
+                                                    span.o_badge_text(title='Holidays / Manager') Holidays / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='33', data-index='21')
+                                                    span.o_badge_text(title='Attendance / Manual Attendance') Attendance / Manual Attendance
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='45', data-index='22')
+                                                    span.o_badge_text(title='Expenses / Officer') Expenses / Officer
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='47', data-index='23')
+                                                    span.o_badge_text(title='Holidays / Officer') Holidays / Officer
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='34', data-index='24')
+                                                    span.o_badge_text(title='Recruitment / Officer') Recruitment / Officer
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='65', data-index='25')
+                                                    span.o_badge_text(title='Timesheets / Officer') Timesheets / Officer
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='31', data-index='26')
+                                                    span.o_badge_text(title='Employees / Officer') Employees / Officer
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='66', data-index='27')
+                                                    span.o_badge_text(title='Attendance / Officer') Attendance / Officer
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='81', data-index='28')
+                                                    span.o_badge_text(title='Website / Restricted Editor') Website / Restricted Editor
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='4', data-index='29')
+                                                    span.o_badge_text(title='Administration / Settings') Administration / Settings
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='38', data-index='30')
+                                                    span.o_badge_text(title='Technical Settings / Tax display B2B') Technical Settings / Tax display B2B
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='7', data-index='31')
+                                                    span.o_badge_text(title='Extra Rights / Technical Features') Extra Rights / Technical Features
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='69', data-index='32')
+                                                    span.o_badge_text(title='Purchases / User') Purchases / User
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='62', data-index='33')
+                                                    span.o_badge_text(title='Manufacturing / User') Manufacturing / User
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='23', data-index='34')
+                                                    span.o_badge_text(title='Project / User') Project / User
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='77', data-index='35')
+                                                    span.o_badge_text(title='Fleet / User') Fleet / User
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='79', data-index='36')
+                                                    span.o_badge_text(title='Live Support / User') Live Support / User
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='74', data-index='37')
+                                                    span.o_badge_text(title='Mass Mailing / User') Mass Mailing / User
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='83', data-index='38')
+                                                    span.o_badge_text(title='Survey / User') Survey / User
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='51', data-index='39')
+                                                    span.o_badge_text(title='Inventory / User') Inventory / User
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='59', data-index='40')
+                                                    span.o_badge_text(title='Point of Sale / User') Point of Sale / User
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='12', data-index='41')
+                                                    span.o_badge_text(title='Sales / User: All Documents') Sales / User: All Documents
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='11', data-index='42')
+                                                    span.o_badge_text(title='Sales / User: Own Documents Only') Sales / User: Own Documents Only
+                                            |  You will be able to define additional access rights by editing the newly created user under the Settings / Users menu.
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_110')
+                                            | Phone
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_110.o_form_input.o_form_field(type='text')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_111')
+                                            | Mobile
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_111.o_form_input.o_form_field(type='text')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_112')
+                                            | Fax
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_112.o_form_input.o_form_field(type='text')
+
+    Modal(v-bind:discard='true',v-bind:save='true',v-bind:savenew='false',v-bind:heading="modal",v-bind:modal='"bd-example-modal-lg2"')
+        .modal-body.o_act_window
+            .o_form_view.o_form_editable
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        span.o_form_field.o_form_invisible 1
+                        .oe_form_box_info.oe_text_center.o_form_invisible(style='margin-bottom: 10px', attrs="{'invisible': [('id', '>', 0)]}")
+                            | You are creating a new user. After saving, the user will receive an invite email containing a link to set its password.
+                        .o_form_field_image.oe_avatar.o_form_field(data-original-title='', title='')
+                            img.img.img-responsive(border='1', name='image', src='http://localhost:8069/web/image?model=res.users&id=1&field=image_medium&unique=20170614053610')
+                            .o_form_image_controls
+                                span.fa.fa-pencil.fa-lg.pull-left.o_select_file_button(title='Edit')
+                                span.fa.fa-trash-o.fa-lg.pull-right.o_clear_file_button(title='Clear')
+                                span.o_form_binary_progress Uploading...
+                                .o_hidden_input_file
+                                    form.o_form_binary_form(enctype='multipart/form-data', method='post', action='/web/binary/upload')
+                                        input(name='csrf_token', type='hidden', value='d1758cc0bcbe465646742c3b802dc29f6946df44o')
+                                        input(name='callback', type='hidden')
+                                        input.o_form_input_file(accept='image/*', name='ufile', type='file')
+                                    iframe(style='display: none')
+                        .oe_title
+                            label.o_form_label.oe_edit_only(for='o_field_input_106')
+                                | Name
+                            h1
+                                input#o_field_input_106.o_form_input.o_form_field.o_form_required(type='text')
+                            input.o_form_input.o_form_field.o_form_invisible(type='text')
+                            label.o_form_label.o_form_label_help.oe_edit_only(for='o_field_input_107', data-original-title='', title='')
+                                | Email Address
+                            h2
+                                input#o_field_input_107.o_form_input.o_form_field.o_form_required(placeholder='email@yourcompany.com', type='text')
+                            label.o_form_label.o_form_label_help.o_form_invisible.oe_edit_only(for='o_field_input_108', data-original-title='', title='')
+                                | Company
+                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required.o_form_invisible
+                                .o_form_input_dropdown
+                                    input#o_field_input_108.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                    span.o_dropdown_button(draggable='false')
+                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: block;')
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible(for='o_field_input_109')
+                                            | Access Rights
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_invisible(invisible='1')
+                                            .o_form_field_many2manytags.o_form_field(style='display: inline;')
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='3', data-index='0')
+                                                    span.o_badge_text(title='Administration / Access Rights') Administration / Access Rights
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='27', data-index='1')
+                                                    span.o_badge_text(title='Accounting &amp; Finance / Accountant') Accounting & Finance / Accountant
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='28', data-index='2')
+                                                    span.o_badge_text(title='Accounting &amp; Finance / Adviser') Accounting & Finance / Adviser
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='26', data-index='3')
+                                                    span.o_badge_text(title='Accounting &amp; Finance / Billing') Accounting & Finance / Billing
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='8', data-index='4')
+                                                    span.o_badge_text(title='Extra Rights / Contact Creation') Extra Rights / Contact Creation
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='82', data-index='5')
+                                                    span.o_badge_text(title='Website / Editor and Designer') Website / Editor and Designer
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='1', data-index='6')
+                                                    span.o_badge_text(title='Employees / Employee') Employees / Employee
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='78', data-index='7')
+                                                    span.o_badge_text(title='Fleet / Manager') Fleet / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='84', data-index='8')
+                                                    span.o_badge_text(title='Survey / Manager') Survey / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='46', data-index='9')
+                                                    span.o_badge_text(title='Expenses / Manager') Expenses / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='32', data-index='10')
+                                                    span.o_badge_text(title='Employees / Manager') Employees / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='52', data-index='11')
+                                                    span.o_badge_text(title='Inventory / Manager') Inventory / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='60', data-index='12')
+                                                    span.o_badge_text(title='Point of Sale / Manager') Point of Sale / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='70', data-index='13')
+                                                    span.o_badge_text(title='Purchases / Manager') Purchases / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='63', data-index='14')
+                                                    span.o_badge_text(title='Manufacturing / Manager') Manufacturing / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='67', data-index='15')
+                                                    span.o_badge_text(title='Attendance / Manager') Attendance / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='35', data-index='16')
+                                                    span.o_badge_text(title='Recruitment / Manager') Recruitment / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='80', data-index='17')
+                                                    span.o_badge_text(title='Live Support / Manager') Live Support / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='13', data-index='18')
+                                                    span.o_badge_text(title='Sales / Manager') Sales / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='24', data-index='19')
+                                                    span.o_badge_text(title='Project / Manager') Project / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='48', data-index='20')
+                                                    span.o_badge_text(title='Holidays / Manager') Holidays / Manager
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='33', data-index='21')
+                                                    span.o_badge_text(title='Attendance / Manual Attendance') Attendance / Manual Attendance
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='45', data-index='22')
+                                                    span.o_badge_text(title='Expenses / Officer') Expenses / Officer
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='47', data-index='23')
+                                                    span.o_badge_text(title='Holidays / Officer') Holidays / Officer
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='34', data-index='24')
+                                                    span.o_badge_text(title='Recruitment / Officer') Recruitment / Officer
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='65', data-index='25')
+                                                    span.o_badge_text(title='Timesheets / Officer') Timesheets / Officer
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='31', data-index='26')
+                                                    span.o_badge_text(title='Employees / Officer') Employees / Officer
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='66', data-index='27')
+                                                    span.o_badge_text(title='Attendance / Officer') Attendance / Officer
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='81', data-index='28')
+                                                    span.o_badge_text(title='Website / Restricted Editor') Website / Restricted Editor
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='4', data-index='29')
+                                                    span.o_badge_text(title='Administration / Settings') Administration / Settings
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='38', data-index='30')
+                                                    span.o_badge_text(title='Technical Settings / Tax display B2B') Technical Settings / Tax display B2B
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='7', data-index='31')
+                                                    span.o_badge_text(title='Extra Rights / Technical Features') Extra Rights / Technical Features
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='69', data-index='32')
+                                                    span.o_badge_text(title='Purchases / User') Purchases / User
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='62', data-index='33')
+                                                    span.o_badge_text(title='Manufacturing / User') Manufacturing / User
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='23', data-index='34')
+                                                    span.o_badge_text(title='Project / User') Project / User
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='77', data-index='35')
+                                                    span.o_badge_text(title='Fleet / User') Fleet / User
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='79', data-index='36')
+                                                    span.o_badge_text(title='Live Support / User') Live Support / User
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='74', data-index='37')
+                                                    span.o_badge_text(title='Mass Mailing / User') Mass Mailing / User
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='83', data-index='38')
+                                                    span.o_badge_text(title='Survey / User') Survey / User
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='51', data-index='39')
+                                                    span.o_badge_text(title='Inventory / User') Inventory / User
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='59', data-index='40')
+                                                    span.o_badge_text(title='Point of Sale / User') Point of Sale / User
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='12', data-index='41')
+                                                    span.o_badge_text(title='Sales / User: All Documents') Sales / User: All Documents
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='11', data-index='42')
+                                                    span.o_badge_text(title='Sales / User: Own Documents Only') Sales / User: Own Documents Only
+                                            |  You will be able to define additional access rights by editing the newly created user under the Settings / Users menu.
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_110')
+                                            | Phone
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_110.o_form_input.o_form_field(type='text')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_111')
+                                            | Mobile
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_111.o_form_input.o_form_field(type='text')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_112')
+                                            | Fax
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_112.o_form_input.o_form_field(type='text')
+
+
+
+    jobs
+
+        header(style='margin-left:-15px;margin-right:-15px;')(slot='head')
+            button.btn.btn-sm#hide(v-on:click="selectid(1)",type='button',value="1")
+                span Launch
+            button.btn.btn-sm#show(v-on:click="selectid(0)",style='display:none;',type='button')
+                span Stop Recruitment
+            ul.oe_form_field_status.oe_form_status.o_form_field.o_form_required(data-original-title='', title='')
+                li#b
+                    span.label Recruitment in Progress
+                    span.arrow
+                        span
+                li#a.oe_active
+                    span.label Not Recruiting
+                    span.arrow
+                        span
+
+
+        .oe_title(slot='title')
+            label.o_form_label.oe_edit_only(for='o_field_input_4')
+                | Job Title
+            h1
+                input#o_field_input_4.o_form_input.o_form_field.o_form_required(v-model='job_tittle',name='name',v-validate:name.initial="'required|alpha'", :class="{'input': true, 'is-danger': errors.has('name') }",placeholder='e.g. Sales Manager', type='text')
+                i.fa.fa-warning.cl(v-show="errors.has('name')",style='color:red;')
+                span.help.is-danger.cl(v-show="errors.has('name')",style='color:red;') {{ errors.first('name') }}
+                button.o_field_translate.fa.fa-globe.btn.btn-link.o_translate_active(type='button')
+                button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+        table.o_group.o_inner_group.o_group_col_6(slot='job')
+            tbody
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label
+                            | Department
+                    td(colspan='1', style='width: 100%;')
+                        select(v-model='department_id')
+                            option(v-for='option in options2',v-bind:value="option.id")
+                                | {{ option.name }}
+                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label
+                            | Recruitment Responsible
+                    td(colspan='1', style='width: 100%;')
+                        select#abcs(v-model='recruitment_responsible',class="dept_dropdown")
+                            option(v-for='option in options',v-bind:value="option.id")
+                                | {{ option.username }}
+                            option
+                                span(data-toggle='modal2', data-target='bd-example-modal-lg1') Create and Edit...
+                        .fa.fa-external-link.btn.btn-default.o_external_button#ss(style='display: none;',data-toggle='modal', data-target='.bd-example-modal-lg2',draggable='false', tabindex='-1', type='button')
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help(for='o_field_input_7', data-original-title='', title='')
+                            | Specific Email Address
+                    td(colspan='1', style='width: 100%;')
+                        div(name='alias_def', attrs="{'invisible': [('alias_domain', '=', False)]}")
+                            .o_form_field_many2one.oe_read_only.o_form_field(data-original-title='', title='')
+                                .o_form_input_dropdown
+                                    input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                    span.o_dropdown_button(draggable='false')
+                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                            .oe_edit_only(name='edit_alias')
+                                input#o_field_input_7.o_form_input.oe_inline.o_form_field(v-model='job_email',type='text')
+                                | @
+                                span.oe_inline.o_form_field localhost
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help(for='o_field_input_8', data-original-title='', title='')
+                            | Expected New Employees
+                    td(colspan='1', style='width: 100%;')
+                        input#o_field_input_8.o_form_input.o_form_field.o_form_field_number(v-model='expected',type='text')
+        table.o_group.o_inner_group.o_group_col_6(slot='jobs')
+            tbody
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                            | Job Locations
+                    td(colspan='1', style='width: 100%;')
+                        select(v-model='job_location')
+                            option(v-for='option in options3', v-bind:value="option.id")
+                                | {{ option.company }}
+                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+        div(attrs="{'invisible': [('state', '!=', 'recruit')]}")(slot='jobsone')
+            label.o_form_label
+                | Job Description
+            textarea.o_form_textarea.o_form_field(v-model='description',rows='6', name='description', style='resize: horizontal; height: 50px;')
+
+    //DashboardController(v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:savebtn='true',v-bind:discardbtn='true',v-bind:links="btnlinks")
+    //    .col-sm-6(style='padding:0px;')(slot='job')
+    //        h4.samodashheading(style="font-size: 18px;") JobPosition/New
+    //jobs
+    //    header(style='margin-left:-15px;margin-right:-15px;')(slot='head')
+    //        button.btn.btn-sm#hide(v-on:click="selectid(1)",type='button',value="1")
+    //            span Launch
+    //        button.btn.btn-sm#show(v-on:click="selectid(0)",style='display:none;',type='button')
+    //            span Stop Recruitment
+    //        ul.oe_form_field_status.oe_form_status.o_form_field.o_form_required(data-original-title='', title='')
+    //            li.oe_active(data-id='recruit')
+    //                span.label Recruitment in Progress
+    //                span.arrow
+    //                    span
+    //            li(data-id='open')
+    //                span.label Not Recruiting
+    //                span.arrow
+    //                    span
+    //    .oe_title(slot='title')
+    //        label.o_form_label.oe_edit_only(for='o_field_input_4')
+    //            | Job Titles
+    //        h1
+    //            input#o_field_input_4.o_form_input.o_form_field.o_form_required(v-model='job_tittle',name='name', v-validate:name.initial="'required|alpha'", :class="{'input': true, 'is-danger': errors.has('name') }",placeholder='e.g. Sales Manager', type='text')
+    //            i.fa.fa-warning.cl(v-show="errors.has('name')",style='color:red;')
+    //            span.help.is-danger.cl(v-show="errors.has('name')",style='color:red;') {{ errors.first('name') }}
+    //            button.o_field_translate.fa.fa-globe.btn.btn-link.o_translate_active(type='button')
+    //            button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+    //    table.o_group.o_inner_group.o_group_col_6(slot='job')
+    //        tbody
+    //            tr
+    //                td.o_td_label(colspan='1')
+    //                    label.o_form_label
+    //                        | Departments
+    //                td(colspan='1', style='width: 100%;')
+    //                    select(v-model='department_id')
+    //                        option(v-for='option in options2',v-bind:value="option.id")
+    //                            | {{ option.name }}
+    //                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+    //            tr
+    //                td.o_td_label(colspan='1')
+    //                    label.o_form_label
+    //                        | Recruitment Responsibles
+    //                td(colspan='1', style='width: 100%;')
+    //                    select(v-model='recruitment_responsible')
+    //                        option(v-for='option in options',v-bind:value="option.id")
+    //                            | {{ option.username }}
+    //                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+    //            tr
+    //                td.o_td_label(colspan='1')
+    //                    label.o_form_label.o_form_label_help(for='o_field_input_7', data-original-title='', title='')
+    //                        | Specific Email Address
+    //                td(colspan='1', style='width: 100%;')
+    //                    div(name='alias_def', attrs="{'invisible': [('alias_domain', '=', False)]}")
+    //                        .o_form_field_many2one.oe_read_only.o_form_field(data-original-title='', title='')
+    //                            .o_form_input_dropdown
+    //                                input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+    //                                span.o_dropdown_button(draggable='false')
+    //                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+    //                        .oe_edit_only(name='edit_alias')
+    //                            input#o_field_input_7.o_form_input.oe_inline.o_form_field(v-model='job_email',type='text')
+    //                            | @
+    //                            span.oe_inline.o_form_field localhost
+    //            tr
+    //                td.o_td_label(colspan='1')
+    //                    label.o_form_label.o_form_label_help(for='o_field_input_8', data-original-title='', title='')
+    //                        | Expected New Employees
+    //                td(colspan='1', style='width: 100%;')
+    //                    input#o_field_input_8.o_form_input.o_form_field.o_form_field_number(v-model='expected',type='text')
+    //    table.o_group.o_inner_group.o_group_col_6(slot='jobs')
+    //        tbody
+    //            tr
+    //                td.o_td_label(colspan='1')
+    //                    label.o_form_label.o_form_label_help( data-original-title='', title='')
+    //                        | Job Locations
+    //                td(colspan='1', style='width: 100%;')
+    //                    select(v-model='job_location')
+    //                        option(v-for='option in options3', v-bind:value="option.id")
+    //                            | {{ option.company }}
+    //                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+    //    div(attrs="{'invisible': [('state', '!=', 'recruit')]}")(slot='jobsone')
+    //        label.o_form_label
+    //            | Job Description
+    //        textarea.o_form_textarea.o_form_field(v-model='description',rows='6', name='description', style='resize: horizontal; height: 50px;')
+

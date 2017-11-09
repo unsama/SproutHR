@@ -1,0 +1,9 @@
+div
+    div.row
+        div.col-md-12
+            div.form-control.mMainCon
+                span.mTagSP(v-for="data in grabData") {{ data }}
+                div.mTagSP
+                    input.mCusInput(v-on:keyup.13="addData($event)" v-on:keydown.8="delData($event)" v-model="newVal")
+                    div.list-group.mCusListG
+                        a.list-group-item.list-group-item-action.selItem(href="#" v-for="lItem in aComData") {{ lItem }}

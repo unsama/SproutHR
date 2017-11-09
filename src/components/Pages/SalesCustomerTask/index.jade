@@ -1,0 +1,354 @@
+.salesorderquotation
+    DashboardController(v-bind:savedbtn='true',v-bind:heading="quotation",v-bind:discardbtn='true',v-bind:importbtn='false',v-bind:Attachmentbtn='true',v-bind:printbtn='true',v-bind:actionbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='false',v-bind:paginbtn2='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false')
+    Modal(v-bind:save='true',v-bind:heading="modal",v-bind:modal='"bd-example-modal-lg"')
+
+    .o_content.samocontent
+        .o_view_manager_content#create
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                .o_stat_info.o_form_field
+                                    span.o_stat_text.o_not_hover.text-success Active
+                                    span.o_stat_text.o_hover.text-danger Archive
+                            button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                .fa.fa-fw.fa-tasks.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value 0
+                                    span.o_stat_text Sub-tasks
+                            button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                .fa.fa-fw.fa-dollar.o_button_icon
+                                span Sales Order
+                        .btn-group.o_kanban_selection.o_form_field.o_form_required(data-original-title='', title='')
+                            a(data-toggle='dropdown', href='#')
+                                span.oe_kanban_status
+                            ul.dropdown-menu.state(role='menu')
+                                li(data-value='done')
+                                    a(href='#')
+                                        span.oe_kanban_status.oe_kanban_status_green
+                                        |             Ready for next stage
+                                li(data-value='blocked')
+                                    a(href='#')
+                                        span.oe_kanban_status.oe_kanban_status_red
+                                        |             Blocked
+                        .oe_title
+                            h1.o_row
+                                .o_priority.o_form_field
+                                    a.o_priority_star.fa.fa-star-o(href='#', data-value='1', title='High')
+                                input.o_form_input.o_form_field.o_form_required(placeholder='Task Title...', type='text',style='height: 39px;font-size: 23px;')
+
+
+
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Project
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field
+                                                select
+                                                    option(value='volvo') Volvo
+                                                    option(value='saab') Saab
+                                                    option(value='mercedes') Mercedes
+                                                    option(value='audi') Audi
+                                                span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_task_user_field
+                                                | Assigned to
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_task_user_field.o_form_field
+                                                select
+                                                    option(value='volvo') Volvo
+                                                    option(value='saab') Saab
+                                                    option(value='mercedes') Mercedes
+                                                    option(value='audi') Audi
+                                                span.o_dropdown_button(draggable='false')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_1421', data-original-title='', title='')
+                                                | Initially Planned Hours
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_1421.o_form_input.o_form_field.o_form_field_number(type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                | Kanban Blocked Explanation
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_invisible.o_form_field_empty
+                                            button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                | Kanban Ongoing Explanation
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_invisible.o_form_field_empty
+                                            button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false
+                                                | Kanban Valid Explanation
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_invisible.o_form_field_empty
+                                            button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Deadline
+                                        td(colspan='1', style='width: 100%;')
+                                            select
+                                                option(value='volvo') Volvo
+                                                option(value='saab') Saab
+                                                option(value='mercedes') Mercedes
+                                                option(value='audi') Audi
+
+                                            span.o_datepicker_button
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Tags
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2manytags.o_form_field
+                                                .o_form_field_many2one.o_form_field
+                                                    select
+                                                        option(value='volvo') Volvo
+                                                        option(value='saab') Saab
+                                                        option(value='mercedes') Mercedes
+                                                        option(value='audi') Audi
+                                                    span.o_dropdown_button(draggable='false')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_false
+                                                | Working Time Recorded
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_progressbar.o_form_field
+                                                .o_progress
+                                                    .o_progressbar_complete(style='width: 0%;')
+                                                .o_progressbar_value 0%
+
+                        .o_notebook(style='margin-top: 38px;')
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Order Line
+                                li.nav-item
+                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') Other Information
+                            // Tab panes
+                            .tab-content
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+
+                                #buzz.tab-pane.fade.in(role='tabpanel')
+                                    .o_group
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_1499', data-original-title='', title='')
+                                                            | Sequence
+                                                    td(colspan='1', style='width: 100%;')
+                                                        input#o_field_input_1499.o_form_input.o_form_field.o_form_invisible.o_form_field_number(type='text')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label
+                                                            | Customer
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_form_field
+                                                            select
+                                                                option(value='volvo') Volvo
+                                                                option(value='saab') Saab
+                                                                option(value='mercedes') Mercedes
+                                                                option(value='audi') Audi
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible(for='o_field_input_1501')
+                                                            | Parent Task
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_form_field.o_form_invisible
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_1501.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible
+                                                            | Sub-tasks
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field.o_form_invisible.o_form_field_one2many.o_view_manager_content
+                                                            .o_x2m_control_panel
+                                                                .o_cp_buttons
+                                                                .o_cp_pager
+                                                                    .o_hidden
+                                                                        span.o_pager_value
+                                                                        |  /
+                                                                        span.o_pager_limit
+                                                                        span.btn-group.btn-group-sm
+                                                                            button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                                            button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                                            div
+                                                                .table-responsive
+                                                                    table.o_list_view.table.table-condensed.table-striped
+                                                                        thead
+                                                                            tr
+                                                                                th.o_column_sortable(data-id='name')
+                                                                                    | Task Title
+                                                                                th.o_column_sortable(data-id='project_id')
+                                                                                    | Project
+                                                                                th.o_column_sortable(data-id='user_id')
+                                                                                    | Assigned to
+                                                                                th.o_column_sortable(data-id='planned_hours')
+                                                                                    | Initially Planned Hours
+                                                                                th.o_column_sortable(data-id='remaining_hours')
+                                                                                    | Remaining Hours
+                                                                                th.o_column_sortable(data-id='stage_id')
+                                                                                    | Stage
+                                                                                th.o_column_sortable(data-id='progress')
+                                                                                    | Working Time Recorded
+                                                                                th.o_list_record_delete
+                                                                        tfoot
+                                                                            tr
+                                                                                td
+                                                                                td
+                                                                                td
+                                                                                td
+                                                                                td.o_list_number(data-field='remaining_hours', title='Remaining Hours') 00:00
+                                                                                td
+                                                                                td
+                                                                                td.o_list_record_delete
+                                                                        tbody.ui-sortable
+                                                                            tr
+                                                                                td.o_form_field_x2many_list_row_add(colspan='8')
+                                                                                    a(href='#') Add an item
+                                                                            tr
+                                                                                td(title='Task Title')  
+                                                                                td(title='Project')  
+                                                                                td(title='Assigned to')  
+                                                                                td(title='Initially Planned Hours')  
+                                                                                td(title='Remaining Hours')  
+                                                                                td(title='Stage')  
+                                                                                td(title='Working Time Recorded')  
+                                                                                td.o_list_record_delete
+                                                                            tr
+                                                                                td(title='Task Title')  
+                                                                                td(title='Project')  
+                                                                                td(title='Assigned to')  
+                                                                                td(title='Initially Planned Hours')  
+                                                                                td(title='Remaining Hours')  
+                                                                                td(title='Stage')  
+                                                                                td(title='Working Time Recorded')  
+                                                                                td.o_list_record_delete
+                                                                            tr
+                                                                                td(title='Task Title')  
+                                                                                td(title='Project')  
+                                                                                td(title='Assigned to')  
+                                                                                td(title='Initially Planned Hours')  
+                                                                                td(title='Remaining Hours')  
+                                                                                td(title='Stage')  
+                                                                                td(title='Working Time Recorded')  
+                                                                                td.o_list_record_delete
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_1503', data-original-title='', title='')
+                                                            | Sub-task Project
+                                                    td(colspan='1', style='width: 100%;')
+                                                        a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible(for='o_field_input_1504')
+                                                            | Procurement
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_form_field.o_form_invisible
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_1504.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible(for='o_field_input_1505')
+                                                            | Order Line
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_form_field.o_form_invisible
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_1505.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label
+                                                            | Company
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_with_button.o_form_field
+                                                            select
+                                                                option(value='volvo') Volvo
+                                                                option(value='saab') Saab
+                                                                option(value='mercedes') Mercedes
+                                                                option(value='audi') Audi
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button',data-toggle='modal', data-target='.bd-example-modal-lg')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible(for='o_field_input_1507')
+                                                            | Displayed Image
+                                                    td(colspan='1', style='width: 100%;')
+                                                        .o_form_field_many2one.o_form_field.o_form_invisible
+                                                            .o_form_input_dropdown
+                                                                input#o_field_input_1507.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                                span.o_dropdown_button(draggable='false')
+                                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        table.o_group.o_inner_group.o_group_col_6
+                                            tbody
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible(for='o_field_input_1508')
+                                                            | Assigning Date
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field_date.o_form_field.o_form_invisible 03/27/2017 06:20:29
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible(for='o_field_input_1509')
+                                                            | Last Stage Update
+                                                    td(colspan='1', style='width: 100%;')
+                                                        span.o_form_field_date.o_form_field.o_form_invisible 03/27/2017 06:20:29
+
+
+        .o_mail_thread(style='margin-left: 336px;')
+            .o_thread_date_separator
+                span.o_thread_date
+                    | February 25, 2017
+
+
+            .o_thread_message.samothreadmessage(data-message-id='1038')
+                .o_thread_message_sidebar
+                    img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/images/image_small.png' style='width: 33px;a')
+                .o_thread_message_core.o_mail_note.samothreadmessage1
+                    p.o_mail_info
+                        | Note by
+                        strong(data-oe-model='res.partner', data-oe-id='')
+                            | YourCompany, Administrators
+                        |                     -
+                        small.o_mail_timestamp(title='Sat Feb 25 2017 16:35:56 GMT+0500') 9 days ago
+                        span
+                            i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='1038')
+                    ul.o_mail_thread_message_tracking
+                        li
+                            | Untaxed Amount:
+                            span  637.5
+                        li
+                            | Vendor:
+                            span  Delta PC
+                        li
+                            | Status:
+                            span  RFQ
+                            span.fa.fa-long-arrow-right
+                            span
+                                | RFQ Sent
+
+
+

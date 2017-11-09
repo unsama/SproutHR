@@ -1,0 +1,41 @@
+.o_content.usamascroll
+    .o_view_manager_content
+        .o_form_view.oe_form_configuration.o_form_nosheet.o_form_editable
+            header
+                button.btn.btn-sm.oe_highlight(type='button')
+                    span Apply
+                button.btn.btn-sm.oe_link(type='button')
+                    span Cancel
+            table.o_group.o_inner_group
+                tbody
+                    tr
+                        td(colspan='2', style='width: 100%;')
+                            .o_horizontal_separator
+                                | Mass Mailing
+                    tr
+                        td.o_td_label(colspan='1')
+                            label.o_form_label.o_form_label_help(for='o_field_input_40', data-original-title='', title='')
+                                | Campaigns
+                        td(colspan='1', style='width: 100%;')
+                            .o_form_field_radio.o_vertical.o_form_field
+                                .o_radio_item
+                                    input#radio43_0.o_form_radio(type='radio', name='radio43', value='0')
+                                    label.o_form_label(for='radio43_0') Do not organize and schedule mail campaigns (easy)
+                                .o_radio_item
+                                    input#radio43_1.o_form_radio(type='radio', name='radio43', value='1')
+                                    label.o_form_label(for='radio43_1') Allow using marketing campaigns (advanced)
+                    tr
+                        td.o_td_label(colspan='1')
+                            label.o_form_label(for='o_field_input_41')
+                                | Mass mailing themes
+                        td(colspan='1', style='width: 100%;')
+                            div
+                                .o_form_field.o_form_field_boolean
+                                    .o_checkbox.o_form_field_boolean
+                                        input#o_field_input_42(type='checkbox', name='module_mass_mailing_themes')
+                                        span
+                                label.o_form_label.o_form_invisible(for='o_field_input_42')
+                                    | Mass mailing themes
+                                span.label.label-primary.oe_inline Enterprise
+                                a(href='https://www.odoo.com/page/email-marketing', target='_blank')  More Info
+        

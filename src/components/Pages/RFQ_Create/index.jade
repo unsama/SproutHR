@@ -1,0 +1,260 @@
+.rfq
+    .row.samorequestinnerrow
+        .dashboardcontroller
+            .bro
+                .col-sm-6.samodashheadingmain(style='margin-top: 10px;')
+                    h4.samodashheading Requests for Quotation / New
+                .col-sm-6.samodashsearch
+                    h1(style='color: #f0eeee;') s
+            .bro
+                .col-sm-6.samodashheadingmain
+                    button.btn.btn-primary.samobuttopcontroller#hasS(type='button', href='users')
+                        router-link.links.samolinks(to='') Edit
+                    button.btn.btn-default.samobuttopcontroller2#hasHide(type='button', href='#home')
+                        router-link.links.samolinks(to='') Create
+                            Discard
+                    .dropdown1
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-filter.iconbutton
+                                | Print
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Purchase order
+                                a.dropdown-item(href='#') Request For Quotation
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton2.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-bars.iconbutton
+                                | Attachment
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Add
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-star.iconbutton
+                                | Action
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Delete
+                                a.dropdown-item(href='#') Duplicate
+                .col-sm-6.samodashsearch
+                    div(style='float:right;')
+                        span.o_pager_value 1-24
+                            |  /
+                            span.o_pager_limit 24
+                            span.btn-group.btn-group-sm
+                                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p', disabled='')
+                                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n', disabled='')
+    .o_content.samocontent
+            .o_view_manager_content
+                .o_form_view.o_form_readonly
+                    .o_form_sheet_bg
+                        .o_form_sheet
+
+                            .tophead
+                                h6 Request for Quotation
+                                h2 New
+
+                            .col-xs-12.request_inner1
+                                .row
+                                    .col-xs-3.request_inner3(style='font-weight: bold;margin-left: -20px;')
+                                        .one(style='border-right: 1px solid grey;')
+                                            label(style='font-size:15px;padding-right:25px;')
+                                                | Vendor
+                                            br
+                                        .one(style='border-right: 1px solid grey;')
+                                            label(style='font-size:15px;padding-right:25px;')
+                                                | Vendor Reference
+                                            br
+                                        .one(style='border-right: 1px solid grey;')
+                                            label(style='font-size:15px;padding-right:25px;')
+                                                | Currency
+                                            br
+                                    .col-xs-4.osahass(style='margin-left: -25px;')
+                                        .two
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                .o_form_input_dropdown
+                                                    select#o_field_input_176.o_form_input.o_form_field(style='')(name='format')
+                                                        option(value='false') ASUSTeK, Julia Rivero
+                                                        option(value='') Agrolait, Edward Foster
+                                                        option(value='') ASUSTeK, James Miller
+                                                        option(value='') ASUSTeK, Julia Rivero
+
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(style='background-color: transparent !important')(draggable='false', tabindex='-1', type='button')
+                                                br
+
+                                        .two
+                                            input#o_field_input_85.o_form_input.o_form_field(style='width: 92% !important;')(type='text')
+
+                                        .two
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                .o_form_input_dropdown
+                                                    select#o_field_input_178.o_form_input.o_form_field(style='padding-right: 140px !important;')(name='format')
+                                                        option(value='false') EUR
+                                                        option(value='') PKR
+                                                        option(value='') USD
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(style='background-color: transparent !important')(draggable='false', tabindex='-1', type='button')
+
+                                    .col-xs-3.request_inner2(style='font-weight: bold;')
+                                        .one
+                                            label(style='font-size:15px;padding-right:25px;')
+                                                | Order Date
+                                            br
+                                            br
+                                        .one
+                                            label(style='font-size:15px;padding-right:25px; padding-top: 14px !important;')
+                                                | Company
+                                            br
+
+
+                                    .col-xs-2.osahass(style='')
+                                        .two
+                                            form#dateRangeForm.form-horizontal(method='post')
+                                                .form-group
+                                                    #dateRangePicker.input-group.input-append.date
+                                                        input.input-group-addon.form-control(type='text', name='date', style='width:164% !important; margin-left: -102px !important; background-color: #D2D2FF !important; text-align: left;')
+                                            br
+                                        .two
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                .o_form_input_dropdown
+                                                    select#o_field_input_178.o_form_input.o_form_field(style='width: 216% !important; margin-left: -121px !important;')(name='format')
+                                                        option(value='false') My Company;wojp,Chicago
+                                                        option(value='') Alupak Industriess
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(style='background-color: transparent !important')(draggable='false', tabindex='-1', type='button')
+                                                br
+
+
+                            .o_notebook
+                                ul.nav.nav-tabs(role='tablist')
+                                    li.nav-item
+                                        a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Products
+                                    li.nav-item
+                                        a.nav-link(href='#buzz', role='tab', data-toggle='tab') Deliveries and Invoices
+                                // Tab panes
+                                .tab-content
+                                    #profile.tab-pane.fade.in.active(role='tabpanel')
+                                        table.table.table-striped.samotable
+                                            thead.samotablehead
+                                                tr
+
+                                                    th.samotableheadborder Product
+                                                    th.samotableheadborder Description
+                                                    th.samotableheadborder Scheduled Date
+                                                    th.samotableheadborder Company
+                                                    th.samotableheadborder Quantity
+                                                    th.samotableheadborder Unit Price
+                                                    th.samotableheadborder Texas
+                                                    th.samotableheadborder Subtotal
+                                            tfoot.samotfoot
+                                                tr
+                                                    td
+                                                    td
+                                                    td
+                                                    td
+                                                    td
+                                                    td
+                                                    td
+                                                    td
+                                                    td
+
+
+                                            tbody.samotbody
+                                                tr
+
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+
+                                                tr
+
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+
+                                                tr
+
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+                                                    td.samotablepadd
+
+
+
+
+
+
+
+
+
+                                    #buzz.tab-pane.fade.in(role='tabpanel')
+                                        .o_group
+                                            .col-xs-12.request_inner1
+                                                .row
+                                                    .col-xs-3.request_inner3(style='font-weight: bold;')
+                                                        .one(style='border-right: 1px solid grey;')
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Scheduled Date
+                                                            br
+                                                            label(style='font-size:15px;')
+                                                                | Incoterm
+                                                            br
+
+
+                                                    .col-xs-4.osahass(style='')
+                                                        .two(style='margin-left: 48px;')
+                                                            form#dateRangeForm1.form-horizontal(method='post')
+                                                                .form-group(style='margin-left: 34px;')
+                                                                    #dateRangePicker1.input-group.input-append.date
+                                                                        input.input-group-addon.form-control(type='text', name='date', style='width:176px !important; margin-left: -102px !important; background-color: #D2D2FF !important; float: left;height: 25px;')
+
+                                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                                .o_form_input_dropdown
+                                                                    select#o_field_input_178.o_form_input.o_form_field(style='width: 177px !important; margin-left: -69px !important; background-color:white;')(name='format')
+                                                                        option(value='false') Ex Works
+                                                                        option(value='') Free Carrier
+                                                                        option(value='') Free Alongside Ship
+                                                                        option(value='', style='font-size: 12px;color: #7c7bad;') Search More
+                                                                        option(value='', style='font-size: 12px;color: #7c7bad;') Create and Edit
+
+
+                                                    .col-xs-3.request_inner2(style='font-weight: bold;margin-left: -45px;')
+                                                        .one(style='border-right: 1px solid grey;')
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Billing Status
+                                                            br
+                                                            label(style='font-size:15px;')
+                                                                | Payment Terms
+                                                            br
+                                                            label(style='font-size:15px;')
+                                                                | Fiscal Position
+
+
+                                                    .col-xs-2.osahass(style='')
+                                                        .two(style='margin-left: 48px;')
+                                                            label(style='font-size:13px;color:white;')
+                                                                | s
+                                                            br
+                                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                                .o_form_input_dropdown
+                                                                    select#o_field_input_178.o_form_input.o_form_field(style='width: 176px !important; margin-left: -62px !important;background-color:white;')(name='format')
+                                                                        option(value='false') Alupak Industriess
+                                                                        option(value='') Alupak Industriess
+                                                            br
+                                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                                .o_form_input_dropdown
+                                                                    select#o_field_input_178.o_form_input.o_form_field(style='width: 176px !important; margin-left: -62px !important;background-color:white;')(name='format')
+                                                                        option(value='false') Alupak Industriess
+                                                                        option(value='') Alupak Industriess
+
+

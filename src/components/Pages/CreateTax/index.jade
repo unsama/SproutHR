@@ -1,0 +1,244 @@
+.configtaxes
+    DashboardController(v-bind:savedbtn='true', v-bind:discardbtn='true', v-bind:links='btnlinks',  v-bind:heading='head' )
+    .o_content.samocontent#tax1(style='margin-left: -15px;margin-right: -15px;')
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .col-xs-12.tax(style='padding-top: 40px;')
+                            .row
+                                .col-xs-2.request_inner3(style='font-weight: bold;')
+                                    .one
+                                        label(style='font-size:15px;padding-right:25px;')
+                                            | Tax Name
+
+                                .col-xs-4.osahass(style='')
+                                    .two
+
+                                        input#o_field_input_11(type='text', name='format')(style='background-color: #D2D2FF; ')
+
+                                .col-xs-2.request_inner2(style='font-weight: bold;')
+                                    .one
+                                        label(style='font-size:15px;padding-right:25px;')
+                                            | Tax Scope
+
+                                .col-xs-4.osahass(style='')
+                                    .two
+                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                            .o_form_input_dropdown(style='')
+                                                select#o_field_input_176.o_form_input.o_form_field(style='')(name='format')
+                                                    option(value='true') Alupak Industriess
+                                                    option(value='') My Company;wojjfp;ofo, Chicago
+
+                        .o_notebook
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Definition
+                                li.nav-item
+                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') Advanced Option
+                            // Tab panes
+                            .tab-content
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+                                    .o_group
+                                        .col-xs-12.request_inner1
+                                            .row
+                                                .col-xs-2.request_inner3(style='font-weight: bold;')
+                                                    .one
+                                                        label(style='font-size:13px; padding-right:25px; ')
+                                                            | Tax Computation
+                                                        br
+                                                        label(style='font-size:13px;')
+                                                            | Amount
+                                                        br
+
+
+                                                .col-xs-4.osahass(style='')
+                                                    .two
+                                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                            .o_form_input_dropdown(style='')
+                                                                select#o_field_input_176.o_form_input.o_form_field(style='')(name='format')
+                                                                    option(value='true') Alupak Industriess
+                                                                    option(value='') My Company;wojjfp;ofo, Chicago
+                                                        br
+                                                        br
+                                                    .two
+                                                        input#o_field_input_11(type='text', value='0.00' , name='format')(style='background-color: #D2D2FF; width:62%;')
+                                                        //label(style='font-size:15px;')
+                                                        //    | %
+
+                                                .col-xs-2.request_inner2(style='font-weight: bold;')
+                                                    .one
+                                                        label(style='font-size:13px;padding-right:25px;')
+                                                            |Tax Account
+                                                        br
+                                                        label(style='font-size:13px;')
+                                                            | Tax Account on Refunds
+                                                        br
+
+
+
+                                                .col-xs-4.osahass(style='')
+                                                    .two
+                                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                            .o_form_input_dropdown(style='')
+                                                                select#o_field_input_176.o_form_input.o_form_field(style='background-color: transparent')(name='format')
+                                                                    option(value='true') Alupak Industriess
+                                                                    option(value='') My Company;wojjfp;ofo, Chicago
+                                                        br
+                                                        br
+                                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                            .o_form_input_dropdown(style='')
+                                                                select#o_field_input_176.o_form_input.o_form_field(style='background-color: transparent')(name='format')
+                                                                    option(value='true') Alupak Industriess
+                                                                    option(value='') My Company;wojjfp;ofo, Chicago
+
+
+
+
+
+                                #buzz.tab-pane.fade.in(role='tabpanel')
+                                    .o_group
+                                        .col-xs-12.request_inner1
+                                            .row
+                                                .col-xs-3.request_inner3(style='font-weight: bold;')
+                                                    .one
+                                                        label(style='font-size:15px;padding-right:25px;')
+                                                            | Label on Invoices
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Tax Group
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Tags
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Company
+                                                        br
+
+
+                                                .col-xs-4.osahass(style='')
+                                                    .two
+                                                        input#o_field_input_11(type='text', name='format')(style='width: 92%;')
+                                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                            .o_form_input_dropdown(style='')
+                                                                select#o_field_input_176.o_form_input.o_form_field(style='background-color: #D2D2FF; width: 92%;')(name='format')
+                                                                    option(value='true') Taxes
+                                                                    option(value='') Create & Edit
+                                                                button.fa.fa-external-link.btn.btn-default.o_external_button#bttn(style='color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button', data-toggle='modal', href='#myModal2')
+
+                                                        br
+                                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                            .o_form_input_dropdown(style='')
+                                                                select#o_field_input_17.o_form_input.o_form_field(style='background-color: transparent; width: 92%;')(name='format')
+                                                                    option(value='true')
+                                                                    option(value='Create & Edit') Create & Edit
+
+                                                        br
+                                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                            .o_form_input_dropdown(style='')
+                                                                select#o_field_input_176.o_form_input.o_form_field(style='background-color: #D2D2FF; width: 92%;')(name='format')
+                                                                    option(value='true') Alupak Industriess
+                                                                    option(value='') My Company;wojjfp;ofo, Chicago
+                                                                button.fa.fa-external-link.btn.btn-default.o_external_button#bttn(style='color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button')
+
+                                                        br
+
+                                                .col-xs-3.request_inner2(style='font-weight: bold;')
+                                                    .one
+                                                        label(style='font-size:15px;padding-right:25px;')
+                                                            | Included in Price
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Affect Base of Subsequent Taxes
+                                                        br
+                                                        label(style='font-size:15px;')
+                                                            | Tax adjustment
+                                                        br
+
+
+
+                                                .col-xs-2.osahass(style='')
+                                                    .two
+                                                        label(style='font-size:13px;')
+                                                            .o_form_field.o_form_field_boolean.oe_inline
+                                                                .o_checkbox.o_form_field_boolean
+                                                                    input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                                        br
+                                                        br
+                                                        label(style='font-size:13px;')
+                                                            .o_form_field.o_form_field_boolean.oe_inline
+                                                                .o_checkbox.o_form_field_boolean
+                                                                    input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                                        br
+                                                        .o_form_field.o_form_field_boolean.oe_inline
+                                                            .o_checkbox.o_form_field_boolean
+                                                                input#o_field_input_10(type='checkbox', name='module_website_sign')
+
+    #myModal2.modal.fade.bd-example-modal-lg(tabindex='-1', role='dialog', aria-labelledby='myLargeModalLabel', aria-hidden='true')
+        .modal-dialog.modal-lg
+            .modal-content(style='width: 123%; margin-left: -79px;')
+                .modal-header
+                    h6.modal-title(style='font-weight:bold;') Open: Tax Group
+                    button.close(type='button', data-dismiss='modal') ×
+                .modal-body(style='height: 250px;')
+                    .o_group
+                        .col-xs-12.request_inner1
+                            .row
+                                .col-xs-3.request_inner3(style='font-weight: bold;')
+                                    .one
+                                        label(style='font-size:13px; padding-right:25px; ')
+                                            | Name
+                                        br
+
+                                .col-xs-4.osahass(style='')
+                                    .two
+                                        input#o_field_input_11(type='text', name='format', value='Taxes')(style='width: 92%; background-color:#D2D2FF;')
+                                .col-xs-3.request_inner3(style='font-weight: bold;')
+                                    .one
+                                        label(style='font-size:13px; padding-right:25px; ')
+                                            | Sequence
+                                        br
+
+                                .col-xs-2.osahass(style='')
+                                    .two
+                                        input#o_field_input_11(type='text', name='format', value='0')(style='width: 92%;')
+
+                .modal-footer(style='justify-content: flex-start;')
+                    button.btn.btn-primary.samobuttopcontroller1(style='width: 7%; font-size: 0.9rem; background-color:#7c7bad; border-color: #414168;')(type='button', href='#') Save
+
+                    button.btn.btn-primary.samobuttopcontroller2(type='button', data-dismiss='modal')(style='width: 9%; background-color: transparent; font-size: 0.9rem; color:black; border-color: #8c8c8c;') Discard
+
+
+    //#myModal3.modal.fade.bd-example-modal-lg(tabindex='-1', role='dialog', aria-labelledby='myLargeModalLabel', aria-hidden='true')
+    //    .modal-dialog.modal-lg
+    //        .modal-content(style='width: 123%; margin-left: -79px;')
+    //            .modal-header
+    //                h6.modal-title(style='font-weight:bold;') Open: Tax Group
+    //                button.close(type='button', data-dismiss='modal') ×
+    //            .modal-body(style='height: 250px;')
+    //                .o_group
+    //                    .col-xs-12.request_inner1
+    //                        .row
+    //                            .col-xs-3.request_inner3(style='font-weight: bold;')
+    //                                .one
+    //                                    label(style='font-size:13px; padding-right:25px; ')
+    //                                        | Name
+    //                                    br
+    //
+    //                            .col-xs-4.osahass(style='')
+    //                                .two
+    //                                    input#o_field_input_11(type='text', name='format', value='Taxes')(style='width: 92%; background-color:#D2D2FF;')
+    //
+    //
+    //            .modal-footer(style='justify-content: flex-start;')
+    //                button.btn.btn-primary.samobuttopcontroller1(style='width: 7%; font-size: 0.9rem; background-color:#515081; border-color: #414168;')(type='button', href='#') Save
+    //
+    //                button.btn.btn-primary.samobuttopcontroller2(type='button', data-dismiss='modal')(style='width: 9%; background-color: white; font-size: 0.9rem; color:black; border-color: #8c8c8c;') Discard
+    //
+    //
+    //
+    //
+
+
+
+

@@ -1,0 +1,191 @@
+.all_transfers_table
+    DashboardController( v-bind:savedbtn='true',v-bind:heading="head",v-bind:discardbtn='true', v-bind:links="btnlinks", v-bind:num1='true', v-bind:num2='true')
+    .o_content.samocontent(style='margin-left:-15px; margin-right:-15px;')
+        .o_view_manager_content
+            .o_form_view.o_form_readonly#hasH
+                header
+                    button.btn.btn-sm.oe_highlight.o_form_invisible(type='button')
+                        span Capture Transaction
+                    button.btn.btn-sm.o_form_invisible(type='button')
+                        span Void Transaction
+                    ul.oe_form_field_status.oe_form_status_clickable.o_form_field.o_form_required
+                        li.oe_active(data-id='draft')
+                            span.label Draft
+                            span.arrow
+                                span
+                        li(data-id='pending')
+                            span.label Pending
+                            span.arrow(style='color: transparent;')
+                                span
+                        li(data-id='authorized')
+                            span.label Authorized
+                            span.arrow
+                                span
+                        li(data-id='done')
+                            span.label Done
+                            span.arrow
+                                span
+                        li(data-id='error')
+                            span.label Error
+                            span.arrow
+                                span
+                        li(data-id='cancel')
+                            span.label Canceled
+                            span.arrow
+
+                .o_form_sheet_bg
+                    .o_form_sheet
+
+                        table.o_group.o_inner_group
+                            tbody
+
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label(style='font-size: 0.9rem; ')
+                                            | Reference
+                                    td.two(colspan='1', style='width: 50%;')
+                                        input#o_field_input_213.o_form_input.o_form_field(style='background-color: #D2D2FF;')(value='gg', type='text')
+
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label
+                                            | Acquirer
+                                    td.two(colspan='1', style='width: 50%;')
+                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                            .o_form_input_dropdown(style='')
+                                                select#o_field_input_176.o_form_input.o_form_field(style='width: 90%;')(name='format')
+                                                    option(value='true') Alupak Industriess
+                                                    option(value='') My Company;wojjfp;ofo, Chicago
+
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(style='background-color: transparent; !important')(draggable='false', tabindex='-1', type='button')
+
+
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label(style='font-size: 0.9rem; ')
+                                            | Amount
+                                    td.two(colspan='1', style='width: 50%;')
+                                        input#o_field_input_213.o_form_input.o_form_field(style='background-color: #D2D2FF; width: 50%; height: 27px;')(value='0.00' type='text')
+                                        select#o_field_input_176.o_form_input.o_form_field(style='background-color: #D2D2FF; width: 50%; height: 27px;')(name='format')
+                                            option(value='true') EUR
+                                            option(value='') AED
+
+
+
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label
+                                            | Payment Token
+                                    td.two(colspan='1', style='width: 50%;')
+                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                            .o_form_input_dropdown(style='')
+                                                select#o_field_input_176.o_form_input.o_form_field(style='width: 90%; background-color:transparent')(name='format')
+                                                    option(value='true') Create&Edit
+
+
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label(style='font-size: 0.9rem; ')
+                                            | Fees
+                                    td.two(colspan='1', style='width: 50%;')
+                                        input#o_field_input_213.o_form_input.o_form_field(style='')( value='0.00' , type='text')
+
+
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label
+                                            | Acquirer Reference
+                                    td.two(colspan='1', style='width: 50%;')
+                                        input#o_field_input_213.o_form_input.o_form_field(style='width: 90%;')( type='text')
+
+
+
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label(style='font-size: 0.9rem; ')
+                                            | Partner
+                                    td.two(colspan='1', style='width: 50%;')
+                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                            .o_form_input_dropdown(style='')
+                                                select#o_field_input_16.o_form_input.o_form_field(style='background-color:transparent; width: 88%;')(name='format')
+                                                    option(value='true')
+                                                    option(value='1') Administrators, Pieter Parter's Farm
+                                                    option(value='2') Agrolait
+                                                    option(value='3') Agrolait, Edward Foster
+                                                    option(value='4') Agrolait, Laith Jubair
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(style='padding-left:2px; color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button')
+
+
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label
+                                            | Creation Date
+                                    td.two(colspan='1', style='width: 50%;')
+                                        span 03/07/2017 19:18:25
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label(style='font-size: 0.9rem; ')
+                                            | Customer Details
+                                    td.two(colspan='1', style='width: 50%;')
+                                        input#o_field_input_21.o_form_input.o_form_field(style='')(placeholder='Name' type='text')
+                                        br
+                                        input#o_field_input_23.o_form_input.o_form_field(style='')(placeholder='Address' type='text')
+                                        br
+                                        input#o_field_input_13.o_form_input.o_form_field(style='width: 50%;')(placeholder='Zip' type='text')
+                                        input#o_field_input_2113.o_form_input.o_form_field(style='width: 50%;')(placeholder='City' type='text')
+                                        br
+                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                            .o_form_input_dropdown#o_field_input_746(style='')
+                                                select#o_field_input_76.o_form_input.o_form_field(style='width: 89%;')(name='format')
+                                                    option(value='true') Alupak Industriess
+                                                    option(value='') My Company;wojjfp;ofo, Chicago
+
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(style='background-color: transparent; !important')(draggable='false', tabindex='-1', type='button')
+
+                                        br
+                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                            .o_form_input_dropdown(style='')
+                                                select#o_field_input_106.o_form_input.o_form_field(style='background-color: transparent')(name='format')
+                                                    option(value='true') Alupak Industriess
+                                                    option(value='') My Company;wojjfp;ofo, Chicago
+                                        br
+                                        input#o_field_input_253.o_form_input.o_form_field(style='')(placeholder='Email' type='text')
+
+
+
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label
+                                            | Validation Date
+                                    td.two(colspan='1', style='width: 50%;')
+                                        form#dateRangeForm.form-horizontal(method='post')
+                                            .form-group
+                                                #dateRangePicker.input-group.input-append.date
+                                                    input.input-group-addon.form-control(type='text', name='date', style=' margin-left: 17px; width:80%; text-align: left; background-color: transparent; ')
+
+                                tr
+                                    td(colspan='2', style='width: 50%;')
+                                        .o_horizontal_separator
+                                            | Message
+
+                        textarea.o_form_textarea.o_form_field(rows='6', name='sale_note', style='height: 50px; width: 100%;')
+                        button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                        textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 1397px;')
+
+
+
+                        .o_notebook(style='margin-top: 12px; padding-bottom: 17px;')
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Paypal TX Details
+
+
+                            table.o_group.o_inner_group
+                                tbody
+
+                                    tr
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Transaction Type
+                                            td(colspan='1', style='width: 100%; font-size: 0.8rem;')
+                                                input#o_field_input_213.o_form_input.o_form_field(style='')( type='text')
+
+
+
+

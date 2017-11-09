@@ -1,0 +1,195 @@
+.o_content(style='margin-left:-15px;margin-right:-15px;')
+    .o_view_manager_content
+        .o_form_view.o_form_editable
+            header
+                button.btn.btn-sm.oe_highlight.o_expense_submit(type='button')
+                    span Submit to Manager
+                ul.oe_form_field_status.oe_form_status.o_form_field(data-original-title='', title='')
+                    li.oe_active(data-id='draft')
+                        span.label To Submit
+                        span.arrow
+                            span
+                    li(data-id='reported')
+                        span.label Reported
+                        span.arrow
+                            span
+                    li(data-id='done')
+                        span.label Posted
+                        span.arrow
+                            span
+                button.btn.btn-sm.oe_highlight.o_form_invisible(type='button')
+                    span View Report
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .oe_button_box
+                        button.btn.btn-sm.oe_stat_button(type='button')
+                            .fa.fa-fw.fa-book.o_button_icon
+                            .o_form_field.o_stat_info
+                                span.o_stat_value 0
+                                span.o_stat_text Documents
+                    .oe_title
+                        label.o_form_label(for='o_field_input_15')
+                            | Expense Description
+                        h1
+                            input#o_field_input_15.o_form_input.o_form_field.o_form_required(placeholder='e.g. Lunch with Customer', type='text')
+                    .o_group
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_16')
+                                            | Product
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                            .o_form_input_dropdown
+                                                input#o_field_input_16.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_17')
+                                            | Unit Price
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_monetary.o_form_field.o_form_required.o_form_field_number
+                                            input#o_field_input_17.o_form_input(type='text')
+                                            span Rs.
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_18')
+                                            | Quantity
+                                    td(colspan='1', style='width: 100%;')
+                                        div
+                                            input#o_field_input_18.o_form_input.oe_inline.o_form_field.o_form_required.o_form_field_number(type='text')
+                                            select.o_form_input.oe_inline.o_form_field.o_form_required.o_form_invisible(name='product_uom_id')
+                                                option(value='false')
+                                                option(value='10') cm
+                                                option(value='6') Day(s)
+                                                option(value='2') Dozen(s)
+                                                option(value='17') fl oz
+                                                option(value='15') foot(ft)
+                                                option(value='4') g
+                                                option(value='19') gal(s)
+                                                option(value='5') Hour(s)
+                                                option(value='14') inch(es)
+                                                option(value='3') kg
+                                                option(value='9') km
+                                                option(value='12') lb(s)
+                                                option(value='11') Liter(s)
+                                                option(value='8') m
+                                                option(value='16') mile(s)
+                                                option(value='13') oz(s)
+                                                option(value='18') qt
+                                                option(value='7') t
+                                                option(value='1') Unit(s)
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible(for='o_field_input_19')
+                                            | Taxes
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2manytags.o_form_field.o_form_invisible
+                                            .o_form_field_many2one.o_form_field.o_form_invisible
+                                                .o_form_input_dropdown
+                                                    input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_20')
+                                            | Bill Reference
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_20.o_form_input.o_form_field(type='text')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_21')
+                                            | Date
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_datepicker.o_form_field_date.o_form_field
+                                            input.o_datepicker_input.o_form_input(type='text', name='date')
+                                            span.o_datepicker_button
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_22')
+                                            | Account
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_with_button.o_form_field
+                                            .o_form_input_dropdown
+                                                input#o_field_input_22.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_23')
+                                            | Employee
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                            .o_form_input_dropdown
+                                                input#o_field_input_23.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_24')
+                                            | Expense Report
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_25')
+                                            | Currency
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_with_button.o_form_field
+                                            .o_form_input_dropdown
+                                                input#o_field_input_25.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible(for='o_field_input_26')
+                                            | Analytic Account
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_invisible
+                                            .o_form_input_dropdown
+                                                input#o_field_input_26.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_27')
+                                            | Company
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_with_button.o_form_field
+                                            .o_form_input_dropdown
+                                                input#o_field_input_27.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                span.o_dropdown_button(draggable='false')
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_28')
+                                            | Total
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field.o_form_field_number
+                                            | 700.00
+                                            span Rs.
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_29')
+                                            | Payment By
+                                    td(colspan='1', style='width: 100%;')
+                                        div
+                                            .o_form_field_radio.o_vertical.o_form_field
+                                                .o_radio_item
+                                                    input#radio30_own_account.o_form_radio(type='radio', name='radio30', value='own_account')
+                                                    label.o_form_label(for='radio30_own_account') Employee (to reimburse)
+                                                .o_radio_item
+                                                    input#radio30_company_account.o_form_radio(type='radio', name='radio30', value='company_account')
+                                                    label.o_form_label(for='radio30_company_account') Company
+                    div
+                        textarea.o_form_textarea.o_form_field(rows='6', name='description', placeholder='Notes...', style='resize: horizontal; height: 50px;')
+                        textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 826px;')
+                        textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 10px;')
+                        textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 10px;')
+                        textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 10px;')
+                        textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 10px;')

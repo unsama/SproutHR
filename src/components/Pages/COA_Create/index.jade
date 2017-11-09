@@ -1,0 +1,153 @@
+.chartofaccount
+    DashboardController(v-bind:savedbtn='true',v-bind:discardbtn='true',v-bind:heading="nextactivity", v-bind:links="btnlinks")
+    .Container-fluid
+    .o_view_manager_content(style='margin-left: -15px;margin-right: -15px;')
+        .o_form_view.o_form_readonly
+            .o_form_sheet_bg
+                .o_form_sheet(style='width:968px; height:685px;')
+                    .o_group
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label(for='o_field_input_235')
+                                            | Code
+                                    td.two(colspan='1', style='width: 100%;')
+                                        input#o_field_input_87.o_form_input.o_form_field(style='background-color: #D2D2FF;')(placeholder='code',type='text')
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label(for='o_field_input_236')
+                                            | Name
+                                    td.two(colspan='1', style='width: 100%;')
+                                        input#o_field_input_87.o_form_input.o_form_field(style='background-color: #D2D2FF;')(type='text')
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label.o_form_label_help(for='o_field_input_237', data-original-title='', title='')
+                                            | Type
+                                    td.two(colspan='1', style='width: 100%;')
+                                        select#o_field_input_186.o_form_input.o_form_field(style=' background-color: #D2D2FF;')(name='format')
+                                            option(value='true') Miscellaneous Operations (pas)
+                                            option(value='"A0"') Customer Invoices (pas)
+                                            option(value='"A1"') Bank (pas)
+                                            option(value='"A1"') Vendor Bills (pas)
+                                            option(value='"A1"') Exchange Difference (pas)
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label.o_form_label_empty(for='o_field_input_238')
+                                            | Default Taxes
+                                    td.two(colspan='1', style='width: 100%;')
+                                        ul.list-group
+                                            li.list-group-item.justify-content-between
+                                                span.badge.badge-default.badge-pill Tax 15.00
+                                                span.badge.badge-default.badge-pill Tax 15.00%
+
+
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label.o_form_label_help.o_form_label_empty(for='o_field_input_239', data-original-title='', title='')
+                                            | Tags
+                                    td.two(colspan='1', style='width: 100%;')
+                                        ul.list-group
+                                            li.list-group-item.justify-content-between
+                                                span.badge.badge-default.badge-pill operating activities
+                                                span.badge.badge-default.badge-pill Demo stalk account
+
+
+
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label(for='o_field_input_240')
+                                            | Company
+                                    td.two(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                            .o_form_input_dropdown(style='')
+                                                select#o_field_input_176.o_form_input.o_form_field(style='')(name='format')
+                                                    option(value='true') Alupak Industriess
+                                                    option(value='') My Company;wojjfp;ofo, Chicago
+
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(style='padding-left: 0px; background-color: transparent; !important')(draggable='false', tabindex='-1', type='button')
+
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false(for='o_field_input_241', data-original-title='', title='')
+                                            | Account Currency
+                                    td.two(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                            .o_form_input_dropdown
+                                                select#o_field_input_176.o_form_input.o_form_field(style=' background-color: transparent; !important')(name='format')
+                                                    option(value='true') EUR
+                                                    option(value='') USD
+                                                    option(value='') pas
+                                                    option(value='') AED
+
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(style='padding-left: 0px;background-color: transparent; !important')(draggable='false', tabindex='-1', type='button')
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_242', data-original-title='', title='')
+                                            | Internal Type
+                                    td.two(colspan='1', style='width: 100%;')
+                                        span.o_form_field.o_form_invisible Regular
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label.o_form_label_help.o_form_label_false(for='o_field_input_243', data-original-title='', title='')
+                                            | Allow Reconciliation
+                                    td.two(colspan='1', style='width: 100%;')
+                                        div
+                                            .o_checkbox.o_form_field_boolean.o_form_field
+                                                input#o_field_input_243(type='checkbox', name='reconcile')
+                                                span
+                                                button.btn.btn-sm.oe_link.o_form_invisible(type='button')
+                                                    span  -> Reconcile
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label.o_form_label_false(for='o_field_input_244')
+                                            | Deprecated
+                                    td.two(colspan='1', style='width: 100%;')
+                                        .o_checkbox.o_form_field_boolean.o_form_field
+                                            input#o_field_input_244(type='checkbox', name='deprecated')
+                                            span
+                        table.o_group.o_inner_group.o_group_col_6(style='margin-top: -341px; margin-left: 427px;width: 51%;line-height: 1.1;')
+                            tbody
+                                tr
+                                    td.one(colspan='1', style='width: 50%;')
+                                        .row
+                                            .col-md-11.col-md-offset-1.col-sm-12.no-margin-top(style='background-color: #eee')
+                                                p.text-center(style='font-weight: bold;') How account type affects your reports?
+                                                .col-md-6.col-sm-6
+                                                    .oe_account_help
+                                                        p.oe_account_font_help.text-center Profit & Loss
+                                                        p.oe_account_font_help.oe_account_font_title Income
+                                                        p.oe_account_font_help.oe_account_font_title Minus Cost of Revenue
+                                                        p.oe_account_font_help(style='color: grey;border-top: 2px solid;border-bottom: 2px solid;') GROSS PROFIT
+                                                        p.oe_account_font_help.oe_account_font_title Plus Other Income
+                                                        p.oe_account_font_help.oe_account_font_title Minus Expenses
+                                                        p.oe_account_font_help.oe_account_font_content Expenses
+                                                        p.oe_account_font_help.oe_account_font_content Depreciation
+                                                        p.oe_account_font_help(style='color: grey;border-top: 2px solid;border-bottom: 2px solid;') NET PROFIT
+                                                        #layer(style='position: relative; width: 250px; height: 277px;')
+                                                            div(style='position: relative; left: 0px; top: 0px; visibility: visible; width: 250px; height: 277px;')
+                                                                svg(pointer-events='none', overflow='auto', width='712.5', height='265', viewbox='-4 -4 712.5 265', style='position: relative; top: -4px; left: -4px; overflow: auto; visibility: visible; width: 350.5px; height: 265px;')
+                                                                    defs
+                                                                        marker#arrow(markerwidth='70', markerheight='70', refx='10', refy='6', orient='auto')
+                                                                            path(d='M2,1 L2,12 L10,6 L2,1', stroke='rgb(173,216,230)', fill='rgb(173,216,230)')
+                                                                    path(pointer-events='visiblePainted', shape-rendering='auto', d='M 150 -110 q 270 100 150 150 t 160 120', fill='none', stroke-dasharray='8,3', stroke='rgb(173,216,230)', stroke-linecap='butt', stroke-width='4', stroke-opacity='1', stroke-linejoin='round', transform='matrix(1,0,0,1,0,0)', fill-opacity='1', style='marker-end: url(#arrow);')
+
+                                                .col-md-6.col-sm-6
+                                                    .oe_account_help
+                                                        p.oe_account_font_help.text-center Balance Sheet
+                                                        p.oe_account_font_help.oe_account_font_title(style='color: grey;') Current Assets
+                                                        p.oe_account_font_help.oe_account_font_content Receivable Accounts
+                                                        p.oe_account_font_help.oe_account_font_content Prepayments
+                                                        p.oe_account_font_help.oe_account_font_title Plus Bank
+                                                        p.oe_account_font_help.oe_account_font_title Plus Fixed Assets
+                                                        p.oe_account_font_help.oe_account_font_title Plus Non-Current Assets
+                                                        p.oe_account_font_help(style='color: grey;border-top: 2px solid;border-bottom: 2px solid;') TOTAL ASSETS
+                                                        p.oe_account_font_help.oe_account_font_title Minus Current Liabilities
+                                                        p.oe_account_font_help.oe_account_font_title Minus Credit Card Accounts
+                                                        p.oe_account_font_help.oe_account_font_title Minus Payable Accounts
+                                                        p.oe_account_font_help.oe_account_font_title Minus Non-Current Liabilities
+                                                        p.oe_account_font_help(style='color: grey;border-top: 2px solid;border-bottom: 2px solid;') NET ASSETS
+                                                        p.oe_account_font_help.oe_account_font_title Equity
+                                                        p.oe_account_font_help.oe_account_font_title Plus Net Profit
+                                                        p.oe_account_font_help(style='color: grey;border-top: 2px solid;border-bottom: 2px solid;') TOTAL EQUITY
+

@@ -1,0 +1,15 @@
+.o_content
+    .o_view_manager_content
+        .o_form_view.o_form_editable
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .oe_title
+                        label.o_form_label.oe_edit_only(for='o_field_input_86')
+                            | Category Name
+                        h1
+                            input#o_field_input_86.o_form_input.o_form_field.o_form_required(type='text')
+                    .o_form_field_many2one.o_form_field
+                        .o_form_input_dropdown
+                            input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                            span.o_dropdown_button(draggable='false')
+                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')

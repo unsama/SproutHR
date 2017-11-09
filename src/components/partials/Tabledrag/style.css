@@ -1,0 +1,47 @@
+.pointer{ cursor: n-resize;}
+.samotablehead{
+    color: #4c4c4c;
+    background-color: #eee;
+    border-bottom: 3px solid #cacaca;
+}
+.samotable tbody tr:nth-of-type(odd){
+
+    background-color: #efeff8;
+}
+.samotable tbody tr:nth-of-type(even){
+
+    background-color: white;
+}
+
+.samotable{
+    font-size:13px;
+   
+}
+.samotableheadborder{
+    border-right: 1px solid lightgrey;
+    line-height: 0.4em;
+    vertical-align: middle;
+}
+
+.samotbody{
+
+    line-height: 0.4em;
+}
+
+.samotablepadd{
+    vertical-align: middle;
+
+}
+a
+{
+    color: #4c4c4c;
+}
+
+.samofoot{
+    cursor: default;
+    color: #4c4c4c;
+    background-color: #eeeeee;
+    font-weight: bold;
+    border-top: 2px solid #cacaca;
+    border-bottom: 1px solid #cacaca;
+}

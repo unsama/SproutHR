@@ -1,0 +1,108 @@
+.reordering_rules_table
+    DashboardController(v-bind:heading="nextactivity",v-bind:savedbtn='false',v-bind:editbtn='true',v-bind:editform='createbtn',v-bind:createbtn='true', v-bind:links="btnlinks", v-bind:Attachmentbtn="true", v-bind:actionbtn="true", v-bind:paginbtn1="true", v-bind:paginbtn2="true", v-bind:num1="true", v-bind:num2="true")
+    .o_content.samocontent
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Stage Name
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required Done
+                                            button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false(data-original-title='', title='')
+                                                | Email Template
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_16', data-original-title='', title='')
+                                                | Folded in Kanban
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_checkbox.o_form_field_boolean.o_form_field
+                                                input#o_field_input_16(type='checkbox', name='fold', disabled='')
+                                                span
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible
+                                                | Projects
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2manytags.o_form_field.o_form_invisible
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='6', data-index='0')
+                                                    span.o_badge_text(title='Data Import/Export Plugin') Data Import/Export Plugin
+                                                span.badge.dropdown.o_tag_color_2(data-color='2', data-id='4', data-index='1')
+                                                    span.o_badge_text(title='E-Learning Integration') E-Learning Integration
+                                                span.badge.dropdown.o_tag_color_2(data-color='2', data-id='7', data-index='2')
+                                                    span.o_badge_text(title='Internal - GAP Analysis') Internal - GAP Analysis
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='3', data-index='3')
+                                                    span.o_badge_text(title='Research &amp; Development') Research & Development
+                                                span.badge.dropdown.o_tag_color_3(data-color='3', data-id='2', data-index='4')
+                                                    span.o_badge_text(title='Website for Sales &amp; WMS') Website for Sales & WMS
+                                                span.badge.dropdown.o_tag_color_10(data-color='10', data-id='5', data-index='5')
+                                                    span.o_badge_text(title='Website Design Templates') Website Design Templates
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible
+                                                | Sequence
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_invisible.o_form_field_number 0
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td(colspan='2', style='width: 100%;')
+                                        .o_horizontal_separator
+                                            | Stage Description and Tooltips
+                                tr
+                                    td(colspan='2', style='width: 100%;')
+                                        p.text-muted(colspan='2')
+                                            | At each stage employees can block or make task/issue ready for next stage.
+                                            | You can define here labels that will be displayed for the state instead
+                                            | of the default labels.
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        span.spancircles1
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field.o_form_field_empty
+                                        button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        span.spancircles2
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field.o_form_field_empty
+                                        button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        span.spancircles3
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field.o_form_field_empty
+                                        button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                tr
+                                    td(colspan='2', style='width: 100%;')
+                                        p.text-muted(colspan='2')
+                                            | You can also give a tooltip about the use of the stars available in the kanban and form views.
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help.fa.fa-star.fa-lg.o_star_on.oe_project_kanban_legend.o_form_label_empty.o_form_label_false(data-original-title='', title='')
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field.o_form_field_empty
+                                        button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                tr
+                                    td(colspan='2', style='width: 100%;')
+                                        p.text-muted(colspan='2')
+                                            | You can also add a description to help your coworkers understand the meaning and purpose of the stage.
+                                tr
+                                    td(colspan='2', style='width: 100%;')
+                                        span.o_form_textarea.o_form_field.o_form_field_empty
+                                        button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+
+
+

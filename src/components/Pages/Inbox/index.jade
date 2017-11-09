@@ -1,0 +1,122 @@
+.inbox
+    #top(style='height:592px;')
+    .row
+        .col-md-12(style='margin-left: -5px;')
+            .row
+                .col-md-5(style='')
+                    hr(style='color:black;')
+                .col-md-1(style='')
+                    h1(style='font-size: 13px;') Today
+                .col-md-6(style='')
+                    hr(style='color:black;')
+
+
+
+            .row
+                .col-
+            .o_thread_message(data-message-id='1551')
+                .row
+                    .col-sm-0
+                        .o_thread_message_sidebar
+                            img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/images/placeholder.png')
+                    .col-sm-6
+                        .o_thread_message_core
+                            p.o_mail_info
+                                strong(data-oe-model='res.partner', data-oe-id='')
+                                    | YourCompany, Administrators
+                                |                     -
+                                small.o_mail_timestamp(title='Tue Apr 18 2017 13:45:52 GMT+0500') a day ago
+                                span
+                                    i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='1551')
+                            p blkl;n;lmn;lnm
+
+            .row
+                .col-sm-0
+                    .o_thread_message_sidebar
+                        img.o_thread_message_avatar(src='/images/placeholder.png')
+                .col-sm-6
+                    .o_thread_message_core
+                        p.o_mail_info
+                            strong
+                                a.o_mail_mailto(href='mailto:logan_expert@gmail.example.com?subject=Re: Inquiry')
+                                    | logan_expert@gmail.example.com
+                            |                     -
+                            small.o_mail_timestamp(title='Wed Mar 08 2017 14:40:31 GMT+0500') a month ago
+                            |                         on
+                            a(data-oe-id='93', data-oe-model='crm.lead', href='http://192.168.25.104:8069/mail/view?message_id=1064') Product Catalog
+                            span
+                                i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='1064')
+                                i.fa.fa-reply.o_thread_message_reply(title='Reply', data-message-id='1064')
+                                i.fa.fa-check.o_thread_message_needaction(title='Mark as Read', data-message-id='1064')
+                        p
+                            | Hi,
+                            br
+                            | Could you send me your product catalogue please ?
+                            br
+                            | Regards,
+                            br
+                            | David Logan
+                            br
+                            | ESM Expert
+                            br
+            .row
+                .col-md-12
+                    .input-group(style='background-color: #7c7bad;')
+                    #yes(style='background-color: #7c7bad;margin-left: -16px;margin-right: -19px;')
+                        .input-group(style='background-color: #7c7bad;')
+                        .row
+
+                            .col-md-10
+                                input.oe_import_file_show.form-control(style='border-color: #7c7bad;border-width: 11px;height: 28px;border-color: rgb(124, 123, 173);border-width: -2px;margin-top: 8px;width: 1356px;',placeholder='Write Somethings...', type='text')
+                            .col-md-2
+                                .btn-group(style='margin-left: 68px;margin-top: 7px;margin-bottom: 4px;',role='group', aria-label='Basic example')
+                                    .btn.btn-secondary.fa.fa-paperclip(style='',type='button')
+                                    .btn.btn-secondary.fa.fa-smile-o(type='button')
+                                    button.btn.btn-secondary(style='background-color: #7c7bad;color: white;',type='button') Send
+
+
+
+
+            //.row
+                .col-md-12
+                    .input-group(style='background-color: #7c7bad;')
+                        input.oe_import_file_show.form-control(style='height: 44px;border-color: #7c7bad;border-width: 11px;height: 27px;border-color: rgb(124, 123, 173);border-width: -2px;margin-top: 10px;width: 1356px;',placeholder='Write Somethings...', type='text')
+
+                        .btn-group.o_composer_buttons
+                            button.btn.btn-sm.btn-icon.fa.fa-smile-o.o_composer_button_emoji(style='margin-top: -11px;',data-toggle='popover', tabindex='4', type='button', data-original-title='', title='')
+                            span.input-group-btn
+                                label.btn.btn-primary.fbtn(style='background-color: white;color: black;margin-left: 5px;',for='my-file-selector')
+                                    input#my-file-selector.oe_import_file(accept='.csv, .xls, .xlsx, .ods', id-attf-id='file_#{_id}', name='file', style='display:none;', type='file')
+                                    |                         Load File
+                            button.btn.btn-sm.btn-primary.o_composer_button_send(style='margin-top: -13px;background-color: #7c7bad;',tabindex='3', type='button') Send
+
+
+                    //.o_chat_composer(style='')
+                        .o_composer_attachments_list
+                        .o_composer
+                            .dropup.o_composer_mention_dropdown
+                            .o_composer_input
+                                textarea.o_composer_text_field(placeholder='Write something...', tabindex='2', style='height: 28px;')
+                                textarea.o_composer_text_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 1468px;')
+                            .btn-group.o_composer_buttons
+                                button.btn.btn-sm.btn-primary.o_composer_button_send(tabindex='3', type='button') Send
+                                button.btn.btn-sm.btn-icon.fa.fa-smile-o.o_composer_button_emoji(data-toggle='popover', tabindex='4', type='button', data-original-title='', title='')
+                                button.btn.btn-sm.btn-icon.fa.fa-paperclip.o_composer_button_add_attachment(tabindex='5', type='button')
+                        span.hide
+                            .o_hidden_input_file
+                                form.o_form_binary_form(enctype='multipart/form-data', method='post', action='/web/binary/upload_attachment', target='o_chat_fileupload88')
+                                    input(name='csrf_token', type='hidden', value='616929304a51b7102a984369878e15a6ca21cbe0o')
+                                    input(name='callback', type='hidden', value='o_chat_fileupload88')
+                                    input.o_form_input_file(name='ufile', type='file')
+                                    input(name='model', type='hidden', value='mail.compose.message')
+                                    input(name='id', type='hidden', value='0')
+                                    input(name='session_id', type='hidden', value='8a6648f6c6093e72cf999d5f4fbd5ef75da2cc26')
+                                iframe#o_chat_fileupload88(style='display: none', name='o_chat_fileupload88')
+                        span.o_composer_emoji
+
+
+
+
+
+
+

@@ -1,0 +1,312 @@
+.possessionmodal
+    Modal( v-bind:saveclose='true',v-bind:modal='"bd-example-modal-lg5"',v-bind:savenew='true',v-bind:discard='true',v-bind:heading="modalheading")
+        Possessioninnermodal
+    .modal-body.o_act_window(style='margin-left:-15px;margin-right:-15px;')
+        .o_form_view.o_form_readonly
+            header
+                .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                    input(type='checkbox', name='all_lines_reconciled', disabled='')
+                    span
+                button.btn.btn-sm.oe_highlight.o_form_invisible(type='button')
+                    span Reconcile
+                button.btn.btn-sm.oe_highlight(type='button')
+                    span Validate
+                button.btn.btn-sm.o_form_invisible(type='button')
+                    span Cancel Statement
+                ul.oe_form_field_status.oe_form_status.o_form_field.o_form_required
+                    li.oe_active(data-id='open')
+                        span.label New
+                        span.arrow
+                            span
+                    li(data-id='confirm')
+                        span.label Validated
+                        span.arrow
+                            span
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .oe_button_box
+                        button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                            .fa.fa-fw.fa-bars.o_button_icon
+                            span Journal Entries
+                        .o_form_field.o_form_invisible.o_form_field_one2many.o_view_manager_content
+                            .o_x2m_control_panel
+                                .o_cp_buttons
+                                .o_cp_pager
+                                    .o_hidden
+                                        span.o_pager_value
+                                        |  /
+                                        span.o_pager_limit
+                                        span.btn-group.btn-group-sm
+                                            button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                            button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                            .o_cannot_create
+                                .table-responsive
+                                    table.o_list_view.table.table-condensed.table-striped
+                                        thead
+                                            tr
+                                                th.o_column_sortable(data-id='date')
+                                                    | Date
+                                                th.o_column_sortable(data-id='move_id')
+                                                    | Journal Entry
+                                                th.o_column_sortable(data-id='journal_id')
+                                                    | Journal
+                                                th.o_column_sortable(data-id='name')
+                                                    | Label
+                                                th.o_column_sortable(data-id='ref')
+                                                    | Reference
+                                                th.o_column_sortable(data-id='partner_id')
+                                                    | Partner
+                                                th.o_column_sortable(data-id='account_id')
+                                                    | Account
+                                                th.o_column_sortable(data-id='full_reconcile_id')
+                                                    | Matching Number
+                                                th.o_column_sortable(data-id='debit')
+                                                    | Debit
+                                                th.o_column_sortable(data-id='credit')
+                                                    | Credit
+                                                th.o_column_sortable(data-id='amount_currency')
+                                                    | Amount currency
+                                                th.o_column_sortable(data-id='date_maturity')
+                                                    | Due date
+                                        tfoot
+                                            tr
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td.o_list_number(data-field='debit', title='Total Debit') 0.00
+                                                td.o_list_number(data-field='credit', title='Total Credit') 0.00
+                                                td
+                                                td
+                                        tbody
+                                            tr
+                                                td(title='Date')  
+                                                td(title='Journal Entry')  
+                                                td(title='Journal')  
+                                                td(title='Label')  
+                                                td(title='Reference')  
+                                                td(title='Partner')  
+                                                td(title='Account')  
+                                                td(title='Matching Number')  
+                                                td(title='Debit')  
+                                                td(title='Credit')  
+                                                td(title='Amount currency')  
+                                                td(title='Due date')  
+                                            tr
+                                                td(title='Date')  
+                                                td(title='Journal Entry')  
+                                                td(title='Journal')  
+                                                td(title='Label')  
+                                                td(title='Reference')  
+                                                td(title='Partner')  
+                                                td(title='Account')  
+                                                td(title='Matching Number')  
+                                                td(title='Debit')  
+                                                td(title='Credit')  
+                                                td(title='Amount currency')  
+                                                td(title='Due date')  
+                                            tr
+                                                td(title='Date')  
+                                                td(title='Journal Entry')  
+                                                td(title='Journal')  
+                                                td(title='Label')  
+                                                td(title='Reference')  
+                                                td(title='Partner')  
+                                                td(title='Account')  
+                                                td(title='Matching Number')  
+                                                td(title='Debit')  
+                                                td(title='Credit')  
+                                                td(title='Amount currency')  
+                                                td(title='Due date')  
+                                            tr
+                                                td(title='Date')  
+                                                td(title='Journal Entry')  
+                                                td(title='Journal')  
+                                                td(title='Label')  
+                                                td(title='Reference')  
+                                                td(title='Partner')  
+                                                td(title='Account')  
+                                                td(title='Matching Number')  
+                                                td(title='Debit')  
+                                                td(title='Credit')  
+                                                td(title='Amount currency')  
+                                                td(title='Due date')  
+                    .oe_title.oe_inline
+                        label.o_form_label.oe_edit_only
+                            | Reference
+                        h1
+                            span.o_form_field POS/2017/03/08/03
+                    .o_group
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help.o_form_invisible( data-original-title='', title='')
+                                            | Type
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field.o_form_invisible Cash
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false
+                                            | Starting Cashbox
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false
+                                            | Ending Cashbox
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Journal
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field.o_form_required Cash (EUR)
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Date
+                                    td(colspan='1', style='width: 100%;')
+                                        span.o_form_field_date.o_form_field.o_form_required 03/08/2017
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                            | Company
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field(href='#') Alupak Industriess
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_invisible
+                                            | Currency
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_invisible(href='#') EUR
+                        table.o_group.o_inner_group.o_group_col_6
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Starting Balance
+                                    td(colspan='1', style='width: 100%;')
+                                        div
+                                            span.oe_inline.o_form_field.o_form_field_number
+                                                | 0.00
+                                                span €
+                                            button.btn.btn-sm.oe_inline.oe_link.oe_edit_only(type='button')
+                                                span → Count
+                                            button.btn.btn-sm.oe_edit_only.oe_link.oe_inline.o_form_invisible(type='button')
+                                                span → Count
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Ending Balance
+                                    td(colspan='1', style='width: 100%;')
+                                        div
+                                            span.oe_inline.o_form_field.o_form_field_number
+                                                | 0.00
+                                                span €
+                                            button.btn.btn-sm.oe_inline.oe_link.oe_edit_only(type='button')
+                                                span → Count
+                                            button.btn.btn-sm.oe_edit_only.oe_link.oe_inline.o_form_invisible(type='button')
+                                                span → Count
+                    .o_notebook
+                        ul.nav.nav-tabs(role='tablist')
+                            li.active
+                                a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_126')
+                                    | Transactions
+                        .tab-content.nav.nav-tabs
+                            #notebook_page_126.tab-pane.active(role='tabpanel')
+                                .o_form_field.o_form_field_one2many.o_view_manager_content
+                                    .o_x2m_control_panel
+                                        .o_cp_buttons
+                                        .o_cp_pager
+                                            .o_hidden
+                                                span.o_pager_value
+                                                |  /
+                                                span.o_pager_limit
+                                                span.btn-group.btn-group-sm
+                                                    button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                    button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                    .o_list_editable
+                                        .o_form_view.o_list_editable_form.o_form_nosheet.o_hidden
+                                            field(name='sequence', widget='handle', modifiers='{"readonly":true}', nolabel='true')
+                                            field(name='journal_entry_ids', invisible='1', on_change='1', modifiers='{"readonly":true,"tree_invisible":true,"invisible":true}', nolabel='true')
+                                            field(name='date', attrs="{'readonly' : [('journal_entry_ids', '!=', [])] }", modifiers='{"readonly":[["journal_entry_ids","!=",[]]],"required":true}', nolabel='true')
+                                            field(name='name', attrs="{'readonly' : [('journal_entry_ids', '!=', [])] }", modifiers='{"readonly":[["journal_entry_ids","!=",[]]],"required":true}', nolabel='true')
+                                            field(name='partner_id', domain="['|',('parent_id','=',False),('is_company','=',True)]", context="{'default_supplier': 1}", attrs="{'readonly' : [('journal_entry_ids', '!=', [])] }", can_create='true', can_write='true', modifiers='{"readonly":[["journal_entry_ids","!=",[]]]}', nolabel='true')
+                                            field(name='ref', invisible='1', modifiers='{"invisible":true,"tree_invisible":true}', nolabel='true')
+                                            field(name='amount', attrs="{'readonly' : [('journal_entry_ids', '!=', [])] }", on_change='1', modifiers='{"readonly":[["journal_entry_ids","!=",[]]]}', nolabel='true')
+                                            field(name='journal_currency_id', invisible='1', can_create='true', can_write='true', modifiers='{"readonly":true,"tree_invisible":true,"invisible":true}', nolabel='true')
+                                            field(name='amount_currency', invisible='1', attrs="{'readonly' : [('journal_entry_ids', '!=', [])] }", modifiers='{"readonly":[["journal_entry_ids","!=",[]]],"tree_invisible":true,"invisible":true}', nolabel='true')
+                                            field(name='currency_id', options="{'no_create': True}", invisible='1', attrs="{'readonly' : [('journal_entry_ids', '!=', [])] }", can_create='true', can_write='true', modifiers='{"readonly":[["journal_entry_ids","!=",[]]],"tree_invisible":true,"invisible":true}', nolabel='true')
+                                            field(name='bank_account_id', invisible='1', attrs="{'readonly' : [('journal_entry_ids', '!=', [])] }", domain="['|', ('partner_id', '=', partner_id), ('partner_id', '=', False)]", can_create='true', can_write='true', modifiers='{"readonly":[["journal_entry_ids","!=",[]]],"tree_invisible":true,"invisible":true}', nolabel='true')
+                                        .table-responsive
+                                            table.o_list_view.table.table-condensed.table-striped
+                                                thead
+                                                    tr
+                                                        th.o_column_sortable(data-id='sequence', width='1')
+                                                            span.o_row_handle.fa.fa-arrows.invisible
+                                                        th.o_column_sortable(data-id='date')
+                                                            | Date
+                                                        th.o_column_sortable(data-id='name')
+                                                            | Label
+                                                        th.o_column_sortable(data-id='partner_id')
+                                                            | Partner
+                                                        th.o_column_sortable(data-id='amount')
+                                                            | Amount
+                                                tfoot
+                                                    tr
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                tbody.ui-sortable
+                                                    tr(data-id='20', style='')
+                                                        td.o_readonly.o_list_number.o_handle_cell(data-field='sequence', title='Gives the sequence order when displaying a list of bank statement lines.')
+                                                            span.o_row_handle.fa.fa-arrows.ui-sortable-handle
+                                                        td(data-field='date')(data-toggle='modal', data-target='.bd-example-modal-lg5') 03/17/2017
+                                                        td(data-field='name') Main/0008: return
+                                                        td(data-field='partner_id')  
+                                                        td.o_list_number(data-field='amount') -52,455.59 €
+                                                    tr(data-id='19', style='')
+                                                        td.o_readonly.o_list_number.o_handle_cell(data-field='sequence', title='Gives the sequence order when displaying a list of bank statement lines.')
+                                                            span.o_row_handle.fa.fa-arrows.ui-sortable-handle
+                                                        td(data-field='date') 03/17/2017
+                                                        td(data-field='name') Main/0008:
+                                                        td(data-field='partner_id')  
+                                                        td.o_list_number(data-field='amount') 55,555.00 €
+                                                    tr(data-id='18', style='')
+                                                        td.o_readonly.o_list_number.o_handle_cell(data-field='sequence', title='Gives the sequence order when displaying a list of bank statement lines.')
+                                                            span.o_row_handle.fa.fa-arrows.ui-sortable-handle
+                                                        td(data-field='date') 03/17/2017
+                                                        td(data-field='name') Main/0007: return
+                                                        td(data-field='partner_id')  
+                                                        td.o_list_number(data-field='amount') -31,201.06 €
+                                                    tr(data-id='17', style='')
+                                                        td.o_readonly.o_list_number.o_handle_cell(data-field='sequence', title='Gives the sequence order when displaying a list of bank statement lines.')
+                                                            span.o_row_handle.fa.fa-arrows.ui-sortable-handle
+                                                        td(data-field='date') 03/17/2017
+                                                        td(data-field='name') Main/0007:
+                                                        td(data-field='partner_id')  
+                                                        td.o_list_number(data-field='amount') 35,555.00 €
+                                                    tr(data-id='16', style='')
+                                                        td.o_readonly.o_list_number.o_handle_cell(data-field='sequence', title='Gives the sequence order when displaying a list of bank statement lines.')
+                                                            span.o_row_handle.fa.fa-arrows.ui-sortable-handle
+                                                        td(data-field='date') 03/17/2017
+                                                        td(data-field='name') Main/0006: return
+                                                        td(data-field='partner_id') YourCompany, Administrators
+                                                        td.o_list_number(data-field='amount') -17.43 €
+                                                    tr(data-id='15', style='')
+                                                        td.o_readonly.o_list_number.o_handle_cell(data-field='sequence', title='Gives the sequence order when displaying a list of bank statement lines.')
+                                                            span.o_row_handle.fa.fa-arrows.ui-sortable-handle
+                                                        td(data-field='date') 03/17/2017
+                                                        td(data-field='name') Main/0006:
+                                                        td(data-field='partner_id') YourCompany, Administrators
+                                                        td.o_list_number(data-field='amount') 50.00 €
+
+

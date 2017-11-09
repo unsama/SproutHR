@@ -1,0 +1,36 @@
+.attendance_creates
+    DashboardController(v-bind:heading="nextactivity",v-bind:savebtn='true',v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks")
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Attendances/News
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_editable
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Employees
+                                    td(colspan='1', style='width: 100%;')
+                                        select(v-model='emp_id')
+                                            option(v-for='option in options',v-bind:value="option.id")
+                                                | {{ option.employeename }}
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Check In
+                                    td(colspan='1', style='width: 100%;')
+                                            .o_datepicker
+                                                input.o_datepicker_input.o_form_input#datepicker()(type='text',v-model='CheckIn')
+                                                span.o_datepicker_button
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Check Outs
+                                    td(colspan='1', style='width: 100%;')
+                                            .o_datepicker
+                                                input.o_datepicker_input.o_form_input#datepicker1()(type='text',v-model='CheckOut')
+                                                span.o_datepicker_button
+

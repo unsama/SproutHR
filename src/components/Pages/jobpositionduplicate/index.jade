@@ -1,0 +1,101 @@
+.jobpositionduplicate
+    .row
+        .col-sm-12
+            #success-alert(style='background-color:red;position:absolute;display:none;right: 0px;z-index: 1;')
+                button.close(type="button", data-dismiss="alert",style='color:white;') x
+                .o_notification.o_error
+                    .o_notification_title
+                        span.o_icon.fa.fa-3x.fa-exclamation(style='color:white;border-bottom: 3px solid white;font-size: 16px') The following fields are invalid:
+
+                    .o_notification_content(style='padding-top: 16px;')
+                        ul
+                            li#leave(style='color:white;') Job Title
+    DashboardController(v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Job Positions/ {{job_tittle}}
+        span.o_pager_value(slot='page') {{counter}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="counter--",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="counter++",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+    jobs
+        header(style='margin-left:-15px;margin-right:-15px;')(slot='head')
+            button.btn.btn-sm#hide(v-on:click="selectid(1)",v-model='dog',type='button',value="1")
+                span Launch
+            button.btn.btn-sm#show(v-on:click="selectid(0)",style='display:none;',v-model='dog',type='button',value="1")
+                span Stop Recruitment
+            ul.oe_form_field_status.oe_form_status.o_form_field.o_form_required(data-original-title='', title='')
+                li#b
+                    span.label Recruitment in Progress
+                    span.arrow
+                        span
+                li#a.oe_active
+                    span.label Not Recruiting
+                    span.arrow
+                        span
+        .oe_title(slot='title')
+            label.o_form_label.oe_edit_only(for='o_field_input_4')
+                | Job Title
+            h1
+                input#o_field_input_4.o_form_input.o_form_field.o_form_required(v-model='job_tittle',name='name', v-validate:name.initial="'required|alpha'", :class="{'input': true, 'is-danger': errors.has('name') }",placeholder='e.g. Sales Manager', type='text')
+                i.fa.fa-warning.cl(v-show="errors.has('name')",style='color:red;')
+                span.help.is-danger.cl(v-show="errors.has('name')",style='color:red;') {{ errors.first('name') }}
+                button.o_field_translate.fa.fa-globe.btn.btn-link.o_translate_active(type='button')
+        table.o_group.o_inner_group.o_group_col_6(slot='job')
+            tbody
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label
+                            | Department
+                    td(colspan='1', style='width: 100%;')
+                        select(v-model='department_id')
+                            option(v-for='option in options2', v-bind:value="option.id")
+                                | {{ option.name }}
+                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label
+                            | Recruitment Responsible
+                    td(colspan='1', style='width: 100%;')
+                        select(v-model='recruitment_responsible')
+                            option(v-for='option in options', v-bind:value="option.id")
+                                | {{ option.username }}
+                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help(for='o_field_input_7', data-original-title='', title='')
+                            | Specific Email Address
+                    td(colspan='1', style='width: 100%;')
+                        div(name='alias_def', attrs="{'invisible': [('alias_domain', '=', False)]}")
+                            .o_form_field_many2one.oe_read_only.o_form_field(data-original-title='', title='')
+                                .o_form_input_dropdown
+                                    input.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                    span.o_dropdown_button(draggable='false')
+                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                            .oe_edit_only(name='edit_alias')
+                                input#o_field_input_7.o_form_input.oe_inline.o_form_field(v-model='job_email',type='text')
+                                | @
+                                span.oe_inline.o_form_field localhost
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help(for='o_field_input_8', data-original-title='', title='')
+                            | Expected New Employees
+                    td(colspan='1', style='width: 100%;')
+                        input#o_field_input_8.o_form_input.o_form_field.o_form_field_number(v-model='expected',type='text')
+        table.o_group.o_inner_group.o_group_col_6(slot='jobs')
+            tbody
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+                            | Job Location
+                    td(colspan='1', style='width: 100%;')
+                        select(v-model='job_location')
+                            option(v-for='option in options3', v-bind:value="option.id")
+                                | {{ option.company }}
+                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+        div(attrs="{'invisible': [('state', '!=', 'recruit')]}")(slot='jobsone')
+            label.o_form_label
+                | Job Description
+            textarea.o_form_textarea.o_form_field(v-model='description',rows='6', name='description', style='resize: horizontal; height: 50px;')

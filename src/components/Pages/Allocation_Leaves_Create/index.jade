@@ -1,0 +1,152 @@
+.manufacturing_order_edit
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:num1='false',v-bind:num2='false',v-bind:paginbtn1='false',v-bind:paginbtn2='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false',v-bind:dropdownbtn1='false',v-bind:dropdownbtn2='false',v-bind:dropdownbtn3='false',v-bind:actionbtn='false',v-bind:Attachmentbtn='false',v-bind:printbtn='false')
+    .o_content.row(style='height:89vh;overflow:auto;')
+        .col-md-12
+            .row
+                .col-md-12.pull-left.samotopcontroller
+                    .col-md-5.pull-left
+                        button.btn.btn-primary.samobutton2(type='button',style='margin-right: 5px;') Approve
+                        button.btn.btn-primary.samobutton1(type='button',style='margin-right: 5px;') Refuse
+                    .col-md-1.pull-left
+                    .col-md-3.pull-left
+                    .col-md-3.pull-right
+                        .btn-group.btn-breadcrumb.samobreadcrum1
+                            a.btn.btn-primary.samobreadbutt(href='#') To Submit
+                            a.btn.btn-primary.samobreadbutt1(href='#') To Approved
+                            a.btn.btn-primary.samobreadbutt(href='#') Approve
+            .o_view_manager_content
+                .o_form_view.o_form_editable
+                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                        input(type='checkbox', name='can_reset', disabled='')
+                        span
+                    select.o_form_input.o_form_field.o_form_required.o_form_invisible(name='type', data-original-title='', title='')
+                        option(value='false')
+                        option(value='"remove"') Leave Request
+                        option(value='"add"') Allocation Request
+                    .o_form_sheet_bg
+                        .o_form_sheet
+                            .oe_title
+                                h1
+                                    span.o_form_field.o_form_field_empty
+                            .o_group
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_192')
+                                                    | Description
+                                            td(colspan='1', style='width: 100%;')
+                                                input#o_field_input_192.o_form_input.o_form_field(type='text')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_193')
+                                                    | Leave Type
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_form_field.o_form_required
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_193.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_194')
+                                                    | Duration
+                                            td(colspan='1', style='width: 100%;padding-right: 0px;')
+                                                div
+                                                    .o_form_invisible(attrs="{'invisible': [('type', '=', 'add')]}")
+                                                        .o_datepicker.o_form_field_date.oe_inline.o_form_field
+                                                            input.o_datepicker_input.o_form_input(type='text', name='date_from')
+                                                            span.o_datepicker_button
+                                                        label.o_form_label.oe_inline
+                                                            | -
+                                                        .o_datepicker.o_form_field_date.oe_inline.o_form_field
+                                                            input.o_datepicker_input.o_form_input(type='text', name='date_to')
+                                                            span.o_datepicker_button
+                                                    div
+                                                        input#o_field_input_194.o_form_input.oe_inline.o_form_field.o_form_field_number(type='text')
+                                                        |  days
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help(for='o_field_input_195', data-original-title='', title='')
+                                                    | Mode
+                                            td(colspan='1', style='width: 100%;')
+                                                select#o_field_input_195.o_form_input.o_form_field.o_form_required(name='holiday_type')
+                                                    option(value='false')
+                                                    option(value='"employee"') By Employee
+                                                    option(value='"category"') By Employee Tag
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label(for='o_field_input_196')
+                                                    | Employee
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_form_field.o_form_required
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_196.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_197', data-original-title='', title='')
+                                                    | Employee Tag
+                                            td(colspan='1', style='width: 100%;')
+                                                .o_form_field_many2one.o_form_field.o_form_invisible
+                                                    .o_form_input_dropdown
+                                                        input#o_field_input_197.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                        span.o_dropdown_button(draggable='false')
+                                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_198')
+                                                    | Department
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_199', data-original-title='', title='')
+                                                    | Reported in last payslips
+                                            td(colspan='1', style='width: 100%;')
+                                                button.o_icon_button.o_form_field.o_form_invisible(type='button', title='Reported in last payslips')
+                                                    i.fa.fa-circle.text-muted(title='Reported in last payslips')
+                                textarea.o_form_textarea.o_group_col_12.o_form_field(rows='6', name='notes', placeholder='Add a reason...', style='height: 50px;')
+                                textarea.o_form_textarea.o_group_col_12.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 826px;')
+                                .o_group_col_6.o_form_invisible(attrs="{'invisible':[('type','=','add')]}")
+                                    .o_horizontal_separator
+                                        | Comment by Manager
+                                    textarea.o_form_textarea.o_form_field(rows='6', name='report_note', placeholder='e.g. Report to the next month...', style='height: 50px;')
+                                    textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 110px;')
+                    .o_chatter.o_form_field.oe_chatter.o_form_invisible
+                        .o_chatter_topbar
+                            button.btn.btn-sm.btn-primary.o_chatter_button_new_message(title='Send a message', type='button')
+                                | New message
+                            button.btn.btn-sm.btn-link.o_chatter_button_log_note(title='Log a note. Followers will not be notified.')
+                                | Log an internal note
+                            .o_followers.o_form_field.o_form_invisible
+                                .o_followers_title_box
+                                    button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', title='No follower')
+                                        i.fa.fa-user
+                                        span.o_followers_count 0
+                                        span.caret
+                                    ul.dropdown-menu.o_followers_list(role='menu')
+                                        li.o_add_follower
+                                            a(href='#')  Add Followers
+                                        li.o_add_follower_channel
+                                            a(href='#')  Add Channels
+                                .o_followers_actions
+                                    .btn-group.btn-group-sm.o_subtypes_list
+                                        button.btn.btn-sm.btn-link.o_followers_follow_button.o_followers_notfollow
+                                            span.o_follow Follow
+                                            span.fa.fa-times.o_followers_unfollow
+                                            span.o_followers_unfollow  Unfollow
+                                            span.fa.fa-check.o_followers_following
+                                            span.o_followers_following  Following
+                                        button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', disabled='disabled')
+                                            span.fa.fa-bell
+                                        ul.dropdown-menu(role='menu')
+                        .o_mail_thread
+
+
+
+
+

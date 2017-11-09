@@ -1,0 +1,45 @@
+
+ .o_form_sheet_bg .o_form_sheet {
+    min-width: 650px;
+    max-width: 860px;
+    min-height: 330px;
+    background: white;
+    padding: 16px;
+    margin: 0 auto;
+}
+
+.o_form_sheet_bg .o_form_sheet  {
+    margin: 0 -16px;
+}
+
+ .o_form_sheet_bg .o_form_sheet  {
+    padding: 0 16px;
+}
+ .o_form_sheet_bg {
+    padding: 0;
+}
+ .o_form_sheet_bg {
+    background: url(/web/static/src/img/form_sheetbg.png);
+
+}
+
+ .o_form_sheet_bg .o_form_sheet {
+    border: 1px solid #c8c8d3;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+ .o_form_sheet_bg, .o_form_sheet {
+    border: none;
+}
+
+ .o_form_sheet_bg {
+    position: relative;
+    padding: 16px 0;
+}
+
+.o_form_sheet {
+    box-shadow: none;
+    width: 100%;
+    margin: 0 auto;
+    max-width: none;
+}

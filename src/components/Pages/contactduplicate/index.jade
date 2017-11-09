@@ -1,0 +1,1335 @@
+.contactduplicate
+    DashboardController(v-bind:heading="nextactivity",v-bind:savebtn='true',v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks")
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Contacts/ {{name}}
+        span.o_pager_value(slot='page') {{counter}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="counter--",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="counter++",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+    Modal(v-bind:discard='true',v-bind:saveTigger="submit12",v-bind:save='true',v-bind:heading="modal",v-bind:modal='"bd-example-modal-lg"')
+        .modal-body.o_act_window
+            .o_form_view.o_form_editable.oe_form_dirty
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .o_form_field_radio.o_horizontal.o_form_field.o_form_required(data-original-title='', title='')
+                            .o_radio_item
+                                input#radio75_contact.contact_invoice.o_form_radio(type='radio', name='gender', value='contact')
+                                label.o_form_label(for='radio75_contact') Contact
+                            .o_radio_item
+                                input#radio75_invoice.contact_invoice1.o_form_radio(type='radio', name='radio75', value='invoice')
+                                label.o_form_label(for='radio75_invoice') Invoice address
+                            .o_radio_item
+                                input#radio75_delivery.o_form_radio(type='radio', name='radio75', value='delivery')
+                                label.o_form_label(for='radio75_delivery') Shipping address
+                            .o_radio_item
+                                input#radio75_other.o_form_radio(type='radio', name='radio75', value='other')
+                                label.o_form_label(for='radio75_other') Other address
+                        hr
+                        .o_group
+                            table.contact_pro.o_group.o_inner_group.o_group_col_6(style='display:none')
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_67')
+                                                | Address
+                                        td(colspan='1', style='width: 100%;')
+                                            div
+                                                .o_address_format(name='div_address')
+                                                    input#o_field_input_67.o_form_input.o_address_street.o_form_field(v-model='mstreet1',placeholder='Street...', type='text')
+                                                    input.o_form_input.o_address_street.o_form_field(v-model='mstreet2',placeholder='Street 2...', type='text')
+                                                    input.o_form_input.o_address_city.o_form_field(v-model='mcity',placeholder='City', type='text')
+                                                    .o_form_field_many2one.o_address_state.o_form_field
+                                                        .o_form_input_dropdown
+                                                            select( v-model='mstates')
+                                                                option(v-for='cm_name1 in options1', v-bind:value="cm_name1.state_name")
+                                                                    | {{ cm_name1.state_name }}
+                                                    input.o_form_input.o_address_zip.o_form_field(v-model='mzip',placeholder='ZIP', type='text')
+                                                    .o_form_field_many2one.o_address_country.o_form_field
+                                                        .o_form_input_dropdown
+                                                            select( v-model='mcountry')
+                                                                option(v-for='cm_name2 in options2', v-bind:value="cm_name2.country_name")
+                                                                    | {{ cm_name2.country_name }}
+                            table.invoice_pro.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_68')
+                                                | Contact Namess
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_68.o_form_input.o_form_field.o_form_required(v-model='mname',type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_69')
+                                                | Title
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_69.o_form_input.ui-autocomplete-input(v-model='mtitle',type='text', placeholder='e.g. Mr.', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_70')
+                                                | Job Position
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_70.o_form_input.o_form_field(v-model='mjob_position',placeholder='e.g. Sales Director', type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_71')
+                                                | Emails
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_71.o_form_input.o_form_field(v-model='memail',type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_72')
+                                                | Phone
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_72.o_form_input.o_form_field(v-model='mphone_number',type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_73')
+                                                | Mobile
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_73.o_form_input.o_form_field(v-model='mmobile_number',type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Notes
+                                        td(colspan='1', style='width: 100%;')
+                                            textarea.o_form_textarea.o_form_field(v-model='mnotes',rows='6', name='comment', placeholder='internal note...')
+                                            textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 0px;')
+
+                        .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible(data-original-title='', title='')
+                            input(type='checkbox', name='supplier')
+                            span
+                        .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible(data-original-title='', title='')
+                            input(type='checkbox', name='customer')
+                            span
+                        select.o_form_input.o_form_field.o_form_invisible(name='lang', data-original-title='', title='')
+                            option(value='false')
+                            option(value='"en_US"') English
+                        .o_form_field_binary_file.o_form_field.o_form_invisible(data-original-title='', title='')
+                            input.o_form_input.o_hidden(readonly='readonly', type='text', name='image')
+                            button.btn.btn-sm.btn-primary.o_select_file_button(title='Select', type='button') Upload your file
+                            button.btn.btn-sm.btn-default.fa.fa-pencil.o_select_file_button.o_hidden(title='Select', type='button')
+                            button.btn.btn-sm.btn-default.fa.fa-trash-o.o_clear_file_button.o_hidden(title='Clear', type='button')
+                            span.o_form_binary_progress.o_hidden Uploading...
+                            .o_hidden_input_file.o_hidden(style='overflow-x: hidden')
+                                form.o_form_binary_form(enctype='multipart/form-data', method='post', action='/web/binary/upload')
+                                    input(name='csrf_token', type='hidden', value='346dc350b54b29ea284f6f7802dda4e763ebb6f9o')
+                                    input(name='callback', type='hidden')
+                                    input.o_form_input_file(name='ufile', type='file')
+                                iframe(style='display: none')
+
+    Modal(v-bind:discard='true',v-bind:saveTigger="insert3",v-bind:save='true',v-bind:heading="modal",v-bind:modal='"bd-example-modal-lg2"')
+        .modal-body.o_act_window
+            .o_form_view.o_form_editable.oe_form_dirty
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .o_form_field_radio.o_horizontal.o_form_field.o_form_required(data-original-title='', title='')
+                            .o_radio_item
+                                input#radio75_contact.contact_invoice.o_form_radio(type='radio', name='gender', value='contact')
+                                label.o_form_label(for='radio75_contact') Contacts
+                            .o_radio_item
+                                input#radio75_invoice.contact_invoice1.o_form_radio(type='radio', name='radio75', value='invoice')
+                                label.o_form_label(for='radio75_invoice') Invoice addressss
+                            .o_radio_item
+                                input#radio75_delivery.o_form_radio(type='radio', name='radio75', value='delivery')
+                                label.o_form_label(for='radio75_delivery') Shipping address
+                            .o_radio_item
+                                input#radio75_other.o_form_radio(type='radio', name='radio75', value='other')
+                                label.o_form_label(for='radio75_other') Other addresssss
+                        hr
+                        .o_group
+                            table.contact_pro.o_group.o_inner_group.o_group_col_6(style='display:none')
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_67')
+                                                | Addressss
+                                        td(colspan='1', style='width: 100%;')
+                                            div
+                                                .o_address_format(name='div_address')
+                                                    input#o_field_input_67.o_form_input.o_address_street.o_form_field(v-model='nstreet1',placeholder='Street...', type='text')
+                                                    input.o_form_input.o_address_street.o_form_field(v-model='nstreet2',placeholder='Street 2...', type='text')
+                                                    input.o_form_input.o_address_city.o_form_field(v-model='ncity',placeholder='City', type='text')
+                                                    .o_form_field_many2one.o_address_state.o_form_field
+                                                        .o_form_input_dropdown
+                                                            select( v-model='nstates')
+                                                                option(v-for='cm_name1 in options1', v-bind:value="cm_name1.state_name")
+                                                                    | {{ cm_name1.state_name }}
+                                                    input.o_form_input.o_address_zip.o_form_field(v-model='nzip',placeholder='ZIP', type='text')
+                                                    .o_form_field_many2one.o_address_country.o_form_field
+                                                        .o_form_input_dropdown
+                                                            select( v-model='ncountry')
+                                                                option(v-for='cm_name2 in options2', v-bind:value="cm_name2.country_name")
+                                                                    | {{ cm_name2.country_name }}
+                            table.invoice_pro.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_68')
+                                                | Contact Name
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_68.o_form_input.o_form_field.o_form_required(v-model='nname',type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_69')
+                                                | Title
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_69.o_form_input.ui-autocomplete-input(v-model='ntitle',type='text', placeholder='e.g. Mr.', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_70')
+                                                | Job Position
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_70.o_form_input.o_form_field(v-model='njob_position',placeholder='e.g. Sales Director', type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_71')
+                                                | Emails
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_71.o_form_input.o_form_field(v-model='nemail',type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_72')
+                                                | Phone
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_72.o_form_input.o_form_field(v-model='nphone_number',type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_73')
+                                                | Mobile
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_73.o_form_input.o_form_field(v-model='nmobile_number',type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Notes
+                                        td(colspan='1', style='width: 100%;')
+                                            textarea.o_form_textarea.o_form_field(v-model='nnotes_id',rows='6', name='comment', placeholder='internal note...')
+                                            textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 0px;')
+
+                        .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible(data-original-title='', title='')
+                            input(type='checkbox', name='supplier')
+                            span
+                        .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible(data-original-title='', title='')
+                            input(type='checkbox', name='customer')
+                            span
+                        select.o_form_input.o_form_field.o_form_invisible(name='lang', data-original-title='', title='')
+                            option(value='false')
+                            option(value='"en_US"') English
+                        .o_form_field_binary_file.o_form_field.o_form_invisible(data-original-title='', title='')
+                            input.o_form_input.o_hidden(readonly='readonly', type='text', name='image')
+                            button.btn.btn-sm.btn-primary.o_select_file_button(title='Select', type='button') Upload your file
+                            button.btn.btn-sm.btn-default.fa.fa-pencil.o_select_file_button.o_hidden(title='Select', type='button')
+                            button.btn.btn-sm.btn-default.fa.fa-trash-o.o_clear_file_button.o_hidden(title='Clear', type='button')
+                            span.o_form_binary_progress.o_hidden Uploading...
+                            .o_hidden_input_file.o_hidden(style='overflow-x: hidden')
+                                form.o_form_binary_form(enctype='multipart/form-data', method='post', action='/web/binary/upload')
+                                    input(name='csrf_token', type='hidden', value='346dc350b54b29ea284f6f7802dda4e763ebb6f9o')
+                                    input(name='callback', type='hidden')
+                                    input.o_form_input_file(name='ufile', type='file')
+                                iframe(style='display: none')
+
+    .row
+        .col-sm-12
+            #success-alert(style='background-color:red;display:none;position:absolute;right: 0px;z-index: 1;')
+                button.close(type="button", data-dismiss="alert",style='color:white;') x
+                .o_notification.o_error
+                    .o_notification_title
+                        span.o_icon.fa.fa-3x.fa-exclamation(style='color:white;border-bottom: 3px solid white;font-size: 16px') The following fields are invalid:
+
+                    .o_notification_content(style='padding-top: 16px;')
+                        ul
+                            li#leave(style='color:white;') Leave Type
+    ProductEdit
+        .o_form_sheet(slot='contact')
+            .oe_button_box(name='button_box')
+                button.btn.btn-sm.oe_stat_button(type='button')
+                    .fa.fa-fw.fa-archive.o_button_icon
+                    .o_stat_info.o_form_field
+                        span.o_stat_text.o_not_hover.text-success Active
+                        span.o_stat_text.o_hover.text-danger Archive
+                button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                    .fa.fa-fw.fa-shopping-bag.o_button_icon
+                    .o_form_field.o_stat_info(data-original-title='', title='')
+                        span.o_stat_value 0
+                        span.o_stat_text POS Sale
+                button.btn.btn-sm.oe_stat_button.o_res_partner_tip_opp(type='button')
+                    .fa.fa-fw.fa-star.o_button_icon
+                    .o_form_field.o_stat_info
+                        span.o_stat_value 0
+                        span.o_stat_text Opportunities
+                button.btn.btn-sm.oe_stat_button(type='button')
+                    .fa.fa-fw.fa-calendar.o_button_icon
+                    .o_form_field.o_stat_info
+                        span.o_stat_value 1
+                        span.o_stat_text Meetings
+                button.btn.btn-sm.oe_stat_button(type='button')
+                    .fa.fa-fw.fa-clock-o.o_button_icon
+                    .o_form_field.o_stat_info
+                        span.o_stat_value 0
+                        span.o_stat_text Activities
+                button.btn.btn-sm.oe_stat_button(type='button')
+                    .fa.fa-fw.fa-pencil-square-o.o_button_icon
+                    .o_form_field.o_stat_info
+                        span.o_stat_value
+                            span.o_form_field.o_form_field_number
+                                | 0.00
+                                span €
+                        span.o_stat_text Invoiced
+                button.btn.btn-sm.oe_stat_button(type='button')
+                    .fa.fa-fw.fa-usd.o_button_icon
+                    .o_form_field.o_stat_info
+                        span.o_stat_value 0
+                        span.o_stat_text Sales
+                button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button', data-original-title='', title='')
+                    .fa.fa-fw.fa-pencil-square-o.o_button_icon
+                    .o_form_field.o_stat_info
+                        span.o_stat_value 0
+                        span.o_stat_text Vendor Bills.
+                button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                    .fa.fa-fw.fa-shopping-cart.o_button_icon
+                    .o_form_field.o_stat_info
+                        span.o_stat_value 0
+                        span.o_stat_text Purchases
+                button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                    .fa.fa-fw.fa-book.o_button_icon
+                    .o_form_field.o_stat_info
+                        span.o_stat_value 0
+                        span.o_stat_text Analytic Accounts
+                button.btn.btn-sm.oe_stat_button(type='button')
+                    .fa.fa-fw.fa-bug.o_button_icon
+                    .o_form_field.o_stat_info
+                        span.o_stat_value 0
+                        span.o_stat_text Issues
+                button.btn.btn-sm.oe_stat_button(type='button')
+                    .fa.fa-fw.fa-tasks.o_button_icon
+                    .o_form_field.o_stat_info
+                        span.o_stat_value 0
+                        span.o_stat_text Tasks
+
+            .o_form_field_image.oe_avatar.o_form_field(data-original-title='', title='',style='display: -webkit-inline-box;')
+                img(border='1', name='image', src='http://192.168.25.104:8069/web/image?model=res.partner&id=50&field=image_medium&unique=20170324135646', style='width: 90px; height: 90px;')
+                .o_form_image_controls(style='width: 89px;margin-right: 296px;')
+                    span.fa.fa-pencil.fa-lg.pull-left.o_select_file_button(title='Edit')
+                    span.fa.fa-trash-o.fa-lg.pull-right.o_clear_file_button(title='Clear')
+                    span.o_form_binary_progress Uploading...
+                    .o_hidden_input_file
+                        form.o_form_binary_form(enctype='multipart/form-data', method='post', action='/web/binary/upload')
+                            input(name='csrf_token', type='hidden', value='fcbc2d44cdc1fc98bf3a5b6b5b49ce0b4051f00bo')
+                            input(name='callback', type='hidden')
+                            input.o_form_input_file(accept='image/*', name='ufile', type='file')
+                        iframe(style='display: none')
+                .oe_title(style='margin-left: 10px;')
+                    form(action='')
+                        .col-md-12
+                            .col-md-5(style='padding:0px;')
+                                input.company_btn_click#one(type='radio', name='gender',v-bind:true-value='1',v-model='individual')
+                                label Individual
+                            .col-md-7(style='padding:0px;')
+                                input.individual_btn_click(type='radio', name='gender',v-bind:true-value='0',v-model='individual')
+                                label Companys
+
+                    input.o_form_input.o_form_field.o_form_required(placeholder='Name', v-model='name', type='text',name='name', v-validate:name.initial="'required|alpha'", :class="{'input': true, 'is-danger': errors.has('name') }",style='width: 285px;display: block;height: 45px;')
+                    .o_form_field_many2manytags.o_form_field.company_btn
+                        .o_form_field_many2one.o_form_field
+                            .o_form_input_dropdown
+                                select(style='width: 286px;margin-top: 5px;',v-model='company')
+                                    option(v-for='cm_name in options', v-bind:value="cm_name.name")
+                                        | {{ cm_name.company_name }}
+            a.o_form_uri.o_form_field.o_form_invisible(href='#') 4sla
+            .o_form_field_radio.o_horizontal.oe_edit_only.o_form_field
+                .o_radio_item
+                    input#radio1707_person.o_form_radio(type='radio', name='radio1707', value='person')
+                    label.o_form_label(for='radio1707_person') Individual
+                .o_radio_item
+                    input#radio1707_company.o_form_radio(type='radio', name='radio1707', value='company')
+                    label.o_form_label(for='radio1707_company') Companys
+
+            .o_group
+                table.o_group.o_inner_group.o_group_col_6
+                    tbody
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_1667', data-original-title='', title='')
+                                    | Address Typess
+                            td(colspan='1', style='width: 100%;')
+                                select#o_field_input_1667.o_form_input.o_form_field.o_form_invisible(name='type')
+                                    option(value='false')
+                                    option(value='"contact"') Contact
+                                    option(value='"invoice"') Invoice address
+                                    option(value='"delivery"') Shipping address
+                                    option(value='"other"') Other address
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_1668')
+                                    | Address
+                            td(colspan='1', style='width: 100%;')
+                                .o_address_format
+                                    .oe_edit_only
+                                        button.btn.btn-sm.oe_link.o_form_invisible(type='button')
+                                            span (edit)
+                                    input#o_field_input_1668.o_form_input.o_address_street.o_form_field(placeholder='Street...', v-model='street1' type='text')
+                                    input.o_form_input.o_address_street.o_form_field(placeholder='Street 2...', v-model='street2' type='text')
+                                    input.o_form_input.o_address_city.o_form_field(placeholder='City', v-model='city' type='text')
+                                    .o_form_field_many2one.o_address_state.o_form_field
+                                        .o_form_input_dropdown
+                                            select( v-model='states')
+                                                option(v-for='cm_name1 in options1', v-bind:value="cm_name1.state_name")
+                                                    | {{ cm_name1.state_name }}
+                                    input.o_form_input.o_address_zip.o_form_field(placeholder='ZIP', v-model='zip' type='text')
+                                    .o_form_field_many2one.o_address_country.o_form_field
+                                        .o_form_input_dropdown
+                                            select( v-model='country')
+                                                option(v-for='cm_name2 in options2', v-bind:value="cm_name2.country_name")
+                                                    | {{ cm_name2.country_name }}
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_1669', data-original-title='', title='')
+                                    | Websites
+                            td(colspan='1', style='width: 100%;')
+                                input#o_field_input_1669.o_form_input.o_form_field(placeholder='e.g. www.odoo.com',v-model='website' type='text')
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | Tag
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_many2manytags.o_form_field
+                                    .o_form_field_many2one.o_form_field
+                                        .o_form_input_dropdown
+                                            select(v-model='tags')
+                                                option(v-for='cm_name3 in options3', v-bind:value="cm_name3.id")
+                                                    | {{ cm_name3.name }}
+                table.o_group.o_inner_group.o_group_col_6
+                    tbody
+                        tr.company_btn
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_1672')
+                                    | Job Position
+                            td(colspan='1', style='width: 100%;')
+                                input.o_form_input.o_form_field(type='text' v-model='job_position')
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_1672')
+                                    | Phone
+                            td(colspan='1', style='width: 100%;')
+                                input#o_field_input_1672.o_form_input.o_form_field(type='text' v-model='phone_number')
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_1673')
+                                    | Mobile
+                            td(colspan='1', style='width: 100%;')
+                                input#o_field_input_1673.o_form_input.o_form_field(type='text' v-model='mobile_number')
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_1674')
+                                    | Fax
+                            td(colspan='1', style='width: 100%;')
+                                input#o_field_input_1674.o_form_input.o_form_field(type='text' v-model='fax_number')
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_invisible
+                                    | Users
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field.o_form_invisible.o_view_manager_content
+                                    .o_x2m_control_panel
+                                        .o_cp_buttons
+                                        .o_cp_pager
+                                            .o_hidden
+                                                span.o_pager_value
+                                                |  /
+                                                span.o_pager_limit
+                                                span.btn-group.btn-group-sm
+                                                    button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                    button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                    div
+                                        .table-responsive
+                                            table.o_list_view.table.table-condensed.table-striped
+                                                thead
+                                                    tr
+                                                        th.o_column_sortable(data-id='name')
+                                                            | Name
+                                                        th.o_column_sortable(data-id='login')
+                                                            | Login
+                                                        th.o_column_sortable(data-id='lang')
+                                                            | Language
+                                                        th(data-id='login_date')
+                                                            | Latest connection
+                                                        th.o_list_record_delete
+                                                tfoot
+                                                    tr
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td.o_list_record_delete
+                                                tbody
+                                                    tr
+                                                        td.o_form_field_x2many_list_row_add(colspan='5')
+                                                            a(href='#') Add an item
+                                                    tr
+                                                        td(title='Name')  
+                                                        td(title='Login')  
+                                                        td(title='Language')  
+                                                        td(title='Latest connection')  
+                                                        td.o_list_record_delete
+                                                    tr
+                                                        td(title='Name')  
+                                                        td(title='Login')  
+                                                        td(title='Language')  
+                                                        td(title='Latest connection')  
+                                                        td.o_list_record_delete
+                                                    tr
+                                                        td(title='Name')  
+                                                        td(title='Login')  
+                                                        td(title='Language')  
+                                                        td(title='Latest connection')  
+                                                        td.o_list_record_delete
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_1676')
+                                    | Email
+                            td(colspan='1', style='width: 100%;')
+                                input#o_field_input_1676.o_form_input.o_form_field(type='text' v-model='email')
+                        tr.company_btn
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | Title
+                            td(colspan='1', style='width: 100%;')
+                                .o_form_field_many2one.o_form_field
+                                    .o_form_input_dropdown
+                                        input#o_field_input_1677.o_form_input.ui-autocomplete-input(type='text', v-model='title' ,autocomplete='off')
+                                        span.o_dropdown_button(draggable='false')
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_1678', data-original-title='', title='')
+                                    | Language
+                            td(colspan='1', style='width: 100%;')
+                                select#o_field_input_1678.o_form_input.o_form_field( v-model='language')
+                                    option(value='false')
+                                    option(value='Amharic/አምሃርኛ') Amharic / አምሃርኛ
+                                    option(value='Arabic/الْعَرَبيّة') Arabic / الْعَرَبيّة
+                                    option(value='Danish/Dansk') Danish / Dansk
+                                    option(value='English') English
+
+
+            .o_notebook(style='margin-top: 0px;')
+                ul.nav.nav-tabs(role='tablist')
+                    li.nav-item
+                        a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Contacts and Addresses
+                    li.nav-item
+                        a.nav-link(href='#buzz', role='tab', data-toggle='tab') InTernal Notes
+                    li.nav-item
+                        a.nav-link(href='#buzz1', role='tab', data-toggle='tab') Sales and Purchases
+                    li.nav-item
+                        a.nav-link(href='#buzz2', role='tab', data-toggle='tab') Accounting
+                // Tabs
+                .tab-content
+                    #profile.tab-pane.fade.in.active(role='tabpanel')
+                        .o_form_field.o_view_manager_content
+                            .o_x2m_control_panel
+                                .o_cp_buttons
+                                    div
+                                        button.btn.btn-success(type='button' ,data-toggle='modal', data-target='.bd-example-modal-lg2', style='color: white;background-color: #7c7bad;border-color: #7c7bad;') Create
+
+                                .col-md-12(style='padding-top: 12px;')
+                                    .col-md-6(style='padding:0px;padding-bottom:10px')(v-for="row in names")
+                                        .col-md-3(data-toggle='modal',v-on:click="select51(row.id)", data-target='.bd-example-modal-lg')
+                                            img(src='/images/placeholder.png')
+                                        .col-md-9(data-toggle='modal',v-on:click="select51(row.id)", data-target='.bd-example-modal-lg' style='cursor: pointer;')
+                                            p(style='display:inline-block;margin:0px') {{row.name}}
+                                            br
+                                            p(style='display:inline-block;margin:0px') {{row.job_position}}
+                                            br
+                                            p(style='display:inline-block;margin:0px') {{row.email}}
+                                        .fa.fa-times.pull-right.oe_kanban_action.oe_kanban_action_a(v-on:click="submit51(row.id)")(style="margin-top:-89px;")
+
+                        //.o_form_field.o_form_field_one2many.o_view_manager_content
+                        //    .o_x2m_control_panel
+                        //        .o_cp_buttons
+                        //        .o_cp_pager
+                        //    .o_kanban_view.o_cannot_create.o_kanban_ungrouped(style='display: flex;')
+                        //        .oe_kanban_color_0.oe_kanban_global_click.o_kanban_record(v-for="row in names",data-toggle='modal', data-target='.bd-example-modal-lg')
+                        //            .o_kanban_image(v-on:click="select51(row.id)")
+                        //                img(src='http://localhost:8069/base/static/src/img/avatar.png')
+                        //            .oe_kanban_details
+                        //                | {{row.name}}
+                        //                div {{row.job_position}}
+                        //                div {{row.email}}
+
+                    #buzz.tab-pane.fade.in(role='tabpanel')
+                        textarea.o_form_textarea.o_form_field(rows='6',v-model='notes', name='comment', placeholder='Internal note...', style='height: 50px;')
+
+                    #buzz1.tab-pane.fade.in(role='tabpanel')
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Sale
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                | Is a Customer
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_checkbox.o_form_field_boolean.o_form_field
+                                                input(type='checkbox', name='my-checkbox', value='1', v-bind:true-value='1', v-bind:false-value='0', v-model='is_Customer')
+                                                span
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                | Salesperson
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field
+                                                .o_form_input_dropdown
+                                                    select( v-model='is_sales_person')
+                                                        option(v-for='cm_name4 in options4', v-bind:value="cm_name4.username")
+                                                            | {{ cm_name4.username }}
+
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible
+                                                | Email Messages and Notifications
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_radio.o_vertical.o_form_field.o_form_required.o_form_invisible
+                                                .o_radio_item
+                                                    input#radio1708_none.o_form_radio(type='radio', name='radio1708', value='none')
+                                                    label.o_form_label(for='radio1708_none') Never
+                                                .o_radio_item
+                                                    input#radio1708_always.o_form_radio(type='radio', name='radio1708', value='always')
+                                                    label.o_form_label(for='radio1708_always') All Messages
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_1687', data-original-title='', title='')
+                                                | Mailing Opt-Outs
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                input#o_field_input_1687(type='checkbox', name='opt_out')
+                                                span
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_1688', data-original-title='', title='')
+                                                | Bounce
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_1688.o_form_input.o_form_field.o_form_invisible.o_form_field_number(type='text')
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_form_invisible(name='parent_pricelists', colspan='2', attrs="{'invisible': ['|',('is_company','=',True),('parent_id','=',False)]}")
+                                                p
+                                                    | Pricelists are managed on
+                                                    button.btn.btn-sm.oe_link(type='button')
+                                                        span the parent company
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Purchase
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                | Is a Vendor
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_checkbox.o_form_field_boolean.o_form_field
+                                                input(type='checkbox', name='my-checkbox1', value='1', v-bind:true-value='1', v-bind:false-value='0', v-model='is_vendor')
+                                                span
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Misc
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_1692')
+                                                | Internal Reference
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_1692.o_form_input.o_form_field(v-model='internal_reference_id',type='text')
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Point of Sale
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_1694', data-original-title='', title='')
+                                                | Barcode
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_1694.o_form_input.o_form_field(v-model='barcode',type='text')
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Payments
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_1695')
+                                                | Currency
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                    tr
+                                        td(colspan='1', style='width: 50%;')
+                                            div
+                                                button.btn.btn-sm.btn-link(type='button')
+                                                    .o_form_field.o_stat_info
+                                                        span.o_stat_value 0
+                                                        span.o_stat_text Bank account(s)
+                                        td(colspan='1', style='width: 50%;')
+                                            button.btn.btn-sm.btn-link(type='button')
+                                                .o_form_field.o_stat_info
+                                                    span.o_stat_value 0
+                                                    span.o_stat_text Credit card(s)
+
+                    #buzz2.tab-pane.fade.in(role='tabpanel')
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Sale
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_1698', data-original-title='', title='')
+                                                | Customer Payment Terms
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_1698.o_form_input.o_form_field(v-model='customer_payment_terms',name='property_payment_term_id')
+                                                option(value='false')
+                                                option(value='15 Days') 15 Days
+                                                option(value='30 Net Days') 30 Net Days
+                                                option(value='30% Advance End of Following Month') 30% Advance End of Following Month
+                                                option(value='End of Following Month') End of Following Month
+                                                option(value='Immediate Payment') Immediate Payment
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible( data-original-title='', title='')
+                                                | Total Receivable
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_invisible.o_form_field_number
+                                                | 0.00
+                                                span €
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_1700')
+                                                | Degree of trust you have in this debtor
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_1700.o_form_input.o_form_field(v-model='degree_of_trust',name='trust')
+                                                option(value='false')
+                                                option(value='good') Good Debtor
+                                                option(value='normal') Normal Debtor
+                                                option(value='bad') Bad Debtor
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Purchase
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_1701', data-original-title='', title='')
+                                                | Vendor Payment Terms
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_1701.o_form_input.o_form_field(v-model='vendor_payment_terms',name='property_supplier_payment_term_id')
+                                                option(value='false')
+                                                option(value='15 Days') 15 Days
+                                                option(value='30 Net Days') 30 Net Days
+                                                option(value='30% Advance End of Following Month') 30% Advance End of Following Month
+                                                option(value='End of Following Month') End of Following Month
+                                                option(value='Immediate Payment') Immediate Payment
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_1702', data-original-title='', title='')
+                                                | Total Payable
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_invisible.o_form_field_number
+                                                | 0.00
+                                                span €
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_1703', data-original-title='', title='')
+                                                | Currency
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible(href='#') EUR
+
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Accounting Entries
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_1705', data-original-title='', title='')
+                                                | Account Receivable
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                .o_form_input_dropdown
+                                                    select( v-model='account_reciveable')
+                                                        option(v-for='cm_name5 in options5', v-bind:value="cm_name5.id")
+                                                            | {{ cm_name5.name }}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_1706', data-original-title='', title='')
+                                                | Account Payable
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                .o_form_input_dropdown
+                                                    select( v-model='account_payable')
+                                                        option(v-for='cm_name6 in options5', v-bind:value="cm_name6.id")
+                                                            | {{ cm_name6.name }}
+        //ProductEdit
+        //    .o_form_sheet(slot='contact')
+        //        .oe_button_box(name='button_box')
+        //            button.btn.btn-sm.oe_stat_button(type='button')
+        //                .fa.fa-fw.fa-archive.o_button_icon
+        //                .o_stat_info.o_form_field
+        //                    span.o_stat_text.o_not_hover.text-success Active
+        //                    span.o_stat_text.o_hover.text-danger Archive
+        //            button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+        //                .fa.fa-fw.fa-shopping-bag.o_button_icon
+        //                .o_form_field.o_stat_info(data-original-title='', title='')
+        //                    span.o_stat_value 0
+        //                    span.o_stat_text POS Sales
+        //            button.btn.btn-sm.oe_stat_button.o_res_partner_tip_opp(type='button')
+        //                .fa.fa-fw.fa-star.o_button_icon
+        //                .o_form_field.o_stat_info
+        //                    span.o_stat_value 0
+        //                    span.o_stat_text Opportunities
+        //            button.btn.btn-sm.oe_stat_button(type='button')
+        //                .fa.fa-fw.fa-calendar.o_button_icon
+        //                .o_form_field.o_stat_info
+        //                    span.o_stat_value 1
+        //                    span.o_stat_text Meetings
+        //            button.btn.btn-sm.oe_stat_button(type='button')
+        //                .fa.fa-fw.fa-clock-o.o_button_icon
+        //                .o_form_field.o_stat_info
+        //                    span.o_stat_value 0
+        //                    span.o_stat_text Activities
+        //            button.btn.btn-sm.oe_stat_button(type='button')
+        //                .fa.fa-fw.fa-pencil-square-o.o_button_icon
+        //                .o_form_field.o_stat_info
+        //                    span.o_stat_value
+        //                        span.o_form_field.o_form_field_number
+        //                            | 0.00
+        //                            span €
+        //                    span.o_stat_text Invoiced
+        //            button.btn.btn-sm.oe_stat_button(type='button')
+        //                .fa.fa-fw.fa-usd.o_button_icon
+        //                .o_form_field.o_stat_info
+        //                    span.o_stat_value 0
+        //                    span.o_stat_text Sales
+        //            button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button', data-original-title='', title='')
+        //                .fa.fa-fw.fa-pencil-square-o.o_button_icon
+        //                .o_form_field.o_stat_info
+        //                    span.o_stat_value 0
+        //                    span.o_stat_text Vendor Bills.
+        //            button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+        //                .fa.fa-fw.fa-shopping-cart.o_button_icon
+        //                .o_form_field.o_stat_info
+        //                    span.o_stat_value 0
+        //                    span.o_stat_text Purchases
+        //            button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+        //                .fa.fa-fw.fa-book.o_button_icon
+        //                .o_form_field.o_stat_info
+        //                    span.o_stat_value 0
+        //                    span.o_stat_text Analytic Accounts
+        //            button.btn.btn-sm.oe_stat_button(type='button')
+        //                .fa.fa-fw.fa-bug.o_button_icon
+        //                .o_form_field.o_stat_info
+        //                    span.o_stat_value 0
+        //                    span.o_stat_text Issues
+        //            button.btn.btn-sm.oe_stat_button(type='button')
+        //                .fa.fa-fw.fa-tasks.o_button_icon
+        //                .o_form_field.o_stat_info
+        //                    span.o_stat_value 0
+        //                    span.o_stat_text Tasks
+        //
+        //        .o_form_field_image.oe_avatar.o_form_field(data-original-title='', title='',style='display: -webkit-inline-box;')
+        //            img(border='1', name='image', src='http://192.168.25.104:8069/web/image?model=res.partner&id=50&field=image_medium&unique=20170324135646', style='width: 90px; height: 90px;')
+        //            .o_form_image_controls(style='width: 89px;margin-right: 296px;')
+        //                span.fa.fa-pencil.fa-lg.pull-left.o_select_file_button(title='Edit')
+        //                span.fa.fa-trash-o.fa-lg.pull-right.o_clear_file_button(title='Clear')
+        //                span.o_form_binary_progress Uploadings...
+        //                .o_hidden_input_file
+        //                    form.o_form_binary_form(enctype='multipart/form-data', method='post', action='/web/binary/upload')
+        //                        input(name='csrf_token', type='hidden', value='fcbc2d44cdc1fc98bf3a5b6b5b49ce0b4051f00bo')
+        //                        input(name='callback', type='hidden')
+        //                        input.o_form_input_file(accept='image/*', name='ufile', type='file')
+        //                    iframe(style='display: none')
+        //            .oe_title(style='margin-left: 10px;')
+        //                form(action='')
+        //                    .col-md-12
+        //                        .col-md-5(style='padding:0px;')
+        //                            input.company_btn_click(type='radio', name='gender',v-bind:true-value='1',v-model='individual')
+        //                            label Individuals
+        //                        .col-md-7(style='padding:0px;')
+        //                            input.individual_btn_click(type='radio', name='gender',v-bind:true-value='0',v-model='individual')
+        //                            label Companys
+        //                input.o_form_input.o_form_field.o_form_required(placeholder='Name', v-model='name', type='text',name='name', v-validate:name.initial="'required|alpha'", :class="{'input': true, 'is-danger': errors.has('name') }",style='width: 285px;display: block;height: 45px;')
+        //                .o_form_field_many2manytags.o_form_field.company_btn
+        //                    .o_form_field_many2one.o_form_field
+        //                        .o_form_input_dropdown
+        //                            select(style='width: 286px;margin-top: 5px;',v-model='company')
+        //                                option(v-for='cm_name in options', v-bind:value="cm_name.name")
+        //                                    | {{ cm_name.company_name }}
+        //        a.o_form_uri.o_form_field.o_form_invisible(href='#') 4sla
+        //        .o_form_field_radio.o_horizontal.oe_edit_only.o_form_field
+        //            .o_radio_item
+        //                input#radio1707_person.o_form_radio(type='radio', name='radio1707', value='person')
+        //                label.o_form_label(for='radio1707_person') Individual
+        //            .o_radio_item
+        //                input#radio1707_company.o_form_radio(type='radio', name='radio1707', value='company')
+        //                label.o_form_label(for='radio1707_company') Companys
+        //
+        //        .o_group
+        //            table.o_group.o_inner_group.o_group_col_6
+        //                tbody
+        //                    tr
+        //                        td.o_td_label(colspan='1')
+        //                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_1667', data-original-title='', title='')
+        //                                | Address Typess
+        //                        td(colspan='1', style='width: 100%;')
+        //                            select#o_field_input_1667.o_form_input.o_form_field.o_form_invisible(name='type')
+        //                                option(value='false')
+        //                                option(value='"contact"') Contact
+        //                                option(value='"invoice"') Invoice address
+        //                                option(value='"delivery"') Shipping address
+        //                                option(value='"other"') Other address
+        //                    tr
+        //                        td.o_td_label(colspan='1')
+        //                            label.o_form_label(for='o_field_input_1668')
+        //                                | Address
+        //                        td(colspan='1', style='width: 100%;')
+        //                            .o_address_format
+        //                                .oe_edit_only
+        //                                    button.btn.btn-sm.oe_link.o_form_invisible(type='button')
+        //                                        span (edit)
+        //                                input#o_field_input_1668.o_form_input.o_address_street.o_form_field(placeholder='Street...', v-model='street1' type='text')
+        //                                input.o_form_input.o_address_street.o_form_field(placeholder='Street 2...', v-model='street2' type='text')
+        //                                input.o_form_input.o_address_city.o_form_field(placeholder='City', v-model='city' type='text')
+        //                                .o_form_field_many2one.o_address_state.o_form_field
+        //                                    .o_form_input_dropdown
+        //                                        select( v-model='states')
+        //                                            option(v-for='cm_name1 in options1', v-bind:value="cm_name1.state_name")
+        //                                                | {{ cm_name1.state_name }}
+        //                                input.o_form_input.o_address_zip.o_form_field(placeholder='ZIP', v-model='zip' type='text')
+        //                                .o_form_field_many2one.o_address_country.o_form_field
+        //                                    .o_form_input_dropdown
+        //                                        select( v-model='country')
+        //                                            option(v-for='cm_name2 in options2', v-bind:value="cm_name2.country_name")
+        //                                                | {{ cm_name2.country_name }}
+        //                    tr
+        //                        td.o_td_label(colspan='1')
+        //                            label.o_form_label.o_form_label_help(for='o_field_input_1669', data-original-title='', title='')
+        //                                | Websites
+        //                        td(colspan='1', style='width: 100%;')
+        //                            input#o_field_input_1669.o_form_input.o_form_field(placeholder='e.g. www.odoo.com',v-model='website' type='text')
+        //                    tr
+        //                        td.o_td_label(colspan='1')
+        //                            label.o_form_label
+        //                                | Tagss
+        //                        td(colspan='1', style='width: 100%;')
+        //                            .o_form_field_many2manytags.o_form_field
+        //                                .o_form_field_many2one.o_form_field
+        //                                    .o_form_input_dropdown
+        //                                        select
+        //                                            option(v-for='cm_name3 in options3', v-bind:value="cm_name3.id")
+        //                                                | {{ cm_name3.name }}
+        //            table.o_group.o_inner_group.o_group_col_6
+        //                tbody
+        //                    tr.company_btn
+        //                        td.o_td_label(colspan='1')
+        //                            label.o_form_label(for='o_field_input_1672')
+        //                                | Job Position
+        //                        td(colspan='1', style='width: 100%;')
+        //                            input.o_form_input.o_form_field(type='text' v-model='job_position')
+        //                    tr
+        //                        td.o_td_label(colspan='1')
+        //                            label.o_form_label(for='o_field_input_1672')
+        //                                | Phone
+        //                        td(colspan='1', style='width: 100%;')
+        //                            input#o_field_input_1672.o_form_input.o_form_field(type='text' v-model='phone_number')
+        //                    tr
+        //                        td.o_td_label(colspan='1')
+        //                            label.o_form_label(for='o_field_input_1673')
+        //                                | Mobile
+        //                        td(colspan='1', style='width: 100%;')
+        //                            input#o_field_input_1673.o_form_input.o_form_field(type='text' v-model='mobile_number')
+        //                    tr
+        //                        td.o_td_label(colspan='1')
+        //                            label.o_form_label(for='o_field_input_1674')
+        //                                | Fax
+        //                        td(colspan='1', style='width: 100%;')
+        //                            input#o_field_input_1674.o_form_input.o_form_field(type='text' v-model='fax_number')
+        //                    tr
+        //                        td.o_td_label(colspan='1')
+        //                            label.o_form_label.o_form_invisible
+        //                                | Users
+        //                        td(colspan='1', style='width: 100%;')
+        //                            .o_form_field.o_form_invisible.o_view_manager_content
+        //                                .o_x2m_control_panel
+        //                                    .o_cp_buttons
+        //                                    .o_cp_pager
+        //                                        .o_hidden
+        //                                            span.o_pager_value
+        //                                            |  /
+        //                                            span.o_pager_limit
+        //                                            span.btn-group.btn-group-sm
+        //                                                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+        //                                                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+        //                                div
+        //                                    .table-responsive
+        //                                        table.o_list_view.table.table-condensed.table-striped
+        //                                            thead
+        //                                                tr
+        //                                                    th.o_column_sortable(data-id='name')
+        //                                                        | Name
+        //                                                    th.o_column_sortable(data-id='login')
+        //                                                        | Login
+        //                                                    th.o_column_sortable(data-id='lang')
+        //                                                        | Language
+        //                                                    th(data-id='login_date')
+        //                                                        | Latest connection
+        //                                                    th.o_list_record_delete
+        //                                            tfoot
+        //                                                tr
+        //                                                    td
+        //                                                    td
+        //                                                    td
+        //                                                    td
+        //                                                    td.o_list_record_delete
+        //                                            tbody
+        //                                                tr
+        //                                                    td.o_form_field_x2many_list_row_add(colspan='5')
+        //                                                        a(href='#') Add an item
+        //                                                tr
+        //                                                    td(title='Name')  
+        //                                                    td(title='Login')  
+        //                                                    td(title='Language')  
+        //                                                    td(title='Latest connection')  
+        //                                                    td.o_list_record_delete
+        //                                                tr
+        //                                                    td(title='Name')  
+        //                                                    td(title='Login')  
+        //                                                    td(title='Language')  
+        //                                                    td(title='Latest connection')  
+        //                                                    td.o_list_record_delete
+        //                                                tr
+        //                                                    td(title='Name')  
+        //                                                    td(title='Login')  
+        //                                                    td(title='Language')  
+        //                                                    td(title='Latest connection')  
+        //                                                    td.o_list_record_delete
+        //                    tr
+        //                        td.o_td_label(colspan='1')
+        //                            label.o_form_label(for='o_field_input_1676')
+        //                                | Email
+        //                        td(colspan='1', style='width: 100%;')
+        //                            input#o_field_input_1676.o_form_input.o_form_field(type='text' v-model='email')
+        //                    tr.company_btn
+        //                        td.o_td_label(colspan='1')
+        //                            label.o_form_label
+        //                                | Title
+        //                        td(colspan='1', style='width: 100%;')
+        //                            .o_form_field_many2one.o_form_field
+        //                                .o_form_input_dropdown
+        //                                    input#o_field_input_1677.o_form_input.ui-autocomplete-input(type='text', v-model='title' ,autocomplete='off')
+        //                                    span.o_dropdown_button(draggable='false')
+        //                    tr
+        //                        td.o_td_label(colspan='1')
+        //                            label.o_form_label.o_form_label_help(for='o_field_input_1678', data-original-title='', title='')
+        //                                | Language
+        //                        td(colspan='1', style='width: 100%;')
+        //                            select#o_field_input_1678.o_form_input.o_form_field( v-model='language')
+        //                                option(value='false')
+        //                                option(value='Amharic/አምሃርኛ') Amharic / አምሃርኛ
+        //                                option(value='Arabic/الْعَرَبيّة') Arabic / الْعَرَبيّة
+        //                                option(value='Danish/Dansk') Danish / Dansk
+        //                                option(value='English') English
+        //
+        //
+        //        .o_notebook(style='margin-top: 0px;')
+        //            ul.nav.nav-tabs(role='tablist')
+        //                li.nav-item
+        //                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Contacts and Addresses
+        //                li.nav-item
+        //                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') InTernal Notes
+        //                li.nav-item
+        //                    a.nav-link(href='#buzz1', role='tab', data-toggle='tab') Sales and Purchases
+        //                li.nav-item
+        //                    a.nav-link(href='#buzz2', role='tab', data-toggle='tab') Accounting
+        //            // Tabs
+        //            .tab-content
+        //                #profile.tab-pane.fade.in.active(role='tabpanel')
+        //                    button.btn.btn-success(type='button' ,data-toggle='modal', data-target='.bd-example-modal-lg', style='color: white;background-color: #7c7bad;border-color: #7c7bad;') Create
+        //                    .row(style='padding-left:15px;')(v-for="row in names1")
+        //                        .col-xs-1
+        //                            .oe_kanban_color_0.oe_kanban_global_click.o_kanban_record
+        //                                .o_kanban_image
+        //                                    img(src='http://localhost:8069/base/static/src/img/avatar.png',style='width: 68px;')
+        //                        .col-xs-5
+        //                            a.fa.fa-times.pull-right.oe_kanban_action.oe_kanban_action_a(data-type='delete', href='#',v-on:click="submit51(row.id)")
+        //                            .oe_kanban_details(data-toggle='modal',v-on:click="select51(row.id)", data-target='.bd-example-modal-lg')
+        //                                | {{row.name}}
+        //                                div {{row.job_position}}
+        //                                div {{row.email}}
+        //                    .row(style='padding-left:15px;')(v-for="row in names")
+        //                        .col-xs-1
+        //                            .oe_kanban_color_0.oe_kanban_global_click.o_kanban_record
+        //                                .o_kanban_image
+        //                                    img(src='http://localhost:8069/base/static/src/img/avatar.png',style='width: 68px;')
+        //                        .col-xs-5
+        //                            a.fa.fa-times.pull-right.oe_kanban_action.oe_kanban_action_a(data-type='delete', href='#',v-on:click="submit51(row.id)")
+        //                            .oe_kanban_details(data-toggle='modal',v-on:click="select51(row.id)", data-target='.bd-example-modal-lg')
+        //                                | {{row.name}}
+        //                                div {{row.job_position}}
+        //                                div {{row.email}}
+        //                    //.o_form_field.o_form_field_one2many.o_view_manager_content
+        //                    //    .o_x2m_control_panel
+        //                    //        .o_cp_buttons
+        //                    //        .o_cp_pager
+        //                    //    .o_kanban_view.o_cannot_create.o_kanban_ungrouped(style='display: flex;')
+        //                    //        .oe_kanban_color_0.oe_kanban_global_click.o_kanban_record(v-for="row in names",data-toggle='modal', data-target='.bd-example-modal-lg')
+        //                    //            .o_kanban_image(v-on:click="select51(row.id)")
+        //                    //                img(src='http://localhost:8069/base/static/src/img/avatar.png')
+        //                    //            .oe_kanban_details
+        //                    //                | {{row.name}}
+        //                    //                div {{row.job_position}}
+        //                    //                div {{row.email}}
+        //
+        //                #buzz.tab-pane.fade.in(role='tabpanel')
+        //                    textarea.o_form_textarea.o_form_field(rows='6',v-model='notes', name='comment', placeholder='Internal note...', style='height: 50px;')
+        //
+        //                #buzz1.tab-pane.fade.in(role='tabpanel')
+        //                    .o_group
+        //                        table.o_group.o_inner_group.o_group_col_6
+        //                            tbody
+        //                                tr
+        //                                    td(colspan='2', style='width: 100%;')
+        //                                        .o_horizontal_separator
+        //                                            | Sale
+        //                                tr
+        //                                    td.o_td_label(colspan='1')
+        //                                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+        //                                            | Is a Customer
+        //                                    td(colspan='1', style='width: 100%;')
+        //                                        .o_checkbox.o_form_field_boolean.o_form_field
+        //                                            input(type='checkbox', name='my-checkbox', value='1', v-bind:true-value='1', v-bind:false-value='0', v-model='is_Customer')
+        //                                            span
+        //                                tr
+        //                                    td.o_td_label(colspan='1')
+        //                                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+        //                                            | Salesperson
+        //                                    td(colspan='1', style='width: 100%;')
+        //                                        .o_form_field_many2one.o_form_field
+        //                                            .o_form_input_dropdown
+        //                                                select( v-model='is_sales_person')
+        //                                                    option(v-for='cm_name4 in options4', v-bind:value="cm_name4.username")
+        //                                                        | {{ cm_name4.username }}
+        //
+        //                                            button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+        //                                tr
+        //                                    td.o_td_label(colspan='1')
+        //                                        label.o_form_label.o_form_label_help.o_form_invisible
+        //                                            | Email Messages and Notifications
+        //                                    td(colspan='1', style='width: 100%;')
+        //                                        .o_form_field_radio.o_vertical.o_form_field.o_form_required.o_form_invisible
+        //                                            .o_radio_item
+        //                                                input#radio1708_none.o_form_radio(type='radio', name='radio1708', value='none')
+        //                                                label.o_form_label(for='radio1708_none') Never
+        //                                            .o_radio_item
+        //                                                input#radio1708_always.o_form_radio(type='radio', name='radio1708', value='always')
+        //                                                label.o_form_label(for='radio1708_always') All Messages
+        //                                tr
+        //                                    td.o_td_label(colspan='1')
+        //                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_1687', data-original-title='', title='')
+        //                                            | Mailing Opt-Outs
+        //                                    td(colspan='1', style='width: 100%;')
+        //                                        .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+        //                                            input#o_field_input_1687(type='checkbox', name='opt_out')
+        //                                            span
+        //                                tr
+        //                                    td.o_td_label(colspan='1')
+        //                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_1688', data-original-title='', title='')
+        //                                            | Bounce
+        //                                    td(colspan='1', style='width: 100%;')
+        //                                        input#o_field_input_1688.o_form_input.o_form_field.o_form_invisible.o_form_field_number(type='text')
+        //                                tr
+        //                                    td(colspan='2', style='width: 100%;')
+        //                                        .o_form_invisible(name='parent_pricelists', colspan='2', attrs="{'invisible': ['|',('is_company','=',True),('parent_id','=',False)]}")
+        //                                            p
+        //                                                | Pricelists are managed on
+        //                                                button.btn.btn-sm.oe_link(type='button')
+        //                                                    span the parent company
+        //                        table.o_group.o_inner_group.o_group_col_6
+        //                            tbody
+        //                                tr
+        //                                    td(colspan='2', style='width: 100%;')
+        //                                        .o_horizontal_separator
+        //                                            | Purchase
+        //                                tr
+        //                                    td.o_td_label(colspan='1')
+        //                                        label.o_form_label.o_form_label_help( data-original-title='', title='')
+        //                                            | Is a Vendor
+        //                                    td(colspan='1', style='width: 100%;')
+        //                                        .o_checkbox.o_form_field_boolean.o_form_field
+        //                                            input(type='checkbox', name='my-checkbox1', value='1', v-bind:true-value='1', v-bind:false-value='0', v-model='is_vendor')
+        //                                            span
+        //                        table.o_group.o_inner_group.o_group_col_6
+        //                            tbody
+        //                                tr
+        //                                    td(colspan='2', style='width: 100%;')
+        //                                        .o_horizontal_separator
+        //                                            | Misc
+        //                                tr
+        //                                    td.o_td_label(colspan='1')
+        //                                        label.o_form_label(for='o_field_input_1692')
+        //                                            | Internal Reference
+        //                                    td(colspan='1', style='width: 100%;')
+        //                                        input#o_field_input_1692.o_form_input.o_form_field(v-model='internal_reference_id',type='text')
+        //                        table.o_group.o_inner_group.o_group_col_6
+        //                            tbody
+        //                                tr
+        //                                    td(colspan='2', style='width: 100%;')
+        //                                        .o_horizontal_separator
+        //                                            | Point of Sale
+        //                                tr
+        //                                    td.o_td_label(colspan='1')
+        //                                        label.o_form_label.o_form_label_help(for='o_field_input_1694', data-original-title='', title='')
+        //                                            | Barcode
+        //                                    td(colspan='1', style='width: 100%;')
+        //                                        input#o_field_input_1694.o_form_input.o_form_field(v-model='barcode',type='text')
+        //                        table.o_group.o_inner_group.o_group_col_6
+        //                            tbody
+        //                                tr
+        //                                    td(colspan='2', style='width: 100%;')
+        //                                        .o_horizontal_separator
+        //                                            | Payments
+        //                                tr
+        //                                    td.o_td_label(colspan='1')
+        //                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_1695')
+        //                                            | Currency
+        //                                    td(colspan='1', style='width: 100%;')
+        //                                        a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+        //                                tr
+        //                                    td(colspan='1', style='width: 50%;')
+        //                                        div
+        //                                            button.btn.btn-sm.btn-link(type='button')
+        //                                                .o_form_field.o_stat_info
+        //                                                    span.o_stat_value 0
+        //                                                    span.o_stat_text Bank account(s)
+        //                                    td(colspan='1', style='width: 50%;')
+        //                                        button.btn.btn-sm.btn-link(type='button')
+        //                                            .o_form_field.o_stat_info
+        //                                                span.o_stat_value 0
+        //                                                span.o_stat_text Credit card(s)
+        //
+        //                #buzz2.tab-pane.fade.in(role='tabpanel')
+        //                    .o_group
+        //                        table.o_group.o_inner_group.o_group_col_6
+        //                            tbody
+        //                                tr
+        //                                    td(colspan='2', style='width: 100%;')
+        //                                        .o_horizontal_separator
+        //                                            | Sale
+        //                                tr
+        //                                    td.o_td_label(colspan='1')
+        //                                        label.o_form_label.o_form_label_help(for='o_field_input_1698', data-original-title='', title='')
+        //                                            | Customer Payment Terms
+        //                                    td(colspan='1', style='width: 100%;')
+        //                                        select#o_field_input_1698.o_form_input.o_form_field(v-model='customer_payment_terms',name='property_payment_term_id')
+        //                                            option(value='false')
+        //                                            option(value='15 Days') 15 Days
+        //                                            option(value='30 Net Days') 30 Net Days
+        //                                            option(value='30% Advance End of Following Month') 30% Advance End of Following Month
+        //                                            option(value='End of Following Month') End of Following Month
+        //                                            option(value='Immediate Payment') Immediate Payment
+        //                                tr
+        //                                    td.o_td_label(colspan='1')
+        //                                        label.o_form_label.o_form_label_help.o_form_invisible( data-original-title='', title='')
+        //                                            | Total Receivable
+        //                                    td(colspan='1', style='width: 100%;')
+        //                                        span.o_form_field.o_form_invisible.o_form_field_number
+        //                                            | 0.00
+        //                                            span €
+        //                                tr
+        //                                    td.o_td_label(colspan='1')
+        //                                        label.o_form_label(for='o_field_input_1700')
+        //                                            | Degree of trust you have in this debtor
+        //                                    td(colspan='1', style='width: 100%;')
+        //                                        select#o_field_input_1700.o_form_input.o_form_field(v-model='degree_of_trust',name='trust')
+        //                                            option(value='false')
+        //                                            option(value='good') Good Debtor
+        //                                            option(value='normal') Normal Debtor
+        //                                            option(value='bad') Bad Debtor
+        //                        table.o_group.o_inner_group.o_group_col_6
+        //                            tbody
+        //                                tr
+        //                                    td(colspan='2', style='width: 100%;')
+        //                                        .o_horizontal_separator
+        //                                            | Purchase
+        //                                tr
+        //                                    td.o_td_label(colspan='1')
+        //                                        label.o_form_label.o_form_label_help(for='o_field_input_1701', data-original-title='', title='')
+        //                                            | Vendor Payment Terms
+        //                                    td(colspan='1', style='width: 100%;')
+        //                                        select#o_field_input_1701.o_form_input.o_form_field(v-model='vendor_payment_terms',name='property_supplier_payment_term_id')
+        //                                            option(value='false')
+        //                                            option(value='15 Days') 15 Days
+        //                                            option(value='30 Net Days') 30 Net Days
+        //                                            option(value='30% Advance End of Following Month') 30% Advance End of Following Month
+        //                                            option(value='End of Following Month') End of Following Month
+        //                                            option(value='Immediate Payment') Immediate Payment
+        //                                tr
+        //                                    td.o_td_label(colspan='1')
+        //                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_1702', data-original-title='', title='')
+        //                                            | Total Payable
+        //                                    td(colspan='1', style='width: 100%;')
+        //                                        span.o_form_field.o_form_invisible.o_form_field_number
+        //                                            | 0.00
+        //                                            span €
+        //                                tr
+        //                                    td.o_td_label(colspan='1')
+        //                                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_1703', data-original-title='', title='')
+        //                                            | Currency
+        //                                    td(colspan='1', style='width: 100%;')
+        //                                        a.o_form_uri.o_form_field.o_form_invisible(href='#') EUR
+        //
+        //                        table.o_group.o_inner_group.o_group_col_6
+        //                            tbody
+        //                                tr
+        //                                    td(colspan='2', style='width: 100%;')
+        //                                        .o_horizontal_separator
+        //                                            | Accounting Entries
+        //                                tr
+        //                                    td.o_td_label(colspan='1')
+        //                                        label.o_form_label.o_form_label_help(for='o_field_input_1705', data-original-title='', title='')
+        //                                            | Account Receivable
+        //                                    td(colspan='1', style='width: 100%;')
+        //                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+        //                                            .o_form_input_dropdown
+        //                                                select( v-model='account_reciveable')
+        //                                                    option(v-for='cm_name5 in options5', v-bind:value="cm_name5.id")
+        //                                                        | {{ cm_name5.name }}
+        //                                tr
+        //                                    td.o_td_label(colspan='1')
+        //                                        label.o_form_label.o_form_label_help(for='o_field_input_1706', data-original-title='', title='')
+        //                                            | Account Payable
+        //                                    td(colspan='1', style='width: 100%;')
+        //                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+        //                                            .o_form_input_dropdown
+        //                                                select( v-model='account_payable')
+        //                                                    option(v-for='cm_name6 in options5', v-bind:value="cm_name6.id")
+        //                                                        | {{ cm_name6.name }}

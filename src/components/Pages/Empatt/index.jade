@@ -1,0 +1,579 @@
+.Empatt
+    dashconterller(v-show='p', v-bind:save='true',v-bind:heading="nextactivity",v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true')
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Attendances/Employee
+    .row
+        .col-sm-12
+            .time
+                p#demo(style='float:right;font-weight:bold;background-color: beige;' v-show='l')
+
+    .row#abcd(style='padding-top: 17px;display:none;')
+        .col-md-3(style='padding-right: 0px;',v-for="row in names")
+            .table(style='margin-top:-10px;color: black;')
+                    .row(v-on:click='selectid(row.id,row.statuss.data[0])')
+                        .col-xs-3
+                            .img(style='padding-left: 5px;')
+                                img.img-responsive(style='width:80px;padding-left: 10px;')(src='/images/alu.jpg')
+                        .col-xs-5.offset-sm-2
+                            strong
+                                | {{row.employeename}}
+                            br(style='font-size:10px;')
+                            | {{row.work_location}}
+                        .col-xs-1.offset-sm-3
+                            i.fa.fa-user(v-if="row.statuss.data[0] == 0",style='color:red;')
+                            i.fa.fa-user(v-else,style='color:green;')
+
+    .row#abcdef(style='padding-top: 17px;display:none;')
+        .col-md-3(style='padding-right: 0px;',v-for="row in names")
+            .table(style='margin-top:-10px;color: black;')
+                .row(v-on:click='selectids(row.id,row.statuss.data[0])')
+                    .col-xs-3
+                        .img(style='padding-left: 5px;')
+                            img.img-responsive(style='width:80px;padding-left: 10px;')(src='/images/alu.jpg')
+                    .col-xs-5.offset-sm-2
+                        strong
+                            | {{row.employeename}}
+                        br(style='font-size:10px;')
+                        | {{row.work_location}}
+
+                    .col-xs-1.offset-sm-3
+                        i.fa.fa-user(v-if="row.statuss.data[0] == 0",style='color:red;')
+                        i.fa.fa-user(v-else,style='color:green;')
+
+    .row#abck(style='padding-top: 17px;display:none;')
+        .col-md-3(style='padding-right: 0px;',v-for="row in names")
+            .table(style='margin-top:-10px;color: black;')
+                .row(v-on:click='selectidss(row.id,row.statuss.data[0])')
+                    .col-xs-3
+                        .img(style='padding-left: 5px;')
+                            img.img-responsive(style='width:80px;padding-left: 10px;')(src='/images/alu.jpg')
+                    .col-xs-5.offset-sm-2
+                        strong
+                            | {{row.employeename}}
+                        br(style='font-size:10px;')
+                        | {{row.work_location}}
+
+                    .col-xs-1.offset-sm-3
+                        i.fa.fa-user(v-if="row.statuss.data[0] == 0",style='color:red;')
+                        i.fa.fa-user(v-else,style='color:green;')
+
+
+
+
+            //router-link(to='CheckOut')
+            //    .table(style='margin-top:-10px;color: black;' )
+            //            .row
+            //                .col-xs-3
+            //                    .img
+            //                        img.img-responsive(style='width:80px;padding-left: 10px;')(src='/images/alu.jpg')
+            //
+            //                .col-xs-5.offset-sm-1
+            //                    strong
+            //                        | John Does
+            //
+            //                    br(style='font-size:10px;')
+            //                    | Web Devloper
+            //                    br(style='font-size:10px;')
+            //                    | 14 Street Newyork
+            //                .col-xs-1.offset-sm-3
+            //                    i.a.fa.fa-user-o(style='color:Red;')
+            //
+            //router-link(to='PassPad')
+            //    .table(style='margin-top:-10px;color: black;')
+            //        .row
+            //            .col-xs-3
+            //                .img
+            //                    img.img-responsive(style='width:80px;padding-left: 10px;')(src='/images/alu.jpg')
+            //
+            //            .col-xs-5.offset-sm-1
+            //                strong
+            //                    | John Doe
+            //
+            //                br(style='font-size:10px;')
+            //                | Web Devloper
+            //                br(style='font-size:10px;')
+            //                | 14 Street Newyork
+            //            .col-xs-1.offset-sm-3
+            //                i.a.fa.fa-user-o(style='color:Red;')
+            //
+
+    .main#checkout(style='display:none;')
+        .center
+            .test(style='flex: 0 0 auto;width: 550px;border-radius: 10px;display: inline-block;background-color: rgba(255, 255, 255, 0.8);box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);font-size: 1.2em;')
+                .row
+                    .col-sm-12
+                        .center
+                            h1(style='font-size: 27px;') Welcome to {{employeename}}
+                .row
+                    .col-sm-12
+                        .center
+                            h2(style='font-size: 19px;') Check Outs
+                .row
+                    .col-sm-12
+                        .center
+                            i.fa.fa-sign-in.btn-primary.icon#checkoutbutton(v-on:click='update2(0)')
+
+    .row#checkoutresponse(style='margin-top: 100px;display:none;')
+        .col-md-12
+            .center
+                .main(style='' )
+                    .test(style='flex: 0 0 auto;width: 550px;border-radius: 10px;background-color: rgba(255, 255, 255, 0.8);display: inline-block;box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);font-size: 1.2em;')
+                        .row
+                            .col-sm-12
+                                .center
+                                    h1(style='font-size: 27px;color: green;') Checked out at {{d1}}
+                        .row
+                            .col-sm-12
+                                .center
+                                    h2(style='font-size: 19px;') Goodbye {{employeename}}
+
+                        .row
+                            .col-sm-12
+                                .center
+                                    h2(style='font-size: 19px;')  Have a good afternoon Good afternoon
+
+                        .row
+                            .col-sm-12
+                                .center
+                                    h1(style='font-size: 20px;color: Orange;') Warning! Last check in was over 12 hours ago.
+                                        | If this isn't right, please contact Human Resourcesss.
+
+                        .row
+                            .col-sm-12
+                                .center
+                                    router-link(to='Mode')
+                                        button.btn.btn-primary.c( type='button') Ok
+    .center#checkin(style='display:none;')
+        .main
+            .test(style='flex: 0 0 auto;width: 550px;display: inline-block;border-radius: 10px;background-color: rgba(255, 255, 255, 0.8);box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);font-size: 1.2em;padding: 3')
+                .row
+                    .col-sm-12
+                        .center
+                            h1(style='font-size: 27px;') Welcome to {{employeename}}
+
+
+                .row
+                    .col-sm-12
+                        .center
+                            h2(style='font-size: 19px;') Check In
+                .row
+                    .col-sm-12
+                        .center
+                            i.fa.fa-sign-in.btn-primary.icon#checkinbutton(v-on:click='update(1)')
+    .row#checkinresponse(style='margin-top: 100px;display:none;')
+        .col-md-12
+            .center
+                .main(style='')
+                    .test(style='flex: 0 0 auto;width: 550px;border-radius: 10px;display: inline-block;' +
+                    'background-color: rgba(255, 255, 255, 0.8);box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);font-size: 1.2em;padding: 3')
+                        .row
+                            .col-sm-12
+                                .center
+                                    h1(style='font-size: 27px;color: green;') Checked in at {{d1}}
+
+
+                        .row
+                            .col-sm-12
+                                .center
+                                    h2(style='font-size: 19px;') Welcome {{employeename}}
+                        .row
+                            .col-sm-12
+                                .center
+                                    h2(style='font-size: 19px;')  Good afternoonss
+
+                        .row
+                            .col-sm-12
+                                .center
+                                    router-link(to='Mode')
+                                        button.btn.btn-primary.c( type='button') Ok
+
+
+    //.center
+    //    .main(style='' v-show='v')
+    //        .test(style='flex: 0 0 auto;width: 550px;display: inline-block;border-radius: 10px;background-color: rgba(255, 255, 255, 0.8);box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);font-size: 1.2em;padding: 3')
+    //            .row
+    //                .col-sm-12
+    //                    .center
+    //                        h1(style='font-size: 27px;') Welcome to John Doe
+    //
+    //
+    //            .row
+    //                .col-sm-12
+    //                    .center
+    //                        h2(style='font-size: 19px;') Check In
+    //            .row
+    //                .col-sm-12
+    //                    .center
+    //                        i.fa.fa-sign-in.btn-primary.icon(v-on:click='v=false,t=true')
+    //
+    //.row
+    //    .col-md-12
+    //        .center
+    //            .main(style='' v-show='t')
+    //                .test(style='flex: 0 0 auto;width: 550px;border-radius: 10px;display: inline-block;' +
+    //                'background-color: rgba(255, 255, 255, 0.8);box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);font-size: 1.2em;padding: 3')
+    //                    .row
+    //                        .col-sm-12
+    //                            .center
+    //                                h1(style='font-size: 27px;color: green;') Checked in at 13:11:08
+    //
+    //
+    //                    .row
+    //                        .col-sm-12
+    //                            .center
+    //                                h2(style='font-size: 19px;') Welcome João Gomer
+    //                    .row
+    //                        .col-sm-12
+    //                            .center
+    //                                h2(style='font-size: 19px;')  Good afternoon
+    //
+    //                    .row
+    //                        .col-sm-12
+    //                            .center
+    //                                router-link(to='Mode')
+    //                                    button.btn.btn-primary.c( type='button') Ok
+    //
+    //
+    //.main(style='' v-show='u')
+    //    .center
+    //        .test(style='flex: 0 0 auto;width: 550px;border-radius: 10px;display: inline-block;background-color: rgba(255, 255, 255, 0.8);box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);font-size: 1.2em;')
+    //            .row
+    //                .col-sm-12
+    //                    .center
+    //                        h1(style='font-size: 27px;') Welcome to John Doe
+    //
+    //
+    //            .row
+    //                .col-sm-12
+    //                    .center
+    //                        h2(style='font-size: 19px;') Check Out
+    //            .row
+    //                .col-sm-12
+    //                    .center
+    //                        i.fa.fa-sign-in.btn-primary.icon(v-on:click='u=false,f=true')
+    //
+    //
+    //
+    //.row
+    //    .col-md-12
+    //        .center
+    //            .main(style='' v-show='f')
+    //                .test(style='flex: 0 0 auto;width: 550px;border-radius: 10px;background-color: rgba(255, 255, 255, 0.8);display: inline-block;box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);font-size: 1.2em;')
+    //                    .row
+    //                        .col-sm-12
+    //                            .center
+    //                                h1(style='font-size: 27px;color: green;') Checked out at 14:03:38
+    //
+    //
+    //                    .row
+    //                        .col-sm-12
+    //                            .center
+    //                                h2(style='font-size: 19px;') Goodbye Juan Gomez
+    //
+    //                    .row
+    //                        .col-sm-12
+    //                            .center
+    //                                h2(style='font-size: 19px;')  Have a good afternoon Good afternoon
+    //
+    //                    .row
+    //                        .col-sm-12
+    //                            .center
+    //                                h1(style='font-size: 20px;color: Orange;') Warning! Last check in was over 12 hours ago.
+    //                                    | If this isn't right, please contact Human Resources.
+    //
+    //                    .row
+    //                        .col-sm-12
+    //                            .center
+    //                                router-link(to='Mode')
+    //                                    button.btn.btn-primary.c( type='button') Ok
+    //
+    //
+    //
+    //
+    //
+    //.main#pincheck(style='display:none;' )
+    //    .center
+    //        .row
+    //            .col-sm-8
+    //                router-link(to='Mode')
+    //                    .center
+    //                        .btn-danger.fa.fa-times(style='display: inline-block;padding-top: 15px;')
+    //        .test(style='flex: 0 0 auto;width: 550px;display: inline-block;border-radius: 10px;background-color: rgba(255, 255, 255, 0.8);box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);font-size: 1.2em;padding: 3')
+    //
+    //
+    //            .row
+    //                .col-sm-12
+    //                    .center
+    //                        h1(style='font-size: 24px;') Welcome {{employeename}}
+    //
+    //
+    //            .row
+    //                .col-sm-12
+    //                    .center
+    //                        h2(style='font-size: 22px;') Please enter your PIN to check ins
+    //            .row(style='margin-left:50px;')
+    //                .col-sm-12ssssss
+    //                        form(name='calcc')
+    //                            table#calcc
+    //                                tr(style='border:none;')
+    //                                    td(colspan='5')
+    //                                        input.btns(name='displayn',style='width:30%;border-radius: 6px;',v-model='pin', onkeypress='return event.charCode >= 48 && event.charCode <= 57', type='Password')
+    //                                    td(style='display:none')
+    //                                        input( name='M', type='number')
+    //                                tr(style='border:none;')
+    //
+    //                                    td
+    //                                        input.btn(type='button', value='0', onclick="calcc.displayn.value+='0'")
+    //                                    td
+    //                                        input.btn(type='button', value='1', onclick="calcc.displayn.value+='1'")
+    //                                    td
+    //                                        input.btn(type='button', value='2', onclick="calcc.displayn.value+='2'")
+    //
+    //                                tr(style='border:none;')
+    //
+    //                                    td
+    //                                        input.btn(type='button', value='3', onclick="calcc.displayn.value+='3'")
+    //                                    td
+    //                                        input.btn(type='button', value='4', onclick="calcc.displayn.value+='4'")
+    //                                    td
+    //                                        input.btn(type='button', value='5', onclick="calcc.displayn.value+='5'")
+    //                                tr(style='border:none;')
+    //                                    td
+    //                                        input.btn(type='button', value='6', onclick="calcc.displayn.value+='6'")
+    //                                    td
+    //                                        input.btn(type='button', value='7', onclick="calcc.displayn.value+='7'")
+    //                                    td
+    //                                        input.btn(type='button', value='8', onclick="calcc.displayn.value+='8'")
+    //
+    //                                tr(style='border:none;')
+    //
+    //                                    td
+    //                                        input.btn(type='button', value='9', onclick="calcc.displayn.value+='9'")
+    //                                    td
+    //                                        input.btn(type='button', value='C', onclick="calcc.displayn.value=''")
+    //                                    td
+    //                                        input.btn(v-on:click='update3(1)',type='button', value='Ok', onclick='calcc.displayn.value=eval(calcc.displayn.value)')
+
+    .row#pincheck(style='display:none;' )
+        .col-sm-12
+            .o_hr_attendance_kiosk_mode(style='position: relative;margin-left: 34%;margin-top: 12%;height: 487px;')
+                h1 Welcome Jan {{employeename}}
+                h2 Please enter your PIN to check in
+                .row
+                    .col-sm-8.col-sm-offset-2
+                        form(name='calc')
+                            .row
+                                .col-xs-4.col-xs-offset-4
+                                    input.o_hr_attendance_PINbox(name='display',v-model='pin', type='password')
+                            .row.o_hr_attendance_pin_pad
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_1(type='button',style='color: white;',onclick="calc.display.value+='1'") 1
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_2(type='button',style='color: white;',onclick="calc.display.value+='2'") 2
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_3(type='button',style='color: white;',onclick="calc.display.value+='3'") 3
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_4(type='button',style='color: white;',onclick="calc.display.value+='4'") 4
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_5(type='button',style='color: white;',onclick="calc.display.value+='5'") 5
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_6(type='button',style='color: white;',onclick="calc.display.value+='6'") 6
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_7(type='button',style='color: white;',onclick="calc.display.value+='7'") 7
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_8(type='button',style='color: white;',onclick="calc.display.value+='8'") 8
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_9(type='button',style='color: white;',onclick="calc.display.value+='9'") 9
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_C(type='button',style='color: white;',onclick="calc.display.value+=''") C
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_0(type='button',style='color: white;',onclick="calc.display.value+='0'") 0
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_ok(v-on:click='update3(1)',type='button',style='color: white;',onclick="calc.display.value+=''") ok
+                br
+                .oe_attendance_sign_in_out
+                router-link(to='Mode')
+                    .o_hr_attendance_back_button.btn.btn-danger.fa.fa-times(style='width: 70px;border-radisus: 72;border-radius: 30px;height: 71px;font-size: 40px;border-radius: 52;')
+
+    .row#pincheckout(style='display:none;' )
+        .col-sm-12
+            .o_hr_attendance_kiosk_mode(style='position: relative;margin-left: 34%;margin-top: 12%;height: 487px;')
+                h1 Welcome Jan {{employeename}}
+                h2 Please enter your PIN to check out
+                .row
+                    .col-sm-8.col-sm-offset-2
+                        form(name='calc1')
+                            .row
+                                .col-xs-4.col-xs-offset-4
+                                    input.o_hr_attendance_PINbox(name='display1',v-model='pin', type='password')
+                            .row.o_hr_attendance_pin_pad
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_1(type='button',style='color: white;',onclick="calc1.display1.value+='1'") 1
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_2(type='button',style='color: white;',onclick="calc1.display1.value+='2'") 2
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_3(type='button',style='color: white;',onclick="calc1.display1.value+='3'") 3
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_4(type='button',style='color: white;',onclick="calc1.display1.value+='4'") 4
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_5(type='button',style='color: white;',onclick="calc1.display1.value+='5'") 5
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_6(type='button',style='color: white;',onclick="calc1.display1.value+='6'") 6
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_7(type='button',style='color: white;',onclick="calc1.display1.value+='7'") 7
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_8(type='button',style='color: white;',onclick="calc1.display1.value+='8'") 8
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_9(type='button',style='color: white;',onclick="calc1.display1.value+='9'") 9
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_C(type='button',style='color: white;',onclick="calc1.display1.value+=''") C
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_0(type='button',style='color: white;',onclick="calc1.display1.value+='0'") 0
+                                .col-xs-4.o_hr_attendance_pin_pad_border
+                                    a.btn.btn-primary.btn-block.btn-lg.o_hr_attendance_btn-round-corners.o_hr_attendance_pin_pad_button_ok(v-on:click='update4(0)',type='button',style='color: white;',onclick="calc1.display1.value+=''") ok
+                br
+                .oe_attendance_sign_in_out
+                router-link(to='Mode')
+                    .o_hr_attendance_back_button.btn.btn-danger.fa.fa-times(style='width: 70px;border-radisus: 72;border-radius: 30px;height: 71px;font-size: 40px;border-radius: 52;')
+
+    .row#breaklayout(style='display:none;')
+        .col-md-12(style='background-color: rgba(0, 0, 0, 0.78);')
+            .container-fluid
+
+                input#start(name='controls', type='radio')
+                input#stop(name='controls', type='radio')
+                input#reset(name='controls', type='radio')
+                .timer(style='background-color:black;')
+                    .cell
+                        .numbers.tenhour.moveten 0 1 2 3 4 5 6 7 8 9
+                    .cell
+                        .numbers.hour.moveten 0 1 2 3 4 5 6 7 8 9
+                    .cell.divider
+                        .numbers :
+                    .cell
+                        .numbers.tenminute.movesix 0 1 2 3 4 5 6
+                    .cell
+                        .numbers.minute.moveten 0 1 2 3 4 5 6 7 8 9
+                    .cell.divider
+                        .numbers :
+                    .cell
+                        .numbers.tensecond.movesix 0 1 2 3 4 5 6
+                    .cell
+                        .numbers.second.moveten 0 1 2 3 4 5 6 7 8 9
+                    .cell.divider
+                        .numbers :
+                    .cell
+                        .numbers.milisecond.moveten 0 1 2 3 4 5 6 7 8 9
+                    .cell
+                        .numbers.tenmilisecond.moveten 0 1 2 3 4 5 6 7 8 9
+                    .cell
+                        .numbers.hundredmilisecond.moveten 0 1 2 3 4 5 6 7 8 9
+                #timer_controls(style='float: right;padding-top: 12px;')
+                    label(for='start',v-on:click='update5(1)',style='padding: 15px;font-size: 18px;background-color: transparent;color: rgba(140,225,255,1);border-radius: 14;border: 1px solid rgba(140,225,255,1);border-color: rgba(140,225,255,1);display: inline-block;') Check In
+                        img.img-responsive(src='/images/Checkin.png',style='display: inline-block;width: 25px;padding-left: 5px;')
+                    label(for='reset',v-on:click='update6(0)',style='padding: 15px;font-size: 18px;background-color: transparent;color: rgba(140,225,255,1);border-radius: 14;border: 1px solid rgba(140,225,255,1);border-color: rgba(140,225,255,1);display: inline-block;') Check Out
+                        img.img-responsive(src='/images/Checkout.png',style='display: inline-block;width: 25px;padding-left: 5px;')
+                    label#breakinbutton(for='stop',v-on:click='breakin()',style='padding: 15px;font-size: 18px;background-color: transparent;color: rgba(140,225,255,1);border-radius: 14;border: 1px solid rgba(140,225,255,1);border-color: rgba(140,225,255,1);display: inline-block;') Break In
+                        img.img-responsive(src='/images/Breakin.png',style='display: inline-block;width: 25px;padding-left: 5px;')
+                    label(for='start',v-on:click='breakout()',style='padding: 15px;font-size: 18px;background-color: transparent;color: rgba(140,225,255,1);border-radius: 14;border: 1px solid rgba(140,225,255,1);border-color: rgba(140,225,255,1);display: inline-block;') Break Out
+                        img.img-responsive(src='/images/Breakin.png',style='display: inline-block;width: 25px;padding-left: 5px;')
+
+    //.main#pincheckout(style='display:none;')
+    //    .center
+    //        .row
+    //            .col-sm-8s
+    //                router-link(to='Mode')
+    //                    .center
+    //                        .btn-danger.fa.fa-times(style='display: inline-block;padding-top: 15px;')
+    //        .test(style='flex: 0 0 auto;width: 550px;display: inline-block;border-radius: 10px;background-color: rgba(255, 255, 255, 0.8);box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);font-size: 1.2em;padding: 3')
+    //
+    //
+    //            .row
+    //                .col-sm-12
+    //                    .center
+    //                        h1(style='font-size: 24px;') Welcome {{employeename}}
+    //
+    //
+    //            .row
+    //                .col-sm-12
+    //                    .center
+    //                        h2(style='font-size: 22px;') Please enter your PIN to check Outs
+    //            .row(style='margin-left:50px;')
+    //                .col-sm-12
+    //                    form(name='calc')
+    //                        table#calc
+    //                            tr(style='border:none;')
+    //                                td(colspan='5')
+    //                                    input.btns(name='display',style='width:30%;border-radius: 6px;', onkeypress='return event.charCode >= 48 && event.charCode <= 57',v-model='pin', type='Password')
+    //                                td(style='display:none')
+    //                                    input( name='M', type='number')
+    //                            tr(style='border:none;')
+    //
+    //                                td
+    //                                    input.btn(type='button', value='0', onclick="calc.display.value+='0'")
+    //                                td
+    //                                    input.btn(type='button', value='1', onclick="calc.display.value+='1'")
+    //                                td
+    //                                    input.btn(type='button', value='2', onclick="calc.display.value+='2'")
+    //
+    //                            tr(style='border:none;')
+    //
+    //                                td
+    //                                    input.btn(type='button', value='3', onclick="calc.display.value+='3'")
+    //                                td
+    //                                    input.btn(type='button', value='4', onclick="calc.display.value+='4'")
+    //                                td
+    //                                    input.btn(type='button', value='5', onclick="calc.display.value+='5'")
+    //
+    //                            tr(style='border:none;')
+    //
+    //                                td
+    //                                    input.btn(type='button', value='6', onclick="calc.display.value+='6'")
+    //                                td
+    //                                    input.btn(type='button', value='7', onclick="calc.display.value+='7'")
+    //                                td
+    //                                    input.btn(type='button', value='8', onclick="calc.display.value+='8'")
+    //
+    //                            tr(style='border:none;')
+    //
+    //                                td
+    //                                    input.btn(type='button', value='9', onclick="calc.display.value+='9'")
+    //                                td
+    //                                    input.btn(type='button', value='C', onclick="calc.display.value=''")
+    //                                td
+    //                                    input.btn(v-on:click='update4(0)',type='button', value='Ok', onclick='calc.display.value=eval(calc.display.value)')
+    //TableMain(v-bind:tableheader='tableheader',v-bind:check='true',v-bind:bullet='false', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter",data-toggle='modal', data-target='.bd-example-modal-lg0')
+    .row#ah(style='display:none;')
+        .col-sm-12
+            .table-responsive(style='padding: 20px;')
+                table.o_list_view.table.table-condensed.table-striped
+                    thead
+                        tr(style='background-color: black;color: rgba(140,225,255,1) !important;')
+                            th.o_column_sortable(data-id='employee_id')
+                                | Date
+                            th.o_column_sortable(data-id='check_in')
+                                | Check In
+                            th.o_column_sortable(data-id='check_in')
+                                | Check Out
+                            th.o_column_sortable(data-id='check_out')
+                                | Break Hours
+                            th.o_column_sortable(data-id='check_out')
+                                | Total Office Times
+                    tfoot
+                        tr(v-for="row1 in tablesf",style='background-color: black;color: rgba(140,225,255,1) !important;')
+                            td
+                            td
+                            td
+                            td
+                            td {{row1.total}}
+
+                    tbody
+                        tr(data-id='23',v-for="row in tables")
+
+                            td {{row.date}}
+                            td {{row.CheckIn}}
+                            td {{row.CheckOut}}
+                            td {{row.Breaktotal}}
+                            td {{row.TotalTime}}
+
+

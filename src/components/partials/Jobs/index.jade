@@ -1,0 +1,33 @@
+.o_content
+    .o_view_manager_content
+        .o_form_view.o_form_editable
+            slot(name='head')
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .oe_button_box(name='button_box')
+                        button.btn.btn-sm.oe_stat_button(type='button')
+                            .fa.fa-fw.fa-file-o.o_button_icon
+                            .o_form_field.o_stat_info
+                                span.o_stat_value 0
+                                span.o_stat_text Applications
+                        button.btn.btn-sm.oe_stat_button(type='button')
+                            .fa.fa-fw.fa-users.o_button_icon
+                            .o_form_field.o_stat_info(data-original-title='', title='')
+                                span.o_stat_value 0
+                                span.o_stat_text Employees
+                        button.btn.btn-sm.oe_stat_button(type='button')
+                            .fa.fa-fw.fa-book.o_button_icon
+                            .o_form_field.o_stat_info
+                                span.o_stat_value 0
+                                span.o_stat_text Documents
+                        button.btn.btn-sm.oe_stat_button(type='button')
+                            .fa.fa-fw.fa-share.o_button_icon
+                            .o_form_field.o_stat_info
+                                span.o_stat_text Trackers
+                    slot(name='title')
+                    .o_group
+                        slot(name='job')
+                        slot(name='jobs')
+                    slot(name='jobsone')
+
+

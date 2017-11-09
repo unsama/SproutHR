@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+    div.row.mt-3.con_loading(v-bind:class='{con_complete: complete}')
+        div.col-md-3.pro-sidenav
+            include ../partials/sidenav
+        div.col-md-9.offset-md-3
+            router-view
+    div.mt-5.text-center.loader_loading(v-bind:class='{loader_complete: complete}')
+        i.fa.fa-circle-o-notch.fa-spin.fa-3x

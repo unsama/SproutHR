@@ -1,0 +1,193 @@
+.expensesreportstable
+    Modal( v-bind:saveclose='true',v-bind:modal='"bd-example-modal-lg2"' ,v-bind:savenew='true',v-bind:discard='true',v-bind:heading="modalheading")
+    .o_content(style='margin-left:-15px;margin-right:-15px;')
+        .o_view_manager_content
+            .o_form_view.o_expense_sheet.o_form_readonly
+                header
+                    button.btn.btn-sm.oe_highlight.o_expense_sheet_approve(type='button')
+                        span Approve
+                    button.btn.btn-sm.oe_highlight.o_expense_sheet_post.o_form_invisible(type='button')
+                        span Post Journal Entries
+                    button.btn.btn-sm.oe_highlight.o_expense_sheet_pay.o_form_invisible(type='button')
+                        span Register Payment
+                    button.btn.btn-sm.o_form_invisible(type='button')
+                        span Resubmit
+                    button.btn.btn-sm(type='button')
+                        span Refuse
+                    button.btn.btn-sm.o_form_invisible(type='button')
+                        span Refuse
+                    ul.oe_form_field_status.oe_form_status.o_form_field.o_form_required(data-original-title='', title='')
+                        li.oe_active(data-id='submit')
+                            span.label Submitted
+                            span.arrow
+                                span
+                        li(data-id='approve')
+                            span.label Approved
+                            span.arrow
+                                span
+                        li(data-id='post')
+                            span.label Posted
+                            span.arrow
+                                span
+                        li(data-id='done')
+                            span.label Paid
+                            span.arrow
+                                span
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-book.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value 0
+                                    span.o_stat_text Documents
+                            button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                .fa.fa-fw.fa-book.o_button_icon
+                                span Accounting Entries
+                        .oe_title
+                            label.o_form_label.oe_edit_only(for='o_field_input_45')
+                                | Expense Report Summary
+                            h1
+                                span.o_form_field.o_form_required Hotel Expenses
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_46')
+                                                | Employee
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_required(href='#') Administrators
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_47')
+                                                | Payment By
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field Employee (to reimburse)
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_48')
+                                                | Validation By
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible(for='o_field_input_49')
+                                                | Total Amount
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_invisible.o_form_field_number 2,000.00
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible(for='o_field_input_50')
+                                                | Currency
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible(href='#') EUR
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible(for='o_field_input_51')
+                                                | Employee Home Address
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible(href='#') Administrators, Pieter Parter's Farm
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible(for='o_field_input_52')
+                                                | Department
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible(href='#') Management
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_53')
+                                                | Company
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field(href='#') Alupak Industriess
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_54', data-original-title='', title='')
+                                                | Expense Journal
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field Vendor Bills (EUR)
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_55', data-original-title='', title='')
+                                                | Bank Journal
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_invisible Bank (EUR)
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_56')
+                                                | Accounting Date
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field_date.o_form_field.o_form_invisible.o_form_field_empty
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_57')
+                                                | Journal Entry
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                        .o_form_field.o_view_manager_content
+                            .o_x2m_control_panel
+                                .o_cp_buttons
+                                .o_cp_pager
+                                    .o_hidden
+                                        span.o_pager_value
+                                        |  /
+                                        span.o_pager_limit
+                                        span.btn-group.btn-group-sm
+                                            button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                            button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                            div
+                                .table-responsive
+                                    table.o_list_view.table.table-condensed.table-striped
+                                        thead
+                                            tr
+                                                th.o_column_sortable(data-id='date')
+                                                    | Date
+                                                th.o_column_sortable(data-id='name')
+                                                    | Expense Description
+                                                th(data-id='attachment_number')
+                                                th(data-id='action_get_attachment_view')
+                                                th.o_column_sortable(data-id='tax_ids')
+                                                    | Taxes
+                                                th.o_column_sortable(data-id='total_amount')
+                                                    | Total
+                                        tfoot
+                                            tr
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td.o_list_number(data-field='total_amount', title='Total Amount') 2,000.00
+                                        tbody
+                                            tr(data-id='2', style='')(data-toggle='modal', data-target='.bd-example-modal-lg2')
+                                                td.o_readonly(data-field='date') 02/18/2017
+                                                td.o_readonly(data-field='name') Hotel Expenses
+                                                td.o_readonly.o_list_number(data-field='attachment_number') 0
+                                                td.o_list_button(data-field='action_get_attachment_view')
+                                                    button.o_icon_button(type='button', title='View Attachments')
+                                                        i.fa.fa-paperclip(title='View Attachments')
+                                                td(data-field='tax_ids')  
+                                                td.o_readonly.o_list_number(data-field='total_amount') 2,000.00
+                                            tr
+                                                td(title='Date')  
+                                                td(title='Expense Description')  
+                                                td(title=' ')  
+                                                td(title='View Attachments')  
+                                                td(title='Taxes')  
+                                                td(title='Total')  
+                                            tr
+                                                td(title='Date')  
+                                                td(title='Expense Description')  
+                                                td(title=' ')  
+                                                td(title='View Attachments')  
+                                                td(title='Taxes')  
+                                                td(title='Total')  
+                                            tr
+                                                td(title='Date')  
+                                                td(title='Expense Description')  
+                                                td(title=' ')  
+                                                td(title='View Attachments')  
+                                                td(title='Taxes')  
+                                                td(title='Total')  

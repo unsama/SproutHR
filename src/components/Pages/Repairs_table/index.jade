@@ -1,0 +1,176 @@
+.Product_inner_Edit
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true', v-bind:links="btnlinks",v-bind:num1='false',v-bind:num2='false',v1-bind:paginbtn1='true',v1-bind:paginbtn2='true',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false',v-bind:dropdownbtn1='false',v-bind:dropdownbtn2='false',v-bind:dropdownbtn3='false',v-bind:actionbtn='false',v-bind:Attachmentbtn='false',v-bind:printbtn='false')
+    .o_content.row
+        .col-md-12
+            .row
+                .col-md-12.pull-left.samotopcontroller
+                    .col-md-5.pull-left
+                        button.btn.btn-primary.samobutton2(type='button',style='margin-right: 5px;') Confirm Repair
+                        button.btn.btn-primary.samobutton1(type='button',style='margin-right: 5px;') Cancel Repair
+
+
+                    .col-md-1.pull-left
+                    .col-md-3.pull-left
+                    .col-md-3.pull-right
+                        .btn-group.btn-breadcrumb.samobreadcrum1
+                            a.btn.btn-primary.samobreadbutt(href='#') Quotation
+                            a.btn.btn-primary.samobreadbutt1(href='#') Confirmed
+                            a.btn.btn-primary.samobreadbutt(href='#') Repaired
+
+            .o_view_manager_content
+                .o_form_view.o_form_readonly
+                    .o_form_sheet_bg
+                        .o_form_sheet
+                            .row
+                                label.o_form_label(style='font-weight: 600;padding-left: 17px;padding-bottom: 10px;')
+                                    | Repair Reference
+
+                                .col-sm-12.samocol4
+                                    h1(style='font-weight:bold;font-size:30px;font-size: 26px;color: #4c4c4c;') RMA00001
+
+
+                            .o_group
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Product to Repair
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_required(href='#') [PCSC234] Computer SC234
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Product Quantity
+                                            td(colspan='1', style='width: 100%;')
+                                                div
+                                                    span.oe_inline.o_form_field.o_form_required.o_form_field_number 1.000
+                                                    a.o_form_uri.oe_inline.o_form_field.o_form_required.o_form_invisible(href='#') Unit(s)
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(data-original-title='', title='')
+                                                    | Repaired Lot
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                    | Partner
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field(href='#') Camptocamp
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_invisible
+                                                    | Delivery Address
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_invisible(href='#') ASUSTeK, Tang Tsui
+                                table.o_group.o_inner_group.o_group_col_6
+                                    tbody
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_invisible
+                                                    | Current Location
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_required.o_form_invisible(href='#') WH/Stock
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label.o_form_invisible
+                                                    | Delivery Location
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field.o_form_required.o_form_invisible(href='#') WH/Stock/Shelf 2
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Company
+                                            td(colspan='1', style='width: 100%;')
+                                                a.o_form_uri.o_form_field(href='#') Alupak Industriesss
+                                        tr
+                                            td.o_td_label(colspan='1')
+                                                label.o_form_label
+                                                    | Warranty Expiration
+                                            td(colspan='1', style='width: 100%;')
+                                                span.o_form_field_date.o_form_field 02/18/2017
+
+
+
+                            .o_notebook(Style='margin-top: 0px !important;')
+                                ul.nav.nav-tabs(role='tablist')
+                                    li.nav-item
+                                        a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Operations
+                                    li.nav-item
+                                        a.nav-link(href='#buzz', role='tab', data-toggle='tab') Invoicing
+                                    li.nav-item
+                                        a.nav-link(href='#buzz1', role='tab', data-toggle='tab') Notes
+
+                                // Tab panes
+                                .tab-content
+                                    #profile.tab-pane.fade.in.active(role='tabpanel')
+                                        TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter")
+                                        table.o_group
+                                            tbody(style="float: right;")
+                                                tr
+                                                    td.o_td_label(colspan='1',style='border:none')
+                                                        label.o_form_label(style='float: right;')
+                                                            | Untaxed Amount :
+                                                    td(colspan='1', style='width: 100%;padding-right: 0px;')
+                                                        span.o_form_field.o_form_field_number(style='text-align: right;')
+                                                            span $
+                                                            | 7,315.00
+                                                tr(style='border-bottom: 1px solid lightslategrey;')
+                                                    td.o_td_label(colspan='1',style='border:none')
+                                                        label.o_form_label(style='float: right;')
+                                                            | Taxes :
+                                                    td(colspan='1', style='width: 100%;padding-right: 0px;')
+                                                        span.o_form_field.o_form_field_number(style='text-align: right;')
+                                                            span $
+                                                            | 0.00
+
+                                                tr
+                                                    td(colspan='1', style='width: 50%;border:none;')
+                                                        .oe_subtotal_footer_separator.oe_inline.o_td_label
+                                                            label.o_form_label(style='float: right;')
+                                                                | Total :
+                                                            button.btn.btn-sm.oe_edit_only.oe_link.o_form_invisible(type='button')
+                                                                span (update)
+                                                    td(colspan='1', style='width: 50%;border:none;text-align: right;')
+                                                        span.oe_subtotal_footer_separator.o_form_field.o_form_field_number
+                                                            span $
+                                                            | 7,315.00
+
+                                    #buzz.tab-pane.fade.in(role='tabpanel')
+                                        table.o_group.o_inner_group
+                                            tbody
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                            | Invoice Method
+                                                    td(colspan='1', style='width: 50%;')
+                                                        span.o_form_field.o_form_required No Invoice
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_empty.o_form_label_false
+                                                            | Invoice
+                                                    td(colspan='1', style='width: 50%;')
+                                                        a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                                tr
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_invisible
+                                                            | Invoicing Address
+                                                    td(colspan='1', style='width: 50%;')
+                                                        a.o_form_uri.o_form_field.o_form_invisible(href='#') ASUSTeK, Tang Tsui
+                                                    td.o_td_label(colspan='1')
+                                                        label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                                            | Pricelist
+                                                    td(colspan='1', style='width: 50%;')
+                                                        a.o_form_uri.o_form_field(href='#') Public Pricelist (USD)
+                                        .o_horizontal_separator
+                                            | Fees
+
+                                        TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter")
+                                    #buzz1.tab-pane.fade.in(role='tabpanel')
+
+
+
+
+
+            Message(Style='position: fixed;left: 514px;')
+            Request_quotation_lower(Style='position: fixed;left: 514px;')

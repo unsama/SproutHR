@@ -1,0 +1,139 @@
+.container-fluid(style='margin-left: -15px;margin-right: -15px;')
+    .dashboardsetting
+        .row
+            .col-sm-12.main.samodashcont1
+                .col-sm-6.samodashheadingmain
+                    h4.samodashheading Sales to Invoice
+                .col-sm-6.samodashsearch
+                    .input-group
+                        input.form-control(type='text', placeholder='Search')
+                        .input-group-btn.samodashinputbutt
+                            button.btn.btn-default.samosearchicon(type='submit')
+                                i.searchview_more.fa.fa-search-plus
+                .row
+                    .col-sm-6.dashcontrollerbutton
+                        button.btn.btn-primary.samobuttopcontroller1#hasS(type='button', href='users')
+                            | Save
+                        button.btn.btn-default.samobuttopcontroller#hasHide(type='button', href='#home')
+                            | Discard
+                        //button.btn.btn-primary.samobuttopcontroller#hasS(type='button', href='users')
+                        //    | Edit
+                        //button.btn.btn-default.samobuttopcontroller2#hasHide(type='button', href='#home')
+                        //    | Discard
+                    .col-sm-6.samodashcorner
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-filter.iconbutton
+                                | filters
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Action
+                                a.dropdown-item(href='#') Another action
+                                a.dropdown-item(href='#') Something else here
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-bars.iconbutton
+                                | Group By
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Action
+                                a.dropdown-item(href='#') Another action
+                                a.dropdown-item(href='#') Something else here
+                        .dropdown.samodropdownbutton2
+                            button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                span.fa.fa-star.iconbutton
+                                | Favourite
+                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                a.dropdown-item(href='#') Action
+                                a.dropdown-item(href='#') Another action
+                                a.dropdown-item(href='#') Something else here
+                        div(style='float:right;')
+                            span.o_pager_value 1-24
+                                |  /
+                                span.o_pager_limit 24
+                                span.btn-group.btn-group-sm
+                                    button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p', disabled='')
+                                    button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n', disabled='')
+                                    .col-xs-1
+                                        //.btn-group.btn-group-sm.o_cp_switch_buttons.samodashbuttcorner
+                                        //    button(data-toggle='tab', href='#home').btn.btn-icon.fa.fa-lg.fa-th-large.o_cp_switch_kanban.active(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button' accesskey='k', data-view-type='kanban', title='', data-original-title='Kanban')
+                                        //    button(data-toggle='tab', href='#menu1').btn.btn-icon.fa.fa-lg.fa-list-ul.o_cp_switch_list(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button', accesskey='l', data-view-type='list', title='', data-original-title='List')
+                                        //    button(data-toggle='tab', href='#home').btn.btn-icon.fa.fa-lg.fa-table.o_cp_switch_pivot(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button' accesskey='k', data-view-type='kanban', title='', data-original-title='Kanban')
+                                        //    button(data-toggle='tab', href='#menu1').btn.btn-icon.fa.fa-lg.fa-bar-chart.o_cp_switch_graph(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button', accesskey='l', data-view-type='list', title='', data-original-title='List')
+                                        //    router-link.links(to='app/purchase/Calendar')
+                                        //        button(data-toggle='tab', href='').btn.btn-icon.fa.fa-lg.fa-calendar.o_cp_switch_calendar(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;')(type='button' accesskey='k', data-view-type='kanban', title='', data-original-title='Kanban')
+    .o_content
+    .o_view_manager_content
+        .o_form_view.o_form_nosheet.o_form_editable
+            span.o_form_field.o_form_invisible.o_form_field_empty
+            table.o_group.o_inner_group
+                tbody
+                    tr
+                        td.o_td_label(colspan='1')
+                            label.o_form_label(for='o_field_input_194')
+                                | Template Name
+                        td(colspan='1', style='width: 100%;')
+                            input#o_field_input_194.o_form_input.o_form_field.o_form_required(type='text')
+                    tr
+                        td.o_td_label(colspan='1')
+                            label.o_form_label(for='o_field_input_195')
+                                | Active
+                        td(colspan='1', style='width: 100%;')
+                            .o_checkbox.o_form_field_boolean.o_form_field
+                                input#o_field_input_195(type='checkbox', name='active')
+                                span
+                    tr
+                        td.o_td_label(colspan='1')
+                            label.o_form_label(for='o_field_input_196')
+                                | Model
+                        td(colspan='1', style='width: 100%;')
+                            .o_form_field_many2one.o_form_field.o_form_required
+                                .o_form_input_dropdown
+                                    input#o_field_input_196.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                    span.o_dropdown_button(draggable='false')
+                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                    tr
+                        td.o_td_label(colspan='1')
+                            label.o_form_label(for='o_field_input_197')
+                                | Filter
+                        td(colspan='1', style='width: 100%;')
+                            div
+                                .o_form_field_many2one.o_form_field
+                                    .o_form_input_dropdown
+                                        input#o_field_input_197.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                        span.o_dropdown_button(draggable='false')
+                                    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                p.oe_grey
+                                    b To create a new filter:
+                                    br
+                                    |                                 - Go to the Odoo document you want to filter. For instance, go to Opportunities and search on Sales Department.
+                                    br
+                                    |                                 - In this "Search" view, select the option "Save Current Filter", enter the name (Ex: Sales Department)
+                                    br
+                                    |                                 - If you select "Share with all users", link of google document in "More" options will appear for all users in opportunities of Sales Department.
+                                    br
+                                    |                                 - If you don't select "Share with all users", link of google document in "More" options will not appear for other users in opportunities of Sales Department.
+                                    br
+                                    |                                 - If filter is not specified, link of google document will appear in "More" option for all users for all opportunities.
+                    tr
+                        td.o_td_label(colspan='1')
+                            label.o_form_label(for='o_field_input_198')
+                                | Template URL
+                        td(colspan='1', style='width: 100%;')
+                            input#o_field_input_198.o_form_input.o_form_field.o_form_required(placeholder='https://docs.google.com/document/d/1vOtpJK9scIQz6taD9tJRIETWbEw3fSiaQHArsJYcua4/edit', type='text')
+                    tr
+                        td.o_td_label(colspan='1')
+                            label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_199')
+                                | Resource Id
+                        td(colspan='1', style='width: 100%;')
+                            span.o_form_field.o_form_invisible.o_form_field_empty
+                    tr
+                        td.o_td_label(colspan='1')
+                            label.o_form_label.o_form_label_help(for='o_field_input_200', data-original-title='', title='')
+                                | Google Drive Name Pattern
+                        td(colspan='1', style='width: 100%;')
+                            div
+                                input#o_field_input_200.o_form_input.o_form_field.o_form_required(type='text')
+                                p.oe_grey
+                                    | The name of the attached document can use fixed or variable data. To distinguish between documents in
+                                    | Google Drive, use fixed words and fields. For instance, in the example above, if you wrote Agrolait_%(name)s_Sales
+                                    | in the Google Drive name field, the document in your Google Drive and in Odoo attachment will be named
+                                    | 'Agrolait_SO0001_Sales'.

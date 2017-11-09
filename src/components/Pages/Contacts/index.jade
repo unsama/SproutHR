@@ -1,0 +1,53 @@
+.Contacts
+    dashconterller(v-bind:createbtn='true',v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true',v-bind:importbtn='false', v-bind:links="btnlinks", v-bind:num1='true',v-bind:num2='true',v1-bind:paginbtn1='true',v1-bind:paginbtn2='true',v-bind:secondbtn='true',v-bind:firstbtn='true')
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Contact
+        span.o_pager_value(slot='page') {{counter}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="select4()",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="select33()",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+    .row
+        .col-md-12
+            .table(style='width:335px;height: 135px;margin-top: 5px;margin-right: 5px;display:inline-block',v-for="row in names ")
+                router-link(v-bind:to="'contact/contactinfo/'+row.id")
+                    .row
+                        .col-xs-2(style='height: 10px;')
+                                .blue(v-if="row.tag_id == 0")
+                                .green(v-else-if="row.tag_id ==1")
+                                .red(v-else-if="row.tag_id ==2")
+                                .orange(v-else-if="row.tag_id ==3")
+                    .row
+                        .col-xs-5(style='padding-top: 17px;')
+                            .img
+                                img.img-responsive(style='width:80px;')(src='/images/orange.png')
+
+                        .col-xs-6.offset-sm-1(style='color: black;font-size: 13px;')
+                            strong(style='color:black;')
+                                | {{row.name}}
+                            br(style='font-size:8px;color:black;')
+                            | {{row.job_position}}
+                            br(style='font-size:8px;color:black;')
+                            | {{row.city}},{{row.country}}
+                            br(style='font-size:8px;color:black;')
+                            |  {{row.email}}s
+                    .row
+                        .col-xs-3.offset-sm-4(style='padding-right: 5px;')
+                            span.badge
+                                i.fa.fa-fw.fa-calendar
+                                | 3
+
+                        .col-xs-1(style='padding-right: 5px;')
+                            span.badge
+                                i.fa.fa-fw.fa-shopping-cart
+                                | 2
+                        .col-xs-1(style='padding-right: 5px;')
+                            span.badge
+                                i.fa.fa-fw.fa-star
+                                | 3
+
+                        .col-xs-1(style='padding-right: 5px;')
+                            span.badge
+                                i.fa.fa-fw.fa-usd
+                                | 2

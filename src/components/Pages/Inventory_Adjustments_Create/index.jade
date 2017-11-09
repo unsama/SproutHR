@@ -1,0 +1,280 @@
+.inevntory_adjustments_create
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:num1='false',v-bind:num2='false',v-bind:paginbtn1='false',v-bind:paginbtn2='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false',v-bind:dropdownbtn1='false',v-bind:dropdownbtn2='false',v-bind:dropdownbtn3='false',v-bind:actionbtn='false',v-bind:Attachmentbtn='false',v-bind:printbtn='false')
+    .row
+        .col-md-12.pull-left.samotopcontroller
+            .col-md-5.pull-left
+
+
+            .col-md-1.pull-left
+            .col-md-3.pull-left
+            .col-md-3.pull-right
+                .btn-group.btn-breadcrumb.samobreadcrum1
+                    a.btn.btn-primary.samobreadbutt(href='#') Draft
+                    a.btn.btn-primary.samobreadbutt1(href='#') In Progress
+                    a.btn.btn-primary.samobreadbutt(href='#') Validated
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_editable
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_title
+                            label.o_form_label.oe_edit_only(for='o_field_input_36')
+                                | Inventory Reference
+                            h1
+                                input#o_field_input_36.o_form_input.o_form_field.o_form_required(placeholder='e.g. Annual inventory', type='text')
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_invisible(for='o_field_input_37')
+                                                | Inventoried Location
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required.o_form_invisible
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_37.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_38', data-original-title='', title='')
+                                                | Inventory of
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_radio.o_vertical.o_form_field.o_form_required
+                                                .o_radio_item
+                                                    input#radio50_none.o_form_radio(type='radio', name='radio50', value='none')
+                                                    label.o_form_label(for='radio50_none') All products
+                                                .o_radio_item
+                                                    input#radio50_category.o_form_radio(type='radio', name='radio50', value='category')
+                                                    label.o_form_label(for='radio50_category') One product category
+                                                .o_radio_item
+                                                    input#radio50_product.o_form_radio(type='radio', name='radio50', value='product')
+                                                    label.o_form_label(for='radio50_product') One product only
+                                                .o_radio_item
+                                                    input#radio50_partial.o_form_radio(type='radio', name='radio50', value='partial')
+                                                    label.o_form_label(for='radio50_partial') Select products manually
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_39')
+                                                | Include Exhausted Products
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_checkbox.o_form_field_boolean.o_form_field
+                                                input#o_field_input_39(type='checkbox', name='exhausted')
+                                                span
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_40', data-original-title='', title='')
+                                                | Inventory Date
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field_date.o_form_field.o_form_required 03/22/2017 18:52:37
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_41', data-original-title='', title='')
+                                                | Force Accounting Date
+                                        td(colspan='1', style='width: 100%;')
+                                            select.o_form_input.o_form_field.o_form_required(name='lead_type')
+                                                option(value='false')
+                                                option(value='"net"') Day(s) to get the products
+                                                option(value='"supplier"') Day(s) to purchase
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_42')
+                                                | Company
+                                        td(colspan='1', style='width: 100%;')
+                                            select.o_form_input.o_form_field.o_form_required(name='lead_type')
+                                                option(value='false')
+                                                option(value='"net"') Day(s) to get the products
+                                                option(value='"supplier"') Day(s) to purchase
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_43', data-original-title='', title='')
+                                                | Inventoried Product
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field.o_form_invisible
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_43.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_44', data-original-title='', title='')
+                                                | Inventoried Category
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field.o_form_invisible
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_44.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_45', data-original-title='', title='')
+                                                | Inventoried Lot/Serial Number
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field.o_form_invisible
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_45.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_46', data-original-title='', title='')
+                                                | Inventoried Owner
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field.o_form_invisible
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_46.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_47', data-original-title='', title='')
+                                                | Inventoried Pack
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field.o_form_invisible
+                                                .o_form_input_dropdown
+                                                    input#o_field_input_47.o_form_input.ui-autocomplete-input(type='text', autocomplete='off')
+                                                    span.o_dropdown_button(draggable='false')
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                    .o_notebook.o_form_invisible
+                        ul.nav.nav-tabs(role='tablist')
+                            li.active
+                                a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_48')
+                                    | Inventory Details
+                            li.o_form_invisible
+                                a(data-toggle='tab', disable_anchor='true', role='tab', href='#notebook_page_49')
+                                    | Inventory Adjustments
+                        .tab-content.nav.nav-tabs
+                            #notebook_page_48.tab-pane.active(role='tabpanel')
+                                button.btn.btn-sm.oe_link.oe_right.o_form_invisible(type='button')
+                                    span ⇒ Set quantities to 0
+                                .o_form_field.o_view_manager_content
+                                    .o_x2m_control_panel
+                                        .o_cp_buttons
+                                        .o_cp_pager
+                                            .o_hidden
+                                                span.o_pager_value
+                                                |  /
+                                                span.o_pager_limit
+                                                span.btn-group.btn-group-sm
+                                                    button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                    button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                    .o_list_editable
+                                        .o_form_view.o_list_editable_form.o_form_nosheet.o_hidden
+                                            field(name='product_id', domain="[('type','=','product')]", on_change='1', can_create='true', can_write='true', modifiers='{"required":true}', nolabel='true')
+                                            field(name='product_uom_id', string='UoM', on_change='1', can_create='true', can_write='true', invisible='1', modifiers='{"invisible":true,"required":true,"tree_invisible":true}', nolabel='true')
+                                            field(name='location_id', domain="[('id', 'child_of', parent.location_id)]", on_change='1', can_create='true', can_write='true', invisible='1', modifiers='{"invisible":true,"required":true,"tree_invisible":true}', nolabel='true')
+                                            field(name='prod_lot_id', domain="[('product_id', '=', product_id)]", context="{'default_product_id': product_id}", on_change='1', can_create='true', can_write='true', invisible='1', modifiers='{"invisible":true,"tree_invisible":true}', nolabel='true')
+                                            field(name='package_id', domain="['|', ('location_id','=', False), ('location_id', '=', location_id)]", on_change='1', can_create='true', can_write='true', invisible='1', modifiers='{"invisible":true,"tree_invisible":true}', nolabel='true')
+                                            field(name='partner_id', on_change='1', can_create='true', can_write='true', invisible='1', modifiers='{"invisible":true,"tree_invisible":true}', nolabel='true')
+                                            field(name='theoretical_qty', readonly='1', modifiers='{"readonly":true}', nolabel='true')
+                                            field(name='product_qty', string='Real Quantity', modifiers='{}', nolabel='true')
+                                            field(name='state', invisible='True', modifiers='{"readonly":true,"tree_invisible":true,"invisible":true}', nolabel='true')
+                                        .table-responsive
+                                            table.o_list_view.table.table-condensed.table-striped
+                                                thead
+                                                    tr
+                                                        th.o_column_sortable(data-id='product_id')
+                                                            | Product
+                                                        th.o_column_sortable(data-id='theoretical_qty')
+                                                            | Theoretical Quantity
+                                                        th.o_column_sortable(data-id='product_qty')
+                                                            | Real Quantity
+                                                        th.o_list_record_delete
+                                                tfoot
+                                                    tr
+                                                        td
+                                                        td
+                                                        td
+                                                        td.o_list_record_delete
+                                                tbody
+                                                    tr
+                                                        td.o_form_field_x2many_list_row_add(colspan='4')
+                                                            a(href='#') Add an item
+                                                    tr
+                                                        td(title='Product')  
+                                                        td(title='Theoretical Quantity')  
+                                                        td(title='Real Quantity')  
+                                                        td.o_list_record_delete
+                                                    tr
+                                                        td(title='Product')  
+                                                        td(title='Theoretical Quantity')  
+                                                        td(title='Real Quantity')  
+                                                        td.o_list_record_delete
+                                                    tr
+                                                        td(title='Product')  
+                                                        td(title='Theoretical Quantity')  
+                                                        td(title='Real Quantity')  
+                                                        td.o_list_record_delete
+                                p
+                                h3.oe_grey Notes
+                                ul.oe_grey
+                                    li
+                                        | Inventory adjustments will be made by comparing the theoretical and the checked quantities.
+                                    li You can delete lines to ignore some products.
+                                    li
+                                        | If a product is not at the right place, set the checked quantity to 0 and create a new line with correct location.
+                            #notebook_page_49.tab-pane.o_form_invisible(role='tabpanel')
+                                .o_form_field.o_view_manager_content
+                                    .o_x2m_control_panel
+                                        .o_cp_buttons
+                                        .o_cp_pager
+                                            .o_hidden
+                                                span.o_pager_value
+                                                |  /
+                                                span.o_pager_limit
+                                                span.btn-group.btn-group-sm
+                                                    button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                    button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                    div
+                                        .table-responsive
+                                            table.o_list_view.table.table-condensed.table-striped
+                                                thead
+                                                    tr
+                                                        th.o_column_sortable(data-id='product_id')
+                                                            | Product
+                                                        th.o_column_sortable(data-id='product_uom_qty')
+                                                            | Quantity
+                                                        th.o_column_sortable(data-id='location_id')
+                                                            | Source Location
+                                                        th.o_column_sortable(data-id='location_dest_id')
+                                                            | Destination Location
+                                                        th.o_column_sortable(data-id='state')
+                                                            | Status
+                                                        th.o_list_record_delete
+                                                tfoot
+                                                    tr
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td.o_list_record_delete
+                                                tbody
+                                                    tr
+                                                        td.o_form_field_x2many_list_row_add(colspan='6')
+                                                            a(href='#') Add an item
+                                                    tr
+                                                        td(title='Product')  
+                                                        td(title='Quantity')  
+                                                        td(title='Source Location')  
+                                                        td(title='Destination Location')  
+                                                        td(title='Status')  
+                                                        td.o_list_record_delete
+                                                    tr
+                                                        td(title='Product')  
+                                                        td(title='Quantity')  
+                                                        td(title='Source Location')  
+                                                        td(title='Destination Location')  
+                                                        td(title='Status')  
+                                                        td.o_list_record_delete
+                                                    tr
+                                                        td(title='Product')  
+                                                        td(title='Quantity')  
+                                                        td(title='Source Location')  
+                                                        td(title='Destination Location')  
+                                                        td(title='Status')  
+                                                        td.o_list_record_delete

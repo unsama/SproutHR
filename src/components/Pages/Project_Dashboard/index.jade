@@ -1,0 +1,73 @@
+.project_dashboard
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:modal='".bd-example-modal-lg"', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v1-bind:paginbtn1='true',v1-bind:paginbtn2='true',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true',v-bind:actionbtn='false',v-bind:Attachmentbtn='false',v-bind:printbtn='false')
+    modal( v-bind:save='false',v-bind:heading="modalheading", v-bind:sheduaeactivity='true', v-bind:noactivity='true')
+        h1 sameer
+    .card(style='width: 20rem;margin-top: 10px;')
+        .card-block.samoblockcard
+            .col-sm-12(style='padding:0px;display: -webkit-inline-box;')
+                .col-sm-8(style='padding: 0px;')
+                    router-link(to='project_dashboard_pipeline')
+                    .text1(style='padding-left: 10px;')
+                        span(style='font-size: larger;') Data Import/Export Plugin
+                    .text2(style='padding-left: 10px;padding-left: 10px;height: 139px;')
+                        i.fa.fa-envelope
+                        span data-import-export-plugin@localhost
+
+                    .col-sm-12(style='padding:0px;')
+                        .col-sm-8.pull-left(style='padding:0px;')
+                            .dropup
+                                button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown',style='background-color: transparent;border: none;color: #4c4c4c;')
+                                    | More
+                                    span.caret
+                                ul.dropdown-menu(style='padding-left: 11px;padding-top: 65px;')
+                                    li
+                                        a(href='#',style='color: #7c7bad;') Settings
+                                    li
+                                        a(href='#',style='color: #7c7bad;') Tasks
+                                    li
+                                        a(href='#',style='color: #7c7bad;') Issues
+                                    li.divider
+                                    li
+                                        a(href='#',style='color: #7c7bad;') TImesheets
+                                    ul(style='list-style-type:none;display: -webkit-inline-box;padding: 0px;')
+                                        li
+                                            a.color1.colorbg(href='#', data-color='1')
+                                        li
+                                            a.color2.colorbg(href='#', data-color='2')
+                                        li
+                                            a.color3.colorbg(href='#', data-color='3')
+                                        li
+                                            a.color4.colorbg(href='#', data-color='4')
+                                        li
+                                            a.color5.colorbg(href='#', data-color='5')
+                                        li
+                                            a.color6.colorbg(href='#', data-color='6')
+                                        li
+                                            a.color7.colorbg(href='#', data-color='7')
+                                        li
+                                            a.color8.colorbg(href='#', data-color='8')
+                                        li
+                                            a.color9.colorbg(href='#', data-color='9')
+                                        li
+                                            a.color10.colorbg(href='#', data-color='10')
+
+                        .col-sm-4.pull-right
+                            i.fa.fa-star(aria-hidden='true', style='color: gold;float: right;padding-top: 9px;')
+
+
+
+
+                .col-sm-4(style='padding: 0px;')
+                    ul(style='list-style-type:none;height: 79px;background-color: #7c7bad;color: white;margin-bottom: 0px;padding-left: 0px;padding-top: 16px;text-align: center;') 4
+                        li Databases
+                    ul(style='list-style-type:none;height: 79px;background-color: grey;color: white;margin-bottom: 0px;padding-left: 0px;padding-top: 16px;text-align: center;') 0
+                        li issues
+                    ul(style='list-style-type:none;height: 43px;background-color: #7c7bad;color: white;margin-bottom: 0px;padding-left: 0px;padding-top: 16px;text-align: center;')
+                        li Timesheets
+
+
+
+
+
+
+

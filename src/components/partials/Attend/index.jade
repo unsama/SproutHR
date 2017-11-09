@@ -1,0 +1,65 @@
+.container
+    dashconterller(v-bind:createbtn='true',v-bind:importbtn='true')
+    .row
+        table.table.table-striped.samotable
+            thead.samotablehead
+                tr
+                    th.o_list_record_selector.samotableheadborder(width='1')
+                        .o_checkbox
+                            input(type='checkbox')
+                            span
+
+                    th.samotableheadborder(colspan='2') Employee
+                    th.samotableheadborder(colspan='2') Check In
+                    th.samotableheadborder(colspan='2') Check Out
+
+
+
+            tfoot
+                tr
+                    td
+                    td
+                    td
+                    td
+
+
+            tbody.samotbody
+                tr
+                    th.o_list_record_selector.samotablepadd(width='1')
+                        .o_checkbox
+                            input(type='checkbox')
+                            span
+                    td.samotablepadd(colspan='2')
+                        router-link.links(to='profile') Alupak Industries
+                    td.samotablepadd(colspan='2') my partner
+
+                tr
+                    th.o_list_record_selector.samotablepadd(width='1')
+                        .o_checkbox
+                            input(type='checkbox')
+                            span
+                    td.samotablepadd(colspan='2') ALUALU INDUSTRIES
+                    td.samotablepadd(colspan='2') Otto
+
+                tr
+                    th.o_list_record_selector.samotablepadd(width='1')
+                        .o_checkbox
+                            input(type='checkbox')
+                            span
+                    td.samotablepadd(colspan='2')
+                        router-link.links(to='Companypopup') PAKpak Industries
+                    td.samotablepadd(colspan='2') my partner
+
+                tr
+                    th.o_list_record_selector.samotablepadd(width='1')
+                        .o_checkbox
+                            input(type='checkbox')
+                            span
+                    td.samotablepadd(colspan='2') ALUALU INDUSTRIES
+                    td.samotablepadd(colspan='2') Otto
+
+
+
+
+
+

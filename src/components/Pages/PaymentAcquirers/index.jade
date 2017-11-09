@@ -1,0 +1,51 @@
+.configtaxes
+    DashboardController(v-bind:createbtn='true',  v-bind:links='btnlinks', v-bind:searchbar='true', v-bind:num1='true',v-bind:num2='true', v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true', v-bind:dropdownbtn3='true', v-bind:heading='head')
+
+    .Account(style=' background-color: #f0eeee;margin-left: -15px;margin-right: -15px;')
+        .table
+          router-link(to='acquirers')(style='color: black;')
+            .row
+
+                .col-xs-3(style='padding-left: 14px; font-size: 0.9rem;')
+                    h3 PayPal
+                    p You will be redirected to the Paypal website after clicking on the payment button.
+                    ul.list-inline
+                        li.list-inline-item
+                            i.fa.fa-check(style='color: green;')
+                            | eCommerce
+
+                        li.list-inline-item
+                            i.fa.fa-check(style='color: green;')
+                            | Pay button in email
+                    span.badge.badge-warning(style='background-color:#f0ad4e; width: 8%;') Test
+
+
+
+                .col-xs-3.offset-sm-1(style='color: black;')
+                    .img
+                        img.img-responsive(style='width:80px;')(src='/images/paypal.png')
+
+
+
+
+    .Account(style=' background-color: #f0eeee;margin-left: -15px;margin-right: -15px;')
+        .table
+            .row
+
+                    .col-xs-3(style='padding-left: 14px; font-size: 0.9rem;')
+                            h3 Stripe
+                            p You will be redirected to the Paypal website after clicking on the payment button.
+                            ul.list-inline
+                                li.list-inline-item
+                                    i.fa.fa-check(style='color: green;')
+                                    | eCommerce
+
+
+                            span.badge.badge-warning(style='background-color:#f0ad4e; width: 8%;') Test
+
+
+
+                    .col-xs-3.offset-sm-1(style='color: black;')
+                                .img
+                                    img.img-responsive(style='width:80px;')(src='/images/stripe.png')
+

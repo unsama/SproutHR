@@ -1,0 +1,65 @@
+.salesactivityview
+    DashboardController(v-bind:heading="activities",v-bind:savedbtn='true',v-bind:discardbtn='true',v-bind:attachmentbtn='true',v-bind:actionbtn='true', v-bind:links="btnlinks")
+    .o_content(style='margin-left: -15px;margin-right: -15px;')
+        .o_view_manager_content
+            .o_form_view.o_form_nosheet.o_form_editable
+                .oe_title
+                    label.o_form_label.o_form_label_help.oe_edit_only(for='o_field_input_354', data-original-title='', title='')
+                        | Message Type
+                    h1
+                        input#o_field_input_354.o_form_input.o_form_field.o_form_required.topinput(type='text', value='Email')
+                        button.o_field_translate.fa.fa-globe.btn.btn-link.o_translate_active.icon.ic(type='button',style='margin-left: -24px;')
+                .o_group
+                    table.o_group.o_inner_group.o_group_col_6
+                        tbody
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label
+                                        | Sales Team
+                                td(colspan='1', style='width: 100%;')
+                                    .o_form_field_many2one.o_form_field
+                                        select.selectb
+                                            option(value='volvo') Volvo
+                                            option(value='saab') Saab
+                                            option(value='mercedes') Mercedes
+                                            option(value='audi') Audi
+                                            span.o_dropdown_button(draggable='false')
+                                        button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help
+                                        | Description
+                                td(colspan='1', style='width: 100%;')
+                                    textarea.o_form_textarea.o_form_field(rows='6', name='description', style='resize: horizontal; height: 50px;')
+                                    textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 639px;')
+                                    textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 10px;')
+                                    button.o_field_translate.fa.fa-globe.btn.btn-link.o_translate_active(type='button')
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help(for='o_field_input_357', data-original-title='', title='')
+                                        | Number of days
+                                td(colspan='1', style='width: 100%;')
+                                    input#o_field_input_357.o_form_input.o_form_field.o_form_field_number(type='text')
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label.o_form_label_help(for='o_field_input_358', data-original-title='', title='')
+                                        | Default
+                                td(colspan='1', style='width: 100%;')
+                                    .o_checkbox.o_form_field_boolean.o_form_field
+                                        input#o_field_input_358(type='checkbox', name='default')
+                                        span
+                    table.o_group.o_inner_group.o_group_col_6
+                        tbody
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label
+                                        | Recommended Next Activities
+                                td(colspan='1', style='width: 100%;')
+                                    .o_form_field_many2manytags.o_form_field
+                                        select.selectb
+                                            option(value='volvo') Volvo
+                                            option(value='saab') Saab
+                                            option(value='mercedes') Mercedes
+                                            option(value='audi') Audi
+                                                span.o_dropdown_button(draggable='false')
+

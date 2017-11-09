@@ -1,0 +1,15 @@
+.row(style="margin-top: 10px;")
+    .col-md-2(style='padding-right: 0px;padding-left: 5px;')
+        .table
+                .row
+                    .col-sm-12(style='padding: 0px;display: -webkit-box;')(v-for='tr in tabledata')
+                        .col-sm-6(style='color: black;')(v-for='td in tr.data')
+                            a(v-if="tr.url != ''" v-bind:href='tr.url') {{ td }}
+                                h6(style='font-size:13px;')
+                        .col-sm-6(style='text-align: right;color:#777777;font-size:13px;')
+                            h6(style='font-size:13px;') Salesorder
+                    .col-sm-12(style='padding: 0px;display: -webkit-box;')
+                        .col-sm-6(style='color:#777777;font-size:13px;')
+                            h6(style='font-size:13px;') AsusTek
+                        .col-sm-6.grid2(style='text-align: right;color: white;font-size:13px;')
+                            span.badge.badge-default Draft

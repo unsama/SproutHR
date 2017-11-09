@@ -1,0 +1,150 @@
+.leaves_dashboard
+    DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:createbtn='false',v-bind:importbtn='false', v-bind:links="btnlinks",v-bind:num1='false',v-bind:num2='false',v-bind:paginbtn1='false',v-bind:paginbtn2='false',v-bind:firstbtn='false',v-bind:secondbtn='true',v-bind:fifthbtn='true',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true')
+    Modal(v-bind:discard='true',v-bind:saveclose='true',v-bind:savenew='true',v-bind:heading="modal",v-bind:modal='"fc-text-arrow"')
+        .modal-body.o_act_window
+            .o_form_view.o_form_editable(slot='allocation',style='margin-left: -15px;margin-right: -15px;')
+                .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                    input(type='checkbox', name='can_reset', disabled='')
+                    span
+                select.o_form_input.o_form_field.o_form_required.o_form_invisible(name='type', data-original-title='', title='')
+                    option(value='false')
+                    option(value='"remove"') Leave Request
+                    option(value='"add"') Allocation Requests
+                header
+                    button.btn.btn-sm.oe_highlight.o_form_invisible(type='button')
+                        span#c Confirm
+                    button.btn.btn-sm.oe_highlight#a(v-on:click="submit3('approved')",type='button',value='approve')
+                        span Approve
+                    button.btn.btn-sm.oe_highlight.o_form_invisible(type='button')
+                        span Validate
+                    button.btn.btn-sm#q(v-on:click="submit3('Refused')",type='button',value='Refuse')
+                        span Refuse
+                    button.btn.btn-sm#d(style='display:none;',type='button')
+                        span Reset to Draft
+                    ul.oe_form_field_status.oe_form_status.o_form_field(data-original-title='', title='')
+                        li(data-id='draft')
+                            span.label To Submits
+                            span.arrow
+                                span
+                        li.oe_active(data-id='confirm')
+                            span.label To Approve
+                            span.arrow
+                                span
+                        li(data-id='validate')
+                            span.label Approved
+                            span.arrow
+                                span
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_title
+                            h1
+                                span.o_form_field.o_form_field_empty
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_102')
+                                                | Description
+                                        td(colspan='1', style='width: 100%;')
+                                            input#o_field_input_102.o_form_input.o_form_field(v-model='description',type='text')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Leave Type
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_form_field.o_form_required
+                                                .o_form_input_dropdown
+                                                    select(v-model='leave_type_id')
+                                                        option(v-for='option in options',v-bind:value="option.id")
+                                                            | {{ option.type }}
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_104')
+                                                | Duration
+                                        td(colspan='1', style='width: 100%;')
+                                            div
+                                                .o_form_invisible(attrs="{'invisible': [('type', '=', 'add')]}")
+                                                    .o_datepicker.o_form_field_date.oe_inline.o_form_field
+                                                        input.o_datepicker_input.o_form_input(type='text', name='date_from')
+                                                        span.o_datepicker_button
+                                                    label.o_form_label.oe_inline
+                                                        | -
+                                                    .o_datepicker.o_form_field_date.oe_inline.o_form_field
+                                                        input.o_datepicker_input.o_form_input(type='text', name='date_to')
+                                                        span.o_datepicker_button
+                                                div
+                                                    input#o_field_input_104.o_form_input.oe_inline.o_form_field.o_form_field_number(v-model='duration',type='text')
+                                                    |  days
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_105', data-original-title='', title='')
+                                                | Mode
+                                        td(colspan='1', style='width: 100%;')
+                                            select#o_field_input_105.o_form_input.o_form_field.o_form_required(name='holiday_type',v-model='mode')
+                                                option(value='employee') By Employee
+                                                option(value='Employee Tags') By Employee Tags
+                                    tr.e
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Employee
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                .o_form_input_dropdown
+                                                    select(v-model='employee_id',v-on:click="selectcontacts()")
+                                                        option(v-for='option in options2', v-bind:value="option.id")
+                                                            | {{ option.employeename }}
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                    tr#r
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Employee Tag
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                                .o_form_input_dropdown
+                                                    select
+                                                        option(v-for='option in options2', v-bind:value="option.id")
+                                                            | {{ option.employeename }}
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button')
+                                    tr.e
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Departments
+                                        td(colspan='1', style='width: 100%;')
+                                            span(v-model='department_id') {{department_name}}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                                | Reported in last payslips
+                                        td(colspan='1', style='width: 100%;')
+                                            button.btn.btn-default.btn-circle#ab(v-on:click="submit4('0')",style='border-radius: 20px 20px 20px 20px;background-color:black;',type='button', title='Reported in last payslips')
+                                                i(title='Reported in last payslips')
+                                            button.btn.btn-default.btn-circle#b(v-on:click="submit4('1')",style='display:none;border-radius: 20px 20px 20px 20px;background-color:green;',type='button', title='Reported in last payslips')
+                                                i(title='Reported in last payslips')
+
+                            textarea.o_form_textarea.o_group_col_12.o_form_field(v-model='comment_manager',rows='6', name='notes', placeholder='Add a reason...', style='resize: horizontal; height: 50px;')
+                            textarea.o_form_textarea.o_group_col_12.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 825px;')
+                                .o_horizontal_separator
+                                    | Comment by Manager
+                                textarea.o_form_textarea.o_form_field(rows='6', name='report_note', placeholder='e.g. Report to the next month...', style='resize: horizontal; height: 50px;')
+                                textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 110.5px;')
+    CalendarT
+        .rows(slot='can')
+            .col-md-10.pull-left.full
+                #wrap
+                    #calendar
+                    div(style='clear:both')
+            .col-md-2.pull-right.half.cld
+                button#Closebutton.btnnn(type='button',style='position: inherit;background-color: transparent;border: none;float:right;') x
+                .card
+                    #embeddingDatePicker(style='margin: 0 auto;')
+                    hr
+                    button.o_google_sync_button.oe_button.btn.btn-sm.btn-default.hascal(type='button')
+                        img(src='images/calendar_32.png')
+                        | Sync with
+                        b Google
+
+

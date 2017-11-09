@@ -1,0 +1,48 @@
+.all_transfers_table
+    DashboardController( v-bind:heading="head",v-bind:discardbtn='true',v-bind:savedbtn='true',  v-bind:links="btnlinks" )
+    .o_content.samocontent
+        .o_view_manager_content
+            .o_form_view.o_form_readonly#hasH
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .row
+
+                        table.o_group.o_inner_group
+                            tbody
+
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label(style='font-size: 0.9rem; ')
+                                            | Date
+                                    td.two(colspan='1', style='width: 50%;')
+                                        form#dateRangeForm.form-horizontal(method='post')
+                                            .form-group
+                                                #dateRangePicker.input-group.input-append.date
+                                                    input.input-group-addon.form-control(value='01/01/2010 05:00:00' , type='text', name='date', style='height:25px; width: 216px; margin-left: 16px; text-align: left; background-color: #D2D2FF; margin-right: 10px;')
+
+
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label
+                                            | Currency
+                                    td.two(colspan='1', style='width: 50%;')
+                                        a.o_form_uri.o_form_field.o_form_required(href='http://192.168.25.104:8040/#/app/accounting/currencies')(style='font-size: 0.9rem; ') AED
+
+                                tr
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label(style='font-size: 0.9rem; ')
+                                            | Rate
+                                    td.two(colspan='1', style='width: 50%;')
+                                        input#o_field_input_87.o_form_input.o_form_field(style=' background-color: transparent;')(value='4.512532',type='text')
+
+                                    td.o_td_label.one(colspan='1')
+                                        label.o_form_label
+                                            | Company
+                                    td.two(colspan='1', style='width: 50%;')
+                                        select#o_field_input_186.o_form_input.o_form_field(style='width: 193px; ')(name='format')
+                                            option(value='true') Alupak Industries
+                                            option(value='"A0"') My Company;wojjfp;ofo, Chica
+
+                                        button.fa.fa-external-link.btn.btn-default.o_external_button#bttn(style='color:#7C7BAD; background-color: transparent !important')(draggable='false', tabindex='-1', type='button', data-toggle='modal', href='#myModal2')
+
+
+

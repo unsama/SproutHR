@@ -1,0 +1,12 @@
+.o_content#createedit
+    .o_view_manager_content
+        .o_form_view.o_form_editable
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .oe_button_box(name='button_box')
+                        button.btn.btn-sm.oe_stat_button(type='button')
+                            .fa.fa-fw.fa-archive.o_button_icon
+                            .o_stat_info.o_form_field
+                                span.o_stat_text.o_not_hover.text-success Active
+                                span.o_stat_text.o_hover.text-danger Archive
+                    slot(name='dep')

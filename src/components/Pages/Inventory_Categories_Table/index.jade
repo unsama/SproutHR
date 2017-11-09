@@ -1,0 +1,136 @@
+.inventory_adjustments_table
+    DashboardController(v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='false',v-bind:dropdownbtn1='false',v-bind:dropdownbtn2='false',v-bind:dropdownbtn3='false',v-bind:Attachmentbtn='true',v-bind:actionbtn='true')
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-th-list.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value
+                                        span.o_form_field.o_form_field_number(data-original-title='', title='') 29
+                                    span.o_stat_text  Products
+                        .oe_title
+                            label.o_form_label.oe_edit_only(for='o_field_input_36')
+                                | Category name
+                            h1
+                                span.o_form_field.o_form_required All
+                                button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td(colspan='4', style='width: 100%;')
+                                        .o_horizontal_separator
+                                            | Category Type
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_37')
+                                            | Parent Category
+                                    td(colspan='1', style='width: 50%;')
+                                        a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help(for='o_field_input_38', data-original-title='', title='')
+                                            | Category Type
+                                    td(colspan='1', style='width: 50%;')
+                                        span.o_form_field Normal
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Inventory Valuation
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_39', data-original-title='', title='')
+                                                | Costing Method
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required.o_form_invisible Standard Price
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_40', data-original-title='', title='')
+                                                | Inventory Valuation
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required Periodic (manual)
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Account Properties
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false(for='o_field_input_41', data-original-title='', title='')
+                                                | Price Difference Account
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_42', data-original-title='', title='')
+                                                | Income Account
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field(href='#') 200000 Product Sales
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_43', data-original-title='', title='')
+                                                | Expense Account
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field(href='#') 220000 Expenses
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Account Stock Properties
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_44', data-original-title='', title='')
+                                                | Stock Input Account
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field(href='#') 101120 Stock Interim Account (Received)
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_45', data-original-title='', title='')
+                                                | Stock Output Account
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field(href='#') 101130 Stock Interim Account (Delivered)
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_46', data-original-title='', title='')
+                                                | Stock Valuation Account
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field(href='#') 101110 Stock Valuation Account
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_47', data-original-title='', title='')
+                                                | Stock Journal
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field(href='#') Stock Journal (EUR)
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td(colspan='2', style='width: 100%;')
+                                        .o_horizontal_separator
+                                            | Logistics
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_empty(for='o_field_input_48')
+                                            | Routes
+                                    td(colspan='1', style='width: 100%;')
+                                        .o_form_field_many2manytags.o_form_field.o_form_field_empty
+                                tr
+                                    td(colspan='2', style='width: 100%;')
+                                        .o_form_invisible(colspan='2', attrs="{'invisible': [('parent_id', '=', False)]}")
+                                            | The following routes will apply to the products in this category taking into account parent categories:
+                                            .o_form_field_many2manytags.o_form_field.o_form_field_empty
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false(for='o_field_input_49', data-original-title='', title='')
+                                            | Force Removal Strategy
+                                    td(colspan='1', style='width: 100%;')
+                                        a.o_form_uri.o_form_field.o_form_field_empty(href='#')
+
+

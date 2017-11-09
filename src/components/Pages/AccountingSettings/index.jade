@@ -1,0 +1,413 @@
+.o_content.pageset
+    .o_view_manager_content
+        .o_form_view.oe_form_configuration.o_form_nosheet.o_form_editable
+            header
+                button.btn.btn-sm.oe_highlight(type='button')
+                    span Apply
+                button.btn.btn-sm.oe_link(type='button')
+                    span Cancel
+            #main
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Company
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | Company
+                            td(colspan='1', style='width: 50%; font-size: 0.8rem;')
+
+                                    .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                        .o_form_input_dropdown(style='')
+                                            select#o_field_input_176.o_form_input.o_form_field(style='width:140px;')(name='format')
+                                                option(value='true') Alupak Industriess
+                                                option(value='') My Company;wojjfp;ofo, Chicago
+
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(style='background-color: transparent; !important')(draggable='false', tabindex='-1', type='button')
+
+
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Chart Of Account
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | chart of account
+                            td(colspan='1', style='width: 100%; font-size: 0.8rem;' )
+                                a.o_form_uri.o_form_field.o_form_required(href='#') Configure your company data
+
+
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Fiscal Year
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help
+                                    | Fiscal Year Last Day
+                            td(colspan='1', style='width: 50%; font-size: 0.8rem; font-size: 0.8rem;')
+                                div
+                                    .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                        .o_form_input_dropdown(style='')
+                                            select#o_field_input_176.o_form_input.o_form_field(style='background-color: transparent;  width:159px;')(name='format')
+                                                option(value='true') April
+                                                option(value='') May
+                                    input#o_field_input_213.o_form_input.o_form_field(style='height: 21px;')( type='text')
+
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help
+                                    | Lock Entries
+                            td(colspan='1', style='width: 100%; font-size: 0.8rem;')
+                                div
+                                    p Lock Date for Non-Advisers
+                                      input#o_field_input_213.o_form_input.o_form_field(style='')( type='text')
+                                    p Lock Date
+                                        input#o_field_input_213.o_form_input.o_form_field(style='')( type='text')
+
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Accounting & Finance
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | Options
+                            td(colspan='1', style='width: 100%; font-size: 0.8rem;')
+
+                                label.o_form_label
+                                    | Options Default company currency
+                                    .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                        .o_form_input_dropdown(style='')
+                                            select#o_field_input_176.o_form_input.o_form_field(style='width:172px;')(name='format')
+                                                option(value='true') Alupak Industriess
+                                                option(value='') My Company;wojjfp;ofo, Chicago
+
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(style='background-color: transparent; !important')(draggable='false', tabindex='-1', type='button')
+                    tr
+                        td.o_td_label(colspan='1')
+                            label.o_form_label
+                                | Features
+                        td(colspan='1', style='width: 100%; font-size: 0.8rem;')
+                            div
+
+                                .o_form_field.o_form_field_boolean.oe_inline
+                                    .o_checkbox.o_form_field_boolean
+                                        input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                        span  Get dynamic accounting reports
+
+                                span.badge.badge-default(style='background-color: #7c7bad;') Enterprise
+
+                                a(href='', target='_blank')  More Info
+                                br
+
+                                .o_form_field.o_form_field_boolean.oe_inline
+                                    .o_checkbox.o_form_field_boolean
+                                        input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                        span  Analytic accounting
+
+                                br
+
+
+                                .o_form_field.o_form_field_boolean.oe_inline
+                                    .o_checkbox.o_form_field_boolean
+                                        input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                        span  Assets management
+                                span.badge.badge-default(style='background-color: #7c7bad;') Enterprise
+
+                                a(href='', target='_blank')  More Info
+                                br
+
+                                .o_form_field.o_form_field_boolean.oe_inline
+                                    .o_checkbox.o_form_field_boolean
+                                        input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                        span  Revenue Recognition
+
+                                span.badge.badge-default(style='background-color: #7c7bad;') Enterprise
+
+
+                                br
+
+
+                                .o_form_field.o_form_field_boolean.oe_inline
+                                    .o_checkbox.o_form_field_boolean
+                                        input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                        span  Budget management
+
+                                br
+
+                                .o_form_field.o_form_field_boolean.oe_inline
+                                    .o_checkbox.o_form_field_boolean
+                                        input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                        span  Allow Tax Cash Basis
+
+                                br
+
+
+
+
+
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Bank & Cash
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help( data-original-title='', title='')
+                                    |Bank Statements
+                            td(colspan='1', style='width: 100%; font-size: 0.8rem;')
+                                div
+
+                                    .o_form_field.o_form_field_boolean.oe_inline
+                                        .o_checkbox.o_form_field_boolean
+                                            input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                            span  Bank Interface - Sync your bank feeds automatically
+                                    span.badge.badge-default(style='background-color: #7c7bad;') Enterprise
+
+                                    a(href='', target='_blank')  More Info
+                                    br
+
+                                    .o_form_field.o_form_field_boolean.oe_inline
+                                        .o_checkbox.o_form_field_boolean
+                                            input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                            span  Plaid Connector
+                                    span.badge.badge-default(style='background-color: #7c7bad;') Enterprise
+
+                                    a(href='', target='_blank')  More Info
+                                    br
+
+
+                                    .o_form_field.o_form_field_boolean.oe_inline
+                                        .o_checkbox.o_form_field_boolean
+                                            input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                            span  Import .qif files
+                                    span.badge.badge-default(style='background-color: #7c7bad;') Enterprise
+
+                                    a(href='', target='_blank')  More Info
+                                    br
+
+                                    .o_form_field.o_form_field_boolean.oe_inline
+                                        .o_checkbox.o_form_field_boolean
+                                            input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                            span  Import in .ofx format
+                                    span.badge.badge-default(style='background-color: #7c7bad;') Enterprise
+
+                                    a(href='', target='_blank')  More Info
+                                    br
+
+                                    .o_form_field.o_form_field_boolean.oe_inline
+                                        .o_checkbox.o_form_field_boolean
+                                            input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                            span  Import in .csv format
+                                    span.badge.badge-default(style='background-color: #7c7bad;') Enterprise
+
+                                    a(href='', target='_blank')  More Info
+                                    br
+
+                        tr
+                            td.o_td_label(colspan='1')
+
+                                label.o_form_label
+                                    | Configuration
+                            td(colspan='1', style='width: 100%; font-size: 0.8rem;')
+                                p Bank accounts footer preview
+                                label.o_form_label
+                                    | Inter-Banks Transfer Account
+                                    .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                        .o_form_input_dropdown(style='')
+                                            select#o_field_input_176.o_form_input.o_form_field(style='width:172px;')(name='format')
+                                                option(value='true') Alupak Industriess
+                                                option(value='') My Company;wojjfp;ofo, Chicago
+
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(style='background-color: transparent; !important')(draggable='false', tabindex='-1', type='button')
+
+
+
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Multi Currencies
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                    | Configuration
+                            td(colspan='1', style='width: 100%; font-size: 0.8rem;')
+                                div
+                                    .o_checkbox
+                                        input(type='checkbox')
+                                        span Allow multi currencies
+
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label.o_form_label_help(data-original-title='', title='')
+                                            | Rate Difference Journal
+                                    td(colspan='1', style='width: 100%; font-size: 0.8rem;')
+                                        .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                            .o_form_input_dropdown(style='')
+                                                select#o_field_input_176.o_form_input.o_form_field(style='width:172px;')(name='format')
+                                                    option(value='true') Alupak Industriess
+                                                    option(value='') My Company;wojjfp;ofo, Chicago
+
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(style='background-color: transparent; !important')(draggable='false', tabindex='-1', type='button')
+
+
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Invoicing & Payments
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_17')
+                                    | Customer
+                            td(colspan='1', style='width: 100%; font-size: 0.8rem;')
+                                div
+
+                                    .o_form_field.o_form_field_boolean.oe_inline
+                                        .o_checkbox.o_form_field_boolean
+                                            input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                            span  Allow pro-forma invoices
+
+
+                                    br
+
+                                    .o_form_field.o_form_field_boolean.oe_inline
+                                        .o_checkbox.o_form_field_boolean
+                                            input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                            span  Enable payment followup management
+                                    span.badge.badge-default(style='background-color: #7c7bad;') Enterprise
+
+                                    a(href='', target='_blank')  More Info
+                                    br
+
+
+                                    .o_form_field.o_form_field_boolean.oe_inline
+                                        .o_checkbox.o_form_field_boolean
+                                            input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                            span  Use batch deposit
+                                    span.badge.badge-default(style='background-color: #7c7bad;') Enterprise
+
+                                    a(href='', target='_blank')  More Info
+                                    br
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_17')
+                                    | Warning
+                            td(colspan='1', style='width: 100%; font-size: 0.8rem;')
+                                div
+                                    .o_form_field_radio.o_vertical.o_form_field
+                                        .o_radio_item
+                                            input#radio41_0.o_form_radio(type='radio', name='radio41', value='0')
+                                            label.o_form_label(for='radio41_0')
+                                                | All the partners can be used in invoices
+                                        .o_radio_item
+                                            input#radio41_1.o_form_radio(type='radio', name='radio41', value='1')
+                                            label.o_form_label(for='radio41_1') An informative or blocking warning can be set on a partner
+
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_17')
+                                    | Taxes
+                            td(colspan='1', style='width: 100%;')
+                                label.o_form_label
+                                    | Default Sale Tax
+                                    .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                        .o_form_input_dropdown(style='')
+                                            select#o_field_input_176.o_form_input.o_form_field(style='width:172px;')(name='format')
+                                                option(value='true') Alupak Industriess
+                                                option(value='') My Company;wojjfp;ofo, Chicago
+
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(style='background-color: transparent; !important')(draggable='false', tabindex='-1', type='button')
+
+                                br
+
+                                label.o_form_label
+                                    | Default Purchase Tax
+                                    .o_form_field_many2one.o_with_button.o_form_field.o_form_required
+                                        .o_form_input_dropdown(style='')
+                                            select#o_field_input_176.o_form_input.o_form_field(style='width:172px;')(name='format')
+                                                option(value='true') Alupak Industriess
+                                                option(value='') My Company;wojjfp;ofo, Chicago
+
+                                            button.fa.fa-external-link.btn.btn-default.o_external_button(style='background-color: transparent; !important')(draggable='false', tabindex='-1', type='button')
+
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_17')
+                                    | Payments
+                            td(colspan='1', style='width: 100%; font-size: 0.8rem;')
+                                a.o_form_uri.o_form_field.o_form_required(href='#') Configure payment acquiring methods
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Analytic Accounting
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_17')
+                                    | Purchase
+                            td(colspan='1', style='width: 100%; font-size: 0.8rem;')
+                                div
+
+                                    .o_form_field.o_form_field_boolean.oe_inline
+                                        .o_checkbox.o_form_field_boolean
+                                            input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                            span  Analytic accounting for purchases
+                                    
+                table.o_group.o_inner_group
+                    tbody
+
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_17')
+                                    | Use Anglo-Saxon Accounting *
+                            td(colspan='1', style='width: 100%; font-size: 0.8rem;')
+                                div
+
+                                    .o_form_field.o_form_field_boolean.oe_inline
+                                        .o_checkbox.o_form_field_boolean
+                                            input#o_field_input_10(type='checkbox', name='module_website_sign')
+                                            span
+
+
+
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td(colspan='2', style='width: 100%;')
+                                .o_horizontal_separator
+                                    | Overdue Payments
+
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_label_help(for='o_field_input_33', data-original-title='', title='')
+                                    | Overdue Payments Message *
+                            td(colspan='1', style='width: 100%; font-size: 0.8rem;')
+                                textarea.o_form_textarea.o_form_field(rows='6', name='sale_note', style='height: 50px; width: 100%;')
+                                    | Dear Sir/Madam,
+
+                                    | Our records indicate that some payments on your account are still due. Please find details below.
+                                    | If the amount has already been paid, please disregard this notice. Otherwise, please forward us the total amount stated below.
+                                    | If you have any queries regarding your account, Please contact us.
+
+                                    | Thank you in advance for your cooperation.
+                                    | Best Regards,
+                                button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
+                                textarea.o_form_textarea.o_form_field(disabled='', style='position: absolute; opacity: 0; height: 10px; top: -10000px; left: -10000px; width: 1397px;')
+
+            div
+                span(style='font-size:0.8rem;') (*) This configuration is related to the company you're logged into.

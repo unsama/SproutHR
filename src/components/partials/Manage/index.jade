@@ -1,0 +1,81 @@
+.Manage
+    DashboardController(v-bind:actionbtn='true',v-bind:duplicatedropbtn='true',v-bind:deletedropbtn='true',v-bind:planorderbtn='true',v-bind:createbtn='true',v-bind:heading="nextactivity",v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true',v-bind:importbtn='true', v-bind:links="btnlinks", v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true')
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Attendancesssssss
+        span.o_pager_value(slot='page') {{counter}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="select4()",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="select3()",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+    //dashconterller(v-show='k',v-bind:createbtn='true',v-bind:heading="nextactivity",v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true',v-bind:importbtn='true', v-bind:links="btnlinks", v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true')
+    //dashconterller(v-show='p', v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true',v-bind:dropdownMenuButton='true',v-bind:Attachmentbtn='true',v-bind:actionbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+    .main(style='margin-top:-50px;')
+        .table(v-show='r')
+            .row
+                table.table.table-striped.samotable
+                    thead.samotablehead
+                        tr
+                            th.o_list_record_selector.samotableheadborder(width='1')
+                                .o_checkbox
+                                    input(type='checkbox')
+                                    span
+                            th.samotableheadborder(colspan='2') Employees
+                            th.samotableheadborder(colspan='2') Check In
+                            th.samotableheadborder(colspan='2') Check Out
+                    tfoot
+                        tr
+                            td
+                            td
+                            td
+                            td
+                    tbody.samotbody
+                        tr
+                            th.o_list_record_selector.samotablepadd(width='1')
+                                .o_checkbox
+                                    input(type='checkbox')
+                                    span
+                            td.samotablepadd(colspan='2')(v-on:click='r=false,v=true,p=true,k=false') Administrators
+                            td.samotablepadd(colspan='2') 03/10/2017 13:08:15
+                            td.samotablepadd(colspan='2') 03/10/2017 13:08:15
+
+
+
+        .test(style='margin-top: 20px;' v-show='v')
+            .row
+                .col-xs-12
+                    .row
+                        .col-xs-6(style='padding-left:15px;font-weight: bold;')
+                            .one
+
+                                label(style='font-size:15px;')
+                                    | Employee
+                                br
+                                label(style='font-size:15px;')
+                                    | Check In
+                                br
+                                label(style='font-size:15px;')
+                                    | Check Out
+                                br
+
+
+                        .col-xs-6(style='padding-left:45px;')
+                            .two
+                                router-link(to='AttHr')
+                                    label(style='font-size:15px;')
+                                        | Administrators
+                                    br
+                                label(style='font-size:15px;')
+                                    | 03/10/2017 13:08:15
+                                br
+                                label(style='font-size:15px;')
+                                    | 03/10/2017 13:08:15
+                                br
+
+
+    .Pin
+
+
+
+
+

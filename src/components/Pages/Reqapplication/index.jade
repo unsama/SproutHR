@@ -1,0 +1,292 @@
+.Reqapplication
+    DashboardController( v-bind:save='true',v-bind:duplicatedropbtn='true',v-bind:deletedropbtn='true',v-bind:planorderbtn='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true',v-bind:dropdownMenuButton='true',v-bind:Attachmentbtn='true',v-bind:actionbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+        .col-sm-6(style='padding:0px;')(slot='job')
+            h4.samodashheading(style="font-size: 18px;") Job Positions/ {{job_tittle}}
+        span.o_pager_value(slot='page') 1-{{num}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                header(style='margin-left:-15px;margin-right:-15px;')
+                    button.btn.btn-sm.oe_highlight(v-on:click="validateBeforeSubmit",type='submit')
+                        span Create Employee
+                    button.btn.btn-sm(type='button')
+                        span Refuse
+                    button.btn.btn-sm.o_form_invisible(type='button')
+                        span Reopen Application
+                    ul.oe_form_field_status.oe_form_status_clickable.o_form_field( v-for="row in names")
+                        li
+                            span.label(@click='select2(row.id)') {{row.name}}
+                            span.label(style='display:none')
+                            span.arrow
+                                span
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .oe_button_box(name='button_box')
+                            button.btn.btn-sm.oe_stat_button(type='button', data-original-title='', title='')
+                                .fa.fa-fw.fa-calendar.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_text Meetings
+                            button.btn.btn-sm.oe_stat_button(type='button')
+                                .fa.fa-fw.fa-book.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value 0
+                                    span.o_stat_text Documents
+                            button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                .fa.fa-fw.fa-user.o_button_icon
+                                .o_form_field.o_stat_info
+                                    span.o_stat_value 0
+                                    span.o_stat_text Employee
+                            button.btn.btn-sm.oe_stat_button.o_form_invisible(type='button')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                .o_stat_info.o_form_field(data-original-title='', title='')
+                                    span.o_stat_text.o_not_hover.text-success Active
+                                    span.o_stat_text.o_hover.text-danger Archive
+                        .oe_title
+                            label.o_form_label.oe_edit_only
+                                | Subject / Application Name
+                            h1
+                                span.o_form_field.o_form_required(v-model='application_tittle') {{ application_tittle }}
+                            h2.o_row
+                                div
+                                    label.o_form_label.oe_edit_only.o_form_label_empty.o_form_label_false
+                                        | Applicant's Name
+                                    span.o_form_field.o_form_required(v-model='applicants_name') {{ applicants_name }}
+                                div
+                                    label.o_form_label.oe_edit_only.o_form_label_empty
+                                        | Tags
+                                    .o_form_field_many2manytags.o_form_field
+                                        span.badge.dropdown.o_tag_color_10(data-color='10', data-id='2', data-index='0')
+                                            span.o_badge_text(title='Manager',v-model='tagid') {{tagsname}}
+                        .o_group
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false
+                                                | Contact
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required(v-model='contact_id') {{ cname }}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false( data-original-title='', title='')
+                                                | Email
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required(v-model='email') {{ email }}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_7')
+                                                | Phone
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required(v-model='phone') {{ phone }}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_8')
+                                                | Mobile
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required(v-model='mobile') {{ mobile }}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false(for='o_field_input_9')
+                                                | Degree
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required(v-model='degree') {{ degree }}
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_10')
+                                                | Responsible
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required(v-model='responsible_id') {{ username }}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false
+                                                | Next Action
+                                        td(colspan='1', style='width: 100%;')
+                                            div
+                                                span.o_form_field.o_form_required(v-model='next_action_date') {{ next_action_date }}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_12')
+                                                | Appreciation
+                                        td(colspan='1', style='width: 100%;')
+                                            .o_priority.o_form_field
+                                                a.o_priority_star.fa.fa-star-o(href='#', data-value='1',v-model='appreciation', title='Good')
+                                                a.o_priority_star.fa.fa-star-o(href='#', data-value='2',v-model='appreciation', title='Very Good')
+                                                a.o_priority_star.fa.fa-star-o(href='#', data-value='3',v-model='appreciation', title='Excellent')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_invisible.o_form_label_empty.o_form_label_false(data-original-title='', title='')
+                                                | Medium
+                                        td(colspan='1', style='width: 100%;')
+                                            a.o_form_uri.o_form_field.o_form_invisible.o_form_field_empty(href='#')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false( data-original-title='', title='')
+                                                | Source
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required(v-model='source') {{ sname }}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_empty.o_form_label_false
+                                                | Referred By
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required(v-modal='referred_by') {{ referred_by }}
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Job
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Applied Job
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required(v-modal='applied_job') {{ jname }}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Department
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required(v-modal='department_id') {{ name }}
+
+                            table.o_group.o_inner_group.o_group_col_6
+                                tbody
+                                    tr
+                                        td(colspan='2', style='width: 100%;')
+                                            .o_horizontal_separator
+                                                | Contracts
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_19', data-original-title='', title='')
+                                                | Expected Salary
+                                        td(colspan='1', style='width: 100%;')
+                                            div
+                                                span.o_form_field.o_form_required(v-model='expected_salary') {{ expected_salary }}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help(for='o_field_input_20', data-original-title='', title='')
+                                                | Proposed Salary
+                                        td(colspan='1', style='width: 100%;')
+                                            div
+                                                span.o_form_field.o_form_required(v-model='proposed_salary') {{ proposed_salary }}
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label.o_form_label_help.o_form_label_empty.o_form_label_false(for='o_field_input_21', data-original-title='', title='')
+                                                | Availability
+                                        td(colspan='1', style='width: 100%;')
+                                            span.o_form_field.o_form_required(v-model='next_action_date') {{ availability }}
+
+                        .o_horizontal_separator
+                            | Application Summary
+                        span.o_form_field.o_form_required(v-model='application_summary') {{ application_summary }}
+                .o_chatter.o_form_field.oe_chatter
+                    .o_chatter_topbar
+                        button.btn.btn-sm.btn-primary.o_chatter_button_new_message(title='Send a message', type='button')
+                            | New message
+                        button.btn.btn-sm.btn-link.o_chatter_button_log_note(title='Log a note. Followers will not be notified.')
+                            | Log an internal note
+                        .o_followers.o_form_field
+                            .o_followers_title_box
+                                button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', title='2 followers')
+                                    i.fa.fa-user
+                                    span.o_followers_count 2
+                                    span.caret
+                                ul.dropdown-menu.o_followers_list(role='menu')
+                                    li.o_add_follower
+                                        a(href='#')  Add Followers
+                                    li.o_add_follower_channel
+                                        a(href='#')  Add Channels
+                                    li.divider
+                                    li.o_partner
+                                        img(src='/web/image/res.partner/3/image_small')
+                                        a.o_mail_redirect(href='#', data-oe-id='3', data-oe-model='res.partner', title='Administrator') Administrator
+                                        i.fa.fa-pencil.o_edit_subtype.hide(title='Edit subscription', data-follower-id='588', data-oe-id='3', data-oe-model='res.partner')
+                                        i.fa.fa-remove.o_remove_follower(title='Remove this follower')
+                                    li.o_partner
+                                        img(src='/web/image/res.partner/49/image_small')
+                                        a.o_mail_redirect(href='#', data-oe-id='49', data-oe-model='res.partner', title='Administrator (copy)') Administrator (copy)
+                                        i.fa.fa-pencil.o_edit_subtype.hide(title='Edit subscription', data-follower-id='589', data-oe-id='49', data-oe-model='res.partner')
+                                        i.fa.fa-remove.o_remove_follower(title='Remove this follower')
+                            .o_followers_actions
+                                .btn-group.btn-group-sm.o_subtypes_list
+                                    button.btn.btn-sm.btn-link.o_followers_follow_button.o_followers_following
+                                        span.o_follow Follow
+                                        span.fa.fa-times.o_followers_unfollow
+                                        span.o_followers_unfollow  Unfollow
+                                        span.fa.fa-check.o_followers_following
+                                        span.o_followers_following  Following
+                                    button.btn.btn-sm.btn-link.dropdown-toggle.o_followers_following(aria-expanded='false', data-toggle='dropdown')
+                                        span.fa.fa-bell
+                                    ul.dropdown-menu(role='menu')
+                                        li.o_subtype
+                                            input#input_mail_followers_subtype_1.o_subtype_checkbox(type='checkbox', checked='true', data-id='1', name='Discussions')
+                                            span(for='input_mail_followers_subtype_1')
+                                                | Discussions
+                                        li.o_subtype
+                                            input#input_mail_followers_subtype_2.o_subtype_checkbox(type='checkbox', data-id='2', name='Note')
+                                            span(for='input_mail_followers_subtype_2')
+                                                | Note
+                                        li.o_subtype
+                                            input#input_mail_followers_subtype_30.o_subtype_checkbox(type='checkbox', data-id='30', name='Stage Changed')
+                                            span(for='input_mail_followers_subtype_30')
+                                                | Stage Changed
+                                        li.o_subtype
+                                            input#input_mail_followers_subtype_31.o_subtype_checkbox(type='checkbox', checked='true', data-id='31', name='Applicant Hired')
+                                            span(for='input_mail_followers_subtype_31')
+                                                | Applicant Hired
+                    //.o_mail_thread
+                    //    .o_thread_date_separator
+                    //        span.o_thread_date
+                    //            | Today
+                    //    .o_thread_message(data-message-id='976')
+                    //        .o_thread_message_sidebar
+                    //            img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/web/image/res.partner/3/image_small')
+                    //        .o_thread_message_core
+                    //            p.o_mail_info
+                    //                strong(data-oe-model='res.partner', data-oe-id='')
+                    //                    | YourCompany, Administrator
+                    //                |                     -
+                    //                small.o_mail_timestamp(title='Mon Jul 10 2017 19:02:23 GMT+0500') an hour ago
+                    //                span
+                    //                    i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='976')
+                    //            |                         Stage changed
+                    //            p
+                    //            ul.o_mail_thread_message_tracking
+                    //                li
+                    //                    | Stage:
+                    //                    span
+                    //                        | a
+                    //                li
+                    //                    | Responsible:
+                    //                    span
+                    //                        | Administrator (copy)
+                    //    .o_thread_message(data-message-id='975')
+                    //        .o_thread_message_sidebar
+                    //            img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/web/image/res.partner/3/image_small')
+                    //        .o_thread_message_core
+                    //            p.o_mail_info
+                    //                strong(data-oe-model='res.partner', data-oe-id='')
+                    //                    | YourCompany, Administrator
+                    //                |                     -
+                    //                small.o_mail_timestamp(title='Mon Jul 10 2017 19:02:20 GMT+0500') an hour ago
+                    //                span
+                    //                    i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='975')
+                    //            p Dear Administrator (copy),
+                    //            p You have been assigned to the applicant ionics.
+                    //            p
+                    //                a(style='border-radius: 5px; font-size: 16px; color: #fff; padding: 10px; margin-top: 10px; background-color: #9E588B', href='http://localhost:8069/mail/view?model=hr.applicant&res_id=34')
+                    //                    | View applicant
+                    //            p(style='color: #9E588B')
+                    //                | Powered by
+                    //                a(href='https://www.odoo.com') Odoo
+                    //                | .
+
+

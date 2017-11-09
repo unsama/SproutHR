@@ -1,0 +1,182 @@
+.samocard{
+    height: 245px;
+    width: 327px;
+    border-radius: inherit;
+    border: 1px solid black;
+    margin-top: 15px;
+
+}
+
+
+
+
+span{
+    display: inline-block;
+    background-color: lightgrey;
+    margin-left: -15px;
+    margin-top: -10px;
+    width: 325px;
+    padding-top: 10px;
+
+}
+
+.samodashbtn{
+
+    color: white;
+    background-color: #7c7bad;
+    border-color: #7c7bad;
+    margin-top: 12px;
+    font-size: 13px;
+
+}
+
+.samoinventorypadd{
+    padding: 0px;
+
+}
+
+.samocolsm12_1{
+
+    margin-top:10px;
+}
+
+.samoh61{
+    font-size:13px;
+    color: #7c7bad;
+    float:left;
+}
+.samoh62{
+    font-size:13px;
+    color: #7c7bad;
+    margin-left: 17px;
+    float: right;
+}
+.samoh63{
+    font-size:13px;
+    float: left;
+    margin-left: 16px;
+}
+
+.samocolright{
+    padding: 0px;
+    display: -webkit-inline-box;
+    margin-top: 10px;
+}
+
+a{
+    color: #7c7bad;
+}
+
+.samodropdownbtn{
+      color: #7c7bad;
+     background-color: transparent;
+
+
+}
+
+.btn-secondary {
+    border-color: transparent;
+}
+
+.btn-secondary.active, .btn-secondary:active, .show>.btn-secondary.dropdown-toggle {
+    color: #7c7bad;
+    background-color: white;
+    background-image: none;
+    border-color: #adadad;
+}
+
+.samoalink{
+    color:#7c7bad !important;
+
+}
+
+.color1{
+    width: 15px !important;
+    height: 15px !important;
+    border: 1px solid #ccc !important;
+    display: block !important;
+}
+
+.color2{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    display: block;
+    background-color: #d8d8d8;
+}
+
+.color3{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    display: block;
+    background-color: #e5d8e3;
+}
+
+.color4{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    display: block;
+    background-color: #ece9c2;
+}
+
+.color5{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    display: block;
+    background-color: #dee180;
+}
+
+.color6{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    display: block;
+    background-color: #abd4cc;
+
+}
+
+.color7{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    display: block;
+    background-color: #b8e3e8;
+}
+.color8{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    display: block;
+    background-color: #f4ddab;
+}
+
+.color9{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    display: block;
+    background-color: #7f637d;
+}
+.color10{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    display: block;
+    background-color: #d8c5d5;
+}
+
+.dashdropmenu{
+    margin-top: 44px;
+    margin-left: -178px;
+    min-width: 20.4rem;
+    height: 190px;
+}
+
+
+
+
+
+

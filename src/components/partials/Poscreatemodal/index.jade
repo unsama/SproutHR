@@ -1,0 +1,53 @@
+.modal-body.o_act_window
+    .o_form_view.o_form_nosheet.o_form_editable
+        table.o_group.o_inner_group
+            tbody
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help(for='o_field_input_205', data-original-title='', title='')
+                            | Rule Name
+                    td(colspan='1', style='width: 50%;')
+                        input#o_field_input_205.o_form_input.o_form_field.o_form_required(maxlength='32', type='text')
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help(for='o_field_input_206', data-original-title='', title='')
+                            | Sequence
+                    td(colspan='1', style='width: 50%;')
+                        input#o_field_input_206.o_form_input.o_form_field.o_form_field_number(type='text')
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label(for='o_field_input_207')
+                            | Type
+                    td(colspan='1', style='width: 50%;')
+                        select#o_field_input_207.o_form_input.o_form_field.o_form_required(name='type')
+                            option(value='false')
+                            option(value='"alias"') Alias
+                            option(value='"product"') Unit Product
+                            option(value='"weight"') Weighted Product
+                            option(value='"location"') Location
+                            option(value='"lot"') Lot
+                            option(value='"package"') Package
+                            option(value='"price"') Priced Product
+                            option(value='"discount"') Discounted Product
+                            option(value='"client"') Client
+                            option(value='"cashier"') Cashier
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help(for='o_field_input_208', data-original-title='', title='')
+                            | Encoding
+                    td(colspan='1', style='width: 50%;')
+                        select#o_field_input_208.o_form_input.o_form_field.o_form_required(name='encoding')
+                            option(value='false')
+                            option(value='"any"') Any
+                            option(value='"ean13"') EAN-13
+                            option(value='"ean8"') EAN-8
+                            option(value='"upca"') UPC-A
+                tr
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help(for='o_field_input_209', data-original-title='', title='')
+                            | Barcode Pattern
+                    td(colspan='1', style='width: 50%;')
+                        input#o_field_input_209.o_form_input.o_form_field.o_form_required(maxlength='32', type='text')
+                    td.o_td_label(colspan='1')
+                        label.o_form_label.o_form_label_help.o_form_invisible(for='o_field_input_210', data-original-title='', title='')
+                            | Alias
+                    td(colspan='1', style='width: 50%;')
+                        input#o_field_input_210.o_form_input.o_form_field.o_form_required.o_form_invisible(maxlength='32', type='text')

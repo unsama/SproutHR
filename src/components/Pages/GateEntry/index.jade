@@ -1,0 +1,116 @@
+.gateentry
+    DashboardController
+    .o_form_sheet_bg
+        .row
+            .col-md-12.entry
+                .row
+                    .col-md-9
+                        .gate-entry
+                            h1
+                            |Gate Entry
+            .col-md-12
+                .row
+                    .col-md-6
+                        .row
+                            .col-md-5
+                                label Type
+                            .col-xs-6.col-sm-3
+                                .form-group
+                                    .col-xs-5.selectContainer
+                                        select#check1.form-control.ship(name='Product')
+                                            option(value='')
+                                            option(value='Visitor') Visitor
+                                            option(value='Customer') Customer
+                                            option(value='Shipment') Shipment
+                                            option(value='Vendor') Vendor
+
+                    .col-md-6
+                        .row
+                            .col-md-5
+                                .cost
+                                    label Full Name
+                            .col-xs-6.col-sm-3
+                                .form-group
+                                    input.form-control.input-lg(type='text')
+            .col-md-12
+                .row
+                    .col-md-6
+                        .row
+                            .col-md-5
+                                label CNIC Number
+                            .col-xs-6.col-sm-3
+                                .form-group
+                                    input.form-control.input-lg(type='numberValue')
+
+                    .col-md-6
+                        .row
+                            .col-md-5
+                                .cost
+                                    label Contact Number
+                            .col-xs-6.col-sm-3
+                                .form-group
+                                    input.form-control.input-lg(type='numberValue')
+            .col-md-12
+                .row
+                    .col-md-6
+                        .row
+                            .col-md-5
+                                label Company Name
+                            .col-xs-6.col-sm-3
+                                .input-group.dropdown
+                                    input.form-control.countrycode.dropdown-toggle.create(type='text', value='')
+                                    ul.dropdown-menu
+                                        li
+                                            a(href='') Create & Edit
+
+
+                                    span.input-group-addon.dropdown-toggle(role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                        span.caret
+
+
+                    .col-md-6
+                        .row
+                            .col-md-5
+                                label Entry Time
+                            .col-xs-6.col-sm-3
+                                .form-group
+                                    input.form-control.input-lg(type='time')
+
+            .col-md-12
+                .row
+                    .col-md-6
+                        .row
+                            .col-md-5
+                                label Visit Purpose
+                            .col-xs-6.col-sm-3
+                                .form-group
+                                    input.form-control.input-lg(type='text')
+
+                    .col-md-6
+                        .row
+                            .col-md-5
+                                label Vehicle Number
+                            .col-xs-6.col-sm-3
+                                .form-group
+                                    input.form-control.input-lg(type='numberValue')
+
+
+            .col-md-12
+                .row
+                    .col-md-6
+                        .row
+                            .col-md-5
+                                label Factory Pass Card
+                            .col-xs-6.col-sm-3
+                                .form-group
+                                    input.form-control.input-lg(type='text')
+            .col-md-12
+                .row
+                    .col-md-6#append
+
+
+                    .col-md-6#append2
+
+
+
+

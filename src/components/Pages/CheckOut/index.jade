@@ -1,0 +1,62 @@
+.CheckOut
+    br
+    br
+    br
+    br
+    br
+    .main(style='' v-show='u')
+        .center
+            .test(style='flex: 0 0 auto;width: 550px;border-radius: 10px;display: inline-block;background-color: rgba(255, 255, 255, 0.8);box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);font-size: 1.2em;')
+                .row
+                    .col-sm-12
+                        .center
+                            h1(style='font-size: 27px;') Welcome to John Doe
+
+
+                .row
+                    .col-sm-12
+                        .center
+                            h2(style='font-size: 19px;') Check Out
+                .row
+                    .col-sm-12
+                        .center
+                            i.fa.fa-sign-in.btn-primary.icon(v-on:click='u=false,f=true')
+    .row(style='margin-top: 100px;')
+        .col-md-12
+            .center
+                .main(style='' v-show='f')
+                    .test(style='flex: 0 0 auto;width: 550px;border-radius: 10px;background-color: rgba(255, 255, 255, 0.8);display: inline-block;box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);font-size: 1.2em;')
+                        .row
+                            .col-sm-12
+                                .center
+                                    h1(style='font-size: 27px;color: green;') Checked out at 14:03:38
+
+
+                        .row
+                            .col-sm-12
+                                .center
+                                    h2(style='font-size: 19px;') Goodbye Juan Gomez
+
+                        .row
+                            .col-sm-12
+                                .center
+                                    h2(style='font-size: 19px;')  Have a good afternoon Good afternoon
+
+                        .row
+                            .col-sm-12
+                                .center
+                                    h1(style='font-size: 20px;color: Orange;') Warning! Last check in was over 12 hours ago.
+                                        | If this isn't right, please contact Human Resources.
+
+                        .row
+                            .col-sm-12
+                                .center
+                                    router-link(to='Mode')
+                                        button.btn.btn-primary.c( type='button') Ok
+
+
+
+
+
+
+

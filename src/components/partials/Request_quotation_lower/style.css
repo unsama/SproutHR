@@ -1,0 +1,31 @@
+.o_mail_thread .o_thread_date_separator {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    border-bottom: solid #eeeeee 2px;
+    text-align: center;
+}
+
+.o_mail_thread .o_thread_date_separator .o_thread_date {
+    position: relative;
+    top: 10px;
+    margin: 0 auto;
+    padding: 0 10px;
+    font-weight: bold;
+    background: white;
+}
+
+.o_mail_thread{
+    width: 860px;
+    height: 20px;
+    padding: 0px;
+}
+
+
+.samothreadmessage{
+    display: -webkit-inline-box;
+}
+
+.samothreadmessage1{
+    background-color: #eeeeee;
+    width: 815px;
+}

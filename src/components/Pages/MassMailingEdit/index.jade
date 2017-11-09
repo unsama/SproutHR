@@ -1,0 +1,248 @@
+.sales
+    DashboardController(v-bind:savedbtn='true',v-bind:heading="vendormenu",v-bind:discardbtn='true',v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:printbtn='true',v-bind:Attachmentbtn='true',v-bind:actionbtn='true',v-bind:links="btnlinks")
+    .row
+        .col-md-12.pull-left.samotopcontroller
+            .col-md-5.pull-left
+                .col-xs-2.pull-left
+                    button.btn.btn-primary.samobutton2(type='button',style='margin-left: -32px;background-color: #9493bc;color: white;') Test Mailing
+                .col-xs-2.pull-left
+                    button.btn.btn-primary.samobutton2(type='button',style='margin-left:10px;background-color: #9493bc;color: white;') Send to All
+
+            .col-md-1.pull-left
+            .col-md-3.pull-left
+            .col-md-3.pull-right
+                .btn-group.btn-breadcrumb.samobreadcrum1
+                    a.btn.btn-primary.samobreadbutt(href='#') Qualified
+                    a.btn.btn-primary.samobreadbutt1(href='#',style='background-color: #9493bc;color: white;') New
+                    a.btn.btn-primary.samobreadbutt(href='#') Purchase
+    Modal(v-bind:select='true',v-bind:cancel='true',v-bind:create='true',v-bind:heading="modal",v-bind:modal='"bd-example-modal-lg"')
+        .o_modal_header
+            .o_searchview
+                span.o_searchview_more.fa.fa-search-minus.srcbr(title='Advanced Search...')
+                ul.dropdown-menu.o_searchview_autocomplete(role='menu')
+                .o_searchview_facet(tabindex='0')
+                input.o_searchview_input(placeholder='Search...', type='text',style='margin-right: -19px;margin-left: -4px;')
+            .o_pager
+                div
+                    span.o_pager_value 1-16
+                    |  /
+                    span.o_pager_limit 16
+                    span.btn-group.btn-group-sm
+                        button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button', accesskey='p', disabled='')
+                        button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button', accesskey='n', disabled='')
+            .o_search_options(style='display: block;')
+                .btn-group.o_dropdown
+                    button.o_dropdown_toggler_btn.btn.btn-sm.dropdown-toggle(data-toggle='dropdown')
+                        span.fa.fa-filter
+                        |  Filters
+                        span.caret
+                    ul.dropdown-menu.o_filters_menu(role='menu')
+                        li(data-index='0')
+                            a(href='#') My
+                        li(data-index='1')
+                            a(href='#') Unassigned
+                        li.divider
+                        li(data-index='0', title='Filter and view on next actions and date')
+                            a(href='#') Next Actions
+                        li.divider
+                        li(data-index='0')
+                            a(href='#') Unread Messages
+                        li(data-index='1')
+                            a(href='#') Archived
+                        li.divider
+                        li.o_add_filter.o_closed_menu
+                            a(href='#') Add Custom Filter
+                        li.o_add_filter_menu
+                            button.btn.btn-primary.btn-sm.o_apply_filter(type='button') Apply
+                            button.btn.btn-default.btn-sm.o_add_condition(type='button')
+                                span.fa.fa-plus-circle
+                                |  Add a condition
+                .btn-group.hidden-xs.o_dropdown
+                    button.o_dropdown_toggler_btn.btn.btn-sm.dropdown-toggle(data-toggle='dropdown')
+                        span.fa.fa-bars
+                        |  Group By
+                        span.caret
+                    ul.dropdown-menu.o_group_by_menu(role='menu')
+                        li(data-index='0')
+                            a(href='#') Responsible
+                        li(data-index='1')
+                            a(href='#') Job
+                        li(data-index='2')
+                            a(href='#') Degree
+                        li(data-index='3')
+                            a(href='#') Stage
+                        li(data-index='4')
+                            a(href='#') Creation Date
+                        li(data-index='5')
+                            a(href='#') Last Stage Update
+                        li.divider(style='display: list-item;')
+                        li.o_add_custom_group.o_closed_menu
+                            a(href='#') Add custom group
+                .btn-group.o_dropdown
+                    button.o_dropdown_toggler_btn.btn.btn-sm.dropdown-toggle(data-toggle='dropdown')
+                        span.fa.fa-star
+                        |  Favorites
+                        span.caret
+                    ul.dropdown-menu.o_favorites_menu(role='menu')
+                        li.divider
+                        li.o_save_search.o_closed_menu
+                            a(href='#') Save current search
+                        li.o_save_name
+                            input(type='text')
+                        li.o_save_name
+                            span
+                                .o_checkbox
+                                    input(type='checkbox')
+                                    span
+                                |  Use by default
+                        li.o_save_name
+                            span
+                                .o_checkbox
+                                    input(type='checkbox')
+                                    span
+                                |  Share with all users
+                            span.fa.fa-users
+                        li.o_save_name
+                            button.btn.btn-primary.btn-sm(type='button') Save
+
+        TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter")
+    .o_content
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        table.o_group.o_inner_group
+                            tbody
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_2')
+                                            | From
+                                    td(colspan='1', style='width: 100%;')
+                                        input#o_field_input_2.o_form_input.o_form_field.o_form_required(type='text')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label(for='o_field_input_3')
+                                            | Subject
+                                    td(colspan='1', style='width: 100%;')
+                                        div
+                                            input#o_field_input_3.o_form_input.o_form_field.o_form_required(type='text')
+                                            button.o_field_translate.fa.fa-globe.btn.btn-link.o_translate_active(type='button')
+                                tr
+                                    td.o_td_label(colspan='1')
+                                        label.o_form_label
+                                            | Recipients
+                                    td(colspan='1', style='width: 100%;')
+                                        div
+                                            .o_form_field_radio.o_horizontal.o_form_field.o_form_required
+                                                .o_radio_item
+                                                    input.o_form_radio.appfield(type='radio', id='radio16_hr.applicant', name='radio16', value='hr.applicant')
+                                                    label.o_form_label(for='radio16_hr.applicant') Applicants
+                                                .o_radio_item
+                                                    input.o_form_radio(type='radio', id='radio16_crm.lead', name='radio16', value='crm.lead')
+                                                    label.o_form_label(for='radio16_crm.lead') Leads / Opportunities
+                                                .o_radio_item
+                                                    input.o_form_radio(type='radio', id='radio16_res.partner', name='radio16', value='res.partner')
+                                                    label.o_form_label(for='radio16_res.partner') Customers
+                                                .o_radio_item
+                                                    input.o_form_radio.mailfield(type='radio', id='radio16_mail.mass_mailing.contact', name='radio16', value='mail.mass_mailing.contact')
+                                                    label.o_form_label(for='radio16_mail.mass_mailing.contact') Mailing List
+                                            .o_form_field.applicants(style='display:none')
+                                                span.o_count 16  selected records
+                                                button.btn.btn-default(type='button',style='background-color: white;border: 1px solid;margin-left: 9px;',data-toggle='modal', data-target='.bd-example-modal-lg')
+                                                    | Change selection
+                                                    span.fa.fa-arrow-right
+                                            div.MailingList
+                                                label.o_form_label.oe_edit_only
+                                                    | Select mailing lists:
+                                                .o_form_field_many2manytags.oe_inline.o_form_field
+                                                    .o_form_field_many2one.oe_inline.o_form_field
+                                                        .o_form_input_dropdown
+                                                            input.o_form_input.ui-autocomplete-input(type='text', placeholder='Select mailing lists...', autocomplete='off')
+                                                            span.o_dropdown_button(draggable='false')
+
+                        .o_notebook(style='margin-top: 24px;')
+                            ul.nav.nav-tabs(role='tablist')
+                                li.nav-item
+                                    a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Mail Body
+                                li.nav-item
+                                    a.nav-link(href='#buzz', role='tab', data-toggle='tab') Option
+                            // Tab panes
+                            .tab-content
+                                #profile.tab-pane.fade.in.active(role='tabpanel')
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+
+                                #buzz.tab-pane.fade.in(role='tabpanel')
+                                    table.o_group.o_inner_group.o_group_col_6
+                                        tbody
+                                            tr
+                                                td(colspan='2', style='width: 100%;')
+                                                    .o_horizontal_separator
+                                                        | Mailing
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label
+                                                        | Attachments
+                                                td(colspan='1', style='width: 100%;')
+                                                    div
+                                                        .oe_fileupload.oe_inline.o_form_field
+                                                            .oe_attachments
+                                                            .oe_add
+                                                                button.btn.btn-default.o_attach
+                                                                    span.fa.fa-paperclip
+                                                                    |  Attach a file
+                                                                .o_hidden_input_file
+                                                                    form.o_form_binary_form(enctype='multipart/form-data', method='post', action='/web/binary/upload_attachment', target='oe_fileupload_temp17')
+                                                                        input(name='csrf_token', type='hidden', value='fcbc2d44cdc1fc98bf3a5b6b5b49ce0b4051f00bo')
+                                                                        input(name='callback', type='hidden', value='oe_fileupload_temp17')
+                                                                        input.o_form_input_file(name='ufile', type='file')
+                                                                        input(name='model', type='hidden', value='mail.mass_mailing')
+                                                                        input(name='id', type='hidden', value='0')
+                                                                    iframe#oe_fileupload_temp17(style='display: none', name='oe_fileupload_temp17')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible(for='o_field_input_9')
+                                                        | Keep Archives
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                                        input#o_field_input_9(type='checkbox', name='keep_archives')
+                                                        span
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_label_help(for='o_field_input_10', data-original-title='', title='')
+                                                        | Reply To
+                                                td(colspan='1', style='width: 100%;')
+                                                    div
+                                                        .o_form_field_radio.o_vertical.o_form_field.o_form_required.o_form_invisible
+                                                            .o_radio_item
+                                                                input#radio18_thread.o_form_radio(type='radio', name='radio18', value='thread')
+                                                                label.o_form_label(for='radio18_thread') Followers of leads/applicants
+                                                            .o_radio_item
+                                                                input#radio18_email.o_form_radio(type='radio', name='radio18', value='email')
+                                                                label.o_form_label(for='radio18_email') Specified Email Address
+                                                        input#o_field_input_10.o_form_input.o_form_field.o_form_required(type='text')
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_11')
+                                                        | Schedule in the Future
+                                                td(colspan='1', style='width: 100%;')
+                                                    .o_datepicker.o_form_field_date.o_form_field
+                                                        input.o_datepicker_input.o_form_input(type='text', name='schedule_date')
+                                                        span.o_datepicker_button
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label(for='o_field_input_12')
+                                                        | Creation Date
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.o_form_field_date.o_form_field 03/09/2017 20:40:07
+                                            tr
+                                                td.o_td_label(colspan='1')
+                                                    label.o_form_label.o_form_invisible.o_form_label_empty.o_form_label_false(for='o_field_input_13')
+                                                        | Sent Date
+                                                td(colspan='1', style='width: 100%;')
+                                                    span.o_form_field_date.o_form_field.o_form_invisible.o_form_field_empty
+
+

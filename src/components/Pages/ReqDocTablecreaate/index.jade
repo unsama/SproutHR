@@ -1,0 +1,175 @@
+.ReqDocTablecreaate
+    .dropdown
+    a.dropdown-toggle.btn.btn-default.btn-color(style='color:#9d9d9d;border-radius: 53px;background-color:black;overflow: hidden;text-overflow: ellipsis;max-width: 200px;display: inline-block;min-width: 8px;padding: 3px 7px;font-size: 10px;font-weight: normal;vertical-align: middle;white-space: nowrap;text-align: center;color: white;border-radius: 53px;')(data-toggle='dropdown', href='#')
+        span.fa.fa-comment.samocomment#color-name
+    ul.dropdown-menu(role='menu')
+        li.o_mail_navbar_dropdown_top
+            div
+                button.btn.btn-sm.o_filter_button.o_selected(href='#tab_default_1',style='background-color: transparent;',type='button', data-toggle='tab')  All
+                button.btn.btn-sm.o_filter_button(href='#tab_default_2',style='background-color: transparent;',data-filter='chat', type='button', data-toggle='tab')  Chat
+                button.btn.btn-sm.o_filter_button(href='#tab_default_3',style='background-color: transparent;',data-filter='channels', type='button', data-toggle='tab')  Channels
+                button.btn.btn-sm.o_new_message(style='background-color: transparent;margin-left: 50px;',type='button', data-toggle='tab')  New message
+        li.o_mail_navbar_dropdown_channels
+            .tab-content
+                #tab_default_1.tab-pane.active
+                    li.o_mail_navbar_dropdown_channels
+                        hr
+                        .row#open(style='margin-left: -10px;margin-right: -10px;margin-top: 4px;')
+                            .col-sm-2
+                                .o_mail_channel_preview(data-channel_id='1')
+                                    img.o_channel_image(src='/images/placeholder.png')
+                            .col-sm-9.offset-sm-1
+                                .o_channel_info
+                                    .o_channel_title
+                                        span.o_channel_name
+                                            | General
+                                        span.o_last_message_date(style='margin-left: 47px;font-size: 11px;')  Apr 17, 2017 7:24 PM
+                                .o_last_message_preview(style='font-size: 10px;')
+                                    | YourCompany, Administrators:
+                                    | joined #general
+                        hr
+                    .row
+                        .col-sm-2
+                            .o_mail_channel_preview(data-channel_id='1')
+                                img.o_channel_image(src='/images/placeholder.png')
+                        .col-sm-9.offset-sm-1
+                            .o_channel_info
+                                .o_channel_title
+                                    span.o_channel_name
+                                        | General
+                                    span.o_last_message_date(style='margin-left: 47px;font-size: 11px;')  Apr 17, 2017 7:24 PM
+                            .o_last_message_preview(style='font-size: 10px;')
+                                | YourCompany, Administrators:
+                                | joined #general
+
+                    hr
+
+                #tab_default_2.tab-pane
+                    li.o_mail_navbar_dropdown_channels
+                        hr
+                        .row(style='margin-left: -10px;margin-right: -10px;margin-top: 1px;')
+                            .col-sm-2
+                                .o_mail_channel_preview(data-channel_id='1')
+                                    img.o_channel_image(src='/images/placeholder.png')
+                            .col-sm-9.offset-sm-1
+                                .o_channel_info
+                                    .o_channel_title
+                                        span.o_channel_name
+                                            | General
+                                        span.o_last_message_date(style='margin-left: 51px;font-size: 10px;')  Apr 17, 2017 7:24 PM
+                                .o_last_message_preview(style='font-size: 10px;')
+                                    | YourCompany, Administrators:
+                                    | joined #general
+                        hr
+                        .row(style='margin-left: -10px;margin-right: -10px;margin-top: 1px;')
+                            .col-sm-2
+                                .o_mail_channel_preview(data-channel_id='1')
+                                    img.o_channel_image(src='/images/placeholder.png')
+                            .col-sm-9.offset-sm-1
+                                .o_channel_info
+                                    .o_channel_title
+                                        span.o_channel_name
+                                            | General
+                                        span.o_last_message_date(style='margin-left: 51px;font-size: 10px;')  Apr 17, 2017 7:24 PM
+                                .o_last_message_preview(style='font-size: 10px;')
+                                    | YourCompany, Administrators:
+                                    | joined #general
+                #tab_default_3.tab-pane
+                    li.o_mail_navbar_dropdown_channels
+                        hr
+                        .row(style='margin-left: -10px;margin-right: -10px;margin-top: 1px;')
+                            .col-sm-2
+                                .o_mail_channel_preview(data-channel_id='1')
+                                    img.o_channel_image(src='/images/placeholder.png')
+                            .col-sm-9.offset-sm-1
+                                .o_channel_info
+                                    .o_channel_title
+                                        span.o_channel_name
+                                            | General
+                                        span.o_last_message_date(style='margin-left: 51px;font-size: 10px;')  Apr 17, 2017 7:24 PM
+                                .o_last_message_preview(style='font-size: 10px;')
+                                    | YourCompany, Administrators:
+                                    | joined #general
+
+            //.row
+                .col-sm-2
+                    .o_mail_channel_preview(data-channel_id='1')
+                        img.o_channel_image(src='/images/placeholder.png')
+                .col-sm-9.offset-sm-1
+                    .o_channel_info
+                        .o_channel_title
+                            span.o_channel_name
+                                | General
+                            span.o_last_message_date(style='margin-left: 47px;font-size: 11px;')  Apr 17, 2017 7:24 PM
+                    .o_last_message_preview(style='font-size: 10px;')
+                        | YourCompany, Administrators:
+                        | joined #general
+    Chat#c(style='display:none;')
+
+
+
+
+// .row
+     .col-md-12
+
+         .tabbable-panel
+             .tabbable-line
+                 ul.nav.nav-tabs
+                     li.active
+                         a(href='#tab_default_1', data-toggle='tab')
+                             | Tab 1
+                     li
+                         a(href='#tab_default_2', data-toggle='tab')
+                             | Tab 2
+                     li
+                         a(href='#tab_default_3', data-toggle='tab')
+                             | Tab 3
+                 .tab-content
+                     #tab_default_1.tab-pane.active
+                         li.o_mail_navbar_dropdown_channels
+                             .row
+                                 .col-sm-2
+                                     .o_mail_channel_preview(data-channel_id='1')
+                                         img.o_channel_image(src='/images/placeholder.png')
+                                 .col-sm-9.offset-sm-1
+                                     .o_channel_info
+                                         .o_channel_title
+                                             span.o_channel_name
+                                                 | General
+                                             span.o_last_message_date(style='margin-left: 47px;font-size: 11px;')  Apr 17, 2017 7:24 PM
+                                     .o_last_message_preview(style='font-size: 10px;')
+                                         | YourCompany, Administrators:
+                                         | joined #general
+                     #tab_default_2.tab-pane
+                         li.o_mail_navbar_dropdown_channels
+                             .row
+                                 .col-sm-2
+                                     .o_mail_channel_preview(data-channel_id='1')
+                                         img.o_channel_image(src='/images/placeholder.png')
+                                 .col-sm-9.offset-sm-1
+                                     .o_channel_info
+                                         .o_channel_title
+                                             span.o_channel_name
+                                                 | Generalone
+                                             span.o_last_message_date(style='margin-left: 47px;font-size: 11px;')  Apr 17, 2017 7:24 PM
+                                     .o_last_message_preview(style='font-size: 10px;')
+                                         | YourCompany, Administrators:
+                                         | joined #general
+                     #tab_default_3.tab-pane
+                         li.o_mail_navbar_dropdown_channels
+                             .row
+                                 .col-sm-2
+                                     .o_mail_channel_preview(data-channel_id='1')
+                                         img.o_channel_image(src='/images/placeholder.png')
+                                 .col-sm-9.offset-sm-1
+                                     .o_channel_info
+                                         .o_channel_title
+                                             span.o_channel_name
+                                                 | Generaloneo
+                                             span.o_last_message_date(style='margin-left: 47px;font-size: 11px;')  Apr 17, 2017 7:24 PM
+                                     .o_last_message_preview(style='font-size: 10px;')
+                                         | YourCompany, Administrators:
+                                         | joined #general
+
+
+

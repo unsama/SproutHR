@@ -1,0 +1,16 @@
+.row
+    .col-sm-6
+        .card.bx(style='height: 225px;')
+            .card-block
+                ul.nav.nav-tabs(role='tablist')
+                    li.nav-item
+                        a.nav-link.active(href='#profile', role='tab', data-toggle='tab') profile
+                    li.nav-item
+                        a.nav-link(href='#buzz', role='tab', data-toggle='tab') buzz
+                    li.nav-item
+                        a.nav-link(href='#references', role='tab', data-toggle='tab') references
+                // Tab panes
+                .tab-content
+                    #profile.tab-pane.fade.in.active(role='tabpanel') ...
+                    #buzz.tab-pane.fade(role='tabpanel') bbb
+                    #references.tab-pane.fade(role='tabpanel') ccc

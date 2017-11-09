@@ -1,0 +1,22 @@
+.container
+    .row
+        .container.logo
+            img(src='/images/company_logo.jpg')
+
+        .col-md-12
+            .container.col-md-6
+                label.label Email
+                p.control.has-icon.has-icon-right
+                    input.form-control(name='email',type='text', placeholder='Email',style='width: 100%;')
+            .container.col-md-6
+                label.label Password
+                p.control.has-icon.has-icon-right
+                    input.form-control(name='password', type='password', placeholder='Password',style='width: 100%;')
+
+        .col-md-6.container(style='margin-left: 290px;')
+            button.btn.btn-primary.log(type="submit") Register
+        .col-md-8(style='position: relative;left: 372px;')
+            button.btn.btn-link.man(type="button") Manage Databases
+            | &nbsp; |
+            | &nbsp;
+            button.btn.btn-link.odo(type="button") Powered by odoo

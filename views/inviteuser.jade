@@ -1,0 +1,166 @@
+doctype html
+html(lang='en')
+    head
+        title Jade
+        style.
+            body {
+                padding: 0;
+                margin: 0;
+            }
+
+            html {
+                -webkit-text-size-adjust: none;
+                -ms-text-size-adjust: none;
+            }
+
+            @media only screen and (max-device-width: 680px), only screen and (max-width: 680px) {
+                *[class="table_width_100"] {
+                    width: 96% !important;
+                }
+
+                *[class="border-right_mob"] {
+                    border-right: 1px solid #dddddd;
+                }
+
+                *[class="mob_100"] {
+                    width: 100% !important;
+                }
+
+                *[class="mob_center"] {
+                    text-align: center !important;
+                }
+
+                *[class="mob_center_bl"] {
+                    float: none !important;
+                    display: block !important;
+                    margin: 0px auto;
+                }
+
+                .iage_footer a {
+                    text-decoration: none;
+                    color: #929ca8;
+                }
+
+                img.mob_display_none {
+                    width: 0px !important;
+                    height: 0px !important;
+                    display: none !important;
+                }
+
+                img.mob_width_50 {
+                    width: 40% !important;
+                    height: auto !important;
+                }
+            }
+
+            .table_width_100 {
+                width: 680px;
+            }
+    body
+
+        #mailsub.notification(align='center')
+            table(width='100%', border='0', cellspacing='0', cellpadding='0', style='min-width: 320px;')
+                tr
+                    td(align='center', bgcolor='#eff3f8')
+                        table.table_width_100(border='0', cellspacing='0', cellpadding='0', width='100%', style='max-width: 680px; min-width: 300px;')
+                            tr
+                                td
+                                    // padding
+                                    div(style='height: 80px; line-height: 80px; font-size: 10px;')  
+                            // header
+                            tr
+                                td(align='center', bgcolor='#8e568a')
+                                    // padding
+                                    div(style='height: 30px; line-height: 30px; font-size: 10px;')  
+                                    table(width='90%', border='0', cellspacing='0', cellpadding='0')
+                                        tr
+                                            td(align='left')
+                                                //
+                                                  Item
+                                                .mob_center_bl(style='float: left; display: inline-block; width: 115px;')
+                                                    table.mob_center(width='115', border='0', cellspacing='0', cellpadding='0', align='left', style='border-collapse: collapse;')
+                                                        tr
+                                                            td(align='left', valign='middle')
+                                                                // padding
+                                                                div(style='height: 20px; line-height: 20px; font-size: 10px;')  
+                                                                table(width='115', border='0', cellspacing='0', cellpadding='0')
+                                                                    tr
+                                                                        td
+                                                                            h1(style='color: white;') Sprout
+
+                                    div(style='height: 50px; line-height: 50px; font-size: 10px;')  
+                            // header END
+                            // content 1
+                            tr
+                                td(align='center', bgcolor='#fbfcfd')
+                                    table(width='90%', border='0', cellspacing='0', cellpadding='0')
+                                        tr
+                                            td(align='center')
+                                                .row
+                                                    .col-sm-12
+                                                        div(style='padding:0px;width:600px;margin:auto;background:#ffffff repeat top/100%;color:#777777')
+                                                            p(style='float:left;') Dear 6737pafkiet,
+                                                br
+
+                                                .row
+                                                    .col-sm-12
+                                                        div(style='padding:0px;width:600px;margin:auto;background:#ffffff repeat top/100%;color:#777777')
+                                                            p
+                                                                | You have been invited to connect to "Alupak Industriesss" in order to get access to your documents in Odoo.
+
+                                                .row
+                                                    .col-sm-12
+                                                        div(style='padding:0px;width:600px;margin:auto;background:#ffffff repeat top/100%;color:#777777')
+                                                            p
+                                                                | To accept the invitation, click on the following link:
+
+                                                .row
+                                                    .col-sm-12
+                                                        div(style='padding:0px;width:600px;margin:auto;background:#ffffff repeat top/100%;color:#777777')
+                                                            div(style='text-align:center;margin-top:16px')
+                                                                a(href='http://192.168.100.100:8069/web/reset_password?token=FQ5W8YFhh9dbBYBuw7Gm&db=odoo', style='padding:5px 10px;font-size:12px;line-height:18px;color:#ffffff;border-color:#875a7b;text-decoration:none;display:inline-block;margin-bottom:0px;font-weight:400;text-align:center;vertical-align:middle;white-space:nowrap;background-image:none;background-color:#875a7b;border:1px solid #875a7b;border-radius:3px', target='_blank', data-saferedirecturl='https://www.google.com/url?hl=en&q=http://192.168.100.100:8069/web/reset_password?token%3DFQ5W8YFhh9dbBYBuw7Gm%26db%3Dodoo&source=gmail&ust=1494932150387000&usg=AFQjCNFAPb8FzV5wq17Hnc7Xkw-f3kJeDw') Accept invitation to "Alupak Industriesss"
+                                                            p(style='float:left;') Best regards,
+                                                            .yj6qo.ajU
+                                                                .ajR(id=':1ga', role='button', tabindex='0', aria-label='Hide expanded content', data-tooltip='Hide expanded content')
+                                                                    img.ajT(src='//ssl.gstatic.com/ui/v1/icons/mail/images/cleardot.gif')
+                                                            span.HOEnZb.adL
+                                                                font(color='#888888')
+                                                            p(style='float: left;margin-left: -86px;')
+                                                                | Administrator
+                                                            p(style='font-size:11px;float: left;margin-top: 35px;margin-left: -89px;')
+                                                                strong
+                                                                    | Sent by Alupak Industriesss using
+                                                                    a(href='http://192.168.100.100:8069/www.odoo.com', style='text-decoration:none;color:#875a7b', target='_blank', data-saferedirecturl='https://www.google.com/url?hl=en&q=http://192.168.100.100:8069/www.odoo.com&source=gmail&ust=1494932150387000&usg=AFQjCNERaluPHIo2pIA1ZE4McfVN_utEiA') Odoo
+
+
+
+                                                br
+
+
+                                                div(style='height: 40px; line-height: 40px; font-size: 10px;')  
+
+
+                            // content 1 END
+                            // content 2
+                            // links
+                            // content 3
+                            // footer
+                            tr
+                                td.iage_footer(align='center', bgcolor='#8e568a')
+                                    // padding
+                                    div(style='height: 80px; line-height: 80px; font-size: 10px;')  
+                                    table(width='100%', border='0', cellspacing='0', cellpadding='0')
+                                        tr
+                                            td(align='center')
+                                                font(face='Arial, Helvetica, sans-serif', size='3', color='#96a5b5', style='font-size: 13px;')
+                                                    span(style='font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: white;')
+                                                        | 2017 © SPROUT. ALL Rights Reserved.
+                                    // padding
+                                    div(style='height: 30px; line-height: 30px; font-size: 10px;')  
+                            // footer END
+                            tr
+                                td
+                                    // padding
+                                    div(style='height: 310px; line-height: 80px; font-size: 10px;')  
+                        //if gte mso 10
+

@@ -1,0 +1,116 @@
+.samoblockcard{
+
+    border: 1px solid grey;
+    box-shadow: 0px 0px 1px 0px #666666;
+    padding: 0px;
+    width: 327px;
+    height: 203px;
+}
+
+.text1{
+
+    color: #5e5e5e;
+    font-size:13px;
+}
+
+.text2{
+
+    color: #5e5e5e;
+    font-size:13px;
+}
+
+
+
+.color1{
+    width: 15px !important;
+    height: 15px !important;
+    border: 1px solid #ccc !important;
+    display: block !important;
+}
+
+.color2{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    display: block;
+    background-color: #d8d8d8;
+}
+
+.color3{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    display: block;
+    background-color: #e5d8e3;
+}
+
+.color4{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    display: block;
+    background-color: #ece9c2;
+}
+
+.color5{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    display: block;
+    background-color: #dee180;
+}
+
+.color6{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    display: block;
+    background-color: #abd4cc;
+
+}
+
+.color7{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    display: block;
+    background-color: #b8e3e8;
+}
+.color8{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    display: block;
+    background-color: #f4ddab;
+}
+
+.color9{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    display: block;
+    background-color: #7f637d;
+}
+.color10{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    display: block;
+    background-color: #d8c5d5;
+}
+
+.dashdropmenu{
+    margin-top: 44px;
+    margin-left: -178px;
+    min-width: 20.4rem;
+    height: 190px;
+}
+
+
+
+.dropdown-menu{
+    width: 218px;
+    height: 203px;
+    margin-left: -1px;
+    margin-bottom: -40px;
+}
