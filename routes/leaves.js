@@ -105,7 +105,7 @@ router.post('/selectallfromleave_requestjoin', function (req, res, next) {
 
 });
 router.post('/confitableall', function (req, res, next) {
-    connection.query("select * from leave_type ", function (error, results, fields) {
+    connection.query("select * from leave_type WHERE active IN (1) ", function (error, results, fields) {
         if (error) res.json({"status": "failed", "message": error.message});
         else{
             res.json({"status": "ok", "data": results});
@@ -152,7 +152,7 @@ router.post('/confitable_get_id', function (req, res, next) {
 
 });
 router.post('/numleavestype', function (req, res, next) {
-    connection.query("select COUNT(*) as count from leave_type", function (error, results, fields) {
+    connection.query("select COUNT(*) as count from leave_type WHERE active IN (1)", function (error, results, fields) {
         if (error) res.json({"status": "failed", "message": error.message});
         else{
             res.json({"status": "ok", "data": results});
@@ -274,7 +274,7 @@ router.post('/allocationrequesttableback', function (req, res, next) {
     });
 });
 router.post('/confitable', function (req, res, next) {
-    connection.query("select * from leave_type ORDER BY id DESC limit  10", function (error, results, fields) {
+    connection.query("select * from leave_type WHERE active IN (1) ORDER BY id DESC limit  10", function (error, results, fields) {
         if (error) res.json({"status": "failed", "message": error.message});
         else{
             res.json({"status": "ok", "data": results});
@@ -283,7 +283,7 @@ router.post('/confitable', function (req, res, next) {
 });
 router.post('/confitablenext', function (req, res, next) {
 
-    connection.query('select * from leave_type ORDER BY id DESC limit  10  OFFSET '+""+ req.body.counter +"" +'', function (error, results, fields) {
+    connection.query('select * from leave_type WHERE active IN (1) ORDER BY id DESC limit  10  OFFSET '+""+ req.body.counter +"" +'', function (error, results, fields) {
         if (error) res.json({"status": "failed", "message": error.message});
         else{
             res.json({"status": "ok", "data": results});
@@ -292,7 +292,7 @@ router.post('/confitablenext', function (req, res, next) {
 });
 router.post('/confitableback', function (req, res, next) {
 
-    connection.query('select * from leave_type ORDER BY id DESC limit 10  OFFSET '+""+ req.body.counter +"" +'', function (error, results, fields) {
+    connection.query('select * from leave_type WHERE active IN (1) ORDER BY id DESC limit 10  OFFSET '+""+ req.body.counter +"" +'', function (error, results, fields) {
         if (error) res.json({"status": "failed", "message": error.message});
         else{
             res.json({"status": "ok", "data": results});

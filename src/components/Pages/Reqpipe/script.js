@@ -151,6 +151,9 @@ export default{
                 console.log(res.body);
             },function(err){
             });
+            this.select();
+            this.select1();
+            this.select2();
         },
         submit2: function (id) {
             var self = this;
@@ -159,6 +162,9 @@ export default{
                 console.log(res.body);
             },function(err){
             });
+            this.select();
+            this.select1();
+            this.select2();
         },
         insert1: function (id) {
             var self = this;
@@ -203,9 +209,10 @@ export default{
             });
 
         },
-        select: function (id) {
+
+        select: function () {
             var self = this;
-            self.$http.post("/recruitment/applicationsonjob", {"id": self.$route.params.id}).then(function (res) {
+            self.$http.post("/recruitment/applicationsonjob2", {"id": self.$route.params.id}).then(function (res) {
                 self.names = res.body.data;
             },function(err){
             });

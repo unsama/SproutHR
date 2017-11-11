@@ -8,7 +8,8 @@ export default{
         self.select();
         $(function () {
 
-
+            self.btnlinks.secondbtnlink = "/Employees/DepttEmpTab/"+self.$route.params.id;
+            self.btnlinks.createbtnlink = "/Employees/DepNew/"+self.$route.params.id;
             $(".colorbg").on("click", function (e) {
                 e.preventDefault();
                 var col = $(this).css("backgroundColor");
@@ -28,19 +29,30 @@ export default{
             p: "Departments",
             dashboard: "Dashboard",
             btnlinks: {
-                createbtnlink: "/Employees/DepNew",
+                createbtnlink: "",//Employees/DepNew",
                 discardbtnlink: "#/app/sales/Salesnextactivityview",
-                importbtnlink: "#/app/imported"
+                importbtnlink: "#/app/imported",
+                secondbtnlink: ""//Employees/TableDep"
             },
         }
     },
     methods: {
         select: function () {
-            console.log("Inside select() ");
+            
             var self = this;
             self.$http.post("/employees/fetchDepartmentEmployees", {"id": self.$route.params.id}).then(function (res) {
                 self.employeenames = res.body.result;
+                console.log("self.employeenames");
                 console.log(self.employeenames);
+                if(self.employeenames.length == 0){
+                    $("#emptyDept").show();
+                    $("#notEmptyDept").hide();
+                }
+                else{
+                    $("#emptyDept").hide();
+                    $("#notEmptyDept").show();
+                }
+
 
                 // self.$http.post("/Employees/fetchJobTitles", {"id":self.job_tittle}).then(function (res) {
                 //     var data = res.body.data[0];
@@ -57,7 +69,7 @@ export default{
 
     components: {
         DashboardController,
-           //Pro,
+        //Pro,
         ProTwo,
 
 

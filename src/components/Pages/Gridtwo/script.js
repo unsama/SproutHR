@@ -32,7 +32,7 @@ export default{
                 createbtnlink:"/employees/CreateDepone",
                 importbtnlink:"#/app/imported",
                 secondbtnlink: "/Employees/TableHr",
-                firstbtnlink: "/Employees/Gridtwo",
+                firstbtnlink: "/Employees/",
             },
             tableheader: [
                 "Reference",

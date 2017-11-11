@@ -18,7 +18,9 @@ export default{
     created: function () {
         var self = this;
         this.select();
+
         $(function () {
+
             self.btnlinks.editbtnlink ="/recruitment/LetterEdit/"+self.$route.params.id;
             $(".delete").click(function () {
                 self.submit();

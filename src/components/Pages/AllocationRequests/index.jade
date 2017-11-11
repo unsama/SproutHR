@@ -1,6 +1,6 @@
 .manufacturing_orders
     DashboardController( v-bind:save='true',v-bind:duplicatedropbtn='false',v-bind:deletedropbtn='true',v-bind:planorderbtn='false',v-bind:actionbtn='true',v-bind:heading="nextactivity",v-bind:createbtn='true',v-bind:importbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:fifthbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true')
-        .col-sm-6(style='padding:0px;')(slot='heading')
+        .col-sm-6(style='padding:0px;')(slot='job')
             h4.samodashheading(style="font-size: 18px;") Departments / Allocation Requests to Approve
         span.o_pager_value(slot='page') {{counter}}
             |  /

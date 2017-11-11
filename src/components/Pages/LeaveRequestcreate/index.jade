@@ -1,6 +1,6 @@
 .all_transfers_table
     DashboardController(v-bind:heading="nextactivity",v-bind:savebtn='true',v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks")
-        .col-sm-6(style='padding:0px;')(slot='heading')
+        .col-sm-6(style='padding:0px;')(slot='job')
             h4.samodashheading(style="font-size: 18px;") Departments / Leave Request to Approve / New
 
     Modal(v-bind:discard='true',v-bind:saveTigger="submitmodal",v-bind:save='true',v-bind:heading="modal2",v-bind:modal='"bd-example-modal-lg1"')

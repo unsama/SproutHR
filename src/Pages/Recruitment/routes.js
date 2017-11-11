@@ -1,4 +1,5 @@
 import Letters from "./../../components/Pages/Letters/Letters.vue"
+import Hremployeeinfo from "./../../components/Pages/Hremployeeinfo/Hremployeeinfo.vue"
 import ReportRecruitment from "./../../components/Pages/ReportRecruitment/ReportRecruitment.vue"
 import JobPosition from "./../../components/Pages/JobPosition/JobPosition.vue"
 import ReqDep from "./../../components/Pages/ReqDep/ReqDep.vue"
@@ -50,6 +51,7 @@ import ReqDocTablecreaate from "./../../components/Pages/ReqDocTablecreaate/ReqD
 import ReqDocTableimport from "./../../components/Pages/ReqDocTableimport/ReqDocTableimport.vue"
 import ReqDocTable from "./../../components/Pages/ReqDocTable/ReqDocTable.vue"
 import ReqDoc from "./../../components/Pages/ReqDoc/ReqDoc.vue"
+import PrintBadge from "./../../components/Pages/PrintBadge/PrintBadge.vue"
 
 import lettertablejob from "./../../components/Pages/lettertablejob/lettertablejob.vue"
 import ReqpipeCreate from "./../../components/Pages/ReqpipeCreate/ReqpipeCreate.vue"
@@ -59,12 +61,16 @@ import ReqCalandar from "./../../components/Pages/ReqCalandar/ReqCalandar.vue"
 import Modalcreate from "./../../components/partials/Modalcreate/Modalcreate.vue"
 import Job from "./../../components/Pages/Job/Job.vue"
 import Test from "./../../components/Pages/Test/Test.vue"
+import hremployeeduplicate from "./../../components/Pages/hremployeeduplicate/hremployeeduplicate.vue"
+import Hremployeeedit from "./../../components/Pages/Hremployeeedit/Hremployeeedit.vue"
+import hierarchy from "./../../components/Pages/hierarchy/hierarchy.vue"
 import ReqapplicationEdit from "./../../components/Pages/ReqapplicationEdit/ReqapplicationEdit.vue"
 import Absent from "./../../components/Pages/Absent/Absent.vue"
 import stageDuplicate from "./../../components/Pages/stageDuplicate/stageDuplicate.vue"
 import Recruitment_layout from "./../../components/Pages/Recruitment_layout/Recruitment_layout.vue"
 import ReqJobAppCreate from "./../../components/Pages/ReqJobAppCreate/ReqJobAppCreate.vue"
 import ReqPipeImport from "./../../components/Pages/ReqPipeImport/ReqPipeImport.vue"
+import hremployeecreate from "./../../components/Pages/hremployeecreate/hremployeecreate.vue"
 import EmpContract from "./../../components/partials/EmpContract/EmpContract.vue"
 import ContractNew from "./../../components/partials/ContractNew/ContractNew.vue"
 import rexBox from "./../../components/partials/rexBox/rexBox.vue"
@@ -73,7 +79,7 @@ import Reqjobs from "./../../components/partials/Reqjobs/Reqjobs.vue"
 import Department from "./../../components/partials/Department/Department.vue"
 import StagesEdits from "./../../components/partials/StagesEdits/StagesEdits.vue"
 import ReqEdit from "./../../components/partials/ReqEdit/ReqEdit.vue"
-
+import Editing   from "./../../components/partials/Editing/Editing.vue"
 const routes = [
     { path: '/recruitment', component: Test,
         children: [
@@ -82,7 +88,13 @@ const routes = [
                     { path: 'letters', component: Letters},
                     { path: 'reqapplicationEdit/:id', component: ReqapplicationEdit},
                     { path: 'hrapp', component: hrapp},
-
+                    { path: 'hremployeeduplicate/:id', component: hremployeeduplicate},
+                    { path: 'Editing', component: Editing},
+                    { path: 'Hremployeeedit/:id', component: Hremployeeedit},
+                    { path: 'PrintBadge/:id', component: PrintBadge},
+                    { path: 'hierarchy/:id', component: hierarchy},
+                    { path: 'hremployeecreate/:id', component: hremployeecreate},
+                    { path: 'Hremployeeinfo/:id', component: Hremployeeinfo},
                     { path: 'applicationduplicate/:id', component: applicationduplicate},
                     { path: 'reqapplication/:id', component: Reqapplication},
                     { path: 'jobduplicate/:id', component: jobduplicate},

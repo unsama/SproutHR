@@ -1,20 +1,22 @@
 .NewDep
     DashboardController(v-bind:save='true',v-bind:heading="p",v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true',v-bind:createbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:firstbtn='true',v-bind:secondbtn='true')
-        //div#whenNo#Employee
-    .row(style='margin-left: 20px;')
+        .col-sm-6(style='padding:0px;' ,slot='job')
+            h4.samodashheading(style="font-size: 18px;") Departments / Employees
+
+    .row#emptyDept(style='margin-left: 20px;')
         .col-xs-6
             img.img-responsive(style='width:80px;')(src='/images/v.png')
         .col-xs-6(style='padding-top:51px;')
             p(style='padding-top:10px;') Click to add a new employee.
             br
-            p(style='margin-top: -28px;') With just a quick glance on the Odoo employee screen, you can easily find all the
+            p(style='margin-top: -28px;') With just a quick glance on the Sprout employee screen, you can easily find all the
             p(style='margin-top: -16px;') information you need for each person; contact data, job position, availability, etc.
-             //div#atLeastOnEmployee
-    .row(v-for="record in employeenames",style='display: inline-block; padding-left: 5px;')
+
+    .row#notEmptyDept(v-for="record in employeenames",style='display: inline-block; padding-left: 5px;')
         .col-md-12
             ProTwo(style='padding-top:10px;')
                 .table(slot='pro')
-                    router-link(v-bind:to="'HrDeps/'+record.id")
+                    router-link(v-bind:to="'/employees/DeptEmpShow/'+record.id")
                         .row(style='margin-left: -15px;')
                             .col-xs-2
                                 a(href='#', data-toggle='tooltip', data-placement='top', title='Distributor')

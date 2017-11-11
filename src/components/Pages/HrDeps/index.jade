@@ -1,6 +1,6 @@
 .HrDeps
-    DashboardController(v-show='p', v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true',v-bind:dropdownMenuButton='true',v-bind:printbtn='true',v-bind:leavesSummarybtn='true',v-bind:printBadge='true',v-bind:Attachmentbtn='true',v-bind:actionbtn='true',v-bind:subordinatebtn='true',v-bind:deletebtn="true",v-bind:duplicate="true", v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
-        .col-sm-6(style='padding:0px;' ,slot='heading')
+    DashboardController(v-show='p', v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true',v-bind:dropdownMenuButton='false',v-bind:printbtn='true',v-bind:leavesSummarybtn='true',v-bind:printBadge='true',v-bind:Attachmentbtn='true',v-bind:actionbtn='true',v-bind:subordinatebtn='true',v-bind:deletebtn="true",v-bind:duplicate="true", v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+        .col-sm-6(style='padding:0px;' ,slot='job')
             h4.samodashheading(style="font-size: 18px;") Employees / {{employeeName}}
         span.o_pager_value(slot='page') {{counter}}
             |  /

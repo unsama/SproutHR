@@ -1,0 +1,533 @@
+.Hremployeeinfo
+    DashboardController(v-show='p',v-bind:duplicatedropbtn='true',v-bind:deletedropbtn='true', v-bind:save='true',v-bind:heading="nextactivity",v-bind:editbtn='true',v-bind:createbtn='true',v-bind:dropdownMenuButton='true',v-bind:printbtn='true',v-bind:leavesSummarybtn='true',v-bind:printBadge='true',v-bind:Attachmentbtn='true',v-bind:actionbtn='true',v-bind:subordinatebtn='true',v-bind:deletebtn="true",v-bind:duplicate="true", v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true')
+        .col-sm-6(style='padding:0px;' ,slot='job')
+            h4.samodashheading(style="font-size: 18px;") Employees / {{employeeName}}
+        span.o_pager_value(slot='page') {{counter}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="counter--",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="counter++",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+    modal( v-bind:print='true',v-bind:heading="nextactivity",v-bind:modal='"bd-example-modal-lg1"',v-bind:cancel='true')
+        .o_view_manager_content
+            .o_form_view.o_form_nosheet.o_form_editable
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label
+                                    | From
+                            td(colspan='1', style='width: 33.3333%;')
+                                .o_datepicker.o_form_field_date.o_form_field.o_form_required
+                                    input.o_datepicker_input.o_form_input#datepicker7(type='text', name='date_from', v-model="leavesFrom")
+                                    span.o_datepicker_button
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label
+                                        | To
+                                td(colspan='1', style='width: 33.3333%;')
+                                    .o_datepicker.o_form_field_date.o_form_field.o_form_required
+                                        input.o_datepicker_input.o_form_input#datepicker8(type='text', name='date_from', v-model="leavesTo")
+                                        span.o_datepicker_button
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_576')
+                                    | Select Leave Type
+                            td(colspan='1', style='width: 33.3333%;')
+                                select#o_field_input_576.o_form_input.o_form_field.o_form_required(name='holiday_type')
+                                    option(value='false')
+                                    option(value='"Approved"') Approved
+                                    option(value='"Confirmed"') Confirmed
+                                    option(value='"both"') Both Approved and Confirmed
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_invisibles
+                                    | Employee(s)
+                            td(colspan='1', style='width: 33.3333%;')
+                                .o_form_field.o_form_invisible.o_form_field_many2many.o_view_manager_content
+                                    .o_x2m_control_panel
+                                        .o_cp_buttons
+                                        .o_cp_pager
+                                            .o_hidden
+                                                span.o_pager_value
+                                                |  /
+                                                span.o_pager_limit
+                                                span.btn-group.btn-group-sm
+                                                    button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                    button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                    div
+                                        .table-responsive
+                                            table.o_list_view.table.table-condensed.table-striped
+                                                thead
+                                                    tr
+                                                        th.o_column_sortable(data-id='name')
+                                                            | Name
+                                                        th.o_column_sortable(data-id='work_phone')
+                                                            | Work Phone
+                                                        th.o_column_sortable(data-id='work_email')
+                                                            | Work Email
+                                                        th.o_column_sortable(data-id='department_id')
+                                                            | Department
+                                                        th.o_column_sortable(data-id='job_id')
+                                                            | Job Title
+                                                        th.o_column_sortable(data-id='parent_id')
+                                                            | Manager
+                                                        th.o_list_record_delete
+                                                tfoot
+                                                    tr
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td.o_list_record_delete
+                                                tbody
+                                                    tr
+                                                        td.o_form_field_x2many_list_row_add(colspan='7')
+                                                            a(href='#') Add an item
+                                                    tr
+                                                        td(title='Name')  
+                                                        td(title='Work Phone')  
+                                                        td(title='Work Email')  
+                                                        td(title='Department')  
+                                                        td(title='Job Title')  
+                                                        td(title='Manager')  
+                                                        td.o_list_record_delete
+                                                    tr
+                                                        td(title='Name')  
+                                                        td(title='Work Phone')  
+                                                        td(title='Work Email')  
+                                                        td(title='Department')  
+                                                        td(title='Job Title')  
+                                                        td(title='Manager')  
+                                                        td.o_list_record_delete
+                                                    tr
+                                                        td(title='Name')  
+                                                        td(title='Work Phone')  
+                                                        td(title='Work Email')  
+                                                        td(title='Department')  
+                                                        td(title='Job Title')  
+                                                        td(title='Manager')  
+                                                        td.o_list_record_delete
+
+    .o_content#createform
+        .o_view_manager_content
+            .o_form_view.o_form_readonly
+                .o_form_sheet_bg
+                    .o_form_sheet
+                        .row
+                            .col-xs-2.offset-sm-0
+                                .img
+                                    img.unsamaimg(style='width:90px;box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 4px;border: none;' src='images/g.jpg')
+                            .col-xs-3(style='padding: 0px;margin-left: -23px;')
+                                i.fa.fa-user#green(style='font-size:42px;color: green;' aria-hidden='true')
+                                i.fa.fa-user#reds(style='font-size:42px;color: green;' aria-hidden='true')
+                                    label(style='color:black;') {{employeeName}}
+                                .row
+                                    .col-xs-3
+                                        .dropdown
+                                            a.dropdown-toggle.btn.btn-default.btn-color(style='color:white;border-radius: 53px;background-color:blue;overflow: hidden;text-overflow: ellipsis;max-width: 200px;display: inline-block;min-width: 8px;padding: 3px 7px;font-size: 10px;font-weight: normal;vertical-align: middle;white-space: nowrap;text-align: center;color: white;border-radius: 53px;')(data-toggle='dropdown', href='#')
+                                                span#color-name Sucesss
+                                            ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
+                                                table
+                                                    tr
+                                                        td
+                                                            #Red.swatch.swatch-clickable.colorbg(style='background-color:#d11600')
+                                                        td
+                                                            #Orange.swatch.swatch-clickable.colorbg(style='background-color:#f96302')
+                                                        td
+                                                            #Banana.swatch.swatch-clickable.colorbg(style='background-color:#ffed38')
+                                                        td
+                                                            #Lemon.swatch.swatch-clickable.colorbg(style='background-color:#e5e111')
+                                                        td
+                                                            #Lime.swatch.swatch-clickable.colorbg(style='background-color:#cee007')
+                                                        td
+                                                            #Evergreen.swatch.swatch-clickable.colorbg(style='background-color:#339e35')
+                                                    tr
+                                                        td
+                                                            .swatch.swatch-clickable.colorbg(id='Lunar Blue', style='background-color:#60afdd')
+                                                        td
+                                                            #Grape.swatch.swatch-clickable.colorbg(style='background-color:#9b4f96')
+                                                        td
+                                                            .swatch.swatch-clickable.colorbg(id='Hot Pink', style='background-color:#fc0093')
+                                                        td
+                                                            #Sagebrush.swatch.swatch-clickable.colorbg(style='background-color:#c6c699')
+                                                        td
+                                                            #Tan.swatch.swatch-clickable.colorbg(style='background-color:tan')
+                                                        td
+                                                            #White.swatch.swatch-clickable.colorbg(style='background-color:white')
+
+
+
+
+
+                                    .col-xs-6
+                                        .dropdown
+                                            a.dropdown-toggle.btn.btn-default.btn-color(style='color:white;border-radius: 53px;background-color:blue;overflow: hidden;text-overflow: ellipsis;max-width: 200px;display: inline-block;min-width: 8px;padding: 3px 7px;font-size: 10px;font-weight: normal;vertical-align: middle;white-space: nowrap;text-align: center;color: white;border-radius: 53px;')(data-toggle='dropdown', href='#')
+                                                span#color-name Empolyee
+                                            ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
+                                                table
+                                                    tr
+                                                        td
+                                                            #Red.swatch.swatch-clickable.colorbg(style='background-color:#d11600')
+                                                        td
+                                                            #Orange.swatch.swatch-clickable.colorbg(style='background-color:#f96302')
+                                                        td
+                                                            #Banana.swatch.swatch-clickable.colorbg(style='background-color:#ffed38')
+                                                        td
+                                                            #Lemon.swatch.swatch-clickable.colorbg(style='background-color:#e5e111')
+                                                        td
+                                                            #Lime.swatch.swatch-clickable.colorbg(style='background-color:#cee007')
+                                                        td
+                                                            #Evergreen.swatch.swatch-clickable.colorbg(style='background-color:#339e35')
+                                                    tr
+                                                        td
+                                                            .swatch.swatch-clickable.colorbg(id='Lunar Blue', style='background-color:#60afdd')
+                                                        td
+                                                            #Grape.swatch.swatch-clickable.colorbg(style='background-color:#9b4f96')
+                                                        td
+                                                            .swatch.swatch-clickable.colorbg(id='Hot Pink', style='background-color:#fc0093')
+                                                        td
+                                                            #Sagebrush.swatch.swatch-clickable.colorbg(style='background-color:#c6c699')
+                                                        td
+                                                            #Tan.swatch.swatch-clickable.colorbg(style='background-color:tan')
+                                                        td
+                                                            #White.swatch.swatch-clickable.colorbg(style='background-color:white')
+
+
+
+
+
+                            .col-xs-4.offset-sm-3
+                                .oe_button_box(name='button_box')
+                                    button.btn.btn-sm.oe_stat_button(type='button')
+                                        .fa.fa-fw.fa-archive.o_button_icon
+                                        .o_stat_info.o_form_field(data-original-title='', title='')
+                                            span.o_stat_text.o_not_hover.text-danger Archived
+                                            span.o_stat_text.o_hover.text-success Unarchive
+                                    .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
+                                        input(type='checkbox', name='show_leaves', disabled='')
+                                        span
+                                    router-link(to='Leave')
+                                        button.btn.btn-sm.oe_stat_button(type='button', data-original-title='', title='')
+                                            .fa.fa-fw.fa-calendar.o_button_icon
+                                            .o_form_field.o_stat_info
+                                                span.o_stat_value 0
+                                                span.o_stat_text Leaves Left
+                                    router-link(to='contracts')
+                                        button.btn.btn-sm.oe_stat_button(type='button')
+                                            .fa.fa-fw.fa-book.o_button_icon
+                                            .o_form_field.o_stat_info
+                                                span.o_stat_value 0
+                                                span.o_stat_text Contracts
+
+
+                        .row(style='')
+                            .col-md-12
+                                .o_notebook
+                                    ul.nav.nav-tabs(role='tablist')
+                                        li.nav-item
+                                            a.nav-link.active(href='#profile', role='tab', data-toggle='tab') Public Information
+                                        li.nav-item
+                                            a.nav-link(href='#buzz', role='tab', data-toggle='tab') Personal Information
+                                        li.nav-item
+                                            a.nav-link(href='#buzz1', role='tab', data-toggle='tab') HR Setting
+
+
+                                    // Tab panes
+                                .tab-content
+                                    #profile.tab-pane.fade.in.active(role='tabpanel')
+                                        .o_group
+                                            .col-xs-12.request_inner1
+                                                .row
+                                                    .col-xs-6
+                                                        h3(style='padding-left: 10px;font-size: 23px;') Contact Information
+                                                    .col-xs-6
+                                                        h3(style='padding-left: 10px;font-size: 23px;') Position
+                                                .row
+                                                    .col-xs-3(style='font-weight: bold;')
+                                                        .one
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Working Address
+                                                            br
+                                                            label(style='font-size:15px;')
+                                                                | Work Mobile
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Work Location
+                                                            br
+                                                            label(style='font-size:15px;')
+                                                                | Work Email
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Work Phone
+                                                            br
+
+
+
+                                                    .col-xs-3(style='')
+                                                        .two
+                                                            // router-link(to='HrCom')
+                                                            label(style='font-size:13px;')
+                                                                | {{workingAddress}}
+                                                            br
+                                                            label(style='font-size:13px;')
+                                                                | {{workMobile}}
+                                                            br
+                                                            label(style='font-size:13px;')
+                                                                | {{workLocation}}
+                                                            br
+                                                            label(style='font-size:13px;')
+                                                                | {{workEmail}}
+                                                            br
+                                                            label(style='font-size:13px;')
+                                                                | {{workPhone}}
+                                                            br
+
+
+
+
+                                                    .col-xs-3(style='font-weight: bold;')
+                                                        .one
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Department
+                                                            br
+                                                            label(style='font-size:15px;')
+                                                                | Job Title
+                                                            br
+                                                            label(style='font-size:15px;')
+                                                                | Manager
+                                                            br
+                                                            label(style='font-size:15px;')
+                                                                | Coach
+                                                            br
+                                                            label(style='font-size:15px;')
+                                                                | Working Time
+
+
+                                                    .col-xs-3(style='')
+                                                        .two
+
+                                                            label(style='font-size:13px;')
+                                                                | {{departmentName}}
+                                                            br
+
+                                                            label(style='font-size:13px;')
+                                                                | {{jobTitle}}
+                                                            br
+
+                                                            label(style='font-size:13px;padding-top: 12px;')
+                                                                | {{emplyeeManagerName}}
+                                                            br
+
+                                                            label(style='font-size:13px;')
+                                                                | {{coachName}}
+                                                            br
+                                                            label(style='font-size:13px;')
+                                                                | {{wokingTimeName}}
+
+
+
+
+                                    #buzz.tab-pane.fade.in(role='tabpanel')
+                                        .o_group
+                                            .col-xs-12.request_inner1
+                                                .row
+                                                    .col-xs-6
+                                                        h3(style='padding-left: 10px;font-size: 23px;') Citizenship & Other Information
+                                                    .col-xs-6
+                                                        h3(style='padding-left: 10px;font-size: 23px;') Contact Information
+                                                .row
+                                                    .col-xs-3(style='font-weight: bold;')
+                                                        .one
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Nationality (Country)
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Identification No
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Passport No
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Bank Account
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Number
+                                                            br
+
+
+                                                    .col-xs-3(style='')
+
+                                                        label(style='font-size:13px;')
+                                                            | {{countryname}}
+                                                        br
+                                                        br
+
+                                                        label(style='font-size:13px;')
+                                                            | {{identificationNo}}
+                                                        br
+
+                                                        label(style='font-size:13px;padding-top: 12px;')
+                                                            | {{passportNo}}
+                                                        br
+                                                        label(style='font-size:13px;')
+                                                            | {{bankAccNo}}
+
+                                                    .col-xs-3(style='font-weight: bold;')
+                                                        .one
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Home Address
+                                                            br
+                                                    .col-xs-3(style='')
+                                                        .two
+                                                            label(style='font-size:13px;padding-top: 12px;')
+                                                                | {{homeAddress}}
+
+                                                .row
+                                                    .col-xs-6
+                                                        h3(style='padding-left: 10px;font-size: 23px;') Status
+                                                    .col-xs-6
+                                                        h3(style='padding-left: 10px;font-size: 23px;') Birth
+                                                .row
+                                                    .col-xs-3(style='font-weight: bold;')
+                                                        .one
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Gender
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Marital Status
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Number of Children
+                                                            br
+
+
+
+                                                    .col-xs-3(style='')
+                                                        .two
+
+                                                            label(style='font-size:13px;')
+                                                                | {{gender}}
+                                                            br
+                                                            label(style='font-size:13px;')
+                                                                | {{maritalStatus}}
+                                                            br
+                                                            label(style='font-size:13px;padding-top: 12px;')
+                                                                | {{noOfChildren}}
+
+                                                    .col-xs-3(style='font-weight: bold;')
+                                                        .one
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Date of Birth
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Place of Birth
+                                                            br
+
+                                                    .col-xs-3(style='')
+                                                        .two
+
+                                                            label(style='font-size:13px;')
+                                                                | {{dateOfBirth}}
+                                                            br
+                                                            label(style='font-size:13px;')
+                                                                | {{placeOfBirth}}
+
+
+                                    #buzz1.tab-pane.fade.in(role='tabpanel')
+                                        .o_group
+                                            .col-xs-12.request_inner1
+                                                .row
+                                                    .col-xs-6
+                                                        h3(style='padding-left: 10px;font-size: 23px;') Timesheets
+                                                    .col-xs-6
+                                                        h3(style='padding-left: 10px;font-size: 23px;') Status
+                                                .row
+                                                    .col-xs-3(style='font-weight: bold;')
+                                                        .one
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Timesheet Cost
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Account
+                                                            br
+
+
+
+                                                    .col-xs-3(style='')
+                                                        .two
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | {{timeSheetCost}}
+                                                            br
+                                                            abel(style='font-size:15px;padding-right:25px;')
+                                                                | {{accountname}}
+                                                            br
+
+
+                                                    .col-xs-3(style='font-weight: bold;')
+                                                        .one
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Related User
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Badge ID
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | PIN
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Manual Attendance
+                                                            br
+
+                                                    .col-xs-3(style='')
+                                                        .two
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | {{relatedUser}}
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | {{badgeId}}
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | {{pin}}
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | {{manualAttendance}}
+                                                            br
+
+
+                                                .row
+                                                    .col-xs-6
+                                                        h3(style='padding-left: 10px;font-size: 23px;') Current Contract
+
+                                                .row
+                                                    .col-xs-3.request_inner3(style='font-weight: bold;')
+                                                        .one
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Medical Exams
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Company Vehicle
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | Home-Work Dist.
+                                                            br
+
+
+
+                                                    .col-xs-4.osahass(style='')
+                                                        .two
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | {{medicalExam}}
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | {{companyVehicle}}
+                                                            br
+                                                            label(style='font-size:15px;padding-right:25px;')
+                                                                | {{homeWorkDistance}}
+                                                            br
+
+
+    .message(style='margin-left: 353px;')

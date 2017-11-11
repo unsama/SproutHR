@@ -37,8 +37,19 @@ export default{
                 console.log("excepted"+self.names[i].expected);
                 console.log("szazalek"+szazalek);
                 console.log(i);
-                document.getElementsByClassName('szliderbar')[i].style.width = szazalek + '%';
-                document.getElementsByClassName('szazalek')[i].innerHTML = szazalek + '%';
+
+                if(self.names[i].expected==0)
+                {
+                    szazalek=0;
+                    document.getElementsByClassName('szazalek')[i].innerHTML = szazalek + '%';
+                    document.getElementsByClassName('szliderbar')[i].style.width = szazalek + '%';
+                }
+                else
+                {
+                    document.getElementsByClassName('szazalek')[i].innerHTML = szazalek + '%';
+                    document.getElementsByClassName('szliderbar')[i].style.width = szazalek + '%';
+                }
+
             }
 
             $("button").click(function(){
@@ -59,7 +70,13 @@ export default{
             $("#create").click(function () {
                 self.submit();
                 self.select();
+                self.remove();
             });
+            $("#discard").click(function () {
+                self.select();
+                self.remove();
+            });
+
             self.id ="/recruitment/ReqSettingEdit/"+self.$route.params.id
             $('.clickedit').hide()
                 .focusout(endEdit)
@@ -101,22 +118,26 @@ export default{
                 importbtnlink: "#/app/imported",
                 secondbtnlink: "#/app/Employees/TableDep"
             },
-
         }
     },
     methods: {
-        remove (index) {
-            // this.todos.splice(index, 1)
-            this.$delete(this.names, index)
+        remove: function () {
+            var self = this;
+
+            self.title=""
+
+
         },
+
         submit: function () {
             var self = this;
 
             self.$http.post("/recruitment/try", {"title": self.title}).then(function(res){
-                console.log(res.body);
 
             },function(err){
             });
+            self.select();
+            $(".bd-example-modal-lg").modal('hide');
 
 
         },

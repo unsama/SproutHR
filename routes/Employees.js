@@ -31,7 +31,6 @@ var transporter = nodemailer.createTransport({
 
 var mysql = require("mysql");
 var connection = mysql.createConnection({
-
     host: "192.168.100.106",
     user: "sprout",
     password: "sprout12345",
@@ -356,8 +355,11 @@ router.post('/EditEmployee', function (req, res, next) {
 router.post('/addNewContract', function (req, res, next) {
 
     console.log("Inside service  addNewContract !!!!!!!");
-    if(!req.body.jobTitleId){
-        req.body.jobTitleId = null;
+    if(!req.body.jobTitle){
+        req.body.jobTitle = null;
+    }
+    if(!req.body.employeeId){
+        req.body.employeeId = null;
     }
     if(!req.body.departmentId){
         req.body.departmentId = null;
@@ -405,7 +407,7 @@ router.post('/addNewContract', function (req, res, next) {
     //}
     console.log("reference=  "+req.body.referenceName);
     console.log("employeeId=  "+req.body.employeeId);
-    console.log("jobTitleId=  "+req.body.jobTitleId);
+    console.log("jobTitle=  "+req.body.jobTitle);
     console.log("departmentId=  "+req.body.departmentId);
     console.log("contractType_id=  "+req.body.contractType_id);
     console.log("wageAmount=  "+req.body.wageAmount);
@@ -423,10 +425,10 @@ router.post('/addNewContract', function (req, res, next) {
 
 
     console.log('INSERT INTO `contract`(`reference`,`employee_id`,`job_tittle`,`department_id`,`contract_type`,`wage`,`advantages`,`trial_period_duration_from`,`trial_period_duration_to`,`duration_to`,`duration_from`,`working_schedule_id`,`notes`,`visa_no`,`work_permit_no`,`visa_expire_date`,`contract_status`) ' +
-        'VALUES ("'+req.body.referenceName+'",'+req.body.employeeId+','+req.body.jobTitleId+','+req.body.departmentId+','+req.body.contractType_id+','+req.body.wageAmount+',"'+req.body.advantage+'","'+req.body.trialFrom+'","'+req.body.trialTo+'","'+req.body.durationTo+'","'+req.body.durationFrom+'",'+req.body.work_schedule_id+',"'+req.body.notes+'",'+req.body.visaNo+','+req.body.workPermitNo+',"'+req.body.visaEpireDate+'","'+req.body.status_name+'")');
+        'VALUES ("'+req.body.referenceName+'",'+req.body.employeeId+','+req.body.jobTitle+','+req.body.departmentId+','+req.body.contractType_id+','+req.body.wageAmount+',"'+req.body.advantage+'","'+req.body.trialFrom+'","'+req.body.trialTo+'","'+req.body.durationTo+'","'+req.body.durationFrom+'",'+req.body.work_schedule_id+',"'+req.body.notes+'",'+req.body.visaNo+','+req.body.workPermitNo+',"'+req.body.visaEpireDate+'","'+req.body.status_name+'")');
 
     connection.query('INSERT INTO `contract`(`reference`,`employee_id`,`job_tittle`,`department_id`,`contract_type`,`wage`,`advantages`,`trial_period_duration_from`,`trial_period_duration_to`,`duration_to`,`duration_from`,`working_schedule_id`,`notes`,`visa_no`,`work_permit_no`,`visa_expire_date`,`contract_status`) ' +
-        'VALUES ("'+req.body.referenceName+'",'+req.body.employeeId+','+req.body.jobTitleId+','+req.body.departmentId+','+req.body.contractType_id+','+req.body.wageAmount+',"'+req.body.advantage+'","'+req.body.trialFrom+'","'+req.body.trialTo+'","'+req.body.durationTo+'","'+req.body.durationFrom+'",'+req.body.work_schedule_id+',"'+req.body.notes+'",'+req.body.visaNo+','+req.body.workPermitNo+',"'+req.body.visaEpireDate+'","'+req.body.status_name+'")', function (error, results, fields) {
+        'VALUES ("'+req.body.referenceName+'",'+req.body.employeeId+','+req.body.jobTitle+','+req.body.departmentId+','+req.body.contractType_id+','+req.body.wageAmount+',"'+req.body.advantage+'","'+req.body.trialFrom+'","'+req.body.trialTo+'","'+req.body.durationTo+'","'+req.body.durationFrom+'",'+req.body.work_schedule_id+',"'+req.body.notes+'",'+req.body.visaNo+','+req.body.workPermitNo+',"'+req.body.visaEpireDate+'","'+req.body.status_name+'")', function (error, results, fields) {
         if (error) {
             res.json({"status": "failed", "message": error.message});
         }
@@ -439,6 +441,9 @@ router.post('/EditContract', function (req, res, next) {
     console.log("Inside service  EditContract !!!!!!!");
     if(!req.body.jobTitleId){
         req.body.jobTitleId = null;
+    }
+    if(!req.body.employeeId){
+        req.body.employeeId = null;
     }
     if(!req.body.departmentId){
         req.body.departmentId = null;
@@ -465,8 +470,8 @@ router.post('/EditContract', function (req, res, next) {
     if(!req.body.advantage){
         req.body.advantage = null;
     }
-    if(!req.body.status_name){
-        req.body.status_name = null;
+    if(!req.body.contract_status){
+        req.body.contract_status = null;
     }
     //........................
     // if(!req.req.body.dates_value1){
@@ -500,12 +505,22 @@ router.post('/EditContract', function (req, res, next) {
     console.log("workPermitNo=  "+req.body.workPermitNo);
     console.log("visaEpireDate=  "+req.body.visaEpireDate);
     console.log("work_schedule_id=  "+req.body.work_schedule_id);
-    console.log("contract_status_id=  "+req.body.status_name);
+    console.log("contract_status=  "+req.body.contract_status);
 
 
-    console.log('UPDATE `contract` SET `reference` ="'+req.body.referenceName+'" ,`employee_id`='+req.body.employeeId+',`job_tittle`="'+req.body.jobTitle+'",`department_id`='+req.body.departmentId+',`contract_type`='+req.body.contractType_id+',`wage`='+req.body.wageAmount+',`advantages`="'+req.body.advantage+'",`trial_period_duration_from`="'+req.body.trialFrom+'",`trial_period_duration_to`="'+req.body.trialTo+'",`duration_to`="'+req.body.durationTo+'",`duration_from`="'+req.body.durationFrom+'",`working_schedule_id`='+req.body.work_schedule_id+',`notes`="'+req.body.notes+'",`visa_no`='+req.body.visaNo+',`work_permit_no`='+req.body.workPermitNo+',`visa_expire_date`="'+req.body.visaEpireDate+'",`contract_status_id`='+req.body.status_name+' WHERE `contract`.`id` = '+req.body.id+'  ');
+    console.log('UPDATE `contract` SET `reference` ="'+req.body.referenceName+'" ,`employee_id`='+req.body.employeeId+',`job_tittle`='+req.body.jobTitleId+',`department_id`='+req.body.departmentId+',`contract_type`='+req.body.contractType_id+',`wage`='+req.body.wageAmount+',`advantages`="'+req.body.advantage+'",`trial_period_duration_from`="'+req.body.trialFrom+'",`trial_period_duration_to`="'+req.body.trialTo+'",`duration_to`="'+req.body.durationTo+'",`duration_from`="'+req.body.durationFrom+'",`working_schedule_id`='+req.body.work_schedule_id+',`notes`="'+req.body.notes+'",`visa_no`='+req.body.visaNo+',`work_permit_no`='+req.body.workPermitNo+',`visa_expire_date`="'+req.body.visaEpireDate+'",`contract_status`="'+req.body.contract_status+'" WHERE `contract`.`id` = '+req.body.id+'  ');
 
-    connection.query('UPDATE `contract` SET `reference` ="'+req.body.referenceName+'" ,`employee_id`='+req.body.employeeId+',`job_tittle`="'+req.body.jobTitle+'",`department_id`='+req.body.departmentId+',`contract_type`='+req.body.contractType_id+',`wage`='+req.body.wageAmount+',`advantages`="'+req.body.advantage+'",`trial_period_duration_from`="'+req.body.trialFrom+'",`trial_period_duration_to`="'+req.body.trialTo+'",`duration_to`="'+req.body.durationTo+'",`duration_from`="'+req.body.durationFrom+'",`working_schedule_id`='+req.body.work_schedule_id+',`notes`="'+req.body.notes+'",`visa_no`='+req.body.visaNo+',`work_permit_no`='+req.body.workPermitNo+',`visa_expire_date`="'+req.body.visaEpireDate+'",`contract_status_id`='+req.body.status_name+' WHERE `contract`.`id` = '+req.body.id+'  ' , function (error, results, fields) {
+    connection.query('UPDATE `contract` SET `reference` ="'+req.body.referenceName+'" ,`employee_id`='+req.body.employeeId+',`job_tittle`='+req.body.jobTitleId+',`department_id`='+req.body.departmentId+',`contract_type`='+req.body.contractType_id+',`wage`='+req.body.wageAmount+',`advantages`="'+req.body.advantage+'",`trial_period_duration_from`="'+req.body.trialFrom+'",`trial_period_duration_to`="'+req.body.trialTo+'",`duration_to`="'+req.body.durationTo+'",`duration_from`="'+req.body.durationFrom+'",`working_schedule_id`='+req.body.work_schedule_id+',`notes`="'+req.body.notes+'",`visa_no`='+req.body.visaNo+',`work_permit_no`='+req.body.workPermitNo+',`visa_expire_date`="'+req.body.visaEpireDate+'",`contract_status`="'+req.body.contract_status+'" WHERE `contract`.`id` = '+req.body.id+'  ' , function (error, results, fields) {
+        if (error) {
+            res.json({"status": "failed", "message": error.message});
+        }
+        console.log(results);
+    });
+
+});
+router.post('/editContractStatus', function (req, res, next) {
+    console.log('UPDATE `contract` SET `contract_status`="'+req.body.contract_status+'" WHERE `contract`.`id` = '+req.body.id+'  ');
+    connection.query('UPDATE `contract` SET `contract_status`="'+req.body.contract_status+'" WHERE `contract`.`id` = '+req.body.id+'  ' , function (error, results, fields) {
         if (error) {
             res.json({"status": "failed", "message": error.message});
         }
@@ -574,7 +589,7 @@ router.post('/fetchContactStatus', function (req, res, next) {
 
 router.post('/selectcontractinfo', function (req, res, next) {
 
-    connection.query('SELECT * FROM  `contract` WHERE id = "'+req.body.id+'"', function (error, results, fields) {
+    connection.query('SELECT contract.reference, contract.contract_status,contract.wage,contract.advantages,contract.trial_period_duration_from,contract.trial_period_duration_to,contract.duration_from,contract.duration_to,contract.notes,contract.visa_no,contract.work_permit_no,contract.visa_expire_date,employee.employeename,job_positions.job_tittle,department.name AS dept_name,employee_contract_type.name contract_name,working_schedule.name AS sche_name FROM contract LEFT JOIN employee ON contract.employee_id = employee.id LEFT JOIN\tjob_positions ON contract.job_tittle = job_positions.id LEFT JOIN department ON contract.department_id = department.id LEFT JOIN employee_contract_type ON contract.contract_type = employee_contract_type.id LEFT JOIN working_schedule ON contract.working_schedule_id = working_schedule.id WHERE contract.id = "'+req.body.id+'"', function (error, results, fields) {
         if (!error) {
             res.json({"status": "ok", "data": results});
         } else {
@@ -657,7 +672,8 @@ router.post('/selectemployeeinfoNotforForm', function (req, res, next) {
 
 });
 router.post('/selectemployeeinfoForFormNext', function (req, res, next) {
-    connection.query('SELECT * FROM employee WHERE id = ( SELECT MIN( id ) FROM employee WHERE (id >'+"'"+ req.body.id +"'" +')',function (error, results, fields) {
+    console.log('SELECT * FROM employee WHERE id = ( SELECT MIN( id ) FROM employee WHERE id >'+"'"+ req.body.id +"'" +')');
+    connection.query('SELECT * FROM employee WHERE id = ( SELECT MIN( id ) FROM employee WHERE id >'+"'"+ req.body.id +"'" +')',function (error, results, fields) {
         if (error) res.json({"status": "failed", "message": error.message});
         else{
             res.json({"status": "ok", "data": results});
@@ -667,11 +683,12 @@ router.post('/selectemployeeinfoForFormNext', function (req, res, next) {
 
 });
 router.post('/selectcontractinfoForFormNext', function (req, res, next) {
+    console.log('SELECT * FROM contract WHERE id = ( SELECT MIN( id ) FROM contract WHERE id >'+"'"+ req.body.id +"'" +')');
     connection.query('SELECT * FROM contract WHERE id = ( SELECT MIN( id ) FROM contract WHERE id >'+"'"+ req.body.id +"'" +')',function (error, results, fields) {
         if (error) res.json({"status": "failed", "message": error.message});
         else{
             res.json({"status": "ok", "data": results});
-
+            console.log(results);
         }
     });
 
@@ -679,7 +696,8 @@ router.post('/selectcontractinfoForFormNext', function (req, res, next) {
 
 
 router.post('/selectemployeeinfoForFormBack', function (req, res, next) {
-    connection.query('SELECT * FROM employee WHERE id = ( SELECT max( id ) FROM employee WHERE id <'+"'"+ req.body.id +"'" +')',function (error, results, fields) {
+    console.log('SELECT * FROM employee WHERE id = ( SELECT MAX( id ) FROM employee WHERE id <'+"'"+ req.body.id +"'" +')');
+    connection.query('SELECT * FROM employee WHERE id = ( SELECT MAX( id ) FROM employee WHERE id <'+"'"+ req.body.id +"'" +')',function (error, results, fields) {
         if (error) res.json({"status": "failed", "message": error.message});
         else{
             res.json({"status": "ok", "data": results});
@@ -706,20 +724,12 @@ router.post('/selectEmployeeInfoForDeptEmpFormNext', function (req, res, next) {
 });
 
 router.post('/selectcontractinfoForFormBack', function (req, res, next) {
-    //  console.log('SELECT e1.id AS ID, e1.employeename, e1.work_email,e1.work_phone,e1.work_mobile,e1.work_location,e1.identification_number,e1.passport_number,e1.gender,e1.maritial_status,e1.number_of_childern,e1.date_of_birth,e1.place_of_birth,e1.time_sheet_cost,e1.medical_exam,e1.company_vehicle,e1.home_work_distance,e1.badge_id,e1.pin,e1.manual_attandance,e1.statuss,e2.employeename AS empManager ,e3.employeename AS empCoach,contact.address AS workAddress, department.name AS deptName,job_positions.job_tittle,country.country_name,working_schedule.name as workingTime, employee_bank_account.account_number As bankAccNo,contact.address AS homeAddress,account.name AccName,user.username FROM employee e1 LEFT JOIN employee e2 ON e1.id = e2.employee_manager_id LEFT JOIN employee e3 ON e1.id = e3.coach_id LEFT JOIN contact ON e1.work_address_id = contact.id LEFT JOIN department ON e1.department_id = department.id LEFT JOIN job_positions ON e1.job_tittle = job_positions.id LEFT JOIN country ON e1.country_id = country.id LEFT JOIN working_schedule ON e1.working_time_id = working_schedule.id LEFT JOIN employee_bank_account ON e1.employee_bank_account_id = employee_bank_account.id LEFT JOIN account ON e1.account_id = account.id LEFT JOIN user ON e1.related_user_id = user.id WHERE e1.id = ( SELECT MAX( id ) FROM employee WHERE id <'+"'"+ req.body.id +"'" +')');
-    // connection.query('SELECT e1.id AS ID, e1.employeename, e1.work_email,e1.work_phone,e1.work_mobile,e1.work_location,e1.identification_number,e1.passport_number,e1.gender,e1.maritial_status,e1.number_of_childern,e1.date_of_birth,e1.place_of_birth,e1.time_sheet_cost,e1.medical_exam,e1.company_vehicle,e1.home_work_distance,e1.badge_id,e1.pin,e1.manual_attandance,e1.statuss,e2.employeename AS empManager ,e3.employeename AS empCoach,contact.address AS workAddress, department.name AS deptName,job_positions.job_tittle,country.country_name,working_schedule.name as workingTime, employee_bank_account.account_number As bankAccNo,contact.address AS homeAddress,account.name AccName,user.username FROM employee e1 LEFT JOIN employee e2 ON e1.id = e2.employee_manager_id LEFT JOIN employee e3 ON e1.id = e3.coach_id LEFT JOIN contact ON e1.work_address_id = contact.id LEFT JOIN department ON e1.department_id = department.id LEFT JOIN job_positions ON e1.job_tittle = job_positions.id LEFT JOIN country ON e1.country_id = country.id LEFT JOIN working_schedule ON e1.working_time_id = working_schedule.id LEFT JOIN employee_bank_account ON e1.employee_bank_account_id = employee_bank_account.id LEFT JOIN account ON e1.account_id = account.id LEFT JOIN user ON e1.related_user_id = user.id WHERE e1.id = ( SELECT MAX( id ) FROM employee WHERE id <'+"'"+ req.body.id +"'" +')', function (error, results, fields) {
-    //     if (!error) {
-    //         res.json({"status": "ok", "data": results});
-    //     } else {
-    //         //console.log("check");
-    //         res.json({"status": "failed", "message": error.message});
-    //     }
-    //     // console.log(results);
-    // });
+    console.log('SELECT * FROM contract WHERE id = ( SELECT max( id ) FROM contract WHERE id <'+"'"+ req.body.id +"'" +')');
     connection.query('SELECT * FROM contract WHERE id = ( SELECT max( id ) FROM contract WHERE id <'+"'"+ req.body.id +"'" +')',function (error, results, fields) {
         if (error) res.json({"status": "failed", "message": error.message});
         else{
             res.json({"status": "ok", "data": results});
+            console.log(results);
         }
     });
 
@@ -741,11 +751,9 @@ router.post('/selectdepartmentinfo', function (req, res, next) {
     });
 
 });
-
-//fetches employteename based on employeename
 router.post('/selectemployee', function (req, res, next) {
     console.log('SELECT * FROM  `employee` WHERE id = "'+req.body.id+'"');
-    connection.query('SELECT * FROM  `employee` ', function (error, results, fields) {
+    connection.query('SELECT * FROM  `employee` WHERE id = "'+req.body.id+'"', function (error, results, fields) {
         if (!error) {
             res.json({"status": "ok", "data": results});
         } else {
@@ -1272,7 +1280,7 @@ router.post('/fetchJobTitleAndDept', function (req, res, next) {
 
     console.log("Inside Service fetchJobTitleAndDept: employeeId  =  "+req.body.employeeId);
 
-    connection.query('SELECT job_positions.job_tittle, department.name FROM employee,job_positions,department where employee.id='+"'"+ req.body.employeeId +"'" +' AND employee.job_tittle = job_positions.id AND employee.department_id = department.id',function (error, results, fields) {
+    connection.query('SELECT job_tittle, department_id FROM employee where employee.id='+"'"+ req.body.employeeId +"'" +'',function (error, results, fields) {
         if (error) res.json({"status": "failed", "message": error.message});
          else{
              console.log(results);
@@ -1302,7 +1310,7 @@ router.post('/fetchContactInformationOfEmployee', function (req, res, next) {
 
     console.log("Inside Service fetchContactInformationOfEmployee: workingAddressId  =  "+req.body.workingAddressId);
 
-    connection.query('SELECT employee.work_mobile,employee.work_email,employee.work_phone FROM employee where employee.work_address_id='+"'"+ req.body.workingAddressId +"'" +' ',function (error, results, fields) {
+    connection.query('SELECT employee.work_mobile,employee.work_email,employee.work_phone, employee.work_location FROM employee where employee.work_address_id='+"'"+ req.body.workingAddressId +"'" +' ',function (error, results, fields) {
         if (error) res.json({"status": "failed", "message": error.message});
         else{
             console.log(results);
@@ -1340,7 +1348,8 @@ router.post('/selectdepartment', function (req, res, next) {
 
 });
 router.post('/selectjobtitles', function (req, res, next) {
-
+    console.log("Insile  selectjobtitles service !!!");
+    console.log("jobtitleId : "+req.body.id);
     connection.query('SELECT * FROM  `job_positions` WHERE id = "'+req.body.id+'"', function (error, results, fields) {
         if (!error) {
             res.json({"status": "ok", "data": results});
@@ -1473,6 +1482,21 @@ router.post('/deleteSelectedEmployee', function (req, res, next) {
     });
 
 });
+router.post('/deleteSelectedContract', function (req, res, next) {
+    console.log('DELETE  FROM  `contract` WHERE id = "'+req.body.id+'"');
+
+    connection.query('DELETE  FROM  `contract` WHERE id = "'+req.body.id+'"', function (error, results, fields) {
+        if (!error) {
+            res.json({"status": "ok", "data": results});
+        } else {
+
+            console.log(error.message);
+            res.json({"status": "failed", "message": error.message});
+        }
+        // console.log(results);
+    });
+
+});
 router.post('/deleteSelectedDepartment2', function (req, res, next) {
     console.log('DELETE  FROM  `department` WHERE id = "'+req.body.id+'"');
 
@@ -1505,12 +1529,27 @@ router.post('/deleteSelectedDepartment', function (req, res, next) {
 
 });
 
-router.post('/deleteEmployees', function (req, res, next) {
+router.post('/deleteContracts', function (req, res, next) {
 
     for (var i = 0; i < req.body.delete_items.length; ++i) {
         console.log(req.body.delete_items[i]);
         console.log('DELETE FROM `contract` WHERE id = "'+req.body.delete_items[i]+'"');
         connection.query('DELETE FROM `contract` WHERE id = "'+req.body.delete_items[i]+'"' , function (error, results, fields) {
+            if (error){
+                res.json({"status": "failed", "message": error.message});
+            }
+            // console.log(results);
+        });
+    }
+    console.log(req.body.delete_items);
+
+});
+router.post('/deleteEmployees', function (req, res, next) {
+
+    for (var i = 0; i < req.body.delete_items.length; ++i) {
+        console.log(req.body.delete_items[i]);
+        console.log('DELETE FROM `employee` WHERE id = "'+req.body.delete_items[i]+'"');
+        connection.query('DELETE FROM `employee` WHERE id = "'+req.body.delete_items[i]+'"' , function (error, results, fields) {
             if (error){
                 res.json({"status": "failed", "message": error.message});
             }

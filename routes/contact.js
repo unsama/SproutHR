@@ -25,7 +25,7 @@ var transporter = nodemailer.createTransport({
 });
 var mysql = require("mysql");
 var connection = mysql.createConnection({
-    host: "46.101.37.156",
+    host: "192.168.100.106",
     user: "sprout",
     password: "sprout12345",
     database: "sprout"

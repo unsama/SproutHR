@@ -2,8 +2,6 @@
 export default{
     created: function () {
         var self = this;
-
-
     },
     data(){
         return {

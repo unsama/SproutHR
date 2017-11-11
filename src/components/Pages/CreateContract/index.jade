@@ -4359,7 +4359,7 @@
     //                                    //.fa.fa-external-link.btn.btn-default.o_external_button(style='display: none;',data-toggle='modal', data-target='.bd-example-modal-lg1',draggable='false', tabindex='-1', type='button')
 
     DashboardController(v-bind:heading="nextactivity",v-bind:savedbtn='true',v-bind:discardbtn='true', v-bind:links="btnlinks",v-bind:searchbar='false',v-bind:num1='false',v-bind:num2='false',v-bind:firstbtn='false',v-bind:secondbtn='false',v-bind:thirdbtn='false',v-bind:fourthbtn='false',v-bind:fifthbtn='false')
-        .col-sm-6(style='padding:0px;' ,slot='heading')
+        .col-sm-6(style='padding:0px;' ,slot='job')
             h4.samodashheading(style="font-size: 18px;")  Contracts /  New
     .row
         .col-sm-12
@@ -4423,7 +4423,7 @@
                                             label.o_form_label(for='o_field_input_934')
                                                 | Job Title
                                         td(colspan='1', style='width: 100%;')
-                                            select.jobTitleDropdowm(v-model='jobTitleId')
+                                            select#o_field_input_934.jobTitleDropdowm(v-model='jobTitleId')
                                                 option(v-for='job in jobPositionsTable', v-bind:value='job.id')
                                                    | {{job.job_tittle}}
                                                 option
@@ -4436,7 +4436,7 @@
                                             label.o_form_label(for='o_field_input_935 ')
                                                 | Department
                                         td(colspan='1', style='width: 100%;')
-                                                select.deptDropDown(v-model='departmentId')
+                                                select#o_field_input_935.deptDropDown(v-model='departmentId')
                                                    option(v-for="dept in dept_table" v-bind:value='dept.id')
                                                       | {{dept.name}}
                                                    option

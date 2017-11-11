@@ -27,11 +27,12 @@ export default{
 
             $("#num01").click(function () {
 
-                self.psubmit();
+                self.ssubmit();
 
             });
             $("#num10").click(function () {
-                self.ssubmit();
+
+                self.psubmit();
             });
             self.btnlinks.editbtnlink ="/leaves/leaves_configuration_edit/"+self.$route.params.id
         })

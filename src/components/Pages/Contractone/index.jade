@@ -1,6 +1,6 @@
 .contractone
     DashboardController(v-bind:createbtn='true',v-bind:actionbtn='true',v-bind:editbtn='true',v-bind:num1='true',v-bind:deletebtn='true',v-bind:assignedtasks='true',v-bind:changepassword='true',v-bind:links='btnlinks',v-bind:heading='head',v-bind:Attachmentbtn='true',v-bind:duplicate="true")
-        .col-sm-6(style='padding:0px;' ,slot='heading')
+        .col-sm-6(style='padding:0px;' ,slot='job')
             h4.samodashheading(style="font-size: 18px;")  Contracts /  {{reference}}
         span.o_pager_value(slot='page') {{counter}}
             |  /
@@ -65,13 +65,14 @@
                                             label.o_form_label
                                                 | Employee
                                         td(colspan='1', style='width: 100%;')
-                                            a.o_form_uri.o_form_field.o_form_required(href='#') {{employeename}}
+                                            a.o_form_uri.o_form_field.o_form_required(href='#',v-model="employeeName",v-if="employeeName !== Null") {{employeeName}}
+                                            a.o_form_uri.o_form_field.o_form_required(href='#',v-model="employeeName",v-else)
                                     tr
                                         td.o_td_label(colspan='1')
                                             label.o_form_label
                                                 | Job Title
                                         td(colspan='1', style='width: 100%;')
-                                            a.o_form_uri.o_form_field.o_form_required(href='#') {{job_tittle}}
+                                            a.o_form_uri.o_form_field.o_form_required(href='#',v-model="jobTitleName") {{jobTitleName}}
                             table.o_group.o_inner_group.o_group_col_6
                                 tbody
                                     tr
@@ -79,14 +80,14 @@
                                             label.o_form_label
                                                 | Department
                                         td(colspan='1', style='width: 100%;')
-                                            a.o_form_uri.o_form_field(href='#') {{d_name}}
+                                            a.o_form_uri.o_form_field(href='#',v-model="deptName") {{deptName}}
                                     tr
                                         td.o_td_label(colspan='1')
                                             label.o_form_label
                                                 | Contract Type
                                         td(colspan='1', style='width: 100%;')
                                             router-link(to='EmpContracts')
-                                                a.o_form_uri.o_form_field.o_form_required(href='#') {{contractname}}
+                                                a.o_form_uri.o_form_field.o_form_required(href='#',v-model="contractname") {{contractname}}
                         .o_notebook
                             ul.nav.nav-tabs(role='tablist')
                                 li.active

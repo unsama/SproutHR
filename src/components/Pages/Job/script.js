@@ -9,6 +9,8 @@ export default{
         this.select();
         this.select1();
         this.select34();
+        this.select4();
+        this.select3();
         self.btnlinks.duplicatebtnlink ="/recruitment/jobduplicate/"+self.$route.params.id
         $(function () {
             $("#hide").click(function(){
@@ -94,6 +96,8 @@ export default{
             j: '',
             d: '',
             num: '',
+            num3: '',
+            num4: '',
             num1: '',
             gf: '',
             counter: 1,
@@ -124,6 +128,26 @@ export default{
                 console.log(res.body);
             },function(err){
 
+            });
+        },
+        select3: function () {
+            var self = this;
+            self.$http.post("/recruitment/abcsnum", {"id": self.$route.params.id}).then(function (res) {
+                var parentdata = res.body.data[0];
+                self.num3 = parentdata.count;
+                console.log(res.body)
+                console.log(self.num)
+            }, function (err) {
+            });
+        },
+        select4: function () {
+            var self = this;
+            self.$http.post("/recruitment/abcsnum3", {"id": self.$route.params.id}).then(function (res) {
+                var parentdata = res.body.data[0];
+                self.num4 = parentdata.count;
+                console.log(res.body)
+                console.log(self.num)
+            }, function (err) {
             });
         },
         select: function () {

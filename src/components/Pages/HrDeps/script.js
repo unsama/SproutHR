@@ -21,17 +21,14 @@ export default{
 
         $(function(){
             $("#num01").click(function () {
-                self.$route.params.id++;
                 self.nextsubmit();
-                //self.select3();
             });
             $("#num10").click(function () {
-                self.$route.params.id--;
                 self.backsubmit();
             });
             $("#delete").click(function () {
-                alert("calling delete operation!!!");
                 self.deleteEmplyee();
+                window.location.href = "/Employees/";
             });
 
             $("#leavesSummary").click(function () {
@@ -492,132 +489,10 @@ export default{
 
             });
         },
-        nextsubmit: function () {
-            var self = this;
-            self.$http.post("/Employees/selectemployeeinfoForFormNext", {"id": self.$route.params.id}).then(function (res) {
-                var parentdata = res.body.data[0];
-                self.$route.params.id = parentdata.id;
-                self.employeeName = parentdata.employeename;
-                self.workingAddressId = parentdata.workAddress;
-                self.workEmail = parentdata.work_email;
-                self.workPhone = parentdata.work_phone;
-                self.workMobile = parentdata.work_mobile;
-                self.workLocation = parentdata.work_location;
-                self.departmentId = parentdata.deptName;
-                self.jobtitleId = parentdata.job_tittle;
-                self.managerId = parentdata.employee_manager_id;
-                self.coachId = parentdata.coach_id;
-                self.countryId = parentdata.country_id;
-                self.workingTimeId = parentdata.working_time_id;
-                self.identificationNo = parentdata.identification_number;
-                self.passportNo = parentdata.passport_number;
-                self.BankAccountNumbersId = parentdata.employee_bank_account_id;
-                self.gender = parentdata.gender;
-                self.maritalStatus = parentdata.maritial_status;
-                self.noOfChildren = parentdata.number_of_childern;
-                self.homeAddressId = parentdata.home_address_id;
-                self.dateOfBirth = parentdata.date_of_birth;
-                self.placeOfBirth = parentdata.place_of_birth;
-                self.timeSheetCost = parentdata.time_sheet_cost;
-                self.accountId = parentdata.account_id;
-                self.medicalExam = parentdata.medical_exam;
-                self.companyVehicle = parentdata.company_vehicle;
-                self.homeWorkDistance = parentdata.home_work_distance;
-                self.relatedUserId = parentdata.related_user_id;
-                self.badgeId = parentdata.badge_id;
-                self.pin = parentdata.pin;
-                self.manualAttendance = parentdata.manual_attandance.data[0];
-
-                self.$http.post("/Employees/selectworkaddress", {"id":self.workingAddressId}).then(function (res) {
-                    var datas = res.body.data[0];
-                    self.workingAddress = datas.address;
-                    self.$http.post("/Employees/selectdepartment", {"id":self.departmentId}).then(function (res) {
-                        var dept = res.body.data[0];
-                        self.departmentName = dept.name;
-                        console.log(dept.name);
-                        self.$http.post("/Employees/selectjobtitles", {"id":self.jobtitleId}).then(function (res) {
-                            var dept = res.body.data[0];
-                            self.jobTitle = dept.job_tittle;
-                            console.log(dept.job_tittle);
-                            self.$http.post("/Employees/selectmanager", {"id":self.managerId}).then(function (res) {
-                                var dept = res.body.data[0];
-                                self.emplyeeManagerName = dept.employeename;
-                                console.log(dept.employeename);
-                                self.$http.post("/Employees/selectcoach", {"id":self.coachId}).then(function (res) {
-                                    var dept = res.body.data[0];
-                                    self.coachName = dept.employeename;
-                                    console.log(dept.employeename);
-                                    self.$http.post("/Employees/selectworkschedule", {"id":self.workingTimeId}).then(function (res) {
-                                        var workSchedule = res.body.data[0];
-                                        self.wokingTimeName = workSchedule.name;
-                                        console.log(workSchedule.name );
-                                        self.$http.post("/Employees/selectcountry", {"id":self.countryId}).then(function (res) {
-                                            var workSchedule = res.body.data[0];
-                                            self.countryname = workSchedule.country_name;
-                                            console.log(workSchedule.country_name );
-                                            self.$http.post("/Employees/selectbankaccountNo", {"id":self.BankAccountNumbersId}).then(function (res) {
-                                                var workSchedule = res.body.data[0];
-                                                self.bankAccNo = workSchedule.account_number;
-                                                console.log(workSchedule.account_number );
-                                                self.$http.post("/Employees/selecthomeAddress", {"id":self.homeAddressId}).then(function (res) {
-                                                    var workSchedule = res.body.data[0];
-                                                    self.homeAddress = workSchedule.address;
-                                                    console.log(workSchedule.address );
-                                                    self.$http.post("/Employees/selectaccount", {"id":self.accountId}).then(function (res) {
-                                                        var workSchedule = res.body.data[0];
-                                                        self.accountname = workSchedule.name;
-                                                        console.log(workSchedule.name );
-                                                        self.$http.post("/Employees/selectrelateduser", {"id":self.relatedUserId}).then(function (res) {
-                                                            var workSchedule = res.body.data[0];
-                                                            self.relatedUser = workSchedule.username;
-                                                            console.log(workSchedule.username );
-
-                                                        }, function (err) {
-
-                                                        });
-
-
-                                                    }, function (err) {
-
-                                                    });
-                                                }, function (err) {
-
-                                                });
-                                            }, function (err) {
-
-                                            });
-                                        }, function (err) {
-
-                                        });
-                                    }, function (err) {
-
-                                    });
-                                }, function (err) {
-
-                                });
-                            }, function (err) {
-
-                            });
-                        }, function (err) {
-
-                        });
-
-                    }, function (err) {
-
-                    });
-                }, function (err) {
-
-                });
-
-            }, function (err) {
-
-            });
-        },
         deleteEmplyee: function () {
             var self = this;
             self.$http.post("/Employees/deleteSelectedEmployee", {"id": self.$route.params.id }).then(function(res){
                 alert("Are you sure you want to delete the employee???");
-                console.log("this is the id of employee to be deleted =  "+self.$route.params.id);
             },function(err){
                 //alert(err);
             });

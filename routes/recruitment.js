@@ -478,6 +478,15 @@ router.post('/abcsnum', function (req, res, next) {
         }
     });
 });
+router.post('/abcsnum3', function (req, res, next) {
+    console.log('SELECT count(*) AS count  FROM applications   where  job_positions_id='+req.body.id+'');
+    connection.query('SELECT count(*) AS count  FROM applications   where  job_positions_id='+req.body.id+'', function (error, results, fields) {
+        if (error) res.json({"status": "failed", "message": error.message});
+        else{
+            res.json({"status": "ok", "data": results});
+        }
+    });
+});
 router.post('/abcsnext', function (req, res, next) {
     connection.query('SELECT application_documents.application_id, application_documents.document_url, application_documents.type, applications.application_tittle FROM application_documents INNER JOIN applications ON application_documents.application_id = applications.id  where  job_positions_id='+"'"+ req.body.id +"'" +' ORDER BY application_documents.application_id DESC limit 10 OFFSET '+""+ req.body.counter +"" +'', function (error, results, fields) {
         if (error) res.json({"status": "failed", "message": error.message});
@@ -494,8 +503,9 @@ router.post('/abcsback', function (req, res, next) {
         }
     });
 });
-router.post('/applicationsonjob', function (req, res, next) {
-    connection.query('SELECT * from applications', function (error, results, fields) {
+router.post('/applicationsonjob2', function (req, res, next) {
+    console.log('SELECT * from applications where  job_positions_id='+req.body.id+'');
+    connection.query('SELECT * from applications where  job_positions_id='+req.body.id+'', function (error, results, fields) {
         if (error) res.json({"status": "failed", "message": error.message});
         else{
             res.json({"status": "ok", "data": results});
@@ -1468,6 +1478,13 @@ router.post('/delete', function (req, res, next) {
 });
 router.post('/deletes', function (req, res, next) {
     connection.query('DELETE  from department where id='+"'"+ req.body.id +"'" +'', function (error, results, fields) {
+        if (error) {
+            res.json({"status": "failed", "message": error.message});
+        }
+    });
+});
+router.post('/delete2', function (req, res, next) {
+    connection.query('DELETE  from applications where id='+"'"+ req.body.id +"'" +'', function (error, results, fields) {
         if (error) {
             res.json({"status": "failed", "message": error.message});
         }

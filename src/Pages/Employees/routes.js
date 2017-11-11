@@ -107,7 +107,7 @@ import CreateDepone from "./../../components/Pages/CreateDepone/CreateDepone.vue
 import Badge from "./../../components/Pages/Badge/Badge.vue"
 import TypeContract from "./../../components/Pages/TypeContract/TypeContract.vue"
 import EditContract from "./../../components/Pages/EditContract/EditContract.vue"
-import ReqSettingEdit from "./../../components/Pages/ReqSettingEdit/ReqSettingEdit.vue"
+import deptSettingEdit from "../../components/Pages/deptSettingEdit/deptSettingEdit.vue"
 import ReqDep from "./../../components/Pages/ReqDep/ReqDep.vue"
 import DuplicateContract from "./../../components/Pages/DuplicateContract/DuplicateContract.vue"
 import Test from "./../../components/Pages/Test/Test.vue"
@@ -124,7 +124,9 @@ import DuplicateLeaveRequest from "./../../components/Pages/DuplicateLeaveReques
 import AllocationRequestEdit from "./../../components/Pages/AllocationRequestEdit/AllocationRequestEdit.vue"
 import AllocationRequestDuplicate from "../../components/Pages/AllocationRequestDuplicate/AllocationRequestDuplicate.vue"
 import department_leave_create from "./../../components/Pages/department_leave_create/department_leave_create.vue"
-
+import DepttEmpTab from "./../../components/Pages/DepttEmpTab/DepttEmpTab.vue"
+import DeptEmpShow from "./../../components/Pages/DeptEmpShow/DeptEmpShow.vue"
+import deptEmpEdit from "./../../components/Pages/deptEmpEdit/deptEmpEdit.vue"
 
 
 
@@ -215,7 +217,7 @@ const routes = [
                     { path: 'DepExps', component: DepExps },
                     { path: 'Expsimport', component: Expsimport },
                     { path: 'DepSetting', component: DepSetting },
-                    { path: 'DepSettingEdit', component: DepSettingEdit },
+                    { path: 'DepSettingEdit/:id', component: DepSettingEdit },
                     { path: 'DepSettingcreate', component: DepSettingcreate },
                     { path: 'NewApp', component: NewApp },
                     { path: 'TableDep', component: TableDep },
@@ -244,7 +246,7 @@ const routes = [
                     { path: 'CreateDepone', component: CreateDepone },
                     { path: 'TypeContract', component: TypeContract },
                     { path: 'EditContract/:id', component: EditContract },
-                    { path: 'ReqSettingEdit/:id', component: ReqSettingEdit },
+                    { path: 'deptSettingEdit/:id', component: deptSettingEdit },
                     { path: 'ReqDep/:id', component: ReqDep },
                     { path: 'DepartmentDuplicate/:id', component: DepartmentDuplicate },
                     { path: 'hierarchy/:id', component: hierarchy },
@@ -256,6 +258,11 @@ const routes = [
                     { path: 'AllocationRequestEdit/:id', component: AllocationRequestEdit },
                     { path: 'AllocationRequestDuplicate/:id', component: AllocationRequestDuplicate },
                     { path: 'department_leave_create', component: department_leave_create },
+                    { path: 'DepttEmpTab/:id', component: DepttEmpTab },
+                    { path: 'DeptEmpShow/:id', component: DeptEmpShow },
+                    { path: 'deptEmpEdit/:id', component: deptEmpEdit },
+
+
 
 
                 ]

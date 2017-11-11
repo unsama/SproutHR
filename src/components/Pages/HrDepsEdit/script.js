@@ -41,7 +41,6 @@ export default{
             });
 
             $("#save").click(function () {
-                alert("button is working!!!")
                 var r = confirm("Are you sure you want to  Edit the employee ");
                 if (r)
                 {
@@ -838,20 +837,7 @@ export default{
             });
         },
         submit: function () {
-            alert("m here jst inside the submit() body.");
             var self = this;
-            alert("workingAddressId =  "+self.workingAddressId);
-            alert("bith date =  "+self.dates_value6);
-            alert("medical exam date =  "+self.dates_value7);
-            // alert("contractType_id =   "+self.contractType_id);
-            // alert("trial_period_duration_from =    "+self.dates_value1);
-            // alert("trial_period_duration_to =    "+self.dates_value2);
-            // alert("duration_from =    "+self.dates_value3);
-            // alert("duration_from =    "+self.dates_value4);
-            // alert("work_schedule_id =    "+self.work_schedule_id);
-            // alert("jobTitle =    "+self.job);
-            //alert("department id =    "+self.abc);
-
             self.$http.post("/Employees/EditEmployee", {
                 "id": self.$route.params.id,
                 "employeeName": self.employeeName,
@@ -891,9 +877,6 @@ export default{
             }, function (err) {
                 //alert(err);
             });
-            // alert("trial_period_duration_from = "+self.trial_period_duration_from);
-            alert("This is the last statement in submit() function body!!!");
-
 
             self.$http.post("/employees/addemp", {
                 "dep_name": self.name, "p_dep_id": self.parent_dept_id, "mgr_id": self.identification_number

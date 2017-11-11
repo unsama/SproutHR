@@ -14,7 +14,7 @@ export default {
             // });
 
             $("#save").click(function () {
-                if(self.type=="")
+                if(self.departName=="")
                 {
                     $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
                         $("#success-alert").slideUp(500);

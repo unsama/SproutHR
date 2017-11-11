@@ -22,15 +22,21 @@ export default{
 
 
         $(function() {
+            self.$watch('jobTitleId', function (val) {
+                self.jobPositionsTable.forEach(function (row) {
 
-            self.$watch('managerId', function (val) {
-                self.managers.forEach(function (row) {
-                    if (row.employeename === val) {
-                        self.managerId = row.id;
+                    if (row.job_tittle === val) {
+                        self.jobTitleId = row.id;
                     }
                 });
             });
-
+            self.$watch('departmentId', function (val) {
+                self.dept_table.forEach(function (row) {
+                    if (row.name === val) {
+                        self.departmentId = row.id;
+                    }
+                });
+            });
             $(".deptdropdown").on('change',function() {
                 var value = $(this).val();
                 if (value == "Create and Edit...") {
@@ -177,7 +183,7 @@ export default{
             //
             // });//#saveclose
             $("#save").click(function () {
-                if(self.type=="")
+                if(self.referenceName==""|| self.employeeId=="")
                 {
                     $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
                         $("#success-alert").slideUp(500);
@@ -439,7 +445,6 @@ export default{
             visaNo:'',
             workPermitNo:'',
             departnents:'',
-            departmentId:'',
             departName:'',
             parentDeptId:'',
 
@@ -559,9 +564,10 @@ export default{
 
             }).then(function(res){
                 var jobAndDept = res.body.data[0];
+                console.log("jobAndDept");
                 console.log(jobAndDept);
-                self.jobTitle = jobAndDept.job_tittle;
-                self.departmentId = jobAndDept.name;
+                self.jobTitleId = jobAndDept.job_tittle;
+                self.departmentId = jobAndDept.department_id;
             },function(err){
             });
             self.$http.post("/Employees/fetchContactStatus", {"statname": self.name}).then(function(res){self.status_name_drop =res.body.result;},function(err){
@@ -703,6 +709,7 @@ export default{
 
         submit: function () {
             var self = this;
+            alert("self.departmentId  : "+self.departmentId);
             self.$http.post("/Employees/addNewContract", {
                 "referenceName": self.referenceName,
                 "employeeId":self.employeeId,

@@ -16,8 +16,8 @@ export default{
         document.title = this.title;
         self.select();
         self.select1();
-
         $(function(){
+            self.btnlinks.createbtnlink ="/recruitment/hremployeecreate/"+self.$route.params.id;
             self.btnlinks.firstbtnlink ="/recruitment/jobemployee/"+self.$route.params.id
             self.btnlinks.printBadgebtnlink = "/attendance/PrintBadge/"+self.$route.params.id;
             $("#action").hide();
@@ -34,12 +34,11 @@ export default{
                     $("#action").hide();
                     $(".printbtnDrop").hide();
                 }
-                // alert("check it");
             });
-
             $("#leavesSummary").click(function () {
                 $(".bd-example-modal-lg1").modal('show');
             });
+
 
             // $("#num01").click(function () {
             //     self.ssubmit();
@@ -71,6 +70,7 @@ export default{
         });
 
 
+
         // $(function(){
         //     $('.samobuttopcontroller2').off('click');
         //     $('.samobuttopcontroller2').on('click', function () {
@@ -89,12 +89,11 @@ export default{
     data(){
         return {
             btnlinks: {
-                createbtnlink: "#/app/Employees/TableHrcreate",
+                createbtnlink: "",
                 editbtnlink:"#/app/Employees/TableHrEdit",
                 importbtnlink:"#/app/Employees/HrImport",
                 firstbtnlink: "",
                 secondbtnlink: "",
-
                 subordinatebtnlink:"",
                 deletebtnlink:"",
                 deletedropbtnlink:"",
@@ -188,7 +187,7 @@ export default{
                                 // val.job_tittle,
                                 // val.employeename,
                             ],
-                            "url": "/attendance/hr/"+val.ID,
+                            "url": "/recruitment/Hremployeeinfo/"+val.id,
                         });
                     });
                 }
@@ -218,7 +217,7 @@ export default{
                                 // val.job_tittle,
                                 // val.employeename,
                             ],
-                            "url": "/attendance/hr/"+val.ID,
+                            "url": "/recruitment/Hremployeeinfo/"+val.id,
                         });
                     });
                 }
@@ -249,7 +248,7 @@ export default{
                                 // val.job_tittle,
                                 // val.employeename,
                             ],
-                            "url": "/attendance/hr/"+val.ID,
+                            "url": "/recruitment/Hremployeeinfo/"+val.id,
                         });
                     });
                 }

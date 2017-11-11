@@ -20,10 +20,12 @@ export default{
 
         $(function(){
             self.btnlinks.printBadgebtnlink = "/Employees/Badge/"+self.$route.params.id;
-
+            $("#export").click(function () {
+                self.btnlinks.subordinatebtnlink = "/Employees/hierarchy/"+self.$route.params.id;
+            });
 
             $("#action").hide();
-            $(".printbtnDrop").hide();
+            $(".printbtnDrop").hide()
 
             $(".checkBoxClass").click(function () {
                 if($(this).prop('checked')){
@@ -56,41 +58,25 @@ export default{
                 $(this).text(oldtext)
             });
             $("#delete").click(function () {
-                alert("inside delete");
                 $(".checkBoxClass:checked").each(function(){
                     del.push($(this).val());
                 });
-                console.log(del);
                 self.delete(del);
                 self.select();
-                alert(del);
+                window.location.href = "/employees/TableHr";
             });
+
         });
 
-
-        // $(function(){
-        //     $('.samobuttopcontroller2').off('click');
-        //     $('.samobuttopcontroller2').on('click', function () {
-        //         let check = $('#createform').css("display");
-        //         if(check == "none"){
-        //             $('#createform').show();
-        //             $('#createedit').hide();
-        //         }else{
-        //             $('#createform').hide();
-        //             $('#createedit').show();
-        //         }
-        //
-        //     });
-        // });
     },
     data(){
         return {
             btnlinks: {
-                createbtnlink: "#/app/Employees/TableHrcreate",
+                createbtnlink: "/employees/CreateDepone",
                 editbtnlink:"#/app/Employees/TableHrEdit",
 
                 importbtnlink:"#/app/Employees/HrImport",
-                firstbtnlink: "/Employees/Gridtwo",
+                firstbtnlink: "/Employees/",
                 secondbtnlink: "/Employees/TableHr",
 
                 subordinatebtnlink:"",
@@ -262,7 +248,6 @@ export default{
         },
         delete: function (del) {
             var self = this;
-            //alert(self.current_company+ " ");
             console.log("a"+del);
             self.$http.post("/Employees/deleteEmployees", {"delete_items": del}).then(function(res){
                 if(res){
@@ -270,8 +255,6 @@ export default{
                 }else {
                     alert("something went wrong");
                 }
-
-                //console.log(res.body);
             },function(err){
                 //alert(err);
             });

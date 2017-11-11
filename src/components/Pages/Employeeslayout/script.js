@@ -10,7 +10,7 @@ export default{
         return{
             title: 'Employees',
             sidebarData: {
-                Employees: "/employees/Gridtwo",
+                Employees: "/employees/",
                 Contracts: "/employees/CreateDep",
                 Departments: "/employees/EmpDash",
 

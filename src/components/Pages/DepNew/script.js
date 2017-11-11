@@ -1,160 +1,563 @@
-
-import Emptyform from "./../../partials/Emptyform/Emptyform.vue"
-import Tabs from "./../../partials/Tabs/Tabs.vue"
-import ModelDescription from "./../../partials/ModelDescription/ModelDescription.vue"
-import Componame from "./../../partials/Componame/Componame.vue"
-import Tableview from "./../../partials/Tableview/Tableview.vue"
 import DashboardController from "./../../partials/DashboardController/DashboardController.vue"
-import Editing from "./../../partials/Editing/Editing.vue"
+import Request_Quotation_Lower from "./../../partials/Request_quotation_lower/Request_quotation_lower.vue"
 import Modal from "./../../partials/Modal/Modal.vue"
-import Request_quotation_lower from "./../../partials/Request_quotation_lower/Request_quotation_lower.vue"
-import Message from "./../../partials/Message/Message.vue"
-import EmpContract from "./../../partials/EmpContract/EmpContract.vue"
+import Editing from "./../../partials/Editing/Editing.vue"
+import TableMain from "./../../partials/TableMain/TableMain.vue"
 
-export default{
+export default {
     created: function () {
+        var self = this;
+        self.select();
 
-        $(function(){
-            $(".colorbg").on("click", function (e) {
-                e.preventDefault();
-                var col = $(this).css("backgroundColor");
-                var anch = $(this).parent().parent().parent().parent().parent().find("a:first-child");
-                anch.css({"backgroundColor":col});
+        $(function () {
+            $("select#o_field_input_600 option").each(function(){
+                if($(this).val()==self.$route.params.id){
+                    $(this).attr("selected","selected");
+                }
             });
-            $(document).ready(function(){
-                $(".btn.btn-success.b").click(function(){
-                    $("#panel").slideToggle("slow");
-                });
+            $("select#o_field_input_600 option").each(function(){
+                if($(this).val()==self.department_id){
+                    $(this).attr("selected","selected");
+                }
+            });
+            $("#saveclose").click(function () {
+                alert("saveclose");
+                self.updateDepart();
+            });
+            $("select#o_field_input_602 option").each(function(){
+                if($(this).val()==self.manager_id){
+                    $(this).attr("selected","selected");
+                }
+            });
+            $("#saveclose").click(function () {
+                alert("saveclose");
+                self.updateDepart();
             });
 
-            $('.samobuttopcontroller2').off('click');
-            $('.samobuttopcontroller2').on('click', function () {
-                let check = $('#edit1').css("display");
-                if(check == "none"){
-                    $('#edit1').show();
-                    $('#main1').hide();
-                }else{
-                    $('#edit1').hide();
-                    $('#main1').show();
+            // $("#save").click(function () {asdasd
+            //     self.submit();
+            //     window.location.href = "/employees/Gridtwo";
+            //     //self.$route.params.id /employees/Gridtwo
+            // });
+            $("#save").click(function () {
+                if(self.employeeName=="")
+                {
+                    $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+                        $("#success-alert").slideUp(500);
+
+
+                    });
+
+                }
+                else{
+                    self.submit();
+                    window.location.href = "/employees/NewDep/"+self.$route.params.id;
                 }
 
             });
+            self.btnlinks.discardbtnlink = "/employees/NewDep/"+self.$route.params.id;
 
-            document.title = this.title;
-            var oldtext;
-            $('.note.btn.btn-primary').hover(function(){
-                oldtext = $(this).text();
-                $(this).text("Unfollow");
-            }, function(){
-                $(this).text(oldtext)
+            // $("#save").click(function () {
+            //     var r = confirm("Are you sure you want to  Save the employee ");
+            //     if (r)
+            //     {
+            //         self.submit();
+            //         window.location.href = "/Employees/HrDeps/"+self.$route.params.id;
+            //
+            //     }
+            //     else
+            //     {
+            //     }
+            // });
+
+
+            self.$watch('managerId', function (val) {
+                self.managers.forEach(function (row) {
+                    if (row.employeename === val) {
+                        self.managerId = row.id;
+                    }
+                });
             });
-            $(document).ready(function () {
-                var d = new Date();
-                var hour    = d.getHours();
-                var minute  = d.getMinutes();
-                var second  = d.getSeconds();
-                var time = hour+":"+minute+":"+second;
-                $("#demo").html(time);
+
+            $(".deptdropdown").on('change',function() {
+                var value = $(this).val();
+                if (value == "Create and Edit...") {
+                    $(".bd-example-modal-lg1").modal('show');
+                }
             });
+            $(".jobTitledropdown").on('change',function() {
+                var value = $(this).val();
+                if (value == "Create and Edit...") {
+                    $(".bd-example-modal-lg3").modal('show');
+                }
+            });
+            $(".bankAccDropdown").on('change',function() {
+                var value = $(this).val();
+                if (value == "Create and Edit...") {
+                    $(".bd-example-modal-lg62").modal('show');
+                }
+            });
+            $(".mgrDropdown").on('change',function() {
+                var value = $(this).val();
+                if (value == "Create and Edit...") {
+                    $(".bd-example-modal-lg61").modal('show');
+                }
+            });
+            $(".coachDropdown").on('change',function() {
+                var value = $(this).val();
+                if (value == "Create and Edit...") {
+                    $(".bd-example-modal-lg61").modal('show');
+                }
+            });
+            $(".workingAddressDropdown").on('change',function() {
+                var value = $(this).val();
+                if (value == "Create and Edit...") {
+                    $(".bd-example-modal-lg6").modal('show');
+                }
+            });
+            $(".homeAddressDropdown").on('change',function() {
+                var value = $(this).val();
+                if (value == "Create and Edit...") {
+                    $(".bd-example-modal-lg6").modal('show');
+                }
+            });
+            $(".relatedUserDropdown").on('change',function() {
+                var value = $(this).val();
+                if (value == "Create and Edit...") {
+                    $(".bd-example-modal-lg5").modal('show');
+                }
+            });
+            $(".accDropdown").on('change',function() {
+                var value = $(this).val();
+                if (value == "Create and Edit...") {
+                    $(".bd-example-modal-lg10").modal('show');
+                }
+            });
+            $(".workingTimeDropdown").on('change',function() {
+                var value = $(this).val();
+                if (value == "Create and Edit...") {
+                    $(".bd-example-modal-lg100").modal('show');
+                }
+            });
+
+
+
+            $('#datepicker6').datepicker({
+                format: "dd.mm.yyyy",
+                todayBtn: "linked",
+                language: "de",
+                daysOfWeekDisabled: "0,6",
+                daysOfWeekHighlighted: "4",
+                todayHighlight: true,
+            }).on('changeDate',showTestDate);
+            $('#datepicker7').datepicker({
+                format: "dd.mm.yyyy",
+                todayBtn: "linked",
+                language: "de",
+                daysOfWeekDisabled: "0,6",
+                daysOfWeekHighlighted: "4",
+                todayHighlight: true,
+            }).on('changeDate',showTestDate);
+
+            function showTestDate() {
+                var value = $('#datepicker6').datepicker('getFormattedDate');
+                self.dates_value6 = value;
+                var value1 = $('#datepicker7').datepicker('getFormattedDate');
+                self.dates_value7 = value1;
+
+            };
+
+
         });
-
     },
-    data(){
+    data() {
         return {
-            r: true,
-            t:false,
-            k:false,
-            y:false,
-            p:true,
-            f:false,
-            l:false,
+            type:'',
+            managers1:'',
+            managerId1:'',
+            departnents1:'',
+            departmentId1:'',
+            departName: '',
+            department_id: '',
 
-            u:false,
-            counter: 0,
-            m: 'Log an internal note which will not be sent to followers, but which can be read by users accessing this document.',
-            message: 'To: Followers of "PO00007: 637.50 Rs."',
-            v: false,
-            nextactivity: "Departments/Employees/New",
+
+            dates_value6:'', //birthDate
+            dates_value7:'',//mediacalExamDate
+            employeeName: '',
+            workingAddresses: '',
+            workingAddressId: '',
+            departnents: '',
+            departmentId: '',
+            jobTitles: '',
+            jobtitleId: '',
+            managers: '',
+            managerId: '',
+            coachs: '',
+            coachId: '',
+            workingTimes: '',
+            workingTimeId: '',
+            workMobile: '',
+            workLocation: '',
+            workEmail: '',
+            workPhone: '',
+            identificationNo: '',
+            passportNo: '',
+            parentdata: '',
+            manager_id: '',
+
+
+            countries: '',
+            countryId: '',
+            BankAccountNumbers: '',
+            BankAccountNumbersId: '',
+            homeAddresses: '',
+            homeAddressId: '',
+            gender: '',
+            maritalStatus: '',
+            noOfChildren: '',
+            birthDate: '',
+            placeOfBirth: '',
+            timeSheetCost: '',
+
+            accounts: '',
+            accountId: '',
+            companies: '',
+            companyId: '',
+            relatedUsers: '',
+            relatedUserId: '',
+            badgeId: '',
+            pin: '',
+            manualAttendance: '',
+            medicalExamDate: '',
+            companyVehicle: '',
+            HomeDistance: '',
+            status: '',
+
+            nextactivity: "Next ActivitiesNeed / to customize the solution",
+            modal2: "Open: Department",
+            modal3: "Open: Job Title",
+            modal4: "Open: Currency",
+            modal5: "Open: Recruitment Responsible",
+            modal6: "Open: Job Location",
+            modal7: "Create: Contacts",
+            modal8: "Open: Title",
+            modal9: "Open: Account Receivable",
+            modal10: "Open: Account Payable",
+            modal11: "Open: Working Address",
+            modal12: "Warning",
+            modal50: "Open:Manager",
+            modal60: "Open:Manager",
+            modal61: "Open:Manager",
             btnlinks: {
-                createbtnlink:"#/app/attendance/Createemp",
-                importbtnlink:"#/app/imported",
-                discardbtnlink: "#/app/Employees/NewDep",
-                savebtnlink:"#/app/Employees/Contractone",
+                createbtnlink: "#/app/sales/salescustomeredit",
+                savebtnlink: "",
+                discardbtnlink: "",
+                importbtnlink: "#/app/imported"
             },
+
             tableheader: [
-                "Reference",
-                "Destination Location Zone",
-                "Partner",
-                "Schduled Date",
-                "Source Document",
-                "Back Order Of",
-                "Status",
+                " Name",
+                " Day of Week",
+                " Work from",
+                " Work to",
+                " Starting Date",
+                " End Date",
+
 
             ],
             tabledata: {
                 "row": {
                     "data": [
-                        "Chic/In/0004",
-                        "Chic/Stock",
-                        "AsusTek",
-                        "01/28/2017 19:23:00",
-                        "Chicago Warehouse",
-                        "Proposition",
-                        "Available",
-
+                        "contract",
+                        "Hassan",
+                        "Employee",
+                        "Developer",
+                        "3/1/12",
+                        "3/1/12",
                     ],
-                    "url": "/#/app/sales/request_quotation_inner"
+
 
                 },
-                "row1": {
+
+            },
+            tablefooter:[
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+
+
+
+            ],
+            tableheader2: [
+                " Reason",
+                " Resource",
+                " Working Time",
+                " Start Date",
+                " End Date",
+
+
+            ],
+            tabledata2: {
+                "row": {
                     "data": [
-                        "Chic/In/0004",
-                        "Chic/Stock",
-                        "AsusTek",
-                        "01/28/2017 19:23:00",
-                        "Chicago Warehouse",
-                        "Proposition",
-                        "Available",
-
+                        "contract",
+                        "Hassan",
+                        "Employee",
+                        "3/1/12",
+                        "3/1/12",
                     ],
-                    "url": "/#/app/sales/request_quotation_inner"
 
-                },
-                "row2": {
-                    "data": [
-                        "Chic/In/0004",
-                        "Chic/Stock",
-                        "AsusTek",
-                        "01/28/2017 19:23:00",
-                        "Chicago Warehouse",
-                        "Proposition",
-                        "Available",
-
-                    ],
-                    "url": "/#/app/sales/request_quotation_inner"
 
                 },
 
-            }
+            },
+            tablefooter2:[
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
 
+
+
+            ],
         }
     },
+
+    methods: {
+
+        updateDepart: function () {
+            var self = this;
+            self.$http.post("/employees/addNewDepartment", {
+                "departName": self.departName,"parentDeptId":self.parentDeptId, "managerId":self.managerId
+            }).then(function(res){
+                //console.log(res.body);
+            },function(err){
+
+            });
+
+        },
+
+
+        SelectContactInfo: function () {
+            var value = $(this).val();
+            console(value);
+            if (!(value == "Create and Edit..." || value == "Search More..." || value=="undefined")) {
+
+
+                var self = this;
+                self.$http.post("/Employees/fetchContactInformationOfEmployee", {
+                    "workingAddressId": self.workingAddressId,
+                }).then(function (res) {
+                    var contactInfo = res.body.data[0];
+                    self.workMobile = contactInfo.work_mobile;
+                    //self.workLocation = contactInfo.name;
+                    self.workEmail = contactInfo.work_email;
+                    self.workPhone = contactInfo.work_phone;
+
+                }, function (err) {
+                    // alert(err);
+                });
+
+            }
+        },
+
+        // selectDepartManagerHussain: function () {
+        //     var value = $(this).val();
+        //     var self = this;
+        //     if (value == "Create and Edit..." || value == "Search More..." ) {
+        //
+        //         //alert("Inside Method selectDepartManagerHussain(): departmentId  =  "+ self.departmentId);
+        //         self.$http.post("/Employees/fetchDeptManager", {
+        //             "departmentId": self.departmentId,
+        //
+        //         }).then(function (res) {
+        //             var deptManager = res.body.result[0];
+        //
+        //             console.log(deptManager);
+        //             self.managerId = deptManager.employeename;
+        //             console.log(self.managerId);
+        //
+        //         }, function (err) {
+        //             alert(err);
+        //         });
+        //     }
+        //
+        // },
+
+
+        select: function () {
+            var self = this;
+
+            self.$http.post("/employees/fetchWorkingAddresses", {"workingAddress": self.address}).then(function (res) {
+                self.workingAddresses = res.body.result;
+            }, function (err) {
+                //alert(err);
+            });
+            // this will work when url will provide department id for creating new employee for the department
+            self.$http.post("/Employees/fetchDepartmentManager", {"id":self.$route.params.id}).then(function (res) {
+                var deptManagerId = res.body.result[0];
+                self.manager_id = deptManagerId.manager_id;
+            }, function (err) {
+
+            });
+            //this will work when url provide employee id for creating new employee for the department
+            self.$http.post("/Employees/fetchEmployeeDeptAndManager", {"id":self.$route.params.id}).then(function (res) {
+                var deptManagerId = res.body.result[0];
+                self.department_id = deptManagerId.department_id;
+                self.manager_id = deptManagerId.manager_id;
+            }, function (err) {
+
+            });
+
+            self.$http.post("/employees/fetchDepartments", {"deptName": self.name}).then(function (res) {
+                self.departnents = res.body.result;
+            }, function (err) {
+                // alert(err);
+            });
+            self.$http.post("/employees/fetchDepartments1", {"deptName": self.name}).then(function (res) {
+                self.departnents1 = res.body.result;
+            }, function (err) {
+                // alert(err);
+            });
+
+            self.$http.post("/employees/fetchJobTitles", {"jobTitle_name": self.job_title}).then(function (res) {
+                self.jobTitles = res.body.result;
+            }, function (err) {
+                // alert(err);
+            });
+
+            self.$http.post("/employees/fetchManagers", {"managerName": self.employeename}).then(function (res) {
+                self.managers = res.body.result;
+            }, function (err) {
+                //alert(err);
+            });
+            self.$http.post("/employees/fetchManagers1", {"managerName": self.employeename}).then(function (res) {
+                self.managers1 = res.body.result;
+            }, function (err) {
+                //alert(err);
+            });
+
+            self.$http.post("/employees/fetchCoachs", {"coach_name": self.employeename}).then(function (res) {
+                self.coachs = res.body.result;
+            }, function (err) {
+                // alert(err);
+            });
+
+            self.$http.post("/employees/fetchWorkingTimeNames", {"workingTime": self.name}).then(function (res) {
+                self.workingScedules = res.body.result;
+            }, function (err) {
+                // alert(err);
+            });
+
+            // self.$http.post("/employees/fetchmanager", {"manager_name": self.employeename	}).then(function(res){self.emp_table =res.body.result;},function(err){
+            //     //alert(err);
+            // });
+
+
+            self.$http.post("/employees/fetchHomeAddresses", {"HomeAddress": self.name}).then(function (res) {
+                self.homeAddresses = res.body.result;
+            }, function (err) {
+                //alert(err);
+            });
+
+            self.$http.post("/employees/FetchBankAccountNumbers", {"AccNo": self.account_number}).then(function (res) {
+                self.BankAccountNumbers = res.body.result;
+            }, function (err) {
+                //alert(err);
+            });
+
+            self.$http.post("/employees/fetchCountries", {"countryName": self.country}).then(function (res) {
+                self.countries = res.body.result;
+            }, function (err) {
+                //alert(err);
+            });
+            //acoountTable
+            self.$http.post("/employees/fetchAccounts", {"accName": self.name}).then(function (res) {
+                self.accounts = res.body.result;
+            }, function (err) {
+                //alert(err);
+            });
+
+            self.$http.post("/employees/fetchCompanies", {"companyName": self.company_name}).then(function (res) {
+                self.companies = res.body.result;
+            }, function (err) {
+            });
+
+            self.$http.post("/employees/fetchRelatedUsers", {"relatedUser": self.username}).then(function (res) {
+                self.relatedUsers = res.body.result;
+            }, function (err) {
+                //alert(err);
+            });
+
+
+        },
+        submit: function () {
+            var self = this;
+            self.$http.post("/Employees/addNewEmployee", {
+                "employeeName": self.employeeName,
+                "workingAddressId": self.workingAddressId,
+                "workMobile": self.workMobile,//job_title
+                "workLocation": self.workLocation,// department name
+                "workEmail": self.workEmail,
+                "workPhone": self.workPhone,
+                "departmentId": self.departmentId,
+                "jobtitleId": self.jobtitleId,
+                "managerId": self.managerId,
+                "coachId": self.coachId,
+                "workingTimeId": self.workingTimeId,
+                "countryId": self.countryId,
+                "identificationNo": self.identificationNo,
+                "passportNo": self.passportNo,
+                "BankAccountNumbersId": self.BankAccountNumbersId,
+                "homeAddressId": self.homeAddressId,
+                "accountId": self.accountId,
+                "gender": self.gender,
+                "maritalStatus": self.maritalStatus,
+                "relatedUserId": self.relatedUserId,
+                "pin": self.pin,
+                "badgeId": self.badgeId,
+                "manualAttendance": self.manualAttendance,
+                "dates_value7": self.dates_value7,
+                "companyVehicle": self.companyVehicle,
+                "HomeDistance": self.HomeDistance,
+                "noOfChildren": self.noOfChildren,
+                "dates_value6": self.dates_value6,
+                "placeOfBirth": self.placeOfBirth,
+                "timeSheetCost": self.timeSheetCost,
+                "status": self.status,
+
+            }).then(function (res) {
+                console.log(res.body);
+            }, function (err) {
+                //alert(err);
+            });
+
+            self.$http.post("/employees/addemp", {
+                "dep_name": self.name, "p_dep_id": self.parent_dept_id, "mgr_id": self.identification_number
+            }).then(function (res) {
+                //console.log(res.body);
+            }, function (err) {
+                //alert(err);
+            });
+
+
+        },
+    },
+
+
     components: {
-        Emptyform,
-        Tabs,
-        Modal,
-        ModelDescription,
-        Componame,
         DashboardController,
-        Tableview,
+        Modal,
+        Request_Quotation_Lower,
         Editing,
-        Request_quotation_lower,
-        Message,
-        EmpContract,
+        TableMain,
+    },
 
-
-
-
-    }
 
 }

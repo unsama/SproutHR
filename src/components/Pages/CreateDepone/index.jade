@@ -4274,7 +4274,7 @@
                                         i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='33')
                                 p Hr Department created
     DashboardController(v-bind:savedbtn='true', v-bind:discardbtn='true',v-bind:heading="head",v-bind:links="btnlinks")
-        .col-sm-6(style='padding:0px;' ,slot='heading')
+        .col-sm-6(style='padding:0px;' ,slot='job')
             h4.samodashheading(style="font-size: 18px;") Employees / New
     .row
         .col-sm-12
@@ -4360,7 +4360,7 @@
                                                 tr
                                                     td(colspan='2', style='width: 100%;')
                                                         .o_horizontal_separator
-                                                            | Contact Information
+                                                            | Contact Informations
                                                 tr
                                                     td.o_td_label(colspan='1')
                                                         label.o_form_label(for='o_field_input_595')
@@ -4377,9 +4377,11 @@
                                                 tr
                                                     td.o_td_label(colspan='1')
                                                         label.o_form_label(for='o_field_input_596')
-                                                            | Work Mobile
+                                                            | Work Mobiles
                                                     td(colspan='1', style='width: 100%;')
                                                         input#o_field_input_596.o_form_input.o_form_field(type='text',v-model="workMobile")
+
+
                                                 tr
                                                     td.o_td_label(colspan='1')
                                                         label.o_form_label(for='o_field_input_597')
@@ -4391,7 +4393,7 @@
                                                         label.o_form_label(for='o_field_input_598')
                                                             | Work Email
                                                     td(colspan='1', style='width: 100%;')
-                                                        input#o_field_input_598.o_form_input.o_form_field(type='text',v-model="workEmail")
+                                                        input#o_field_input_598.o_form_input.o_form_field(type='email',v-model="workEmail")
                                                 tr
                                                     td.o_td_label(colspan='1')
                                                         label.o_form_label(for='o_field_input_599')

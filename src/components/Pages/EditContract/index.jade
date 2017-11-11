@@ -4284,26 +4284,6 @@
             span.btn-group.btn-group-sm
                 button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="counter--",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
                 button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="counter++",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
-    //.row
-    //    .col-md-12.pull-left.samotopcontroller
-    //        .col-md-5.pull-left
-    //            .col-xs-3.pull-left
-    //                //button.btn.btn-primary.samobutton2(type='button',style='margin-left: 7px;')
-    //            .col-xs-3.pull-left
-    //                //button.btn.btn-primary.samobutton2(type='button',style='margin-left: 7px;')
-    //            .col-xs-3.pull-left
-    //                //button.btn.btn-primary.samobutton2(type='button',style='margin-left: 9px;,',data-toggle='modal', data-target='.marklostmodal')
-    //            .col-xs-3.pull-left
-    //                //button.btn.btn-primary.mark(type='button',style='margin-left: 5px;')
-    //
-    //
-    //        .col-md-1.pull-left
-    //        .col-md-2.pull-left
-    //        .col-md-4.pull-right
-    //            .btn-group.btn-breadcrumb.samobreadcrum1(v-for='optionasd, index in status_name_drop')
-    //                a.btn.btn-primary.samobreadbutt.link( v-model='status_name',v-on:click="select2(optionasd.id)")
-    //                    | {{ optionasd.name }}
-
     .o_content
         .o_view_manager_content
             .o_form_view.o_form_editable
@@ -4351,10 +4331,10 @@
                                     tr
                                         td.o_td_label(colspan='1')
                                             label.o_form_label(for='o_field_input_934')
-                                                | Job Title {{jobTitle}}
+                                                | Job Title
                                         td(colspan='1', style='width: 100%;')
-                                            select.jobTitleDropdowm(v-model='jobTitle')
-                                                option(v-for='job in jobTitles', v-bind:value='job.jobTitle')
+                                            select.jobTitleDropdowm(v-model='jobTitleId')
+                                                option(v-for='job in jobTitles', v-bind:value='job.id')
                                                     | {{job.job_tittle}}
                                                 option
                                                     span(data-toggle='model3',data-target='bd-example-modal-lg3') Create and Edit...

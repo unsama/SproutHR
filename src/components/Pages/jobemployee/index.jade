@@ -1,7 +1,7 @@
 .jobemployee
     DashboardController( v-bind:save='true',v-bind:heading="nextactivity",v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true',v-bind:createbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:firstbtn='true',v-bind:secondbtn='true')
         .col-sm-6(style='padding:0px;')(slot='job')
-            h4.samodashheading(style="font-size: 18px;") Employee
+            h4.samodashheading(style="font-size: 18px;") Employees
         span.o_pager_value(slot='page') {{counter}}
             |  /
             span.o_pager_limit(style="padding-right: 6px;") {{num}}
@@ -13,7 +13,7 @@
         .col-md-12
             ProTwo(style='padding-top:10px;')
                 .table(slot='pro')
-                    router-link(v-bind:to="'Hr/'+record.id")
+                    router-link(v-bind:to="'/recruitment/Hremployeeinfo/'+record.id")
                         .row(style='margin-left: -15px;')
                             .col-xs-2
                                 a(href='#', data-toggle='tooltip', data-placement='top', title='CheckIn')
@@ -28,7 +28,7 @@
                                 .row(style='margin-top:5px;padding-left:10px;')
                                     .col-xs-3
                                         i.fa.fa-comments(aria-hidden='true',style='font-size: small;color: #4c4c4c;')
-                                            | 12s
+                                            | 12
                                     .col-xs-3.offset-sm-1
                                         i.fa.fa-users(style='font-size: small;color: #4c4c4c;')
                                             | 12
@@ -36,6 +36,7 @@
                             .col-xs-3(style='color: black;padding-left: 14px;font-size:13px;color: #4c4c4c;')
                                 address
                                     strong
+
                                         a(href='mailto:webmaster@example.com',style='color: #4c4c4c;') {{record.employeename}}
                                         | .
                                     br(style='font-size:10px;')

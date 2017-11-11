@@ -27,16 +27,10 @@ export default{
         });
         $(function() {
             $("#num01").click(function () {
-                self.$route.params.id++;
                 self.nextsubmit();
-                //self.AssignActiveClass();
-                //self.select3();
             });
             $("#num10").click(function () {
-                self.$route.params.id--;
                 self.backsubmit();
-                //self.AssignActiveClass();
-
             });
             $("#delete").click(function () {
                 self.deleteContract();
@@ -90,6 +84,7 @@ export default{
 
             $(document).ready(function() {
                 $("#new").click(function(){
+                    self.editStatus();
                     document.getElementById("new").classList.add("oe_active");
                     document.getElementById("running").classList.remove("oe_active");
                     document.getElementById("toRenew").classList.remove("oe_active");
@@ -98,12 +93,14 @@ export default{
                 });
 
                 $("#running").click(function(){
+                    self.editStatus();
                     document.getElementById("running").classList.add("oe_active");
                     document.getElementById("new").classList.remove("oe_active");
                     document.getElementById("toRenew").classList.remove("oe_active");
                     document.getElementById("expired").classList.remove("oe_active");
                 });
                 $("#toRenew").click(function(){
+                    self.editStatus();
                     document.getElementById("toRenew").classList.add("oe_active");
                     document.getElementById("running").classList.remove("oe_active");
                     document.getElementById("new").classList.remove("oe_active");
@@ -111,6 +108,7 @@ export default{
 
                 });
                 $("#expired").click(function(){
+                    self.editStatus();
                     document.getElementById("expired").classList.add("oe_active");
                     document.getElementById("new").classList.remove("oe_active");
                     document.getElementById("running").classList.remove("oe_active");
@@ -119,9 +117,6 @@ export default{
                 });
 
             });
-
-            //self.btnlinks.editbtnlink = "/employees/contractsave/"+self.$route.params.id;
-            //self.btnlinks.editbtnlink = alert("Inside edit button!!");
         });
 
     },
@@ -144,10 +139,10 @@ export default{
             reference: '',
             status_name: '',
             employee_id: '',
-            employeename: '',
+            employeeName: '',
             departname: '',
             name: '',
-            d_name:'',
+            deptName:'',
             contractname:'',
             workschedule:'',
             department_id: '',
@@ -160,6 +155,7 @@ export default{
             duration_from: '',
             duration_to: '',
             job_tittle: '',
+            jobTitleName:'',
             notes:'',
             visa_no:'',
             work_permit_no:'',
@@ -232,29 +228,22 @@ export default{
         }
     },
     methods: {
-        // getStatusValue: function (status) {
-        //     var self = this;
-        //     self.status_name= status;
-        //
-        // },
+        getStatusValue: function (status) {
+            var self = this;
+            self.status_name= status;
 
-        // AssignActiveClass: function (status) {
-        //     var self = this;
-        //     alert(" self.status_name : "+self.status_name);
-        //     if(self.status_name == "new"){
-        //         document.getElementById("new").classList.add("oe_active");
-        //     }
-        //     else if (self.status_name =="running"){
-        //         document.getElementById('running').classList.add('oe_active')
-        //     }
-        //     else if(self.status_name =='toRenew'){
-        //         document.getElementbyId('toRenew').classList.add('oe_active');
-        //     }
-        //     else if(self.status_name =='expired'){
-        //         document.getElementbyId('expired').classList.add('oe_active');
-        //     }
-        //
-        // },
+        },
+        editStatus: function(){
+          var self = this;
+            self.$http.post("/Employees/editContractStatus", {
+                "id": self.$route.params.id,
+                "contract_status": self.status_name,
+            }).then(function(res){
+                console.log(res.body);
+            },function(err){
+
+            });
+        },
         nextsubmit: function () {
             var self = this;
             self.$http.post("/Employees/selectcontractinfoForFormNext", {"id": self.$route.params.id}).then(function (res) {
@@ -262,9 +251,55 @@ export default{
                 self.$route.params.id = parentdata.id;
                 self.reference = parentdata.reference;
                 self.employee_id = parentdata.employee_id;
+                self.$http.post("/Employees/selectemployee", {"id":self.employee_id}).then(function (res) {
+                    var datas = res.body.data[0];
+                    //alert("(datas.employeename).length  "+(datas.employeename).length);
+                    self.employeeName = datas.employeename;
+
+
+                }, function (err) {
+
+                });
                 self.job_tittle = parentdata.job_tittle;
+                self.$http.post("/Employees/selectjobtitles", {"id":self.job_tittle}).then(function (res) {
+                    var datas = res.body.data[0];
+                    if(!datas.job_tittle){
+                        alert("!datas.job_tittle");
+                        self.jobTitleName ='';
+                    }
+                    else {
+                        self.jobTitleName = datas.job_tittle;
+                    }
+                }, function (err) {
+
+                });
                 self.department_id = parentdata.department_id;
+                self.$http.post("/Employees/selectdep", {"id":self.department_id}).then(function (res) {
+                    var datas = res.body.data[0];
+                    if(!datas.name){
+                        self.deptName='';
+                        alert("!datas.deptName");
+                    }
+                    else {
+                        self.deptName = datas.name;
+                    }
+                }, function (err) {
+
+                });
                 self.contract_type = parentdata.contract_type;
+                self.$http.post("/Employees/selectcontractype", {"id":self.contract_type}).then(function (res) {
+                    var dept = res.body.data[0];
+                    if(!dept.name){
+                        alert("!datas.selectcontractype");
+                        self.contractname ='';
+                    }
+                    else {
+                        self.contractname = dept.name;
+                    }
+                }, function (err) {
+
+                });
+
                 self.wage = parentdata.wage;
                 self.advantages = parentdata.advantages;
                 self.trial_period_duration_from = parentdata.trial_period_duration_from;
@@ -272,6 +307,13 @@ export default{
                 self.duration_to = parentdata.duration_to;
                 self.duration_from = parentdata.duration_from;
                 self.working_schedule_id = parentdata.working_schedule_id;
+                self.$http.post("/Employees/selectworkschedule", {"id":self.working_schedule_id}).then(function (res) {
+                    var workSchedule = res.body.data[0];
+                    self.workschedule = workSchedule.name;
+                    console("workSchedule.workschedule : "+workSchedule.workschedule );
+                }, function (err) {
+
+                });
                 self.notes = parentdata.notes;
                 self.visa_no = parentdata.visa_no;
                 self.work_permit_no = parentdata.work_permit_no;
@@ -279,34 +321,18 @@ export default{
                 self.status_name = parentdata.contract_status;
                 $(function () {
                     if( self.status_name == "new"){
-                        // $('#new').classList.add("oe_active");
-                        // $('#running').classList.remove("oe_active");
-                        // $('#toRenew').classList.remove("oe_active");
-                        // $('#expired').classList.remove("oe_active");
 
                         $("#new").addClass('oe_active');
                         $("#running").removeClass('oe_active');
                         $("#toRenew").removeClass('oe_active');
                         $("#expired").removeClass('oe_active');
-                        // document.getElementById("new").classList.add("oe_active");
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // document.getElementById("expired").classList.remove("oe_active");
                     }
                     else if( self.status_name == "running")
                     {
-                        // $('#running').classList.add("oe_active");
-                        // $('#new').classList.remove("oe_active");
-                        // $('#toRenew').classList.remove("oe_active");
-                        // $('#expired').classList.remove("oe_active");
                         $("#running").addClass('oe_active');
                         $("#new").removeClass('oe_active');
                         $("#toRenew").removeClass('oe_active');
                         $("#expired").removeClass('oe_active');
-                        // document.getElementById('running').classList.add('oe_active');
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // document.getElementById("expired").classList.remove("oe_active");
                     }
                     else if( self.status_name == "toRenew")
                     {
@@ -314,96 +340,77 @@ export default{
                         $("#new").removeClass('oe_active');
                         $("#running").removeClass('oe_active');
                         $("#expired").removeClass('oe_active');
-
-                        // document.getElementbyId('toRenew').classList.add('oe_active');
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("expired").classList.remove("oe_active");
                     }
                     else if( self.status_name == "expired")
                     {
-                        // $('#expired').classList.add("oe_active");
-                        // $('#running').classList.remove("oe_active");
-                        // $('#new').classList.remove("oe_active");
-                        // $('#toRenew').classList.remove("oe_active");
-
                         $("#expired").addClass('oe_active');
                         $("#new").removeClass('oe_active');
                         $("#running").removeClass('oe_active');
                         $("#toRenew").removeClass('oe_active');
-                        // document.getElementbyId('expired').classList.add('oe_active');
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // $('#d').show();
-                        // $('#a').show();
-                        // $('#q').show();
                     }
-                    else if( self.status_name == null)
-                    {
-                        $("#expired").removeClass('oe_active');
-                        $("#new").removeClass('oe_active');
-                        $("#running").removeClass('oe_active');
-                        $("#toRenew").removeClass('oe_active');
-
-                        // document.getElementbyId('expired').classList.remove('oe_active');
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // $('#d').show();
-                        // $('#a').show();
-                        // $('#q').show();
-                    }
-
                 })
-
-
-                console.log(parentdata);
-                self.$http.post("/Employees/selectemployee", {"id":self.employee_id}).then(function (res) {
-                    var data = res.body.data[0];
-                    self.employeename = data.employeename;
-                    self.$http.post("/Employees/selectdep", {"id":self.department_id}).then(function (res) {
-                        var datas = res.body.data[0];
-                        self.d_name = datas.name;
-                        self.$http.post("/Employees/selectcontractype", {"id":self.contract_type}).then(function (res) {
-                            var dept = res.body.data[0];
-                            self.contractname = dept.name;
-                            console.log(dept.name);
-                            self.$http.post("/Employees/selectworkschedule", {"id":self.working_schedule_id}).then(function (res) {
-                                var workSchedule = res.body.data[0];
-                                self.workschedule = workSchedule.name;
-                                console.log(workSchedule.workschedule );
-
-                            }, function (err) {
-
-                            });
-                        }, function (err) {
-
-                        });
-                    }, function (err) {
-
-                    });
-                }, function (err) {
-
-                });
             }, function (err) {
 
             });
-
-
-
-
         },
-        backsubmit: function () {
+        backsubmit: function ()     {
             var self = this;
             self.$http.post("/Employees/selectcontractinfoForFormBack", {"id": self.$route.params.id}).then(function (res) {
                 var parentdata = res.body.data[0];
                 self.$route.params.id = parentdata.id;
                 self.reference = parentdata.reference;
                 self.employee_id = parentdata.employee_id;
+                self.$http.post("/Employees/selectemployee", {"id":self.employee_id}).then(function (res) {
+                    var datas = res.body.data[0];
+                    self.employeeName = datas.employeename;
+                    // if(datas.employeename === NULL ){
+                    //     alert("!datas.employeename is Null");
+                    //     self.employeeName ='';
+                    // }
+                    // else {
+                    //     alert("!datas.employeename is not Null");
+                    //
+                    // }
+                }, function (err) {
+
+                });
                 self.job_tittle = parentdata.job_tittle;
+                self.$http.post("/Employees/selectjobtitles", {"id":self.job_tittle}).then(function (res) {
+                    var datas = res.body.data[0];
+                    if(!datas.job_tittle){
+                        self.jobTitleName ='';
+                    }
+                    else {
+                    self.jobTitleName = datas.job_tittle;
+                    }
+                }, function (err) {
+
+                });
                 self.department_id = parentdata.department_id;
+                self.$http.post("/Employees/selectdep", {"id":self.department_id}).then(function (res) {
+                    var datas = res.body.data[0];
+                    if(!datas.name){
+                        self.deptName='';
+                    }
+                    else {
+                        self.deptName = datas.name;
+                    }
+                }, function (err) {
+
+                });
                 self.contract_type = parentdata.contract_type;
+                self.$http.post("/Employees/selectcontractype", {"id":self.contract_type}).then(function (res) {
+                    var dept = res.body.data[0];
+                    if(!dept.name){
+                        self.contractname ='';
+                    }
+                    else {
+                        self.contractname = dept.name;
+                    }
+                }, function (err) {
+
+                });
+
                 self.wage = parentdata.wage;
                 self.advantages = parentdata.advantages;
                 self.trial_period_duration_from = parentdata.trial_period_duration_from;
@@ -411,6 +418,13 @@ export default{
                 self.duration_to = parentdata.duration_to;
                 self.duration_from = parentdata.duration_from;
                 self.working_schedule_id = parentdata.working_schedule_id;
+                self.$http.post("/Employees/selectworkschedule", {"id":self.working_schedule_id}).then(function (res) {
+                    var workSchedule = res.body.data[0];
+                    self.workschedule = workSchedule.name;
+                    alert("workSchedule.workschedule : "+workSchedule.workschedule );
+                }, function (err) {
+
+                });
                 self.notes = parentdata.notes;
                 self.visa_no = parentdata.visa_no;
                 self.work_permit_no = parentdata.work_permit_no;
@@ -418,34 +432,18 @@ export default{
                 self.status_name = parentdata.contract_status;
                 $(function () {
                     if( self.status_name == "new"){
-                        // $('#new').classList.add("oe_active");
-                        // $('#running').classList.remove("oe_active");
-                        // $('#toRenew').classList.remove("oe_active");
-                        // $('#expired').classList.remove("oe_active");
 
                         $("#new").addClass('oe_active');
                         $("#running").removeClass('oe_active');
                         $("#toRenew").removeClass('oe_active');
                         $("#expired").removeClass('oe_active');
-                        // document.getElementById("new").classList.add("oe_active");
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // document.getElementById("expired").classList.remove("oe_active");
                     }
                     else if( self.status_name == "running")
                     {
-                        // $('#running').classList.add("oe_active");
-                        // $('#new').classList.remove("oe_active");
-                        // $('#toRenew').classList.remove("oe_active");
-                        // $('#expired').classList.remove("oe_active");
                         $("#running").addClass('oe_active');
                         $("#new").removeClass('oe_active');
                         $("#toRenew").removeClass('oe_active');
                         $("#expired").removeClass('oe_active');
-                        // document.getElementById('running').classList.add('oe_active');
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // document.getElementById("expired").classList.remove("oe_active");
                     }
                     else if( self.status_name == "toRenew")
                     {
@@ -453,78 +451,17 @@ export default{
                         $("#new").removeClass('oe_active');
                         $("#running").removeClass('oe_active');
                         $("#expired").removeClass('oe_active');
-
-                        // document.getElementbyId('toRenew').classList.add('oe_active');
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("expired").classList.remove("oe_active");
                     }
                     else if( self.status_name == "expired")
                     {
-                        // $('#expired').classList.add("oe_active");
-                        // $('#running').classList.remove("oe_active");
-                        // $('#new').classList.remove("oe_active");
-                        // $('#toRenew').classList.remove("oe_active");
-
                         $("#expired").addClass('oe_active');
                         $("#new").removeClass('oe_active');
                         $("#running").removeClass('oe_active');
                         $("#toRenew").removeClass('oe_active');
-                        // document.getElementbyId('expired').classList.add('oe_active');
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // $('#d').show();
-                        // $('#a').show();
-                        // $('#q').show();
                     }
-                    else if( self.status_name == null)
-                    {
-                        $("#expired").removeClass('oe_active');
-                        $("#new").removeClass('oe_active');
-                        $("#running").removeClass('oe_active');
-                        $("#toRenew").removeClass('oe_active');
-
-                        // document.getElementbyId('expired').classList.remove('oe_active');
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // $('#d').show();
-                        // $('#a').show();
-                        // $('#q').show();
-                    }
-
                 })
 
-
                 console.log(parentdata);
-                self.$http.post("/Employees/selectemployee", {"id":self.employee_id}).then(function (res) {
-                    var data = res.body.data[0];
-                    self.employeename = data.employeename;
-                    self.$http.post("/Employees/selectdep", {"id":self.department_id}).then(function (res) {
-                        var datas = res.body.data[0];
-                        self.d_name = datas.name;
-                        self.$http.post("/Employees/selectcontractype", {"id":self.contract_type}).then(function (res) {
-                            var dept = res.body.data[0];
-                            self.contractname = dept.name;
-                            console.log(dept.name);
-                            self.$http.post("/Employees/selectworkschedule", {"id":self.working_schedule_id}).then(function (res) {
-                                var workSchedule = res.body.data[0];
-                                self.workschedule = workSchedule.name;
-                                console.log(workSchedule.workschedule );
-
-                            }, function (err) {
-
-                            });
-                        }, function (err) {
-
-                        });
-                    }, function (err) {
-
-                    });
-                }, function (err) {
-
-                });
             }, function (err) {
 
             });
@@ -533,34 +470,26 @@ export default{
             var self = this;
             self.$http.post("/Employees/deleteSelectedContract", {"id": self.$route.params.id }).then(function(res){
                 alert("Are you sure you want to delete the contract???");
-                console.log("this is the id of contract to be deleted =  "+self.$route.params.id);
             },function(err){
 
             });
         },
-        select2: function (id) {
-            var self = this
-            self.status_name = id;
-
-        },
         select: function () {
             var self = this;
-            // self.$http.post("/Employees/fetchContactStatus", {"statname": self.name}).then(function(res){self.status_name_drop =res.body.result;},function(err){
-            // });
             self.$http.post("/Employees/selectcontractinfo", {"id": self.$route.params.id}).then(function (res) {
                 var parentdata = res.body.data[0];
                 self.reference = parentdata.reference;
-                self.employee_id = parentdata.employee_id;
+                self.employeename = parentdata.employeename;
                 self.job_tittle = parentdata.job_tittle;
-                self.department_id = parentdata.department_id;
-                self.contract_type = parentdata.contract_type;
+                self.d_name = parentdata.dept_name;
+                self.contractname = parentdata.contract_name;
                 self.wage = parentdata.wage;
                 self.advantages = parentdata.advantages;
                 self.trial_period_duration_from = parentdata.trial_period_duration_from;
                 self.trial_period_duration_to = parentdata.trial_period_duration_to;
                 self.duration_to = parentdata.duration_to;
                 self.duration_from = parentdata.duration_from;
-                self.working_schedule_id = parentdata.working_schedule_id;
+                self.workschedule = parentdata.sche_name;
                 self.notes = parentdata.notes;
                 self.visa_no = parentdata.visa_no;
                 self.work_permit_no = parentdata.work_permit_no;
@@ -568,34 +497,19 @@ export default{
                 self.status_name = parentdata.contract_status;
                 $(function () {
                     if( self.status_name == "new"){
-                        // $('#new').classList.add("oe_active");
-                        // $('#running').classList.remove("oe_active");
-                        // $('#toRenew').classList.remove("oe_active");
-                        // $('#expired').classList.remove("oe_active");
 
                         $("#new").addClass('oe_active');
                         $("#running").removeClass('oe_active');
                         $("#toRenew").removeClass('oe_active');
                         $("#expired").removeClass('oe_active');
-                        // document.getElementById("new").classList.add("oe_active");
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // document.getElementById("expired").classList.remove("oe_active");
+
                     }
                     else if( self.status_name == "running")
                     {
-                        // $('#running').classList.add("oe_active");
-                        // $('#new').classList.remove("oe_active");
-                        // $('#toRenew').classList.remove("oe_active");
-                        // $('#expired').classList.remove("oe_active");
                         $("#running").addClass('oe_active');
                         $("#new").removeClass('oe_active');
                         $("#toRenew").removeClass('oe_active');
                         $("#expired").removeClass('oe_active');
-                        // document.getElementById('running').classList.add('oe_active');
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // document.getElementById("expired").classList.remove("oe_active");
                     }
                     else if( self.status_name == "toRenew")
                     {
@@ -604,77 +518,18 @@ export default{
                         $("#running").removeClass('oe_active');
                         $("#expired").removeClass('oe_active');
 
-                        // document.getElementbyId('toRenew').classList.add('oe_active');
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("expired").classList.remove("oe_active");
                     }
                     else if( self.status_name == "expired")
                     {
-                        // $('#expired').classList.add("oe_active");
-                        // $('#running').classList.remove("oe_active");
-                        // $('#new').classList.remove("oe_active");
-                        // $('#toRenew').classList.remove("oe_active");
-
                         $("#expired").addClass('oe_active');
                         $("#new").removeClass('oe_active');
                         $("#running").removeClass('oe_active');
                         $("#reRenew").removeClass('oe_active');
-                        // document.getElementbyId('expired').classList.add('oe_active');
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // $('#d').show();
-                        // $('#a').show();
-                        // $('#q').show();
                     }
-                    else if( self.status_name ==null)
-                    {
-                        $("#expired").removeClass('oe_active');
-                        $("#new").removeClass('oe_active');
-                        $("#running").removeClass('oe_active');
-                        $("#reRenew").removeClass('oe_active');
-
-                        // document.getElementbyId('expired').classList.remove('oe_active');
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // $('#d').show();
-                        // $('#a').show();
-                        // $('#q').show();
-                    }
-
                 })
 
 
                 console.log(parentdata);
-                self.$http.post("/Employees/selectemployee", {"id":self.employee_id}).then(function (res) {
-                    var data = res.body.data[0];
-                    self.employeename = data.employeename;
-                    self.$http.post("/Employees/selectdep", {"id":self.department_id}).then(function (res) {
-                        var datas = res.body.data[0];
-                        self.d_name = datas.name;
-                        self.$http.post("/Employees/selectcontractype", {"id":self.contract_type}).then(function (res) {
-                            var dept = res.body.data[0];
-                            self.contractname = dept.name;
-                            console.log(dept.name);
-                            self.$http.post("/Employees/selectworkschedule", {"id":self.working_schedule_id}).then(function (res) {
-                                var workSchedule = res.body.data[0];
-                                self.workschedule = workSchedule.name;
-                                console.log(workSchedule.workschedule );
-
-                            }, function (err) {
-
-                            });
-                        }, function (err) {
-
-                        });
-                    }, function (err) {
-
-                    });
-                }, function (err) {
-
-                });
             }, function (err) {
 
             });

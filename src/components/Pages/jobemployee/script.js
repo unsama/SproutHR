@@ -19,6 +19,7 @@ export default{
                 }
             });
         });
+        self.btnlinks.createbtnlink ="/recruitment/hremployeecreate/"+self.$route.params.id;
         self.btnlinks.secondbtnlink ="/recruitment/jobemployeetable/"+self.$route.params.id
         document.title = this.title;
     },
@@ -29,7 +30,7 @@ export default{
             counter: 1,
             nextactivity: "Employee",
             btnlinks: {
-                createbtnlink:"/attendance/Createemp",
+                createbtnlink:"",
                 importbtnlink:"/imported",
                 firstbtnlink: "/recruitment/jobemployee",
                 secondbtnlink: "/recruitment/jobemployeetable"

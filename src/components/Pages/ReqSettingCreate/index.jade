@@ -333,7 +333,7 @@
                     span.arrow
                         span
                 li#a.oe_active
-                    span.label Not Recruiting
+                    span.label Not Recruitings
                     span.arrow
                         span
 
@@ -342,7 +342,7 @@
             label.o_form_label.oe_edit_only(for='o_field_input_4')
                 | Job Title
             h1
-                input#o_field_input_4.o_form_input.o_form_field.o_form_required(v-model='job_tittle',name='name',v-validate:name.initial="'required|alpha'", :class="{'input': true, 'is-danger': errors.has('name') }",placeholder='e.g. Sales Manager', type='text')
+                input#o_field_input_4.o_form_input.o_form_field.o_form_required(v-model='job_tittle',name='name',v-validate:name.initial="'required|max'", :class="{'input': true, 'is-danger': errors.has('name') }",placeholder='e.g. Sales Manager', type='text')
                 i.fa.fa-warning.cl(v-show="errors.has('name')",style='color:red;')
                 span.help.is-danger.cl(v-show="errors.has('name')",style='color:red;') {{ errors.first('name') }}
                 button.o_field_translate.fa.fa-globe.btn.btn-link.o_translate_active(type='button')

@@ -10,18 +10,8 @@ export default {
         self.select();
 
         $(function () {
-            $("#saveclose").click(function () {
-                alert("saveclose");
-                self.updateDepart();
-            });
-
-            // $("#save").click(function () {asdasd
-            //     self.submit();
-            //     window.location.href = "/employees/Gridtwo";
-            //     //self.$route.params.id /employees/Gridtwo
-            // });
             $("#save").click(function () {
-                if(self.type=="")
+                if(self.employeeName=="")
                 {
                     $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
                         $("#success-alert").slideUp(500);
@@ -32,7 +22,7 @@ export default {
                 }
                 else{
                     self.submit();
-                    window.location.href = "/employees/Gridtwo";
+                    window.location.href = "/employees/";
                 }
 
             });
@@ -141,9 +131,9 @@ export default {
 
             function showTestDate() {
                 var value = $('#datepicker6').datepicker('getFormattedDate');
-                self.dates_value6 = value;
+                self.birthDate = value;
                 var value1 = $('#datepicker7').datepicker('getFormattedDate');
-                self.dates_value7 = value1;
+                self.medicalExamDate = value1;
 
             };
 
@@ -160,8 +150,8 @@ export default {
             departName: '',
 
 
-            dates_value6:'', //birthDate
-            dates_value7:'',//mediacalExamDate
+            birthDate:'', //birthDate
+            medicalExamDate:'',//medicalExamDate
             employeeName: '',
             workingAddresses: '',
             workingAddressId: '',
@@ -192,7 +182,6 @@ export default {
             gender: '',
             maritalStatus: '',
             noOfChildren: '',
-            birthDate: '',
             placeOfBirth: '',
             timeSheetCost: '',
 
@@ -205,7 +194,6 @@ export default {
             badgeId: '',
             pin: '',
             manualAttendance: '',
-            medicalExamDate: '',
             companyVehicle: '',
             HomeDistance: '',
             status: '',
@@ -228,7 +216,7 @@ export default {
             btnlinks: {
                 createbtnlink: "#/app/sales/salescustomeredit",
                 savebtnlink: "",
-                discardbtnlink: "/employees/Gridtwo",
+                discardbtnlink: "/employees/",
                 importbtnlink: "#/app/imported"
             },
 
@@ -322,18 +310,13 @@ export default {
 
 
         SelectContactInfo: function () {
-            var value = $(this).val();
-            console(value);
-            if (!(value == "Create and Edit..." || value == "Search More..." || value=="undefined")) {
-
-
                 var self = this;
                 self.$http.post("/Employees/fetchContactInformationOfEmployee", {
                     "workingAddressId": self.workingAddressId,
                 }).then(function (res) {
                     var contactInfo = res.body.data[0];
                     self.workMobile = contactInfo.work_mobile;
-                    //self.workLocation = contactInfo.name;
+                    self.workLocation = contactInfo.work_location;
                     self.workEmail = contactInfo.work_email;
                     self.workPhone = contactInfo.work_phone;
 
@@ -341,15 +324,12 @@ export default {
                     // alert(err);
                 });
 
-            }
+
         },
 
         selectDepartManagerHussain: function () {
-            var value = $(this).val();
             var self = this;
-            if (value == "Create and Edit..." || value == "Search More..." ) {
-
-                //alert("Inside Method selectDepartManagerHussain(): departmentId  =  "+ self.departmentId);
+            //alert("Inside Method selectDepartManagerHussain(): departmentId  =  "+ self.departmentId);
                 self.$http.post("/Employees/fetchDeptManager", {
                     "departmentId": self.departmentId,
 
@@ -363,8 +343,6 @@ export default {
                 }, function (err) {
                     alert(err);
                 });
-            }
-
         },
 
 
@@ -493,11 +471,11 @@ export default {
                 "pin": self.pin,
                 "badgeId": self.badgeId,
                 "manualAttendance": self.manualAttendance,
-                "dates_value7": self.dates_value7,
+                "medicalExamDate": self.medicalExamDate,
                 "companyVehicle": self.companyVehicle,
                 "HomeDistance": self.HomeDistance,
                 "noOfChildren": self.noOfChildren,
-                "dates_value6": self.dates_value6,
+                "birthDate": self.birthDate,
                 "placeOfBirth": self.placeOfBirth,
                 "timeSheetCost": self.timeSheetCost,
                 "status": self.status,

@@ -47,6 +47,8 @@ export default{
                 });
                 self.delete(del);
                 self.select();
+                window.location.href = "/employees/CreateDep/";
+
 
             });
 
@@ -241,7 +243,7 @@ export default{
             var self = this;
             //alert(self.current_company+ " ");
             console.log("a"+del);
-            self.$http.post("/Employees/deleteEmployees", {"delete_items": del}).then(function(res){
+            self.$http.post("/Employees/deleteContracts", {"delete_items": del}).then(function(res){
                 if(res){
                     self.select();
                 }else {

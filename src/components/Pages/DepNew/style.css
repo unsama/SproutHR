@@ -352,7 +352,8 @@ td, th {
 
 @font-face {
     font-family: 'Glyphicons Halflings';
-
+    src: url('../fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
 .glyphicon {
@@ -9560,7 +9561,13 @@ a:hover {
     display: block;
 }
 
-
+.o_form_view .o_form_field_many2one, .o_form_view .o_form_field_radio, .o_form_view .o_form_field_many2manytags, .o_form_view .o_form_field_percent_pie, .o_form_view .o_form_field_monetary, .o_form_view .o_form_field_binary_file {
+    display: -ms-inline-flexbox;
+    display: -moz-inline-box;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+}
 
 .o_form_view .o_form_field_many2one > span, .o_form_view .o_form_field_radio > span, .o_form_view .o_form_field_many2manytags > span, .o_form_view .o_form_field_percent_pie > span, .o_form_view .o_form_field_monetary > span, .o_form_view .o_form_field_binary_file > span, .o_form_view .o_form_field_many2one > button, .o_form_view .o_form_field_radio > button, .o_form_view .o_form_field_many2manytags > button, .o_form_view .o_form_field_percent_pie > button, .o_form_view .o_form_field_monetary > button, .o_form_view .o_form_field_binary_file > button {
     -ms-flex: 0 0 auto;
@@ -11087,6 +11094,7 @@ a.o_form_view .oe_form_box_info:hover, a.o_form_view .oe_form_box_info:focus {
     margin-left: 5px;
     display: -ms-inline-flexbox;
     display: -moz-inline-box;
+    display: -webkit-inline-box;
     display: -webkit-inline-flex;
     display: inline-flex;
     -webkit-align-items: center;
@@ -11421,7 +11429,7 @@ a.o_form_view .oe_form_box_info:hover, a.o_form_view .oe_form_box_info:focus {
     height: 80px;
     margin-left: -70px;
     margin-top: -50px;
-
+    background: transparent url(/web/static/src/img/view_empty_arrow.png) no-repeat 0px 0px;
 }
 
 .oe_view_nocontent > p {
@@ -11429,7 +11437,7 @@ a.o_form_view .oe_form_box_info:hover, a.o_form_view .oe_form_box_info:focus {
 }
 
 .oe_view_nocontent .oe_empty_custom_dashboard {
-
+    background: transparent url(/web/static/src/img/graph_background.png) no-repeat 0 0;
     margin-top: -15px;
     padding: 100px 0 0 137px;
     min-height: 327px;
@@ -11437,7 +11445,10 @@ a.o_form_view .oe_form_box_info:hover, a.o_form_view .oe_form_box_info:focus {
 }
 
 /* /web/static/src/less/form_view_extra.less defined in bundle 'web.assets_backend' */
-
+.o_form_view .o_form_sheet_bg {
+    background: url(/images/form_sheetbg.png);
+    border-bottom: 1px solid #ddd;
+}
 
 .o_form_view .o_form_sheet_bg .o_form_sheet {
     border: 1px solid #c8c8d3;

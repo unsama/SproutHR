@@ -20,23 +20,6 @@ export default{
 
 
         $(function(){
-            $("select#o_field_input_933 option").each(function(){
-                if($(this).val()==self.employeeId){
-                    $(this).attr("selected","selected");
-                }
-            });
-            $("select#o_field_input_934 option").each(function(){
-                if($(this).val()==self.jobTitle){
-                    $(this).attr("selected","selected");
-                }
-            });
-
-            $("select#o_field_input_935 option").each(function(){
-                if($(this).val()==self.departmentId){
-                    $(this).attr("selected","selected");
-                }
-            });
-
             $("select#o_field_input_936 option").each(function(){
                 if($(this).val()==self.contractType_id){
                     $(this).attr("selected","selected");
@@ -49,25 +32,14 @@ export default{
             $("#num10").click(function () {
                 self.backsubmit();
             });
-
-
-
-            // self.$watch('employeeId', function (val) {
-            //     self.emp_table.forEach(function (row) {
-            //         if (row.employeename === val) {
-            //             self.employeeId = row.id;
-            //         }
-            //     });
-            // });
-
-            self.$watch('jobTitle', function (val) {
+            self.$watch('jobTitleId', function (val) {
                 self.jobTitles.forEach(function (row) {
+
                     if (row.job_tittle === val) {
-                        self.jobTitle = row.id;
+                        self.jobTitleId = row.id;
                     }
                 });
             });
-
             self.$watch('departmentId', function (val) {
                 self.dept_table.forEach(function (row) {
                     if (row.name === val) {
@@ -75,12 +47,6 @@ export default{
                     }
                 });
             });
-
-
-
-
-
-
 
             var oldtext;
             $('.note.btn.btn-primary').hover(function(){
@@ -102,9 +68,9 @@ export default{
                 }
 
             });
-
-
+            self.btnlinks.discardbtnlink ="/Employees/Contractone/"+self.$route.params.id;
             $("#save").click(function () {
+                alert("button is working!!!");
                 self.submit();
                 window.location.href = "/Employees/contractone/"+self.$route.params.id;
             });
@@ -248,7 +214,7 @@ export default{
             emplyee_name:'',
             emp_table:'',
 
-            jobTitle:'',// Used to store jobtitle temporarily for inertion purpose, it is v-model value
+            jobTitleId:'',// Used to store jobtitle temporarily for inertion purpose, it is v-model value
             jobTitles:'',//used to store all the rerods from database table to use in the browser from
 
 
@@ -311,7 +277,7 @@ export default{
             btnlinks: {
 
                 importbtnlink:"#/app/imported",
-                discardbtnlink: "/employees/CreateDep",
+                discardbtnlink: "",
                 savebtnlink: "",
             },
             r: true,
@@ -331,14 +297,9 @@ export default{
         getStatusValue: function (status) {
             var self = this;
             self.status_name= status;
+            alert("self.status_name : "+self.status_name);
 
         },
-        // select2: function (id) {
-        //     var self = this
-        //     self.status_name=id;
-        //
-        //
-        // },
         selectJobtitleAndDepartmentName: function () {
             var self = this;
             self.$http.post("/Employees/fetchJobTitleAndDept", {
@@ -347,8 +308,8 @@ export default{
             }).then(function(res){
                 var jobAndDept = res.body.data[0];
                 console.log(jobAndDept);
-                self.job = jobAndDept.job_tittle;
-                self.abc = jobAndDept.name;
+                self.jobTitleId = jobAndDept.job_tittle;
+                self.departmentId = jobAndDept.department_id;
 
             },function(err){
             });
@@ -363,7 +324,7 @@ export default{
                 var parentdata = res.body.data[0];
                 self.referenceName = parentdata.reference;
                 self.employeeId = parentdata.employee_id;
-                self.jobTitle = parentdata.job_tittle;
+                self.jobTitleId = parentdata.job_tittle;
                 self.departmentId = parentdata.department_id;
                 self.contractType_id = parentdata.contract_type;
                 self.wageAmount = parentdata.wage;
@@ -382,34 +343,17 @@ export default{
                 self.status_name = parentdata.contract_status;
                 $(function () {
                     if( self.status_name == "new"){
-                        // $('#new').classList.add("oe_active");
-                        // $('#running').classList.remove("oe_active");
-                        // $('#toRenew').classList.remove("oe_active");
-                        // $('#expired').classList.remove("oe_active");
-
                         $("#new").addClass('oe_active');
                         $("#running").removeClass('oe_active');
                         $("#toRenew").removeClass('oe_active');
                         $("#expired").removeClass('oe_active');
-                        // document.getElementById("new").classList.add("oe_active");
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // document.getElementById("expired").classList.remove("oe_active");
                     }
                     else if( self.status_name == "running")
                     {
-                        // $('#running').classList.add("oe_active");
-                        // $('#new').classList.remove("oe_active");
-                        // $('#toRenew').classList.remove("oe_active");
-                        // $('#expired').classList.remove("oe_active");
                         $("#running").addClass('oe_active');
                         $("#new").removeClass('oe_active');
                         $("#toRenew").removeClass('oe_active');
                         $("#expired").removeClass('oe_active');
-                        // document.getElementById('running').classList.add('oe_active');
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // document.getElementById("expired").classList.remove("oe_active");
                     }
                     else if( self.status_name == "toRenew")
                     {
@@ -417,30 +361,13 @@ export default{
                         $("#new").removeClass('oe_active');
                         $("#running").removeClass('oe_active');
                         $("#expired").removeClass('oe_active');
-
-                        // document.getElementbyId('toRenew').classList.add('oe_active');
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("expired").classList.remove("oe_active");
                     }
                     else if( self.status_name == "expired")
                     {
-                        // $('#expired').classList.add("oe_active");
-                        // $('#running').classList.remove("oe_active");
-                        // $('#new').classList.remove("oe_active");
-                        // $('#toRenew').classList.remove("oe_active");
-
                         $("#expired").addClass('oe_active');
                         $("#new").removeClass('oe_active');
                         $("#running").removeClass('oe_active');
                         $("#toRenew").removeClass('oe_active');
-                        // document.getElementbyId('expired').classList.add('oe_active');
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // $('#d').show();
-                        // $('#a').show();
-                        // $('#q').show();
                     }
                     else if( self.status_name == null)
                     {
@@ -448,14 +375,6 @@ export default{
                         $("#new").removeClass('oe_active');
                         $("#running").removeClass('oe_active');
                         $("#toRenew").removeClass('oe_active');
-
-                        // document.getElementbyId('expired').classList.remove('oe_active');
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // $('#d').show();
-                        // $('#a').show();
-                        // $('#q').show();
                     }
 
                 })
@@ -473,7 +392,7 @@ export default{
                 var parentdata = res.body.data[0];
                 self.referenceName = parentdata.reference;
                 self.employeeId = parentdata.employee_id;
-                self.jobTitle = parentdata.job_tittle;
+                self.jobTitleId = parentdata.job_tittle;
                 self.departmentId = parentdata.department_id;
                 self.contractType_id = parentdata.contract_type;
                 self.wageAmount = parentdata.wage;
@@ -492,34 +411,17 @@ export default{
                 self.status_name = parentdata.contract_status;
                 $(function () {
                     if( self.status_name == "new"){
-                        // $('#new').classList.add("oe_active");
-                        // $('#running').classList.remove("oe_active");
-                        // $('#toRenew').classList.remove("oe_active");
-                        // $('#expired').classList.remove("oe_active");
-
                         $("#new").addClass('oe_active');
                         $("#running").removeClass('oe_active');
                         $("#toRenew").removeClass('oe_active');
                         $("#expired").removeClass('oe_active');
-                        // document.getElementById("new").classList.add("oe_active");
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // document.getElementById("expired").classList.remove("oe_active");
                     }
                     else if( self.status_name == "running")
                     {
-                        // $('#running').classList.add("oe_active");
-                        // $('#new').classList.remove("oe_active");
-                        // $('#toRenew').classList.remove("oe_active");
-                        // $('#expired').classList.remove("oe_active");
                         $("#running").addClass('oe_active');
                         $("#new").removeClass('oe_active');
                         $("#toRenew").removeClass('oe_active');
                         $("#expired").removeClass('oe_active');
-                        // document.getElementById('running').classList.add('oe_active');
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // document.getElementById("expired").classList.remove("oe_active");
                     }
                     else if( self.status_name == "toRenew")
                     {
@@ -527,47 +429,14 @@ export default{
                         $("#new").removeClass('oe_active');
                         $("#running").removeClass('oe_active');
                         $("#expired").removeClass('oe_active');
-
-                        // document.getElementbyId('toRenew').classList.add('oe_active');
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("expired").classList.remove("oe_active");
                     }
                     else if( self.status_name == "expired")
                     {
-                        // $('#expired').classList.add("oe_active");
-                        // $('#running').classList.remove("oe_active");
-                        // $('#new').classList.remove("oe_active");
-                        // $('#toRenew').classList.remove("oe_active");
-
                         $("#expired").addClass('oe_active');
                         $("#new").removeClass('oe_active');
                         $("#running").removeClass('oe_active');
                         $("#toRenew").removeClass('oe_active');
-                        // document.getElementbyId('expired').classList.add('oe_active');
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // $('#d').show();
-                        // $('#a').show();
-                        // $('#q').show();
                     }
-                    else if( self.status_name == null)
-                    {
-                        $("#expired").removeClass('oe_active');
-                        $("#new").removeClass('oe_active');
-                        $("#running").removeClass('oe_active');
-                        $("#toRenew").removeClass('oe_active');
-
-                        // document.getElementbyId('expired').classList.remove('oe_active');
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // $('#d').show();
-                        // $('#a').show();
-                        // $('#q').show();
-                    }
-
                 })
 
 
@@ -587,7 +456,7 @@ export default{
 
                 self.referenceName = parentdata.reference;
                 self.employeeId = parentdata.employee_id;
-                self.jobTitle = parentdata.job_tittle;
+                self.jobTitleId = parentdata.job_tittle;
                 self.departmentId = parentdata.department_id;
                 self.contractType_id = parentdata.contract_type;
                 self.wageAmount = parentdata.wage;
@@ -605,34 +474,17 @@ export default{
                 self.status_name = parentdata.contract_status;
                 $(function () {
                     if( self.status_name == "new"){
-                        // $('#new').classList.add("oe_active");
-                        // $('#running').classList.remove("oe_active");
-                        // $('#toRenew').classList.remove("oe_active");
-                        // $('#expired').classList.remove("oe_active");
-
                         $("#new").addClass('oe_active');
                         $("#running").removeClass('oe_active');
                         $("#toRenew").removeClass('oe_active');
                         $("#expired").removeClass('oe_active');
-                        // document.getElementById("new").classList.add("oe_active");
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // document.getElementById("expired").classList.remove("oe_active");
                     }
                     else if( self.status_name == "running")
                     {
-                        // $('#running').classList.add("oe_active");
-                        // $('#new').classList.remove("oe_active");
-                        // $('#toRenew').classList.remove("oe_active");
-                        // $('#expired').classList.remove("oe_active");
                         $("#running").addClass('oe_active');
                         $("#new").removeClass('oe_active');
                         $("#toRenew").removeClass('oe_active');
                         $("#expired").removeClass('oe_active');
-                        // document.getElementById('running').classList.add('oe_active');
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // document.getElementById("expired").classList.remove("oe_active");
                     }
                     else if( self.status_name == "toRenew")
                     {
@@ -640,45 +492,14 @@ export default{
                         $("#new").removeClass('oe_active');
                         $("#running").removeClass('oe_active');
                         $("#expired").removeClass('oe_active');
-
-                        // document.getElementbyId('toRenew').classList.add('oe_active');
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("expired").classList.remove("oe_active");
                     }
                     else if( self.status_name == "expired")
                     {
-                        // $('#expired').classList.add("oe_active");
-                        // $('#running').classList.remove("oe_active");
-                        // $('#new').classList.remove("oe_active");
-                        // $('#toRenew').classList.remove("oe_active");
 
                         $("#expired").addClass('oe_active');
                         $("#new").removeClass('oe_active');
                         $("#running").removeClass('oe_active');
                         $("#toRenew").removeClass('oe_active');
-                        // document.getElementbyId('expired').classList.add('oe_active');
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // $('#d').show();
-                        // $('#a').show();
-                        // $('#q').show();
-                    }
-                    else if( self.status_name == null)
-                    {
-                        $("#expired").removeClass('oe_active');
-                        $("#new").removeClass('oe_active');
-                        $("#running").removeClass('oe_active');
-                        $("#toRenew").removeClass('oe_active');
-
-                        // document.getElementbyId('expired').classList.remove('oe_active');
-                        // document.getElementById("new").classList.remove("oe_active");
-                        // document.getElementById("running").classList.remove("oe_active");
-                        // document.getElementById("toRenew").classList.remove("oe_active");
-                        // $('#d').show();
-                        // $('#a').show();
-                        // $('#q').show();
                     }
 
                 })
@@ -695,7 +516,7 @@ export default{
 
             });
 
-            self.$http.post("/employees/fetchJobTitles", {"jobTitle": self.job_tittle	}).then(function(res){self.jobTitles =res.body.result;},function(err){
+            self.$http.post("/employees/fetchJobTitles", {"jobTitleId": self.job_tittle	}).then(function(res){self.jobTitles =res.body.result;},function(err){
 
             });
 
@@ -744,18 +565,14 @@ export default{
 
 
         },
-
-
-
-
-
         submit: function () {
             var self = this;
+            alert("self.status_name  :  "+self.status_name);
             self.$http.post("/Employees/EditContract", {
                 "id": self.$route.params.id,
                 "referenceName": self.referenceName,
                 "employeeId":self.employeeId,
-                "jobTitle":self.jobTitle,//job_title
+                "jobTitleId":self.jobTitleId,//job_title
                 "departmentId":self.departmentId,// department name
                 "contractType_id":self.contractType_id,
                 "wageAmount":self.wageAmount,
@@ -769,7 +586,7 @@ export default{
                 "work_schedule_id":self.work_schedule_id,
                 "visaNo":self.visaNo,
                 "workPermitNo":self.workPermitNo,
-                "status_name": self.status_name,
+                "contract_status": self.status_name,
             }).then(function(res){
                 console.log(res.body);
             },function(err){

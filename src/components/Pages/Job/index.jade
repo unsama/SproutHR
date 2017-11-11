@@ -24,22 +24,23 @@
                     span.arrow
                         span
         .oe_button_box(name='button_box',slot='button')
-            button.btn.btn-sm.oe_stat_button(type='button')
-                .fa.fa-fw.fa-file-o.o_button_icon
-                .o_form_field.o_stat_info
-                    span.o_stat_value 3
-                    span.o_stat_text Application
+            router-link(v-bind:to="'/recruitment/Reqpipe/'+$route.params.id")
+                button.btn.btn-sm.oe_stat_button(type='button')
+                    .fa.fa-fw.fa-file-o.o_button_icon
+                    .o_form_field.o_stat_info
+                        span.o_stat_value {{num4}}
+                        span.o_stat_text Application
             router-link(v-bind:to="'/recruitment/jobemployee/'+$route.params.id")
                 button.btn.btn-sm.oe_stat_button(type='button')
                     .fa.fa-fw.fa-users.o_button_icon
                     .o_form_field.o_stat_info(data-original-title='', title='')
                         span.o_stat_value {{num1}}
                         span.o_stat_text Employee
-            router-link(to='ReqDoc')
+            router-link(v-bind:to="'/recruitment/ReqAppDoc/'+$route.params.id")
                 button.btn.btn-sm.oe_stat_button(type='button')
                     .fa.fa-fw.fa-book.o_button_icon
                     .o_form_field.o_stat_info
-                        span.o_stat_value 0
+                        span.o_stat_value {{num3}}
                         span.o_stat_text Documents
             button.btn.btn-sm.oe_stat_button(type='button')
                 .fa.fa-fw.fa-share.o_button_icon

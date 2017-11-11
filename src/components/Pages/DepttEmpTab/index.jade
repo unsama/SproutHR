@@ -1,0 +1,115 @@
+.DepttEmpTab
+    DashboardController(v-bind:save='true',v-bind:heading="nextactivity",v-bind:importbtn='true',v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true',v-bind:createbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:firstbtn='true',v-bind:secondbtn='true',v-bind:printbtn='true',v-bind:leavesSummarybtn='true',v-bind:printBadge='true',v-bind:actionbtn='true',v-bind:subordinatebtn='true',v-bind:deletebtn="true",v-bind:exportbtn="true")
+        .col-sm-6(style='padding:0px;' ,slot='job')
+            h4.samodashheading(style="font-size: 18px;") Departments / Employees
+        span.o_pager_value(slot='page') {{counter}}
+            |  /
+            span.o_pager_limit(style="padding-right: 6px;") {{num}}
+            span.btn-group.btn-group-sm
+                button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous#num10(@click="select4()",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='p')
+                button.fa.fa-chevron-right.btn.btn-icon.o_pager_next#num01(@click="select3()",style='background-color:white;border-color: #adadad;color: #4c4c4c;')(type='button', accesskey='n')
+    modal( v-bind:print='true',v-bind:heading="nextactivity",v-bind:modal='"bd-example-modal-lg1"',v-bind:cancel='true')
+        .o_view_manager_content
+            .o_form_view.o_form_nosheet.o_form_editable
+                table.o_group.o_inner_group
+                    tbody
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_575')
+                                    | From
+                            td(colspan='1', style='width: 33.3333%;')
+                                .o_datepicker.o_form_field_date.o_form_field.o_form_required
+                                    input.o_datepicker_input.o_form_input#datepicker7(type='text', name='date_from', v-model="leavesFrom")
+                                    span.o_datepicker_button
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label(for='o_field_input_575')
+                                        | To
+                                td(colspan='1', style='width: 33.3333%;')
+                                    .o_datepicker.o_form_field_date.o_form_field.o_form_required
+                                        input.o_datepicker_input.o_form_input#datepicker8(type='text', name='date_from', v-model="leavesTo")
+                                        span.o_datepicker_button
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label(for='o_field_input_576')
+                                    | Select Leave Type
+                            td(colspan='1', style='width: 33.3333%;')
+                                select#o_field_input_576.o_form_input.o_form_field.o_form_required(name='holiday_type')
+                                    option(value='false')
+                                    option(value='"Approved"') Approved
+                                    option(value='"Confirmed"') Confirmed
+                                    option(value='"both"') Both Approved and Confirmed
+                        tr
+                            td.o_td_label(colspan='1')
+                                label.o_form_label.o_form_invisible(for='o_field_input_577')
+                                    | Employee(s)
+                            td(colspan='1', style='width: 33.3333%;')
+                                .o_form_field.o_form_invisible.o_form_field_many2many.o_view_manager_content
+                                    .o_x2m_control_panel
+                                        .o_cp_buttons
+                                        .o_cp_pager
+                                            .o_hidden
+                                                span.o_pager_value
+                                                |  /
+                                                span.o_pager_limit
+                                                span.btn-group.btn-group-sm
+                                                    button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous(type='button')
+                                                    button.fa.fa-chevron-right.btn.btn-icon.o_pager_next(type='button')
+                                    div
+                                        .table-responsive
+                                            table.o_list_view.table.table-condensed.table-striped
+                                                thead
+                                                    tr
+                                                        th.o_column_sortable(data-id='name')
+                                                            | Name
+                                                        th.o_column_sortable(data-id='work_phone')
+                                                            | Work Phone
+                                                        th.o_column_sortable(data-id='work_email')
+                                                            | Work Email
+                                                        th.o_column_sortable(data-id='department_id')
+                                                            | Department
+                                                        th.o_column_sortable(data-id='job_id')
+                                                            | Job Title
+                                                        th.o_column_sortable(data-id='parent_id')
+                                                            | Manager
+                                                        th.o_list_record_delete
+                                                tfoot
+                                                    tr
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td
+                                                        td.o_list_record_delete
+                                                tbody
+                                                    tr
+                                                        td.o_form_field_x2many_list_row_add(colspan='7')
+                                                            a(href='#') Add an item
+                                                    tr
+                                                        td(title='Name')  
+                                                        td(title='Work Phone')  
+                                                        td(title='Work Email')  
+                                                        td(title='Department')  
+                                                        td(title='Job Title')  
+                                                        td(title='Manager')  
+                                                        td.o_list_record_delete
+                                                    tr
+                                                        td(title='Name')  
+                                                        td(title='Work Phone')  
+                                                        td(title='Work Email')  
+                                                        td(title='Department')  
+                                                        td(title='Job Title')  
+                                                        td(title='Manager')  
+                                                        td.o_list_record_delete
+                                                    tr
+                                                        td(title='Name')  
+                                                        td(title='Work Phone')  
+                                                        td(title='Work Email')  
+                                                        td(title='Department')  
+                                                        td(title='Job Title')  
+                                                        td(title='Manager')  
+                                                        td.o_list_record_delete
+
+    TableMain(v-bind:tableheader='tableheader', v-bind:tabledata="tabledata", v-bind:tablefoot="tablefooter",data-toggle='modal', data-target='.bd-example-modal-lg0')
+
