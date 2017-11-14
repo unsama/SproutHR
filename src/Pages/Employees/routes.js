@@ -217,7 +217,7 @@ const routes = [
                     { path: 'DepExps', component: DepExps },
                     { path: 'Expsimport', component: Expsimport },
                     { path: 'DepSetting', component: DepSetting },
-                    { path: 'DepSettingEdit/:id', component: DepSettingEdit },
+                    { path: 'DepSettingEdit', component: DepSettingEdit },
                     { path: 'DepSettingcreate', component: DepSettingcreate },
                     { path: 'NewApp', component: NewApp },
                     { path: 'TableDep', component: TableDep },

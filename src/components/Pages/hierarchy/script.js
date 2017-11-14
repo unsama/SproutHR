@@ -90,7 +90,7 @@ export default{
     methods: {
         select1: function () {
             var self = this;
-            self.$http.post("/recruitment/herachy1", {"id": self.$route.params.id}).then(function (res) {
+            self.$http.post("/Employees/herachy1", {"id": self.$route.params.id}).then(function (res) {
                 self.names = res.body.data;
                 console.log(self.names);
             },function(err){
@@ -114,7 +114,7 @@ export default{
 
         select: function () {
             var self = this;
-            self.$http.post("/recruitment/herachy", {"id": self.$route.params.id}).then(function (res) {
+            self.$http.post("/Employees/herachy", {"id": self.$route.params.id}).then(function (res) {
                 var parentdata = res.body.data[0];
                 self.employeename  = parentdata.employeename ;
                 self.work_email  = parentdata.work_email ;
@@ -122,11 +122,11 @@ export default{
                 self.work_phone = parentdata.work_phone;
                 self.job_tittle  = parentdata.job_tittle ;
                 //console.log(this.$route.query.id);
-                self.$http.post("/recruitment/parentdep", {"parent_dept_id":self.parent_dept_id}).then(function (res) {
+                self.$http.post("/Employees/parentdep", {"parent_dept_id":self.parent_dept_id}).then(function (res) {
                         var data = res.body.data[0];
                         self.j = data.name;
                         //console.log(self.job_tittle);
-                        self.$http.post("/recruitment/manager", {"manager_id":self.manager_id}).then(function (res) {
+                        self.$http.post("/Employees/manager", {"manager_id":self.manager_id}).then(function (res) {
                                 var data = res.body.data[0];
                                 self.d = data.employeename;
 
