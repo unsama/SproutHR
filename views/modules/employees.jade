@@ -27,28 +27,19 @@ html(lang='en')
         div.container-fluid#main
             router-view
         if(!error)
-
             //FOR electron DO not remove.
             <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
             <script>window.$ = window.jQuery = require('jquery')</script>
             <script>if (window.module) module = window.module;</script>
-
-
-
-
-
-
             //script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.min.js')
             script(src='/javascripts/jquery.min.js')
             script(src='/javascripts/jqueryui.js')
             script(src='/plugins/ckeditor/ckeditor.js')
             //script(src='http://cdn.bootcss.com/jquery/1.11.3/jquery.js')
-
             script(src='/plugins/emoji-picker/lib/script/jquery.mousewheel-3.0.6.min.js')
             script(src='/plugins/emoji-picker/lib/script/jquery.mCustomScrollbar.min.js')
             script(src='/plugins/emoji-picker/src/js/jquery.emoji.js')
-
-
+            script(src='/javascripts/print.js')
 
             //script(src='/javascripts/vue-sortable.js')
             script(src='/javascripts/tether.min.js')

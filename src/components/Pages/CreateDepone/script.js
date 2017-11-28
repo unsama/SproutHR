@@ -10,7 +10,9 @@ export default {
         self.select();
 
         $(function () {
+
             $("#save").click(function () {
+                alert("self.employeeName"+self.employeeName);
                 if(self.employeeName=="")
                 {
                     $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
@@ -27,20 +29,6 @@ export default {
 
             });
 
-            // $("#save").click(function () {
-            //     var r = confirm("Are you sure you want to  Save the employee ");
-            //     if (r)
-            //     {
-            //         self.submit();
-            //         window.location.href = "/Employees/HrDeps/"+self.$route.params.id;
-            //
-            //     }
-            //     else
-            //     {
-            //     }
-            // });
-
-
             self.$watch('managerId', function (val) {
                 self.managers.forEach(function (row) {
                     if (row.employeename === val) {
@@ -53,8 +41,10 @@ export default {
                 var value = $(this).val();
                 if (value == "Create and Edit...") {
                     $(".bd-example-modal-lg1").modal('show');
+                    //callback();
                 }
             });
+
             $(".jobTitledropdown").on('change',function() {
                 var value = $(this).val();
                 if (value == "Create and Edit...") {
@@ -142,16 +132,25 @@ export default {
     },
     data() {
         return {
+            departName1:'',
+            managerId1:'',
+            managers1:'',
+            departmentId1:'',
+            departnents1:'',
+
+
             type:'',
             managers1:'',
             managerId1:'',
             departnents1:'',
             departmentId1:'',
             departName: '',
+            emptagId: '',
+            tagss: '',
 
 
-            birthDate:'', //birthDate
-            medicalExamDate:'',//medicalExamDate
+            birthDate:'',
+            medicalExamDate:'',
             employeeName: '',
             workingAddresses: '',
             workingAddressId: '',
@@ -197,6 +196,7 @@ export default {
             companyVehicle: '',
             HomeDistance: '',
             status: '',
+            activeArchive: '',
 
             nextactivity: "Next ActivitiesNeed / to customize the solution",
             modal2: "Open: Department",
@@ -295,6 +295,38 @@ export default {
     },
 
     methods: {
+        // callback:function() {
+        //         // Find modal body on the document
+        //         var $currentDetailsModal = $('.bd-example-modal-lg1');
+        //
+        //         // Clone modal and save copy
+        //         var $cloneDetailsModal = $currentDetailsModal.clone();
+        //
+        //         // Find links in this modal which open this modal again and bind this function to their click events
+        //         var value = $(this).val();
+        //         if (value == "Create and Edit...") {
+        //             $(value, $cloneDetailsModal).click(callback);
+        //         }
+        //
+        //
+        // },
+
+        SwitchButtons: function(buttonId) {
+            var self = this;
+            self.activeArchive = buttonId;
+            alert(self.activeArchive);
+
+            var hideBtn, showBtn;
+            if (buttonId == 'Active') {
+                showBtn = 'Archive';
+                hideBtn = 'Active';
+            } else {
+                showBtn = 'Active';
+                hideBtn = 'Archive';
+            }
+            document.getElementById(hideBtn).style.display = 'none';
+            document.getElementById(showBtn).style.display = '';
+        },
 
         updateDepart: function () {
             var self = this;
@@ -327,23 +359,23 @@ export default {
 
         },
 
-        selectDepartManagerHussain: function () {
-            var self = this;
-            //alert("Inside Method selectDepartManagerHussain(): departmentId  =  "+ self.departmentId);
-                self.$http.post("/Employees/fetchDeptManager", {
-                    "departmentId": self.departmentId,
-
-                }).then(function (res) {
-                    var deptManager = res.body.result[0];
-
-                    console.log(deptManager);
-                    self.managerId = deptManager.employeename;
-                    console.log(self.managerId);
-
-                }, function (err) {
-                    alert(err);
-                });
-        },
+        // selectDepartManagerHussain: function () {
+        //     var self = this;
+        //     //alert("Inside Method selectDepartManagerHussain(): departmentId  =  "+ self.departmentId);
+        //         self.$http.post("/Employees/fetchDeptManager", {
+        //             "departmentId": self.departmentId,
+        //
+        //         }).then(function (res) {
+        //             var deptManager = res.body.result[0];
+        //
+        //             console.log(deptManager);
+        //             self.managerId = deptManager.employeename;
+        //             console.log(self.managerId);
+        //
+        //         }, function (err) {
+        //             alert(err);
+        //         });
+        // },
 
 
         select: function () {
@@ -355,16 +387,16 @@ export default {
                 //alert(err);
             });
 
-            // self.$http.post("/employees /fetchdeparments", {"id": self.$route.params.id}).then(function (res) {
-            //     self.names = res.body.data;
-            //
-            //     alert(self.names);
-            // },function(err){
-            //     // alert(err);
-            // });
+            self.$http.post("/employees/fetchtags").then(function (res) {
+                self.tagss = res.body.result;
+            }, function (err) {
+                //alert(err);
+            });
 
             self.$http.post("/employees/fetchDepartments", {"deptName": self.name}).then(function (res) {
                 self.departnents = res.body.result;
+                console.log("self.departnents");
+                console.log(self.departnents);
             }, function (err) {
                 // alert(err);
             });
@@ -445,6 +477,47 @@ export default {
 
 
         },
+        // closeModal:function (){
+        //     alert("dddd");
+        //     window.location.replace("/employees/CreateDepone/");
+        // },
+        submitDepartment: function () {
+            var self = this;
+            if(self.departName1=="")
+            {
+                $("#success-alert1").fadeTo(2000, 500).slideUp(500, function(){
+                    $("#success-alert1").slideUp(500);
+
+
+                });
+
+            }
+            else {
+                self.$http.post("/Employees/addNewDepartment", {
+                    "departName": self.departName1,
+                    "managerId": self.managerId1,
+                    "parentDeptId": self.departmentId1,
+
+
+                }).then(function (res) {
+                    console.log(res.body);
+                }, function (err) {
+                    alert(err);
+                });
+
+            self.$http.post("/employees/fetchDepartments", {"deptName": self.name}).then(function (res) {
+                self.departnents = res.body.result;
+            }, function (err) {
+                // alert(err);
+            });
+            self.departName1 ='';
+            self.managerId1 ='';
+            self.departmentId1 ='';
+            //window.location.href = "/employees/CreateDepone/";
+            //router-link ="'HrDeps/'+record.id";
+            window.location.replace("/employees/CreateDepone/");
+            }
+        },
         submit: function () {
             var self = this;
             self.$http.post("/Employees/addNewEmployee", {
@@ -479,13 +552,13 @@ export default {
                 "placeOfBirth": self.placeOfBirth,
                 "timeSheetCost": self.timeSheetCost,
                 "status": self.status,
+                "activeArchive": self.activeArchive,
 
             }).then(function (res) {
                 console.log(res.body);
             }, function (err) {
                 //alert(err);
             });
-
             self.$http.post("/employees/addemp", {
                 "dep_name": self.name, "p_dep_id": self.parent_dept_id, "mgr_id": self.identification_number
             }).then(function (res) {

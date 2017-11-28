@@ -20,6 +20,12 @@
                                     .o_stat_info.o_form_field
                                         span.o_stat_text.o_not_hover.text-success Active
                                         span.o_stat_text.o_hover.text-danger Archive
+                                //button#Active.btn.btn-sm.oe_stat_button.sideviewtoggle.myButton(v-on:click="SwitchButtons('Active');")
+                                //    .fa.fa-fw.fa-archive.o_button_icon
+                                //    | Active
+                                //button#Archive.btn.btn-sm.oe_stat_button.sideviewtoggle.myButton(v-on:click="SwitchButtons('Archive');", style='display:none;')
+                                //    .fa.fa-fw.fa-archive.o_button_icon
+                                //    | Archive
                             table.o_group.o_inner_group
                                 tbody
                                     tr
@@ -86,39 +92,56 @@
 
 
         ReqEdit
-            table.o_group.o_inner_group(slot='dep')
-                tbody
-                    tr
-                        td.o_td_label(colspan='1')
-                            label.o_form_label(for='o_field_input_155')
-                                | Department Name
-                        td(colspan='1', style='width: 50%;')
-                            input#o_field_input_155.o_form_input.o_form_field.o_form_required(v-model='name',name='name', v-validate:name.initial="'required|alpha'", :class="{'input': true, 'is-danger': errors.has('name') }",type='text')
-                            i.fa.fa-warning.cl(v-show="errors.has('name')",style='color:red;')
-                            span.help.is-danger.cl(v-show="errors.has('name')",style='color:red;') {{ errors.first('name') }}
-                            button.o_field_translate.fa.fa-globe.btn.btn-link.o_translate_active(type='button')
-                        td.o_td_label(colspan='1')
-                            label.o_form_label
-                                | Manager
-                        td(colspan='1', style='width: 50%;')
-                            select(v-model='manager_id')
-                                option(v-for='option in options', v-bind:value="option.id")
-                                    | {{ option.employeename }}
-                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
-                    tr
-                        td.o_td_label(colspan='1')
-                            label.o_form_label
-                                | Parent Department
-                        td(colspan='1', style='width: 50%;')
-                            select#abcs(v-model='parent_dept_id',class="dept_dropdown",@click="select2()",style='width: 82%; display: inline-block;')
-                                option(v-for='option in options2',v-bind:value="option.id")
-                                    | {{ option.name }}
-                                option
-                                    span(data-toggle='modal2', data-target='bd-example-modal-lg1') Create and Edit...
-                            .fa.fa-external-link.btn.btn-default.o_external_button#ss(style='display: none;display: inline-block;',data-toggle='modal', data-target='.bd-example-modal-lg2',draggable='false', tabindex='-1', type='button')
-                            //select(v-model='parent_dept_id')
-                            //    option(v-for='option in options2', v-bind:value="option.id")
-                            //        | {{ option.name }}
-                            //    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
-                            //
+        .o_content#createedit(slot='dep')
+            .o_view_manager_content
+                .o_form_view.o_form_editable
+                    .o_form_sheet_bg
+                        .o_form_sheet
+                            .oe_button_box(name='button_box')
+                                //button.btn.btn-sm.oe_stat_button(type='button')
+                                //    .fa.fa-fw.fa-archive.o_button_icon
+                                //    .o_stat_info.o_form_field
+                                //        span.o_stat_text.o_not_hover.text-success Active
+                                //        span.o_stat_text.o_hover.text-danger Archive
+                                button#Active.btn.btn-sm.oe_stat_button.sideviewtoggle.myButton(v-on:click="SwitchButtons('Active');")
+                                    .fa.fa-fw.fa-archive.o_button_icon
+                                    | Active
+                                button#Archive.btn.btn-sm.oe_stat_button.sideviewtoggle.myButton(v-on:click="SwitchButtons('Archive');", style='display:none;')
+                                    .fa.fa-fw.fa-archive.o_button_icon
+                                    | Archive
+                            table.o_group.o_inner_group
+                                tbody
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label(for='o_field_input_155')
+                                                | Department Name
+                                        td(colspan='1', style='width: 50%;')
+                                            input#o_field_input_155.o_form_input.o_form_field.o_form_required(v-model='name',name='name', v-validate:name.initial="'required|alpha'", :class="{'input': true, 'is-danger': errors.has('name') }",type='text')
+                                            i.fa.fa-warning.cl(v-show="errors.has('name')",style='color:red;')
+                                            span.help.is-danger.cl(v-show="errors.has('name')",style='color:red;') {{ errors.first('name') }}
+                                            button.o_field_translate.fa.fa-globe.btn.btn-link.o_translate_active(type='button')
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Manager
+                                        td(colspan='1', style='width: 50%;')
+                                            select(v-model='manager_id')
+                                                option(v-for='option in options', v-bind:value="option.id")
+                                                    | {{ option.employeename }}
+                                                button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+                                    tr
+                                        td.o_td_label(colspan='1')
+                                            label.o_form_label
+                                                | Parent Department
+                                        td(colspan='1', style='width: 50%;')
+                                            select#abcs(v-model='parent_dept_id',class="dept_dropdown",@click="select2()",style='width: 82%; display: inline-block;')
+                                                option(v-for='option in options2',v-bind:value="option.id")
+                                                    | {{ option.name }}
+                                                option
+                                                    span(data-toggle='modal2', data-target='bd-example-modal-lg1') Create and Edit...
+                                            .fa.fa-external-link.btn.btn-default.o_external_button#ss(style='display: none;display: inline-block;',data-toggle='modal', data-target='.bd-example-modal-lg2',draggable='false', tabindex='-1', type='button')
+                                            //select(v-model='parent_dept_id')
+                                            //    option(v-for='option in options2', v-bind:value="option.id")
+                                            //        | {{ option.name }}
+                                            //    button.fa.fa-external-link.btn.btn-default.o_external_button(draggable='false', tabindex='-1', type='button', style='display: none;')
+
 

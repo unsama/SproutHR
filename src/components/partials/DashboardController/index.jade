@@ -12,7 +12,7 @@
 
             .col-sm-6.dashcontrollerbutton(style='padding-top: 24px;')
                 router-link.links.btn.btn-primary.samobuttopcontroller1#create(style="color:white;font-size: 13px;" ,v-if='createbtn', v-bind:to="links.createbtnlink")
-                    | Creates
+                    | Create
                 router-link.links.btn.btn-primary.samobuttopcontroller1(style="color:white;font-size: 13px;" ,v-if='starbtn', v-bind:to="links.starbtnlink")
                     | Unstar all
                 router-link.links.btn.btn-primary.samobuttopcontroller(style="color:white;font-size: 13px;" ,v-if='Invitebtn', v-bind:to="links.Invitebtnlink")
@@ -33,6 +33,8 @@
                     | Validate
                 router-link.btn.btn-primary.samobuttopcontroller2#save(style="font-size: 13px;color:white;",v-if='savedbtn',v-bind:to="links.savebtnlink")
                     | Save
+                router-link.btn.btn-primary.samobuttopcontroller2#print2(style="font-size: 13px;color:white;",v-if='print2btn',v-bind:to="links.print2btnlink")
+                    | Print
                 router-link.btn.btn-default.samobuttopcontroller(style="font-size: 13px;color: #4c4c4c;", v-if='discardbtn', v-bind:to="links.discardbtnlink")
                     | Discard
                 a.btn.btn-default.samobuttopcontroller#activity_discardbtn(style="font-size: 13px;display:none;", v-if='discard1btn',v-bind:to="links.discard1btnlink")
@@ -88,8 +90,10 @@
                         span.fa.fa-filter.iconbutton
                         | Action
                     .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                        a.dropdown-item.delete_inside#delete(v-if='deletebtn' v-bind:to="links.deletebtnlink") Delete
                         router-link.dropdown-item.delete(v-if='deletedropbtn' v-bind:to="links.deletedropbtnlink") Delete
                         router-link.dropdown-item.Duplicate(v-if='duplicatedropbtn' v-bind:to="links.duplicatebtnlink") Duplicate
+                        router-link.dropdown-item#duplicate(v-if='duplicate' v-bind:to="links.duplicatebtnlink") Duplicate
                         router-link.dropdown-item(v-if='planorderbtn' v-bind:to="links.planorderbtnlink") Plan Orders
                         router-link.dropdown-item#export(v-if='subordinatebtn' v-bind:to="links.subordinatebtnlink") Subordinate Hierchy
                         router-link.dropdown-item(v-if='leaveMeetingbtn' v-bind:to="links.leaveMeetingbtnlink") leave Meeting
@@ -100,7 +104,7 @@
                     .dropdown-menu(aria-labelledby='dropdownMenuButton')
                         a.dropdown-item(href='#') Adds
                 .dropdown.samodropdownbutton2(style='float: right;margin-top: -15px;', v-if='printbtn')
-                    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
+                    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton.printbtnDrop(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
                         span.fa.fa-star.iconbutton
                         | Print
                     .dropdown-menu(aria-labelledby='dropdownMenuButton')
@@ -109,15 +113,16 @@
                         router-link.dropdown-item#print(v-if='printcontact' v-bind:to="links.printcontactbtnlink") Payment Due
                         a.dropdown-item(v-if='Production',v-bind:to="links.Productioncontactbtnlink") Production Orders
             .col-sm-6.samodashcorner
-                .dropdown.samodropdownbutton2(v-if='dropdownbtn1')
+                .dropdown.samodropdownbutton2.newClass(v-if='dropdownbtn1')
                     button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
                         span.fa.fa-filter.iconbutton
                         | filter
                     .dropdown-menu(aria-labelledby='dropdownMenuButton')
-                        a.dropdown-item(href='#')#delete Action
+
+                        router-link.dropdown-item#archived(v-if='archivebtn',v-bind:to="links.archivebtnlink") Archived
                         a.dropdown-item(href='#') Another action
                         a.dropdown-item(href='#') Something else here
-                .dropdown.samodropdownbutton2(v-if='dropdownbtn2')
+                .dropdown.samodropdownbutton2.newClass(v-if='dropdownbtn2')
                     button#dropdownMenuButton2.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
                         span.fa.fa-bars.iconbutton
                         | Group By
@@ -125,7 +130,7 @@
                         a.dropdown-item(href='#') Action
                         a.dropdown-item(href='#') Another action
                         a.dropdown-item(href='#') Something else here
-                .dropdown.samodropdownbutton2(v-if='dropdownbtn3')
+                .dropdown.samodropdownbutton2.newClass(v-if='dropdownbtn3')
                     button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.samodropdownmenubutton(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false',style="font-size: 12px;border-radius: 0px;")
                         span.fa.fa-star.iconbutton
                         | Favourite
@@ -139,11 +144,11 @@
 
                     .col-xs-1
                         .btn-group.btn-group-sm.o_cp_switch_buttons.samodashbuttcorner
-                            a.btn.btn-icon.fa.fa-lg.fa-th-large.o_cp_switch_kanban.active(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button' , title='',v-if='firstbtn',v-bind:href="links.firstbtnlink")
-                            a.btn.btn-icon.fa.fa-lg.fa-list-ul.o_cp_switch_list(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button',v-if='secondbtn',v-bind:href="links.secondbtnlink")
-                            a.btn.btn-icon.fa.fa-lg.fa-table.o_cp_switch_pivot(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button' ,v-if='thirdbtn',v-bind:href="links.thirdbtnlink")
-                            a.btn.btn-icon.fa.fa-lg.fa-bar-chart.o_cp_switch_graph(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button',v-if='fourthbtn',v-bind:href="links.fourthbtnlink")
-                            a.btn.btn-icon.fa.fa-lg.fa-calendar.o_cp_switch_calendar(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 5px;font-size: inherit;',type='button',v-if='fifthbtn',v-bind:href="links.fifthbtnlink")
+                            router-link.btn.btn-icon.fa.fa-lg.fa-th-large.o_cp_switch_kanban.active(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button' , title='',v-if='firstbtn',v-bind:to="links.firstbtnlink")
+                            router-link.btn.btn-icon.fa.fa-lg.fa-list-ul.o_cp_switch_list(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button',v-if='secondbtn',v-bind:to="links.secondbtnlink")
+                            router-link.btn.btn-icon.fa.fa-lg.fa-table.o_cp_switch_pivot(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button' ,v-if='thirdbtn',v-bind:to="links.thirdbtnlink")
+                            router-link.btn.btn-icon.fa.fa-lg.fa-bar-chart.o_cp_switch_graph(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 9px;font-size: inherit;',type='button',v-if='fourthbtn',v-bind:to="links.fourthbtnlink")
+                            router-link.btn.btn-icon.fa.fa-lg.fa-calendar.o_cp_switch_calendar(style='background-color:white;border-color: #adadad;color: #4c4c4c;height: 27px;padding-top: 5px;font-size: inherit;',type='button',v-if='fifthbtn',v-bind:to="links.fifthbtnlink")
 
 
 

@@ -10,9 +10,9 @@
                     slot
                 .modal-footer(style='-webkit-justify-content: flex-start !important')
                     //button.btn.btn-primary.samobuttopcontroller2(type="button" class="btn btn-default" data-dismiss="modal") No Activitysas
-                    button.btn.btn-sm.btn-primary.savebtn(v-if='save && saveTigger' v-on:click="saveTigger")
+                    button#modalSave.btn.btn-sm.btn-primary.savebtn(v-if='savebtnTigger',v-on:click="saveTigger")
                         span Save
-                    button.btn.btn-sm.btn-primary.savebtn#saves(type='button',v-if='saveclose')
+                    button.btn.btn-sm.btn-primary.savebtn#saves(type='button',v-if='saveclose' )
                         span Save
                     button.btn.btn-sm.btn-primary.savebtn#savess(type='button',v-if='savemodal')
                         span Saves
@@ -22,9 +22,9 @@
                         span Save & New
                     button.btn.btn-sm.btn-primary.savebtn(type='button', v-if='sheduaeactivity')
                         span Shedule Activity
-                    button.btn.btn-sm.btn-primary.savebtn(type='button', v-if='noactivity' , class="btn btn-default" data-dismiss="modal")
+                    button.btn.btn-sm.btn-primary.savebtn(type='button', v-if='noactivity' , class="btn btn-default" closeDeptModal)
                         span No Activity
-                    button.btn.btn-sm.btn-default.o_form_button_cancel.discardbtn#discard(type='button', v-if='discard', data-dismiss="modal")
+                    button.btn.btn-sm.btn-default.o_form_button_cancel.discardbtn#discard(type='button', v-if='discard', data-dismiss="modal" )
                         span Discard
                     button.btn.btn-sm.btn-default.o_form_button_cancel.discardbtn(type='button', v-if='cancel', data-dismiss="modal")
                         span Cancel

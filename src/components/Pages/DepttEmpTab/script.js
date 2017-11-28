@@ -17,10 +17,19 @@ export default{
         var del = [];
         document.title = this.title;
         self.select();
-        self.select1();
+        //self.select1();
 
 
         $(function(){
+            $(".archivedpagi").hide();
+            $(".firstpagi").show();
+            $("#archived").click(function () {
+                $(".archivedpagi").show()
+                $(".firstpagi").hide()
+            });
+            $("#archived").click(function () {
+                self.selectArcivedEmployees();
+            });
             self.btnlinks.printBadgebtnlink = "/Employees/Badge/"+self.$route.params.id;
             self.btnlinks.firstbtnlink = "/Employees/NewDep/"+self.$route.params.id;
 
@@ -77,6 +86,7 @@ export default{
                 leavesSummarybtnlink:"",
                 printBadgebtnlink:"",
                 exportbtnlink:"",
+                archivebtnlink: "",
             },
             tableheader: [
                 "ID",
@@ -133,10 +143,77 @@ export default{
         }
     },
     methods: {
+        selectArcivedEmployees: function () {
+            var self = this;
+            alert("self.$route.params.id: "+self.$route.params.id);
+            self.$http.post("/employees/fetchDeptArchivedEmployeesForTable",{"id":self.$route.params.id}).then(function (res){
+                var data = res.body.result;
+                console.log(data);
+                self.tabledata = [];
+                if(data.length > 0){
+                    data.forEach(function(val) {
+                        var j_date = new Date(val.created_at);
+                        self.tabledata.push({
+                            "data": [
+                                val.ID,
+                                val.empname,
+                                val.phone,
+                                val.email,
+                                val.deptname,
+                                val.job,
+                                val.empManager,
+                            ],
+                            "url": "/Employees/DeptEmpShow/"+val.ID,
+
+                        });
+                    });
+                }
+            });
+            self.$http.post("/Employees/countDeptArchivedEmployees",{"id":self.$route.params.id}).then(function (res) {
+                var parentdata = res.body.data[0];
+                self.num = parentdata.count;
+                console.log('value of num'+self.num);
+
+            }, function (err) {
+
+            });
+        },
         select3: function () {
             var self = this;
             self.counter+=3;
             self.$http.post("/employees/DeptEmployeeNext", {
+                "counter": self.counter,
+            }).then(function(res){
+                var data = res.body.data;
+                self.j = data.name;
+                self.tabledata = [];
+                if(data.length > 0){
+                    data.forEach(function(val) {
+                        var j_date = new Date(val.created_at);
+                        self.tabledata.push({
+                            "data": [
+                                val.ID,
+                                val.empname,
+                                val.phone,
+                                val.email,
+                                val.deptname,
+                                val.job,
+                                val.empManager,
+                            ],
+                            "url": "/Employees/HrDeps/"+val.ID,
+
+                        });
+                    });
+                }
+
+            },function(err){
+                alert(err);
+            });
+        },
+        select5: function () {
+            var self = this;
+            self.counter+=3;
+            self.$http.post("/employees/archivedDeptEmployeeNext", {
                 "counter": self.counter,
             }).then(function(res){
                 var data = res.body.data;
@@ -199,6 +276,40 @@ export default{
             });
 
         },
+        select6: function () {
+            var self = this;
+            self.counter-=3;
+            self.$http.post("/employees/archivedDeptEmployeeBack", {
+                "counter": self.counter,
+                "id":self.$route.params.id,
+            }).then(function(res){
+                var data = res.body.data;
+                self.j = data.name;
+                self.tabledata = [];
+                if(data.length > 0){
+                    data.forEach(function(val) {
+                        var j_date = new Date(val.created_at);
+                        self.tabledata.push({
+                            "data": [
+                                val.ID,
+                                val.empname,
+                                val.phone,
+                                val.email,
+                                val.deptname,
+                                val.job,
+                                val.empManager,
+                            ],
+                            "url": "/Employees/HrDeps/"+val.ID,
+
+                        });
+                    });
+                }
+
+            },function(err){
+                alert(err);
+            });
+
+        },
         select: function () {
             var self = this;
             self.$http.post("/Employees/putDeptEmployeesToTableView", {
@@ -225,6 +336,17 @@ export default{
                         });
                     });
                 }
+                self.$http.post("/Employees/countDeptActiveEmployees", {"id": self.$route.params.id}).then(function (res) {
+
+                    var parentdata = res.body.data[0];
+                    self.num = parentdata.count;
+                    console.log('value of num'+self.num);
+                    //console.log(this.$route.query.id);
+
+                }, function (err) {
+
+                });
+
 
 
             },function(err){

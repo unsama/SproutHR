@@ -14,12 +14,9 @@ export default{
         this.select1();
         $(function() {
             $("#save").click(function () {
-                var r = confirm("Are you sure update user");
+                var r = confirm("Are you sure you want to  edit this department???");
                 if (r)
                 {
-                    // x="You pressed OK!";
-                    //console.log("asdasdas");
-
                     self.submit();
                     window.location.href = "../ReqDep/"+self.$route.params.id;
                 }
@@ -85,6 +82,7 @@ export default{
             j: '',
             d: '',
             names: '',
+            status: '',
             options2: '',
             options: '',
             num: '',
@@ -104,6 +102,27 @@ export default{
         }
     },
     methods: {
+        SwitchButtons: function(buttonId) {
+            var self = this;
+            self.status = buttonId;
+            alert(self.status);
+            self.$http.post("/Employees/editActiveArchiveOfDeptment", {
+                "id": self.$route.params.id,
+                "status": self.status,
+            }).then(function (res) {
+            }, function (err) {
+            });
+            var hideBtn, showBtn;
+            if (buttonId == 'Active') {
+                showBtn = 'Archive';
+                hideBtn = 'Active';
+            } else {
+                showBtn = 'Active';
+                hideBtn = 'Archive';
+            }
+            document.getElementById(hideBtn).style.display = 'none';
+            document.getElementById(showBtn).style.display = '';
+        },
         submit: function () {
             var self = this;
             self.$http.post("/Employees/Editreqs", {"id": self.$route.params.id,"name": self.name,"parent_dept_id": self.parent_dept_id,"manager_id": self.manager_id}).then(function(res){

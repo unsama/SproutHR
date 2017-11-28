@@ -39,7 +39,6 @@ export default{
 
 
             $("#save").click(function () {
-                alert("save buttton is pressed!!!");
                 self.submit();
                 window.location.href = "/Employees/TableDep";
             });
@@ -266,14 +265,10 @@ export default{
         },
 
         submit: function () {
-            alert("Inside submit body!!!");
             var self = this;
-            //var ckeditor_value = CKEDITOR.instances.editor1.getData();
-
             self.$http.post("/employees/addNewDepartment", {
                 "departName": self.departName, "parentDeptId": self.parentDeptId, "managerId": self.managerId
             }).then(function (res) {
-                //console.log(res.body);
             }, function (err) {
 
             });

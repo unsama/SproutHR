@@ -18,6 +18,15 @@ export default{
         self.select1();
 
         $(function(){
+            $(".archivedpagi").hide();
+            $(".firstpagi").show();
+            $("#archived").click(function () {
+                $(".archivedpagi").show()
+                $(".firstpagi").hide()
+            });
+            $("#archived").click(function () {
+                self.selectArcivedDepartments();
+            });
 
             self.$watch('managerId', function (val) {
                 self.employeeNames.forEach(function (row) {
@@ -85,6 +94,7 @@ export default{
                 exportbtnlink:"",
                 importbtnlink:"#/app/Employees/TableImport",
                 firstbtnlink: "/Employees/EmpDash",
+                archivebtnlink: "",
 
             },
             counter:1,
@@ -136,6 +146,42 @@ export default{
         }
     },
     methods: {
+        selectArcivedDepartments: function () {
+            var self = this;
+            self.$http.post("/employees/fetchArchivedDepartmentsToTableView").then(function (res){
+                var data = res.body.result;
+                console.log(data);
+                self.tabledata = [];
+                if(data.length > 0){
+                    data.forEach(function(val) {
+                        var j_date = new Date(val.created_at);
+                        self.tabledata.push({
+                            "data": [
+                                val.ID,
+                                val.displayname,
+                                val.manager,
+                                val.deptId,
+                                // "Id",
+                                // "Display Name",
+                                // "Manager",
+                                // "Parent Department",
+                            ],
+                            "url": "/Employees/Tables/"+val.ID,
+
+                        });
+                    });
+                }
+            });
+            self.$http.post("/Employees/countArchivedEmployees").then(function (res) {
+                var parentdata = res.body.data[0];
+                self.num = parentdata.count;
+                console.log('value of num'+self.num);
+                //console.log(this.$route.query.id);
+
+            }, function (err) {
+
+            });
+        },
         select3: function () {
             var self = this;
             self.counter+=5;
@@ -167,10 +213,72 @@ export default{
                 alert(err);
             });
         },
+        select5: function () {
+            var self = this;
+            self.counter+=5;
+            self.$http.post("/employees/archivedDepartment_tablenext", {
+                "counter": self.counter,
+            }).then(function(res){
+                var data = res.body.data;
+                self.j = data.name;
+                self.tabledata = [];
+                if(data.length > 0){
+                    data.forEach(function(val) {
+                        var j_date = new Date(val.created_at);
+                        self.tabledata.push({
+                            "data": [
+                                val.ID,
+                                val.displayname,
+                                val.manager,
+                                val.deptId,
+
+
+                            ],
+                            "url": "/Employees/Tables/"+val.ID,
+
+                        });
+                    });
+                }
+
+            },function(err){
+                alert(err);
+            });
+        },
         select4: function () {
             var self = this;
             self.counter-=5;
             self.$http.post("/employees/department_tableback", {
+                "counter": self.counter,
+            }).then(function(res){
+                var data = res.body.data;
+                self.j = data.name;
+                self.tabledata = [];
+                if(data.length > 0){
+                    data.forEach(function(val) {
+                        var j_date = new Date(val.created_at);
+                        self.tabledata.push({
+                            "data": [
+                                val.ID,
+                                val.displayname,
+                                val.manager,
+                                val.deptId,
+
+                            ],
+                            "url": "/Employees/Tables/"+val.ID,
+
+                        });
+                    });
+                }
+
+            },function(err){
+                alert(err);
+            });
+
+        },
+        select6: function () {
+            var self = this;
+            self.counter-=5;
+            self.$http.post("/employees/archivedDepartment_tableback", {
                 "counter": self.counter,
             }).then(function(res){
                 var data = res.body.data;
@@ -275,10 +383,6 @@ export default{
             }, function (err) {
 
             });
-
-
-
-
         },
 
     },

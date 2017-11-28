@@ -71,6 +71,7 @@ import TableHrEdit from "./../../components/Pages/TableHrEdit/TableHrEdit.vue"
 import HrGrid from "./../../components/Pages/HrGrid/HrGrid.vue"
 import Gridtwo from "./../../components/Pages/Gridtwo/Gridtwo.vue"
 import Gridtwotable from "./../../components/Pages/Gridtwotable/Gridtwotable.vue"
+import deptEmpDuplicate from "./../../components/Pages/deptEmpDuplicate/deptEmpDuplicate.vue"
 
 import DashEmp   from "./../../components/partials/DashEmp/DashEmp.vue"
 import Grid from "./../../components/partials/Grid/Grid.vue"
@@ -261,6 +262,7 @@ const routes = [
                     { path: 'DepttEmpTab/:id', component: DepttEmpTab },
                     { path: 'DeptEmpShow/:id', component: DeptEmpShow },
                     { path: 'deptEmpEdit/:id', component: deptEmpEdit },
+                    { path: 'deptEmpDuplicate/:id', component: deptEmpDuplicate },
 
 
 

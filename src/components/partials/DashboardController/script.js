@@ -5,7 +5,7 @@ export default{
     created: function () {
         $(document).ready(function () {
             $("#searchbutton").click(function () {
-                $(".samodropdownbutton2").toggle();
+                $(".newClass").toggle();
             });
         });
         $(document).ready(function () {
@@ -27,6 +27,7 @@ export default{
     },
     props: [
         "discard1btn",
+        "archivebtn",
         "measurebtn",
         "editform",
         "modal",
@@ -45,6 +46,7 @@ export default{
         "validatebtn",
         "savebtn",
         "savedbtn",
+        "print2btn",
         "heading",
         "pagibtn",
         "firstbtn",
@@ -69,7 +71,9 @@ export default{
         "seventhbtn",
         "eighthbtn",
         "deletedropbtn",
+        "deletebtn",
         "duplicatedropbtn",
+        "duplicate",
         "planorderbtn",
         "subordinatebtn",
         "printBadge",

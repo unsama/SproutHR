@@ -62,6 +62,7 @@ export default {
             departName: '',
             parent_dept_id: '',
             managerId: '',
+            activeArchive: '',
 
 
             v: true,
@@ -91,6 +92,22 @@ export default {
         }
     },
     methods: {
+        SwitchButtons: function(buttonId) {
+            var self = this;
+            self.activeArchive = buttonId;
+            alert(self.activeArchive);
+
+            var hideBtn, showBtn;
+            if (buttonId == 'Active') {
+                showBtn = 'Archive';
+                hideBtn = 'Active';
+            } else {
+                showBtn = 'Active';
+                hideBtn = 'Archive';
+            }
+            document.getElementById(hideBtn).style.display = 'none';
+            document.getElementById(showBtn).style.display = '';
+        },
         select: function () {
             var self = this;
 
@@ -122,7 +139,7 @@ export default {
             //var ckeditor_value = CKEDITOR.instances.editor1.getData();
 
             self.$http.post("/employees/addNewDepartment", {
-                "departName": self.departName, "parentDeptId": self.parentDeptId, "managerId": self.managerId
+                "departName": self.departName, "parentDeptId": self.parentDeptId, "managerId": self.managerId, "activeArchive": self.activeArchive
             }).then(function (res) {
                 //console.log(res.body);
             }, function (err) {

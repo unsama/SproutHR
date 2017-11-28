@@ -4410,7 +4410,7 @@
                                                             | Department
                                                     td(colspan='1', style='width: 100%;')
 
-                                                        select#o_field_input_600.deptdropdown(v-model='departmentId',v-on:click="selectDepartManagerHussain()")
+                                                        select#o_field_input_600.deptdropdown(v-model='departmentId')
                                                             option(v-for="deptName in departnents" ,v-bind:value='deptName.id')
                                                                 | {{deptName.name}}
                                                             option

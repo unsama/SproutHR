@@ -143,12 +143,11 @@
     height: 37px;
 }
 
-span{
+.whc{
     display: inline-block;
 
     margin-left: -15px;
     margin-top: -10px;
-    width: 548px;
     padding-top: 10px;
 
 }

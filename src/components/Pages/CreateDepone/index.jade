@@ -4185,94 +4185,104 @@
                                                     input#o_field_input_789.o_form_input.o_form_field.o_form_invisible.o_form_field_number(type='text')
 
 
-        Modal(v-bind:saveclose='true',v-bind:discard='true',v-bind:heading="modal2",v-bind:modal='"bd-example-modal-lg1"')
-        .modal-body.o_act_window
-            .o_form_view.o_form_editable
-                .o_form_sheet_bg
-                    .o_form_sheet
-                        .oe_button_box(name='button_box')
-                            button.btn.btn-sm.oe_stat_button(type='button')
-                                .fa.fa-fw.fa-archive.o_button_icon
-                                .o_stat_info.o_form_field
-                                    span.o_stat_text.o_not_hover.text-success Active
-                                    span.o_stat_text.o_hover.text-danger Archive
-                        table.o_group.o_inner_group
-                            tbody
-                                tr
-                                    td.o_td_label(colspan='1')
-                                        label.o_form_label(for='o_field_input_194')
-                                            | Department Name
-                                    td(colspan='1', style='width: 50%;')
-                                        input#o_field_input_194.o_form_input.o_form_field.o_form_required(type='text',v-model="departName")
-                                    td.o_td_label(colspan='1')
-                                        label.o_form_label(for='o_field_input_195')
-                                            | Manager
-                                    td(colspan='1', style='width: 50%;')
-                                        select.mgrDropdown1(v-model="managerId1")
-                                            option(v-for="mgr in managers1" v-bind:value="mgr.id")
-                                                | {{mgr.employeename}}
-                                            option
-                                                span(data-toggle='' data-target='') Search More...
-                                            option
-                                                span(data-toggle='' data-target='') Create and Edit...
-                                tr
-                                    td.o_td_label(colspan='1')
-                                        label.o_form_label(for='o_field_input_196')
-                                            | Parent Department
-                                    td(colspan='1', style='width: 50%;')
-                                        select.deptdropdown(v-model='departmentId1')
-                                            option(v-for="deptName in departnents1" ,v-bind:value='deptName.id')
-                                                | {{deptName.name}}
-                                            option
-                                                span(data-toggle='' data-taget='') Search More...
-                                            option
-                                                span(data-toggle='modal2' data-target='bd-example-modal-lg1') Create and Edit...
+    //discardTrigger
+    Modal(v-bind:savebtnTigger='true',v-bind:saveTigger='submitDepartment',v-bind:discard='true',v-bind:heading="modal2",v-bind:modal='"bd-example-modal-lg1"')
+        .col-sm-12
+            #success-alert1(style='background-color:red;display:none;position:absolute;right: 16px;z-index: 3;')
+                button.close(type="button", data-dismiss="alert",style='color:white;') x
+                .o_notification.o_error
+                    .o_notification_title
+                        span.o_icon.fa.fa-3x.fa-exclamation(style='color:white;border-bottom: 3px solid white;font-size: 16px') The following fields are invalid:
 
-                .o_chatter.o_form_field.oe_chatter
-                    .o_chatter_topbar
-                        button.btn.btn-sm.btn-primary.o_chatter_button_new_message(title='Send a message', type='button')
-                            | New message
-                        button.btn.btn-sm.btn-link.o_chatter_button_log_note(title='Log a note. Followers will not be notified.')
-                            | Log an internal note
-                        .o_followers.o_form_field
-                            .o_followers_title_box
-                                button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', title='No follower')
-                                    i.fa.fa-user
-                                    span.o_followers_count 0
-                                    span.caret
-                                ul.dropdown-menu.o_followers_list(role='menu')
-                                    li.o_add_follower
-                                        a(href='#')  Add Followers
-                                    li.o_add_follower_channel
-                                        a(href='#')  Add Channels
-                            .o_followers_actions
-                                .btn-group.btn-group-sm.o_subtypes_list
-                                    button.btn.btn-sm.btn-link.o_followers_follow_button.o_followers_notfollow
-                                        span.o_follow Follow
-                                        span.fa.fa-times.o_followers_unfollow
-                                        span.o_followers_unfollow  Unfollow
-                                        span.fa.fa-check.o_followers_following
-                                        span.o_followers_following  Following
-                                    button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', disabled='disabled')
-                                        span.fa.fa-bell
-                                    ul.dropdown-menu(role='menu')
-                    .o_mail_thread
-                        .o_thread_date_separator
-                            span.o_thread_date
-                                | January 28, 2017
-                        .o_thread_message(data-message-id='33')
-                            .o_thread_message_sidebar
-                                img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/images/image_small.png')
-                            .o_thread_message_core.o_mail_note
-                                p.o_mail_info
-                                    | Note by
-                                    strong(data-oe-model='res.partner', data-oe-id='')
-                                        | YourCompany, Administrators
-                                    |                     -
-                                    small.o_mail_timestamp(title='Sat Jan 28 2017 18:12:15 GMT+0500') 2 months ago
-                                    span
-                                        i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='33')
-                                p Hr Department created
+                    .o_notification_content(style='padding-top: 16px;')
+                        ul
+                            li#leave1(style='color:white;') Department Name
+        .o_form_view.o_form_editable
+            .o_form_sheet_bg
+                .o_form_sheet
+                    .oe_button_box(name='button_box')
+                        button.btn.btn-sm.oe_stat_button(type='button')
+                            .fa.fa-fw.fa-archive.o_button_icon
+                            .o_stat_info.o_form_field
+                                span.o_stat_text.o_not_hover.text-success Active
+                                span.o_stat_text.o_hover.text-danger Archive
+                    table.o_group.o_inner_group
+                        tbody
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label(for='o_field_input_194')
+                                        | Department Name
+                                td(colspan='1', style='width: 50%;')
+                                    input#o_field_input_194.o_form_input.o_form_field.o_form_required(type='text',v-model="departName1")
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label(for='o_field_input_195')
+                                        | Manager
+                                td(colspan='1', style='width: 50%;')
+                                    select.mgrDropdown1(v-model="managerId1")
+                                        option(v-for="mgr in managers1" v-bind:value="mgr.id")
+                                            | {{mgr.employeename}}
+                                        option
+                                            span(data-toggle='' data-target='') Search More...
+                                        option
+                                            span Create and Edit...
+                            tr
+                                td.o_td_label(colspan='1')
+                                    label.o_form_label(for='o_field_input_196')
+                                        | Parent Department
+                                td(colspan='1', style='width: 50%;')
+                                    select.deptdropdown(v-model='departmentId1')
+                                        option(v-for="deptName in departnents1" ,v-bind:value='deptName.id')
+                                            | {{deptName.name}}
+                                        option
+                                            span(data-toggle='' data-taget='') Search More...
+                                        option
+                                            span(data-toggle='modal2' data-target='bd-example-modal-lg1') Create and Edit...
+
+            .o_chatter.o_form_field.oe_chatter
+                .o_chatter_topbar
+                    button.btn.btn-sm.btn-primary.o_chatter_button_new_message(title='Send a message', type='button')
+                        | New message
+                    button.btn.btn-sm.btn-link.o_chatter_button_log_note(title='Log a note. Followers will not be notified.')
+                        | Log an internal note
+                    .o_followers.o_form_field
+                        .o_followers_title_box
+                            button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', title='No follower')
+                                i.fa.fa-user
+                                span.o_followers_count 0
+                                span.caret
+                            ul.dropdown-menu.o_followers_list(role='menu')
+                                li.o_add_follower
+                                    a(href='#')  Add Followers
+                                li.o_add_follower_channel
+                                    a(href='#')  Add Channels
+                        .o_followers_actions
+                            .btn-group.btn-group-sm.o_subtypes_list
+                                button.btn.btn-sm.btn-link.o_followers_follow_button.o_followers_notfollow
+                                    span.o_follow Follow
+                                    span.fa.fa-times.o_followers_unfollow
+                                    span.o_followers_unfollow  Unfollow
+                                    span.fa.fa-check.o_followers_following
+                                    span.o_followers_following  Following
+                                button.btn.btn-sm.btn-link.dropdown-toggle(aria-expanded='false', data-toggle='dropdown', disabled='disabled')
+                                    span.fa.fa-bell
+                                ul.dropdown-menu(role='menu')
+                .o_mail_thread
+                    .o_thread_date_separator
+                        span.o_thread_date
+                            | January 28, 2017
+                    .o_thread_message(data-message-id='33')
+                        .o_thread_message_sidebar
+                            img.o_thread_message_avatar(data-oe-model='res.partner', data-oe-id='', src='/images/image_small.png')
+                        .o_thread_message_core.o_mail_note
+                            p.o_mail_info
+                                | Note by
+                                strong(data-oe-model='res.partner', data-oe-id='')
+                                    | YourCompany, Administrators
+                                |                     -
+                                small.o_mail_timestamp(title='Sat Jan 28 2017 18:12:15 GMT+0500') 2 months ago
+                                span
+                                    i.fa.fa-lg.o_thread_message_star.fa-star-o(title='Mark as Todo', data-message-id='33')
+                            p Hr Department created
     DashboardController(v-bind:savedbtn='true', v-bind:discardbtn='true',v-bind:heading="head",v-bind:links="btnlinks")
         .col-sm-6(style='padding:0px;' ,slot='job')
             h4.samodashheading(style="font-size: 18px;") Employees / New
@@ -4287,6 +4297,8 @@
                     .o_notification_content(style='padding-top: 16px;')
                         ul
                             li#leave(style='color:white;') Employee's Name
+
+
     Editing
     .o_content(slot='profile')
         .o_view_manager_content
@@ -4294,11 +4306,17 @@
                 .o_form_sheet_bg
                     .o_form_sheet
                         .oe_button_box(name='button_box')
-                            button.btn.btn-sm.oe_stat_button(type='button')
+                            //button.btn.btn-sm.oe_stat_button(type='button')
+                            //    .fa.fa-fw.fa-archive.o_button_icon
+                            //    .o_stat_info.o_form_field(data-original-title='', title='')
+                            //        span.o_stat_text.o_not_hover.text-success Active
+                            //        span.o_stat_text.o_hover.text-danger Archive
+                            button#Active.btn.btn-sm.oe_stat_button.sideviewtoggle.myButton(v-on:click="SwitchButtons('Active');")
                                 .fa.fa-fw.fa-archive.o_button_icon
-                                .o_stat_info.o_form_field(data-original-title='', title='')
-                                    span.o_stat_text.o_not_hover.text-success Active
-                                    span.o_stat_text.o_hover.text-danger Archive
+                                | Active
+                            button#Archive.btn.btn-sm.oe_stat_button.sideviewtoggle.myButton(v-on:click="SwitchButtons('Archive');", style='display:none;')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                | Archive
                             .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
                                 input(type='checkbox', name='show_leaves', disabled='')
                                 span
@@ -4332,15 +4350,14 @@
                                     .o_form_field.o_form_field_empty(data-original-title='', title='')
                                         .oe_hr_attendance_status.fa.fa-user
                                     input#o_field_input_591.o_form_input.o_form_field.o_form_required.employeeName(placeholder="Employees's Name", type='text', v-model="employeeName")
-                        .o_form_field_many2manytags.o_form_field
+                        .o_form_field_many2manytags.o_form_field(style="border:none !important;width: 17%;")
                             .o_form_field_many2one.o_form_field
                                 .o_form_input_dropdown
-                                    input(type='text' list='designations' placeholder='e.g Part Time' style="border: 1px solid red;" )
-                                    datalist#designations
-                                        option(value='Sales')
-                                        option(value='Trainer')
-                                        option(value='Employee')
-                                        option(value='Consultant')
+                                    select.emptags(v-model='emptagId')
+                                        option(value="", disabled,selected)
+                                            | e.fggfg
+                                        option(v-for="etag in tagss" v-bind:value="etag.id")
+                                            | {{etag.name}}
                         .o_notebook
                             ul.nav.nav-tabs(role='tablist')
                                 li.nav-item.active
@@ -4380,11 +4397,6 @@
                                                             | Work Mobile
                                                     td(colspan='1', style='width: 100%;')
                                                         input#o_field_input_596.o_form_input.o_form_field(type='text',v-model="workMobile")
-                                                        input#o_field_input_4.o_form_input.o_form_field.o_form_required(v-model='job_tittle',name='name',v-validate:name.initial="'required|alpha'", :class="{'input': true, 'is-danger': errors.has('name') }",placeholder='e.g. Sales Manager', type='text')
-                                                            i.fa.fa-warning.cl(v-show="errors.has('name')",style='color:red;')
-                                                            span.help.is-danger.cl(v-show="errors.has('name')",style='color:red;') {{ errors.first('name') }}
-                                                            button.o_field_translate.fa.fa-globe.btn.btn-link.o_translate_active(type='button')
-                                                            button.o_field_translate.fa.fa-globe.btn.btn-link(type='button')
                                                 tr
                                                     td.o_td_label(colspan='1')
                                                         label.o_form_label(for='o_field_input_597')
@@ -4415,13 +4427,13 @@
                                                             | Department
                                                     td(colspan='1', style='width: 100%;')
 
-                                                        select.deptdropdown(v-model='departmentId',v-on:click="selectDepartManagerHussain()")
+                                                        select.deptdropdown(v-model='departmentId')
                                                             option(v-for="deptName in departnents" ,v-bind:value='deptName.id')
                                                                 | {{deptName.name}}
                                                             option
                                                                 span(data-toggle='' data-taget='') Search More...
                                                             option
-                                                                span(data-toggle='modal2' data-target='bd-example-modal-lg1') Create and Edit...
+                                                                span( data-target='bd-example-modal-lg1') Create and Edit...
                                                 tr
                                                     td.o_td_label(colspan='1')
                                                         label.o_form_label(for='o_field_input_601')

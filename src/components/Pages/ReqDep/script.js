@@ -57,6 +57,7 @@ export default{
         return {
 
             DepartmentName: '',
+            status: '',
             parentDepartmentName: '',
             parentDepartmentId: '',
             ManagerName: '',
@@ -79,6 +80,27 @@ export default{
     },
 
     methods: {
+        SwitchButtons: function(buttonId) {
+            var self = this;
+            self.status = buttonId;
+            alert(self.status);
+            self.$http.post("/Employees/editActiveArchiveOfDeptment", {
+                "id": self.$route.params.id,
+                "status": self.status,
+            }).then(function (res) {
+            }, function (err) {
+            });
+            var hideBtn, showBtn;
+            if (buttonId == 'Active') {
+                showBtn = 'Archive';
+                hideBtn = 'Active';
+            } else {
+                showBtn = 'Active';
+                hideBtn = 'Archive';
+            }
+            document.getElementById(hideBtn).style.display = 'none';
+            document.getElementById(showBtn).style.display = '';
+        },
         backsubmit: function () {
             var self = this;
             self.$http.post("/Employees/usaa", {"id": self.$route.params.id}).then(function (res) {

@@ -1,6 +1,6 @@
 .ReqDep
     DashboardController(v-bind:save='true',v-bind:heading="p",v-bind:searchbar='true',v-bind:dropdownbtn1='true',v-bind:dropdownbtn2='true',v-bind:dropdownbtn3='true',v-bind:createbtn='true', v-bind:links="btnlinks",v-bind:num1='true',v-bind:num2='true',v-bind:paginbtn1='true',v-bind:paginbtn2='true',v-bind:deletebtn="true",v-bind:duplicate="true",v-bind:actionbtn='true',v-bind:Attachmentbtn='true',v-bind:editbtn='true')
-        .col-sm-6(style='padding:0px;' ,slot='heading')
+        .col-sm-6(style='padding:0px;' ,slot='job')
             h4.samodashheading(style="font-size: 18px;") Departments / {{parentDepartmentName}} / {{DepartmentName}}
         span.o_pager_value(slot='page') {{counter}}
             |  /
@@ -15,11 +15,17 @@
                 .o_form_sheet_bg
                     .o_form_sheet
                         .oe_button_box(name='button_box')
-                            button.btn.btn-sm.oe_stat_button(type='button')
+                            //button.btn.btn-sm.oe_stat_button(type='button')
+                            //    .fa.fa-fw.fa-archive.o_button_icon
+                            //    .o_stat_info.o_form_field
+                            //        span.o_stat_text.o_not_hover.text-success Active
+                            //        span.o_stat_text.o_hover.text-danger Archive
+                            button#Active.btn.btn-sm.oe_stat_button.sideviewtoggle.myButton(v-on:click="SwitchButtons('Active');")
                                 .fa.fa-fw.fa-archive.o_button_icon
-                                .o_stat_info.o_form_field
-                                    span.o_stat_text.o_not_hover.text-success Active
-                                    span.o_stat_text.o_hover.text-danger Archive
+                                | Active
+                            button#Archive.btn.btn-sm.oe_stat_button.sideviewtoggle.myButton(v-on:click="SwitchButtons('Archive');", style='display:none;')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                | Archive
                         table.o_group.o_inner_group
                             tbody
                                 tr

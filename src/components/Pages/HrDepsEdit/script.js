@@ -1,4 +1,4 @@
-import Emptyform from "./../../partials/Emptyform/Emptyform.vue"
+    import Emptyform from "./../../partials/Emptyform/Emptyform.vue"
 import Tabs from "./../../partials/Tabs/Tabs.vue"
 import ModelDescription from "./../../partials/ModelDescription/ModelDescription.vue"
 import Componame from "./../../partials/Componame/Componame.vue"
@@ -141,9 +141,9 @@ export default{
 
             function showTestDate() {
                 var value = $('#datepicker6').datepicker('getFormattedDate');
-                self.dates_value6 = value;
+                self.birthDate = value;
                 var value1 = $('#datepicker7').datepicker('getFormattedDate');
-                self.dates_value7 = value1;
+                self.medicalExamDate = value1;
 
             };
 
@@ -158,9 +158,8 @@ export default{
             departmentId1:'',
             departName: '',
 
-
-            dates_value6:'', //birthDate
-            dates_value7:'',//mediacalExamDate
+            birthDate:'',
+            medicalExamDate:'',
             employeeName: '',
             workingAddresses: '',
             workingAddressId: '',
@@ -191,7 +190,6 @@ export default{
             gender: '',
             maritalStatus: '',
             noOfChildren: '',
-            birthDate: '',
             placeOfBirth: '',
             timeSheetCost: '',
 
@@ -204,7 +202,6 @@ export default{
             badgeId: '',
             pin: '',
             manualAttendance: '',
-            medicalExamDate: '',
             companyVehicle: '',
             HomeDistance: '',
             num: '',
@@ -863,11 +860,11 @@ export default{
                 "pin": self.pin,
                 "badgeId": self.badgeId,
                 "manualAttendance": self.manualAttendance,
-                "dates_value7": self.dates_value7,
+                "medicalExamDate": self.medicalExamDate,
                 "companyVehicle": self.companyVehicle,
                 "HomeDistance": self.HomeDistance,
                 "noOfChildren": self.noOfChildren,
-                "dates_value6": self.dates_value6,
+                "birthDate": self.birthDate,
                 "placeOfBirth": self.placeOfBirth,
                 "timeSheetCost": self.timeSheetCost,
 

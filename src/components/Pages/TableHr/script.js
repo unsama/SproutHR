@@ -19,6 +19,15 @@ export default{
 
 
         $(function(){
+
+            $("#archived").click(function () {
+                $(".archivedpagi").show()
+                $(".firstpagi").hide()
+            });
+
+            $("#archived").click(function () {
+                self.selectArcivedEmployees();
+            });
             self.btnlinks.printBadgebtnlink = "/Employees/Badge/"+self.$route.params.id;
             $("#export").click(function () {
                 self.btnlinks.subordinatebtnlink = "/Employees/hierarchy/"+self.$route.params.id;
@@ -84,6 +93,7 @@ export default{
                 leavesSummarybtnlink:"",
                 printBadgebtnlink:"",
                 exportbtnlink:"",
+                archivebtnlink: "",
             },
             tableheader: [
                 "ID",
@@ -140,6 +150,41 @@ export default{
         }
     },
     methods: {
+        selectArcivedEmployees: function () {
+            var self = this;
+            self.$http.post("/employees/putArchivedEmployeesToTableView").then(function (res){
+                var data = res.body.result;
+                console.log(data);
+                self.tabledata = [];
+                if(data.length > 0){
+                    data.forEach(function(val) {
+                        var j_date = new Date(val.created_at);
+                        self.tabledata.push({
+                            "data": [
+                                val.ID,
+                                val.empname,
+                                val.phone,
+                                val.email,
+                                val.deptname,
+                                val.job,
+                                val.empManager,
+                            ],
+                            "url": "/Employees/HrDeps/"+val.ID,
+
+                        });
+                    });
+                }
+            });
+            self.$http.post("/Employees/countArchivedEmployees").then(function (res) {
+                var parentdata = res.body.data[0];
+                self.num = parentdata.count;
+                console.log('value of num'+self.num);
+                //console.log(this.$route.query.id);
+
+            }, function (err) {
+
+            });
+        },
         select3: function () {
             var self = this;
             self.counter+=3;
@@ -172,6 +217,39 @@ export default{
                 alert(err);
             });
         },
+        select5: function () {
+            var self = this;
+            self.counter+=3;
+            self.$http.post("/employees/archiveEmployee_tablenext", {
+                "counter": self.counter,
+            }).then(function(res){
+                var data = res.body.data;
+                self.j = data.name;
+                self.tabledata = [];
+                if(data.length > 0){
+                    data.forEach(function(val) {
+                        var j_date = new Date(val.created_at);
+                        self.tabledata.push({
+                            "data": [
+                                val.ID,
+                                val.empname,
+                                val.phone,
+                                val.email,
+                                val.deptname,
+                                val.job,
+                                val.empManager,
+                            ],
+                            "url": "/Employees/HrDeps/"+val.ID,
+
+                        });
+                    });
+                }
+
+            },function(err){
+                alert(err);
+            });
+        },
+
         select4: function () {
             var self = this;
             self.counter-=3;
@@ -205,6 +283,40 @@ export default{
             });
 
         },
+        select6: function () {
+            var self = this;
+            self.counter-=3;
+            self.$http.post("/employees/archiveEmployee_tableback", {
+                "counter": self.counter,
+            }).then(function(res){
+                var data = res.body.data;
+                self.j = data.name;
+                self.tabledata = [];
+                if(data.length > 0){
+                    data.forEach(function(val) {
+                        var j_date = new Date(val.created_at);
+                        self.tabledata.push({
+                            "data": [
+                                val.ID,
+                                val.empname,
+                                val.phone,
+                                val.email,
+                                val.deptname,
+                                val.job,
+                                val.empManager,
+                            ],
+                            "url": "/Employees/HrDeps/"+val.ID,
+
+                        });
+                    });
+                }
+
+            },function(err){
+                alert(err);
+            });
+
+        },
+
         select: function () {
             var self = this;
             self.$http.post("/Employees/putEmployeesToTableView", {

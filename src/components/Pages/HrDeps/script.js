@@ -14,12 +14,26 @@ export default{
         var self = this;
         self.select();
         self.select1();
+
         self.btnlinks.editbtnlink = "/Employees/HrDepsEdit/"+self.$route.params.id;
         self.btnlinks.duplicatebtnlink = "/Employees/HrDuplicate/"+self.$route.params.id;
         self.btnlinks.printBadgebtnlink = "/Employees/Badge/"+self.$route.params.id;
 
 
         $(function(){
+            $(document).ready(function() {
+                var hideBtn, showBtn;
+                if (self.activeArchive == 'Active') {
+                    showBtn = 'Active';
+                    hideBtn = 'Archive';
+                } else {
+                    showBtn = 'Archive';
+                    hideBtn = 'Active';
+                }
+                document.getElementById(hideBtn).style.display = 'none';
+                document.getElementById(showBtn).style.display = '';
+
+            });
             $("#num01").click(function () {
                 self.nextsubmit();
             });
@@ -50,18 +64,6 @@ export default{
                 });
             });
 
-            $('.samobuttopcontroller2').off('click');
-            $('.samobuttopcontroller2').on('click', function () {
-                let check = $('#edit1').css("display");
-                if(check == "none"){
-                    $('#edit1').show();
-                    $('#main1').hide();
-                }else{
-                    $('#edit1').hide();
-                    $('#main1').show();
-                }
-
-            });
 
             document.title = this.title;
             var oldtext;
@@ -113,8 +115,9 @@ export default{
     data(){
         return {
             num:'',
-
+            activeArchive:'',
             employeename:'',
+            employeeContracts:'',
             workaddressId:'',
             workEmail:'',
             workPhone:'',
@@ -247,11 +250,33 @@ export default{
         }
     },
     methods: {
+        SwitchButtons: function(buttonId) {
+            var self = this;
+            self.activeArchive = buttonId;
+            alert(self.activeArchive);
+            self.$http.post("/Employees/editActiveArchive", {
+                "id": self.$route.params.id,
+                "status": self.activeArchive,
+            }).then(function (res) {
+            }, function (err) {
+            });
+            var hideBtn, showBtn;
+            if (buttonId == 'Active') {
+                showBtn = 'Archive';
+                hideBtn = 'Active';
+            } else {
+                showBtn = 'Active';
+                hideBtn = 'Archive';
+            }
+            document.getElementById(hideBtn).style.display = 'none';
+            document.getElementById(showBtn).style.display = '';
+        },
         backsubmit: function () {
             var self = this;
             self.$http.post("/Employees/selectemployeeinfoForFormBack", {"id": self.$route.params.id}).then(function (res) {
                 var parentdata = res.body.data[0];
                 self.$route.params.id = parentdata.id;
+
                 self.employeeName = parentdata.employeename;
                 self.workingAddressId = parentdata.workAddress;
                 self.workEmail = parentdata.work_email;
@@ -283,9 +308,12 @@ export default{
                 self.pin = parentdata.pin;
                 self.manualAttendance = parentdata.manual_attandance.data[0];
 
-                self.$http.post("/Employees/selectworkaddress", {"id":self.workingAddressId}).then(function (res) {
+                self.$http.post("/Employees/countEmployeeContracts", {"empid":parentdata.id}).then(function (res) {
                     var datas = res.body.data[0];
-                    self.workingAddress = datas.address;
+                    self.employeeContracts = datas.countEmpContracts;
+                self.$http.post("/Employees/selectworkaddress", {"id":self.workingAddressId}).then(function (res) {
+                        var datas = res.body.data[0];
+                        self.workingAddress = datas.address;
                 self.$http.post("/Employees/selectdepartment", {"id":self.departmentId}).then(function (res) {
                     var dept = res.body.data[0];
                     self.departmentName = dept.name;
@@ -330,9 +358,13 @@ export default{
                                                         }, function (err) {
 
                                                         });
-
-
                                                     }, function (err) {
+
+                                                    });
+
+
+
+                }, function (err) {
 
                                                     });
                                                 }, function (err) {
@@ -404,6 +436,9 @@ export default{
                 self.pin = parentdata.pin;
                 self.manualAttendance = parentdata.manual_attandance.data[0];
 
+                self.$http.post("/Employees/countEmployeeContracts", {"id":parentdata.id}).then(function (res) {
+                    var datas = res.body.data[0];
+                    self.employeeContracts = datas.countEmpContracts;
                 self.$http.post("/Employees/selectworkaddress", {"id":self.workingAddressId}).then(function (res) {
                     var datas = res.body.data[0];
                     self.workingAddress = datas.address;
@@ -448,6 +483,9 @@ export default{
                                                             self.relatedUser = workSchedule.username;
                                                             console.log(workSchedule.username );
 
+                                                        }, function (err) {
+
+                                                        });
                                                         }, function (err) {
 
                                                         });
@@ -541,11 +579,14 @@ export default{
                 self.relatedUser = parentdata.username;
                 self.badgeId = parentdata.badge_id;
                 self.pin = parentdata.pin;
+                self.activeArchive = parentdata.ActiveAcrchive;
                 self.manualAttendance = parentdata.manual_attandance.data[0];
+                self.$http.post("/Employees/countEmployeeContracts", {"empid":parentdata.ID}).then(function (res) {
+                    var datas = res.body.data[0];
+                    self.employeeContracts = datas.countEmpContracts;
+            }, function (err) {
 
-                console.log(parentdata);
-
-
+            });
             }, function (err) {
 
             });

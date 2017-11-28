@@ -201,11 +201,17 @@
 
                             .col-xs-4.offset-sm-3
                                 .oe_button_box(name='button_box')
-                                    button.btn.btn-sm.oe_stat_button(type='button')
+                                    //button.btn.btn-sm.oe_stat_button(type='button')
+                                    //    .fa.fa-fw.fa-archive.o_button_icon
+                                    //    .o_stat_info.o_form_field(data-original-title='', title='')
+                                    //        span.o_stat_text.o_not_hover.text-danger Archived
+                                    //        span.o_stat_text.o_hover.text-success Unarchive
+                                    button#Active.btn.btn-sm.oe_stat_button.sideviewtoggle.myButton(v-on:click="SwitchButtons('Active');")
                                         .fa.fa-fw.fa-archive.o_button_icon
-                                        .o_stat_info.o_form_field(data-original-title='', title='')
-                                            span.o_stat_text.o_not_hover.text-danger Archived
-                                            span.o_stat_text.o_hover.text-success Unarchive
+                                        | Active
+                                    button#Archive.btn.btn-sm.oe_stat_button.sideviewtoggle.myButton(v-on:click="SwitchButtons('Archive');", style='display:none;')
+                                        .fa.fa-fw.fa-archive.o_button_icon
+                                        | Archive
                                     .o_checkbox.o_form_field_boolean.o_form_field.o_form_invisible
                                         input(type='checkbox', name='show_leaves', disabled='')
                                         span
@@ -219,7 +225,7 @@
                                         button.btn.btn-sm.oe_stat_button(type='button')
                                             .fa.fa-fw.fa-book.o_button_icon
                                             .o_form_field.o_stat_info
-                                                span.o_stat_value 0
+                                                span.o_stat_value {{employeeContracts}}
                                                 span.o_stat_text Contracts
 
 

@@ -7,6 +7,7 @@ export default{
         "modal",
         "heading",
         "save",
+        "savebtnTigger",
         "saveclose",
         "savenew",
         "discard",

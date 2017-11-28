@@ -15,30 +15,12 @@ export default {
                     $(this).attr("selected","selected");
                 }
             });
-            $("select#o_field_input_600 option").each(function(){
-                if($(this).val()==self.department_id){
-                    $(this).attr("selected","selected");
-                }
-            });
-            $("#saveclose").click(function () {
-                alert("saveclose");
-                self.updateDepart();
-            });
+
             $("select#o_field_input_602 option").each(function(){
                 if($(this).val()==self.manager_id){
                     $(this).attr("selected","selected");
                 }
             });
-            $("#saveclose").click(function () {
-                alert("saveclose");
-                self.updateDepart();
-            });
-
-            // $("#save").click(function () {asdasd
-            //     self.submit();
-            //     window.location.href = "/employees/Gridtwo";
-            //     //self.$route.params.id /employees/Gridtwo
-            // });
             $("#save").click(function () {
                 if(self.employeeName=="")
                 {
@@ -56,21 +38,6 @@ export default {
 
             });
             self.btnlinks.discardbtnlink = "/employees/NewDep/"+self.$route.params.id;
-
-            // $("#save").click(function () {
-            //     var r = confirm("Are you sure you want to  Save the employee ");
-            //     if (r)
-            //     {
-            //         self.submit();
-            //         window.location.href = "/Employees/HrDeps/"+self.$route.params.id;
-            //
-            //     }
-            //     else
-            //     {
-            //     }
-            // });
-
-
             self.$watch('managerId', function (val) {
                 self.managers.forEach(function (row) {
                     if (row.employeename === val) {
@@ -345,51 +312,20 @@ export default {
 
 
         SelectContactInfo: function () {
-            var value = $(this).val();
-            console(value);
-            if (!(value == "Create and Edit..." || value == "Search More..." || value=="undefined")) {
-
-
                 var self = this;
                 self.$http.post("/Employees/fetchContactInformationOfEmployee", {
                     "workingAddressId": self.workingAddressId,
                 }).then(function (res) {
                     var contactInfo = res.body.data[0];
                     self.workMobile = contactInfo.work_mobile;
-                    //self.workLocation = contactInfo.name;
+                    self.workLocation = contactInfo.name;
                     self.workEmail = contactInfo.work_email;
                     self.workPhone = contactInfo.work_phone;
 
                 }, function (err) {
                     // alert(err);
                 });
-
-            }
         },
-
-        // selectDepartManagerHussain: function () {
-        //     var value = $(this).val();
-        //     var self = this;
-        //     if (value == "Create and Edit..." || value == "Search More..." ) {
-        //
-        //         //alert("Inside Method selectDepartManagerHussain(): departmentId  =  "+ self.departmentId);
-        //         self.$http.post("/Employees/fetchDeptManager", {
-        //             "departmentId": self.departmentId,
-        //
-        //         }).then(function (res) {
-        //             var deptManager = res.body.result[0];
-        //
-        //             console.log(deptManager);
-        //             self.managerId = deptManager.employeename;
-        //             console.log(self.managerId);
-        //
-        //         }, function (err) {
-        //             alert(err);
-        //         });
-        //     }
-        //
-        // },
-
 
         select: function () {
             var self = this;
@@ -399,33 +335,12 @@ export default {
             }, function (err) {
                 //alert(err);
             });
-            // this will work when url will provide department id for creating new employee for the department
-            self.$http.post("/Employees/fetchDepartmentManager", {"id":self.$route.params.id}).then(function (res) {
-                var deptManagerId = res.body.result[0];
-                self.manager_id = deptManagerId.manager_id;
-            }, function (err) {
 
-            });
-            //this will work when url provide employee id for creating new employee for the department
-            self.$http.post("/Employees/fetchEmployeeDeptAndManager", {"id":self.$route.params.id}).then(function (res) {
-                var deptManagerId = res.body.result[0];
-                self.department_id = deptManagerId.department_id;
-                self.manager_id = deptManagerId.manager_id;
-            }, function (err) {
-
-            });
-
-            self.$http.post("/employees/fetchDepartments", {"deptName": self.name}).then(function (res) {
+            self.$http.post("/employees/fetchDepartments").then(function (res) {
                 self.departnents = res.body.result;
             }, function (err) {
                 // alert(err);
             });
-            self.$http.post("/employees/fetchDepartments1", {"deptName": self.name}).then(function (res) {
-                self.departnents1 = res.body.result;
-            }, function (err) {
-                // alert(err);
-            });
-
             self.$http.post("/employees/fetchJobTitles", {"jobTitle_name": self.job_title}).then(function (res) {
                 self.jobTitles = res.body.result;
             }, function (err) {
@@ -437,11 +352,6 @@ export default {
             }, function (err) {
                 //alert(err);
             });
-            self.$http.post("/employees/fetchManagers1", {"managerName": self.employeename}).then(function (res) {
-                self.managers1 = res.body.result;
-            }, function (err) {
-                //alert(err);
-            });
 
             self.$http.post("/employees/fetchCoachs", {"coach_name": self.employeename}).then(function (res) {
                 self.coachs = res.body.result;
@@ -449,24 +359,20 @@ export default {
                 // alert(err);
             });
 
-            self.$http.post("/employees/fetchWorkingTimeNames", {"workingTime": self.name}).then(function (res) {
+            self.$http.post("/employees/fetchWorkingTimeNames").then(function (res) {
                 self.workingScedules = res.body.result;
             }, function (err) {
                 // alert(err);
             });
 
-            // self.$http.post("/employees/fetchmanager", {"manager_name": self.employeename	}).then(function(res){self.emp_table =res.body.result;},function(err){
-            //     //alert(err);
-            // });
 
-
-            self.$http.post("/employees/fetchHomeAddresses", {"HomeAddress": self.name}).then(function (res) {
+            self.$http.post("/employees/fetchHomeAddresses").then(function (res) {
                 self.homeAddresses = res.body.result;
             }, function (err) {
                 //alert(err);
             });
 
-            self.$http.post("/employees/FetchBankAccountNumbers", {"AccNo": self.account_number}).then(function (res) {
+            self.$http.post("/employees/FetchBankAccountNumbers").then(function (res) {
                 self.BankAccountNumbers = res.body.result;
             }, function (err) {
                 //alert(err);
@@ -477,33 +383,32 @@ export default {
             }, function (err) {
                 //alert(err);
             });
-            //acoountTable
-            self.$http.post("/employees/fetchAccounts", {"accName": self.name}).then(function (res) {
+
+            self.$http.post("/employees/fetchAccounts").then(function (res) {
                 self.accounts = res.body.result;
             }, function (err) {
                 //alert(err);
             });
 
-            self.$http.post("/employees/fetchCompanies", {"companyName": self.company_name}).then(function (res) {
-                self.companies = res.body.result;
-            }, function (err) {
-            });
-
-            self.$http.post("/employees/fetchRelatedUsers", {"relatedUser": self.username}).then(function (res) {
+            self.$http.post("/employees/fetchRelatedUsers").then(function (res) {
                 self.relatedUsers = res.body.result;
             }, function (err) {
-                //alert(err);
+                //alert(err);ss
             });
-
-
+            // self.$http.post("/Employees/fetchDepartmentManager", {"id":self.$route.params.id}).then(function (res) {
+            //     var deptManagerId = res.body.result[0];
+            //     self.manager_id = deptManagerId.manager_id;
+            // }, function (err) {
+            //
+            // });
         },
         submit: function () {
             var self = this;
             self.$http.post("/Employees/addNewEmployee", {
                 "employeeName": self.employeeName,
                 "workingAddressId": self.workingAddressId,
-                "workMobile": self.workMobile,//job_title
-                "workLocation": self.workLocation,// department name
+                "workMobile": self.workMobile,
+                "workLocation": self.workLocation,
                 "workEmail": self.workEmail,
                 "workPhone": self.workPhone,
                 "departmentId": self.departmentId,
@@ -537,16 +442,6 @@ export default {
             }, function (err) {
                 //alert(err);
             });
-
-            self.$http.post("/employees/addemp", {
-                "dep_name": self.name, "p_dep_id": self.parent_dept_id, "mgr_id": self.identification_number
-            }).then(function (res) {
-                //console.log(res.body);
-            }, function (err) {
-                //alert(err);
-            });
-
-
         },
     },
 

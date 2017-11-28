@@ -4296,12 +4296,17 @@
                 .o_form_sheet_bg
                     .o_form_sheet
                         .oe_button_box(name='button_box')
-                            button.btn.btn-sm.oe_stat_button(type='button')
+                            //button.btn.btn-sm.oe_stat_button(type='button')
+                            //    .fa.fa-fw.fa-archive.o_button_icon
+                            //    .o_stat_info.o_form_field
+                            //        span.o_stat_text.o_not_hover.text-success Active
+                            //        span.o_stat_text.o_hover.text-danger Archive
+                            button#Active.btn.btn-sm.oe_stat_button.sideviewtoggle.myButton(v-on:click="SwitchButtons('Active');")
                                 .fa.fa-fw.fa-archive.o_button_icon
-                                .o_stat_info.o_form_field
-                                    span.o_stat_text.o_not_hover.text-success Active
-                                    span.o_stat_text.o_hover.text-danger Archive
-
+                                | Active
+                            button#Archive.btn.btn-sm.oe_stat_button.sideviewtoggle.myButton(v-on:click="SwitchButtons('Archive');", style='display:none;')
+                                .fa.fa-fw.fa-archive.o_button_icon
+                                | Archive
                         table.o_group.o_inner_group
                         form(style='margin-top: 59px;margin-left: 13px;')(@submit.prevent="validateBeforeSubmit" v-if="!formSubmitted")
                             table.o_group.o_inner_group

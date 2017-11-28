@@ -16,8 +16,6 @@ export default{
         var del = []; // initialize empty array
 
         $(function(){
-
-
             var oldtext;
             $('.note.btn.btn-primary').hover(function(){
                 oldtext = $(this).text();
@@ -75,7 +73,7 @@ export default{
                 createbtnlink: "/employees/CreateContract",
 
                 importbtnlink:"/employees/Importemp",
-                exportbtnlink:""
+                exportbtnlink:"",
             },
             tableheader: [
                 "ID",
